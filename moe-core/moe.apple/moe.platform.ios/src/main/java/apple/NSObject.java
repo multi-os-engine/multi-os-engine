@@ -62,10 +62,6 @@ import apple.corefoundation.struct.CGRect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.moe.natj.objc.ann.ObjCBlock;
-import apple.foundation.NSKeyValueSharedObserversSnapshot;
-import apple.foundation.struct.NSRange;
-import apple.uikit.UIEvent;
-import apple.uikit.protocol.UITextInput;
 
 /**
  * API-Since: 2.0
@@ -87,8 +83,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * Return YES if -valueForKey:, -setValue:forKey:, -mutableArrayValueForKey:, -storedValueForKey:,
      * -takeStoredValue:forKey:, and -takeValue:forKey: may directly manipulate instance variables when sent to
      * instances of the receiving class, NO otherwise. The default implementation of this property returns YES.
-     * 
-     * API-Since: 2.0
      */
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -114,24 +108,16 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * method searches the receiving class for a method whose name matches the pattern
      * +automaticallyNotifiesObserversOf<Key>, and returns the result of invoking that method if it is found. So, any
      * such method must return BOOL too. If no such method is found YES is returned.
-     * 
-     * API-Since: 2.0
      */
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
-    /**
-     * API-Since: 2.0
-     */
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
     public static native void cancelPreviousPerformRequestsWithTarget(
             @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
-    /**
-     * API-Since: 2.0
-     */
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
@@ -148,47 +134,30 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * [self replacementObjectForArchiver:nil] by default, NOT
      * -replacementObjectForCoder: as might be expected. This is a concession
      * to source compatibility.
-     * 
-     * API-Since: 2.0
      */
     @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
-    /**
-     * API-Since: 2.0
-     */
     @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
-    /**
-     * API-Since: 2.0
-     */
     @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
-    /**
-     * API-Since: 2.0
-     */
     @Generated
     @Selector("description")
     public static native String description_static();
 
-    /**
-     * API-Since: 2.0
-     */
     @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
 
-    /**
-     * API-Since: 2.0
-     */
     @Generated
     @Selector("instanceMethodForSelector:")
     @FunctionPtr(name = "call_instanceMethodForSelector_ret")
@@ -198,16 +167,10 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Selector("instanceMethodSignatureForSelector:")
     public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
 
-    /**
-     * API-Since: 2.0
-     */
     @Generated
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
-    /**
-     * API-Since: 2.0
-     */
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
@@ -260,23 +223,14 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
-    /**
-     * API-Since: 2.0
-     */
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
-    /**
-     * API-Since: 2.0
-     */
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
-    /**
-     * API-Since: 2.0
-     */
     @Generated
     @Selector("version")
     @NInt
@@ -584,8 +538,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * the same observer is registered for the same key path multiple times, but with different context pointers each
      * time, -removeObserver:forKeyPath: has to guess at the context pointer when deciding what exactly to remove, and
      * it can guess wrong.
-     * 
-     * API-Since: 2.0
      */
     @Generated
     @Selector("addObserver:forKeyPath:options:context:")
@@ -597,8 +549,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * error's recovery options, attempt recovery from the error, and return YES if error recovery was completely
      * successful, NO otherwise. The recovery option index is an index into the error's array of localized recovery
      * options.
-     * 
-     * API-Since: 2.0
      */
     @Generated
     @Selector("attemptRecoveryFromError:optionIndex:")
@@ -613,8 +563,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * - (void)didPresentErrorWithRecovery:(BOOL)didRecover contextInfo:(void *)contextInfo;
      * 
      * The value passed for didRecover must be YES if error recovery was completely successful, NO otherwise.
-     * 
-     * API-Since: 2.0
      */
     @Generated
     @Selector("attemptRecoveryFromError:optionIndex:delegate:didRecoverSelector:contextInfo:")
@@ -631,9 +579,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object autoContentAccessingProxy();
 
-    /**
-     * API-Since: 2.0
-     */
     @Nullable
     @Generated
     @Selector("awakeAfterUsingCoder:")
@@ -648,25 +593,16 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Selector("class")
     public native Class class_objc();
 
-    /**
-     * API-Since: 2.0
-     */
     @NotNull
     @Generated
     @Selector("classForCoder")
     public native Class classForCoder();
 
-    /**
-     * API-Since: 2.0
-     */
     @Nullable
     @Generated
     @Selector("classForKeyedArchiver")
     public native Class classForKeyedArchiver();
 
-    /**
-     * API-Since: 2.0
-     */
     @Generated
     @Owned
     @Selector("copy")
@@ -691,40 +627,26 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * Given an array of keys, return a dictionary containing the keyed attribute values, to-one-related objects, and/or
      * collections of to-many-related objects. Entries for which -valueForKey: returns nil have NSNull as their value in
      * the returned dictionary.
-     * 
-     * API-Since: 2.0
      */
     @NotNull
     @Generated
     @Selector("dictionaryWithValuesForKeys:")
     public native NSDictionary<String, ?> dictionaryWithValuesForKeys(@NotNull NSArray<String> keys);
 
-    /**
-     * API-Since: 2.0
-     */
     @Generated
     @Selector("didChange:valuesAtIndexes:forKey:")
     public native void didChangeValuesAtIndexesForKey(@NUInt long changeKind, @NotNull NSIndexSet indexes,
             @NotNull String key);
 
-    /**
-     * API-Since: 2.0
-     */
     @Generated
     @Selector("didChangeValueForKey:")
     public native void didChangeValueForKey(@NotNull String key);
 
-    /**
-     * API-Since: 2.0
-     */
     @Generated
     @Selector("didChangeValueForKey:withSetMutation:usingObjects:")
     public native void didChangeValueForKeyWithSetMutationUsingObjects(@NotNull String key, @NUInt long mutationKind,
             @NotNull NSSet<?> objects);
 
-    /**
-     * API-Since: 2.0
-     */
     @Generated
     @Selector("doesNotRecognizeSelector:")
     public native void doesNotRecognizeSelector(SEL aSelector);
@@ -750,9 +672,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Selector("fileManager:willProcessPath:")
     public native void fileManagerWillProcessPath(@NotNull NSFileManager fm, @NotNull String path);
 
-    /**
-     * API-Since: 2.0
-     */
     @Generated
     @Selector("finalize")
     public native void finalize_objc();
@@ -783,9 +702,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @NInt
     public native long indexOfAccessibilityElement(@NotNull @Mapped(ObjCObjectMapper.class) Object element);
 
-    /**
-     * API-Since: 2.0
-     */
     @Generated
     @Selector("init")
     public native NSObject init();
@@ -816,9 +732,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Selector("isProxy")
     public native boolean isProxy();
 
-    /**
-     * API-Since: 2.0
-     */
     @Generated
     @Selector("methodForSelector:")
     @FunctionPtr(name = "call_methodForSelector_ret")
@@ -864,25 +777,17 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * Performance note: the repetitive -set<Key>: messages implied by step 2's description are a potential performance
      * problem. For better performance implement insertion and removal methods that fulfill the requirements for step 1
      * in your KVC-compliant class. For best performance implement a replacement method too.
-     * 
-     * API-Since: 2.0
      */
     @NotNull
     @Generated
     @Selector("mutableArrayValueForKey:")
     public native NSMutableArray<?> mutableArrayValueForKey(@NotNull String key);
 
-    /**
-     * API-Since: 2.0
-     */
     @NotNull
     @Generated
     @Selector("mutableArrayValueForKeyPath:")
     public native NSMutableArray<?> mutableArrayValueForKeyPath(@NotNull String keyPath);
 
-    /**
-     * API-Since: 2.0
-     */
     @Owned
     @Generated
     @Selector("mutableCopy")
@@ -975,17 +880,12 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * Performance note: the repetitive -set<Key>: messages implied by step 2's description are a potential performance
      * problem. For better performance implement methods that fulfill the requirements for step 1 in your KVC-compliant
      * class.
-     * 
-     * API-Since: 2.0
      */
     @NotNull
     @Generated
     @Selector("mutableSetValueForKey:")
     public native NSMutableSet<?> mutableSetValueForKey(@NotNull String key);
 
-    /**
-     * API-Since: 2.0
-     */
     @NotNull
     @Generated
     @Selector("mutableSetValueForKeyPath:")
@@ -997,8 +897,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * observation info in a global dictionary keyed by the receivers' pointers. For improved performance, you can
      * override these methods to store the opaque data pointer in an instance variable. Overrides of these methods must
      * not attempt to send Objective-C messages to the passed-in observation info, including -retain and -release.
-     * 
-     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -1044,8 +942,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * NSKeyValueChangeNotificationIsPriorKey entry whose value is an NSNumber wrapping YES (use -[NSNumber boolValue]).
      * 
      * context is always the same pointer that was passed in at observer registration time.
-     * 
-     * API-Since: 2.0
      */
     @Generated
     @Selector("observeValueForKeyPath:ofObject:change:context:")
@@ -1082,17 +978,11 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object performSelectorWithObject(SEL aSelector, @Mapped(ObjCObjectMapper.class) Object object);
 
-    /**
-     * API-Since: 2.0
-     */
     @Generated
     @Selector("performSelector:withObject:afterDelay:")
     public native void performSelectorWithObjectAfterDelay(@NotNull SEL aSelector,
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument, double delay);
 
-    /**
-     * API-Since: 2.0
-     */
     @Generated
     @Selector("performSelector:withObject:afterDelay:inModes:")
     public native void performSelectorWithObjectAfterDelayInModes(@NotNull SEL aSelector,
@@ -1114,17 +1004,11 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     public native void performSelectorInBackgroundWithObject(@NotNull SEL aSelector,
             @Nullable @Mapped(ObjCObjectMapper.class) Object arg);
 
-    /**
-     * API-Since: 2.0
-     */
     @Generated
     @Selector("performSelectorOnMainThread:withObject:waitUntilDone:")
     public native void performSelectorOnMainThreadWithObjectWaitUntilDone(@NotNull SEL aSelector,
             @Nullable @Mapped(ObjCObjectMapper.class) Object arg, boolean wait_);
 
-    /**
-     * API-Since: 2.0
-     */
     @Generated
     @Selector("performSelectorOnMainThread:withObject:waitUntilDone:modes:")
     public native void performSelectorOnMainThreadWithObjectWaitUntilDoneModes(@NotNull SEL aSelector,
@@ -1152,8 +1036,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * 
      * Changing the virtual memory mapping of the supplied buffer (e.g. using
      * vm_copy () to modify it) will give undefined behavior.
-     * 
-     * API-Since: 2.0
      */
     @Generated
     @Selector("provideImageData:bytesPerRow:origin::size::userInfo:")
@@ -1161,9 +1043,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
             @NUInt long x, @NUInt long y, @NUInt long width, @NUInt long height,
             @Nullable @Mapped(ObjCObjectMapper.class) Object info);
 
-    /**
-     * API-Since: 2.0
-     */
     @Generated
     @Selector("removeObserver:forKeyPath:")
     public native void removeObserverForKeyPath(@NotNull NSObject observer, @NotNull String keyPath);
@@ -1176,9 +1055,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     public native void removeObserverForKeyPathContext(@NotNull NSObject observer, @NotNull String keyPath,
             @Nullable VoidPtr context);
 
-    /**
-     * API-Since: 2.0
-     */
     @Nullable
     @Generated
     @Selector("replacementObjectForCoder:")
@@ -1193,8 +1069,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * the result of this method is ignored. This method returns the result of
      * [self classForArchiver] by default, NOT -classForCoder as might be
      * expected. This is a concession to source compatibility.
-     * 
-     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -1388,8 +1262,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * is nil, set the keyed value using some other mechanism. The default implementation of this method raises an
      * NSInvalidArgumentException. You can override it to map nil values to something meaningful in the context of your
      * application.
-     * 
-     * API-Since: 2.0
      */
     @Generated
     @Selector("setNilValueForKey:")
@@ -1401,8 +1273,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * observation info in a global dictionary keyed by the receivers' pointers. For improved performance, you can
      * override these methods to store the opaque data pointer in an instance variable. Overrides of these methods must
      * not attempt to send Objective-C messages to the passed-in observation info, including -retain and -release.
-     * 
-     * API-Since: 2.0
      */
     @Generated
     @Selector("setObservationInfo:")
@@ -1456,16 +1326,11 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * - For backward binary compatibility with -takeValue:forKey:'s behavior, -handleTakeValue:forUnboundKey: will be
      * invoked instead of -setValue:forUndefinedKey: in step 3, if the implementation of -handleTakeValue:forUnboundKey:
      * in the receiver's class is not NSObject's.
-     * 
-     * API-Since: 2.0
      */
     @Generated
     @Selector("setValue:forKey:")
     public native void setValueForKey(@Nullable @Mapped(ObjCObjectMapper.class) Object value, @NotNull String key);
 
-    /**
-     * API-Since: 2.0
-     */
     @Generated
     @Selector("setValue:forKeyPath:")
     public native void setValueForKeyPath(@Nullable @Mapped(ObjCObjectMapper.class) Object value,
@@ -1475,8 +1340,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * Given that an invocation of -setValue:forKey: would be unable to set the keyed value using its default mechanism,
      * set the keyed value using some other mechanism. The default implementation of this method raises an
      * NSUndefinedKeyException. You can override it to handle properties that are dynamically defined at run-time.
-     * 
-     * API-Since: 2.0
      */
     @Generated
     @Selector("setValue:forUndefinedKey:")
@@ -1487,8 +1350,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * Given a dictionary containing keyed attribute values, to-one-related objects, and/or collections of
      * to-many-related objects, set the keyed values. Dictionary entries whose values are NSNull result in -setValue:nil
      * forKey:key messages being sent to the receiver.
-     * 
-     * API-Since: 2.0
      */
     @Generated
     @Selector("setValuesForKeysWithDictionary:")
@@ -1523,8 +1384,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * The default implementation of this method searches the class of the receiver for a validator method whose name
      * matches the pattern -validate<Key>:error:. If such a method is found it is invoked and the result is returned. If
      * no such method is found, YES is returned.
-     * 
-     * API-Since: 2.0
      */
     @Generated
     @Selector("validateValue:forKey:error:")
@@ -1532,9 +1391,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
             @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> ioValue, @NotNull String inKey,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
-    /**
-     * API-Since: 2.0
-     */
     @Generated
     @Selector("validateValue:forKeyPath:error:")
     public native boolean validateValueForKeyPathError(
@@ -1597,8 +1453,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * - For backward binary compatibility, -handleQueryWithUnboundKey: will be invoked instead of
      * -valueForUndefinedKey: in step 6, if the implementation of -handleQueryWithUnboundKey: in the receiver's class is
      * not NSObject's.
-     * 
-     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -1612,8 +1466,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * -valueForKey: is invoked with the first key path component as the argument, and the method being invoked is
      * invoked recursively on the result, with the remainder of the key path passed as an argument. If not, the
      * like-named non-key-path-taking method is invoked.
-     * 
-     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -1625,8 +1477,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * Given that an invocation of -valueForKey: would be unable to get a keyed value using its default access
      * mechanism, return the keyed value using some other mechanism. The default implementation of this method raises an
      * NSUndefinedKeyException. You can override it to handle properties that are dynamically defined at run-time.
-     * 
-     * API-Since: 2.0
      */
     @Nullable
     @Generated
@@ -1651,8 +1501,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * - The NSKeyValueChangeNewKey entry, if present (only for NSKeyValueChangeInsertion and
      * NSKeyValueChangeReplacement), contains an array of the indexed objects from the array returned by -valueForKey:
      * at the instant that -didChangeValueForKey:valuesAtIndexes:forKey: is invoked.
-     * 
-     * API-Since: 2.0
      */
     @Generated
     @Selector("willChange:valuesAtIndexes:forKey:")
@@ -1672,8 +1520,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * -willChangeValueForKey: is invoked (or an NSNull if -valueForKey: returns nil).
      * - The NSKeyValueChangeNewKey entry, if present, contains the value returned by -valueForKey: at the instant that
      * -didChangeValueForKey: is invoked (or an NSNull if -valueForKey: returns nil).
-     * 
-     * API-Since: 2.0
      */
     @Generated
     @Selector("willChangeValueForKey:")
@@ -1699,8 +1545,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * NSKeyValueChangeReplacement), contains the set of objects that were removed.
      * - The NSKeyValueChangeNewKey entry, if present (only for NSKeyValueChangeInsertion and
      * NSKeyValueChangeReplacement), contains the set of objects that were added.
-     * 
-     * API-Since: 2.0
      */
     @Generated
     @Selector("willChangeValueForKey:withSetMutation:usingObjects:")
@@ -3252,527 +3096,4 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Selector("valuesForKeys:")
     @NotNull
     public native NSDictionary<?, ?> valuesForKeys(@NotNull NSArray<?> keys);
-
-    /**
-     * Returns the expanded or collapsed status of an element.
-     * 
-     * API-Since: 18.0
-     */
-    @Generated
-    @Selector("accessibilityExpandedStatus")
-    @NInt
-    public native long accessibilityExpandedStatus();
-
-    /**
-     * API-Since: 18.0
-     */
-    @Generated
-    @Selector("accessibilityExpandedStatusBlock")
-    @ObjCBlock(name = "call_accessibilityExpandedStatusBlock_ret")
-    @Nullable
-    public native Block_accessibilityExpandedStatusBlock_ret accessibilityExpandedStatusBlock();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_accessibilityExpandedStatusBlock_ret {
-        @Generated
-        @NInt
-        long call_accessibilityExpandedStatusBlock_ret();
-    }
-
-    /**
-     * Returns an accessibility element at the specified coordinate. The result should return true for
-     * isAccessibilityElement
-     * 
-     * API-Since: 18.0
-     */
-    @Generated
-    @Selector("accessibilityHitTest:withEvent:")
-    @MappedReturn(ObjCObjectMapper.class)
-    @Nullable
-    public native Object accessibilityHitTestWithEvent(@ByValue CGPoint point, @Nullable UIEvent event);
-
-    /**
-     * The text cursor position of the soft line end should be returned, starting from the current selection (or
-     * beginning if no selection).
-     * 
-     * API-Since: 18.2
-     */
-    @Generated
-    @Selector("accessibilityLineEndPositionFromCurrentSelection")
-    @NInt
-    public native long accessibilityLineEndPositionFromCurrentSelection();
-
-    /**
-     * The text cursor range of the soft line should be returned depending on the position.
-     * 
-     * @param position A text cursor position within a line of text.
-     * 
-     *                 API-Since: 18.2
-     */
-    @Generated
-    @Selector("accessibilityLineRangeForPosition:")
-    @ByValue
-    public native NSRange accessibilityLineRangeForPosition(@NInt long position);
-
-    /**
-     * The text cursor position of the soft line start should be returned, starting from the current selection (or
-     * beginning if no selection).
-     * 
-     * API-Since: 18.2
-     */
-    @Generated
-    @Selector("accessibilityLineStartPositionFromCurrentSelection")
-    @NInt
-    public native long accessibilityLineStartPositionFromCurrentSelection();
-
-    /**
-     * API-Since: 18.0
-     */
-    @Generated
-    @Selector("accessibilityNextTextNavigationElement")
-    @MappedReturn(ObjCObjectMapper.class)
-    @Nullable
-    public native Object accessibilityNextTextNavigationElement();
-
-    /**
-     * API-Since: 18.0
-     */
-    @Generated
-    @Selector("accessibilityNextTextNavigationElementBlock")
-    @ObjCBlock(name = "call_accessibilityNextTextNavigationElementBlock_ret")
-    @Nullable
-    public native Block_accessibilityNextTextNavigationElementBlock_ret accessibilityNextTextNavigationElementBlock();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_accessibilityNextTextNavigationElementBlock_ret {
-        @Generated
-        @MappedReturn(ObjCObjectMapper.class)
-        @Nullable
-        Object call_accessibilityNextTextNavigationElementBlock_ret();
-    }
-
-    /**
-     * An accessibility element that contains text that is semantically connected to this accessibility element.
-     * Assistive technologies will transition to these elements when navigating via text granularities, such as when
-     * using the VoiceOver Lines rotor.
-     * 
-     * API-Since: 18.0
-     */
-    @Generated
-    @Selector("accessibilityPreviousTextNavigationElement")
-    @MappedReturn(ObjCObjectMapper.class)
-    @Nullable
-    public native Object accessibilityPreviousTextNavigationElement();
-
-    /**
-     * API-Since: 18.0
-     */
-    @Generated
-    @Selector("accessibilityPreviousTextNavigationElementBlock")
-    @ObjCBlock(name = "call_accessibilityPreviousTextNavigationElementBlock_ret")
-    @Nullable
-    public native Block_accessibilityPreviousTextNavigationElementBlock_ret accessibilityPreviousTextNavigationElementBlock();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_accessibilityPreviousTextNavigationElementBlock_ret {
-        @Generated
-        @MappedReturn(ObjCObjectMapper.class)
-        @Nullable
-        Object call_accessibilityPreviousTextNavigationElementBlock_ret();
-    }
-
-    /**
-     * If your accessibility element represents a view that supports text operations via the UITextInput
-     * protocol, you may use this property to forward UITextInput calls to your backing view
-     * 
-     * API-Since: 18.1
-     */
-    @Generated
-    @Selector("accessibilityTextInputResponder")
-    @MappedReturn(ObjCObjectMapper.class)
-    @Nullable
-    public native UITextInput accessibilityTextInputResponder();
-
-    /**
-     * API-Since: 18.1
-     */
-    @Generated
-    @Selector("accessibilityTextInputResponderBlock")
-    @ObjCBlock(name = "call_accessibilityTextInputResponderBlock_ret")
-    @Nullable
-    public native Block_accessibilityTextInputResponderBlock_ret accessibilityTextInputResponderBlock();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_accessibilityTextInputResponderBlock_ret {
-        @Generated
-        @MappedReturn(ObjCObjectMapper.class)
-        @Nullable
-        UITextInput call_accessibilityTextInputResponderBlock_ret();
-    }
-
-    /**
-     * Returns the attributed value of this element in the given range.
-     * 
-     * @param range The range of this element's value to return.
-     * 
-     *              API-Since: 18.0
-     */
-    @Generated
-    @Selector("browserAccessibilityAttributedValueInRange:")
-    @NotNull
-    public native NSAttributedString browserAccessibilityAttributedValueInRange(@ByValue NSRange range);
-
-    /**
-     * An option set of the types that contain this element. For example, an object within a table cell
-     * will return the Table container type.
-     * default: BEAccessibilityContainerTypeNone
-     * 
-     * API-Since: 18.0
-     */
-    @Generated
-    @Selector("browserAccessibilityContainerType")
-    @NUInt
-    public native long browserAccessibilityContainerType();
-
-    /**
-     * Represents the value of aria-current.
-     * default: nil
-     * 
-     * API-Since: 18.0
-     */
-    @Generated
-    @Selector("browserAccessibilityCurrentStatus")
-    @Nullable
-    public native String browserAccessibilityCurrentStatus();
-
-    /**
-     * Delete text at the current cursor position.
-     * 
-     * @param numberOfCharacters Number of characters to delete.
-     * 
-     *                           API-Since: 18.0
-     */
-    @Generated
-    @Selector("browserAccessibilityDeleteTextAtCursor:")
-    public native void browserAccessibilityDeleteTextAtCursor(@NInt long numberOfCharacters);
-
-    /**
-     * Represents whether the current element has native DOM focus.
-     * default: false
-     * 
-     * API-Since: 18.0
-     */
-    @Generated
-    @Selector("browserAccessibilityHasDOMFocus")
-    public native boolean browserAccessibilityHasDOMFocus();
-
-    /**
-     * Insert text at the current cursor position.
-     * 
-     * @param text The text to insert.
-     * 
-     *             API-Since: 18.0
-     */
-    @Generated
-    @Selector("browserAccessibilityInsertTextAtCursor:")
-    public native void browserAccessibilityInsertTextAtCursor(@NotNull String text);
-
-    /**
-     * Represents the value of aria-required.
-     * default: false
-     * 
-     * API-Since: 18.0
-     */
-    @Generated
-    @Selector("browserAccessibilityIsRequired")
-    public native boolean browserAccessibilityIsRequired();
-
-    /**
-     * Represents the value of aria-pressed.
-     * default: BEAccessibilityPressedStateUndefined
-     * 
-     * API-Since: 18.0
-     */
-    @Generated
-    @Selector("browserAccessibilityPressedState")
-    @NInt
-    public native long browserAccessibilityPressedState();
-
-    /**
-     * Represents the value of aria-roledescription.
-     * default: nil
-     * 
-     * API-Since: 18.0
-     */
-    @Generated
-    @Selector("browserAccessibilityRoleDescription")
-    @Nullable
-    public native String browserAccessibilityRoleDescription();
-
-    /**
-     * Returns an range representing the selected text on the page.
-     * default: { NSNotFound, 0 }
-     * 
-     * API-Since: 18.0
-     */
-    @Generated
-    @Selector("browserAccessibilitySelectedTextRange")
-    @ByValue
-    public native NSRange browserAccessibilitySelectedTextRange();
-
-    /**
-     * Set the selected text range.
-     * 
-     * @param range The range to make selected.
-     * 
-     *              API-Since: 18.0
-     */
-    @Generated
-    @Selector("browserAccessibilitySetSelectedTextRange:")
-    public native void browserAccessibilitySetSelectedTextRange(@ByValue NSRange range);
-
-    /**
-     * Represents the value of aria-sort.
-     * default: nil
-     * 
-     * API-Since: 18.0
-     */
-    @Generated
-    @Selector("browserAccessibilitySortDirection")
-    @Nullable
-    public native String browserAccessibilitySortDirection();
-
-    /**
-     * Returns the value of this element in the given range.
-     * 
-     * @param range The range of this element's value to return.
-     * 
-     *              API-Since: 18.0
-     */
-    @Generated
-    @Selector("browserAccessibilityValueInRange:")
-    @NotNull
-    public native String browserAccessibilityValueInRange(@ByValue NSRange range);
-
-    /**
-     * Returns the expanded or collapsed status of an element.
-     * 
-     * API-Since: 18.0
-     */
-    @Generated
-    @Selector("setAccessibilityExpandedStatus:")
-    public native void setAccessibilityExpandedStatus(@NInt long value);
-
-    /**
-     * API-Since: 18.0
-     */
-    @Generated
-    @Selector("setAccessibilityExpandedStatusBlock:")
-    public native void setAccessibilityExpandedStatusBlock(
-            @ObjCBlock(name = "call_setAccessibilityExpandedStatusBlock") @Nullable Block_setAccessibilityExpandedStatusBlock value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setAccessibilityExpandedStatusBlock {
-        @Generated
-        @NInt
-        long call_setAccessibilityExpandedStatusBlock();
-    }
-
-    /**
-     * API-Since: 18.0
-     */
-    @Generated
-    @Selector("setAccessibilityNextTextNavigationElement:")
-    public native void setAccessibilityNextTextNavigationElement(
-            @Mapped(ObjCObjectMapper.class) @Nullable Object value);
-
-    /**
-     * API-Since: 18.0
-     */
-    @Generated
-    @Selector("setAccessibilityNextTextNavigationElementBlock:")
-    public native void setAccessibilityNextTextNavigationElementBlock(
-            @ObjCBlock(name = "call_setAccessibilityNextTextNavigationElementBlock") @Nullable Block_setAccessibilityNextTextNavigationElementBlock value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setAccessibilityNextTextNavigationElementBlock {
-        @Generated
-        @MappedReturn(ObjCObjectMapper.class)
-        @Nullable
-        Object call_setAccessibilityNextTextNavigationElementBlock();
-    }
-
-    /**
-     * An accessibility element that contains text that is semantically connected to this accessibility element.
-     * Assistive technologies will transition to these elements when navigating via text granularities, such as when
-     * using the VoiceOver Lines rotor.
-     * 
-     * API-Since: 18.0
-     */
-    @Generated
-    @Selector("setAccessibilityPreviousTextNavigationElement:")
-    public native void setAccessibilityPreviousTextNavigationElement(
-            @Mapped(ObjCObjectMapper.class) @Nullable Object value);
-
-    /**
-     * API-Since: 18.0
-     */
-    @Generated
-    @Selector("setAccessibilityPreviousTextNavigationElementBlock:")
-    public native void setAccessibilityPreviousTextNavigationElementBlock(
-            @ObjCBlock(name = "call_setAccessibilityPreviousTextNavigationElementBlock") @Nullable Block_setAccessibilityPreviousTextNavigationElementBlock value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setAccessibilityPreviousTextNavigationElementBlock {
-        @Generated
-        @MappedReturn(ObjCObjectMapper.class)
-        @Nullable
-        Object call_setAccessibilityPreviousTextNavigationElementBlock();
-    }
-
-    /**
-     * If your accessibility element represents a view that supports text operations via the UITextInput
-     * protocol, you may use this property to forward UITextInput calls to your backing view
-     * 
-     * API-Since: 18.1
-     */
-    @Generated
-    @Selector("setAccessibilityTextInputResponder:")
-    public native void setAccessibilityTextInputResponder_unsafe(
-            @Mapped(ObjCObjectMapper.class) @Nullable UITextInput value);
-
-    /**
-     * If your accessibility element represents a view that supports text operations via the UITextInput
-     * protocol, you may use this property to forward UITextInput calls to your backing view
-     * 
-     * API-Since: 18.1
-     */
-    @Generated
-    public void setAccessibilityTextInputResponder(@Mapped(ObjCObjectMapper.class) @Nullable UITextInput value) {
-        Object __old = accessibilityTextInputResponder();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setAccessibilityTextInputResponder_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
-    /**
-     * API-Since: 18.1
-     */
-    @Generated
-    @Selector("setAccessibilityTextInputResponderBlock:")
-    public native void setAccessibilityTextInputResponderBlock(
-            @ObjCBlock(name = "call_setAccessibilityTextInputResponderBlock") @Nullable Block_setAccessibilityTextInputResponderBlock value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setAccessibilityTextInputResponderBlock {
-        @Generated
-        @MappedReturn(ObjCObjectMapper.class)
-        @Nullable
-        UITextInput call_setAccessibilityTextInputResponderBlock();
-    }
-
-    /**
-     * An option set of the types that contain this element. For example, an object within a table cell
-     * will return the Table container type.
-     * default: BEAccessibilityContainerTypeNone
-     * 
-     * API-Since: 18.0
-     */
-    @Generated
-    @Selector("setBrowserAccessibilityContainerType:")
-    public native void setBrowserAccessibilityContainerType(@NUInt long value);
-
-    /**
-     * Represents the value of aria-current.
-     * default: nil
-     * 
-     * API-Since: 18.0
-     */
-    @Generated
-    @Selector("setBrowserAccessibilityCurrentStatus:")
-    public native void setBrowserAccessibilityCurrentStatus(@Nullable String value);
-
-    /**
-     * Represents whether the current element has native DOM focus.
-     * default: false
-     * 
-     * API-Since: 18.0
-     */
-    @Generated
-    @Selector("setBrowserAccessibilityHasDOMFocus:")
-    public native void setBrowserAccessibilityHasDOMFocus(boolean value);
-
-    /**
-     * Represents the value of aria-required.
-     * default: false
-     * 
-     * API-Since: 18.0
-     */
-    @Generated
-    @Selector("setBrowserAccessibilityIsRequired:")
-    public native void setBrowserAccessibilityIsRequired(boolean value);
-
-    /**
-     * Represents the value of aria-pressed.
-     * default: BEAccessibilityPressedStateUndefined
-     * 
-     * API-Since: 18.0
-     */
-    @Generated
-    @Selector("setBrowserAccessibilityPressedState:")
-    public native void setBrowserAccessibilityPressedState(@NInt long value);
-
-    /**
-     * Represents the value of aria-roledescription.
-     * default: nil
-     * 
-     * API-Since: 18.0
-     */
-    @Generated
-    @Selector("setBrowserAccessibilityRoleDescription:")
-    public native void setBrowserAccessibilityRoleDescription(@Nullable String value);
-
-    /**
-     * Represents the value of aria-sort.
-     * default: nil
-     * 
-     * API-Since: 18.0
-     */
-    @Generated
-    @Selector("setBrowserAccessibilitySortDirection:")
-    public native void setBrowserAccessibilitySortDirection(@Nullable String value);
-
-    /**
-     * Register shared observations.
-     * 
-     * A shared observation collection might be shared between multiple observables
-     * to minimise registration work. Shared observers remain registered throughout
-     * the object's lifetime and do not need to be removed using `removeObserver:`.
-     * 
-     * An observable may only have one set of shared observations. Subsequent calls
-     * to this method will replace existing shared observations.
-     * 
-     * - Parameter sharedObservers: shared observer collection that was initialized
-     * with the class of this object
-     * - Invariant: `sharedObserers` was initialized with the class of this object
-     * - Throws: Exception if the class of the receiving observable object does not
-     * match the class with which `sharedObserers` was initialized.
-     * 
-     * API-Since: 18.0
-     */
-    @Generated
-    @Selector("setSharedObservers:")
-    public native void setSharedObservers(@Nullable NSKeyValueSharedObserversSnapshot sharedObservers);
 }
