@@ -7,10 +7,6 @@
 
 #define EXPORT __attribute__ ((visibility ("default")))
 
-EXPORT size_t __natj_inline_MPSDataTypeBitsCount(MPSDataType t) {
-	return MPSDataTypeBitsCount(t);
-}
-
 EXPORT size_t __natj_inline_MPSSizeofMPSDataType(MPSDataType t) {
 	return MPSSizeofMPSDataType(t);
 }

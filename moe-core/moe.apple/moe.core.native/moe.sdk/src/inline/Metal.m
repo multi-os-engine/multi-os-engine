@@ -64,10 +64,6 @@ EXPORT MTLPackedFloat3 __natj_inline_MTLPackedFloat3Make(float x, float y, float
 	return MTLPackedFloat3Make(x, y, z);
 }
 
-EXPORT MTLPackedFloatQuaternion __natj_inline_MTLPackedFloatQuaternionMake(float x, float y, float z, float w) {
-	return MTLPackedFloatQuaternionMake(x, y, z, w);
-}
-
 EXPORT MTLIndirectCommandBufferExecutionRange __natj_inline_MTLIndirectCommandBufferExecutionRangeMake(uint32_t location, uint32_t length) {
 	return MTLIndirectCommandBufferExecutionRangeMake(location, length);
 }
