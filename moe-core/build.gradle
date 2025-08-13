@@ -22,7 +22,7 @@ plugins {
 
 apply plugin: 'base'
 
-version '1.10.2'
+version '1.10.3-SNAPSHOT'
 
 allprojects {
     repositories {
