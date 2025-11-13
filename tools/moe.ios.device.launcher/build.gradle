@@ -16,15 +16,16 @@ limitations under the License.
 
 apply plugin: 'java'
 
-sourceCompatibility = "1.8"
-targetCompatibility = "1.8"
+sourceCompatibility = "11"
+targetCompatibility = "11"
 
 dependencies {
+    implementation 'org.multi-os-engine:javapymobiledevice3:1.1.0'
+    implementation("com.badlogicgames.jnigen:jnigen-commons:3.1.1")
     implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.+'
     implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.+'
     implementation project(':moe.tools.common')
     implementation project(':moe.protocol.gdbremote')
-    implementation project(':moe.binding.libimobiledevice')
 }
 
 jar {
@@ -32,6 +33,3 @@ jar {
     manifest { attributes 'Main-Class': 'org.moe.ios.device.launcher.Main' }
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
-
-// TODO Figure out, why this can't be removed?
-tasks.jar.dependsOn(':moe.binding.libimobiledevice:jar')

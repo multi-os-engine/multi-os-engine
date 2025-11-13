@@ -42,24 +42,6 @@ for (target in [[name: 'ios'],
 }
 
 /*
- * PROJECT: external/libimobiledevice/libimobiledevice
- */
-ext {
-    external.libimobiledevice = [:]
-    external.libimobiledevice.root = "${external.prebuilts}/external/libimobiledevice/libimobiledevice"
-    external.libimobiledevice.jnipath = file("${external.libimobiledevice.root}/build/macos")
-}
-for (target in [[name: 'macos', outputs: ["${external.libimobiledevice.root}/build/macos/libimobiledevice.dylib"]],
-                [name: 'windows', outputs: ["${external.libimobiledevice.root}/build/windows/x86_64-w64-mingw32/libimobiledevice.dll"]],
-                [name: 'linux', outputs: ["${external.libimobiledevice.root}/build/linux/libimobiledevice.so"]]]) {
-    external.libimobiledevice[target.name] = target.outputs.collect { file(it) }
-
-    task("prebuild_libimobiledevice_${target.name}") {
-        dependsOn gradle.includedBuild("prebuilts").task(":external:libimobiledevice:libimobiledevice:prebuild_${target.name}")
-    }
-}
-
-/*
  * PROJECT: moe/natj
  */
 ext {

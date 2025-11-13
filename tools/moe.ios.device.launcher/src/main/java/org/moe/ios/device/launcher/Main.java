@@ -16,15 +16,23 @@ limitations under the License.
 
 package org.moe.ios.device.launcher;
 
-import org.libimobiledevice.opaque.idevice_t;
+import com.badlogic.gdx.jnigen.commons.HostDetection;
+import com.badlogic.gdx.jnigen.commons.Os;
+import io.github.berstanio.pymobiledevice3.daemon.DaemonHandler;
+import io.github.berstanio.pymobiledevice3.data.DeviceInfo;
+import io.github.berstanio.pymobiledevice3.data.InstallMode;
+import io.github.berstanio.pymobiledevice3.ipc.PyMobileDevice3IPC;
+import io.github.berstanio.pymobiledevice3.venv.PyInstallation;
+import io.github.berstanio.pymobiledevice3.venv.PyInstallationHandler;
 import org.moe.common.ShutdownManager;
 import org.moe.common.configuration.ConfigurationValidationException;
-import org.moe.common.utils.NativeUtil;
-import org.moe.natj.general.NatJ;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Set;
 
 /**
@@ -36,32 +44,6 @@ public class Main {
      * Logger.
      */
     private static final Logger LOG = LoggerFactory.getLogger(Main.class);
-
-    /**
-     * Loads native libraries.
-     *
-     * @throws IOException if an I/O error occures
-     */
-    private static void loadNativeLibraries() throws IOException {
-        String current = new java.io.File(".").getCanonicalPath();
-
-        String osName = NativeUtil.getUnifiedSystemName();
-
-        if (osName.equals(NativeUtil.OS_NAME_MAC_OS_X)) {
-            System.load(current + "/macosx/libnatj.dylib");
-            System.load(current + "/macosx/libimobiledevice.dylib");
-        } else if (osName.equals(NativeUtil.OS_NAME_WINDOWS)) {
-            System.load(current + "/windows/x86_64/natj.dll");
-            System.load(current + "/windows/x86_64/libimobiledevice.dll");
-        } else if (osName.equals(NativeUtil.OS_NAME_LINUX)){
-            System.load(current + "/linux/x86_64/libnatj.so");
-            if (!NatJ.loadGlobalLinux(current + "/linux/x86_64/libimobiledevice.so")) {
-                throw new RuntimeException("Couldn't load " + current + "/linux/x86_64/libimobiledevice.so");
-            }
-        } else {
-            throw new RuntimeException("Unsupported OS");
-        }
-    }
 
     /**
      * Configuration to launch.
@@ -97,18 +79,51 @@ public class Main {
             System.exit(1);
         }
 
-        loadNativeLibraries();
+        if (!DaemonHandler.isDaemonRunning())
+        {
+            LOG.debug("IPC Daemon not running - starting");
+            Path ownedDir;
+            if (HostDetection.os == Os.Windows) {
+                String localAppData = System.getenv("LOCALAPPDATA");
+                if (localAppData != null) {
+                    ownedDir = Paths.get(localAppData, "JavaPyMobileDevice3");
+                } else {
+                    // Fallback
+                    ownedDir = Paths.get(System.getProperty("user.home"), "AppData", "Local", "JavaPyMobileDevice3");
+                }
+            } else {
+                // Unix/Mac
+                ownedDir = Paths.get(System.getProperty("user.home"), ".javapymobiledevice3");
+            }
+
+            File installDir = ownedDir.resolve("daemon-" + PyMobileDevice3IPC.PROTOCOL_VERSION).toFile();
+
+            PyInstallation installation = PyInstallationHandler.install(installDir);
+            DaemonHandler.startDaemon(installation);
+            LOG.debug("Started IPC Daemon in {}", installation.getVEnv());
+        }
+
+        IPCHandler.init();
+
+        if (IPCHandler.getInstance().isTunneldRunning().join())
+        {
+            LOG.debug("Tunneld is already running");
+        }
+        else
+        {
+            LOG.debug("Starting tunneld");
+            if (HostDetection.os == Os.MacOsX)
+                LOG.info("Elevated privileges are required to launch tunneld");
+            IPCHandler.getInstance().ensureTunneldRunning().join();
+            LOG.debug("Tunneld is started");
+        }
 
         // Launch
         Main main = new Main(config);
         try {
             main.run();
         } catch (DeviceException e) {
-            if (e.getCall() != null) {
-                PRINT_ERROR(e.getMessage() + " (" + e.getCall() + " returned " + e.getCode() + ")");
-            } else {
-                PRINT_ERROR(e.getMessage());
-            }
+            PRINT_ERROR(e.getMessage());
             LOG.debug("Launching failed", e);
             System.exit(1);
         }
@@ -123,20 +138,29 @@ public class Main {
         if (config.getListDevices()) {
             printDevices();
         }
-        idevice_t device = DeviceHelper.getDevice(config);
+        DeviceInfo device = DeviceHelper.getDevice(config);
         if (device == null) {
             throw new DeviceException("Failed to connect to device, device is null");
         }
         try {
             if (config.getApplicationPath() != null) {
-                String appPath = InstallHelper.uploadAndInstall(device, config);
+                InstallMode installMode = config.getInstallModePy();
+                if (installMode != InstallMode.NONE)
+                {
+                    PRINT_CONTROL("Installing:");
+                    IPCHandler.getInstance().installApp(device, config.getApplicationPath(), config.getInstallModePy(), value -> {
+                        System.out.println("- Installation" + "@" + value + "%");
+                    }).join();
+                }
+
+                String bundleIdentifier = IPCHandler.getInstance().getBundleIdentifier(config.getApplicationPath()).join();
+                String appPath = IPCHandler.getInstance().getInstalledPath(device, bundleIdentifier).join();
                 LaunchHelper.launch(device, appPath, config);
             } else {
                 ProxyHelper.launch(device, config);
             }
         } finally {
             ShutdownManager.shutdown();
-            //idevice_free(device);
         }
     }
 

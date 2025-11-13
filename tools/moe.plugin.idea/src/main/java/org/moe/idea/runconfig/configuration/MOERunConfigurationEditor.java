@@ -39,12 +39,11 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiPackage;
 import com.intellij.ui.EditorTextFieldWithBrowseButton;
 import com.intellij.util.ui.UIUtil;
+import io.github.berstanio.pymobiledevice3.ipc.PyMobileDevice3IPC;
 import org.jetbrains.annotations.NotNull;
 import org.moe.common.configuration.ConfigurationValidationException;
 import org.moe.common.configuration.RemoteSettings;
 import org.moe.common.exec.ExecRunnerBase;
-import org.moe.common.ios.Device;
-import org.moe.common.ios.DeviceInfo;
 import org.moe.common.utils.OsUtils;
 import org.moe.idea.MOESdkPlugin;
 import org.moe.idea.compiler.MOEGradleRunner;
@@ -55,6 +54,7 @@ import org.moe.idea.ui.MOEToolWindow;
 import org.moe.idea.utils.Configuration;
 import org.moe.idea.utils.InputValidationHelper;
 import org.moe.idea.utils.ModuleUtils;
+import org.moe.idea.utils.PyMobileHandler;
 import org.moe.idea.utils.RunTargetUtil;
 import org.moe.idea.utils.RunTargetUtil.SimulatorComboItem;
 import org.moe.idea.utils.logger.LoggerFactory;
@@ -354,7 +354,7 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
             }
         });
 
-        populateDevices(configuration);
+        populateDevices();
 
         if (configuration.deviceUdid() != null) {
             deviceCombo.setSelectedItem(configuration.deviceUdid());
@@ -363,7 +363,7 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
         refreshButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                populateDevices(configuration);
+                populateDevices();
             }
         });
 
@@ -414,31 +414,21 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
         }
     }
 
-    private void populateDevices(MOERunConfiguration configuration) {
+    private void populateDevices() {
         deviceCombo.removeAllItems();
-
         deviceCombo.addItem(MOEText.get("First.Device.Available"));
-
-        String moduleName = configuration.moduleName();
-
-        Module module = null;
-
-        if (moduleName != null && ! moduleName.isEmpty()) {
-            module = configuration.getModules()[0];
-        } else {
-            module = ModuleManager.getInstance(configuration.getProject()).findModuleByName((String)moduleCombo.getItemAt(0));
-        }
-        File projectFile = new File(ModuleUtils.getModulePath(module));
-
-        try {
-            for (DeviceInfo device : Device.getDevices(projectFile, MOEGradleRunner.requireGradleJavaHome(module))) {
-                deviceCombo.addItem(device.udid());
-            }
-        } catch (Exception e) {
-            MOEToolWindow.getInstance(myProject).log(e.getMessage());
-        }
-
         deviceCombo.setSelectedItem(MOEText.get("First.Device.Available"));
+
+        PyMobileHandler.invokeOnUIThread(PyMobileDevice3IPC::listDevicesUDID, deviceInfos -> {
+            deviceCombo.removeAllItems();
+            deviceCombo.addItem(MOEText.get("First.Device.Available"));
+            deviceCombo.setSelectedItem(MOEText.get("First.Device.Available"));
+
+            for (String deviceInfo : deviceInfos)
+                deviceCombo.addItem(deviceInfo);
+        }, throwable -> {
+            MOEToolWindow.getInstance(myProject).log(throwable.getMessage());
+        });
     }
 
     private void updateArch() {

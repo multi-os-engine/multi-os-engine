@@ -16,6 +16,7 @@ limitations under the License.
 
 package org.moe.ios.device.launcher;
 
+import io.github.berstanio.pymobiledevice3.data.InstallMode;
 import org.moe.common.Port;
 import org.moe.common.ProxyPort;
 import org.moe.common.configuration.AbstractConfiguration;
@@ -337,6 +338,19 @@ public class Configuration extends AbstractConfiguration {
     public void setDebugserverPort(ProxyPort debugserverPort) {
         requireOpen();
         this.debugserverPort = debugserverPort;
+    }
+
+    public InstallMode getInstallModePy() {
+        switch (installMode) {
+        case INSTALL_MODE_INSTALL:
+        case INSTALL_MODE_INSTALL_ONLY:
+            return InstallMode.INSTALL;
+        case INSTALL_MODE_UPGRADE_ONLY:
+        case INSTALL_MODE_UPGRADE:
+            return InstallMode.UPGRADE;
+        default:
+            return InstallMode.NONE;
+        }
     }
 
     /**

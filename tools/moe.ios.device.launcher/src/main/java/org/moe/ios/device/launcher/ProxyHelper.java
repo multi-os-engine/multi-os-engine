@@ -16,26 +16,15 @@ limitations under the License.
 
 package org.moe.ios.device.launcher;
 
-import org.libimobiledevice.enums.idevice_error_t;
-import org.libimobiledevice.opaque.idevice_connection_t;
-import org.libimobiledevice.opaque.idevice_t;
+import io.github.berstanio.pymobiledevice3.data.DeviceInfo;
+import io.github.berstanio.pymobiledevice3.data.USBMuxForwarder;
 import org.moe.common.ProxyPort;
 import org.moe.common.ShutdownManager;
-import org.moe.common.utils.ProxyUtil;
-import org.moe.ios.device.ConnectionHelper;
-import org.moe.ios.device.ConnectionInputStream;
-import org.moe.ios.device.ConnectionLock;
-import org.moe.ios.device.ConnectionOutputStream;
-import org.moe.natj.general.ptr.Ptr;
-import org.moe.natj.general.ptr.impl.PtrFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
-
-import static org.libimobiledevice.c.Globals.idevice_connect;
-import static org.libimobiledevice.c.Globals.idevice_disconnect;
 
 /**
  * Helper class for proxy servers.
@@ -53,8 +42,8 @@ public class ProxyHelper {
      * @param device        Device to connect to
      * @param configuration Configuration
      */
-    public static void launch(idevice_t device, Configuration configuration) {
-        if (configuration.getJdwpPort() == null && configuration.getProxyPorts().size() == 0) {
+    public static void launch(DeviceInfo device, Configuration configuration) {
+        if (configuration.getJdwpPort() == null && configuration.getProxyPorts().isEmpty()) {
             return;
         }
 
@@ -78,67 +67,13 @@ public class ProxyHelper {
      * @param device       device
      * @param isInShutdown boolean signaling, that application is shutting down
      */
-    static void createProxyServer(final ProxyPort port, final idevice_t device, final AtomicBoolean isInShutdown) {
-        final Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                LOG.debug(port.getRemotePort() + ": Trying to connect to remote");
-                Ptr<idevice_connection_t> conn_ptr = PtrFactory.newOpaquePtrReference(idevice_connection_t.class);
-                int err = 0;
-                do {
-                    if (err != 0) {
-                        try {
-                            Thread.sleep(100);
-                        } catch (InterruptedException e) {
-                            break;
-                        }
-                    }
-                    err = idevice_connect(device, (char)(port.getShortRemotePort() & 0xFFFF), conn_ptr);
-                } while (!Thread.currentThread().isInterrupted() && err != idevice_error_t.IDEVICE_E_SUCCESS
-                        && !isInShutdown.get());
-                final idevice_connection_t conn = conn_ptr.get();
+    static void createProxyServer(final ProxyPort port, final DeviceInfo device, final AtomicBoolean isInShutdown) {
+        LOG.debug(port.getRemotePort() + ": Trying to connect to remote");
+        USBMuxForwarder forwarder = IPCHandler.getInstance().usbMuxForwarderCreate(device, port.getRemotePort(), port.getLocalPort()).join();
+        LOG.debug(port.getRemotePort() + ": Connected to remote");
 
-                // Let go if interrupted
-                if (Thread.currentThread().isInterrupted() || err != idevice_error_t.IDEVICE_E_SUCCESS) {
-                    if (err == idevice_error_t.IDEVICE_E_SUCCESS) {
-                        idevice_disconnect(conn);
-                    }
-                    return;
-                }
-
-                LOG.debug(port.getRemotePort() + ": Connected to remote");
-                final ConnectionLock dscisLock = new ConnectionLock();
-                final ConnectionLock dscosLock = new ConnectionLock();
-                ConnectionInputStream<idevice_connection_t> dscis = ConnectionHelper.getInputStream(conn, dscisLock);
-                ConnectionOutputStream<idevice_connection_t> dscos = ConnectionHelper.getOutputStream(conn, dscosLock);
-                Runnable disconnectHook = new Runnable() {
-
-                    @Override
-                    public void run() {
-                        dscisLock.lockAndClose();
-                        dscosLock.lockAndClose();
-                        idevice_disconnect(conn);
-                        dscisLock.unlock();
-                        dscosLock.unlock();
-                    }
-                };
-                ShutdownManager.register(disconnectHook);
-
-                ProxyUtil proxyUtil = ProxyUtil.create(port.getLocalPort(), dscis, dscos);
-                proxyUtil.registerShutdownHook();
-            }
-        });
-        thread.start();
-        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
-            @Override
-            public void run() {
-                thread.interrupt();
-                try {
-                    thread.join(10000);
-                } catch (InterruptedException e) {
-                    LOG.debug(port.getRemotePort() + ": Failed to join remote connect thread");
-                }
-            }
+        ShutdownManager.register(new Thread(() -> {
+            IPCHandler.getInstance().usbMuxForwarderClose(forwarder).join();
         }));
     }
 }

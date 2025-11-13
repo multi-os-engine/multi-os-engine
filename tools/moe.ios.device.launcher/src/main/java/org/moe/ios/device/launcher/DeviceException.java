@@ -17,18 +17,9 @@ limitations under the License.
 package org.moe.ios.device.launcher;
 
 /**
- * Exception caused by libimobiledevice.
+ * Exception caused by pymobiledevice3.
  */
 public class DeviceException extends Exception {
-
-    /**
-     * libimobiledevice error code.
-     */
-    private final int code;
-    /**
-     * libimobiledevice function name.
-     */
-    private final String call;
 
     /**
      * Create a new DeviceException instance.
@@ -36,7 +27,7 @@ public class DeviceException extends Exception {
      * @param message error message
      */
     public DeviceException(String message) {
-        this(message, null, 0, null);
+        super(message);
     }
 
     /**
@@ -46,51 +37,7 @@ public class DeviceException extends Exception {
      * @param cause   cause
      */
     public DeviceException(String message, Throwable cause) {
-        this(message, null, 0, cause);
-    }
-
-    /**
-     * Create a new DeviceException instance.
-     *
-     * @param message error message
-     * @param call    libimobiledevice function name
-     * @param code    libimobiledevice error code
-     */
-    public DeviceException(String message, String call, int code) {
-        super(message);
-        this.code = code;
-        this.call = call;
-    }
-
-    /**
-     * Create a new DeviceException instance.
-     *
-     * @param message error message
-     * @param call    libimobiledevice function name
-     * @param code    libimobiledevice error code
-     * @param cause   cause
-     */
-    public DeviceException(String message, String call, int code, Throwable cause) {
         super(message, cause);
-        this.code = code;
-        this.call = call;
     }
 
-    /**
-     * Returns the libimobiledevice error code.
-     *
-     * @return error code
-     */
-    public int getCode() {
-        return code;
-    }
-
-    /**
-     * Returns the libimobiledevice function name.
-     *
-     * @return function name
-     */
-    public String getCall() {
-        return call;
-    }
 }

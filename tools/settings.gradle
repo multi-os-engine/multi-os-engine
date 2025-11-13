@@ -19,7 +19,6 @@ includeBuild("../moe-core")
 includeBuild("../prebuilts")
 
 include 'moe.binding.clang'
-include 'moe.binding.libimobiledevice'
 include 'moe.document.pbxproj'
 include 'moe.generator.natjgen'
 include 'moe.generator.project'

@@ -33,7 +33,6 @@ apply plugin: 'signing'
 
 def projectDeps = [
         ':moe.binding.clang',
-        ':moe.binding.libimobiledevice',
         ':moe.generator.natjgen',
         ':moe.ios.device.launcher',
 ]
@@ -65,17 +64,6 @@ tasks.buildDeps.dependsOn(":ext_moe_core")
 
 if (!rootProject.hasProperty('moe.tools.sdk.exclude_mac')) {
     tasks.buildDeps.dependsOn ':ext_natj_mac'
-    tasks.buildDeps.dependsOn ':prebuild_libimobiledevice_macos'
-}
-
-if (!rootProject.hasProperty('moe.tools.sdk.exclude_win')) {
-    tasks.buildDeps.dependsOn ':ext_natj_win'
-    tasks.buildDeps.dependsOn ':prebuild_libimobiledevice_windows'
-}
-
-if (!rootProject.hasProperty('moe.tools.sdk.exclude_linux')) {
-    tasks.buildDeps.dependsOn ':ext_natj_linux'
-    tasks.buildDeps.dependsOn ':prebuild_libimobiledevice_linux'
 }
 
 def buildfiles(def proj, def subpath, def closure) {
@@ -178,26 +166,7 @@ def getSDKCopySpec() {
         into('tools/macosx') {
             if (!rootProject.hasProperty('moe.tools.sdk.exclude_mac')) {
                 from files(external.llvm.macos)
-                from files(external.libimobiledevice.macos)
                 from files(external.natj.mac)
-            } else {
-                from files('.placeholder')
-            }
-        }
-
-        into('tools/windows/x86_64') {
-            if (!rootProject.hasProperty('moe.tools.sdk.exclude_win')) {
-                from files(external.libimobiledevice.windows)
-                from files(external.natj.win)
-            } else {
-                from files('.placeholder')
-            }
-        }
-
-        into('tools/linux/x86_64') {
-            if (!rootProject.hasProperty('moe.tools.sdk.exclude_linux')) {
-                from files(external.libimobiledevice.linux)
-                from files(external.natj.linux)
             } else {
                 from files('.placeholder')
             }

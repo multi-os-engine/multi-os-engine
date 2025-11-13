@@ -16,23 +16,15 @@ limitations under the License.
 
 package org.moe.ios.device.launcher;
 
-import org.libimobiledevice.enums.debugserver_error_t;
-import org.libimobiledevice.enums.idevice_error_t;
-import org.libimobiledevice.enums.idevice_event_type;
-import org.libimobiledevice.opaque.debugserver_client_t;
-import org.libimobiledevice.opaque.idevice_t;
+import io.github.berstanio.pymobiledevice3.data.DebugServerConnection;
+import io.github.berstanio.pymobiledevice3.data.DeviceInfo;
+import io.github.berstanio.pymobiledevice3.data.DeviceListener;
+import org.json.JSONObject;
 import org.moe.common.Port;
 import org.moe.common.ProxyPort;
 import org.moe.common.ShutdownManager;
 import org.moe.common.macho.MachoFile;
 import org.moe.common.utils.ProxyUtil;
-import org.moe.ios.device.ConnectionHelper;
-import org.moe.ios.device.ConnectionInputStream;
-import org.moe.ios.device.ConnectionLock;
-import org.moe.ios.device.ConnectionOutputStream;
-import org.moe.natj.general.ptr.BytePtr;
-import org.moe.natj.general.ptr.Ptr;
-import org.moe.natj.general.ptr.impl.PtrFactory;
 import org.moe.protocol.gdbremote.GDBRemoteProtocol;
 import org.moe.protocol.gdbremote.IStopReplyListener;
 import org.slf4j.Logger;
@@ -56,8 +48,6 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-import static org.libimobiledevice.c.Globals.*;
-
 /**
  * iOS Device application launch helper.
  */
@@ -70,14 +60,9 @@ public class LaunchHelper implements IStopReplyListener {
     private static final Logger LOG = LoggerFactory.getLogger(LaunchHelper.class);
 
     /**
-     * Cached device UDID.
-     */
-    private final String udid;
-
-    /**
      * Device.
      */
-    private final idevice_t device;
+    private final DeviceInfo device;
 
     /**
      * Configuration.
@@ -145,14 +130,9 @@ public class LaunchHelper implements IStopReplyListener {
      * @param config  configuration
      * @throws DeviceException if a device error occurs
      */
-    private LaunchHelper(idevice_t device, String appPath, Configuration config) throws DeviceException {
+    private LaunchHelper(DeviceInfo device, String appPath, Configuration config) throws DeviceException {
         this.device = device;
         this.config = config;
-        Ptr<BytePtr> udidRef = (Ptr<BytePtr>)PtrFactory.newPointerPtr(Byte.class, 2, 1, true, false);
-        if (idevice_get_udid(device, udidRef) != idevice_error_t.IDEVICE_E_SUCCESS) {
-            throw new DeviceException("Failed to get device UDID from device");
-        }
-        this.udid = udidRef.get().toASCIIString();
         this.appPath = appPath;
         this.launchArgs = config.getLaunchArgs();
         this.envVars = config.getEnvVars();
@@ -169,7 +149,7 @@ public class LaunchHelper implements IStopReplyListener {
      * @param config  configuration
      * @throws DeviceException if a device error occurs
      */
-    public static void launch(idevice_t device, String appPath, Configuration config) throws DeviceException {
+    public static void launch(DeviceInfo device, String appPath, Configuration config) throws DeviceException {
         if (Configuration.INSTALL_MODE_INSTALL_ONLY.equals(config.getInstallMode())
                 || Configuration.INSTALL_MODE_UPGRADE_ONLY.equals(config.getInstallMode())) {
             return;
@@ -188,24 +168,6 @@ public class LaunchHelper implements IStopReplyListener {
         } catch (InterruptedException e) {
             LOG.debug("Sleep interrupted", e);
         }
-    }
-
-    /**
-     * Creates a new debug server client.
-     *
-     * @param device device
-     * @return new debug server client
-     * @throws DeviceException If an error occurred
-     */
-    private static debugserver_client_t getDebugServer(idevice_t device) throws DeviceException {
-        Ptr<debugserver_client_t> client_ptr = PtrFactory.newOpaquePtrReference(debugserver_client_t.class);
-        int err = debugserver_client_start_service(device, client_ptr, null);
-
-        if (err != debugserver_error_t.DEBUGSERVER_E_SUCCESS) {
-            throw new DeviceException("Failed to get debug server", "debugserver_error_t", err);
-        }
-
-        return client_ptr.get();
     }
 
     /**
@@ -229,9 +191,9 @@ public class LaunchHelper implements IStopReplyListener {
                 String execName = null;
                 try {
                     File plist = new File(file, "Info.plist");
-                    HashMap<String, Object> plistData = PlistHelper.readFromFile(plist);
+                    JSONObject plistData = IPCHandler.getInstance().decodePList(plist).join();
                     if (plistData != null) {
-                        execName = (String)plistData.get("CFBundleExecutable");
+                        execName = plistData.getString("CFBundleExecutable");
                     }
                 } catch (Exception ignore) {
                     // Ignore
@@ -251,14 +213,11 @@ public class LaunchHelper implements IStopReplyListener {
             try {
                 stdFileOutput = new FileOutputStream(config.getStdOutFile());
 
-                ShutdownManager.registerPost(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            stdFileOutput.close();
-                        } catch (IOException ignore) {
+                ShutdownManager.registerPost(() -> {
+                    try {
+                        stdFileOutput.close();
+                    } catch (IOException ignore) {
 
-                        }
                     }
                 });
             } catch (FileNotFoundException e) {
@@ -277,24 +236,21 @@ public class LaunchHelper implements IStopReplyListener {
                 });
                 proxy.registerShutdownHook();
 
-                ShutdownManager.registerPost(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            stdPipeOutput.flush();
-                        } catch (IOException ignore) {
+                ShutdownManager.registerPost(() -> {
+                    try {
+                        stdPipeOutput.flush();
+                    } catch (IOException ignore) {
 
-                        }
-                        try {
-                            stdPipeOutput.close();
-                        } catch (IOException ignore) {
+                    }
+                    try {
+                        stdPipeOutput.close();
+                    } catch (IOException ignore) {
 
-                        }
-                        try {
-                            pipedInputStream.close();
-                        } catch (IOException ignore) {
+                    }
+                    try {
+                        pipedInputStream.close();
+                    } catch (IOException ignore) {
 
-                        }
                     }
                 });
             } catch (IOException e) {
@@ -302,56 +258,39 @@ public class LaunchHelper implements IStopReplyListener {
             }
         }
 
-        debugserver_client_t debugServer = getDebugServer(device);
+        int port = 0;
+        if (config.getDebugserverPort() != null)
+            port = config.getDebugserverPort().getLocalPort();
+        DebugServerConnection debugServer = IPCHandler.getInstance().debugServerConnect(device, port).join();
 
-        DebugserverProxy proxy = null;
         Socket sockProxy = null;
         InputStream is = null;
-        OutputStream os = null;
-        if (config.getDebugserverPort() != null) {
-            proxy = DebugserverProxy.create(debugServer, config.getDebugserverPort().getLocalPort());
+        OutputStream os;
+        try {
+            sockProxy = new Socket(debugServer.getHostname(), debugServer.getPort());
+            sockProxy.setReuseAddress(true);
+            is = sockProxy.getInputStream();
+            os = sockProxy.getOutputStream();
+        } catch (Exception e) {
+            System.out.println("SERVER----error on socket!");
             try {
-                sockProxy = new Socket("localhost", config.getDebugserverPort().getLocalPort());
-                sockProxy.setReuseAddress(true);
-                is = sockProxy.getInputStream();
-                os = sockProxy.getOutputStream();
-            } catch (Exception e) {
-                System.out.println("SERVER----error on socket!");
-                try {
-                    if (is != null) is.close();
-                } catch (IOException ignore) {
-                    //ignore
-                }
-                try {
-                    if (os != null) os.close();
-                } catch (IOException ignore) {
-                    //ignore
-                }
-                try {
-                    if (sockProxy != null) sockProxy.close();
-                } catch (IOException ignore) {
-                    //ignore
-                }
-                if (proxy != null) {
-                    proxy.waitFor();
-                    proxy.stop();
-                }
-                return false;
+                if (is != null) is.close();
+            } catch (IOException ignore) {
+                //ignore
             }
+            try {
+                if (sockProxy != null) sockProxy.close();
+            } catch (IOException ignore) {
+                //ignore
+            }
+            return false;
         }
 
-        ConnectionLock dscisLock = new ConnectionLock();
-        ConnectionLock dscosLock = new ConnectionLock();
-        ConnectionInputStream<debugserver_client_t> dscis = ConnectionHelper.getInputStream(debugServer, dscisLock);
-        ConnectionOutputStream<debugserver_client_t> dscos = ConnectionHelper.getOutputStream(debugServer, dscosLock);
         try {
             try {
-                if (config.getDebugserverPort() != null) {
-                    protocol = new GDBRemoteProtocol(is, os);
-                    protocol.addListener(this);
-                } else {
-                    protocol = new GDBRemoteProtocol(dscis, dscos);
-                    protocol.addListener(this);
+                protocol = new GDBRemoteProtocol(is, os);
+                protocol.addListener(this);
+                if (config.getDebugserverPort() == null) {
                     protocol.set_StartNoAckMode();
                 }
 
@@ -418,13 +357,9 @@ public class LaunchHelper implements IStopReplyListener {
                             //ignore
                         }
                         try {
-                            if (sockProxy != null) sockProxy.close();
+                            sockProxy.close();
                         } catch (IOException e) {
                             //ignore
-                        }
-                        if (proxy != null) {
-                            proxy.waitFor();
-                            proxy.stop();
                         }
                     }
                     throw new DeviceException("Failed to launch application on device: " + query_launchSuccess);
@@ -443,15 +378,10 @@ public class LaunchHelper implements IStopReplyListener {
                         //ignore
                     }
                     try {
-                        if (sockProxy != null) sockProxy.close();
+                        sockProxy.close();
                     } catch (IOException e) {
                         //ignore
                     }
-                    if (proxy != null) {
-                        proxy.waitFor();
-                        proxy.stop();
-                    }
-                    proxy = DebugserverProxy.create(debugServer, config.getDebugserverPort().getLocalPort());
                 } else {
                     // Continue app
                     protocol.send_vCont(GDBRemoteProtocol.VCONT_ACTION_CONTINUE, GDBRemoteProtocol.THREAD_ID_ANY);
@@ -461,9 +391,9 @@ public class LaunchHelper implements IStopReplyListener {
                     LOG.debug("Starting debug server: " + debugPort);
                     ProxyHelper.createProxyServer(debugPort, device, shuttingDown);
                 }
-                for (ProxyPort port : proxyPorts) {
-                    LOG.debug("Starting proxy server: " + port);
-                    ProxyHelper.createProxyServer(port, device, shuttingDown);
+                for (ProxyPort proxyPort : proxyPorts) {
+                    LOG.debug("Starting proxy server: " + proxyPort);
+                    ProxyHelper.createProxyServer(proxyPort, device, shuttingDown);
                 }
 
                 final Thread waitingThread = Thread.currentThread();
@@ -490,10 +420,15 @@ public class LaunchHelper implements IStopReplyListener {
                     }
                 });
 
-                USBDeviceWatcher.IUSBDeviceListener listener = new USBDeviceWatcher.IUSBDeviceListener() {
+                DeviceListener listener = new DeviceListener() {
                     @Override
-                    public void handle(int event, String deviceUDID) {
-                        if (deviceUDID.equals(udid) && event == idevice_event_type.REMOVE) {
+                    public void deviceAdded(String s) {
+
+                    }
+
+                    @Override
+                    public void deviceRemoved(String deviceUDID) {
+                        if (deviceUDID.equals(device.getUniqueDeviceId())) {
                             signalProcessEnded(false);
                         }
                     }
@@ -510,8 +445,6 @@ public class LaunchHelper implements IStopReplyListener {
                 throw new DeviceException("An exception occurred during launch " + e.getMessage());
             }
         } finally {
-            dscisLock.lockAndClose();
-            dscosLock.lockAndClose();
             try {
                 if (is != null) is.close();
             } catch (IOException e) {
@@ -523,17 +456,12 @@ public class LaunchHelper implements IStopReplyListener {
                 //ignore
             }
             try {
-                if (sockProxy != null) sockProxy.close();
+                sockProxy.close();
             } catch (IOException e) {
                 //ignore
             }
-            if (proxy != null) {
-                proxy.waitFor();
-                proxy.stop();
-            }
-            debugserver_client_free(debugServer);
-            dscisLock.unlock();
-            dscosLock.unlock();
+
+            IPCHandler.getInstance().debugServerClose(debugServer).join();
         }
         return false;
     }

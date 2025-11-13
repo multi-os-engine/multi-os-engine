@@ -21,13 +21,11 @@ import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.Messages;
+import io.github.berstanio.pymobiledevice3.ipc.PyMobileDevice3IPC;
 import org.jetbrains.annotations.Nullable;
-import org.moe.common.ios.Device;
-import org.moe.common.ios.DeviceInfo;
 import org.moe.common.utils.OsUtils;
-import org.moe.idea.compiler.MOEGradleRunner;
 import org.moe.idea.runconfig.configuration.MOERunConfiguration;
-import org.moe.idea.utils.ModuleUtils;
+import org.moe.idea.utils.PyMobileHandler;
 import org.moe.idea.utils.RunTargetUtil;
 import org.moe.idea.utils.RunTargetUtil.SimulatorComboItem;
 import org.moe.idea.utils.logger.LoggerFactory;
@@ -36,7 +34,6 @@ import res.MOEText;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 
 public class DeviceChooserDialog extends DialogWrapper {
 
@@ -85,7 +82,7 @@ public class DeviceChooserDialog extends DialogWrapper {
 
         populateSimulators(selectedSimulatordUdid);
 
-        populateDevices(module, configuration);
+        populateDevices();
 
         if(selecteDevicedUdid != null && !selecteDevicedUdid.isEmpty()) {
             deviceCombo.setSelectedItem(selecteDevicedUdid);
@@ -96,29 +93,28 @@ public class DeviceChooserDialog extends DialogWrapper {
         refreshButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                populateDevices(module, configuration);
+                populateDevices();
             }
         });
 
         init();
     }
 
-    private void populateDevices(Module module, MOERunConfiguration configuration) {
+    private void populateDevices() {
         deviceCombo.removeAllItems();
-
         deviceCombo.addItem(MOEText.get("First.Device.Available"));
 
-        File projectFile = new File(ModuleUtils.getModulePath(module));
-
-        try {
-            for (DeviceInfo device : Device.getDevices(projectFile, MOEGradleRunner.requireGradleJavaHome(module))) {
-                deviceCombo.addItem(device.udid());
-            }
-        } catch (Exception e) {
-            LOG.error("An error occurred during getDevices", e);
-        }
-
         deviceCombo.setSelectedItem(MOEText.get("First.Device.Available"));
+
+        PyMobileHandler.invokeOnUIThread(PyMobileDevice3IPC::listDevicesUDID, deviceInfos -> {
+            deviceCombo.removeAllItems();
+            deviceCombo.addItem(MOEText.get("First.Device.Available"));
+
+            for (String deviceInfo : deviceInfos)
+                deviceCombo.addItem(deviceInfo);
+
+            deviceCombo.setSelectedItem(MOEText.get("First.Device.Available"));
+        }, throwable -> LOG.error("An error occurred during getDevices", throwable));
     }
 
     @Nullable
