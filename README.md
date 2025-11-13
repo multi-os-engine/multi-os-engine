@@ -103,5 +103,5 @@ cd <repo>/moe
 
 ```sh
 cd <repo>/moe/tools/master
-./gradlew :moe.plugin.idea:build
+./gradlew :tools:moe.plugin.idea:build
 ```
