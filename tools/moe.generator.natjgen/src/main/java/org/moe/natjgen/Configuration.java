@@ -1969,6 +1969,10 @@ public class Configuration implements IConfigurationElement {
             if (framework != null && framework.length() == 0) {
                 framework = null;
             }
+
+            String base = pkg.substring(0, packageBaseLength);
+
+            this.pkg = pkg.replace(packageName(base, lowercased(this.framework)), packageName(base, lowercased(framework)));
             this.framework = framework;
         }
 
