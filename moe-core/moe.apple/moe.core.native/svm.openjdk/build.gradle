@@ -34,6 +34,7 @@ task('jdk_gensrc', type: Script) {
     progress 'Configure jdk'
     rawWorkDir "${builtJdkDir}"
 
+    exec "sh", "-c", "patch -p1 < ${file("fix_mac_xattr_build.patch").absolutePath}"
     exec "sh", "-c", "patch -p1 < ${file("zutil-clang17.patch").absolutePath}"
     exec "sh", "-c", "patch -p1 < ${file("pngpriv-clang17.patch").absolutePath}"
 

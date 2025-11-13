@@ -1,0 +1,12 @@
+diff --git a/make/common/MakeBase.gmk b/make/common/MakeBase.gmk
+index 252d9dd50..d61f27b26 100644
+--- a/make/common/MakeBase.gmk
++++ b/make/common/MakeBase.gmk
+@@ -285,6 +285,7 @@ ifeq ($(call isTargetOs, macosx), true)
+ 	  $(CP) -fRP '$(call DecodeSpace, $<)' '$(call DecodeSpace, $@)'; \
+ 	fi
+ 	if [ -n "`$(XATTR) -ls '$(call DecodeSpace, $@)'`" ]; then \
++          $(CHMOD) -h u+w '$(call DecodeSpace, $@)'; \
+ 	  $(XATTR) -cs '$(call DecodeSpace, $@)'; \
+ 	fi
+   endef
