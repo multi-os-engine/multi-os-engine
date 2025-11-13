@@ -71,7 +71,7 @@ This step only needs to be done once (or until MinGW or LLVM components/requirem
 ### Setting a custom version
 
 ```sh
-cd <repo>/moe/tools
+cd <repo>/moe
 sh set_version.sh <component> <version>  
 ```
 
