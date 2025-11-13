@@ -346,4 +346,29 @@ public interface MTLArgumentEncoder {
     void setVisibleFunctionTablesWithRange(
             @NotNull @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> visibleFunctionTables,
             @ByValue NSRange range);
+
+    /**
+     * setDepthStencilState:atIndex
+     * 
+     * Sets a depth stencil state at a given bind point index
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setDepthStencilState:atIndex:")
+    void setDepthStencilStateAtIndex(@Mapped(ObjCObjectMapper.class) @Nullable MTLDepthStencilState depthStencilState,
+            @NUInt long index);
+
+    /**
+     * setDepthStencilStates:withRange:
+     * 
+     * Sets an array of depth stencil states at a given buffer index range
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setDepthStencilStates:withRange:")
+    void setDepthStencilStatesWithRange(
+            @ReferenceInfo(type = ObjCObject.class) @NotNull ConstPtr<ObjCObject> depthStencilStates,
+            @ByValue NSRange range);
 }

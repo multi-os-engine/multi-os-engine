@@ -26,8 +26,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVAssetPlaybackAssistant
- * 
  * AVAssetPlaybackAssistant provides playback information for an asset.
  * 
  * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
@@ -63,15 +61,13 @@ public class AVAssetPlaybackAssistant extends NSObject {
     public static native AVAssetPlaybackAssistant allocWithZone(VoidPtr zone);
 
     /**
-     * assetPlaybackAssistantWithAsset:
-     * 
      * Returns an instance of AVAssetPlaybackAssistant for inspection of an AVAsset object.
      * 
-     * @param asset
-     *              An instance of AVAsset.
-     * @return An instance of AVAssetPlaybackAssistant.
+     * - Parameter asset: An instance of AVAsset.
      * 
-     *         API-Since: 16.0
+     * - Returns: An instance of AVAssetPlaybackAssistant.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("assetPlaybackAssistantWithAsset:")
@@ -142,19 +138,16 @@ public class AVAssetPlaybackAssistant extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
-     * loadPlaybackConfigurationOptionsWithCompletionHandler:
-     * 
      * Calls the completionHandler with information about the asset.
      * 
      * completionHandler is called when all of the AVAssetPlaybackConfigurationOption values have been loaded. If
      * AVAssetPlaybackAssistant encounters failures when inspecting the contents of the asset, it will return no
      * AVAssetPlaybackConfigurationOptions associated with those contents.
      * 
-     * API-Since: 16.0
+     * - Parameter completionHandler: Called with an array of AVAssetPlaybackConfigurationOption values describing
+     * capabilities of the asset.
      * 
-     * @param completionHandler
-     *                          Called with an array of AVAssetPlaybackConfigurationOption values describing
-     *                          capabilities of the asset.
+     * API-Since: 16.0
      */
     @Generated
     @Selector("loadPlaybackConfigurationOptionsWithCompletionHandler:")

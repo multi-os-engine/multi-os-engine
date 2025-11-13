@@ -142,8 +142,9 @@ public interface UITabBarControllerDelegate {
     }
 
     /**
-     * Called when the selected tab has changed in the tab bar controller. The specified selected `tab` is either a root
-     * tab or its decendants.
+     * Tells the delegate that the user selected the specified @c selectedTab in the tab bar controller.
+     * 
+     * This specified @c selectedTab is either a root tab or any of their descendants.
      * 
      * API-Since: 18.0
      */
@@ -156,7 +157,7 @@ public interface UITabBarControllerDelegate {
     }
 
     /**
-     * Notifies the deleagte that the display order for the specified tab has been changed by the user.
+     * Notifies the delegate that the display order for the specified tab has been changed by the user.
      * 
      * API-Since: 18.0
      */
@@ -183,10 +184,10 @@ public interface UITabBarControllerDelegate {
      * @param tabBarController        The tab bar controller managed by the delegate.
      * @param tab                     The tab for which the displayed view controllers is being requested for by its
      *                                `managingTabGroup`. Each tab in the selection hierarchy will be called once.
-     * @param proposedViewControllers The proposed view controllers for the given tab. In general, the propoesd view
+     * @param proposedViewControllers The proposed view controllers for the given tab. In general, the proposed view
      *                                controller is a single-item array of the tab's viewController. If other view
      *                                controllers are pushed onto the navigation stack, they will be part of the last
-     *                                (leafmost) tab's `proposedViewControllers` such that they are preserved between
+     *                                (leaf-most) tab's `proposedViewControllers` such that they are preserved between
      *                                updates.
      * 
      * @return A list of view controllers represented by the tab in the navigation stack.
@@ -204,7 +205,9 @@ public interface UITabBarControllerDelegate {
     }
 
     /**
-     * Return YES if the specified `tab` can be selected by the user. Otherwise, return NO.
+     * Asks the delegate whether the specified tab should be made active.
+     * 
+     * Return @c YES if the specified @c tab can be selected by the user. Otherwise, return @c NO
      * 
      * API-Since: 18.0
      */
@@ -216,9 +219,10 @@ public interface UITabBarControllerDelegate {
     }
 
     /**
-     * Receive the drop from into the tab using the specified session. This is only called if the drop operation
-     * returned
-     * from `tabBarController:tab:operationForAcceptingItemsFromDropSession` is valid for a drop.
+     * Notifies the delegate to perform a drop into the specified @c tab from the specified session.
+     * 
+     * This is only called if the operation returned from
+     * `tabBarController:tab:operationForAcceptingItemsFromDropSession` is valid for a drop.
      * 
      * API-Since: 18.0
      */
@@ -231,11 +235,11 @@ public interface UITabBarControllerDelegate {
     }
 
     /**
-     * Determines if items from the specified drop session can be dropped into the specified `tab`. If the operation is
-     * either a `.move` or `.copy`,
-     * then the drop will proceed and `tabBarController:tab:acceptItemsFromDropSession:` is called. By default, the drop
-     * will be
-     * treated as a cancel operation if this is not implemented.
+     * Asks the delegate for a drop operation to determine if drag items can be dropped into the specified @c tab
+     * 
+     * If the operation is either a `.move` or `.copy`, then the drop will proceed and
+     * `tabBarController:tab:acceptItemsFromDropSession:`
+     * is called. By default, the drop will be treated as a cancel operation if this is not implemented.
      * 
      * API-Since: 18.0
      */

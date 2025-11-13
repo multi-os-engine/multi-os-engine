@@ -1,19 +1,3 @@
-/*
-Copyright 2014-2016 Intel Corporation
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
-
 package apple.corelocation;
 
 import apple.NSObject;
@@ -23,6 +7,8 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSSecureCoding;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -42,8 +28,6 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 /**
  * CLFloor
@@ -76,8 +60,8 @@ public class CLFloor extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native CLFloor alloc();
 
-    @Owned
     @Generated
+    @Owned
     @Selector("allocWithZone:")
     public static native CLFloor allocWithZone(VoidPtr zone);
 
@@ -88,23 +72,30 @@ public class CLFloor extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
     public static native void cancelPreviousPerformRequestsWithTarget(
-            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
+            @Mapped(ObjCObjectMapper.class) @NotNull Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
-            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @Mapped(ObjCObjectMapper.class) @NotNull Object aTarget, @NotNull SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) @Nullable Object anArgument);
 
-    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
+    @NotNull
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
-    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
+    @NotNull
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -115,9 +106,21 @@ public class CLFloor extends NSObject implements NSCopying, NSSecureCoding {
     public static native String description_static();
 
     @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(@NotNull NSCoder coder);
+
+    @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
+
+    @Generated
+    @Selector("init")
+    public native CLFloor init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CLFloor initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -136,10 +139,28 @@ public class CLFloor extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
-    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
+    @NotNull
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
+
+    /**
+     * level
+     * 
+     * Discussion:
+     * This is a logical representation that will vary on definition from building-to-building.
+     * Floor 0 will always represent the floor designated as "ground".
+     * This number may be negative to designate floors below the ground floor
+     * and positive to indicate floors above the ground floor.
+     * It is not intended to match any numbering that might actually be used in the building.
+     * It is erroneous to use as an estimate of altitude.
+     * 
+     * API-Since: 8.0
+     */
+    @Generated
+    @Selector("level")
+    @NInt
+    public native long level();
 
     @Generated
     @Owned
@@ -167,48 +188,6 @@ public class CLFloor extends NSObject implements NSCopying, NSSecureCoding {
     public static native boolean supportsSecureCoding();
 
     @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
-
-    @NotNull
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(@Nullable VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(@NotNull NSCoder coder);
-
-    @Generated
-    @Selector("init")
-    public native CLFloor init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CLFloor initWithCoder(@NotNull NSCoder coder);
-
-    /**
-     * level
-     * 
-     * Discussion:
-     * This is a logical representation that will vary on definition from building-to-building.
-     * Floor 0 will always represent the floor designated as "ground".
-     * This number may be negative to designate floors below the ground floor
-     * and positive to indicate floors above the ground floor.
-     * It is not intended to match any numbering that might actually be used in the building.
-     * It is erroneous to use as an estimate of altitude.
-     * 
-     * API-Since: 8.0
-     */
-    @Generated
-    @Selector("level")
-    @NInt
-    public native long level();
-
-    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
@@ -218,4 +197,9 @@ public class CLFloor extends NSObject implements NSCopying, NSSecureCoding {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
 }

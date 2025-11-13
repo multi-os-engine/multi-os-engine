@@ -28,6 +28,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * CMRecordedPressureData
+ * 
+ * Discussion:
+ * CMRecordedPressureData contains data for each pressure sample.
+ * 
  * API-Since: 12.0
  */
 @Generated

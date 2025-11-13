@@ -160,4 +160,31 @@ public class SCSensitivityAnalysis extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Intervention guidance that suggests the app indicate the presence of sensitive content.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("shouldIndicateSensitivity")
+    public native boolean shouldIndicateSensitivity();
+
+    /**
+     * Intervention guidance that suggests the app interrupt the video stream.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("shouldInterruptVideo")
+    public native boolean shouldInterruptVideo();
+
+    /**
+     * Intervention guidance that suggests the app mute the audio of the current video stream.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("shouldMuteAudio")
+    public native boolean shouldMuteAudio();
 }

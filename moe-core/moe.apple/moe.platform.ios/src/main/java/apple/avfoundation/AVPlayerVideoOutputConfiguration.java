@@ -33,6 +33,8 @@ import apple.corefoundation.struct.CGAffineTransform;
  * An AVPlayerVideoOutputConfiguration carries an identifier for the AVPlayerItem the configuration is associated with
  * as well as presentation settings for that item.
  * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 17.2
  */
 @Generated

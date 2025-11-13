@@ -753,4 +753,42 @@ public class UISlider extends UIControl implements NSCoding {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Allows adjusting the slider styling
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setSliderStyle:")
+    public native void setSliderStyle(@NInt long value);
+
+    /**
+     * Defines how the slider track behaves
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setTrackConfiguration:")
+    public native void setTrackConfiguration(@Nullable UISliderTrackConfiguration value);
+
+    /**
+     * Allows adjusting the slider styling
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("sliderStyle")
+    @NInt
+    public native long sliderStyle();
+
+    /**
+     * Defines how the slider track behaves
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("trackConfiguration")
+    @Nullable
+    public native UISliderTrackConfiguration trackConfiguration();
 }

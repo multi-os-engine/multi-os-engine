@@ -843,8 +843,7 @@ public class MTRBaseClusterSoftwareDiagnostics extends MTRGenericBaseCluster {
     /**
      * Command ResetWatermarks
      * 
-     * Reception of this command SHALL reset the values: The StackFreeMinimum field of the ThreadMetrics attribute,
-     * CurrentHeapHighWaterMark attribute.
+     * This command is used to reset the high watermarks for heap and stack memory.
      * 
      * API-Since: 16.4
      */

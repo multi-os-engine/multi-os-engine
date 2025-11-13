@@ -33,8 +33,6 @@ import org.jetbrains.annotations.Nullable;
 import apple.opaque.dispatch_queue_t;
 
 /**
- * AVSampleBufferRenderSynchronizer
- * 
  * AVSampleBufferRenderSynchronizer can synchronize multiple objects conforming to AVQueuedSampleBufferRendering to a
  * single timebase.
  * 
@@ -59,29 +57,24 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * addBoundaryTimeObserverForTimes:queue:usingBlock:
-     * 
      * Requests invocation of a block when specified times are traversed during normal rendering.
      * 
      * Each call to -addPeriodicTimeObserverForInterval:queue:usingBlock: should be paired with a corresponding call to
      * -removeTimeObserver:. Releasing the observer object without a call to -removeTimeObserver: will result in
      * undefined behavior.
      * 
-     * API-Since: 11.0
+     * - Parameter times: The times for which the observer requests notification, supplied as an array of NSValues
+     * carrying CMTimes.
+     * - Parameter queue: The serial queue onto which block should be enqueued. If you pass NULL, the main queue
+     * (obtained using dispatch_get_main_queue()) will be used. Passing a concurrent queue to this method will result in
+     * undefined behavior.
+     * - Parameter block: The block to be invoked when any of the specified times is crossed during normal rendering.
      * 
-     * @param times
-     *              The times for which the observer requests notification, supplied as an array of NSValues carrying
-     *              CMTimes.
-     * @param queue
-     *              The serial queue onto which block should be enqueued. If you pass NULL, the main queue (obtained
-     *              using dispatch_get_main_queue()) will be used. Passing a
-     *              concurrent queue to this method will result in undefined behavior.
-     * @param block
-     *              The block to be invoked when any of the specified times is crossed during normal rendering.
-     * @return
-     *         An object conforming to the NSObject protocol. You must retain this returned value as long as you want
-     *         the time observer to be invoked by the synchronizer. Pass this object to -removeTimeObserver: to cancel
-     *         time observation.
+     * - Returns: An object conforming to the NSObject protocol. You must retain this returned value as long as you want
+     * the time observer to be invoked by the synchronizer. Pass this object to -removeTimeObserver: to cancel time
+     * observation.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -99,8 +92,6 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     }
 
     /**
-     * addPeriodicTimeObserverForInterval:queue:usingBlock:
-     * 
      * Requests invocation of a block during rendering to report changing time.
      * 
      * The block is invoked periodically at the interval specified, interpreted according to the timeline of the
@@ -114,21 +105,18 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
      * -removeTimeObserver:. Releasing the observer object without a call to -removeTimeObserver: will result in
      * undefined behavior.
      * 
-     * API-Since: 11.0
+     * - Parameter interval: The interval of invocation of the block during normal rendering, according to progress of
+     * the current time of the timebase.
+     * - Parameter queue: The serial queue onto which block should be enqueued. If you pass NULL, the main queue
+     * (obtained using dispatch_get_main_queue()) will be used. Passing a concurrent queue to this method will result in
+     * undefined behavior.
+     * - Parameter block: The block to be invoked periodically.
      * 
-     * @param interval
-     *                 The interval of invocation of the block during normal rendering, according to progress of the
-     *                 current time of the timebase.
-     * @param queue
-     *                 The serial queue onto which block should be enqueued. If you pass NULL, the main queue (obtained
-     *                 using dispatch_get_main_queue()) will be used. Passing a concurrent queue to this method will
-     *                 result in undefined behavior.
-     * @param block
-     *                 The block to be invoked periodically.
-     * @return
-     *         An object conforming to the NSObject protocol. You must retain this returned value as long as you want
-     *         the time observer to be invoked by the synchronizer. Pass this object to -removeTimeObserver: to cancel
-     *         time observation.
+     * - Returns: An object conforming to the NSObject protocol. You must retain this returned value as long as you want
+     * the time observer to be invoked by the synchronizer. Pass this object to -removeTimeObserver: to cancel time
+     * observation.
+     * 
+     * API-Since: 11.0
      */
     @NotNull
     @Generated
@@ -146,18 +134,16 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     }
 
     /**
-     * addRenderer:
-     * 
      * Adds a renderer to the list of renderers under the synchronizer's control.
      * 
      * Adds a renderer to begin operating with the synchronizer's timebase.
      * 
      * This method can be called while rate is non-0.0.
      * 
-     * API-Since: 11.0
+     * - Parameter renderer: An object conforming to AVQueuedSampleBufferRendering to be synchronized by this
+     * synchronizer.
      * 
-     * @param renderer
-     *                 An object conforming to AVQueuedSampleBufferRendering to be synchronized by this synchronizer.
+     * API-Since: 11.0
      */
     @Generated
     @Selector("addRenderer:")
@@ -243,8 +229,6 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     public static native AVSampleBufferRenderSynchronizer new_objc();
 
     /**
-     * [@property] rate
-     * 
      * Playback rate.
      * 
      * Indicates the current rate of rendering. A value of 0.0 means "stopped"; a value of 1.0 means "play at the
@@ -257,8 +241,6 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     public native float rate();
 
     /**
-     * removeRenderer:atTime:completionHandler:
-     * 
      * Removes a renderer from the list of renderers under the synchronizer's control.
      * 
      * This method can be called while rate is non-0.0.
@@ -281,17 +263,14 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
      * - When the renderer is removed due to a scheduled removal, the completionHandler provided when that removal was
      * scheduled will be called and didRemoveRenderer will be YES.
      * 
-     * API-Since: 11.0
+     * - Parameter renderer: An object conforming to AVQueuedSampleBufferRendering currently synchronized by this
+     * synchronizer to no longer be synchronized by the synchronizer.
+     * - Parameter time: The time on the timebase's timeline at which the renderer should be removed.
+     * - Parameter completionHandler: Optional. A block called when the renderer is removed from the synchronizer. If
+     * provided, this block will always be called with didRemoveRenderer indicating whether the renderer was removed by
+     * this scheduled removal.
      * 
-     * @param renderer
-     *                          An object conforming to AVQueuedSampleBufferRendering currently synchronized by this
-     *                          synchronizer to no longer be synchronized by the synchronizer.
-     * @param time
-     *                          The time on the timebase's timeline at which the renderer should be removed.
-     * @param completionHandler
-     *                          Optional. A block called when the renderer is removed from the synchronizer. If
-     *                          provided, this block will always be called with didRemoveRenderer indicating whether the
-     *                          renderer was removed by this scheduled removal.
+     * API-Since: 11.0
      */
     @Generated
     @Selector("removeRenderer:atTime:completionHandler:")
@@ -307,8 +286,6 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     }
 
     /**
-     * removeTimeObserver:
-     * 
      * Cancels a previously registered time observer.
      * 
      * Upon return, the caller is guaranteed that no new time observer blocks will begin executing. Depending on the
@@ -325,19 +302,16 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
      * -addPeriodicTimeObserverForInterval:queue:usingBlock:
      * -addBoundaryTimeObserverForTimes:queue:usingBlock:
      * 
-     * API-Since: 11.0
+     * - Parameter observer: An object returned by a previous call to
+     * -addPeriodicTimeObserverForInterval:queue:usingBlock: or -addBoundaryTimeObserverForTimes:queue:usingBlock:.
      * 
-     * @param observer
-     *                 An object returned by a previous call to -addPeriodicTimeObserverForInterval:queue:usingBlock: or
-     *                 -addBoundaryTimeObserverForTimes:queue:usingBlock:.
+     * API-Since: 11.0
      */
     @Generated
     @Selector("removeTimeObserver:")
     public native void removeTimeObserver(@NotNull @Mapped(ObjCObjectMapper.class) Object observer);
 
     /**
-     * [@property] renderers
-     * 
      * Array of id<AVQueuedSampleBufferRendering> currently attached to the synchronizer.
      * 
      * A list of renderers added to and not removed from the synchronizer. The list also includes renderers that have
@@ -361,8 +335,6 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property] rate
-     * 
      * Playback rate.
      * 
      * Indicates the current rate of rendering. A value of 0.0 means "stopped"; a value of 1.0 means "play at the
@@ -375,8 +347,6 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     public native void setRate(float value);
 
     /**
-     * setRate:time:
-     * 
      * Sets the timebase's time and rate.
      * 
      * Sets the timebase's time to time and then sets the rendering rate to rate. A rate value of 0.0 means "stopped"; a
@@ -384,12 +354,10 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
      * timebase's time.
      * Note that this method updates the rate property synchronously, but the timebase is updated asynchronously.
      * 
-     * API-Since: 11.0
+     * - Parameter rate: A new timebase rate to set. Must be greater than or equal to 0.0
+     * - Parameter time: A new time to set. Must be greater than or equal to kCMTimeZero, or kCMTimeInvalid
      * 
-     * @param rate
-     *             A new timebase rate to set. Must be greater than or equal to 0.0
-     * @param time
-     *             A new time to set. Must be greater than or equal to kCMTimeZero, or kCMTimeInvalid
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setRate:time:")
@@ -404,8 +372,6 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * [@property] timebase
-     * 
      * The synchronizer's rendering timebase, which governs how time stamps are interpreted.
      * 
      * By default, this timebase will be driven by the clock of an added AVSampleBufferAudioRenderer.
@@ -429,16 +395,14 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     public static native long version_static();
 
     /**
-     * currentTime
-     * 
      * Returns the current time of the synchronizer.
      * 
      * Returns the current time of the synchronizer. Not key-value observable; use
      * -addPeriodicTimeObserverForInterval:queue:usingBlock: instead.
      * 
-     * API-Since: 12.0
+     * - Returns: A CMTime
      * 
-     * @return A CMTime
+     * API-Since: 12.0
      */
     @Generated
     @Selector("currentTime")
@@ -446,8 +410,6 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     public native CMTime currentTime();
 
     /**
-     * [@property] delaysRateChangeUntilHasSufficientMediaData
-     * 
      * Indicates whether the playback should be started immediately on rate change request.
      * 
      * If set to YES, playback will be delayed if the value of hasSufficientMediaDataForReliablePlaybackStart of any
@@ -461,8 +423,6 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     public native boolean delaysRateChangeUntilHasSufficientMediaData();
 
     /**
-     * [@property] delaysRateChangeUntilHasSufficientMediaData
-     * 
      * Indicates whether the playback should be started immediately on rate change request.
      * 
      * If set to YES, playback will be delayed if the value of hasSufficientMediaDataForReliablePlaybackStart of any
@@ -476,8 +436,6 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     public native void setDelaysRateChangeUntilHasSufficientMediaData(boolean value);
 
     /**
-     * setRate:time:atHostTime:
-     * 
      * Simultaneously sets the playback rate and the relationship between the current time and host time.
      * 
      * You can use this function to synchronize playback with an external activity.
@@ -496,6 +454,7 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
      * The recommended approach is to use the output presentation time of the first buffer enqueued in the renderers as
      * time and and an associated hostTime in the future.
      * Example use:
+     * ```objc
      * CMTime startTime = …;
      * __block CMTime nextBufferTime = startTime;
      * [renderer requestMediaDataWhenReadyOnQueue:queue usingBlock:^{
@@ -506,17 +465,14 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
      * }];
      * CMTime inOneSecond = CMTimeAdd(CMClockGetTime(CMClockGetHostTimeClock()), CMTimeMake(1, 1));
      * [synchronizer setRate:rate time:startTime atHostTime:inOneSecond];
-     * 
+     * ```
      * Also note that this method updates the rate property synchronously, but the timebase is updated asynchronously.
      * 
-     * API-Since: 14.5
+     * - Parameter rate: A new timebase rate to set. Must be greater than or equal to 0.0
+     * - Parameter time: A new timebase time to set. Must be greater than or equal to kCMTimeZero, or kCMTimeInvalid
+     * - Parameter hostTime: A new hostTime to set. Must be greater than or equal to kCMTimeZero, or kCMTimeInvalid
      * 
-     * @param rate
-     *                 A new timebase rate to set. Must be greater than or equal to 0.0
-     * @param time
-     *                 A new timebase time to set. Must be greater than or equal to kCMTimeZero, or kCMTimeInvalid
-     * @param hostTime
-     *                 A new hostTime to set. Must be greater than or equal to kCMTimeZero, or kCMTimeInvalid
+     * API-Since: 14.5
      */
     @Generated
     @Selector("setRate:time:atHostTime:")

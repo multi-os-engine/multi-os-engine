@@ -397,6 +397,8 @@ public final class SystemConfiguration {
      * 3. application has active VPN configurations installed.
      * 4. application has active NEDNSSettingsManager configurations installed.
      * 
+     * - An application will receive NULL if it is linked against iOS 19.0 SDK (or newer) regardless of fulfillment of
+     * the above requirements.
      * - An application that is linked against iOS 12.0 SDK and above must have the
      * "com.apple.developer.networking.wifi-info" entitlement.
      * - An application will receive a pseudo network information if it is linked against an SDK before iOS 13.0, and if

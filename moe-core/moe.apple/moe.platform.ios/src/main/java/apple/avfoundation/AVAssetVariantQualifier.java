@@ -29,8 +29,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVAssetVariantQualifier
- * 
  * The qualifier of an asset variant.
  * 
  * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
@@ -66,29 +64,23 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
     public static native AVAssetVariantQualifier allocWithZone(VoidPtr zone);
 
     /**
-     * assetVariantQualifierWithPredicate:
-     * 
      * Returns a qualifer for a predicate.
      * 
-     * @param predicate
-     *                  The variant predicate. Must be a valid, non-nil NSPredicate.
+     * - Parameter predicate: The variant predicate. Must be a valid, non-nil NSPredicate.
      * 
-     *                  API-Since: 15.0
+     * API-Since: 15.0
      */
     @Generated
     @Selector("assetVariantQualifierWithPredicate:")
     public static native AVAssetVariantQualifier assetVariantQualifierWithPredicate(@NotNull NSPredicate predicate);
 
     /**
-     * assetVariantQualifierWithVariant:
-     * 
      * Returns a qualifer for a particular asset variant.
      * 
-     * @param variant
-     *                A variant obtained from the -[AVAsset variants] or -[AVAssetDownloadConfiguration
-     *                playableVariants]. Must be a valid, non-nil AVAssetVariant.
+     * - Parameter variant: A variant obtained from the -[AVAsset variants] or -[AVAssetDownloadConfiguration
+     * playableVariants]. Must be a valid, non-nil AVAssetVariant.
      * 
-     *                API-Since: 15.0
+     * API-Since: 15.0
      */
     @Generated
     @Selector("assetVariantQualifierWithVariant:")
@@ -171,22 +163,17 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
     public static native AVAssetVariantQualifier new_objc();
 
     /**
-     * predicateForChannelCount:mediaSelectionOption:operatorType:
-     * 
      * Creates a NSPredicate for audio channel count which can be used with other NSPredicates to express variant
      * preferences.
      * 
-     * @param channelCount
-     *                             The RHS value for the channel count in the predicate equation.
-     * @param mediaSelectionOption
-     *                             The audio media selection option under consideration.
-     * @param operatorType
-     *                             The valid values are NSLessThanPredicateOperatorType,
-     *                             NSLessThanOrEqualToPredicateOperatorType, NSGreaterThanPredicateOperatorType,
-     *                             NSGreaterThanOrEqualToPredicateOperatorType, NSEqualToPredicateOperatorType and
-     *                             NSNotEqualToPredicateOperatorType.
+     * - Parameter channelCount: The RHS value for the channel count in the predicate equation.
+     * - Parameter mediaSelectionOption: The audio media selection option under consideration.
+     * - Parameter operatorType: The valid values are NSLessThanPredicateOperatorType,
+     * NSLessThanOrEqualToPredicateOperatorType, NSGreaterThanPredicateOperatorType,
+     * NSGreaterThanOrEqualToPredicateOperatorType, NSEqualToPredicateOperatorType and
+     * NSNotEqualToPredicateOperatorType.
      * 
-     *                             API-Since: 15.0
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -195,20 +182,16 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
             @Nullable AVMediaSelectionOption mediaSelectionOption, @NUInt long operatorType);
 
     /**
-     * predicateForPresentationHeight:operatorType:
-     * 
      * Creates a NSPredicate for presentation size height which can be used with other NSPredicates to express variant
      * preferences.
      * 
-     * @param height
-     *                     The RHS value for the presentation size height in the predicate equation.
-     * @param operatorType
-     *                     The valid values are NSLessThanPredicateOperatorType,
-     *                     NSLessThanOrEqualToPredicateOperatorType, NSGreaterThanPredicateOperatorType,
-     *                     NSGreaterThanOrEqualToPredicateOperatorType, NSEqualToPredicateOperatorType and
-     *                     NSNotEqualToPredicateOperatorType.
+     * - Parameter height: The RHS value for the presentation size height in the predicate equation.
+     * - Parameter operatorType: The valid values are NSLessThanPredicateOperatorType,
+     * NSLessThanOrEqualToPredicateOperatorType, NSGreaterThanPredicateOperatorType,
+     * NSGreaterThanOrEqualToPredicateOperatorType, NSEqualToPredicateOperatorType and
+     * NSNotEqualToPredicateOperatorType.
      * 
-     *                     API-Since: 15.0
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -217,20 +200,16 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
             @NUInt long operatorType);
 
     /**
-     * predicateForPresentationWidth:operatorType:
-     * 
      * Creates a NSPredicate for presentation size width which can be used with other NSPredicates to express variant
      * preferences.
      * 
-     * @param width
-     *                     The RHS value for the presentation size width in the predicate equation.
-     * @param operatorType
-     *                     The valid values are NSLessThanPredicateOperatorType,
-     *                     NSLessThanOrEqualToPredicateOperatorType, NSGreaterThanPredicateOperatorType,
-     *                     NSGreaterThanOrEqualToPredicateOperatorType, NSEqualToPredicateOperatorType and
-     *                     NSNotEqualToPredicateOperatorType.
+     * - Parameter width: The RHS value for the presentation size width in the predicate equation.
+     * - Parameter operatorType: The valid values are NSLessThanPredicateOperatorType,
+     * NSLessThanOrEqualToPredicateOperatorType, NSGreaterThanPredicateOperatorType,
+     * NSGreaterThanOrEqualToPredicateOperatorType, NSEqualToPredicateOperatorType and
+     * NSNotEqualToPredicateOperatorType.
      * 
-     *                     API-Since: 15.0
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -260,16 +239,12 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
     public static native long version_static();
 
     /**
-     * predicateForBinauralAudio:mediaSelectionOption:
-     * 
      * Creates a NSPredicate for binaural which can be used with other NSPredicates to express variant preferences.
      * 
-     * @param isBinaural
-     *                             The RHS value for the value of isBinauralAudio in the predicate equation.
-     * @param mediaSelectionOption
-     *                             The audio media selection option under consideration.
+     * - Parameter isBinaural: The RHS value for the value of isBinauralAudio in the predicate equation.
+     * - Parameter mediaSelectionOption: The audio media selection option under consideration.
      * 
-     *                             API-Since: 17.0
+     * API-Since: 17.0
      */
     @Generated
     @Selector("predicateForBinauralAudio:mediaSelectionOption:")
@@ -278,17 +253,13 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
             @Nullable AVMediaSelectionOption mediaSelectionOption);
 
     /**
-     * predicateForDownmixAudio:mediaSelectionOption:
-     * 
      * Creates a NSPredicate for immersive audio which can be used with other NSPredicates to express variant
      * preferences.
      * 
-     * @param isDownmixAudio
-     *                             The RHS value for the value of isDownmixAudio in the predicate equation.
-     * @param mediaSelectionOption
-     *                             The audio media selection option under consideration.
+     * - Parameter isDownmixAudio: The RHS value for the value of isDownmixAudio in the predicate equation.
+     * - Parameter mediaSelectionOption: The audio media selection option under consideration.
      * 
-     *                             API-Since: 17.0
+     * API-Since: 17.0
      */
     @Generated
     @Selector("predicateForDownmixAudio:mediaSelectionOption:")
@@ -297,17 +268,13 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
             @Nullable AVMediaSelectionOption mediaSelectionOption);
 
     /**
-     * predicateForImmersiveAudio:mediaSelectionOption:
-     * 
      * Creates a NSPredicate for immersive audio which can be used with other NSPredicates to express variant
      * preferences.
      * 
-     * @param isImmersiveAudio
-     *                             The RHS value for the value of isImmersiveAudio in the predicate equation.
-     * @param mediaSelectionOption
-     *                             The audio media selection option under consideration.
+     * - Parameter isImmersiveAudio: The RHS value for the value of isImmersiveAudio in the predicate equation.
+     * - Parameter mediaSelectionOption: The audio media selection option under consideration.
      * 
-     *                             API-Since: 17.0
+     * API-Since: 17.0
      */
     @Generated
     @Selector("predicateForImmersiveAudio:mediaSelectionOption:")
@@ -321,22 +288,17 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
     public static native boolean useStoredAccessor();
 
     /**
-     * predicateForAudioSampleRate:mediaSelectionOption:operatorType:
-     * 
      * Creates a NSPredicate for audio sample rate which can be used with other NSPredicates to express variant
      * preferences.
      * 
-     * @param sampleRate
-     *                             The RHS value for the sample rate in the predicate equation.
-     * @param mediaSelectionOption
-     *                             The audio media selection option under consideration.
-     * @param operatorType
-     *                             The valid values are NSLessThanPredicateOperatorType,
-     *                             NSLessThanOrEqualToPredicateOperatorType, NSGreaterThanPredicateOperatorType,
-     *                             NSGreaterThanOrEqualToPredicateOperatorType, NSEqualToPredicateOperatorType and
-     *                             NSNotEqualToPredicateOperatorType.
+     * - Parameter sampleRate: The RHS value for the sample rate in the predicate equation.
+     * - Parameter mediaSelectionOption: The audio media selection option under consideration.
+     * - Parameter operatorType: The valid values are NSLessThanPredicateOperatorType,
+     * NSLessThanOrEqualToPredicateOperatorType, NSGreaterThanPredicateOperatorType,
+     * NSGreaterThanOrEqualToPredicateOperatorType, NSEqualToPredicateOperatorType and
+     * NSNotEqualToPredicateOperatorType.
      * 
-     *                             API-Since: 18.0
+     * API-Since: 18.0
      */
     @Generated
     @Selector("predicateForAudioSampleRate:mediaSelectionOption:operatorType:")
@@ -345,8 +307,6 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
             @Nullable AVMediaSelectionOption mediaSelectionOption, @NUInt long operatorType);
 
     /**
-     * predicateForAudioSampleRate:operatorType:
-     * 
      * Creates a NSPredicate for audio sample rate which can be used with other NSPredicates to express variant
      * preferences.
      * 
@@ -356,15 +316,13 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
      * Media selection options for interstitial assets may be circumscribed by -[AVAssetDownloadConfiguration
      * setInterstitialMediaSelectionCriteria: forMediaCharacteristic:].
      * 
-     * API-Since: 18.5
+     * - Parameter sampleRate: The RHS value for the sample rate in the predicate equation.
+     * - Parameter operatorType: The valid values are NSLessThanPredicateOperatorType,
+     * NSLessThanOrEqualToPredicateOperatorType, NSGreaterThanPredicateOperatorType,
+     * NSGreaterThanOrEqualToPredicateOperatorType, NSEqualToPredicateOperatorType and
+     * NSNotEqualToPredicateOperatorType.
      * 
-     * @param sampleRate
-     *                     The RHS value for the sample rate in the predicate equation.
-     * @param operatorType
-     *                     The valid values are NSLessThanPredicateOperatorType,
-     *                     NSLessThanOrEqualToPredicateOperatorType, NSGreaterThanPredicateOperatorType,
-     *                     NSGreaterThanOrEqualToPredicateOperatorType, NSEqualToPredicateOperatorType and
-     *                     NSNotEqualToPredicateOperatorType.
+     * API-Since: 18.5
      */
     @Generated
     @Selector("predicateForAudioSampleRate:operatorType:")
@@ -373,14 +331,11 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
             @NUInt long operatorType);
 
     /**
-     * predicateForBinauralAudio:
-     * 
      * Creates a NSPredicate for binaural which can be used with other NSPredicates to express variant preferences.
      * 
-     * @param isBinaural
-     *                   The RHS value for the value of isBinauralAudio in the predicate equation.
+     * - Parameter isBinaural: The RHS value for the value of isBinauralAudio in the predicate equation.
      * 
-     *                   API-Since: 18.5
+     * API-Since: 18.5
      */
     @Generated
     @Selector("predicateForBinauralAudio:")
@@ -388,8 +343,6 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
     public static native NSPredicate predicateForBinauralAudio(boolean isBinauralAudio);
 
     /**
-     * predicateForChannelCount:operatorType:
-     * 
      * Creates a NSPredicate for audio channel count which can be used with other NSPredicates to express variant
      * preferences.
      * 
@@ -399,15 +352,13 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
      * Media selection options for interstitial assets may be circumscribed by -[AVAssetDownloadConfiguration
      * setInterstitialMediaSelectionCriteria: forMediaCharacteristic:].
      * 
-     * API-Since: 18.5
+     * - Parameter channelCount: The RHS value for the channel count in the predicate equation.
+     * - Parameter operatorType: The valid values are NSLessThanPredicateOperatorType,
+     * NSLessThanOrEqualToPredicateOperatorType, NSGreaterThanPredicateOperatorType,
+     * NSGreaterThanOrEqualToPredicateOperatorType, NSEqualToPredicateOperatorType and
+     * NSNotEqualToPredicateOperatorType.
      * 
-     * @param channelCount
-     *                     The RHS value for the channel count in the predicate equation.
-     * @param operatorType
-     *                     The valid values are NSLessThanPredicateOperatorType,
-     *                     NSLessThanOrEqualToPredicateOperatorType, NSGreaterThanPredicateOperatorType,
-     *                     NSGreaterThanOrEqualToPredicateOperatorType, NSEqualToPredicateOperatorType and
-     *                     NSNotEqualToPredicateOperatorType.
+     * API-Since: 18.5
      */
     @Generated
     @Selector("predicateForChannelCount:operatorType:")
@@ -416,8 +367,6 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
             @NUInt long operatorType);
 
     /**
-     * predicateForDownmixAudio:mediaSelectionOption:
-     * 
      * Creates a NSPredicate for immersive audio which can be used with other NSPredicates to express variant
      * preferences.
      * 
@@ -427,10 +376,9 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
      * Media selection options for interstitial assets may be circumscribed by -[AVAssetDownloadConfiguration
      * setInterstitialMediaSelectionCriteria: forMediaCharacteristic:].
      * 
-     * API-Since: 18.5
+     * - Parameter isDownmixAudio: The RHS value for the value of isDownmixAudio in the predicate equation.
      * 
-     * @param isDownmixAudio
-     *                       The RHS value for the value of isDownmixAudio in the predicate equation.
+     * API-Since: 18.5
      */
     @Generated
     @Selector("predicateForDownmixAudio:")
@@ -438,8 +386,6 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
     public static native NSPredicate predicateForDownmixAudio(boolean isDownmixAudio);
 
     /**
-     * predicateForImmersiveAudio
-     * 
      * Creates a NSPredicate for immersive audio which can be used with other NSPredicates to express variant
      * preferences.
      * 
@@ -449,10 +395,9 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
      * Media selection options for interstitial assets may be circumscribed by -[AVAssetDownloadConfiguration
      * setInterstitialMediaSelectionCriteria: forMediaCharacteristic:].
      * 
-     * API-Since: 18.5
+     * - Parameter isImmersiveAudio: The RHS value for the value of isImmersiveAudio in the predicate equation.
      * 
-     * @param isImmersiveAudio
-     *                         The RHS value for the value of isImmersiveAudio in the predicate equation.
+     * API-Since: 18.5
      */
     @Generated
     @Selector("predicateForImmersiveAudio:")

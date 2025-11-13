@@ -172,4 +172,14 @@ public class PKToolPickerItem extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * The `PKTool` this tool picker item represents.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("tool")
+    @Nullable
+    public native PKTool tool();
 }

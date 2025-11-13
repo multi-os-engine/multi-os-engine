@@ -21,7 +21,6 @@ import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.quartzcore.CADisplayLink;
-import apple.uikit.protocol.UICoordinateSpace;
 import apple.uikit.protocol.UIFocusItem;
 import apple.uikit.protocol.UITraitEnvironment;
 import apple.uikit.struct.UIEdgeInsets;
@@ -48,6 +47,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.protocol.UICoordinateSpace;
 
 /**
  * API-Since: 2.0
@@ -141,11 +141,10 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
-     * the device's internal screen
-     * 
      * API-Since: 2.0
-     * Deprecated-Since: 100000.0
-     * Deprecated-Message: Use a UIScreen instance found through context instead: i.e, view.window.windowScene.screen
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use a UIScreen instance found through context instead (i.e, view.window.windowScene.screen),
+     * or for properties like UIScreen.scale with trait equivalents, use a traitCollection found through context.
      */
     @NotNull
     @Deprecated

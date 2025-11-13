@@ -8,12 +8,13 @@ import org.moe.natj.general.ann.NInt;
  * 
  * Represents the test used to determine a Heart Rate Recovery value
  * 
- * [@constant] HKHeartRateRecoveryTestTypeMaxExercise The user was exerted to their physical limit to evaluate actual
- * Heart Rate Recovery.
- * [@constant] HKHeartRateRecoveryTestTypePredictionSubMaxExercise A specific test protocol was used to calculate and
- * correlate a predicted Heart Rate Recovery.
- * [@constant] HKHeartRateRecoveryTestTypePredictionNonExercise A non-exercise equation was used based on user metrics
- * to calculate a predicted Heart Rate Recovery.
+ * [@constant] HKHeartRateRecoveryTestTypeMaxExercise The user was exerted to their physical limit to
+ * evaluate actual Heart Rate Recovery.
+ * [@constant] HKHeartRateRecoveryTestTypePredictionSubMaxExercise A specific test protocol was used to calculate
+ * and correlate a predicted Heart Rate Recovery.
+ * [@constant] HKHeartRateRecoveryTestTypePredictionNonExercise A non-exercise equation was used based on user
+ * metrics to calculate a predicted Heart Rate
+ * Recovery.
  * 
  * API-Since: 16.0
  */

@@ -40,6 +40,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -156,6 +159,8 @@ public class MKRouteStep extends NSObject {
 
     /**
      * step distance in meters
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("distance")
@@ -167,6 +172,8 @@ public class MKRouteStep extends NSObject {
 
     /**
      * localized written instructions
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -175,6 +182,8 @@ public class MKRouteStep extends NSObject {
 
     /**
      * additional localized legal or warning notice related to this step (e.g. "Do not cross tracks when lights flash")
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -183,6 +192,8 @@ public class MKRouteStep extends NSObject {
 
     /**
      * detailed step geometry
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -191,6 +202,8 @@ public class MKRouteStep extends NSObject {
 
     /**
      * step transport type (may differ from overall route transport type)
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("transportType")

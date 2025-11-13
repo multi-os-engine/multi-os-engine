@@ -460,7 +460,7 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
      * 
      * @return An NSDictionary object containing the dictionary representation
      * 
-     *         API-Since: 14.0
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -471,4 +471,16 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] diskSpaceUsageMetrics
+     * 
+     * An object containing disk space usage metrics for this application.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("diskSpaceUsageMetrics")
+    @Nullable
+    public native MXDiskSpaceUsageMetric diskSpaceUsageMetrics();
 }

@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.NotNull;
+import apple.foundation.NSArray;
+import apple.foundation.NSValue;
 
 @Generated
 @Library("UIKit")
@@ -48,7 +50,9 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
      * called before text changes
      * 
      * API-Since: 3.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("searchBar:shouldChangeTextInRange:replacementText:")
@@ -146,6 +150,19 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
     @IsOptional
     @Selector("searchBarTextDidEndEditing:")
     default void searchBarTextDidEndEditing(@NotNull UISearchBar searchBar) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * called before text changes
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("searchBar:shouldChangeTextInRanges:replacementText:")
+    default boolean searchBarShouldChangeTextInRangesReplacementText(@NotNull UISearchBar searchBar,
+            @NotNull NSArray<? extends NSValue> ranges, @NotNull String replacementText) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

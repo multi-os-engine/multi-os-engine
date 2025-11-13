@@ -28,39 +28,52 @@ public final class CGBitmapInfo {
      */
     @Generated public static final int AlphaInfoMask = 0x0000001F;
     /**
-     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
      */
-    @Generated public static final int FloatInfoMask = 0x00000F00;
+    @Deprecated @Generated public static final int FloatInfoMask = 0x00000F00;
     /**
-     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
      */
-    @Generated public static final int FloatComponents = 0x00000100;
+    @Deprecated @Generated public static final int FloatComponents = 0x00000100;
     /**
-     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
      */
-    @Generated public static final int ByteOrderMask = 0x00007000;
+    @Deprecated @Generated public static final int ByteOrderMask = 0x00007000;
     /**
-     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
      */
-    @Generated public static final int ByteOrderDefault = 0x00000000;
+    @Deprecated @Generated public static final int ByteOrderDefault = 0x00000000;
     /**
-     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
      */
-    @Generated public static final int ByteOrder16Little = 0x00001000;
+    @Deprecated @Generated public static final int ByteOrder16Little = 0x00001000;
     /**
-     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
      */
-    @Generated public static final int ByteOrder32Little = 0x00002000;
+    @Deprecated @Generated public static final int ByteOrder32Little = 0x00002000;
     /**
-     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
      */
-    @Generated public static final int ByteOrder16Big = 0x00003000;
+    @Deprecated @Generated public static final int ByteOrder16Big = 0x00003000;
     /**
-     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
      */
-    @Generated public static final int ByteOrder32Big = 0x00004000;
+    @Deprecated @Generated public static final int ByteOrder32Big = 0x00004000;
 
     @Generated
     private CGBitmapInfo() {
     }
+
+    /**
+     * API-Since: 2.0
+     */
+    @Generated public static final int ComponentInfoMask = 0x00000F00;
+    /**
+     * API-Since: 2.0
+     */
+    @Generated public static final int ByteOrderInfoMask = 0x00007000;
+    /**
+     * API-Since: 2.0
+     */
+    @Generated public static final int PixelFormatInfoMask = 0x000F0000;
 }

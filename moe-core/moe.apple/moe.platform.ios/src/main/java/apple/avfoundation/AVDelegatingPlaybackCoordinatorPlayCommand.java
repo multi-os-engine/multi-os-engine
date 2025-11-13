@@ -27,8 +27,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVDelegatingPlaybackCoordinatorPlayCommand
- * 
  * A playback command requesting playback with specific timing.
  * 
  * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
@@ -102,8 +100,6 @@ public class AVDelegatingPlaybackCoordinatorPlayCommand extends AVDelegatingPlay
     public static native long hash_static();
 
     /**
-     * [@property] hostClockTime
-     * 
      * This is the host clock time (see CMClockGetHostTimeClock()) defining when playback should start (or should have
      * started) at the given itemTime.
      * 
@@ -136,8 +132,6 @@ public class AVDelegatingPlaybackCoordinatorPlayCommand extends AVDelegatingPlay
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * [@property] itemTime
-     * 
      * The itemTime that playback should begin at.
      * 
      * The receiver of this command should verify that data is loaded for the requested time and potentially begin
@@ -168,8 +162,6 @@ public class AVDelegatingPlaybackCoordinatorPlayCommand extends AVDelegatingPlay
     public static native AVDelegatingPlaybackCoordinatorPlayCommand new_objc();
 
     /**
-     * [@property] rate
-     * 
      * Playback rate. Will always be non-zero.
      * 
      * API-Since: 15.0

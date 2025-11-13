@@ -2464,4 +2464,60 @@ public final class Enums {
      * API-Since: 18.0
      */
     @Generated @NInt public static final long kAUSoundIsolationSoundType_HighQualityVoice = 0x0000000000000000L;
+    /**
+     * Global, Enum, 0->9, 0
+     * 
+     * API-Since: 26.0
+     */
+    @Generated public static final int kAUAudioMixParameter_Style = 0x00000000;
+    /**
+     * Global, float, 0->1, 0.5
+     * 
+     * API-Since: 26.0
+     */
+    @Generated public static final int kAUAudioMixParameter_RemixAmount = 0x00000001;
+    @Generated public static final int kAudioCodecContentSource_Unspecified = 0xFFFFFFFF;
+    @Generated public static final int kAudioCodecContentSource_Reserved = 0x00000000;
+    @Generated public static final int kAudioCodecContentSource_AppleCapture_Traditional = 0x00000001;
+    @Generated public static final int kAudioCodecContentSource_AppleCapture_Spatial = 0x00000002;
+    @Generated public static final int kAudioCodecContentSource_AppleCapture_Spatial_Enhanced = 0x00000003;
+    @Generated public static final int kAudioCodecContentSource_AppleMusic_Traditional = 0x00000004;
+    @Generated public static final int kAudioCodecContentSource_AppleMusic_Spatial = 0x00000005;
+    @Generated public static final int kAudioCodecContentSource_AppleAV_Traditional_Offline = 0x00000006;
+    @Generated public static final int kAudioCodecContentSource_AppleAV_Spatial_Offline = 0x00000007;
+    @Generated public static final int kAudioCodecContentSource_AppleAV_Traditional_Live = 0x00000008;
+    @Generated public static final int kAudioCodecContentSource_AppleAV_Spatial_Live = 0x00000009;
+    @Generated public static final int kAudioCodecContentSource_ApplePassthrough = 0x0000000A;
+    @Generated public static final int kAudioCodecContentSource_Capture_Traditional = 0x00000021;
+    @Generated public static final int kAudioCodecContentSource_Capture_Spatial = 0x00000022;
+    @Generated public static final int kAudioCodecContentSource_Capture_Spatial_Enhanced = 0x00000023;
+    @Generated public static final int kAudioCodecContentSource_Music_Traditional = 0x00000024;
+    @Generated public static final int kAudioCodecContentSource_Music_Spatial = 0x00000025;
+    @Generated public static final int kAudioCodecContentSource_AV_Traditional_Offline = 0x00000026;
+    @Generated public static final int kAudioCodecContentSource_AV_Spatial_Offline = 0x00000027;
+    @Generated public static final int kAudioCodecContentSource_AV_Traditional_Live = 0x00000028;
+    @Generated public static final int kAudioCodecContentSource_AV_Spatial_Live = 0x00000029;
+    @Generated public static final int kAudioCodecContentSource_Passthrough = 0x0000002A;
+    @Generated public static final int kAudioCodecDynamicRangeControlConfiguration_None = 0x00000000;
+    @Generated public static final int kAudioCodecDynamicRangeControlConfiguration_Music = 0x00000001;
+    @Generated public static final int kAudioCodecDynamicRangeControlConfiguration_Speech = 0x00000002;
+    @Generated public static final int kAudioCodecDynamicRangeControlConfiguration_Movie = 0x00000003;
+    @Generated public static final int kAudioCodecDynamicRangeControlConfiguration_Capture = 0x00000004;
+    @Generated public static final int kAudioConverterPropertyPerformDownmix = 0x646D6978;
+    @Generated public static final int kAudioConverterPropertyChannelMixMap = 0x6D6D6170;
+    /**
+     * API-Since: 26.0
+     */
+    @Generated public static final int kAUAudioMixProperty_SpatialAudioMixMetadata = 0x00001388;
+    /**
+     * API-Since: 26.0
+     */
+    @Generated public static final int kAUAudioMixProperty_EnableSpatialization = 0x00001389;
+    @Generated public static final int kAudioCodecPropertyDynamicRangeControlConfiguration = 0x63647263;
+    @Generated public static final int kAudioCodecPropertyContentSource = 0x63737263;
+    @Generated public static final int kAudioCodecPropertyASPFrequency = 0x61737066;
+    /**
+     * API-Since: 26.0
+     */
+    @Generated public static final int kAudioUnitSubType_AUAudioMix = 0x616D6978;
 }

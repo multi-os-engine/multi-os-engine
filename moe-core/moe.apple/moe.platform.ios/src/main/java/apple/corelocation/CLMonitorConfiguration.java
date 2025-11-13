@@ -27,6 +27,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
+ * `CLMonitorConfiguration` describes the configuration with which a `CLMonitor`
+ * instance can be created.
+ * 
+ * 
  * API-Since: 17.0
  */
 @Generated

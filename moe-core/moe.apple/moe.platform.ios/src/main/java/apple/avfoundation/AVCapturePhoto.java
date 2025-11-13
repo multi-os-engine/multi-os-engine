@@ -202,7 +202,7 @@ public class AVCapturePhoto extends NSObject {
      * fileDataRepresentation
      * 
      * Flattens the AVCapturePhoto to an NSData using the file container format (processedFileType or rawFileType)
-     * specified in the AVCapturePhotoSettings (e.g. JFIF, HEIF, DNG).
+     * specified in the AVCapturePhotoSettings (e.g. JFIF, HEIF, DNG, DICOM).
      * 
      * @return
      *         An NSData containing bits in the file container's format, or nil if the flattening process fails.
@@ -218,8 +218,8 @@ public class AVCapturePhoto extends NSObject {
      * fileDataRepresentationWithReplacementMetadata:replacementEmbeddedThumbnailPhotoFormat:replacementEmbeddedThumbnailPixelBuffer:replacementDepthData:
      * 
      * Flattens the AVCapturePhoto to an NSData using the file container format (processedFileType or rawFileType)
-     * specified in the AVCapturePhotoSettings (e.g. JFIF, HEIF, DNG), and allows you to replace metadata, thumbnail,
-     * and depth data in the process.
+     * specified in the AVCapturePhotoSettings (e.g. JFIF, HEIF, DNG, DICOM), and allows you to replace metadata,
+     * thumbnail, and depth data in the process.
      * 
      * @param replacementMetadata
      *                                                A dictionary of keys and values from
@@ -513,8 +513,8 @@ public class AVCapturePhoto extends NSObject {
      * fileDataRepresentationWithCustomizer:
      * 
      * Flattens the AVCapturePhoto to an NSData using the file container format (processedFileType or rawFileType)
-     * specified in the AVCapturePhotoSettings (e.g. JFIF, HEIF, DNG), and allows you to strip or replace various pieces
-     * of metadata in the process.
+     * specified in the AVCapturePhotoSettings (e.g. JFIF, HEIF, DNG, DICOM), and allows you to strip or replace various
+     * pieces of metadata in the process.
      * 
      * @param customizer
      *                   An object conforming to the AVCapturePhotoFileDataRepresentationCustomizer protocol that will

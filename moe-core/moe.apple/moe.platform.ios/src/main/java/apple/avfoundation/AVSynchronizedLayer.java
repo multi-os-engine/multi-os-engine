@@ -255,4 +255,9 @@ public class AVSynchronizedLayer extends CALayer {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("layerWithRemoteClientId:")
+    @NotNull
+    public static native CALayer layerWithRemoteClientId(int client_id);
 }

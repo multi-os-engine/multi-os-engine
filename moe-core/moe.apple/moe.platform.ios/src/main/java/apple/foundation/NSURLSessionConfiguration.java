@@ -857,4 +857,92 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     @Generated
     @Selector("usesClassicLoadingMode")
     public native boolean usesClassicLoadingMode();
+
+    /**
+     * allow request to route over ultra constrained networks.
+     * 
+     * API-Since: 26.1
+     */
+    @Generated
+    @Selector("allowsUltraConstrainedNetworkAccess")
+    public native boolean allowsUltraConstrainedNetworkAccess();
+
+    /**
+     * Enables HTTP/3 0-RTT early data transmission of safe requests (GET or HEAD
+     * requests).
+     * 
+     * WARNING: Inclusion in TLS early data changes the security guarantees offered
+     * by TLS.
+     * 
+     * Requests sent in early data are not covered by anti-replay security
+     * protections. Early data must be idempotent and the impact of adversarial
+     * replays must be carefully evaluated, as the data may be replayed. Early data
+     * also does not provide full forward secrecy; data transmitted is more
+     * susceptible to data breach and security compromise of the server, even if
+     * the breach happens after the data was transmitted.
+     * 
+     * See Section 8 of RFC8446 for more details.
+     * 
+     * https://datatracker.ietf.org/doc/html/rfc8446#section-8
+     * 
+     * See RFC8470 for additional discussion and security considerations.
+     * 
+     * https://datatracker.ietf.org/doc/html/rfc8470
+     * 
+     * If these risks are acceptable for your use case, set this property to YES.
+     * If unsure, NO is the safest option.
+     * 
+     * NOTE: Not supported in the classic loading mode.
+     * 
+     * Defaults to NO.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("enablesEarlyData")
+    public native boolean enablesEarlyData();
+
+    /**
+     * allow request to route over ultra constrained networks.
+     * 
+     * API-Since: 26.1
+     */
+    @Generated
+    @Selector("setAllowsUltraConstrainedNetworkAccess:")
+    public native void setAllowsUltraConstrainedNetworkAccess(boolean value);
+
+    /**
+     * Enables HTTP/3 0-RTT early data transmission of safe requests (GET or HEAD
+     * requests).
+     * 
+     * WARNING: Inclusion in TLS early data changes the security guarantees offered
+     * by TLS.
+     * 
+     * Requests sent in early data are not covered by anti-replay security
+     * protections. Early data must be idempotent and the impact of adversarial
+     * replays must be carefully evaluated, as the data may be replayed. Early data
+     * also does not provide full forward secrecy; data transmitted is more
+     * susceptible to data breach and security compromise of the server, even if
+     * the breach happens after the data was transmitted.
+     * 
+     * See Section 8 of RFC8446 for more details.
+     * 
+     * https://datatracker.ietf.org/doc/html/rfc8446#section-8
+     * 
+     * See RFC8470 for additional discussion and security considerations.
+     * 
+     * https://datatracker.ietf.org/doc/html/rfc8470
+     * 
+     * If these risks are acceptable for your use case, set this property to YES.
+     * If unsure, NO is the safest option.
+     * 
+     * NOTE: Not supported in the classic loading mode.
+     * 
+     * Defaults to NO.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setEnablesEarlyData:")
+    public native void setEnablesEarlyData(boolean value);
 }

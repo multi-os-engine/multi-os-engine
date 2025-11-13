@@ -25,6 +25,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.UIImage;
 
 /**
  * [@c] CPMessageListItem is a special variant of a list item for use in a @c CPListTemplate.
@@ -342,4 +343,23 @@ public class CPMessageListItem extends NSObject implements CPListTemplateItem {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Image shown on the leading edge of the detail text.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("leadingDetailTextImage")
+    @Nullable
+    public native UIImage leadingDetailTextImage();
+
+    /**
+     * Image shown on the leading edge of the detail text.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setLeadingDetailTextImage:")
+    public native void setLeadingDetailTextImage(@Nullable UIImage value);
 }

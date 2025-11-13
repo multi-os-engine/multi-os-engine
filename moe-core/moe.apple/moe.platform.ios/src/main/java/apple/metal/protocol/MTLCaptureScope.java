@@ -82,4 +82,16 @@ public interface MTLCaptureScope {
     @Generated
     @Selector("setLabel:")
     void setLabel(@Nullable String value);
+
+    /**
+     * If set, this scope will only capture Metal commands from the associated Metal 4 command queue. Defaults to nil
+     * (all command queues from the associated device are captured).
+     * 
+     * API-Since: 11.0
+     */
+    @Generated
+    @Selector("mtl4CommandQueue")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    MTL4CommandQueue mtl4CommandQueue();
 }

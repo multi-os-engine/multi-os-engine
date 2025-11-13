@@ -228,4 +228,26 @@ public class UIViewControllerTransition extends NSObject {
         @Nullable
         UIView call_zoomWithOptionsSourceViewProvider(@NotNull UIZoomTransitionSourceViewProviderContext arg0);
     }
+
+    /**
+     * Zoom from the `UIBarButtonItem` provided by the `sourceBarButtonItemProvider` to the presented or pushed view
+     * controller's view.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("zoomWithOptions:sourceBarButtonItemProvider:")
+    @NotNull
+    public static native UIViewControllerTransition zoomWithOptionsSourceBarButtonItemProvider(
+            @Nullable UIZoomTransitionOptions options,
+            @ObjCBlock(name = "call_zoomWithOptionsSourceBarButtonItemProvider") @NotNull Block_zoomWithOptionsSourceBarButtonItemProvider sourceBarButtonItemProvider);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_zoomWithOptionsSourceBarButtonItemProvider {
+        @Generated
+        @Nullable
+        UIBarButtonItem call_zoomWithOptionsSourceBarButtonItemProvider(
+                @NotNull UIZoomTransitionSourceViewProviderContext arg0);
+    }
 }

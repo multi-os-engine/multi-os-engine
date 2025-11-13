@@ -1,7 +1,6 @@
 package apple.arkit;
 
 import apple.NSObject;
-import apple.corelocation.struct.CLLocationCoordinate2D;
 import apple.foundation.NSArray;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
@@ -28,6 +27,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.avfoundation.AVCaptureDevice;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.corelocation.struct.CLLocationCoordinate2D;
 
 /**
  * A configuration for running geographical world tracking.
@@ -101,9 +101,10 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
      * 
      * @param coordinate        Location at which to check.
      * @param completionHandler Completion handler that is called when availability has been determined. This handler is
-     *                          executed on an arbitrary serial queue. It takes the following parameters:
-     *                          isAvailable - True if geo tracking is available at the given location, otherwise false.
-     *                          error - An error that indicates why geo tracking is not available at the given location.
+     *                          executed on an arbitrary serial
+     *                          queue. It takes the following parameters: isAvailable - True if geo tracking is
+     *                          available at the given location, otherwise false. error - An error
+     *                          that indicates why geo tracking is not available at the given location.
      * 
      *                          API-Since: 14.0
      */
@@ -125,11 +126,10 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
      * This method will attempt to acquire a location fix on a background thread, then check availability.
      * 
      * @param completionHandler Completion handler that is called when availability has been determined. This handler is
-     *                          executed on an arbitrary serial queue. It takes the following parameters:
-     *                          isAvailable - True if geo tracking is available at the current location, otherwise
-     *                          false.
-     *                          error - An error that indicates why geo tracking is not available at the current
-     *                          location.
+     *                          executed on an arbitrary serial
+     *                          queue. It takes the following parameters: isAvailable - True if geo tracking is
+     *                          available at the current location, otherwise false. error - An error
+     *                          that indicates why geo tracking is not available at the current location.
      * 
      *                          API-Since: 14.0
      */
@@ -179,7 +179,8 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
      * Objects to detect in the scene.
      * 
      * If set the session will attempt to detect the specified objects. When an object is detected an ARObjectAnchor
-     * will be added to the session.
+     * will be added to the
+     * session.
      * 
      * API-Since: 14.0
      */
@@ -316,7 +317,8 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
      * Objects to detect in the scene.
      * 
      * If set the session will attempt to detect the specified objects. When an object is detected an ARObjectAnchor
-     * will be added to the session.
+     * will be added to the
+     * session.
      * 
      * API-Since: 14.0
      */

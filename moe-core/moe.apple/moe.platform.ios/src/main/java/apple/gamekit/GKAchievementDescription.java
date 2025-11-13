@@ -47,6 +47,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import apple.foundation.NSNumber;
+import apple.foundation.NSDictionary;
 
 /**
  * GKAchievementDescription is a full description of the achievement as defined before app submission in App Store
@@ -354,4 +355,26 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     @Selector("releaseState")
     @NUInt
     public native long releaseState();
+
+    /**
+     * The identifier of the game activity associated with this achievement, as configured by the developer in App Store
+     * Connect.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("activityIdentifier")
+    @NotNull
+    public native String activityIdentifier();
+
+    /**
+     * The properties when associating this achievement with a game activity, as configured by the developer in App
+     * Store Connect.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("activityProperties")
+    @NotNull
+    public native NSDictionary<String, String> activityProperties();
 }

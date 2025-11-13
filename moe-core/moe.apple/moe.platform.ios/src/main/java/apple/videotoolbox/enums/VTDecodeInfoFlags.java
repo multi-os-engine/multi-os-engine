@@ -35,6 +35,10 @@ import org.moe.natj.general.ann.Generated;
  * frames following the sync frame that cannot be decoded due to missing references. Dropping these frames
  * has no impact to playback since the non-decodeable frames will not be rendered.
  * If kVTDecodeInfo_SkippedLeadingFrameDropped is set, kVTDecodeInfo_FrameDropped will also be set.
+ * [@constant] kVTDecodeInfo_FrameInterrupted
+ * The kVTDecodeInfo_FrameInterrupted bit may be set if the frame was decoded successfully but the decoded
+ * content was not provided in the output callback. When this bit is set, the imageBuffer provided to the output
+ * handler may either be NULL or contain only black pixels.
  */
 @Generated
 public final class VTDecodeInfoFlags {
@@ -47,4 +51,5 @@ public final class VTDecodeInfoFlags {
     }
 
     @Generated public static final int SkippedLeadingFrameDropped = 0x00000008;
+    @Generated public static final int FrameInterrupted = 0x00000010;
 }

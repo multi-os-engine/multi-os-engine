@@ -98,7 +98,9 @@ public class MTRDeviceAttestationDeviceInfo extends NSObject {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 26.1
      */
+    @Deprecated
     @Generated
     @Selector("certificateDeclaration")
     @Nullable
@@ -175,7 +177,8 @@ public class MTRDeviceAttestationDeviceInfo extends NSObject {
     public static native MTRDeviceAttestationDeviceInfo new_objc();
 
     /**
-     * The product ID from the Device Attestation Certificate. May be nil only if attestation was unsuccessful.
+     * The product ID from the Device Attestation Certificate. May be nil only if
+     * attestation verification failed.
      * 
      * API-Since: 16.4
      */
@@ -206,7 +209,8 @@ public class MTRDeviceAttestationDeviceInfo extends NSObject {
     public static native boolean useStoredAccessor();
 
     /**
-     * The vendor ID from the Device Attestation Certificate. May be nil only if attestation was unsuccessful.
+     * The vendor ID from the Device Attestation Certificate. May be nil only if
+     * attestation verification failed.
      * 
      * API-Since: 16.4
      */
@@ -219,4 +223,59 @@ public class MTRDeviceAttestationDeviceInfo extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * The attestation challenge from the secure session.
+     * 
+     * API-Since: 26.1
+     */
+    @Generated
+    @Selector("attestationChallenge")
+    @NotNull
+    public native NSData attestationChallenge();
+
+    /**
+     * The attestation nonce from the AttestationRequest command.
+     * 
+     * API-Since: 26.1
+     */
+    @Generated
+    @Selector("attestationNonce")
+    @NotNull
+    public native NSData attestationNonce();
+
+    /**
+     * The certification declaration of the device, if available. This is a DER-encoded string
+     * representing a CMS-formatted certification declaration. May be nil only if
+     * attestation verification failed.
+     * 
+     * API-Since: 26.1
+     */
+    @Generated
+    @Selector("certificationDeclaration")
+    @Nullable
+    public native NSData certificationDeclaration();
+
+    /**
+     * A signature, using the device attestation private key of the device that sent
+     * the attestation information, over the concatenation of elementsTLV and
+     * attestationChallenge.
+     * 
+     * API-Since: 26.1
+     */
+    @Generated
+    @Selector("elementsSignature")
+    @NotNull
+    public native NSData elementsSignature();
+
+    /**
+     * The TLV-encoded attestation_elements_message that was used to find the
+     * certificationDeclaration (possibly unsuccessfully).
+     * 
+     * API-Since: 26.1
+     */
+    @Generated
+    @Selector("elementsTLV")
+    @NotNull
+    public native NSData elementsTLV();
 }

@@ -177,6 +177,8 @@ public class MXMetricManager extends NSObject {
      * [@property] pastPayloads
      * 
      * A list of past metric payloads received.
+     * 
+     * API-Since: 13.0
      */
     @NotNull
     @Generated

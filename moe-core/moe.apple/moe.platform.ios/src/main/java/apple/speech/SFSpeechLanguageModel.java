@@ -28,6 +28,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
+ * A language model built from custom training data.
+ * 
+ * Create this object using ``SFSpeechLanguageModel/prepareCustomLanguageModelForUrl:configuration:completion:`` or
+ * ``SFSpeechLanguageModel/prepareCustomLanguageModelForUrl:configuration:ignoresCache:completion:``.
+ * 
  * API-Since: 17.0
  */
 @Generated
@@ -129,7 +134,9 @@ public class SFSpeechLanguageModel extends NSObject {
 
     /**
      * API-Since: 17.0
+     * Deprecated-Since: 26.0
      */
+    @Deprecated
     @Generated
     @Selector("prepareCustomLanguageModelForUrl:clientIdentifier:configuration:completion:")
     public static native void prepareCustomLanguageModelForUrlClientIdentifierConfigurationCompletion(
@@ -146,7 +153,9 @@ public class SFSpeechLanguageModel extends NSObject {
 
     /**
      * API-Since: 17.0
+     * Deprecated-Since: 26.0
      */
+    @Deprecated
     @Generated
     @Selector("prepareCustomLanguageModelForUrl:clientIdentifier:configuration:ignoresCache:completion:")
     public static native void prepareCustomLanguageModelForUrlClientIdentifierConfigurationIgnoresCacheCompletion(
@@ -187,4 +196,56 @@ public class SFSpeechLanguageModel extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Creates a language model from custom training data.
+     * 
+     * - Parameters:
+     * - asset: The URL of a file containing custom training data. Create this file with
+     * ``SFCustomLanguageModelData/export(to:)``.
+     * - configuration: An object listing the URLs at which this method should create the language model and compiled
+     * vocabulary from the training data.
+     * - completion: Called when the language model has been created.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("prepareCustomLanguageModelForUrl:configuration:completion:")
+    public static native void prepareCustomLanguageModelForUrlConfigurationCompletion(@NotNull NSURL asset,
+            @NotNull SFSpeechLanguageModelConfiguration configuration,
+            @ObjCBlock(name = "call_prepareCustomLanguageModelForUrlConfigurationCompletion") @NotNull Block_prepareCustomLanguageModelForUrlConfigurationCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_prepareCustomLanguageModelForUrlConfigurationCompletion {
+        @Generated
+        void call_prepareCustomLanguageModelForUrlConfigurationCompletion(@Nullable NSError error);
+    }
+
+    /**
+     * Creates a language model from custom training data.
+     * 
+     * - Parameters:
+     * - asset: The URL of a file containing custom training data. Create this file with
+     * ``SFCustomLanguageModelData/export(to:)``.
+     * - configuration: An object listing the URLs at which this method should create the language model and compiled
+     * vocabulary from the training data.
+     * - ignoresCache: If `true`, the language model identified by the configuration will be recreated even if the
+     * `asset` file is unchanged.
+     * - completion: Called when the language model has been created.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("prepareCustomLanguageModelForUrl:configuration:ignoresCache:completion:")
+    public static native void prepareCustomLanguageModelForUrlConfigurationIgnoresCacheCompletion(@NotNull NSURL asset,
+            @NotNull SFSpeechLanguageModelConfiguration configuration, boolean ignoresCache,
+            @ObjCBlock(name = "call_prepareCustomLanguageModelForUrlConfigurationIgnoresCacheCompletion") @NotNull Block_prepareCustomLanguageModelForUrlConfigurationIgnoresCacheCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_prepareCustomLanguageModelForUrlConfigurationIgnoresCacheCompletion {
+        @Generated
+        void call_prepareCustomLanguageModelForUrlConfigurationIgnoresCacheCompletion(@Nullable NSError error);
+    }
 }

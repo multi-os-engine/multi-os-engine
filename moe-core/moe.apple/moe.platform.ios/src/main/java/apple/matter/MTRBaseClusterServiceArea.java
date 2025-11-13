@@ -518,7 +518,7 @@ public class MTRBaseClusterServiceArea extends MTRGenericBaseCluster {
     /**
      * Command SelectAreas
      * 
-     * Command used to select a set of device areas, where the device is to operate.
+     * This command is used to select a set of device areas, where the device is to operate.
      * 
      * API-Since: 18.4
      */
@@ -542,7 +542,8 @@ public class MTRBaseClusterServiceArea extends MTRGenericBaseCluster {
     /**
      * Command SkipArea
      * 
-     * This command is used to skip an area where the device operates.
+     * This command is used to skip the given area, and to attempt operating at other areas on the SupportedAreas
+     * attribute list.
      * 
      * API-Since: 18.4
      */

@@ -66,6 +66,8 @@ import apple.foundation.NSKeyValueSharedObserversSnapshot;
 import apple.foundation.struct.NSRange;
 import apple.uikit.UIEvent;
 import apple.uikit.protocol.UITextInput;
+import apple.metal.protocol.MTLCommandBuffer;
+import apple.metal.protocol.MTLTexture;
 
 /**
  * API-Since: 2.0
@@ -1138,27 +1140,38 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     public native void prepareForInterfaceBuilder();
 
     /**
-     * Callee should initialize the given bitmap with the subregion x,y
-     * width,height of the image. (this subregion is defined in the image's
-     * local coordinate space, i.e. the origin is the top left corner of
-     * the image).
+     * The method that an image provider object must implement.
+     * This method provides pixel data when the image object is rendered.
      * 
-     * By default, this method will be called to requests the full image
-     * data regardless of what subregion is needed for the current render.
-     * All of the image is loaded or none of it is.
+     * The implementation should provide pixels for the requested sub-rect `x,y,width,height` of the image.
+     * The sub-rect is in defined in the image's local coordinate space,
+     * where the origin is relative to the top left corner of the image.
      * 
-     * If the kCIImageProviderTileSize option is specified, then only the
-     * tiles that are needed are requested.
+     * By default, this method will be called to request the full image
+     * regardless of what sub-rect is needed for the current render.
+     * In this case the requested `x,y,width,height` will be `0,0,imageWidth,imageHeight`
      * 
-     * Changing the virtual memory mapping of the supplied buffer (e.g. using
-     * vm_copy () to modify it) will give undefined behavior.
+     * If the ``kCIImageProviderTileSize`` option is specified when the ``CIImage`` was created,
+     * then this method may be called once for each tile that is needed for the current render.
+     * 
+     * - Parameters:
+     * - data: A pointer into which the provider should copy the pixels for the requested sub-rect.
+     * - rowbytes: The number of bytes per row for the requested pixels.
+     * - originx: The x origin of the requested sub-rect relative to the upper left corner of the image.
+     * - originy: The y origin of the requested sub-rect relative to the upper left corner of the image.
+     * - width: The width of the requested sub-rect.
+     * - height: The height of the requested sub-rect.
+     * - info: The value of the `kCIImageProviderTileSize`` option specified when calling:
+     * * ``/CIImage/imageWithImageProvider:size::format:colorSpace:options:``
+     * * ``/CIImage/initWithImageProvider:size::format:colorSpace:options:``
+     * 
      * 
      * API-Since: 2.0
      */
     @Generated
     @Selector("provideImageData:bytesPerRow:origin::size::userInfo:")
     public native void provideImageDataBytesPerRowOrigin_Size_UserInfo(@NotNull VoidPtr data, @NUInt long rowbytes,
-            @NUInt long x, @NUInt long y, @NUInt long width, @NUInt long height,
+            @NUInt long originx, @NUInt long originy, @NUInt long width, @NUInt long height,
             @Nullable @Mapped(ObjCObjectMapper.class) Object info);
 
     /**
@@ -3775,4 +3788,48 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Generated
     @Selector("setSharedObservers:")
     public native void setSharedObservers(@Nullable NSKeyValueSharedObserversSnapshot sharedObservers);
+
+    /**
+     * An optional method that an image provider object way implement.
+     * With this method, the provider object can use the Metal API to provide pixel
+     * data into a MTLTexture when the image object is rendered.
+     * 
+     * The implementation should provide pixels for the requested sub-rect `x,y,width,height` of the image.
+     * The sub-rect is in defined in the image's local coordinate space,
+     * where the origin is relative to the top left corner of the image.
+     * 
+     * The work to fill the `MTLTexture` should be encoded on the specified `commandBuffer`.
+     * If the implementation uses its own commandBuffer,
+     * then it should call `waitUntilCompleted` before returning.
+     * If the texture is surface-backed then you only need to
+     * call `waitUntilScheduled` before returning.
+     * 
+     * By default, this method will be called to request the full image
+     * regardless of what sub-rect is needed for the current render.
+     * In this case the requested `x,y,width,height` will be `0,0,imageWidth,imageHeight`
+     * 
+     * If the ``kCIImageProviderTileSize`` option is specified when the ``CIImage`` was created,
+     * then this method may be called once for each tile that is needed for the current render.
+     * 
+     * - Parameters:
+     * - texture: The `<id>MTLTexture` into which the provider should copy the pixels for the requested sub-rect.
+     * - commandBuffer: The `<id>MTLCommandBuffer` that the provider should use encoded the copy.
+     * - originx: The x origin of the requested sub-rect relative to the upper left corner of the image.
+     * - originy: The y origin of the requested sub-rect relative to the upper left corner of the image.
+     * - width: The width of the requested sub-rect.
+     * - height: The height of the requested sub-rect.
+     * - info: The value of the `kCIImageProviderTileSize`` option specified when calling:
+     * * ``/CIImage/imageWithImageProvider:size::format:colorSpace:options:``
+     * * ``/CIImage/initWithImageProvider:size::format:colorSpace:options:``
+     * 
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @Selector("provideImageToMTLTexture:commandBuffer:originx:originy:width:height:userInfo:")
+    public native void provideImageToMTLTextureCommandBufferOriginxOriginyWidthHeightUserInfo(
+            @Mapped(ObjCObjectMapper.class) @NotNull MTLTexture texture,
+            @Mapped(ObjCObjectMapper.class) @NotNull MTLCommandBuffer commandBuffer, @NUInt long originx,
+            @NUInt long originy, @NUInt long width, @NUInt long height,
+            @Mapped(ObjCObjectMapper.class) @Nullable Object info);
 }

@@ -831,4 +831,36 @@ public final class SensorKit {
     @MappedReturn(ObjCStringMapper.class)
     @NotNull
     public static native String SRPhotoplethysmogramSampleUsageBackgroundSystem();
+
+    /**
+     * [@const] SRSensorAcousticSettings
+     * 
+     * Sensor stream for Acoustic Settings
+     * 
+     * This stream stores samples of the Acoustic Settings sensor
+     * Fetches from this stream return objects of type \c SRAcousticSettings
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String SRSensorAcousticSettings();
+
+    /**
+     * [@const] SRSensorSleepSessions
+     * 
+     * Sesnor stream for sleep sessions collection
+     * 
+     * This stream stores samples of the Sleep Sessions sensor
+     * Fetches from this stream return objects of type \c SRSleepSession
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String SRSensorSleepSessions();
 }

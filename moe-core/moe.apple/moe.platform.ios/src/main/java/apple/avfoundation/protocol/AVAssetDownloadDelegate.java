@@ -35,12 +35,11 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.NotNull;
+import apple.avfoundation.AVMetricEvent;
 
 /**
- * [@protocol] AVAssetDownloadDelegate
- * 
- * Delegate methods to implement when adopting AVAssetDownloadTask.
- * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * Delegate methods to implement when adopting AVAssetDownloadTask. Subclasses of this type that are used from Swift
+ * must fulfill the requirements of a Sendable type.
  * 
  * API-Since: 9.0
  */
@@ -50,24 +49,19 @@ import org.jetbrains.annotations.NotNull;
 @ObjCProtocolName("AVAssetDownloadDelegate")
 public interface AVAssetDownloadDelegate extends NSURLSessionTaskDelegate {
     /**
-     * URLSession:assetDownloadTask:didFinishDownloadingToURL:
-     * 
      * Sent when a download task that has completed a download.
      * 
      * Unlike NSURLSessionDownloadDelegate, the delegate should NOT move the file from this directory after it has been
      * called. Downloaded assets must remain at the system provided URL. URLSession:task:didCompleteWithError: will
      * still be called.
      * 
-     * @param session
-     *                          The session the asset download task is on.
-     * @param assetDownloadTask
-     *                          The AVAssetDownloadTask whose downloaded completed.
-     * @param location
-     *                          The location the asset has been downloaded to.
+     * - Parameter session: The session the asset download task is on.
+     * - Parameter assetDownloadTask: The AVAssetDownloadTask whose downloaded completed.
+     * - Parameter location: The location the asset has been downloaded to.
      * 
-     *                          API-Since: 10.0
-     *                          Deprecated-Since: 100000.0
-     *                          Deprecated-Message: Use URLSession:assetDownloadTask:willDownloadToURL: instead
+     * API-Since: 10.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use URLSession:assetDownloadTask:willDownloadToURL: instead
      */
     @Deprecated
     @Generated
@@ -79,27 +73,19 @@ public interface AVAssetDownloadDelegate extends NSURLSessionTaskDelegate {
     }
 
     /**
-     * URLSession:assetDownloadTask:didLoadTimeRange:totalTimeRangesLoaded:timeRangeExpectedToLoad:
-     * 
      * Method to adopt to subscribe to progress updates of an AVAssetDownloadTask.
      * 
-     * @param session
-     *                                The session the asset download task is on.
-     * @param assetDownloadTask
-     *                                The AVAssetDownloadTask which is being updated.
-     * @param timeRange
-     *                                A CMTimeRange indicating the time range loaded since the last time this method was
-     *                                called.
-     * @param loadedTimeRanges
-     *                                A NSArray of NSValues of CMTimeRanges indicating all the time ranges loaded by
-     *                                this asset download task.
-     * @param timeRangeExpectedToLoad
-     *                                A CMTimeRange indicating the single time range that is expected to be loaded when
-     *                                the download is complete.
+     * - Parameter session: The session the asset download task is on.
+     * - Parameter assetDownloadTask: The AVAssetDownloadTask which is being updated.
+     * - Parameter timeRange: A CMTimeRange indicating the time range loaded since the last time this method was called.
+     * - Parameter loadedTimeRanges: A NSArray of NSValues of CMTimeRanges indicating all the time ranges loaded by this
+     * asset download task.
+     * - Parameter timeRangeExpectedToLoad: A CMTimeRange indicating the single time range that is expected to be loaded
+     * when the download is complete.
      * 
-     *                                API-Since: 9.0
-     *                                Deprecated-Since: 100000.0
-     *                                Deprecated-Message: Use NSURLSessionTask.progress instead
+     * API-Since: 9.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use NSURLSessionTask.progress instead
      */
     @Deprecated
     @Generated
@@ -113,20 +99,14 @@ public interface AVAssetDownloadDelegate extends NSURLSessionTaskDelegate {
     }
 
     /**
-     * URLSession:assetDownloadTask:didResolveMediaSelection:
-     * 
      * Method called when the media selection for the download is fully resolved, including any automatic selections.
      * 
-     * @param session
-     *                               The session the asset download task is on.
-     * @param assetDownloadTask
-     *                               The AVAssetDownloadTask which is being updated.
-     * @param resolvedMediaSelection
-     *                               The resolved media selection for the download task. For the best chance of playing
-     *                               back downloaded content without further network I/O, apply this selection to
-     *                               subsequent AVPlayerItems.
+     * - Parameter session: The session the asset download task is on.
+     * - Parameter assetDownloadTask: The AVAssetDownloadTask which is being updated.
+     * - Parameter resolvedMediaSelection: The resolved media selection for the download task. For the best chance of
+     * playing back downloaded content without further network I/O, apply this selection to subsequent AVPlayerItems.
      * 
-     *                               API-Since: 9.0
+     * API-Since: 9.0
      */
     @Generated
     @IsOptional
@@ -137,21 +117,15 @@ public interface AVAssetDownloadDelegate extends NSURLSessionTaskDelegate {
     }
 
     /**
-     * URLSession:aggregateAssetDownloadTask:didCompleteForMediaSelection:
-     * 
      * Method called when a child AVAssetDownloadTask completes.
      * 
-     * @param session
-     *                                   The session the aggregate asset download task is on.
-     * @param aggregateAssetDownloadTask
-     *                                   The AVAggregateAssetDownloadTask.
-     * @param mediaSelection
-     *                                   The AVMediaSelection which is now fully available for offline use.
+     * - Parameter session: The session the aggregate asset download task is on.
+     * - Parameter aggregateAssetDownloadTask: The AVAggregateAssetDownloadTask.
+     * - Parameter mediaSelection: The AVMediaSelection which is now fully available for offline use.
      * 
-     *                                   API-Since: 11.0
-     *                                   Deprecated-Since: 100000.0
-     *                                   Deprecated-Message: Use the NSURLSessionDownloadDelegate method instead,
-     *                                   URLSession:task:didCompleteWithError:
+     * API-Since: 11.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use the NSURLSessionDownloadDelegate method instead, URLSession:task:didCompleteWithError:
      */
     @Deprecated
     @Generated
@@ -164,29 +138,20 @@ public interface AVAssetDownloadDelegate extends NSURLSessionTaskDelegate {
     }
 
     /**
-     * URLSession:aggregateAssetDownloadTask:didLoadTimeRange:totalTimeRangesLoaded:timeRangeExpectedToLoad:forMediaSelection:
-     * 
      * Method to adopt to subscribe to progress updates of an AVAggregateAssetDownloadTask
      * 
-     * @param session
-     *                                   The session the asset download task is on.
-     * @param aggregateAssetDownloadTask
-     *                                   The AVAggregateAssetDownloadTask.
-     * @param timeRange
-     *                                   A CMTimeRange indicating the time range loaded for the media selection being
-     *                                   downloaded.
-     * @param loadedTimeRanges
-     *                                   A NSArray of NSValues of CMTimeRanges indicating all the time ranges loaded for
-     *                                   the media selection being downloaded.
-     * @param timeRangeExpectedToLoad
-     *                                   A CMTimeRange indicating the single time range that is expected to be loaded
-     *                                   when the download is complete for the media selection being downloaded.
-     * @param mediaSelection
-     *                                   The media selection which has additional media data loaded for offline use.
+     * - Parameter session: The session the asset download task is on.
+     * - Parameter aggregateAssetDownloadTask: The AVAggregateAssetDownloadTask.
+     * - Parameter timeRange: A CMTimeRange indicating the time range loaded for the media selection being downloaded.
+     * - Parameter loadedTimeRanges: A NSArray of NSValues of CMTimeRanges indicating all the time ranges loaded for the
+     * media selection being downloaded.
+     * - Parameter timeRangeExpectedToLoad: A CMTimeRange indicating the single time range that is expected to be loaded
+     * when the download is complete for the media selection being downloaded.
+     * - Parameter mediaSelection: The media selection which has additional media data loaded for offline use.
      * 
-     *                                   API-Since: 11.0
-     *                                   Deprecated-Since: 100000.0
-     *                                   Deprecated-Message: Use NSURLSessionTask.progress: instead
+     * API-Since: 11.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use NSURLSessionTask.progress: instead
      */
     @Deprecated
     @Generated
@@ -200,23 +165,18 @@ public interface AVAssetDownloadDelegate extends NSURLSessionTaskDelegate {
     }
 
     /**
-     * URLSession:aggregateAssetDownloadTask:willDownloadToURL:
-     * 
      * Method called when the aggregate download task determines the location this asset will be downloaded to.
      * 
      * This URL should be saved for future instantiations of AVAsset. While an AVAsset already exists for this content,
      * it is advisable to re-use that instance.
      * 
-     * @param session
-     *                                   The session the aggregate asset download task is on.
-     * @param aggregateAssetDownloadTask
-     *                                   The AVAggregateAssetDownloadTask.
-     * @param location
-     *                                   The file URL this task will download media data to.
+     * - Parameter session: The session the aggregate asset download task is on.
+     * - Parameter aggregateAssetDownloadTask: The AVAggregateAssetDownloadTask.
+     * - Parameter location: The file URL this task will download media data to.
      * 
-     *                                   API-Since: 11.0
-     *                                   Deprecated-Since: 100000.0
-     *                                   Deprecated-Message: Use URLSession:assetDownloadTask:willDownloadToURL: instead
+     * API-Since: 11.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use URLSession:assetDownloadTask:willDownloadToURL: instead
      */
     @Deprecated
     @Generated
@@ -228,18 +188,13 @@ public interface AVAssetDownloadDelegate extends NSURLSessionTaskDelegate {
     }
 
     /**
-     * URLSession:assetDownloadTask:willDownloadVariants:
-     * 
      * Sent when a download task has completed the variant selection.
      * 
-     * @param session
-     *                          The session the asset download task is on.
-     * @param assetDownloadTask
-     *                          The asset download task.
-     * @param variants
-     *                          The variants chosen. Depends on the environmental condition when the download starts.
+     * - Parameter session: The session the asset download task is on.
+     * - Parameter assetDownloadTask: The asset download task.
+     * - Parameter variants: The variants chosen. Depends on the environmental condition when the download starts.
      * 
-     *                          API-Since: 15.0
+     * API-Since: 15.0
      */
     @Generated
     @IsOptional
@@ -250,27 +205,39 @@ public interface AVAssetDownloadDelegate extends NSURLSessionTaskDelegate {
     }
 
     /**
-     * URLSession:assetDownloadTask:willDownloadToURL:
-     * 
      * Method called when the asset download task determines the location this asset will be downloaded to.
      * 
      * This URL should be saved for future instantiations of AVAsset. While an AVAsset already exists for this content,
      * it is advisable to re-use that instance.
      * 
-     * @param session
-     *                          The session the asset download task is on.
-     * @param assetDownloadTask
-     *                          The AVAssetDownloadTask.
-     * @param location
-     *                          The file URL this task will download media data to.
+     * - Parameter session: The session the asset download task is on.
+     * - Parameter assetDownloadTask: The AVAssetDownloadTask.
+     * - Parameter location: The file URL this task will download media data to.
      * 
-     *                          API-Since: 18.0
+     * API-Since: 18.0
      */
     @Generated
     @IsOptional
     @Selector("URLSession:assetDownloadTask:willDownloadToURL:")
     default void URLSessionAssetDownloadTaskWillDownloadToURL(@NotNull NSURLSession session,
             @NotNull AVAssetDownloadTask assetDownloadTask, @NotNull NSURL location) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Sent when a download task receives an AVMetricEvent.
+     * 
+     * - Parameter session: The NSURLSession corresponding to this AVAssetDownloadTask.
+     * - Parameter assetDownloadTask: The asset download task.
+     * - Parameter metricEvent: The metric event received.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("URLSession:assetDownloadTask:didReceiveMetricEvent:")
+    default void URLSessionAssetDownloadTaskDidReceiveMetricEvent(@NotNull NSURLSession session,
+            @NotNull AVAssetDownloadTask assetDownloadTask, @NotNull AVMetricEvent metricEvent) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

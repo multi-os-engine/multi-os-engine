@@ -336,4 +336,22 @@ public class UIImageSymbolConfiguration extends UIImageConfiguration {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Initializes a symbol configuration with a preferred color rendering mode.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("configurationWithColorRenderingMode:")
+    public static native UIImageSymbolConfiguration configurationWithColorRenderingMode(@NInt long mode);
+
+    /**
+     * Initializes a symbol configuration with a preferred variable value mode.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("configurationWithVariableValueMode:")
+    public static native UIImageSymbolConfiguration configurationWithVariableValueMode(@NInt long variableValueMode);
 }

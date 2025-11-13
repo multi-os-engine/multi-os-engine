@@ -74,6 +74,14 @@ import apple.opaque.dispatch_data_t;
 import apple.metal.MTLCommandQueueDescriptor;
 import apple.metal.MTLLogStateDescriptor;
 import apple.metal.MTLResidencySetDescriptor;
+import apple.metal.MTL4ArgumentTableDescriptor;
+import apple.metal.MTL4CommandAllocatorDescriptor;
+import apple.metal.MTL4CommandQueueDescriptor;
+import apple.metal.MTL4CompilerDescriptor;
+import apple.metal.MTL4CounterHeapDescriptor;
+import apple.metal.MTL4PipelineDataSetSerializerDescriptor;
+import apple.metal.MTLResourceViewPoolDescriptor;
+import apple.metal.MTLTensorDescriptor;
 
 /**
  * [@protocol] MTLDevice
@@ -1710,4 +1718,334 @@ public interface MTLDevice {
     @Nullable
     MTLResidencySet newResidencySetWithDescriptorError(@NotNull MTLResidencySetDescriptor desc,
             @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    /**
+     * Get the function handle for the specified binary-linked function from the pipeline state.
+     * 
+     * - Parameters:
+     * - function: A ``MTL4BinaryFunction`` instance representing the function binary.
+     * 
+     * - Returns: A ``MTLFunctionHandle`` instance for a binary function that was compiled with
+     * ``MTLFunctionOptionPipelineIndependent``, otherwise `nil`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("functionHandleWithBinaryFunction:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    MTLFunctionHandle functionHandleWithBinaryFunction(
+            @Mapped(ObjCObjectMapper.class) @NotNull MTL4BinaryFunction function);
+
+    /**
+     * functionHandleWithFunction:
+     * 
+     * Returns the function handle for a function that was compiled with MTLFunctionOptionPipelineIndependent and
+     * MTLFunctionOptionCompileToBinary.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("functionHandleWithFunction:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    MTLFunctionHandle functionHandleWithFunction(@Mapped(ObjCObjectMapper.class) @NotNull MTLFunction function);
+
+    /**
+     * [@property] maximumConcurrentCompilationTaskCount
+     * 
+     * Returns the maximum count of concurrent executing compilation tasks.
+     * 
+     * The property returns a different value depending on the value of the property
+     * `shouldMaximizeConcurrentCompilation`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("maximumConcurrentCompilationTaskCount")
+    @NUInt
+    long maximumConcurrentCompilationTaskCount();
+
+    /**
+     * Creates a new archive from data available at an `NSURL` address.
+     * 
+     * - Parameters:
+     * - url: An `NSURL` instance that represents the path from which the device loads the ``MTL4Archive``.
+     * - error: Optional pointer to a `NSError` instance that Metal uses to describe the failure
+     * if this function fails.
+     * 
+     * - Returns: A ``MTL4Archive`` instance, or `nil` if the function failed.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("newArchiveWithURL:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    MTL4Archive newArchiveWithURLError(@NotNull NSURL url,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    /**
+     * Creates a new argument table from an argument table descriptor.
+     * 
+     * - Parameters:
+     * - descriptor: A ``MTL4ArgumentTableDescriptor`` instance that configures the
+     * ``MTL4ArgumentTable`` instance.
+     * - error: Optional pointer to a `NSError` instance that Metal uses to describe the failure
+     * if this function fails.
+     * 
+     * - Returns: A ``MTL4ArgumentTable`` instance, or `nil` if the function failed.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("newArgumentTableWithDescriptor:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    MTL4ArgumentTable newArgumentTableWithDescriptorError(@NotNull MTL4ArgumentTableDescriptor descriptor,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    /**
+     * Creates a new placement sparse buffer of a specific length.
+     * 
+     * This method creates a new placement sparse ``MTLBuffer`` of a specific length. You assign memory to
+     * placement sparse buffers using a ``MTLHeap`` of type ``MTLHeapType/MTLHeapTypePlacement``.
+     * 
+     * - Parameters:
+     * - length: The size of the ``MTLBuffer``, in bytes.
+     * - options: A ``MTLResourceOptions`` instance that establishes the buffer’s storage modes.
+     * - placementSparsePageSize: ``MTLSparsePageSize`` to use for the placement sparse buffer.
+     * 
+     * - Returns: A ``MTLBuffer`` instance, or `nil` if the function failed.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("newBufferWithLength:options:placementSparsePageSize:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    MTLBuffer newBufferWithLengthOptionsPlacementSparsePageSize(@NUInt long length, @NUInt long options,
+            @NInt long placementSparsePageSize);
+
+    /**
+     * Creates a new command allocator.
+     * 
+     * - Returns: A ``MTL4CommandAllocator`` instance, or `nil` if the function failed.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("newCommandAllocator")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    MTL4CommandAllocator newCommandAllocator();
+
+    /**
+     * Creates a new command allocator from a command allocator descriptor.
+     * 
+     * - Parameters:
+     * - descriptor: A ``MTL4CommandAllocatorDescriptor`` instance that configures the
+     * ``MTL4CommandAllocator`` instance.
+     * - error: Optional pointer to a `NSError` instance that Metal uses to describe the failure
+     * if this function fails.
+     * 
+     * - Returns: A ``MTL4CommandAllocator`` instance, or `nil` if the function failed.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("newCommandAllocatorWithDescriptor:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    MTL4CommandAllocator newCommandAllocatorWithDescriptorError(@NotNull MTL4CommandAllocatorDescriptor descriptor,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    /**
+     * Creates a new command buffer.
+     * 
+     * - Returns: A ``MTL4CommandBuffer`` instance, or `nil` if the function failed.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("newCommandBuffer")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    MTL4CommandBuffer newCommandBuffer();
+
+    /**
+     * Creates a new compiler from a compiler descriptor.
+     * 
+     * - Parameters:
+     * - descriptor: A ``MTL4CompilerDescriptor`` instance that configures the
+     * ``MTL4Compiler`` instance.
+     * - error: Optional pointer to a `NSError` instance that Metal uses to describe the failure
+     * if this function fails.
+     * 
+     * - Returns: A ``MTL4Compiler`` instance, or `nil` if the function failed.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("newCompilerWithDescriptor:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    MTL4Compiler newCompilerWithDescriptorError(@NotNull MTL4CompilerDescriptor descriptor,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    /**
+     * Creates a new counter heap configured from a counter heap descriptor.
+     * 
+     * - Parameters:
+     * - descriptor: ``MTL4CounterHeapDescriptor`` instance that configures the ``MTL4CounterHeap`` instance.
+     * - error: Optional pointer to a `NSError` instance that Metal uses to describe the failure
+     * if this function fails.
+     * 
+     * - Returns: A ``MTL4CounterHeap`` instance, or `nil` if the function failed.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("newCounterHeapWithDescriptor:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    MTL4CounterHeap newCounterHeapWithDescriptorError(@NotNull MTL4CounterHeapDescriptor descriptor,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    /**
+     * Creates a new command queue.
+     * 
+     * - Returns: A ``MTL4CommandQueue`` instance, or `nil` if the function failed.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("newMTL4CommandQueue")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    MTL4CommandQueue newMTL4CommandQueue();
+
+    /**
+     * Creates a new command queue from a queue descriptor.
+     * 
+     * - Parameters:
+     * - descriptor: A ``MTL4CommandQueueDescriptor`` instance that configures the
+     * ``MTL4CommandQueue`` instance.
+     * - error: Optional pointer to a `NSError` instance that Metal uses to describe the failure
+     * if this function fails.
+     * 
+     * - Returns: A ``MTL4CommandQueue`` instance, or `nil` if the function failed.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("newMTL4CommandQueueWithDescriptor:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    MTL4CommandQueue newMTL4CommandQueueWithDescriptorError(@NotNull MTL4CommandQueueDescriptor descriptor,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    /**
+     * Creates a new pipeline data set serializer instance from a descriptor.
+     * 
+     * - Parameter descriptor: A ``MTL4PipelineDataSetSerializerDescriptor`` instance that configures
+     * the new ``MTL4PipelineDataSetSerializer`` instance.
+     * 
+     * - Returns: A ``MTL4PipelineDataSetSerializer`` instance, or `nil` if the function failed.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("newPipelineDataSetSerializerWithDescriptor:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    MTL4PipelineDataSetSerializer newPipelineDataSetSerializerWithDescriptor(
+            @NotNull MTL4PipelineDataSetSerializerDescriptor descriptor);
+
+    /**
+     * Creates a tensor by allocating new memory.
+     * 
+     * - Parameters:
+     * - descriptor: A description of the properties for the new tensor.
+     * - error: Metal populates this parameter with information in case an error occurs.
+     * - Returns: A new tensor instance that Metal configures using `descriptor` or `nil` if an error occurred.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("newTensorWithDescriptor:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    MTLTensor newTensorWithDescriptorError(@NotNull MTLTensorDescriptor descriptor,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    /**
+     * Creates a new texture view pool from a resource view pool descriptor.
+     * 
+     * - Parameters:
+     * - descriptor: A ``MTLResourceViewPoolDescriptor`` instance that configures the
+     * ``MTLTextureViewPool`` instance.
+     * - error: Optional pointer to a `NSError` instance that Metal uses to describe the failure
+     * if this function fails.
+     * 
+     * - Returns: A ``MTLTextureViewPool`` instance, or `nil` if the function failed.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("newTextureViewPoolWithDescriptor:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    MTLTextureViewPool newTextureViewPoolWithDescriptorError(@NotNull MTLResourceViewPoolDescriptor descriptor,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    /**
+     * Queries the frequency of the GPU timestamp in ticks per second.
+     * 
+     * - Returns: The frequency of the GPU timestamp in ticks per second.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("queryTimestampFrequency")
+    long queryTimestampFrequency();
+
+    /**
+     * Returns the size, in bytes, of each entry in a counter heap of a specific counter heap type when
+     * your app resolves it into a usable format.
+     * 
+     * In order to use the data available in a ``MTL4CounterHeap``, your app first resolves it either in the CPU
+     * timeline
+     * or in the GPU timeline. When your app calls
+     * ``MTL4CommandBuffer/resolveCounterHeap:withRange:intoBuffer:waitFence:updateFence:``
+     * to resolve counter data in the GPU timeline, Metal writes the data into a ``MTLBuffer``.
+     * 
+     * During this process, Metal transform the data in the heap into a format consisting of entries of the size
+     * that this method advertises, based on the ``MTL4CounterHeapType``.
+     * 
+     * - Parameters:
+     * - type: ``MTL4CounterHeapType`` value that represents the type of the ``MTL4CounterHeap`` to resolve.
+     * 
+     * - Returns: The size of the post-transformation entry from a ``MTL4CounterHeap`` of type ``MTL4CounterHeapType``.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("sizeOfCounterHeapEntry:")
+    @NUInt
+    long sizeOfCounterHeapEntry(@NInt long type);
+
+    /**
+     * Determines the size and alignment required to hold the data of a tensor you create with a descriptor in a buffer.
+     * 
+     * - Parameters:
+     * - descriptor: A description of the properties for the new tensor.
+     * - Returns: The size and alignment required to hold the data of a tensor you create with `descriptor` in a buffer.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("tensorSizeAndAlignWithDescriptor:")
+    @ByValue
+    MTLSizeAndAlign tensorSizeAndAlignWithDescriptor(@NotNull MTLTensorDescriptor descriptor);
 }

@@ -307,7 +307,10 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
      * that pool will be used.
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Creating and using multiple instances of WKProcessPool no longer has any effect.
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("processPool")
@@ -330,7 +333,10 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
      * The default value is WKSelectionGranularityDynamic.
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: This property is ignored; selection granularity is always `character`.
      */
+    @Deprecated
     @Generated
     @Selector("selectionGranularity")
     @NInt
@@ -453,7 +459,10 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
      * that pool will be used.
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Creating and using multiple instances of WKProcessPool no longer has any effect.
      */
+    @Deprecated
     @Generated
     @Selector("setProcessPool:")
     public native void setProcessPool(@NotNull WKProcessPool value);
@@ -475,7 +484,10 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
      * The default value is WKSelectionGranularityDynamic.
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: This property is ignored; selection granularity is always `character`.
      */
+    @Deprecated
     @Generated
     @Selector("setSelectionGranularity:")
     public native void setSelectionGranularity(@NInt long value);
@@ -746,4 +758,26 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
     @Selector("webExtensionController")
     @Nullable
     public native WKWebExtensionController webExtensionController();
+
+    /**
+     * A Boolean value indicating whether the System Screen Time blocking view should be shown.
+     * 
+     * The default value is YES.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setShowsSystemScreenTimeBlockingView:")
+    public native void setShowsSystemScreenTimeBlockingView(boolean value);
+
+    /**
+     * A Boolean value indicating whether the System Screen Time blocking view should be shown.
+     * 
+     * The default value is YES.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("showsSystemScreenTimeBlockingView")
+    public native boolean showsSystemScreenTimeBlockingView();
 }

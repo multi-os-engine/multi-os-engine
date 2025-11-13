@@ -17,7 +17,6 @@ limitations under the License.
 package apple.mapkit;
 
 import apple.NSObject;
-import apple.corelocation.struct.CLLocationCoordinate2D;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -43,7 +42,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.corelocation.struct.CLLocationCoordinate2D;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -172,10 +175,16 @@ public class MKShape extends NSObject implements MKAnnotation {
     @Selector("setCoordinate:")
     public native void setCoordinate(@ByValue CLLocationCoordinate2D newCoordinate);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("setSubtitle:")
     public native void setSubtitle(@Nullable String value);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(@Nullable String value);

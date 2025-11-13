@@ -158,7 +158,8 @@ public class MTRBaseClusterWiFiNetworkManagement extends MTRGenericBaseCluster {
     /**
      * Command NetworkPassphraseRequest
      * 
-     * Request the current WPA-Personal passphrase or PSK associated with the managed Wi-Fi network.
+     * This command is used to request the current WPA-Personal passphrase or PSK associated with the Wi-Fi network
+     * provided by this device.
      * 
      * API-Since: 18.4
      */

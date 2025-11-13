@@ -17,7 +17,6 @@ limitations under the License.
 package apple.corelocation;
 
 import apple.NSObject;
-import apple.corelocation.struct.CLLocationCoordinate2D;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -46,8 +45,14 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.corelocation.struct.CLLocationCoordinate2D;
 
 /**
+ * CLRegion
+ * 
+ * Discussion:
+ * A logical area.
+ * 
  * API-Since: 4.0
  */
 @Generated
@@ -169,6 +174,13 @@ public class CLRegion extends NSObject implements NSCopying, NSSecureCoding {
     public static native long version_static();
 
     /**
+     * center
+     * 
+     * Discussion:
+     * Returns the coordinate of the center of the region.
+     * 
+     * This method has been deprecated, please see CLCircularRegion.
+     * 
      * API-Since: 4.0
      * Deprecated-Since: 7.0
      * Deprecated-Message: Please see CLCircularRegion
@@ -180,6 +192,13 @@ public class CLRegion extends NSObject implements NSCopying, NSSecureCoding {
     public native CLLocationCoordinate2D center();
 
     /**
+     * containsCoordinate:
+     * 
+     * Discussion:
+     * Returns YES if the coordinate lies inside the region, and NO otherwise.
+     * 
+     * This method has been deprecated, please see CLCircularRegion.
+     * 
      * API-Since: 4.0
      * Deprecated-Since: 7.0
      * Deprecated-Message: Please see CLCircularRegion
@@ -268,6 +287,13 @@ public class CLRegion extends NSObject implements NSCopying, NSSecureCoding {
     public native boolean notifyOnExit();
 
     /**
+     * radius
+     * 
+     * Discussion:
+     * Returns the radius of the region.
+     * 
+     * This method has been deprecated, please see CLCircularRegion.
+     * 
      * API-Since: 4.0
      * Deprecated-Since: 7.0
      * Deprecated-Message: Please see CLCircularRegion

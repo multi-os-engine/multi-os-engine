@@ -16,6 +16,7 @@ import org.moe.natj.objc.ann.Selector;
 import apple.nearbyinteraction.NIAlgorithmConvergence;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.nearbyinteraction.NIDLTDOAMeasurement;
 
 /**
  * Delegate for nearby interaction session updates.
@@ -177,6 +178,24 @@ public interface NISessionDelegate {
     @IsOptional
     @Selector("sessionDidStartRunning:")
     default void sessionDidStartRunning(@NotNull NISession session) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * This is called when new updates about DL-TDOA measurement are available.
+     * 
+     * [@note] this will only be called after successfully running an NISession with an NIDLTDOAConfiguration.
+     * 
+     * @param session      The session that updated NI DL-TDOA measurement.
+     * @param measurements The measurements update from a NI DL-TDOA session
+     * 
+     *                     API-Since: 26.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("session:didUpdateDLTDOAMeasurements:")
+    default void sessionDidUpdateDLTDOAMeasurements(@NotNull NISession session,
+            @NotNull NSArray<? extends NIDLTDOAMeasurement> measurements) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

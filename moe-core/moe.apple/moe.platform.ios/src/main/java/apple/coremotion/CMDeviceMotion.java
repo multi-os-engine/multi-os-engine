@@ -264,6 +264,14 @@ public class CMDeviceMotion extends CMLogItem {
     public native CMAcceleration userAcceleration();
 
     /**
+     * heading
+     * 
+     * Discussion:
+     * Returns heading angle in the range [0,360) degrees with respect to the CMAttitude reference frame. A negative
+     * value is returned
+     * for CMAttitudeReferenceFrameXArbitraryZVertical and CMAttitudeReferenceFrameXArbitraryCorrectedZVertical.
+     * 
+     * 
      * API-Since: 11.0
      */
     @Generated

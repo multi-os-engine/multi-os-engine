@@ -27,8 +27,6 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * AVMetricPlayerItemPlaybackSummaryEvent
- * 
  * Represents a summary metric event with aggregated metrics for the entire playback session.
  * 
  * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
@@ -97,8 +95,6 @@ public class AVMetricPlayerItemPlaybackSummaryEvent extends AVMetricEvent {
     public static native String description_static();
 
     /**
-     * [@property] errorEvent
-     * 
      * Returns the error event if any. If no value is available, returns nil.
      * 
      * API-Since: 18.0
@@ -144,9 +140,8 @@ public class AVMetricPlayerItemPlaybackSummaryEvent extends AVMetricEvent {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
-     * [@property] mediaResourceRequestCount
-     * 
-     * Returns the total number of media requests performed by the player.
+     * Returns the total number of media requests performed by the player. This includes playlist requests, media
+     * segment requests, and content key requests.
      * 
      * API-Since: 18.0
      */
@@ -161,8 +156,6 @@ public class AVMetricPlayerItemPlaybackSummaryEvent extends AVMetricEvent {
     public static native AVMetricPlayerItemPlaybackSummaryEvent new_objc();
 
     /**
-     * [@property] playbackDuration
-     * 
      * Returns the total duration of playback in seconds.
      * 
      * API-Since: 18.0
@@ -173,8 +166,6 @@ public class AVMetricPlayerItemPlaybackSummaryEvent extends AVMetricEvent {
     public native long playbackDuration();
 
     /**
-     * [@property] recoverableErrorCount
-     * 
      * Returns the total count of recoverable errors encountered during playback. If no errors were encountered, returns
      * 0.
      * 
@@ -198,8 +189,6 @@ public class AVMetricPlayerItemPlaybackSummaryEvent extends AVMetricEvent {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property] stallCount
-     * 
      * Returns the total count of stalls encountered during playback. If no stalls were encountered, returns 0.
      * 
      * API-Since: 18.0
@@ -224,8 +213,6 @@ public class AVMetricPlayerItemPlaybackSummaryEvent extends AVMetricEvent {
     }
 
     /**
-     * [@property] timeSpentInInitialStartup
-     * 
      * Returns the total time spent in initial startup of playback.
      * 
      * API-Since: 18.0
@@ -235,8 +222,6 @@ public class AVMetricPlayerItemPlaybackSummaryEvent extends AVMetricEvent {
     public native double timeSpentInInitialStartup();
 
     /**
-     * [@property] timeSpentRecoveringFromStall
-     * 
      * Returns the total time spent recovering from a stall event.
      * 
      * API-Since: 18.0
@@ -246,8 +231,6 @@ public class AVMetricPlayerItemPlaybackSummaryEvent extends AVMetricEvent {
     public native double timeSpentRecoveringFromStall();
 
     /**
-     * [@property] timeWeightedAverageBitrate
-     * 
      * Returns the playtime weighted average bitrate played in bits / second.
      * 
      * API-Since: 18.0
@@ -258,8 +241,6 @@ public class AVMetricPlayerItemPlaybackSummaryEvent extends AVMetricEvent {
     public native long timeWeightedAverageBitrate();
 
     /**
-     * [@property] timeWeightedPeakBitrate
-     * 
      * Returns the playtime weighted peak bitrate played in bits / second.
      * 
      * API-Since: 18.0
@@ -275,8 +256,6 @@ public class AVMetricPlayerItemPlaybackSummaryEvent extends AVMetricEvent {
     public static native boolean useStoredAccessor();
 
     /**
-     * [@property] variantSwitchCount
-     * 
      * Returns the total count of variant switch encountered during playback.
      * 
      * API-Since: 18.0

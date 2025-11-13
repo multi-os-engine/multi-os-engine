@@ -27,21 +27,22 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * An interaction that indicates your views's intent to receive game controller
- * events through the GameController framework.
+ * An interaction that indicates the view's intent to receive game controller
+ * events through the Game Controller framework.
  * 
- * On some platforms controllers can be used to control the general UIKit user
- * interface and for many views that is the default behavior. By attaching a
- * \c GCEventInteraction to one or more of your app's views you get fine
- * grained control over whether the controller events go through the UIEvent &
- * UIResponder chain, or if they are decoupled from the UI and all incoming
- * data is served via Game Controller framework.
+ * On visionOS, users can interact with your app using a game controller. By
+ * default, the system converts game controller actions into pinch events and
+ * sends them to the view the user is gazing at, its gesture recognizers, and
+ * then up the responder chain.
  * 
- * On visionOS, while the user is gazing a view with the \c GCEventInteraction,
- * or one of its subviews, the interaction's \c handledEventTypes property
- * determines whether the system will deliver game controller events through
- * the Game Controller framework instead of through the UIEvent & UIResponder
- * chain.
+ * If you use the Game Controller framework to handle game controller events
+ * for part of your user interface, add an instance of `GCEventInteraction`
+ * to the root of that part of your app’s view hierarchy. For example, if you
+ * are writing a game using Metal, add this interaction to the view that hosts
+ * your game’s `CAMetalLayer`.
+ * 
+ * [@note]
+ * This class should not be subclassed.
  * 
  * API-Since: 18.0
  */
@@ -127,6 +128,8 @@ public class GCEventInteraction extends NSObject implements UIInteraction {
     public static native long hash_static();
 
     /**
+     * Creates a game controller interaction.
+     * 
      * API-Since: 18.0
      */
     @Generated
@@ -204,4 +207,44 @@ public class GCEventInteraction extends NSObject implements UIInteraction {
     @Generated
     @Selector("willMoveToView:")
     public native void willMoveToView(@Nullable UIView view);
+
+    /**
+     * A Boolean value that determines whether events are delivered exclusively
+     * through the Game Controller framework.
+     * 
+     * If `YES`, events of the types specified by `handledEventTypes` are
+     * delivered both through the Game Controller framework and as UIKit event
+     * objects to your app's views and gesture recognizers.
+     * 
+     * If `NO`, events of the types specified by `handledEventTypes` are
+     * delivered **exclusively** through the Game Controller framework.
+     * 
+     * The default value of this property is `NO`.
+     * This property has no effect if `handledEventTypes` is `GCUIEventTypeNone`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("receivesEventsInView")
+    public native boolean receivesEventsInView();
+
+    /**
+     * A Boolean value that determines whether events are delivered exclusively
+     * through the Game Controller framework.
+     * 
+     * If `YES`, events of the types specified by `handledEventTypes` are
+     * delivered both through the Game Controller framework and as UIKit event
+     * objects to your app's views and gesture recognizers.
+     * 
+     * If `NO`, events of the types specified by `handledEventTypes` are
+     * delivered **exclusively** through the Game Controller framework.
+     * 
+     * The default value of this property is `NO`.
+     * This property has no effect if `handledEventTypes` is `GCUIEventTypeNone`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setReceivesEventsInView:")
+    public native void setReceivesEventsInView(boolean value);
 }

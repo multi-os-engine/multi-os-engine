@@ -71,7 +71,7 @@ public class BGTaskScheduler extends NSObject {
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
-     * Cancel all scheduled task requests.
+     * Cancel all previously submitted task requests.
      * 
      * API-Since: 13.0
      */
@@ -94,7 +94,7 @@ public class BGTaskScheduler extends NSObject {
      * Cancel a previously scheduled task request.
      * 
      * - Parameters:
-     * - identifier: The string identifier of the task request to cancel.
+     * - identifier: The identifier of the previously submitted task request to cancel.
      * 
      * API-Since: 13.0
      */
@@ -121,18 +121,17 @@ public class BGTaskScheduler extends NSObject {
     public static native String description_static();
 
     /**
-     * Request a list of unexecuted scheduled task requests.
-     * 
-     * - Parameters:
-     * - completionHandler: The completion handler called with the pending tasks.
-     * The handler may execute on a background thread.
+     * Returns a list of all task requests that have been submitted but not yet completed.
      * 
      * The handler takes a single parameter `tasksRequests`, an array of `BGTaskRequest`
      * objects. The array is empty if there are no scheduled tasks.
      * 
-     * The objects passed in the array are copies of the existing requests. Changing the
-     * attributes of a request has no effect. To change the attributes submit a new
-     * task request using ``BGTaskScheduler/submitTaskRequest:error:``.
+     * The objects passed in the array are copies of the existing requests. Changing the attributes of a request has no
+     * effect. To change the attributes submit a new task request using ``BGTaskScheduler/submitTaskRequest:error:``.
+     * 
+     * - Parameters:
+     * - completionHandler: The completion handler called with the pending tasks.
+     * - Note: The handler may execute on a background thread.
      * 
      * API-Since: 13.0
      */
@@ -185,36 +184,34 @@ public class BGTaskScheduler extends NSObject {
     public static native BGTaskScheduler new_objc();
 
     /**
-     * Register a launch handler for the task with the associated identifier that’s
-     * executed on the specified queue.
+     * Register a launch handler for the task with the associated identifier that’s executed on the specified queue.
      * 
      * Every identifier in the
      * <doc://com.apple.documentation/documentation/bundleresources/information_property_list/bgtaskschedulerpermittedidentifiers>
-     * requires a handler. Registration of all launch handlers must be complete
-     * before the end of
+     * requires a handler. Registration of all launch handlers must be complete before the end of
      * <doc://com.apple.documentation/documentation/uikit/uiapplicationdelegate/1623053-applicationdidfinishlaunching>.
      * 
-     * - Important: Register each task identifier only once. The system kills the
-     * app on the second registration of the same task identifier.
+     * You must register launch handlers before your application finishes launching (``BGContinuedProcessingTask``
+     * registrations are exempt from this requirement). Attempting to register a handler after launch or multiple
+     * handlers
+     * for the same identifier is an error. Although you may submit task requests from some extensions, only the host
+     * app
+     * will be launched to handle background work.
      * 
      * - Parameters:
-     * - identifier: A string containing the identifier of the task.
-     * 
-     * - queue: A queue for executing the task. Pass `nil` to use a default
-     * background queue.
-     * 
-     * - launchHandler: The system runs the block of code for the launch handler
-     * when it launches the app in the background. The block takes a single
-     * parameter, a ``BGTask`` object used for assigning an expiration handler and
-     * for setting a completion status. The block has no return value.
-     * 
-     * - Returns: Returns
-     * <doc://com.apple.documentation/documentation/objectivec/yes> if the launch
-     * handler was registered. Returns
-     * <doc://com.apple.documentation/documentation/objectivec/no> if the
-     * identifier isn't included in the
+     * - identifier: The identifier for the task that will be handled by the provided launch handler.
+     * - queue: A queue for executing the task. Pass `nil` to use a default background queue.
+     * - launchHandler: The system runs the block of code for the launch handler when it launches the app in the
+     * background. The block takes a single parameter, a ``BGTask`` object used for assigning an expiration handler and
+     * for setting a completion status. The block has no return value. Assign an expiration handler to the task's
+     * expirationHandler property and call setTaskCompletedWithSuccess: when the background work is complete.
+     * - Returns: Returns <doc://com.apple.documentation/documentation/objectivec/yes> if the launch handler was
+     * registered. Returns <doc://com.apple.documentation/documentation/objectivec/no> if the identifier isn't included
+     * in the
      * <doc://com.apple.documentation/documentation/bundleresources/information_property_list/bgtaskschedulerpermittedidentifiers>
      * `Info.plist`.
+     * - Important: Register each task identifier only once. The system kills the app on the second registration of the
+     * same task identifier.
      */
     @Generated
     @Selector("registerForTaskWithIdentifier:usingQueue:launchHandler:")
@@ -254,18 +251,16 @@ public class BGTaskScheduler extends NSObject {
     /**
      * Submit a previously registered background task for execution.
      * 
-     * Submitting a task request for an unexecuted task that’s already in the queue
-     * replaces the previous task request.
+     * Submitting a task request for an unexecuted task that’s already in the queue replaces the previous task request.
      * 
-     * There can be a total of 1 refresh task and 10 processing tasks scheduled at
-     * any time. Trying to schedule more tasks returns
-     * ``BGTaskSchedulerErrorCode/BGTaskSchedulerErrorCodeTooManyPendingTaskRequests``.
+     * There can be a total of 1 refresh task and 10 processing tasks scheduled at any time. Trying to schedule more
+     * tasks
+     * returns ``BGTaskSchedulerErrorCode/BGTaskSchedulerErrorCodeTooManyPendingTaskRequests``.
      * 
      * - Parameters:
-     * - taskRequest: A background task request object specifying the task
-     * - error: On input, a pointer to an error object. If an error occurs, this pointer is set to an error object
-     * containing the error information. Specify `nil` for this parameter to ignore the error information.
-     * identifier and optional configuration information.
+     * - taskRequest: The task request object representing the parameters of the background task to be scheduled.
+     * - error: If an error occurs, upon return contains an error object that indicates why the request was rejected
+     * - Returns: `YES` if the request was successfully submitted; `NO` if there was an error
      * 
      * API-Since: 13.0
      */
@@ -287,4 +282,15 @@ public class BGTaskScheduler extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * A bitfield of the resources the device supports for ``BackgroundTasks/BGContinuedProcessingTaskRequest``
+     * instances.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("supportedResources")
+    @NInt
+    public static native long supportedResources();
 }

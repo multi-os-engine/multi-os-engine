@@ -33,4 +33,8 @@ public final class UISplitViewControllerColumn {
      * API-Since: 14.0
      */
     @Generated @NInt public static final long Compact = 0x0000000000000003L;
+    /**
+     * API-Since: 26.0
+     */
+    @Generated @NInt public static final long Inspector = 0x0000000000000004L;
 }

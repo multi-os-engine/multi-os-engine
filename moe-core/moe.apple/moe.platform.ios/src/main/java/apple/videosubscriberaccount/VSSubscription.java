@@ -31,6 +31,7 @@ import org.jetbrains.annotations.Nullable;
  * 
  * API-Since: 11.0
  * Deprecated-Since: 18.0
+ * Deprecated-Message: Use VSUserAccount instead.
  */
 @Deprecated
 @Generated
@@ -60,6 +61,7 @@ public class VSSubscription extends NSObject {
      * 
      * API-Since: 11.0
      * Deprecated-Since: 18.0
+     * Deprecated-Message: Use VSUserAccount instead.
      */
     @Deprecated
     @Generated
@@ -129,6 +131,7 @@ public class VSSubscription extends NSObject {
      * 
      * API-Since: 11.0
      * Deprecated-Since: 18.0
+     * Deprecated-Message: Use VSUserAccount instead.
      */
     @Deprecated
     @Generated
@@ -188,6 +191,7 @@ public class VSSubscription extends NSObject {
      * 
      * API-Since: 11.0
      * Deprecated-Since: 18.0
+     * Deprecated-Message: Use VSUserAccount instead.
      */
     @Deprecated
     @Generated
@@ -213,6 +217,7 @@ public class VSSubscription extends NSObject {
      * 
      * API-Since: 11.0
      * Deprecated-Since: 18.0
+     * Deprecated-Message: Use VSUserAccount instead.
      */
     @Deprecated
     @Generated
@@ -226,6 +231,7 @@ public class VSSubscription extends NSObject {
      * 
      * API-Since: 11.0
      * Deprecated-Since: 18.0
+     * Deprecated-Message: Use VSUserAccount instead.
      */
     @Deprecated
     @Generated
@@ -247,6 +253,7 @@ public class VSSubscription extends NSObject {
      * 
      * API-Since: 11.0
      * Deprecated-Since: 18.0
+     * Deprecated-Message: Use VSUserAccount instead.
      */
     @Deprecated
     @Generated

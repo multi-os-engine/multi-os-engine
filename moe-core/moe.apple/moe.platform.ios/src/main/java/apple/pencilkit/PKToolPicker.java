@@ -32,6 +32,7 @@ import org.jetbrains.annotations.Nullable;
 import apple.pencilkit.protocol.PKToolPickerDelegate;
 import apple.uikit.UIBarButtonItem;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NFloat;
 
 /**
  * A user interface for selecting a PKTool.
@@ -532,4 +533,39 @@ public class PKToolPicker extends NSObject {
     @Selector("toolItems")
     @NotNull
     public native NSArray<? extends PKToolPickerItem> toolItems();
+
+    /**
+     * Maximum linear exposure for the color picker used by the tool picker. Can be used to enable picking HDR colors.
+     * 
+     * Default value is 1.0 which means only SDR colors can be picked.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("colorMaximumLinearExposure")
+    @NFloat
+    public native double colorMaximumLinearExposure();
+
+    /**
+     * The default tool items for new tool pickers.
+     * 
+     * These items are used when creating a new `PKToolPicker`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("defaultToolItems")
+    @NotNull
+    public static native NSArray<? extends PKToolPickerItem> defaultToolItems();
+
+    /**
+     * Maximum linear exposure for the color picker used by the tool picker. Can be used to enable picking HDR colors.
+     * 
+     * Default value is 1.0 which means only SDR colors can be picked.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setColorMaximumLinearExposure:")
+    public native void setColorMaximumLinearExposure(@NFloat double value);
 }

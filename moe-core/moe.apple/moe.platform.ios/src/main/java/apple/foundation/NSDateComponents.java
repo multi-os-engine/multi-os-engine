@@ -486,4 +486,18 @@ public class NSDateComponents extends NSObject implements NSCopying, NSSecureCod
     @Generated
     @Selector("setDayOfYear:")
     public native void setDayOfYear(@NInt long value);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isRepeatedDay")
+    public native boolean isRepeatedDay();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setRepeatedDay:")
+    public native void setRepeatedDay(boolean value);
 }

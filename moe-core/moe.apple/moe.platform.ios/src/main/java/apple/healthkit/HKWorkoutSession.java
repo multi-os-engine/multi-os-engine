@@ -33,6 +33,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.moe.natj.general.ann.ReferenceInfo;
+import org.moe.natj.general.ptr.Ptr;
 
 /**
  * HKWorkoutSession
@@ -199,10 +201,10 @@ public class HKWorkoutSession extends NSObject implements NSSecureCoding {
     /**
      * [@property] endDate
      * 
-     * Indicates the date when the workout session ended.
+     * Indicates the date when the workout session stopped.
      * 
      * This value is nil when a workout session is initialized. It is set when the workout session state
-     * changes to HKWorkoutSessionStateEnded.
+     * changes to HKWorkoutSessionStateStopped.
      * 
      * API-Since: 17.0
      */
@@ -506,4 +508,37 @@ public class HKWorkoutSession extends NSObject implements NSSecureCoding {
     @Selector("workoutConfiguration")
     @NotNull
     public native HKWorkoutConfiguration workoutConfiguration();
+
+    /**
+     * associatedWorkoutBuilder
+     * 
+     * Retrieves (and creates if necessary) an HKLiveWorkoutBuilder associated with this session.
+     * 
+     * A session may have associated with it an HKLiveWorkoutBuilder that will be used to record the workout
+     * for this session. This method will return the session's associated builder, creating it if needed.
+     * Calling this method more than once will return the previously-created builder. If this session was not
+     * initialized with initWithHealthStore:configuration:error:, an exception will be thrown.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("associatedWorkoutBuilder")
+    @NotNull
+    public native HKLiveWorkoutBuilder associatedWorkoutBuilder();
+
+    /**
+     * initWithHealthStore:configuration:error:
+     * 
+     * @param healthStore          Specifies the HKHealthStore object to use.
+     * @param workoutConfiguration Configuration object describing the various properties of a workout.
+     * @param error                If the configuration does not specify valid configuration properties, an
+     *                             an NSError describing the error is set and nil is returned.
+     * 
+     *                             API-Since: 26.0
+     */
+    @Generated
+    @Selector("initWithHealthStore:configuration:error:")
+    public native HKWorkoutSession initWithHealthStoreConfigurationError(@NotNull HKHealthStore healthStore,
+            @NotNull HKWorkoutConfiguration workoutConfiguration,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
 }

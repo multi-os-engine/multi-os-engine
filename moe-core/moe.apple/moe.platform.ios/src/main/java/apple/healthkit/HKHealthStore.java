@@ -961,4 +961,25 @@ public class HKHealthStore extends NSObject {
         @Generated
         void call_unrelateWorkoutEffortSampleFromWorkoutActivityCompletion(boolean success, @Nullable NSError error);
     }
+
+    /**
+     * recoverActiveWorkoutSessionWithCompletion:
+     * 
+     * Recovers an active workout session after a client crash. If no session is available to be re-attached,
+     * nil will be returned. If an error occurs, session will be nil and error will be set appropriately.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("recoverActiveWorkoutSessionWithCompletion:")
+    public native void recoverActiveWorkoutSessionWithCompletion(
+            @ObjCBlock(name = "call_recoverActiveWorkoutSessionWithCompletion") @NotNull Block_recoverActiveWorkoutSessionWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_recoverActiveWorkoutSessionWithCompletion {
+        @Generated
+        void call_recoverActiveWorkoutSessionWithCompletion(@Nullable HKWorkoutSession session,
+                @Nullable NSError error);
+    }
 }

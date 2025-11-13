@@ -17,6 +17,7 @@ limitations under the License.
 #import <CoreFoundation/CFCGTypes.h>
 #import <CoreGraphics/CGAffineTransform.h>
 #import <CoreGraphics/CGGeometry.h>
+#import <CoreGraphics/CGImage.h>
 
 
 #define EXPORT __attribute__ ((visibility ("default")))
@@ -55,6 +56,10 @@ EXPORT CGPoint __natj_inline___CGPointApplyAffineTransform(CGPoint point, CGAffi
 
 EXPORT CGSize __natj_inline___CGSizeApplyAffineTransform(CGSize size, CGAffineTransform t) {
 	return __CGSizeApplyAffineTransform(size, t);
+}
+
+EXPORT CGBitmapInfo __natj_inline_CGBitmapInfoMake(CGImageAlphaInfo alpha, CGImageComponentInfo component, CGImageByteOrderInfo byteOrder, CGImagePixelFormatInfo pixelFormat) {
+	return CGBitmapInfoMake(alpha, component, byteOrder, pixelFormat);
 }
 
 

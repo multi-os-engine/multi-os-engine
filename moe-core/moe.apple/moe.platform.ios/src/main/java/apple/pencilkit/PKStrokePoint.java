@@ -269,4 +269,30 @@ public class PKStrokePoint extends NSObject implements NSCopying {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Create a new point with the provided properties.
+     * 
+     * API-Since: 14.0
+     */
+    @Generated
+    @Selector("initWithLocation:timeOffset:size:opacity:force:azimuth:altitude:secondaryScale:threshold:")
+    public native PKStrokePoint initWithLocationTimeOffsetSizeOpacityForceAzimuthAltitudeSecondaryScaleThreshold(
+            @ByValue CGPoint location, double timeOffset, @ByValue CGSize size, @NFloat double opacity,
+            @NFloat double force, @NFloat double azimuth, @NFloat double altitude, @NFloat double secondaryScale,
+            @NFloat double threshold);
+
+    /**
+     * The threshold for clipping the stroke rendering.
+     * 
+     * When rendering only pixels with an alpha greater than the threshold are drawn. A threshold of 0 has no affect on
+     * rendering,
+     * a threshold of 1 does not draw anything. Thresholds are only used for some inks, eg. `PKInkIdentifierReed`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("threshold")
+    @NFloat
+    public native double threshold();
 }

@@ -519,4 +519,26 @@ public class NERelayManager extends NSObject {
     @Generated
     @Selector("setUIToggleEnabled:")
     public native void setUIToggleEnabled(boolean value);
+
+    /**
+     * [@property] allowDNSFailover
+     * 
+     * Determines if DNS queries that fail over relay can fallback to default DNS
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isDNSFailoverAllowed")
+    public native boolean isDNSFailoverAllowed();
+
+    /**
+     * [@property] allowDNSFailover
+     * 
+     * Determines if DNS queries that fail over relay can fallback to default DNS
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setAllowDNSFailover:")
+    public native void setAllowDNSFailover(boolean value);
 }

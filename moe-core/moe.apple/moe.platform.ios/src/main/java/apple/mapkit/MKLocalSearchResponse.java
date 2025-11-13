@@ -42,6 +42,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 6.1
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -156,6 +159,9 @@ public class MKLocalSearchResponse extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 6.1
+     */
     @Generated
     @Selector("boundingRegion")
     @ByValue
@@ -167,6 +173,8 @@ public class MKLocalSearchResponse extends NSObject {
 
     /**
      * An array of MKMapItems sorted by relevance in descending order
+     * 
+     * API-Since: 6.1
      */
     @NotNull
     @Generated

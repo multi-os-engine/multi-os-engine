@@ -49,15 +49,29 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import apple.opaque.dispatch_queue_t;
+import apple.avrouting.protocol.AVRoutingPlaybackParticipant;
 
 /**
+ * AVPlayer offers a playback interface for single-item playback that's sufficient for the implementation of playback
+ * controllers and playback user interfaces.
+ * 
+ * AVPlayer works equally well with local and remote media files, providing clients with appropriate
+ * information about readiness to play or about the need to await additional data before continuing.
+ * 
+ * Visual content of items played by an instance of AVPlayer can be displayed in a CoreAnimation layer
+ * of class AVPlayerLayer.
+ * 
+ * To allow clients to add and remove their objects as key-value observers safely, AVPlayer serializes notifications of
+ * changes that occur dynamically during playback on a dispatch queue. By default, this queue is the main queue. See
+ * dispatch_get_main_queue().
+ * 
  * API-Since: 4.0
  */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class AVPlayer extends NSObject {
+public class AVPlayer extends NSObject implements AVRoutingPlaybackParticipant {
     static {
         NatJ.register();
     }
@@ -147,33 +161,31 @@ public class AVPlayer extends NSObject {
     public static native AVPlayer new_objc();
 
     /**
-     * playerWithPlayerItem:
-     * 
      * Create an AVPlayer that plays a single audiovisual item.
      * 
      * Useful in order to play items for which an AVAsset has previously been created. See -[AVPlayerItem
      * initWithAsset:].
      * 
-     * API-Since: 4.0
+     * - Parameter item:
      * 
-     * @param item
-     * @return An instance of AVPlayer
+     * - Returns: An instance of AVPlayer
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("playerWithPlayerItem:")
     public static native AVPlayer playerWithPlayerItem(@Nullable AVPlayerItem item);
 
     /**
-     * playerWithURL:
-     * 
      * Returns an instance of AVPlayer that plays a single audiovisual resource referenced by URL.
      * 
      * Implicitly creates an AVPlayerItem. Clients can obtain the AVPlayerItem as it becomes the player's currentItem.
      * 
-     * API-Since: 4.0
+     * - Parameter URL:
      * 
-     * @param URL
-     * @return An instance of AVPlayer
+     * - Returns: An instance of AVPlayer
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("playerWithURL:")
@@ -201,8 +213,6 @@ public class AVPlayer extends NSObject {
     public static native long version_static();
 
     /**
-     * [@property] actionAtItemEnd
-     * 
      * Indicates the action that the player should perform when playback of an item reaches its end time.
      * 
      * This property throws an exception if set to AVPlayerActionAtItemEndAdvance on an AVPlayer which is not an
@@ -216,29 +226,24 @@ public class AVPlayer extends NSObject {
     public native long actionAtItemEnd();
 
     /**
-     * addBoundaryTimeObserverForTimes:queue:usingBlock:
-     * 
      * Requests invocation of a block when specified times are traversed during normal playback.
      * 
      * Each call to -addPeriodicTimeObserverForInterval:queue:usingBlock: should be paired with a corresponding call to
      * -removeTimeObserver:.
      * Releasing the observer object without a call to -removeTimeObserver: will result in undefined behavior.
      * 
-     * API-Since: 4.0
+     * - Parameter times: The times for which the observer requests notification, supplied as an array of NSValues
+     * carrying CMTimes.
+     * - Parameter queue: The serial queue onto which block should be enqueued. If you pass NULL, the main queue
+     * (obtained using dispatch_get_main_queue()) will be used. Passing a concurrent queue to this method will result in
+     * undefined behavior.
+     * - Parameter block: The block to be invoked when any of the specified times is crossed during normal playback.
      * 
-     * @param times
-     *              The times for which the observer requests notification, supplied as an array of NSValues carrying
-     *              CMTimes.
-     * @param queue
-     *              The serial queue onto which block should be enqueued. If you pass NULL, the main queue (obtained
-     *              using dispatch_get_main_queue()) will be used. Passing a
-     *              concurrent queue to this method will result in undefined behavior.
-     * @param block
-     *              The block to be invoked when any of the specified times is crossed during normal playback.
-     * @return
-     *         An object conforming to the NSObject protocol. You must retain this returned value as long as you want
-     *         the time observer to be invoked by the player.
-     *         Pass this object to -removeTimeObserver: to cancel time observation.
+     * - Returns: An object conforming to the NSObject protocol. You must retain this returned value as long as you want
+     * the time observer to be invoked by the player.
+     * Pass this object to -removeTimeObserver: to cancel time observation.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -249,8 +254,6 @@ public class AVPlayer extends NSObject {
             @NotNull @ObjCBlock(name = "call_addBoundaryTimeObserverForTimesQueueUsingBlock") Block_addBoundaryTimeObserverForTimesQueueUsingBlock block);
 
     /**
-     * addPeriodicTimeObserverForInterval:queue:usingBlock:
-     * 
      * Requests invocation of a block during playback to report changing time.
      * 
      * The block is invoked periodically at the interval specified, interpreted according to the timeline of the current
@@ -264,21 +267,18 @@ public class AVPlayer extends NSObject {
      * -removeTimeObserver:.
      * Releasing the observer object without a call to -removeTimeObserver: will result in undefined behavior.
      * 
-     * API-Since: 4.0
+     * - Parameter interval: The interval of invocation of the block during normal playback, according to progress of
+     * the current time of the player.
+     * - Parameter queue: The serial queue onto which block should be enqueued. If you pass NULL, the main queue
+     * (obtained using dispatch_get_main_queue()) will be used. Passing a concurrent queue to this method will result in
+     * undefined behavior.
+     * - Parameter block: The block to be invoked periodically.
      * 
-     * @param interval
-     *                 The interval of invocation of the block during normal playback, according to progress of the
-     *                 current time of the player.
-     * @param queue
-     *                 The serial queue onto which block should be enqueued. If you pass NULL, the main queue (obtained
-     *                 using dispatch_get_main_queue()) will be used. Passing a
-     *                 concurrent queue to this method will result in undefined behavior.
-     * @param block
-     *                 The block to be invoked periodically.
-     * @return
-     *         An object conforming to the NSObject protocol. You must retain this returned value as long as you want
-     *         the time observer to be invoked by the player.
-     *         Pass this object to -removeTimeObserver: to cancel time observation.
+     * - Returns: An object conforming to the NSObject protocol. You must retain this returned value as long as you want
+     * the time observer to be invoked by the player.
+     * Pass this object to -removeTimeObserver: to cancel time observation.
+     * 
+     * API-Since: 4.0
      */
     @NotNull
     @Generated
@@ -289,8 +289,8 @@ public class AVPlayer extends NSObject {
             @NotNull @ObjCBlock(name = "call_addPeriodicTimeObserverForIntervalQueueUsingBlock") Block_addPeriodicTimeObserverForIntervalQueueUsingBlock block);
 
     /**
-     * Indicates whether the player allows AirPlay Video playback. The default value is YES.
-     * This property is deprecated. Use AVPlayer's -allowsExternalPlayback instead.
+     * Indicates whether the player allows AirPlay Video playback. The default value is YES. This property is
+     * deprecated. Use AVPlayer's -allowsExternalPlayback instead.
      * 
      * API-Since: 5.0
      * Deprecated-Since: 6.0
@@ -311,6 +311,7 @@ public class AVPlayer extends NSObject {
 
     /**
      * Indicates whether the receiver should apply the current selection criteria automatically to AVPlayerItems.
+     * 
      * For clients linked against the iOS 7 SDK or later or against the macOS 10.9 SDK or later, the default is YES. For
      * all others, the default is NO.
      * 
@@ -324,10 +325,7 @@ public class AVPlayer extends NSObject {
     public native boolean appliesMediaSelectionCriteriaAutomatically();
 
     /**
-     * [@property] automaticallyWaitsToMinimizeStalling
-     * 
      * Indicates that the player is allowed to delay playback at the specified rate in order to minimize stalling
-     * 
      * 
      * When this property is YES, whenever 1) the rate is set from zero to non-zero or 2) the playback buffer becomes
      * empty and playback stalls, the player will attempt to determine if, at the specified rate, its currentItem will
@@ -379,8 +377,6 @@ public class AVPlayer extends NSObject {
     public native boolean automaticallyWaitsToMinimizeStalling();
 
     /**
-     * cancelPendingPrerolls
-     * 
      * Cancel any pending preroll requests and invoke the corresponding completion handlers if present.
      * 
      * Use this method to cancel and release the completion handlers for pending prerolls. The finished parameter of the
@@ -393,7 +389,7 @@ public class AVPlayer extends NSObject {
     public native void cancelPendingPrerolls();
 
     /**
-     * indicates the current item of the player
+     * Indicates the current item of the player
      * 
      * API-Since: 4.0
      */
@@ -403,16 +399,14 @@ public class AVPlayer extends NSObject {
     public native AVPlayerItem currentItem();
 
     /**
-     * currentTime
-     * 
      * Returns the current time of the current item.
      * 
      * Returns the current time of the current item. Not key-value observable; use
      * -addPeriodicTimeObserverForInterval:queue:usingBlock: instead.
      * 
-     * API-Since: 4.0
+     * - Returns: A CMTime
      * 
-     * @return A CMTime
+     * API-Since: 4.0
      */
     @Generated
     @Selector("currentTime")
@@ -420,8 +414,6 @@ public class AVPlayer extends NSObject {
     public native CMTime currentTime();
 
     /**
-     * [@property] error
-     * 
      * If the receiver's status is AVPlayerStatusFailed, this describes the error that caused the failure.
      * 
      * The value of this property is an NSError that describes what caused the receiver to no longer be able to play
@@ -446,8 +438,6 @@ public class AVPlayer extends NSObject {
     public native String externalPlaybackVideoGravity();
 
     /**
-     * init
-     * 
      * Initializes an AVPlayer with no player items.
      * 
      * API-Since: 4.0
@@ -457,8 +447,6 @@ public class AVPlayer extends NSObject {
     public native AVPlayer init();
 
     /**
-     * initWithPlayerItem:
-     * 
      * Create an AVPlayer that plays a single audiovisual item.
      * 
      * Useful in order to play items for which an AVAsset has previously been created. See -[AVPlayerItem
@@ -466,34 +454,34 @@ public class AVPlayer extends NSObject {
      * This method throws an exception if the item is not an AVPlayerItem, or if the item is
      * associated with another AVPlayer.
      * 
-     * API-Since: 4.0
+     * - Parameter item:
      * 
-     * @param item
-     * @return An instance of AVPlayer
+     * - Returns: An instance of AVPlayer
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("initWithPlayerItem:")
     public native AVPlayer initWithPlayerItem(@Nullable AVPlayerItem item);
 
     /**
-     * initWithURL:
-     * 
      * Initializes an AVPlayer that plays a single audiovisual resource referenced by URL.
      * 
      * Implicitly creates an AVPlayerItem. Clients can obtain the AVPlayerItem as it becomes the player's currentItem.
      * 
-     * API-Since: 4.0
+     * - Parameter URL:
      * 
-     * @param URL
-     * @return An instance of AVPlayer
+     * - Returns: An instance of AVPlayer
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("initWithURL:")
     public native AVPlayer initWithURL(@NotNull NSURL URL);
 
     /**
-     * Indicates whether the player is currently playing video via AirPlay.
-     * This property is deprecated. Use AVPlayer's -externalPlaybackActive instead.
+     * Indicates whether the player is currently playing video via AirPlay. This property is deprecated. Use AVPlayer's
+     * -externalPlaybackActive instead.
      * 
      * API-Since: 5.0
      * Deprecated-Since: 6.0
@@ -504,8 +492,6 @@ public class AVPlayer extends NSObject {
     public native boolean isAirPlayVideoActive();
 
     /**
-     * [@property] closedCaptionDisplayEnabled
-     * 
      * Indicates whether display of closed captions is enabled.
      * 
      * This property is deprecated.
@@ -538,8 +524,6 @@ public class AVPlayer extends NSObject {
     public native boolean isClosedCaptionDisplayEnabled();
 
     /**
-     * [@property] closedCaptionDisplayEnabled
-     * 
      * Indicates whether display of closed captions is enabled.
      * 
      * This property is deprecated.
@@ -581,7 +565,7 @@ public class AVPlayer extends NSObject {
     public native boolean isExternalPlaybackActive();
 
     /**
-     * indicates whether or not audio output of the player is muted. Only affects audio muting for the player instance
+     * Indicates whether or not audio output of the player is muted. Only affects audio muting for the player instance
      * and not for the device.
      * 
      * API-Since: 7.0
@@ -591,7 +575,7 @@ public class AVPlayer extends NSObject {
     public native boolean isMuted();
 
     /**
-     * indicates whether or not audio output of the player is muted. Only affects audio muting for the player instance
+     * Indicates whether or not audio output of the player is muted. Only affects audio muting for the player instance
      * and not for the device.
      * 
      * API-Since: 7.0
@@ -613,19 +597,14 @@ public class AVPlayer extends NSObject {
     public native CMClockRef masterClock();
 
     /**
-     * mediaSelectionCriteriaForMediaCharacteristic:
-     * 
      * Returns the automatic selection criteria for media that has the specified media characteristic.
      * 
-     * @param mediaCharacteristic
-     *                            The media characteristic for which the selection criteria is to be returned. Supported
-     *                            values include AVMediaCharacteristicAudible, AVMediaCharacteristicLegible, and
-     *                            AVMediaCharacteristicVisual.
+     * - Parameter mediaCharacteristic: The media characteristic for which the selection criteria is to be returned.
+     * Supported values include AVMediaCharacteristicAudible, AVMediaCharacteristicLegible, and
+     * AVMediaCharacteristicVisual. Before macOS 13, iOS 16, tvOS 16, and watchOS 9, this method must be invoked on the
+     * main thread/queue.
      * 
-     *                            Before macOS 13, iOS 16, tvOS 16, and watchOS 9, this method must be invoked on the
-     *                            main thread/queue.
-     * 
-     *                            API-Since: 7.0
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -634,8 +613,6 @@ public class AVPlayer extends NSObject {
             @NotNull String mediaCharacteristic);
 
     /**
-     * [@property] outputObscuredDueToInsufficientExternalProtection
-     * 
      * Whether or not decoded output is being obscured due to insufficient external protection.
      * 
      * The value of this property indicates whether the player is purposefully obscuring the visual output
@@ -655,8 +632,6 @@ public class AVPlayer extends NSObject {
     public native boolean outputObscuredDueToInsufficientExternalProtection();
 
     /**
-     * pause
-     * 
      * Pauses playback.
      * 
      * Equivalent to setting the value of rate to 0.0.
@@ -670,8 +645,6 @@ public class AVPlayer extends NSObject {
     public native void pause();
 
     /**
-     * play
-     * 
      * Signals the desire to begin playback at the rate set in the defaultRate.
      * 
      * For releases up to iOS version 16.0, macOS versions 13.0, tvOS 16.0 and watchOS 9.0, this is equivalent to
@@ -689,8 +662,6 @@ public class AVPlayer extends NSObject {
     public native void play();
 
     /**
-     * playImmediatelyAtRate:
-     * 
      * Immediately plays the available media data at the specified rate.
      * 
      * When the player's currentItem has a value of NO for playbackBufferEmpty, this method causes the value of rate to
@@ -710,8 +681,6 @@ public class AVPlayer extends NSObject {
     public native void playImmediatelyAtRate(float rate);
 
     /**
-     * prerollAtRate:completionHandler:
-     * 
      * Begins loading media data to prime the render pipelines for playback from the current time with the given rate.
      * 
      * Once the completion handler is called with YES, the player's rate can be set with minimal latency.
@@ -721,11 +690,11 @@ public class AVPlayer extends NSObject {
      * AVPlayerStatusReadyToPlay.
      * This method throws an exception if the status is not AVPlayerStatusReadyToPlay.
      * 
-     * @param rate              The intended rate for subsequent playback.
-     * @param completionHandler
-     *                          The block that will be called when the preroll is either completed or is interrupted.
+     * - Parameter rate: The intended rate for subsequent playback.
+     * - Parameter completionHandler: The block that will be called when the preroll is either completed or is
+     * interrupted.
      * 
-     *                          API-Since: 6.0
+     * API-Since: 6.0
      */
     @Generated
     @Selector("prerollAtRate:completionHandler:")
@@ -733,8 +702,6 @@ public class AVPlayer extends NSObject {
             @Nullable @ObjCBlock(name = "call_prerollAtRateCompletionHandler") Block_prerollAtRateCompletionHandler completionHandler);
 
     /**
-     * [@property] rate
-     * 
      * Indicates the desired rate of playback; 0.0 means "paused", 1.0 indicates a desire to play at the natural rate of
      * the current item.
      * 
@@ -764,8 +731,6 @@ public class AVPlayer extends NSObject {
     public native float rate();
 
     /**
-     * [@property] reasonForWaitingToPlay
-     * 
      * Indicates the reason for waiting when the value of timeControlStatus is
      * AVPlayerTimeControlStatusWaitingToPlayAtSpecifiedRate
      * 
@@ -784,8 +749,6 @@ public class AVPlayer extends NSObject {
     public native String reasonForWaitingToPlay();
 
     /**
-     * removeTimeObserver:
-     * 
      * Cancels a previously registered time observer.
      * 
      * Upon return, the caller is guaranteed that no new time observer blocks will begin executing. Depending on the
@@ -804,54 +767,46 @@ public class AVPlayer extends NSObject {
      * - observer was not returned by -addPeriodicTimeObserverForInterval:queue:usingBlock:
      * - observer was not returned by -addBoundaryTimeObserverForTimes:queue:usingBlock:
      * 
-     * API-Since: 4.0
+     * - Parameter observer: An object returned by a previous call to
+     * -addPeriodicTimeObserverForInterval:queue:usingBlock: or -addBoundaryTimeObserverForTimes:queue:usingBlock:.
      * 
-     * @param observer
-     *                 An object returned by a previous call to -addPeriodicTimeObserverForInterval:queue:usingBlock: or
-     *                 -addBoundaryTimeObserverForTimes:queue:usingBlock:.
+     * API-Since: 4.0
      */
     @Generated
     @Selector("removeTimeObserver:")
     public native void removeTimeObserver(@NotNull @Mapped(ObjCObjectMapper.class) Object observer);
 
     /**
-     * replaceCurrentItemWithPlayerItem:
-     * 
      * Replaces the player's current item with the specified player item.
      * 
      * In all releases of iOS 4, invoking replaceCurrentItemWithPlayerItem: with an AVPlayerItem that's already the
      * receiver's currentItem results in an exception being raised. Starting with iOS 5, it's a no-op.
      * This method throws an exception if the item already exists in the play queue.
      * 
-     * API-Since: 4.0
+     * - Parameter item: The AVPlayerItem that will become the player's current item.
      * 
-     * @param item
-     *             The AVPlayerItem that will become the player's current item.
+     * API-Since: 4.0
      */
     @Generated
     @Selector("replaceCurrentItemWithPlayerItem:")
     public native void replaceCurrentItemWithPlayerItem(@Nullable AVPlayerItem item);
 
     /**
-     * seekToDate:
-     * 
      * Moves the playback cursor.
      * 
      * Use this method to seek to a specified time for the current player item.
      * The time seeked to may differ from the specified time for efficiency. For sample accurate seeking see
      * seekToTime:toleranceBefore:toleranceAfter:.
      * 
-     * API-Since: 4.0
+     * - Parameter date:
      * 
-     * @param date
+     * API-Since: 4.0
      */
     @Generated
     @Selector("seekToDate:")
     public native void seekToDate(@NotNull NSDate date);
 
     /**
-     * seekToDate:completionHandler:
-     * 
      * Moves the playback cursor and invokes the specified block when the seek operation has either been completed or
      * been interrupted.
      * 
@@ -865,10 +820,10 @@ public class AVPlayer extends NSObject {
      * handler will be
      * invoked immediately with the finished parameter set to NO.
      * 
-     * API-Since: 5.0
+     * - Parameter date:
+     * - Parameter completionHandler:
      * 
-     * @param date
-     * @param completionHandler
+     * API-Since: 5.0
      */
     @Generated
     @Selector("seekToDate:completionHandler:")
@@ -876,25 +831,21 @@ public class AVPlayer extends NSObject {
             @NotNull @ObjCBlock(name = "call_seekToDateCompletionHandler") Block_seekToDateCompletionHandler completionHandler);
 
     /**
-     * seekToTime:
-     * 
      * Moves the playback cursor.
      * 
      * Use this method to seek to a specified time for the current player item.
      * The time seeked to may differ from the specified time for efficiency. For sample accurate seeking see
      * seekToTime:toleranceBefore:toleranceAfter:.
      * 
-     * API-Since: 4.0
+     * - Parameter time:
      * 
-     * @param time
+     * API-Since: 4.0
      */
     @Generated
     @Selector("seekToTime:")
     public native void seekToTime(@ByValue CMTime time);
 
     /**
-     * seekToTime:completionHandler:
-     * 
      * Moves the playback cursor and invokes the specified block when the seek operation has either been completed or
      * been interrupted.
      * 
@@ -908,10 +859,10 @@ public class AVPlayer extends NSObject {
      * handler will be
      * invoked immediately with the finished parameter set to NO.
      * 
-     * API-Since: 5.0
+     * - Parameter time:
+     * - Parameter completionHandler:
      * 
-     * @param time
-     * @param completionHandler
+     * API-Since: 5.0
      */
     @Generated
     @Selector("seekToTime:completionHandler:")
@@ -919,8 +870,6 @@ public class AVPlayer extends NSObject {
             @NotNull @ObjCBlock(name = "call_seekToTimeCompletionHandler") Block_seekToTimeCompletionHandler completionHandler);
 
     /**
-     * seekToTime:toleranceBefore:toleranceAfter:
-     * 
      * Moves the playback cursor within a specified time bound.
      * 
      * Use this method to seek to a specified time for the current player item.
@@ -931,11 +880,11 @@ public class AVPlayer extends NSObject {
      * Messaging this method with beforeTolerance:kCMTimePositiveInfinity and afterTolerance:kCMTimePositiveInfinity is
      * the same as messaging seekToTime: directly.
      * 
-     * API-Since: 4.0
+     * - Parameter time:
+     * - Parameter toleranceBefore:
+     * - Parameter toleranceAfter:
      * 
-     * @param time
-     * @param toleranceBefore
-     * @param toleranceAfter
+     * API-Since: 4.0
      */
     @Generated
     @Selector("seekToTime:toleranceBefore:toleranceAfter:")
@@ -943,8 +892,6 @@ public class AVPlayer extends NSObject {
             @ByValue CMTime toleranceAfter);
 
     /**
-     * seekToTime:toleranceBefore:toleranceAfter:completionHandler:
-     * 
      * Moves the playback cursor within a specified time bound and invokes the specified block when the seek operation
      * has either been completed or been interrupted.
      * 
@@ -963,11 +910,11 @@ public class AVPlayer extends NSObject {
      * finished parameter set to YES. If no item is attached, the completion handler will be invoked immediately with
      * the finished parameter set to NO.
      * 
-     * API-Since: 5.0
+     * - Parameter time:
+     * - Parameter toleranceBefore:
+     * - Parameter toleranceAfter:
      * 
-     * @param time
-     * @param toleranceBefore
-     * @param toleranceAfter
+     * API-Since: 5.0
      */
     @Generated
     @Selector("seekToTime:toleranceBefore:toleranceAfter:completionHandler:")
@@ -976,8 +923,6 @@ public class AVPlayer extends NSObject {
             @NotNull @ObjCBlock(name = "call_seekToTimeToleranceBeforeToleranceAfterCompletionHandler") Block_seekToTimeToleranceBeforeToleranceAfterCompletionHandler completionHandler);
 
     /**
-     * [@property] actionAtItemEnd
-     * 
      * Indicates the action that the player should perform when playback of an item reaches its end time.
      * 
      * This property throws an exception if set to AVPlayerActionAtItemEndAdvance on an AVPlayer which is not an
@@ -990,8 +935,8 @@ public class AVPlayer extends NSObject {
     public native void setActionAtItemEnd(@NInt long value);
 
     /**
-     * Indicates whether the player allows AirPlay Video playback. The default value is YES.
-     * This property is deprecated. Use AVPlayer's -allowsExternalPlayback instead.
+     * Indicates whether the player allows AirPlay Video playback. The default value is YES. This property is
+     * deprecated. Use AVPlayer's -allowsExternalPlayback instead.
      * 
      * API-Since: 5.0
      * Deprecated-Since: 6.0
@@ -1012,6 +957,7 @@ public class AVPlayer extends NSObject {
 
     /**
      * Indicates whether the receiver should apply the current selection criteria automatically to AVPlayerItems.
+     * 
      * For clients linked against the iOS 7 SDK or later or against the macOS 10.9 SDK or later, the default is YES. For
      * all others, the default is NO.
      * 
@@ -1025,10 +971,7 @@ public class AVPlayer extends NSObject {
     public native void setAppliesMediaSelectionCriteriaAutomatically(boolean value);
 
     /**
-     * [@property] automaticallyWaitsToMinimizeStalling
-     * 
      * Indicates that the player is allowed to delay playback at the specified rate in order to minimize stalling
-     * 
      * 
      * When this property is YES, whenever 1) the rate is set from zero to non-zero or 2) the playback buffer becomes
      * empty and playback stalls, the player will attempt to determine if, at the specified rate, its currentItem will
@@ -1100,8 +1043,6 @@ public class AVPlayer extends NSObject {
     public native void setMasterClock(@Nullable CMClockRef value);
 
     /**
-     * setMediaSelectionCriteria:forMediaCharacteristic:
-     * 
      * Applies automatic selection criteria for media that has the specified media characteristic.
      * 
      * Criteria will be applied to an AVPlayerItem when:
@@ -1116,14 +1057,12 @@ public class AVPlayer extends NSObject {
      * 
      * Before macOS 13, iOS 16, tvOS 16, and watchOS 9, this method must be invoked on the main thread/queue.
      * 
-     * API-Since: 7.0
+     * - Parameter criteria: An instance of AVPlayerMediaSelectionCriteria.
+     * - Parameter mediaCharacteristic: The media characteristic for which the selection criteria are to be applied.
+     * Supported values include AVMediaCharacteristicAudible, AVMediaCharacteristicLegible, and
+     * AVMediaCharacteristicVisual.
      * 
-     * @param criteria
-     *                            An instance of AVPlayerMediaSelectionCriteria.
-     * @param mediaCharacteristic
-     *                            The media characteristic for which the selection criteria are to be applied. Supported
-     *                            values include AVMediaCharacteristicAudible, AVMediaCharacteristicLegible, and
-     *                            AVMediaCharacteristicVisual.
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setMediaSelectionCriteria:forMediaCharacteristic:")
@@ -1131,8 +1070,6 @@ public class AVPlayer extends NSObject {
             @Nullable AVPlayerMediaSelectionCriteria criteria, @NotNull String mediaCharacteristic);
 
     /**
-     * [@property] rate
-     * 
      * Indicates the desired rate of playback; 0.0 means "paused", 1.0 indicates a desire to play at the natural rate of
      * the current item.
      * 
@@ -1162,8 +1099,6 @@ public class AVPlayer extends NSObject {
     public native void setRate(float value);
 
     /**
-     * setRate:time:atHostTime:
-     * 
      * Simultaneously sets the playback rate and the relationship between the current item's current time and host time.
      * 
      * You can use this function to synchronize playback with an external activity.
@@ -1183,17 +1118,14 @@ public class AVPlayer extends NSObject {
      * 
      * Before macOS 13, iOS 16, tvOS 16, and watchOS 9, this method must be invoked on the main thread/queue.
      * 
-     * @param itemTime      The time to start playback from, specified precisely (i.e., with zero tolerance).
-     *                      Pass kCMTimeInvalid to use the current item's current time.
-     * @param hostClockTime
-     *                      The host time at which to start playback.
-     *                      If hostClockTime is specified, the player will not ensure that media data is loaded before
-     *                      the timebase starts moving.
-     *                      If hostClockTime is kCMTimeInvalid, the rate and time will be set together, but without
-     *                      external synchronization;
-     *                      a host time in the near future will be used, allowing some time for media data loading.
+     * - Parameter itemTime: The time to start playback from, specified precisely (i.e., with zero tolerance). Pass
+     * kCMTimeInvalid to use the current item's current time.
+     * - Parameter hostClockTime: The host time at which to start playback. If hostClockTime is specified, the player
+     * will not ensure that media data is loaded before the timebase starts moving. If hostClockTime is kCMTimeInvalid,
+     * the rate and time will be set together, but without external synchronization; a host time in the near future will
+     * be used, allowing some time for media data loading.
      * 
-     *                      API-Since: 6.0
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setRate:time:atHostTime:")
@@ -1202,6 +1134,7 @@ public class AVPlayer extends NSObject {
     /**
      * Indicates whether the player should automatically switch to AirPlay Video while AirPlay Screen is active in order
      * to play video content, switching back to AirPlay Screen as soon as playback is done.
+     * 
      * The default value is NO. Has no effect if allowsAirPlayVideo is NO.
      * This property is deprecated. Use AVPlayer's -usesExternalPlaybackWhileExternalScreenIsActive instead.
      * 
@@ -1214,10 +1147,10 @@ public class AVPlayer extends NSObject {
     public native void setUsesAirPlayVideoWhileAirPlayScreenIsActive(boolean value);
 
     /**
-     * Indicates whether the player should automatically switch to "external playback" mode while the "external
-     * screen" mode is active in order to play video content and switching back to "external screen" mode as soon
-     * as playback is done. Brief transition may be visible on the external display when automatically switching
-     * between the two modes. The default value is NO. Has no effect if allowsExternalPlayback is NO.
+     * Indicates whether the player should automatically switch to "external playback" mode while the "external screen"
+     * mode is active in order to play video content and switching back to "external screen" mode as soon as playback is
+     * done. Brief transition may be visible on the external display when automatically switching between the two modes.
+     * The default value is NO. Has no effect if allowsExternalPlayback is NO.
      * 
      * API-Since: 6.0
      */
@@ -1242,8 +1175,6 @@ public class AVPlayer extends NSObject {
     public native void setVolume(float value);
 
     /**
-     * [@property] status
-     * 
      * The ability of the receiver to be used for playback.
      * 
      * The value of this property is an AVPlayerStatus that indicates whether the receiver can be used for playback.
@@ -1261,8 +1192,6 @@ public class AVPlayer extends NSObject {
     public native long status();
 
     /**
-     * [@property] timeControlStatus
-     * 
      * Indicates whether playback is currently paused indefinitely, suspended while waiting for appropriate conditions,
      * or in progress.
      * 
@@ -1284,6 +1213,7 @@ public class AVPlayer extends NSObject {
     /**
      * Indicates whether the player should automatically switch to AirPlay Video while AirPlay Screen is active in order
      * to play video content, switching back to AirPlay Screen as soon as playback is done.
+     * 
      * The default value is NO. Has no effect if allowsAirPlayVideo is NO.
      * This property is deprecated. Use AVPlayer's -usesExternalPlaybackWhileExternalScreenIsActive instead.
      * 
@@ -1296,10 +1226,10 @@ public class AVPlayer extends NSObject {
     public native boolean usesAirPlayVideoWhileAirPlayScreenIsActive();
 
     /**
-     * Indicates whether the player should automatically switch to "external playback" mode while the "external
-     * screen" mode is active in order to play video content and switching back to "external screen" mode as soon
-     * as playback is done. Brief transition may be visible on the external display when automatically switching
-     * between the two modes. The default value is NO. Has no effect if allowsExternalPlayback is NO.
+     * Indicates whether the player should automatically switch to "external playback" mode while the "external screen"
+     * mode is active in order to play video content and switching back to "external screen" mode as soon as playback is
+     * done. Brief transition may be visible on the external display when automatically switching between the two modes.
+     * The default value is NO. Has no effect if allowsExternalPlayback is NO.
      * 
      * API-Since: 6.0
      */
@@ -1366,8 +1296,6 @@ public class AVPlayer extends NSObject {
     }
 
     /**
-     * [@property] availableHDRModes
-     * 
      * An AVPlayerHDRMode value that indicates the HDR modes the device can play to an appropriate display. A value of 0
      * indicates that no HDR modes are supported.
      * 
@@ -1377,7 +1305,7 @@ public class AVPlayer extends NSObject {
      * currently playing, or whether video is playing on an HDR display.
      * 
      * API-Since: 11.2
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 26.0
      * Deprecated-Message: Use eligibleForHDRPlayback instead
      */
     @Deprecated
@@ -1387,8 +1315,6 @@ public class AVPlayer extends NSObject {
     public static native long availableHDRModes();
 
     /**
-     * [@property] preventsDisplaySleepDuringVideoPlayback
-     * 
      * Indicates whether video playback prevents display and device sleep.
      * 
      * Default is YES on iOS, tvOS and in Mac Catalyst apps. Default is NO on macOS.
@@ -1404,8 +1330,6 @@ public class AVPlayer extends NSObject {
     public native boolean preventsDisplaySleepDuringVideoPlayback();
 
     /**
-     * [@property] preventsDisplaySleepDuringVideoPlayback
-     * 
      * Indicates whether video playback prevents display and device sleep.
      * 
      * Default is YES on iOS, tvOS and in Mac Catalyst apps. Default is NO on macOS.
@@ -1421,8 +1345,6 @@ public class AVPlayer extends NSObject {
     public native void setPreventsDisplaySleepDuringVideoPlayback(boolean value);
 
     /**
-     * [@property] eligibleForHDRPlayback
-     * 
      * Indicates whether HDR content can be played to an appropriate display.
      * 
      * This property is YES if an HDR display is available and the device is capable of playing HDR content from an
@@ -1437,8 +1359,6 @@ public class AVPlayer extends NSObject {
     public static native boolean eligibleForHDRPlayback();
 
     /**
-     * [@property] audiovisualBackgroundPlaybackPolicy
-     * 
      * Controls the policy to be used in deciding how playback of audiovisual content should continue while the
      * application transitions to background.
      * 
@@ -1457,8 +1377,6 @@ public class AVPlayer extends NSObject {
     public native long audiovisualBackgroundPlaybackPolicy();
 
     /**
-     * [@property] playbackCoordinator
-     * 
      * The playback coordinator for this player.
      * 
      * If the playback coordinator is connected to other participants, rate changes and seeks on the current item will
@@ -1485,8 +1403,6 @@ public class AVPlayer extends NSObject {
     public native AVPlayerPlaybackCoordinator playbackCoordinator();
 
     /**
-     * [@property] audiovisualBackgroundPlaybackPolicy
-     * 
      * Controls the policy to be used in deciding how playback of audiovisual content should continue while the
      * application transitions to background.
      * 
@@ -1504,8 +1420,6 @@ public class AVPlayer extends NSObject {
     public native void setAudiovisualBackgroundPlaybackPolicy(@NInt long value);
 
     /**
-     * [@property] sourceClock
-     * 
      * Set to override the automatic choice of source clock for item timebases.
      * 
      * NULL by default. This is most useful for synchronizing video-only movies with audio played via other means.
@@ -1519,8 +1433,6 @@ public class AVPlayer extends NSObject {
     public native void setSourceClock(@Nullable CMClockRef value);
 
     /**
-     * [@property] sourceClock
-     * 
      * Set to override the automatic choice of source clock for item timebases.
      * 
      * NULL by default. This is most useful for synchronizing video-only movies with audio played via other means.
@@ -1535,8 +1447,6 @@ public class AVPlayer extends NSObject {
     public native CMClockRef sourceClock();
 
     /**
-     * [@property] defaultRate
-     * 
      * Indicates the rate at which to start playback when play is called; defaults to 1.0.
      * 
      * Setting this property does not imply playback starts automatically at this rate. Clients still have to kick off
@@ -1548,7 +1458,6 @@ public class AVPlayer extends NSObject {
      * The effective rate of playback may still differ from the default rate subject to restrictions imposed by the
      * system. See documentation for the rate property for a discussion on when the desired rate does not translate to
      * effective rate.
-     * 
      * 
      * API-Since: 16.0
      */
@@ -1557,8 +1466,6 @@ public class AVPlayer extends NSObject {
     public native float defaultRate();
 
     /**
-     * [@property] defaultRate
-     * 
      * Indicates the rate at which to start playback when play is called; defaults to 1.0.
      * 
      * Setting this property does not imply playback starts automatically at this rate. Clients still have to kick off
@@ -1571,7 +1478,6 @@ public class AVPlayer extends NSObject {
      * system. See documentation for the rate property for a discussion on when the desired rate does not translate to
      * effective rate.
      * 
-     * 
      * API-Since: 16.0
      */
     @Generated
@@ -1579,13 +1485,12 @@ public class AVPlayer extends NSObject {
     public native void setDefaultRate(float value);
 
     /**
-     * [@property] videoOutput
-     * 
      * The video output for this player, if one was set.
      * 
      * When an AVPlayerVideoOutput is associated with an AVPlayer, the AVPlayerVideoOutput can then be used to receive
      * video-related samples during playback.
-     * [@note] If an output is set while AVPlayer has a current item it may cause different data channels to be selected
+     * 
+     * - NOTE: If an output is set while AVPlayer has a current item it may cause different data channels to be selected
      * for that item, which can have a performance impact.
      * As a result, when possible, it is best to set an output before setting items on an AVPlayer.
      * 
@@ -1601,13 +1506,12 @@ public class AVPlayer extends NSObject {
     public static native boolean useStoredAccessor();
 
     /**
-     * [@property] videoOutput
-     * 
      * The video output for this player, if one was set.
      * 
      * When an AVPlayerVideoOutput is associated with an AVPlayer, the AVPlayerVideoOutput can then be used to receive
      * video-related samples during playback.
-     * [@note] If an output is set while AVPlayer has a current item it may cause different data channels to be selected
+     * 
+     * - NOTE: If an output is set while AVPlayer has a current item it may cause different data channels to be selected
      * for that item, which can have a performance impact.
      * As a result, when possible, it is best to set an output before setting items on an AVPlayer.
      * 
@@ -1617,4 +1521,85 @@ public class AVPlayer extends NSObject {
     @Selector("videoOutput")
     @Nullable
     public native AVPlayerVideoOutput videoOutput();
+
+    /**
+     * Whether the player's audio output is suppressed due to being on a non-mixable audio route.
+     * 
+     * If YES, the player's audio output is suppressed. The player is muted while on a non-mixable audio route and
+     * cannot play audio. The player's mute property does not reflect the true mute status.
+     * If NO, the player's audio output is not suppressed. The player may be muted or unmuted while on a non-mixable
+     * audio route and can play audio. The player's mute property reflects the true mute status.
+     * In a non-mixable audio route, only one player can play audio. To play audio in non-mixable states, the player
+     * must be specified as the priority participant in
+     * AVRoutingPlaybackArbiter.preferredParticipantForNonMixableAudioRoutes. If this player becomes the preferred
+     * player, it will gain audio priority and suppress the audio of all other players. If another participant becomes
+     * the preferred participant, this player will lose audio priority and have their audio suppressed. This property is
+     * key-value observed.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("audioOutputSuppressedDueToNonMixableAudioRoute")
+    public native boolean audioOutputSuppressedDueToNonMixableAudioRoute();
+
+    /**
+     * AVPlayer and other AVFoundation types can optionally be observed using Swift Observation.
+     * 
+     * When set to YES, new instances of AVPlayer, AVQueuePlayer, AVPlayerItem, and AVPlayerItemTrack are observable
+     * with Swift Observation. The default value is NO (not observable). An exception is thrown if this property is set
+     * YES after initializing any objects of these types, or if it is set to NO after any observable objects are
+     * initialized. In other words, all objects of these types must either be observable or not observable in an
+     * application instance.
+     * 
+     * For more information regarding management of class objects in SwiftUI, please refer to
+     * https://developer.apple.com/documentation/swiftui/state.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isObservationEnabled")
+    public static native boolean isObservationEnabled();
+
+    /**
+     * Indicates the priority of this player for network bandwidth resource distribution.
+     * 
+     * This value determines the priority of the player during network resource allocation among all other players
+     * within the same application process. The default value for this is AVPlayerNetworkResourcePriorityDefault.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("networkResourcePriority")
+    @NInt
+    public native long networkResourcePriority();
+
+    /**
+     * Indicates the priority of this player for network bandwidth resource distribution.
+     * 
+     * This value determines the priority of the player during network resource allocation among all other players
+     * within the same application process. The default value for this is AVPlayerNetworkResourcePriorityDefault.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setNetworkResourcePriority:")
+    public native void setNetworkResourcePriority(@NInt long value);
+
+    /**
+     * AVPlayer and other AVFoundation types can optionally be observed using Swift Observation.
+     * 
+     * When set to YES, new instances of AVPlayer, AVQueuePlayer, AVPlayerItem, and AVPlayerItemTrack are observable
+     * with Swift Observation. The default value is NO (not observable). An exception is thrown if this property is set
+     * YES after initializing any objects of these types, or if it is set to NO after any observable objects are
+     * initialized. In other words, all objects of these types must either be observable or not observable in an
+     * application instance.
+     * 
+     * For more information regarding management of class objects in SwiftUI, please refer to
+     * https://developer.apple.com/documentation/swiftui/state.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setObservationEnabled:")
+    public static native void setObservationEnabled(boolean value);
 }

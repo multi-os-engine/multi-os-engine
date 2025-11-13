@@ -15,7 +15,7 @@ public final class PKAddSecureElementPassErrorCode {
     /**
      * API-Since: 13.4
      * Deprecated-Since: 18.0
-     * Deprecated-Message: Use PKAddSecureElementPassGeneralError instead.
+     * Deprecated-Message: Use PKAddSecureElementPassGenericError instead.
      */
     @Deprecated @Generated @NInt public static final long UnknownError = 0x0000000000000000L;
     /**

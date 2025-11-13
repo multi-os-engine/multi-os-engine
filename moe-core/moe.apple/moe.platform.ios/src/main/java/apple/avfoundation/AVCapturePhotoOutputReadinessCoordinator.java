@@ -270,7 +270,7 @@ public class AVCapturePhotoOutputReadinessCoordinator extends NSObject {
      * 
      * Tracking automatically stops when -[AVCapturePhotoOutput capturePhotoWithSettings:delegate] is called with a
      * photo settings objects with the same or a newer uniqueID, but in cases where an error or other condition prevents
-     * calling -capturePhotoWithSettings:delegate tracking should be explictly stopped to ensure the captureReadiness
+     * calling -capturePhotoWithSettings:delegate tracking should be explicitly stopped to ensure the captureReadiness
      * value is up to date. When called on the main queue the delegate callback is invoked synchronously before
      * returning to ensure shutter availability is updated immediately.
      * 

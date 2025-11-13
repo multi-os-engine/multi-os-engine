@@ -29,6 +29,13 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
+ * Event object that would be passed to the callback handler upon an event
+ * 
+ * Discussion:
+ * Instances of `CLMonitoringEvent` contain detailed information about
+ * an event in the monitoring of a `CLCondition` by a `CLMonitor`.
+ * 
+ * 
  * API-Since: 17.0
  */
 @Generated

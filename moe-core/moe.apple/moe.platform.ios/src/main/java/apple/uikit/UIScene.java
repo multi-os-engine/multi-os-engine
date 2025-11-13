@@ -315,4 +315,23 @@ public class UIScene extends UIResponder {
     @Selector("systemProtectionManager")
     @Nullable
     public native UISceneSystemProtectionManager systemProtectionManager();
+
+    /**
+     * Conditions that help the system shell determine whether the scene should be destroyed for certain actions
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("destructionConditions")
+    @NotNull
+    public native NSSet<? extends UISceneDestructionCondition> destructionConditions();
+
+    /**
+     * Conditions that help the system shell determine whether the scene should be destroyed for certain actions
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setDestructionConditions:")
+    public native void setDestructionConditions(@NotNull NSSet<? extends UISceneDestructionCondition> value);
 }

@@ -3012,9 +3012,27 @@ public final class CoreVideo {
      * curve.
      * 
      * The value is a CFString holding fully specified reverse DNS identifier.
-     * Content captured in Apple Log will have this key set to kCVImageBufferLogTransferFunction_AppleLog.
+     * Log is a specific video format usually processed in a camera's ISP. A Log video format usually defines:
+     * Scene-referred color primaries designed to preserve the chromaticity range captured by a camera sensor. In
+     * cinematography, "scene-referred" color primaries refers to a color space designed to accurately preserve the
+     * chromaticity and dynamic range directly captured by a camera sensor.
+     * A specific gamma curve (or transfer characteristic) tailored to capturing the full dynamic range from the sensor.
+     * This gamma curve is usually shaped like a log curve (hence the name Log).
+     * A set of matrix transforms to go from RGB to Y'CbCr (Y'CbCr being the most common format used to store the bits
+     * compressed into a file).
+     * As described above, a Log video format defines a whole color space (even though the “log” part of the name comes
+     * only from the “transfer characteristic” or gamma curve)
+     * Content captured in Apple Log will have this key set to kCVImageBufferLogTransferFunction_AppleLog or
+     * kCVImageBufferLogTransferFunction_AppleLog2.
      * [@constant] kCVImageBufferLogTransferFunction_AppleLog
      * Indicates the Apple Log identifier.
+     * [@constant] kCVImageBufferLogTransferFunction_AppleLog2
+     * Indicates the Apple Log 2 identifier.
+     * To use Apple Log 2, set other color attachments as follows:
+     * kCVImageBufferColorPrimariesKey = undefined or absent
+     * kCVImageBufferTransferFunctionKey = undefined or absent
+     * kCVImageBufferYCbCrMatrixKey = kCVImageBufferYCbCrMatrix_ITU_R_2020
+     * https://developer.apple.com/download/all/?q=Apple%20log%20profile
      * 
      * You can download the Apple Log Profile White Paper from the Apple Developer Downloads website.
      * 
@@ -3160,4 +3178,187 @@ public final class CoreVideo {
 
     @Generated public static final double __COREVIDEO_CVMETALBUFFER_H__ = 1.0;
     @Generated public static final double __COREVIDEO__CVMETALBUFFERCACHE_H__ = 1.0;
+
+    /**
+     * [@function] CVImageBufferGetColorSpace
+     * 
+     * Returns the color space of a CVImageBuffer.
+     * 
+     * @param imageBuffer A CVImageBuffer that you wish to retrieve the color space from.
+     * @return A CGColorSpaceRef representing the color space of the buffer.
+     *         Returns NULL if called with a non-CVImageBufferRef type or NULL.
+     * 
+     *         API-Since: 4.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native CGColorSpaceRef CVImageBufferGetColorSpace(@NotNull CVBufferRef imageBuffer);
+
+    /**
+     * [@function] CVPixelBufferIsCompatibleWithAttributes
+     * 
+     * Returns true if given pixel buffer is compatible with pixelBufferAttributes dictionary.
+     * 
+     * @param pixelBuffer PixelBuffer to check for compatibility.
+     * @param attributes  Creation attributes which pixel buffer should have.
+     * 
+     *                    API-Since: 4.0
+     */
+    @Generated
+    @CFunction
+    public static native byte CVPixelBufferIsCompatibleWithAttributes(@NotNull CVBufferRef pixelBuffer,
+            @Nullable CFDictionaryRef attributes);
+
+    /**
+     * [@function] CVPixelFormatTypeCopyFourCharCodeString
+     * 
+     * Creates a string with a formatted representation of a pixel format
+     * 
+     * @param pixelFormat The pixel format to convert
+     * @return A string with a user displayable conversion of a pixel format.
+     * 
+     *         API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native CFStringRef CVPixelFormatTypeCopyFourCharCodeString(int pixelFormat);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCVImageBufferLogTransferFunction_AppleLog2();
+
+    /**
+     * CFDictionary
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCVImageBufferDisplayMaskRectangleKey();
+
+    /**
+     * CFNumber(uint16_t)
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCVImageBufferDisplayMaskRectangle_ReferenceRasterWidthKey();
+
+    /**
+     * CFNumber(uint16_t)
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCVImageBufferDisplayMaskRectangle_ReferenceRasterHeightKey();
+
+    /**
+     * CFNumber(uint16_t)
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCVImageBufferDisplayMaskRectangle_RectangleLeftKey();
+
+    /**
+     * CFNumber(uint16_t)
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCVImageBufferDisplayMaskRectangle_RectangleWidthKey();
+
+    /**
+     * CFNumber(uint16_t)
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCVImageBufferDisplayMaskRectangle_RectangleTopKey();
+
+    /**
+     * CFNumber(uint16_t)
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCVImageBufferDisplayMaskRectangle_RectangleHeightKey();
+
+    /**
+     * CFDictionary
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCVImageBufferDisplayMaskRectangleStereoLeftKey();
+
+    /**
+     * CFDictionary
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCVImageBufferDisplayMaskRectangleStereoRightKey();
+
+    /**
+     * CFArray( CFNumber(uint16_t) pairs)
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCVImageBufferDisplayMaskRectangle_LeftEdgePointsKey();
+
+    /**
+     * CFArray( CFNumber(uint16_t) pairs)
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCVImageBufferDisplayMaskRectangle_RightEdgePointsKey();
+
+    /**
+     * [@const] kCVPixelBufferIOSurfacePurgeableKey
+     * 
+     * Key sets the IOSurface backed memory allocation for CVPixelBuffer as purgable and volatile.
+     * 
+     * A purgeable IOSurface is capable of being switched between non-volatile, volatile and empty states using
+     * IOSurfaceSetPurgeable. When in the volatile state, the OS is permitted to instantly change its state to empty and
+     * remove all its memory pages. Clients should set the IOSurfaces to the non-volatile state while they are in use
+     * and the volatile state when their need and contents is optional/speculative and OK to discard in response to
+     * system memory demand. See IOSurfaceSetPurgeable for more details. This key is only effective for CVPixelBuffers
+     * that are backed by IOSurface.
+     * 
+     * API-Since: 15.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCVPixelBufferIOSurfacePurgeableKey();
 }

@@ -481,7 +481,7 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
      * This controls the camera selection behavior used while recording a movie, when enabled through
      * primaryConstituentDeviceSwitchingBehaviorForRecordingEnabled. Setting the switching behavior to anything other
      * than AVCapturePrimaryConstituentDeviceSwitchingBehaviorUnsupported when connected to an AVCaptureDevice that does
-     * not suport constituent device selection throws an NSInvalidArgumentException. Setting
+     * not support constituent device selection throws an NSInvalidArgumentException. Setting
      * restrictedSwitchingBehaviorConditions to something other than
      * AVCapturePrimaryConstituentDeviceRestrictedSwitchingBehaviorConditionNone while setting switchingBehavior to
      * something other than AVCapturePrimaryConstituentDeviceSwitchingBehaviorRestricted throws an
@@ -528,6 +528,12 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
      * `minAvailableVideoZoomFactor`, and `maxAvailableVideoZoomFactor` to the field of view of the narrower camera in
      * the pair.
      * 
+     * When spatialVideoCaptureEnabled is true, setting -[AVCaptureDeviceInput activeVideoMinFrameDuration] or
+     * -[AVCaptureDeviceInput activeVideoMaxFrameDuration] throws an NSInvalidArgumentException.
+     * 
+     * Enabling this property throws an NSInvalidArgumentException if -[AVCaptureDevice isVideoFrameDurationLocked] or
+     * -[AVCaptureDevice isFollowingExternalSyncDevice] is true.
+     * 
      * API-Since: 18.0
      */
     @Generated
@@ -561,6 +567,12 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
      * On iOS, enabling spatial video will overwrite the connected AVCaptureDevice's `videoZoomFactor`,
      * `minAvailableVideoZoomFactor`, and `maxAvailableVideoZoomFactor` to the field of view of the narrower camera in
      * the pair.
+     * 
+     * When spatialVideoCaptureEnabled is true, setting -[AVCaptureDeviceInput activeVideoMinFrameDuration] or
+     * -[AVCaptureDeviceInput activeVideoMaxFrameDuration] throws an NSInvalidArgumentException.
+     * 
+     * Enabling this property throws an NSInvalidArgumentException if -[AVCaptureDevice isVideoFrameDurationLocked] or
+     * -[AVCaptureDevice isFollowingExternalSyncDevice] is true.
      * 
      * API-Since: 18.0
      */

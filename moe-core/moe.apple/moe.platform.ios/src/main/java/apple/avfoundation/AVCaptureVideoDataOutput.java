@@ -550,6 +550,9 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
      * focus, exposure, and white balance changes are quicker. AVCaptureVideoDataOutput assumes that the buffers are
      * being used for on-screen preview rather than recording.
      * 
+     * When AVCaptureDevice.activeFormat supports ProRes Raw video, setting deliversPreviewSizedOutputBuffers gives out
+     * buffers with 422 format that can be used for proxy video recording.
+     * 
      * API-Since: 13.0
      */
     @Generated
@@ -589,6 +592,9 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
      * automaticallyConfiguresOutputBufferDimensions to NO. When deliversPreviewSizedOutputBuffers is set to YES, auto
      * focus, exposure, and white balance changes are quicker. AVCaptureVideoDataOutput assumes that the buffers are
      * being used for on-screen preview rather than recording.
+     * 
+     * When AVCaptureDevice.activeFormat supports ProRes Raw video, setting deliversPreviewSizedOutputBuffers gives out
+     * buffers with 422 format that can be used for proxy video recording.
      * 
      * API-Since: 13.0
      */
@@ -651,4 +657,121 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Indicates whether the receiver should prepare the cellular radio for imminent network activity.
+     * 
+     * Apps that scan video data output buffers for information that will result in network activity (such as detecting
+     * a QRCode containing a URL) should set this property `true` to allow the cellular radio to prepare for an imminent
+     * network request. Enabling this property requires a lengthy reconfiguration of the capture render pipeline, so you
+     * should set this property to `true` before calling ``AVCaptureSession/startRunning``.
+     * 
+     * Using this API requires your app to adopt the entitlement
+     * `com.apple.developer.avfoundation.video-data-output-prepares-cellular-radio-for-machine-readable-code-scanning`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("preparesCellularRadioForNetworkConnection")
+    public native boolean preparesCellularRadioForNetworkConnection();
+
+    /**
+     * Indicates whether the receiver should preserve dynamic HDR metadata as an attachment on the output sample
+     * buffer's underlying pixel buffer.
+     * 
+     * Set this property to `true` if you wish to use ``AVCaptureVideoDataOutput`` with ``AVAssetWriter`` to record HDR
+     * movies. You must also set ``kVTCompressionPropertyKey_PreserveDynamicHDRMetadata`` to `true` in the compression
+     * settings you pass to your ``AVAssetWriterInput``. These compression settings are represented under the
+     * ``AVVideoCompressionPropertiesKey`` sub-dictionary of your top-level AVVideoSettings (see
+     * <doc://com.apple.documentation/documentation/avfoundation/video-settings>). When you set this key to `true`,
+     * performance improves, as the encoder is able to skip HDR metadata calculation for every frame. The default value
+     * is `false`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("preservesDynamicHDRMetadata")
+    public native boolean preservesDynamicHDRMetadata();
+
+    /**
+     * Indicates the recommended media timescale for the video track.
+     * 
+     * - Returns: The recommended media timescale based on the active capture session's inputs. It is never less than
+     * 600. It may or may not be a multiple of 600.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("recommendedMediaTimeScaleForAssetWriter")
+    public native int recommendedMediaTimeScaleForAssetWriter();
+
+    /**
+     * Recommends movie-level metadata for a particular video codec type and output file type, to be used with an asset
+     * writer input.
+     * 
+     * - Parameter videoCodecType: The desired ``AVVideoCodecKey`` to be used for compression (see
+     * <doc://com.apple.documentation/documentation/avfoundation/video-settings>).
+     * - Parameter outputFileType: Specifies the UTI of the file type to be written (see
+     * <doc://com.apple.documentation/documentation/avfoundation/avfiletype>).
+     * - Returns: A fully populated array of ``AVMetadataItem`` objects compatible with ``AVAssetWriter``.
+     * 
+     * The value of this property is an array of ``AVMetadataItem`` objects representing the collection of top-level
+     * metadata to be written in each output file. This array is suitable to use as the ``AVAssetWriter/metadata``
+     * property before you have called ``AVAssetWriter/startWriting``. For more details see
+     * <doc://com.apple.documentation/documentation/avfoundation/avassetwriter/startwriting()>.
+     * 
+     * The ``videoCodecType`` string you provide must be present in
+     * ``availableVideoCodecTypesForAssetWriterWithOutputFileType:`` array, or an `NSInvalidArgumentException` is
+     * thrown.
+     * 
+     * For clients writing files using a ProRes Raw codec type, white balance must be locked (call
+     * ``AVCaptureDevice/setWhiteBalanceModeLockedWithDeviceWhiteBalanceGains:completionHandler:``) before querying this
+     * property, or an `NSIvalidArgumentException` is thrown.
+     * 
+     * - Note: The array of metadata is dependent on the current configuration of the receiver's ``AVCaptureSession``
+     * and its inputs. The array may change when the session's configuration changes. As such, you should configure and
+     * start your session first, then query this method.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("recommendedMovieMetadataForVideoCodecType:assetWriterOutputFileType:")
+    @Nullable
+    public native NSArray<? extends AVMetadataItem> recommendedMovieMetadataForVideoCodecTypeAssetWriterOutputFileType(
+            @NotNull String videoCodecType, @NotNull String outputFileType);
+
+    /**
+     * Indicates whether the receiver should prepare the cellular radio for imminent network activity.
+     * 
+     * Apps that scan video data output buffers for information that will result in network activity (such as detecting
+     * a QRCode containing a URL) should set this property `true` to allow the cellular radio to prepare for an imminent
+     * network request. Enabling this property requires a lengthy reconfiguration of the capture render pipeline, so you
+     * should set this property to `true` before calling ``AVCaptureSession/startRunning``.
+     * 
+     * Using this API requires your app to adopt the entitlement
+     * `com.apple.developer.avfoundation.video-data-output-prepares-cellular-radio-for-machine-readable-code-scanning`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setPreparesCellularRadioForNetworkConnection:")
+    public native void setPreparesCellularRadioForNetworkConnection(boolean value);
+
+    /**
+     * Indicates whether the receiver should preserve dynamic HDR metadata as an attachment on the output sample
+     * buffer's underlying pixel buffer.
+     * 
+     * Set this property to `true` if you wish to use ``AVCaptureVideoDataOutput`` with ``AVAssetWriter`` to record HDR
+     * movies. You must also set ``kVTCompressionPropertyKey_PreserveDynamicHDRMetadata`` to `true` in the compression
+     * settings you pass to your ``AVAssetWriterInput``. These compression settings are represented under the
+     * ``AVVideoCompressionPropertiesKey`` sub-dictionary of your top-level AVVideoSettings (see
+     * <doc://com.apple.documentation/documentation/avfoundation/video-settings>). When you set this key to `true`,
+     * performance improves, as the encoder is able to skip HDR metadata calculation for every frame. The default value
+     * is `false`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setPreservesDynamicHDRMetadata:")
+    public native void setPreservesDynamicHDRMetadata(boolean value);
 }

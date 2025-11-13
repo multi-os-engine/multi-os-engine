@@ -31,8 +31,6 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * AVMetricEvent
- * 
  * An abstract base class representing metric events.
  * 
  * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
@@ -93,8 +91,6 @@ public class AVMetricEvent extends NSObject implements NSSecureCoding {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property] date
-     * 
      * Returns the date when the event occurred.
      * 
      * API-Since: 18.0
@@ -152,8 +148,6 @@ public class AVMetricEvent extends NSObject implements NSSecureCoding {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
-     * [@property] mediaTime
-     * 
      * Returns the time in the media timeline when the event occured.
      * 
      * API-Since: 18.0
@@ -177,8 +171,6 @@ public class AVMetricEvent extends NSObject implements NSSecureCoding {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property] sessionID
-     * 
      * A GUID that identifies the media session. If not available, value is nil.
      * 
      * API-Since: 18.0

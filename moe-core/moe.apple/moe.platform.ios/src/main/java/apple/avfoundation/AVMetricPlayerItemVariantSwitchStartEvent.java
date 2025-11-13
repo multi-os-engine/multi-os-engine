@@ -28,8 +28,6 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * AVMetricPlayerItemVariantSwitchStartEvent
- * 
  * Represents a metric event when variant switch was attempted.
  * 
  * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
@@ -98,8 +96,6 @@ public class AVMetricPlayerItemVariantSwitchStartEvent extends AVMetricEvent {
     public static native String description_static();
 
     /**
-     * [@property] fromVariant
-     * 
      * Returns the variant from which the switch is attempted. If no value is available, returns nil
      * 
      * API-Since: 18.0
@@ -145,8 +141,6 @@ public class AVMetricPlayerItemVariantSwitchStartEvent extends AVMetricEvent {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
-     * [@property] loadedTimeRanges
-     * 
      * This property provides a collection of time ranges for which the player has the media data readily available. The
      * ranges provided might be discontinuous.
      * 
@@ -191,8 +185,6 @@ public class AVMetricPlayerItemVariantSwitchStartEvent extends AVMetricEvent {
     }
 
     /**
-     * [@property] toVariant
-     * 
      * Returns the variant to which the switch is attempted.
      * 
      * API-Since: 18.0
@@ -211,4 +203,40 @@ public class AVMetricPlayerItemVariantSwitchStartEvent extends AVMetricEvent {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * [@property] audioRendition
+     * 
+     * Contains information corresponding to the currently selected audio rendition.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("audioRendition")
+    @NotNull
+    public native AVMetricMediaRendition audioRendition();
+
+    /**
+     * [@property] subtitleRendition
+     * 
+     * Contains information corresponding to the currently selected subtitle rendition.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("subtitleRendition")
+    @NotNull
+    public native AVMetricMediaRendition subtitleRendition();
+
+    /**
+     * [@property] videoRendition
+     * 
+     * Contains information corresponding to the currently selected video rendition.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("videoRendition")
+    @NotNull
+    public native AVMetricMediaRendition videoRendition();
 }

@@ -44,8 +44,24 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * A rectangle feature found by a CIDetector
- * All positions are relative to the original image.
+ * Information about a rectangular region detected in a still or video image.
+ * 
+ * > Note: In macOS 10.13, iOS 11, and tvOS 11 or later, the Vision framework replaces these classes
+ * for identifying and analyzing image features.
+ * See <doc://com.apple.documentation/documentation/vision/vndetectfacerectanglesrequest>)
+ * 
+ * A detected rectangle feature is not necessarily rectangular in the plane of the image; rather, the
+ * feature identifies a shape that may be rectangular in space (for example a book on a desk) but which
+ * appears as a four-sided polygon in the image. The properties of a `CIRectangleFeature` object
+ * identify its four corners in image coordinates.
+ * 
+ * You can use rectangle feature detection together with the `CIPerspectiveCorrection` filter
+ * to transform the feature to a normal orientation.
+ * 
+ * To detect rectangles in an image or video, choose ``CIDetectorTypeRectangle`` when initializing a
+ * ``CIDetector`` object, and use the `CIDetectorAspectRatio` and `CIDetectorFocalLength` options to
+ * specify the approximate shape of rectangular features to search for. The detector returns at
+ * most one rectangle feature, the most prominent found in the image.
  */
 @Generated
 @Library("CoreImage")
@@ -161,16 +177,30 @@ public class CIRectangleFeature extends CIFeature {
     @NInt
     public static native long version_static();
 
+    /**
+     * The image coordinate of the lower-left corner of the detected rectangle.
+     */
     @Generated
     @Selector("bottomLeft")
     @ByValue
     public native CGPoint bottomLeft();
 
+    /**
+     * The image coordinate of the lower-right corner of the detected rectangle.
+     */
     @Generated
     @Selector("bottomRight")
     @ByValue
     public native CGPoint bottomRight();
 
+    /**
+     * A rectangle that indicates the position and extent of the rectangle feature in image coordinates.
+     * 
+     * This property identifies the rectangular region of the image containing the detected rectangle,
+     * not necessarily the shape of the rectangle. A detected feature is rectangular in space, but may
+     * appear as a four-sided polygon in the image. Use the properties listed in `CIRectangleFeature` to find the
+     * corners of the rectangle as it appears in perspective.
+     */
     @Generated
     @Selector("bounds")
     @ByValue
@@ -180,11 +210,17 @@ public class CIRectangleFeature extends CIFeature {
     @Selector("init")
     public native CIRectangleFeature init();
 
+    /**
+     * The image coordinate of the upper-left corner of the detected rectangle.
+     */
     @Generated
     @Selector("topLeft")
     @ByValue
     public native CGPoint topLeft();
 
+    /**
+     * The image coordinate of the upper-right corner of the detected rectangle.
+     */
     @Generated
     @Selector("topRight")
     @ByValue

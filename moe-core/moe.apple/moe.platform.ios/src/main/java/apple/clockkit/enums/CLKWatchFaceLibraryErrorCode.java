@@ -28,4 +28,8 @@ public final class CLKWatchFaceLibraryErrorCode {
      * API-Since: 14.0
      */
     @Generated @NInt public static final long FaceNotAvailable = 0x0000000000000004L;
+    /**
+     * API-Since: 14.0
+     */
+    @Generated @NInt public static final long NoURL = 0x0000000000000005L;
 }

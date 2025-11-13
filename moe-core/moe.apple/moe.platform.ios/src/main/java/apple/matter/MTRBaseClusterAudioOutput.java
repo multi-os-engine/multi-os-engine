@@ -663,8 +663,7 @@ public class MTRBaseClusterAudioOutput extends MTRGenericBaseCluster {
     /**
      * Command RenameOutput
      * 
-     * Upon receipt, this SHALL rename the output at a specific index in the Output List. Updates to the output name
-     * SHALL appear in the TV settings menus.
+     * Upon receipt, this SHALL rename the output at a specific index in the Output List.
      * 
      * API-Since: 16.4
      */
@@ -709,8 +708,7 @@ public class MTRBaseClusterAudioOutput extends MTRGenericBaseCluster {
     /**
      * Command SelectOutput
      * 
-     * Upon receipt, this SHALL change the output on the media device to the output at a specific index in the Output
-     * List.
+     * Upon receipt, this SHALL change the output on the device to the output at a specific index in the Output List.
      * 
      * API-Since: 16.4
      */

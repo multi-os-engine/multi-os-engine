@@ -193,7 +193,9 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     public native NSArray<? extends UIViewController> customizableViewControllers();
 
     /**
-     * The object managing the delegate of the tab bar controller. Default is nil.
+     * The object managing the delegate of the tab bar controller.
+     * 
+     * The default value for this property is `nil`.
      * 
      * API-Since: 2.0
      */
@@ -255,7 +257,9 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     public native void setCustomizableViewControllers(@Nullable NSArray<? extends UIViewController> value);
 
     /**
-     * The object managing the delegate of the tab bar controller. Default is nil.
+     * The object managing the delegate of the tab bar controller.
+     * 
+     * The default value for this property is `nil`.
      * 
      * API-Since: 2.0
      */
@@ -264,7 +268,9 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UITabBarControllerDelegate value);
 
     /**
-     * The object managing the delegate of the tab bar controller. Default is nil.
+     * The object managing the delegate of the tab bar controller.
+     * 
+     * The default value for this property is `nil`.
      * 
      * API-Since: 2.0
      */
@@ -387,8 +393,9 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     public static native boolean useStoredAccessor();
 
     /**
-     * An optional filter to display only select root-level tabs when in a compact appearance. Default is nil, which
-     * would make all tabs available.
+     * An optional filter to display only select root-level tabs when in a compact appearance.
+     * 
+     * The default value is is `nil`, which would make all tabs available.
      * 
      * API-Since: 18.0
      */
@@ -398,9 +405,10 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     public native NSArray<String> compactTabIdentifiers();
 
     /**
-     * The customization identifier for the tab bar and sidebar for persistence. The identifier is useful for when an
-     * app has multiple tab bar controllers,
-     * each with their own customizations. If the identifier is nil, a system default is used. Default is nil.
+     * The customization identifier for the tab bar and sidebar for persistence.
+     * 
+     * The identifier is useful for when an app has multiple tab bar controllers, each with their own customizations.
+     * If the customization identifier is `nil`, a system default is used. Default is `nil`.
      * 
      * API-Since: 18.0
      */
@@ -419,7 +427,9 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     public native UITabBarController initWithTabs(@NotNull NSArray<? extends UITab> tabs);
 
     /**
-     * Determines if the active tab bar is currently hidden. Default is NO.
+     * Determines if the active tab bar is currently hidden.
+     * 
+     * The default value for this property is `NO`.
      * 
      * API-Since: 18.0
      */
@@ -428,7 +438,9 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     public native boolean isTabBarHidden();
 
     /**
-     * The object managing the tab sidebar for the tab bar controller. Default is `UITabBarControllerModeAutomatic`
+     * The object managing the tab sidebar for the tab bar controller.
+     * 
+     * The default value for this property is `UITabBarControllerModeAutomatic`.
      * 
      * API-Since: 18.0
      */
@@ -438,7 +450,9 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     public native long mode();
 
     /**
-     * The currently selected tab, which can be a root tab or any of their descendants. Default is nil.
+     * The currently selected tab, which can be a root tab or any of their descendants.
+     * 
+     * The default value for this property is `nil`.
      * 
      * API-Since: 18.0
      */
@@ -448,8 +462,9 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     public native UITab selectedTab();
 
     /**
-     * An optional filter to display only select root-level tabs when in a compact appearance. Default is nil, which
-     * would make all tabs available.
+     * An optional filter to display only select root-level tabs when in a compact appearance.
+     * 
+     * The default value is is `nil`, which would make all tabs available.
      * 
      * API-Since: 18.0
      */
@@ -458,9 +473,10 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     public native void setCompactTabIdentifiers(@Nullable NSArray<String> value);
 
     /**
-     * The customization identifier for the tab bar and sidebar for persistence. The identifier is useful for when an
-     * app has multiple tab bar controllers,
-     * each with their own customizations. If the identifier is nil, a system default is used. Default is nil.
+     * The customization identifier for the tab bar and sidebar for persistence.
+     * 
+     * The identifier is useful for when an app has multiple tab bar controllers, each with their own customizations.
+     * If the customization identifier is `nil`, a system default is used. Default is `nil`.
      * 
      * API-Since: 18.0
      */
@@ -469,7 +485,9 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     public native void setCustomizationIdentifier(@Nullable String value);
 
     /**
-     * The object managing the tab sidebar for the tab bar controller. Default is `UITabBarControllerModeAutomatic`
+     * The object managing the tab sidebar for the tab bar controller.
+     * 
+     * The default value for this property is `UITabBarControllerModeAutomatic`.
      * 
      * API-Since: 18.0
      */
@@ -478,7 +496,9 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     public native void setMode(@NInt long value);
 
     /**
-     * The currently selected tab, which can be a root tab or any of their descendants. Default is nil.
+     * The currently selected tab, which can be a root tab or any of their descendants.
+     * 
+     * The default value for this property is `nil`.
      * 
      * API-Since: 18.0
      */
@@ -487,7 +507,9 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     public native void setSelectedTab(@Nullable UITab value);
 
     /**
-     * Determines if the active tab bar is currently hidden. Default is NO.
+     * Determines if the active tab bar is currently hidden.
+     * 
+     * The default value for this property is `NO`.
      * 
      * API-Since: 18.0
      */
@@ -505,7 +527,8 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     public native void setTabBarHiddenAnimated(boolean hidden, boolean animated);
 
     /**
-     * An array of root tabs representing view controllers to display by the tab bar interface. Default is empty.
+     * An array of root tabs representing view controllers to display by the tab bar interface.
+     * 
      * Once set, `UITabBarController.viewControllers` and related properties and methods will not be called.
      * 
      * API-Since: 18.0
@@ -545,7 +568,8 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     public native UITab tabForIdentifier(@NotNull String identifier);
 
     /**
-     * An array of root tabs representing view controllers to display by the tab bar interface. Default is empty.
+     * An array of root tabs representing view controllers to display by the tab bar interface.
+     * 
      * Once set, `UITabBarController.viewControllers` and related properties and methods will not be called.
      * 
      * API-Since: 18.0
@@ -554,4 +578,70 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     @Selector("tabs")
     @NotNull
     public native NSArray<? extends UITab> tabs();
+
+    /**
+     * An optional bottom accessory of the tab bar controller.
+     * 
+     * The default value for this property is `nil`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("bottomAccessory")
+    @Nullable
+    public native UITabAccessory bottomAccessory();
+
+    /**
+     * The content layout guide provides the layout area for the UITabBarController unobscured by the tab bar or
+     * sidebar.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("contentLayoutGuide")
+    @NotNull
+    public native UILayoutGuide contentLayoutGuide();
+
+    /**
+     * An optional bottom accessory of the tab bar controller.
+     * 
+     * The default value for this property is `nil`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setBottomAccessory:")
+    public native void setBottomAccessory(@Nullable UITabAccessory value);
+
+    /**
+     * Sets a bottom accessory with an option to animate the change.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setBottomAccessory:animated:")
+    public native void setBottomAccessoryAnimated(@Nullable UITabAccessory bottomAccessory, boolean animated);
+
+    /**
+     * Defines the minimize behavior for the tab bar, if it is supported.
+     * 
+     * The default value for this property is `UITabBarMinimizeBehaviorAutomatic`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setTabBarMinimizeBehavior:")
+    public native void setTabBarMinimizeBehavior(@NInt long value);
+
+    /**
+     * Defines the minimize behavior for the tab bar, if it is supported.
+     * 
+     * The default value for this property is `UITabBarMinimizeBehaviorAutomatic`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("tabBarMinimizeBehavior")
+    @NInt
+    public native long tabBarMinimizeBehavior();
 }

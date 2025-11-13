@@ -28,7 +28,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * The context of an attempt to fetch changes from the server.
  * 
  * The sync engine might attempt to fetch changes to the server for many reasons.
- * For example, if you call `fetchChanges`, it'll try to fetch changes immediately.
+ * For example, if you call ``CKSyncEngine/fetchChanges(_:)``, it'll try to fetch changes immediately.
  * Or if it receives a push notification, it'll schedule a sync and fetch changes when the scheduler task runs.
  * This object represents one of those attempts to fetch changes.
  * 

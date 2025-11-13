@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.mapkit.protocol;
 
-import apple.corelocation.struct.CLLocationCoordinate2D;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
@@ -26,6 +25,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.Nullable;
+import apple.corelocation.struct.CLLocationCoordinate2D;
 
 @Generated
 @Library("MapKit")

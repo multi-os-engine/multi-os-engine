@@ -50,7 +50,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * API-Since: 2.0
  * Deprecated-Since: 12.0
- * Deprecated-Message: OpenGLES is deprecated
+ * Deprecated-Message: OpenGLES is deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
  */
 @Deprecated
 @Generated
@@ -253,4 +253,9 @@ public class CAEAGLLayer extends CALayer implements EAGLDrawable {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("layerWithRemoteClientId:")
+    @NotNull
+    public static native CALayer layerWithRemoteClientId(int client_id);
 }

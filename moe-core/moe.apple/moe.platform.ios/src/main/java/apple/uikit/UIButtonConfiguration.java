@@ -849,4 +849,57 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("clearGlassButtonConfiguration")
+    @NotNull
+    public static native UIButtonConfiguration clearGlassButtonConfiguration();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("glassButtonConfiguration")
+    @NotNull
+    public static native UIButtonConfiguration glassButtonConfiguration();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("prominentClearGlassButtonConfiguration")
+    @NotNull
+    public static native UIButtonConfiguration prominentClearGlassButtonConfiguration();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("prominentGlassButtonConfiguration")
+    @NotNull
+    public static native UIButtonConfiguration prominentGlassButtonConfiguration();
+
+    /**
+     * The symbol content transition to use when transitioning across symbol images.
+     * Defaults to `nil`, meaning no symbol content transition should occur.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setSymbolContentTransition:")
+    public native void setSymbolContentTransition(@Nullable UISymbolContentTransition value);
+
+    /**
+     * The symbol content transition to use when transitioning across symbol images.
+     * Defaults to `nil`, meaning no symbol content transition should occur.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("symbolContentTransition")
+    @Nullable
+    public native UISymbolContentTransition symbolContentTransition();
 }

@@ -746,6 +746,17 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     }
 
     /**
+     * presentFriendRequestCreatorFromViewController:
+     * 
+     * Discussion:
+     * iOS only. When invoked, a Messages sheet will be presented on the viewController passed in, using the existing
+     * flow of presentation on behalf of an application.
+     * If an error is returned, control are returned directly to the application, without presentation.
+     * 
+     * Possible reasons for error:
+     * - The local player user account is not allowed to add friends
+     * - The device is not allowing outgoing traffic at the time of the operation
+     * 
      * API-Since: 15.0
      */
     @Generated

@@ -37,6 +37,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.moe.natj.objc.ann.ObjCBlock;
 
 @Generated
 @Library("MediaAccessibility")
@@ -537,4 +538,84 @@ public final class MediaAccessibility {
     @MappedReturn(ObjCStringMapper.class)
     @NotNull
     public static native String MAMusicHapticsManagerActiveStatusDidChangeNotification();
+
+    /**
+     * [@function] MACaptionAppearanceCopyProfileIDs
+     * 
+     * Copies all system and user defined profiles, each represented by a CFString containing a non-human-readable ID
+     * 
+     * @return An array of strings where each string represents a unique caption profile ID.
+     * 
+     *         API-Since: 19.0
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native CFArrayRef MACaptionAppearanceCopyProfileIDs();
+
+    /**
+     * [@function] MACaptionAppearanceSetActiveProfileID
+     * 
+     * Sets the currently-selected caption drawing profileID system wide. Behavior is undefined if NULL or an invalid
+     * profileID is provided
+     * 
+     * @param profileID The profileID to make active.
+     * 
+     *                  API-Since: 19.0
+     */
+    @Generated
+    @CFunction
+    public static native void MACaptionAppearanceSetActiveProfileID(@NotNull CFStringRef profileID);
+
+    /**
+     * [@function] MACaptionAppearanceCopyActiveProfileID
+     * 
+     * Gets the currently-selected caption drawing profileID system wide.
+     * 
+     * @return The currently-selected profileID.
+     * 
+     *         API-Since: 19.0
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native CFStringRef MACaptionAppearanceCopyActiveProfileID();
+
+    /**
+     * [@function] MACaptionAppearanceCopyProfileName
+     * 
+     * Copies the human-readable name of a profileID
+     * 
+     * @param profileID The profileID to copy the name of
+     * @return A human-readable name of the provided profileID
+     * 
+     *         API-Since: 19.0
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native CFStringRef MACaptionAppearanceCopyProfileName(@NotNull CFStringRef profileID);
+
+    /**
+     * [@function] MACaptionAppearanceExecuteBlockForProfileID
+     * 
+     * Executes a block of code as if the provided profileID was active. This is used in cases such as a need to get the
+     * fonts and colors of a profileID without changing the currently selected profileID.
+     * 
+     * @param profileID The profileID which will appear active when executing the block
+     * @param aBlock    the block of code to execute
+     * 
+     *                  API-Since: 19.0
+     */
+    @Generated
+    @CFunction
+    public static native void MACaptionAppearanceExecuteBlockForProfileID(@NotNull CFStringRef profileID,
+            @ObjCBlock(name = "call_MACaptionAppearanceExecuteBlockForProfileID") @NotNull Block_MACaptionAppearanceExecuteBlockForProfileID aBlock);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_MACaptionAppearanceExecuteBlockForProfileID {
+        @Generated
+        void call_MACaptionAppearanceExecuteBlockForProfileID();
+    }
 }

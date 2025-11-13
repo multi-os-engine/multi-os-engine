@@ -692,14 +692,16 @@ public final class Network {
      * [@function] nw_endpoint_get_hostname
      * 
      * Retrieves the hostname string for a network endpoint with
-     * the type nw_endpoint_type_host or nw_endpoint_type_url.
+     * the type nw_endpoint_type_host, nw_endpoint_type_address,
+     * or nw_endpoint_type_url.
      * 
      * @param endpoint
      *                 The endpoint object.
      * 
      * @return
      *         Returns the hostname string for the endpoint, or NULL
-     *         if the endpoint is not of type nw_endpoint_type_host.
+     *         if the endpoint is not of type nw_endpoint_type_host,
+     *         nw_endpoint_type_address, or nw_endpoint_type_url.
      * 
      *         API-Since: 12.0
      */
@@ -5764,8 +5766,7 @@ public final class Network {
      *                A TCP protocol options object.
      * 
      * @param no_push
-     *                A boolean indicating that TCP should be set into
-     *                no-push mode.
+     *                A boolean indicating that TCP should use no-push mode.
      * 
      *                API-Since: 12.0
      */
@@ -5782,8 +5783,7 @@ public final class Network {
      *                   A TCP protocol options object.
      * 
      * @param no_options
-     *                   A boolean indicating that TCP should be set into
-     *                   no-options mode.
+     *                   A boolean indicating that TCP should use no-options mode.
      * 
      *                   API-Since: 12.0
      */
@@ -9525,4 +9525,91 @@ public final class Network {
     @Generated
     @CFunction
     public static native void nw_privacy_context_clear_proxies(@NotNull nw_privacy_context_t privacy_context);
+
+    /**
+     * [@function] nw_parameters_set_allow_ultra_constrained
+     * 
+     * Explicitly allow connectivity over ultra-constrained interfaces. Without
+     * this being set, connections are not allowed to use these interfaces.
+     * 
+     * @param parameters
+     *                                The parameters to modify.
+     * 
+     * @param allow_ultra_constrained
+     *                                Whether or not ultra-constrained interfaces are allowed.
+     * 
+     *                                API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    public static native void nw_parameters_set_allow_ultra_constrained(@NotNull nw_parameters_t parameters,
+            boolean allow_ultra_constrained);
+
+    /**
+     * [@function] nw_parameters_get_allow_ultra_constrained
+     * 
+     * Check if the parameters explicitly allow connectivity over
+     * ultra-constrained interfaces.
+     * 
+     * @param parameters
+     *                   The parameters to check.
+     * 
+     * @return
+     *         Returns whether or not ultra-constrained interfaces are allowed.
+     * 
+     *         API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    public static native boolean nw_parameters_get_allow_ultra_constrained(@NotNull nw_parameters_t parameters);
+
+    /**
+     * [@function] nw_path_is_ultra_constrained
+     * 
+     * Checks if the path uses any network interfaces that are considered ultra-constrained.
+     * 
+     * @param path
+     *             The path object to check.
+     * 
+     * @return
+     *         Returns true if the path uses any network interface that is considered ultra-constrained,
+     *         false otherwise.
+     * 
+     *         API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    public static native boolean nw_path_is_ultra_constrained(@NotNull nw_path_t path);
+
+    /**
+     * [@function] nw_path_get_link_quality
+     * 
+     * Fetches the link quality measurement for the interface.
+     * Link quality measurement is a representation of the expected capabilities of the link layer network
+     * attachment. Use this value to tune initial values for algorithms that can scale with the
+     * capabilities of the network. Do not use this value to gate connection attempts or to override
+     * adjustments that would be made based on actual network performance.
+     * 
+     * @param path
+     *             The path object to check.
+     * 
+     * @return
+     *         Returns the link quality measurement of the link layer network attachment.
+     *         Returns nw_link_quality_unknown if there is no measurement available.
+     * 
+     *         API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    public static native int nw_path_get_link_quality(@NotNull nw_path_t path);
+
+    /**
+     * Values will be errors from <WifiAware/errors.swift>
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kNWErrorDomainWiFiAware();
 }

@@ -232,9 +232,9 @@ public class NEAppPushManager extends NSObject {
     /**
      * [@property] matchSSIDs
      * 
-     * An array of Wi-Fi SSID strings. If the SSID string of current Wi-Fi network matches with one of these strings
-     * then the NEAppPushProvider
-     * is started. The upper limit of number of SSIDs is 10.
+     * An array of Wi-Fi SSID strings. If the SSID string of current Wi-Fi network matches with one of these strings and
+     * the Wi-Fi network is the primary route
+     * on the device then the NEAppPushProvider is started. The upper limit of number of SSIDs is 10.
      * 
      * API-Since: 14.0
      */
@@ -383,9 +383,9 @@ public class NEAppPushManager extends NSObject {
     /**
      * [@property] matchSSIDs
      * 
-     * An array of Wi-Fi SSID strings. If the SSID string of current Wi-Fi network matches with one of these strings
-     * then the NEAppPushProvider
-     * is started. The upper limit of number of SSIDs is 10.
+     * An array of Wi-Fi SSID strings. If the SSID string of current Wi-Fi network matches with one of these strings and
+     * the Wi-Fi network is the primary route
+     * on the device then the NEAppPushProvider is started. The upper limit of number of SSIDs is 10.
      * 
      * API-Since: 14.0
      */
@@ -435,9 +435,10 @@ public class NEAppPushManager extends NSObject {
      * [@property] matchPrivateLTENetworks
      * 
      * An array of NEPrivateLTENetwork objects. If the properties of current private LTE network match with properties
-     * of one of these NEPrivateLTENetwork objects then the
-     * NEAppPushProvider is started. The upper limit of number of private LTE networks is 10. For private LTE networks
-     * that are not band 48, the device must be supervised in order to perform the match
+     * of one of these NEPrivateLTENetwork
+     * objects and the private LTE network is the primary route on the device then the NEAppPushProvider is started. The
+     * upper limit of number of private LTE networks is 10.
+     * For private LTE networks that are not band 48, the device must be supervised in order to perform the match
      * 
      * API-Since: 15.0
      */
@@ -450,9 +451,10 @@ public class NEAppPushManager extends NSObject {
      * [@property] matchPrivateLTENetworks
      * 
      * An array of NEPrivateLTENetwork objects. If the properties of current private LTE network match with properties
-     * of one of these NEPrivateLTENetwork objects then the
-     * NEAppPushProvider is started. The upper limit of number of private LTE networks is 10. For private LTE networks
-     * that are not band 48, the device must be supervised in order to perform the match
+     * of one of these NEPrivateLTENetwork
+     * objects and the private LTE network is the primary route on the device then the NEAppPushProvider is started. The
+     * upper limit of number of private LTE networks is 10.
+     * For private LTE networks that are not band 48, the device must be supervised in order to perform the match
      * 
      * API-Since: 15.0
      */
@@ -464,4 +466,34 @@ public class NEAppPushManager extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] matchEthernet
+     * 
+     * If set to YES NEAppPushProvider is started when iOS device is connected to an Ethernet network and the ethernet
+     * network is the primary route
+     * on the device. NEAppPushProvider must determine viability of its functionality on the network. If the network
+     * does not support its operation it must call
+     * [NEAppPushProvider unmatchEthernet:] method to stop itself.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("matchEthernet")
+    public native boolean matchEthernet();
+
+    /**
+     * [@property] matchEthernet
+     * 
+     * If set to YES NEAppPushProvider is started when iOS device is connected to an Ethernet network and the ethernet
+     * network is the primary route
+     * on the device. NEAppPushProvider must determine viability of its functionality on the network. If the network
+     * does not support its operation it must call
+     * [NEAppPushProvider unmatchEthernet:] method to stop itself.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setMatchEthernet:")
+    public native void setMatchEthernet(boolean value);
 }

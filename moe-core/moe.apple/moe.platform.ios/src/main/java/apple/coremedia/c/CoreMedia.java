@@ -8166,6 +8166,18 @@ public final class CoreMedia {
      * [@const] kCMMetadataBaseDataType_PerspectiveTransformF64
      * A 3x3 matrix of 64-bit big endian floating point numbers stored in row-major order that specify a perspective
      * transform.
+     * [@const] kCMMetadataBaseDataType_RasterRectangleValue
+     * Consists of six 16-bit big endian unsigned integer values of RasterRectangleValue in the following order: raster
+     * width, raster height, left, width, top, height.
+     * Rectangle origin and dimension are normalized to raster rectangle coordinates to be pixel accurate but still
+     * retain the relative semantics when scaled.
+     * [@const] kCMMetadataBaseDataType_ExtendedRasterRectangleValue
+     * Consists of at least six 16-bit big endian unsigned integer values for RasterRectangleValue in the same order as
+     * kCMMetadataBaseDataType_RasterRectangleValue and then two 4-bit values for the number of left and right edge
+     * adjustment points. If edge adustment points are 2 or more, points would be pairs of 16-bit big endian unsigned
+     * integers alternating between x and y with left edge points first and right edge points afterwards.
+     * Rectangle origin and dimension are normalized to raster rectangle coordinates to be pixel accurate but still
+     * retain the relative semantics when scaled.
      * 
      * API-Since: 8.0
      */
@@ -11075,19 +11087,7 @@ public final class CoreMedia {
     public static native CFStringRef kCMTagCollectionTagsArrayKey();
 
     /**
-     * [@constant] `kCMFormatDescriptionExtension_ProjectionKind`
-     * 
-     * Indicates the projection that should be applied to presented decoded video frames.
-     * [@constant] `kCMFormatDescriptionProjectionKind_Rectilinear`
-     * Indicates rectilinear projection. Generally less than 90 degree field of view with no barrel distortion.
-     * [@constant] `kCMFormatDescriptionProjectionKind_Equirectangular`
-     * Indicates equirectangular projection of a 360 degree sphere to a rectangular plane, where longitude and latitude
-     * of the sphere are mapped linearly to the x,y axes of the plane.
-     * [@constant] `kCMFormatDescriptionProjectionKind_HalfEquirectangular`
-     * Indicates half equirectangular projection of a 180 degree hemisphere to a rectangular plane, where longitude and
-     * latitude of the sphere are mapped linearly to the x,y axes of the plane
-     * 
-     * The value is a CFString holding one of the kCMFormatDescriptionProjectionKind_* constants.
+     * CFString, one of
      * 
      * API-Since: 18.0
      */
@@ -11105,15 +11105,7 @@ public final class CoreMedia {
     public static native CFStringRef kCMFormatDescriptionProjectionKind_Rectilinear();
 
     /**
-     * [@constant] `kCMFormatDescriptionExtension_ViewPackingKind`
-     * 
-     * Indicates the packing type of stereoscopic video frames.
-     * [@constant] `kCMFormatDescriptionViewPackingKind_SideBySide`
-     * Indicates that frames are packed side-by-side.
-     * [@constant] `kCMFormatDescriptionViewPackingKind_OverUnder`
-     * Indicates that frames are packed over under.
-     * 
-     * The value is a CFString holding one of the kCMFormatDescriptionViewPackingKind_* constants.
+     * CFString, one of
      * 
      * API-Since: 18.0
      */
@@ -11213,4 +11205,346 @@ public final class CoreMedia {
     @CVariable()
     @NotNull
     public static native CFStringRef kCMFormatDescriptionProjectionKind_HalfEquirectangular();
+
+    /**
+     * [@function] CMTaggedBufferGroupFormatDescriptionCreateForTaggedBufferGroupWithExtensions
+     * 
+     * Creates a format description for a CMTaggedBufferGroup with extensions.
+     * 
+     * The returned CMTaggedBufferGroupFormatDescription could be used to create a CMSampleBuffer
+     * wrapping the CMTaggedBufferGroup using CMSampleBufferCreateForTaggedBufferGroup.
+     * If you are going to call CMSampleBufferCreateForTaggedBufferGroup on a series of matching
+     * CMTaggedBufferGroups, it is more efficient to create the CMTaggedBufferGroupFormatDescription
+     * once and use it for all of the CMSampleBuffers.
+     * The caller owns the returned CMFormatDescription, and must release it when done with it.
+     * All input parameters are copied (the extensions are deep-copied). The caller can deallocate them or re-use them
+     * after making this call.
+     * 
+     * API-Since: 26.0
+     * 
+     * @param allocator
+     *                             CFAllocator to be used when creating the CMFormatDescription. Pass
+     *                             kCFAllocatorDefault to use the default allocator.
+     * @param taggedBufferGroup
+     *                             The tagged buffer group for which we are creating the format description.
+     * @param extensions
+     *                             Dictionary of extension key/value pairs. Keys are always CFStrings. Values are always
+     *                             property list objects (ie. CFData, CFString, CFArray, CFDictionary, CFDate,
+     *                             CFBoolean, or CFNumber). Can be NULL.
+     * @param formatDescriptionOut
+     *                             Returned newly-created tagged buffer group CMFormatDescription
+     */
+    @Generated
+    @CFunction
+    public static native int CMTaggedBufferGroupFormatDescriptionCreateForTaggedBufferGroupWithExtensions(
+            @Nullable CFAllocatorRef allocator, @NotNull CMTaggedBufferGroupRef taggedBufferGroup,
+            @Nullable CFDictionaryRef extensions, @NotNull Ptr<CMFormatDescriptionRef> formatDescriptionOut);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionProjectionKind_ParametricImmersive();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionProjectionKind_AppleImmersiveVideo();
+
+    /**
+     * CFArray of CFDictionaries
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionExtension_CameraCalibrationDataLensCollection();
+
+    /**
+     * CFString one of
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionCameraCalibration_LensAlgorithmKind();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionCameraCalibrationLensAlgorithmKind_ParametricLens();
+
+    /**
+     * CFString one of
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionCameraCalibration_LensDomain();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionCameraCalibrationLensDomain_Color();
+
+    /**
+     * CFNumber(int32)
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionCameraCalibration_LensIdentifier();
+
+    /**
+     * CFString one of
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionCameraCalibration_LensRole();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionCameraCalibrationLensRole_Mono();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionCameraCalibrationLensRole_Left();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionCameraCalibrationLensRole_Right();
+
+    /**
+     * CFArray[CFNumber(float)], k1, k2, p1 & p2 order
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionCameraCalibration_LensDistortions();
+
+    /**
+     * CFArray[CFNumber(float)], polynomialX[0], polynomialX[1] & polynomialX[2] order
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionCameraCalibration_LensFrameAdjustmentsPolynomialX();
+
+    /**
+     * CFArray[CFNumber(float)], polynomialY[0], polynomialY[1] & polynomialY[2] order
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionCameraCalibration_LensFrameAdjustmentsPolynomialY();
+
+    /**
+     * CFNumber(float)
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionCameraCalibration_RadialAngleLimit();
+
+    /**
+     * CFData(matrix_float3x3)
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionCameraCalibration_IntrinsicMatrix();
+
+    /**
+     * CFNumber(float)
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionCameraCalibration_IntrinsicMatrixProjectionOffset();
+
+    /**
+     * CGSize dictionary
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionCameraCalibration_IntrinsicMatrixReferenceDimensions();
+
+    /**
+     * CFString one of
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionCameraCalibration_ExtrinsicOriginSource();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionCameraCalibrationExtrinsicOriginSource_StereoCameraSystemBaseline();
+
+    /**
+     * CFArray[CFNumber(float)], ix, iy & iz order
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionCameraCalibration_ExtrinsicOrientationQuaternion();
+
+    /**
+     * CFBoolean
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionExtension_ConvertedFromExternalSphericalTags();
+
+    /**
+     * [@constant] kCMTagProjectionTypeParametricImmersive
+     * 
+     * A CMTag of category kCMTagCategory_ProjectionType and the value kCMTagProjectionType_ParametricImmersive
+     * (OSType).
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native CMTag kCMTagProjectionTypeParametricImmersive();
+
+    /**
+     * [@const] kCMMetadataIdentifier_QuickTimeMetadataSpatialAudioMix
+     * Data associated with a Spatial Audio capture that contains an analysis of a First Order Ambisonics audio stream
+     * which is used for playback.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMMetadataIdentifier_QuickTimeMetadataSpatialAudioMix();
+
+    /**
+     * [@const] kCMMetadataIdentifier_QuickTimeMetadataDisplayMaskRectangleMono
+     * Display mask rectangle for monoscopic video
+     * Expected data type is kCMMetadataBaseDataType_RasterRectangleValue.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMMetadataIdentifier_QuickTimeMetadataDisplayMaskRectangleMono();
+
+    /**
+     * [@const] kCMMetadataIdentifier_QuickTimeMetadataDisplayMaskRectangleStereoLeft
+     * Display mask rectangle for stereoscopic video's left eye view
+     * Expected data type is kCMMetadataBaseDataType_RasterRectangleValue or
+     * kCMMetadataBaseDataType_ExtendedRasterRectangleValue.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMMetadataIdentifier_QuickTimeMetadataDisplayMaskRectangleStereoLeft();
+
+    /**
+     * [@const] kCMMetadataIdentifier_QuickTimeMetadataDisplayMaskRectangleStereoRight
+     * Display mask rectangle for stereoscopic video's right eye view
+     * Expected data type is kCMMetadataBaseDataType_RasterRectangleValue or
+     * kCMMetadataBaseDataType_ExtendedRasterRectangleValue.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMMetadataIdentifier_QuickTimeMetadataDisplayMaskRectangleStereoRight();
+
+    /**
+     * [@const] kCMMetadataIdentifier_QuickTimeMetadataPresentationImmersiveMedia
+     * Presentation data associated with Apple Immersive Video's video frames. Data is a JSON-encoding of
+     * ImmersiveMediaSupport framework's PresentationDescriptor object.
+     * Expected data type is kCMMetadataBaseDataType_RawData.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMMetadataIdentifier_QuickTimeMetadataPresentationImmersiveMedia();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMMetadataBaseDataType_RasterRectangleValue();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMMetadataBaseDataType_ExtendedRasterRectangleValue();
+
+    @Generated public static final double COREMEDIA_EXPORTS_USE_EXPLICIT_VISIBILITY = 0.0;
 }

@@ -248,4 +248,14 @@ public class NSTextList extends NSObject implements NSSecureCoding, NSCopying {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * When YES, TextKit includes text list marker in the contents.
+     * It is NO by default.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("includesTextListMarkers")
+    public static native boolean includesTextListMarkers();
 }

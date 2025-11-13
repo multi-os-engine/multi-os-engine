@@ -25,11 +25,6 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * AVAssetWriterInputCaptionAdaptor
- * 
- * An adaptor class for appending instances of AVCaption to an asset writer input. -[AVAssetWriterInput
- * -appendSampleBuffer:] will throw an exception if used when this adaptor is attached.
- * 
  * API-Since: 18.0
  */
 @Generated
@@ -61,8 +56,6 @@ public class AVAssetWriterInputCaptionAdaptor extends NSObject {
     public static native AVAssetWriterInputCaptionAdaptor allocWithZone(VoidPtr zone);
 
     /**
-     * appendCaption:
-     * 
      * Append a single caption to be written.
      * 
      * If this method returns NO, check the value of AVAssetWriter.status on the attached asset writer to determine why
@@ -75,20 +68,17 @@ public class AVAssetWriterInputCaptionAdaptor extends NSObject {
      * 
      * The duration of each caption's timeRange property must be numeric.
      * 
-     * API-Since: 18.0
+     * - Parameter caption: The caption to append.
      * 
-     * @param caption
-     *                The caption to append.
-     * @return
-     *         Returns YES if the operation succeeded, NO if it failed.
+     * - Returns: Returns YES if the operation succeeded, NO if it failed.
+     * 
+     * API-Since: 18.0
      */
     @Generated
     @Selector("appendCaption:")
     public native boolean appendCaption(@NotNull AVCaption caption);
 
     /**
-     * appendCaptionGroup:
-     * 
      * Append a group of captions to be written.
      * 
      * If this method returns NO, check the value of AVAssetWriter.status on the attached asset writer to determine why
@@ -101,19 +91,17 @@ public class AVAssetWriterInputCaptionAdaptor extends NSObject {
      * greater than the end time of any previous captions.
      * To mark a time range containing no captions, append a group containing an empty caption array.
      * 
-     * API-Since: 18.0
+     * - Parameter captionGroup:
      * 
-     * @param captionGroup
-     * @return
-     *         Returns YES if the operation succeeded, NO if it failed.
+     * - Returns: Returns YES if the operation succeeded, NO if it failed.
+     * 
+     * API-Since: 18.0
      */
     @Generated
     @Selector("appendCaptionGroup:")
     public native boolean appendCaptionGroup(@NotNull AVCaptionGroup captionGroup);
 
     /**
-     * [@property] assetWriterInput
-     * 
      * The asset writer input that was used to initialize the receiver.
      * 
      * API-Since: 18.0
@@ -124,8 +112,6 @@ public class AVAssetWriterInputCaptionAdaptor extends NSObject {
     public native AVAssetWriterInput assetWriterInput();
 
     /**
-     * assetWriterInputCaptionAdaptorWithAssetWriterInput:
-     * 
      * Creates a new caption adaptor for writing to the specified asset writer input.
      * 
      * API-Since: 18.0
@@ -178,8 +164,6 @@ public class AVAssetWriterInputCaptionAdaptor extends NSObject {
     public native AVAssetWriterInputCaptionAdaptor init();
 
     /**
-     * initWithAssetWriterInput:
-     * 
      * Creates a new caption adaptor for writing to the specified asset writer input.
      * 
      * This method thows an exception for any of the following reasons:

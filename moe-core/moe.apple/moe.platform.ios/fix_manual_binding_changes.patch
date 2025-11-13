@@ -1,143 +1,51 @@
+Subject: [PATCH] feat: Update bindings to 26.1
+---
+Index: moe-core/moe.apple/moe.platform.ios/src/main/java/apple/gameplaykit/GKCompositeBehavior.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
 diff --git a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/gameplaykit/GKCompositeBehavior.java b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/gameplaykit/GKCompositeBehavior.java
---- a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/gameplaykit/GKCompositeBehavior.java	(date 1741277621827)
-+++ b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/gameplaykit/GKCompositeBehavior.java	(revision 7db4e5be78ed8bed822f815953efd1c2b83c7812)
+--- a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/gameplaykit/GKCompositeBehavior.java	(date 1763056988743)
++++ b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/gameplaykit/GKCompositeBehavior.java	(revision 31dc980ebebd479461dac71d0f9c046638163878)
 @@ -211,7 +211,7 @@
      @NotNull
      @Generated
      @Selector("objectAtIndexedSubscript:")
 -    public native GKBehavior objectAtIndexedSubscript(@NUInt long idx);
 +    public native GKGoal objectAtIndexedSubscript(@NUInt long idx);
- 
+
      /**
       * Supports getting a weight via a [behavior] subscript.
-Index: moe-core/moe.apple/moe.platform.ios/src/main/java/apple/authenticationservices/ASAuthorizationSecurityKeyPublicKeyCredentialAssertionRequest.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/authenticationservices/ASAuthorizationSecurityKeyPublicKeyCredentialAssertionRequest.java b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/authenticationservices/ASAuthorizationSecurityKeyPublicKeyCredentialAssertionRequest.java
---- a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/authenticationservices/ASAuthorizationSecurityKeyPublicKeyCredentialAssertionRequest.java	(date 1741277611247)
-+++ b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/authenticationservices/ASAuthorizationSecurityKeyPublicKeyCredentialAssertionRequest.java	(revision 7db4e5be78ed8bed822f815953efd1c2b83c7812)
-@@ -172,8 +172,7 @@
- 
-     @Generated
-     @Selector("setAllowedCredentials:")
--    public native void setAllowedCredentials(
--            @NotNull NSArray<? extends ASAuthorizationSecurityKeyPublicKeyCredentialDescriptor> value);
-+    public native void setAllowedCredentials(@NotNull NSArray<?> value);
- 
-     @Generated
-     @Selector("setChallenge:")
-Index: moe-core/moe.apple/moe.platform.ios/src/main/java/apple/matter/enums/MTROtaSoftwareUpdateProviderOTADownloadProtocol.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/matter/enums/MTROtaSoftwareUpdateProviderOTADownloadProtocol.java b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/matter/enums/MTROtaSoftwareUpdateProviderOTADownloadProtocol.java
---- a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/matter/enums/MTROtaSoftwareUpdateProviderOTADownloadProtocol.java	(date 1741277627831)
-+++ b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/matter/enums/MTROtaSoftwareUpdateProviderOTADownloadProtocol.java	(revision 7db4e5be78ed8bed822f815953efd1c2b83c7812)
-@@ -10,6 +10,10 @@
- @Generated
- @Deprecated
- public final class MTROtaSoftwareUpdateProviderOTADownloadProtocol {
-+    @Generated
-+    private MTROtaSoftwareUpdateProviderOTADownloadProtocol() {
-+    }
-+
-     /**
-      * API-Since: 16.1
-      * Deprecated-Since: 16.4
-@@ -34,8 +38,4 @@
-      * Deprecated-Message: Please use MTROTASoftwareUpdateProviderDownloadProtocolVendorSpecific
-      */
-     @Generated @Deprecated public static final byte VendorSpecific = 3;
--
--    @Generated
--    private MTROtaSoftwareUpdateProviderOTADownloadProtocol() {
--    }
- }
-\ No newline at end of file
-Index: moe-core/moe.apple/moe.platform.ios/src/main/java/apple/authenticationservices/ASAuthorizationPlatformPublicKeyCredentialAssertionRequest.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/authenticationservices/ASAuthorizationPlatformPublicKeyCredentialAssertionRequest.java b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/authenticationservices/ASAuthorizationPlatformPublicKeyCredentialAssertionRequest.java
---- a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/authenticationservices/ASAuthorizationPlatformPublicKeyCredentialAssertionRequest.java	(date 1741277611204)
-+++ b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/authenticationservices/ASAuthorizationPlatformPublicKeyCredentialAssertionRequest.java	(revision 7db4e5be78ed8bed822f815953efd1c2b83c7812)
-@@ -172,8 +172,7 @@
- 
-     @Generated
-     @Selector("setAllowedCredentials:")
--    public native void setAllowedCredentials(
--            @NotNull NSArray<? extends ASAuthorizationPlatformPublicKeyCredentialDescriptor> value);
-+    public native void setAllowedCredentials(@NotNull NSArray<?> value);
- 
-     @Generated
-     @Selector("setChallenge:")
 Index: moe-core/moe.apple/moe.platform.ios/src/main/java/apple/uikit/UIContentUnavailableView.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/uikit/UIContentUnavailableView.java b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/uikit/UIContentUnavailableView.java
---- a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/uikit/UIContentUnavailableView.java	(date 1741277652669)
-+++ b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/uikit/UIContentUnavailableView.java	(revision 7db4e5be78ed8bed822f815953efd1c2b83c7812)
-@@ -419,7 +419,7 @@
- 
+--- a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/uikit/UIContentUnavailableView.java	(date 1763056998004)
++++ b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/uikit/UIContentUnavailableView.java	(revision 31dc980ebebd479461dac71d0f9c046638163878)
+@@ -417,7 +417,7 @@
+
      @Generated
      @Selector("setConfiguration:")
 -    public native void setConfiguration(@NotNull UIContentUnavailableConfiguration value);
 +    public native void setConfiguration(@NotNull UIContentConfiguration value);
- 
+
      /**
       * Whether the content can scroll. Default is NO.
-Index: moe-core/moe.apple/moe.platform.ios/src/main/java/apple/matter/enums/MTRKeypadInputCecKeyCode.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/matter/enums/MTRKeypadInputCecKeyCode.java b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/matter/enums/MTRKeypadInputCecKeyCode.java
---- a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/matter/enums/MTRKeypadInputCecKeyCode.java	(date 1741277582584)
-+++ b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/matter/enums/MTRKeypadInputCecKeyCode.java	(revision 7db4e5be78ed8bed822f815953efd1c2b83c7812)
-@@ -6,7 +6,7 @@
-  * API-Since: 17.4
-  */
- @Generated
--public final class MTRKeypadInputCECKeyCode {
-+public final class MTRKeypadInputCecKeyCode {
-     @Generated
-     private MTRKeypadInputCecKeyCode() {
-     }
-Index: moe-core/moe.apple/moe.platform.ios/src/main/java/apple/uikit/UIListContentView.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/uikit/UIListContentView.java b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/uikit/UIListContentView.java
---- a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/uikit/UIListContentView.java	(date 1741277653052)
-+++ b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/uikit/UIListContentView.java	(revision 7db4e5be78ed8bed822f815953efd1c2b83c7812)
-@@ -240,7 +240,7 @@
- 
-     @Generated
-     @Selector("setConfiguration:")
--    public native void setConfiguration(@NotNull UIListContentConfiguration value);
-+    public native void setConfiguration(@NotNull UIContentConfiguration value);
- 
-     @Generated
-     @Selector("debugDescription")
 Index: moe-core/moe.apple/moe.platform.ios/src/main/java/apple/gamekit/protocol/GKLocalPlayerListener.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/gamekit/protocol/GKLocalPlayerListener.java b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/gamekit/protocol/GKLocalPlayerListener.java
---- a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/gamekit/protocol/GKLocalPlayerListener.java	(date 1741277621683)
-+++ b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/gamekit/protocol/GKLocalPlayerListener.java	(revision 7db4e5be78ed8bed822f815953efd1c2b83c7812)
+--- a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/gamekit/protocol/GKLocalPlayerListener.java	(date 1763059388531)
++++ b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/gamekit/protocol/GKLocalPlayerListener.java	(revision 31dc980ebebd479461dac71d0f9c046638163878)
 @@ -16,11 +16,15 @@
- 
+
  package apple.gamekit.protocol;
- 
+
 +import apple.foundation.NSArray;
 +import apple.gamekit.GKPlayer;
  import org.moe.natj.general.ann.Generated;
@@ -147,13 +55,14 @@ diff --git a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/gamekit/pro
 +import org.moe.natj.objc.ann.IsOptional;
  import org.moe.natj.objc.ann.ObjCProtocolName;
 +import org.moe.natj.objc.ann.Selector;
- 
- @Generated
- @Library("GameKit")
-@@ -28,4 +32,11 @@
+
+ /**
+  * API-Since: 7.0
+@@ -31,4 +35,12 @@
  @ObjCProtocolName("GKLocalPlayerListener")
- public interface GKLocalPlayerListener extends GKChallengeListener, GKInviteEventListener, GKTurnBasedEventListener,
-         GKSavedGameListener {
+ public interface GKLocalPlayerListener extends GKChallengeListener, GKGameActivityListener, GKInviteEventListener,
+         GKTurnBasedEventListener, GKSavedGameListener {
++
 +    @Generated
 +    @IsOptional
 +    @Deprecated
@@ -162,62 +71,18 @@ diff --git a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/gamekit/pro
 +        throw new java.lang.UnsupportedOperationException();
 +    }
  }
-Index: moe-core/moe.apple/moe.platform.ios/src/main/java/apple/metalperformanceshaders/MPSCNNConvolutionTranspose.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/metalperformanceshaders/MPSCNNConvolutionTranspose.java b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/metalperformanceshaders/MPSCNNConvolutionTranspose.java
---- a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/metalperformanceshaders/MPSCNNConvolutionTranspose.java	(date 1741277642493)
-+++ b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/metalperformanceshaders/MPSCNNConvolutionTranspose.java	(revision 7db4e5be78ed8bed822f815953efd1c2b83c7812)
-@@ -566,7 +566,7 @@
-     @Generated
-     @Selector("resultStateForSourceImage:sourceStates:destinationImage:")
-     public native MPSCNNConvolutionTransposeGradientState resultStateForSourceImageSourceStatesDestinationImage(
--            @NotNull MPSImage sourceImage, @Nullable NSArray<? extends MPSCNNConvolutionGradientState> sourceStates,
-+            @NotNull MPSImage sourceImage, @Nullable NSArray<? extends MPSState> sourceStates,
-             @NotNull MPSImage destinationImage);
- 
-     /**
-@@ -588,8 +588,7 @@
-     @Selector("temporaryResultStateForCommandBuffer:sourceImage:sourceStates:destinationImage:")
-     public native MPSCNNConvolutionTransposeGradientState temporaryResultStateForCommandBufferSourceImageSourceStatesDestinationImage(
-             @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSImage sourceImage,
--            @Nullable NSArray<? extends MPSCNNConvolutionGradientState> sourceStates,
--            @NotNull MPSImage destinationImage);
-+            @Nullable NSArray<? extends MPSState> sourceStates, @NotNull MPSImage destinationImage);
- 
-     @Generated
-     @Deprecated
-Index: moe-core/moe.apple/moe.platform.ios/src/main/java/apple/foundation/NSDictionary.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/foundation/NSDictionary.java b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/foundation/NSDictionary.java
---- a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/foundation/NSDictionary.java	(date 1741277619830)
-+++ b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/foundation/NSDictionary.java	(revision 7db4e5be78ed8bed822f815953efd1c2b83c7812)
-@@ -280,7 +280,7 @@
-     @Selector("countByEnumeratingWithState:objects:count:")
-     @NUInt
-     public native long countByEnumeratingWithStateObjectsCount(@NotNull VoidPtr state,
--            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<_KeyType> buffer, @NUInt long len);
-+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
- 
-     @NotNull
-     @Generated
 Index: moe-core/moe.apple/moe.platform.ios/src/main/java/apple/foundation/NSMutableDictionary.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/foundation/NSMutableDictionary.java b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/foundation/NSMutableDictionary.java
---- a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/foundation/NSMutableDictionary.java	(date 1741277513053)
-+++ b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/foundation/NSMutableDictionary.java	(revision 7db4e5be78ed8bed822f815953efd1c2b83c7812)
+--- a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/foundation/NSMutableDictionary.java	(date 1763059342243)
++++ b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/foundation/NSMutableDictionary.java	(revision 31dc980ebebd479461dac71d0f9c046638163878)
 @@ -1057,11 +1057,4 @@
      @Selector("useStoredAccessor")
      public static native boolean useStoredAccessor();
- 
+
 -    /**
 -     * Send -setObject:forKey: to the receiver, unless the value is nil, in which case send -removeObjectForKey:.
 -     */
@@ -226,16 +91,34 @@ diff --git a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/foundation/
 -    public native void setValueForKey(@Mapped(ObjCObjectMapper.class) @Nullable _ObjectType value, @NotNull String key);
 -
  }
+Index: moe-core/moe.apple/moe.platform.ios/src/main/java/apple/authenticationservices/ASAuthorizationSecurityKeyPublicKeyCredentialAssertionRequest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/authenticationservices/ASAuthorizationSecurityKeyPublicKeyCredentialAssertionRequest.java b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/authenticationservices/ASAuthorizationSecurityKeyPublicKeyCredentialAssertionRequest.java
+--- a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/authenticationservices/ASAuthorizationSecurityKeyPublicKeyCredentialAssertionRequest.java	(date 1763059388528)
++++ b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/authenticationservices/ASAuthorizationSecurityKeyPublicKeyCredentialAssertionRequest.java	(revision 31dc980ebebd479461dac71d0f9c046638163878)
+@@ -172,8 +172,7 @@
+
+     @Generated
+     @Selector("setAllowedCredentials:")
+-    public native void setAllowedCredentials(
+-            @NotNull NSArray<? extends ASAuthorizationSecurityKeyPublicKeyCredentialDescriptor> value);
++    public native void setAllowedCredentials(@NotNull NSArray<?> value);
+
+     @Generated
+     @Selector("setChallenge:")
 Index: moe-core/moe.apple/moe.platform.ios/src/main/java/apple/callkit/CXCallDirectoryProvider.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/callkit/CXCallDirectoryProvider.java b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/callkit/CXCallDirectoryProvider.java
---- a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/callkit/CXCallDirectoryProvider.java	(date 1741277614130)
-+++ b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/callkit/CXCallDirectoryProvider.java	(revision 7db4e5be78ed8bed822f815953efd1c2b83c7812)
+--- a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/callkit/CXCallDirectoryProvider.java	(date 1763059388530)
++++ b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/callkit/CXCallDirectoryProvider.java	(revision 31dc980ebebd479461dac71d0f9c046638163878)
 @@ -18,6 +18,7 @@
- 
+
  import apple.NSObject;
  import apple.foundation.NSArray;
 +import apple.foundation.NSExtensionContext;
@@ -243,96 +126,90 @@ diff --git a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/callkit/CXC
  import apple.foundation.NSSet;
  import apple.foundation.protocol.NSExtensionRequestHandling;
 @@ -160,7 +161,7 @@
- 
+
      @Generated
      @Selector("beginRequestWithExtensionContext:")
 -    public native void beginRequestWithExtensionContext(@NotNull CXCallDirectoryExtensionContext context);
 +    public native void beginRequestWithExtensionContext(@NotNull NSExtensionContext context);
- 
+
      @Generated
      @Selector("init")
-Index: moe-core/moe.apple/moe.platform.ios/src/main/java/apple/matter/enums/MTROtaSoftwareUpdateRequestorOTAUpdateState.java
+Index: moe-core/moe.apple/moe.platform.ios/src/main/java/apple/foundation/NSDictionary.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
-diff --git a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/matter/enums/MTROtaSoftwareUpdateRequestorOTAUpdateState.java b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/matter/enums/MTROtaSoftwareUpdateRequestorOTAUpdateState.java
---- a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/matter/enums/MTROtaSoftwareUpdateRequestorOTAUpdateState.java	(date 1741277627836)
-+++ b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/matter/enums/MTROtaSoftwareUpdateRequestorOTAUpdateState.java	(revision 7db4e5be78ed8bed822f815953efd1c2b83c7812)
-@@ -10,6 +10,10 @@
- @Generated
- @Deprecated
- public final class MTROtaSoftwareUpdateRequestorOTAUpdateState {
-+    @Generated
-+    private MTROtaSoftwareUpdateRequestorOTAUpdateState() {
-+    }
-+
-     /**
-      * API-Since: 16.1
-      * Deprecated-Since: 16.4
-@@ -64,8 +68,4 @@
-      * Deprecated-Message: Please use MTROTASoftwareUpdateRequestorUpdateStateDelayedOnUserConsent
-      */
-     @Generated @Deprecated public static final byte DelayedOnUserConsent = 8;
--
--    @Generated
--    private MTROtaSoftwareUpdateRequestorOTAUpdateState() {
--    }
- }
-\ No newline at end of file
-Index: moe-core/moe.apple/moe.platform.ios/src/main/java/apple/metrickit/MXCrashDiagnostic.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/metrickit/MXCrashDiagnostic.java b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/metrickit/MXCrashDiagnostic.java
---- a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/metrickit/MXCrashDiagnostic.java	(date 1741277645431)
-+++ b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/metrickit/MXCrashDiagnostic.java	(revision 7db4e5be78ed8bed822f815953efd1c2b83c7812)
-@@ -260,9 +260,9 @@
-      * 
-      * The MXCrashDiagnosticObjectiveCExceptionReason object associated with this crash.
-      * 
--     * @see <MetricKit/MXCrashDiagnosticObjectiveCExceptionReason.h>
-+     *
-      * 
--     *      API-Since: 17.0
-+     * API-Since: 17.0
-      */
-     @Generated
-     @Selector("exceptionReason")
-Index: moe-core/moe.apple/moe.platform.ios/src/main/java/apple/matter/MTRDeviceController.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/matter/MTRDeviceController.java b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/matter/MTRDeviceController.java
---- a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/matter/MTRDeviceController.java	(revision ec6d6e4f3d2d4ae2eac84d58c8c51c39634cb973)
-+++ b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/matter/MTRDeviceController.java	(date 1741289041851)
-@@ -592,27 +592,6 @@
-         NSXPCConnection call_sharedControllerWithIDXpcConnectBlock();
-     }
+diff --git a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/foundation/NSDictionary.java b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/foundation/NSDictionary.java
+--- a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/foundation/NSDictionary.java	(date 1763056988035)
++++ b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/foundation/NSDictionary.java	(revision 31dc980ebebd479461dac71d0f9c046638163878)
+@@ -280,7 +280,7 @@
+     @Selector("countByEnumeratingWithState:objects:count:")
+     @NUInt
+     public native long countByEnumeratingWithStateObjectsCount(@NotNull VoidPtr state,
+-            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<_KeyType> buffer, @NUInt long len);
++            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
 
--    /**
--     * API-Since: 16.1
--     * Deprecated-Since: 16.4
--     * Deprecated-Message: Please use sharedControllerWithID:xpcConnectBlock:
--     */
--    @Generated
--    @Deprecated
--    @Selector("sharedControllerWithId:xpcConnectBlock:")
--    @NotNull
--    public static native MTRDeviceController sharedControllerWithIdXpcConnectBlock(
--            @Mapped(ObjCObjectMapper.class) @Nullable Object controllerID,
--            @ObjCBlock(name = "call_sharedControllerWithIdXpcConnectBlock") @NotNull Block_sharedControllerWithIdXpcConnectBlock xpcConnectBlock);
--
--    @Runtime(ObjCRuntime.class)
--    @Generated
--    public interface Block_sharedControllerWithIdXpcConnectBlock {
--        @Generated
--        @NotNull
--        NSXPCConnection call_sharedControllerWithIdXpcConnectBlock();
--    }
--
+     @NotNull
+     @Generated
+Index: moe-core/moe.apple/moe.platform.ios/src/main/java/apple/authenticationservices/ASAuthorizationPlatformPublicKeyCredentialAssertionRequest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/authenticationservices/ASAuthorizationPlatformPublicKeyCredentialAssertionRequest.java b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/authenticationservices/ASAuthorizationPlatformPublicKeyCredentialAssertionRequest.java
+--- a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/authenticationservices/ASAuthorizationPlatformPublicKeyCredentialAssertionRequest.java	(date 1763059388526)
++++ b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/authenticationservices/ASAuthorizationPlatformPublicKeyCredentialAssertionRequest.java	(revision 31dc980ebebd479461dac71d0f9c046638163878)
+@@ -172,8 +172,7 @@
+
+     @Generated
+     @Selector("setAllowedCredentials:")
+-    public native void setAllowedCredentials(
+-            @NotNull NSArray<? extends ASAuthorizationPlatformPublicKeyCredentialDescriptor> value);
++    public native void setAllowedCredentials(@NotNull NSArray<?> value);
+
+     @Generated
+     @Selector("setChallenge:")
+Index: moe-core/moe.apple/moe.platform.ios/src/main/java/apple/metalperformanceshaders/MPSCNNConvolutionTranspose.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/metalperformanceshaders/MPSCNNConvolutionTranspose.java b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/metalperformanceshaders/MPSCNNConvolutionTranspose.java
+--- a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/metalperformanceshaders/MPSCNNConvolutionTranspose.java	(date 1763059388536)
++++ b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/metalperformanceshaders/MPSCNNConvolutionTranspose.java	(revision 31dc980ebebd479461dac71d0f9c046638163878)
+@@ -566,7 +566,7 @@
+     @Generated
+     @Selector("resultStateForSourceImage:sourceStates:destinationImage:")
+     public native MPSCNNConvolutionTransposeGradientState resultStateForSourceImageSourceStatesDestinationImage(
+-            @NotNull MPSImage sourceImage, @Nullable NSArray<? extends MPSCNNConvolutionGradientState> sourceStates,
++            @NotNull MPSImage sourceImage, @Nullable NSArray<? extends MPSState> sourceStates,
+             @NotNull MPSImage destinationImage);
+
      /**
-      * Shut down the controller. Calls to shutdown after the first one are NO-OPs.
-      * This must be called, either directly or via shutting down the
+@@ -588,8 +588,7 @@
+     @Selector("temporaryResultStateForCommandBuffer:sourceImage:sourceStates:destinationImage:")
+     public native MPSCNNConvolutionTransposeGradientState temporaryResultStateForCommandBufferSourceImageSourceStatesDestinationImage(
+             @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSImage sourceImage,
+-            @Nullable NSArray<? extends MPSCNNConvolutionGradientState> sourceStates,
+-            @NotNull MPSImage destinationImage);
++            @Nullable NSArray<? extends MPSState> sourceStates, @NotNull MPSImage destinationImage);
+
+     @Generated
+     @Deprecated
+Index: moe-core/moe.apple/moe.platform.ios/src/main/java/apple/uikit/UIListContentView.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/uikit/UIListContentView.java b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/uikit/UIListContentView.java
+--- a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/uikit/UIListContentView.java	(date 1763056998230)
++++ b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/uikit/UIListContentView.java	(revision 31dc980ebebd479461dac71d0f9c046638163878)
+@@ -238,7 +238,7 @@
+
+     @Generated
+     @Selector("setConfiguration:")
+-    public native void setConfiguration(@NotNull UIListContentConfiguration value);
++    public native void setConfiguration(@NotNull UIContentConfiguration value);
+
+     @Generated
+     @Selector("debugDescription")

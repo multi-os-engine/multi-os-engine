@@ -45,8 +45,6 @@ import org.jetbrains.annotations.Nullable;
 import apple.foundation.NSDictionary;
 
 /**
- * AVPlayerItemErrorLogEvent
- * 
  * An AVPlayerItemErrorLogEvent represents a single log entry.
  * 
  * An AVPlayerItemErrorLogEvent provides named properties for accessing the data
@@ -171,8 +169,6 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
     public static native long version_static();
 
     /**
-     * [@property] URI
-     * 
      * The URI of the playback item. Can be nil.
      * 
      * If nil is returned the URI is unknown. Corresponds to "uri".
@@ -193,8 +189,6 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
-     * [@property] date
-     * 
      * The date and time when the error occured. Can be nil.
      * 
      * If nil is returned the date is unknown. Corresponds to "date".
@@ -208,8 +202,6 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
     public native NSDate date();
 
     /**
-     * [@property] errorComment
-     * 
      * A description of the error encountered. Can be nil.
      * 
      * If nil is returned further information is not available. Corresponds to "comment".
@@ -223,8 +215,6 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
     public native String errorComment();
 
     /**
-     * [@property] errorDomain
-     * 
      * The domain of the error.
      * 
      * Corresponds to "domain".
@@ -238,8 +228,6 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
     public native String errorDomain();
 
     /**
-     * [@property] errorStatusCode
-     * 
      * A unique error code identifier.
      * 
      * Corresponds to "status".
@@ -257,8 +245,6 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
     public native AVPlayerItemErrorLogEvent init();
 
     /**
-     * [@property] playbackSessionID
-     * 
      * A GUID that identifies the playback session. This value is used in HTTP requests. Can be nil.
      * 
      * If nil is returned the GUID is unknown. Corresponds to "cs-guid".
@@ -272,8 +258,6 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
     public native String playbackSessionID();
 
     /**
-     * [@property] serverAddress
-     * 
      * The IP address of the server that was the source of the error. Can be nil.
      * 
      * If nil is returned the address is unknown. Can be either an IPv4 or IPv6 address. Corresponds to "s-ip".
@@ -287,8 +271,6 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
     public native String serverAddress();
 
     /**
-     * [@property] allHTTPResponseHeaderFields
-     * 
      * The HTTP header fields returned by the server, if an HTTP response was received as part of this error.
      * 
      * See -[NSHTTPURLResponse allHeaderFields] for more information.

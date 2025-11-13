@@ -41,7 +41,8 @@ public final class CoreTelephony {
     /**
      * API-Since: 4.0
      * Deprecated-Since: 10.0
-     * Deprecated-Message: Replaced by <CallKit/CXCall.h> properties
+     * Deprecated-Message: Obsolete and will be a useless stub before final removal. Replaced by <CallKit/CXCall.h>
+     * properties
      */
     @NotNull
     @Deprecated
@@ -53,7 +54,8 @@ public final class CoreTelephony {
     /**
      * API-Since: 4.0
      * Deprecated-Since: 10.0
-     * Deprecated-Message: Replaced by <CallKit/CXCall.h> properties
+     * Deprecated-Message: Obsolete and will be a useless stub before final removal. Replaced by <CallKit/CXCall.h>
+     * properties
      */
     @NotNull
     @Deprecated
@@ -65,7 +67,8 @@ public final class CoreTelephony {
     /**
      * API-Since: 4.0
      * Deprecated-Since: 10.0
-     * Deprecated-Message: Replaced by <CallKit/CXCall.h> properties
+     * Deprecated-Message: Obsolete and will be a useless stub before final removal. Replaced by <CallKit/CXCall.h>
+     * properties
      */
     @NotNull
     @Deprecated
@@ -77,7 +80,8 @@ public final class CoreTelephony {
     /**
      * API-Since: 4.0
      * Deprecated-Since: 10.0
-     * Deprecated-Message: Replaced by <CallKit/CXCall.h> properties
+     * Deprecated-Message: Obsolete and will be a useless stub before final removal. Replaced by <CallKit/CXCall.h>
+     * properties
      */
     @NotNull
     @Deprecated

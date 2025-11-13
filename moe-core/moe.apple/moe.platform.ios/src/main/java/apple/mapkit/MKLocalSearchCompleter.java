@@ -44,6 +44,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 9.3
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -158,10 +161,16 @@ public class MKLocalSearchCompleter extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.3
+     */
     @Generated
     @Selector("cancel")
     public native void cancel();
 
+    /**
+     * API-Since: 9.3
+     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -183,30 +192,48 @@ public class MKLocalSearchCompleter extends NSObject {
     @Selector("init")
     public native MKLocalSearchCompleter init();
 
+    /**
+     * API-Since: 9.3
+     */
     @Generated
     @Selector("isSearching")
     public native boolean isSearching();
 
+    /**
+     * API-Since: 9.3
+     */
     @NotNull
     @Generated
     @Selector("queryFragment")
     public native String queryFragment();
 
+    /**
+     * API-Since: 9.3
+     */
     @Generated
     @Selector("region")
     @ByValue
     public native MKCoordinateRegion region();
 
+    /**
+     * API-Since: 9.3
+     */
     @NotNull
     @Generated
     @Selector("results")
     public native NSArray<? extends MKLocalSearchCompletion> results();
 
+    /**
+     * API-Since: 9.3
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
             @Nullable @Mapped(ObjCObjectMapper.class) MKLocalSearchCompleterDelegate value);
 
+    /**
+     * API-Since: 9.3
+     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) MKLocalSearchCompleterDelegate value) {
         Object __old = delegate();
@@ -229,10 +256,16 @@ public class MKLocalSearchCompleter extends NSObject {
     @Selector("setFilterType:")
     public native void setFilterType(@NInt long value);
 
+    /**
+     * API-Since: 9.3
+     */
     @Generated
     @Selector("setQueryFragment:")
     public native void setQueryFragment(@NotNull String value);
 
+    /**
+     * API-Since: 9.3
+     */
     @Generated
     @Selector("setRegion:")
     public native void setRegion(@ByValue MKCoordinateRegion value);

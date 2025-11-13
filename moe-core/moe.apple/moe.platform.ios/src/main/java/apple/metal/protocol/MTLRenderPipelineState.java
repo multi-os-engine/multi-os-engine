@@ -38,6 +38,9 @@ import apple.metal.struct.MTLResourceID;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.moe.natj.general.ann.NInt;
+import apple.metal.MTL4PipelineDescriptor;
+import apple.metal.MTL4RenderPipelineBinaryFunctionsDescriptor;
+import apple.metal.MTLRenderPipelineReflection;
 
 /**
  * [@protocol] MTLRenderPipelineState
@@ -52,7 +55,7 @@ import org.moe.natj.general.ann.NInt;
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLRenderPipelineState")
-public interface MTLRenderPipelineState {
+public interface MTLRenderPipelineState extends MTLAllocation {
     /**
      * API-Since: 8.0
      */
@@ -274,4 +277,143 @@ public interface MTLRenderPipelineState {
     @Selector("shaderValidation")
     @NInt
     long shaderValidation();
+
+    /**
+     * Obtains the function handle for a specific function this pipeline state links at the binary level.
+     * 
+     * - Parameters:
+     * - function: a binary function to retrieve the handle.
+     * - stage: The shader stage that uses the function.
+     * 
+     * - Returns: a function handle representing the function if present, otherwise `nil`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("functionHandleWithBinaryFunction:stage:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    MTLFunctionHandle functionHandleWithBinaryFunctionStage(
+            @Mapped(ObjCObjectMapper.class) @NotNull MTL4BinaryFunction function, @NUInt long stage);
+
+    /**
+     * Obtains a function handle for the a specific function this pipeline links at the Metal IR level.
+     * 
+     * - Parameters:
+     * - name: A string containing the name of the function.
+     * - stage: The shader stage that uses the function.
+     * 
+     * - Returns: a function handle representing the function if present, otherwise `nil`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("functionHandleWithName:stage:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    MTLFunctionHandle functionHandleWithNameStage(@NotNull String name, @NUInt long stage);
+
+    /**
+     * Creates a render pipeline descriptor from this pipeline that you can use for pipeline specialization.
+     * 
+     * Use this method to obtain a new ``MTL4PipelineDescriptor`` instance that you can use to specialize any
+     * unspecialized
+     * properties in this pipeline state object.
+     * 
+     * The returned descriptor contains every unspecialized field in the current pipeline state object, set to
+     * unspecialized.
+     * It may, however, not contain valid or accurate properties in any other field.
+     * 
+     * This descriptor is only valid for the purpose of calling specialization functions on the ``MTL4Compiler`` to
+     * specialize this pipeline, for example:
+     * ``MTL4Compiler/newRenderPipelineStateBySpecializationWithDescriptor:pipeline:error:``.
+     * 
+     * Although this method returns the ``MTL4PipelineDescriptor`` base class, the concrete instance this method returns
+     * corresponds to the specific descriptor type for the creation of this pipeline state, for example if a
+     * ``MTL4Compiler``
+     * instance creates this current pipeline form a ``MTLTileRenderPipelineDescriptor``, this method returns a concrete
+     * ``MTLTileRenderPipelineDescriptor`` instance.
+     * 
+     * - Returns: a new pipeline descriptor that you use for pipeline state specialization.
+     * 
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("newRenderPipelineDescriptorForSpecialization")
+    @NotNull
+    MTL4PipelineDescriptor newRenderPipelineDescriptorForSpecialization();
+
+    /**
+     * Creates a new render pipeline state by adding binary functions to each stage of this pipeline
+     * state.
+     * 
+     * - Parameters:
+     * - binaryFunctionsDescriptor: A non-`nil` dynamic linking descriptor.
+     * - error: An optional pointer that Metal populates with information in case of an error.
+     * 
+     * - Returns: A new render pipeline state upon success, otherwise `nil`.
+     * 
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("newRenderPipelineStateWithBinaryFunctions:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    MTLRenderPipelineState newRenderPipelineStateWithBinaryFunctionsError(
+            @NotNull MTL4RenderPipelineBinaryFunctionsDescriptor binaryFunctionsDescriptor,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    /**
+     * Obtains a reflection object for this render pipeline.
+     * 
+     * When you create the pipeline through an ``MTLDevice`` instance, reflection is `nil`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("reflection")
+    @Nullable
+    MTLRenderPipelineReflection reflection();
+
+    /**
+     * [@property] requiredThreadsPerMeshThreadgroup
+     * 
+     * The required size of every mesh shader threadgroup.
+     * 
+     * This value is set in MTLMeshRenderPipelineDescriptor.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("requiredThreadsPerMeshThreadgroup")
+    @ByValue
+    MTLSize requiredThreadsPerMeshThreadgroup();
+
+    /**
+     * [@property] requiredThreadsPerObjectThreadgroup
+     * 
+     * The required size of every object shader threadgroup.
+     * 
+     * This value is set in MTLMeshRenderPipelineDescriptor.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("requiredThreadsPerObjectThreadgroup")
+    @ByValue
+    MTLSize requiredThreadsPerObjectThreadgroup();
+
+    /**
+     * [@property] requiredThreadsPerTileThreadgroup
+     * 
+     * The required size of every tile shader threadgroup.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("requiredThreadsPerTileThreadgroup")
+    @ByValue
+    MTLSize requiredThreadsPerTileThreadgroup();
 }

@@ -20,36 +20,38 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
+ * The state of the task associated with the recognition request.
+ * 
  * API-Since: 10.0
  */
 @Generated
 public final class SFSpeechRecognitionTaskState {
     /**
-     * Speech processing (potentially including recording) has not yet begun
+     * Speech recognition (potentially including audio recording) has not yet started.
      * 
      * API-Since: 10.0
      */
     @Generated @NInt public static final long Starting = 0x0000000000000000L;
     /**
-     * Speech processing (potentially including recording) is running
+     * Speech recognition (potentially including audio recording) is in progress.
      * 
      * API-Since: 10.0
      */
     @Generated @NInt public static final long Running = 0x0000000000000001L;
     /**
-     * No more audio is being recorded, but more recognition results may arrive
+     * Audio recording has stopped, but delivery of recognition results may continue.
      * 
      * API-Since: 10.0
      */
     @Generated @NInt public static final long Finishing = 0x0000000000000002L;
     /**
-     * No more recognition results will arrive, but recording may not have stopped yet
+     * Delivery of recognition results has finished, but audio recording may be ongoing.
      * 
      * API-Since: 10.0
      */
     @Generated @NInt public static final long Canceling = 0x0000000000000003L;
     /**
-     * No more results will arrive, and recording is stopped.
+     * Delivery of recognition requests has finished and audio recording has stopped.
      * 
      * API-Since: 10.0
      */

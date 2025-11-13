@@ -25,7 +25,7 @@ import org.moe.natj.general.ann.NUInt;
 @Generated
 public final class CKRecordZoneCapabilities {
     /**
-     * This zone supports CKFetchRecordChangesOperation
+     * This zone supports `CKFetchRecordZoneChangesOperation`
      * 
      * API-Since: 8.0
      */
@@ -48,7 +48,7 @@ public final class CKRecordZoneCapabilities {
     }
 
     /**
-     * This zone supports a single CKShare record that shares all records in the zone
+     * This zone supports a single `CKShare` record that shares all records in the zone
      * 
      * API-Since: 15.0
      */

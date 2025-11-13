@@ -672,4 +672,39 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Determines the page size for a placement sparse texture.
+     * 
+     * Set this property to a non-zero value to create a *placement sparse texture*.
+     * 
+     * Placement sparse textures are instances of ``MTLTexture`` that you assign memory to using a ``MTLHeap`` instance
+     * of type ``MTLHeapType/MTLHeapTypePlacement`` and a ``MTLHeapDescriptor/maxCompatiblePlacementSparsePageSize``
+     * at least as large as the ``MTLSparsePageSize`` value you assign to this property.
+     * 
+     * This value is 0 by default.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("placementSparsePageSize")
+    @NInt
+    public native long placementSparsePageSize();
+
+    /**
+     * Determines the page size for a placement sparse texture.
+     * 
+     * Set this property to a non-zero value to create a *placement sparse texture*.
+     * 
+     * Placement sparse textures are instances of ``MTLTexture`` that you assign memory to using a ``MTLHeap`` instance
+     * of type ``MTLHeapType/MTLHeapTypePlacement`` and a ``MTLHeapDescriptor/maxCompatiblePlacementSparsePageSize``
+     * at least as large as the ``MTLSparsePageSize`` value you assign to this property.
+     * 
+     * This value is 0 by default.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setPlacementSparsePageSize:")
+    public native void setPlacementSparsePageSize(@NInt long value);
 }

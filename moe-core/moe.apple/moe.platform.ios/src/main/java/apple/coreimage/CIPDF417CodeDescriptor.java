@@ -28,10 +28,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * CIPDF417CodeDescriptor
+ * A concrete subclass of Core Image Barcode Descriptor that represents a PDF417 symbol.
  * 
- * CIPDF417CodeDescriptor is a concrete subclass of CIBarcodeDescriptor that defines an abstract representation of a
- * PDF417 code symbol.
+ * PDF417 is a stacked linear barcode symbol format used predominantly in transport, ID cards,
+ * and inventory management. Each pattern in the code comprises 4 bars and spaces, 17 units long.
  * 
  * Refer to the ISO/IEC 15438:2006(E) for the PDF417 symbol specification.
  */
@@ -89,12 +89,10 @@ public class CIPDF417CodeDescriptor extends CIBarcodeDescriptor {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property] columnCount
+     * The number of columns in the PDF417 code symbol.
      * 
-     * Indicates the number of columns in the rectangular matrix, excluding the columns used to indicate the symbol
-     * structure.
-     * 
-     * columnCount values range from 1 to 30.
+     * Valid column count values are from 1 to 30.
+     * This count excluded the columns used to indicate the symbol structure.
      */
     @Generated
     @Selector("columnCount")
@@ -110,7 +108,16 @@ public class CIPDF417CodeDescriptor extends CIBarcodeDescriptor {
     public static native String description_static();
 
     /**
-     * Construct an autoreleased descriptor that can be used as input to CIBarcodeGenerator
+     * Creates an PDF417 code descriptor for the given payload and parameters.
+     * 
+     * - Parameters:
+     * - errorCorrectedPayload: The data to encode in the PDF417 code symbol.
+     * - isCompact: A Boolean indicating whether or not the PDF417 code is compact.
+     * - rowCount: The number of rows in the PDF417 code, from 3 to 90.
+     * - columnCount: The number of columns in the Aztec code, from 1 to 30.
+     * - Returns:
+     * An autoreleased ``CIPDF417CodeDescriptor`` instance
+     * or `nil` if the parameters are invalid
      */
     @Generated
     @Selector("descriptorWithPayload:isCompact:rowCount:columnCount:")
@@ -118,18 +125,18 @@ public class CIPDF417CodeDescriptor extends CIBarcodeDescriptor {
             @NotNull NSData errorCorrectedPayload, boolean isCompact, @NInt long rowCount, @NInt long columnCount);
 
     /**
-     * [@property] errorCorrectedPayload
+     * The error-corrected payload containing the data encoded in the PDF417 code symbol.
      * 
-     * The error-corrected codewords which comprise the PDF417 symbol. The first codeword indicates the number of data
-     * codewords in the errorCorrectedPayload.
+     * The first codeword indicates the number of data codewords in the errorCorrectedPayload.
      * 
-     * PDF417 codes are comprised of a start character on the left and a stop character on the right. Each row begins
-     * and ends with special characters indicating the current row as well as information about the dimensions of the
-     * PDF417 symbol. The errorCorrectedPayload represents the sequence of PDF417 codewords that make up the body of the
-     * message. The first codeword indicates the number of codewords in the message. This count includes the "count"
-     * codeword and any padding codewords, but does not include the error correction codewords. Each codeword is a
-     * 16-bit value in the range of 0...928. The sequence is to be interpreted as described in the PDF417 bar code
-     * symbology specification -- ISO/IEC 15438:2006(E).
+     * PDF417 codes are comprised of a start character on the left and a stop character on the right.
+     * Each row begins and ends with special characters indicating the current row as well as information
+     * about the dimensions of the PDF417 symbol. The errorCorrectedPayload represents the sequence
+     * of PDF417 codewords that make up the body of the message. The first codeword indicates the number
+     * of codewords in the message. This count includes the "count" codeword and any padding codewords,
+     * but does not include the error correction codewords. Each codeword is a 16-bit value in the range
+     * of 0...928. The sequence is to be interpreted as described in the PDF417 bar code symbology
+     * specification -- ISO/IEC 15438:2006(E).
      */
     @NotNull
     @Generated
@@ -150,7 +157,16 @@ public class CIPDF417CodeDescriptor extends CIBarcodeDescriptor {
     public native CIPDF417CodeDescriptor initWithCoder(@NotNull NSCoder coder);
 
     /**
-     * Initializes a descriptor that can be used as input to CIBarcodeGenerator
+     * Initializes an PDF417 code descriptor for the given payload and parameters.
+     * 
+     * - Parameters:
+     * - errorCorrectedPayload: The data to encode in the PDF417 code symbol.
+     * - isCompact: A Boolean indicating whether or not the PDF417 code is compact.
+     * - rowCount: The number of rows in the PDF417 code, from 3 to 90.
+     * - columnCount: The number of columns in the Aztec code, from 1 to 30.
+     * - Returns:
+     * An initialized ``CIPDF417CodeDescriptor`` instance
+     * or `nil` if the parameters are invalid
      */
     @Generated
     @Selector("initWithPayload:isCompact:rowCount:columnCount:")
@@ -171,9 +187,7 @@ public class CIPDF417CodeDescriptor extends CIBarcodeDescriptor {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * [@property] isCompact
-     * 
-     * A BOOL indicating whether the symbol is compact.
+     * A boolean value telling if the PDF417 code is compact.
      * 
      * Compact PDF417 symbols have abbreviated right-side guard bars.
      */
@@ -204,11 +218,9 @@ public class CIPDF417CodeDescriptor extends CIBarcodeDescriptor {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property] rowCount
+     * The number of rows in the PDF417 code symbol.
      * 
-     * Indicates the number of rows in the rectangular matrix.
-     * 
-     * rowCount values range from 3 to 90.
+     * Valid row count values are from 3 to 90.
      */
     @Generated
     @Selector("rowCount")

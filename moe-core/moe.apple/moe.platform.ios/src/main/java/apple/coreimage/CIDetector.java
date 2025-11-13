@@ -124,7 +124,7 @@ public class CIDetector extends NSObject {
      * a GPU context this may avoid additional upload to / download from the GPU. If the input image is on the CPU (or
      * the output from a CPU based context) specifying a GPU based context (or vice versa) may reduce performance.
      * 
-     * The options parameter lets you optinally specify a accuracy / performance tradeoff. Can be nil or an empty
+     * // The options parameter lets you optionally specify a accuracy / performance tradeoff. Can be nil or an empty
      * dictionary.
      * 
      * API-Since: 5.0

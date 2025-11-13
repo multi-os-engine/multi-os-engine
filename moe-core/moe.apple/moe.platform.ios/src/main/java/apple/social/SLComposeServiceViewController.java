@@ -471,6 +471,7 @@ public class SLComposeServiceViewController extends UIViewController implements 
     @Selector("textView")
     public native UITextView textView();
 
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("textView:shouldChangeTextInRange:replacementText:")
@@ -558,6 +559,7 @@ public class SLComposeServiceViewController extends UIViewController implements 
     @Selector("scrollViewDidChangeAdjustedContentInset:")
     public native void scrollViewDidChangeAdjustedContentInset(@NotNull UIScrollView scrollView);
 
+    @Deprecated
     @Nullable
     @Generated
     @IsOptional
@@ -656,4 +658,17 @@ public class SLComposeServiceViewController extends UIViewController implements 
     @Selector("textView:insertInputSuggestion:")
     public native void textViewInsertInputSuggestion(@NotNull UITextView textView,
             @NotNull UIInputSuggestion inputSuggestion);
+
+    @Generated
+    @IsOptional
+    @Selector("textView:editMenuForTextInRanges:suggestedActions:")
+    @Nullable
+    public native UIMenu textViewEditMenuForTextInRangesSuggestedActions(@NotNull UITextView textView,
+            @NotNull NSArray<? extends NSValue> ranges, @NotNull NSArray<? extends UIMenuElement> suggestedActions);
+
+    @Generated
+    @IsOptional
+    @Selector("textView:shouldChangeTextInRanges:replacementText:")
+    public native boolean textViewShouldChangeTextInRangesReplacementText(@NotNull UITextView textView,
+            @NotNull NSArray<? extends NSValue> ranges, @NotNull String text);
 }

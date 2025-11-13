@@ -25,8 +25,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVAssetVariantAudioRenditionSpecificAttributes
- * 
  * Audio rendition attributes for an asset variant.
  * 
  * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
@@ -77,8 +75,6 @@ public class AVAssetVariantAudioRenditionSpecificAttributes extends NSObject {
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
-     * [@property] channelCount
-     * 
      * If it is not declared, the value will be negative.
      * 
      * A channel count greater than two indicates that the variant offers a rich multichannel authoring.
@@ -166,8 +162,6 @@ public class AVAssetVariantAudioRenditionSpecificAttributes extends NSObject {
     public static native long version_static();
 
     /**
-     * [@property] binaural
-     * 
      * Indicates that the variant is best suited for delivery to headphones.
      * 
      * A binaural variant may originate from a direct binaural recording or from the processing of a multichannel audio
@@ -180,8 +174,6 @@ public class AVAssetVariantAudioRenditionSpecificAttributes extends NSObject {
     public native boolean isBinaural();
 
     /**
-     * [@property] downmix
-     * 
      * Indicates that this variant is declared as a downmix derivative of other media of greater channel count.
      * 
      * If one or more multichannel variants are also provided, the dowmix is assumed to be compatible in its internal
@@ -195,8 +187,6 @@ public class AVAssetVariantAudioRenditionSpecificAttributes extends NSObject {
     public native boolean isDownmix();
 
     /**
-     * [@property] immersive
-     * 
      * Indicates that this variant contains virtualized or otherwise pre-processed audio content that is suitable for a
      * variety of purposes.
      * 

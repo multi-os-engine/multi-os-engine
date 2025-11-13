@@ -28,14 +28,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVDelegatingPlaybackCoordinatorSeekCommand
- * 
  * A playback command requesting a seek.
  * 
  * If the current playback rate is non-zero, playback should not automatically resume after the seek. Instead the
- * delegate should pause and wait for the coordinator to issue another PlayCommand.
- * 
- * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * delegate should pause and wait for the coordinator to issue another PlayCommand. Subclasses of this type that are
+ * used from Swift must fulfill the requirements of a Sendable type.
  * 
  * API-Since: 15.0
  */
@@ -68,8 +65,6 @@ public class AVDelegatingPlaybackCoordinatorSeekCommand extends AVDelegatingPlay
     public static native AVDelegatingPlaybackCoordinatorSeekCommand allocWithZone(VoidPtr zone);
 
     /**
-     * [@property] anticipatedPlaybackRate
-     * 
      * The rate to prepare for if shouldBufferInAnticipationOfPlayback is YES.
      * 
      * API-Since: 15.0
@@ -104,8 +99,6 @@ public class AVDelegatingPlaybackCoordinatorSeekCommand extends AVDelegatingPlay
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property] completionDueDate
-     * 
      * Communicates when the coordinator expects the command's completion handler at the latest.
      * 
      * A seek command expecting buffering in anticipation of playback does expect the receiver to fire the completion
@@ -160,8 +153,6 @@ public class AVDelegatingPlaybackCoordinatorSeekCommand extends AVDelegatingPlay
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * [@property] itemTime
-     * 
      * The time to seek the currentItem to.
      * 
      * Playback should never automatically resume after seeking to this time. The coordinator will issue a new
@@ -197,8 +188,6 @@ public class AVDelegatingPlaybackCoordinatorSeekCommand extends AVDelegatingPlay
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property] shouldBufferInAnticipationOfPlayback
-     * 
      * Indicates that playback is anticipated and the player should begin buffering if necessary.
      * 
      * When shouldBufferInAnticipationOfPlayback, playback is expected to eventually resume at the rate indicated by the

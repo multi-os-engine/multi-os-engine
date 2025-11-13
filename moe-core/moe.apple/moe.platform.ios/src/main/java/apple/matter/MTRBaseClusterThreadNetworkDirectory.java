@@ -57,7 +57,7 @@ public class MTRBaseClusterThreadNetworkDirectory extends MTRGenericBaseCluster 
     /**
      * Command AddNetwork
      * 
-     * Adds an entry to the ThreadNetworks list.
+     * Adds an entry to the ThreadNetworks attribute with the specified Thread Operational Dataset.
      * 
      * API-Since: 18.4
      */
@@ -119,7 +119,7 @@ public class MTRBaseClusterThreadNetworkDirectory extends MTRGenericBaseCluster 
     /**
      * Command GetOperationalDataset
      * 
-     * Retrieves a Thread Operational Dataset from the ThreadNetworks list.
+     * Retrieves the Thread Operational Dataset with the given Extended PAN ID.
      * 
      * API-Since: 18.4
      */
@@ -452,7 +452,7 @@ public class MTRBaseClusterThreadNetworkDirectory extends MTRGenericBaseCluster 
     /**
      * Command RemoveNetwork
      * 
-     * Removes an entry from the ThreadNetworks list.
+     * Removes the network with the given Extended PAN ID from the ThreadNetworks attribute.
      * 
      * API-Since: 18.4
      */

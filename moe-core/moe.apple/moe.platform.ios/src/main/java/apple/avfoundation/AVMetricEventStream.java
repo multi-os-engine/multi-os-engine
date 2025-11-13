@@ -28,8 +28,6 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * AVMetricEventStream
- * 
  * AVMetricEventStream allows clients to add publishers and then subscribe to specific metric event classes from those
  * publishers. Publishers are AVFoundation instances implementing AVMetricEventStreamPublisher. The interface allows
  * clients to receive metric events via a subscriber delegate which implements AVMetricEventStreamSubscriber.
@@ -55,8 +53,6 @@ public class AVMetricEventStream extends NSObject {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * addPublisher:
-     * 
      * The publisher should be an AVFoundation instance conforming to AVMetricEventStreamPublisher.
      * 
      * API-Since: 18.0
@@ -109,8 +105,6 @@ public class AVMetricEventStream extends NSObject {
     public static native String description_static();
 
     /**
-     * eventStream
-     * 
      * Returns an autoreleased instance.
      * 
      * API-Since: 18.0
@@ -164,14 +158,12 @@ public class AVMetricEventStream extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * setSubscriber:queue:
-     * 
      * Set a subscriber delegate.
      * 
-     * @param subscriber A subscriber delegate object conforming to AVMetricEventStreamSubscriber.
-     * @param queue      Dispatch queue for the delegate callbacks.
+     * - Parameter subscriber: A subscriber delegate object conforming to AVMetricEventStreamSubscriber.
+     * - Parameter queue: Dispatch queue for the delegate callbacks.
      * 
-     *                   API-Since: 18.0
+     * API-Since: 18.0
      */
     @Generated
     @Selector("setSubscriber:queue:")
@@ -184,8 +176,6 @@ public class AVMetricEventStream extends NSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * subscribeToAllMetricEvents:
-     * 
      * Subscribe to all metric event classes.
      * 
      * API-Since: 18.0
@@ -195,26 +185,22 @@ public class AVMetricEventStream extends NSObject {
     public native void subscribeToAllMetricEvents();
 
     /**
-     * subscribeToMetricEvent:
-     * 
      * Subscribe to a specific metric event class.
      * 
-     * @param metricEventClass Type of metric event class to subscribe to.
+     * - Parameter metricEventClass: Type of metric event class to subscribe to.
      * 
-     *                         API-Since: 18.0
+     * API-Since: 18.0
      */
     @Generated
     @Selector("subscribeToMetricEvent:")
     public native void subscribeToMetricEvent(@NotNull Class metricEventClass);
 
     /**
-     * subscribeToMetricEvents:
-     * 
      * Subscribe to set of metric event classes.
      * 
-     * @param metricEventClasses Set of metric event classes to subscribe to.
+     * - Parameter metricEventClasses: Set of metric event classes to subscribe to.
      * 
-     *                           API-Since: 18.0
+     * API-Since: 18.0
      */
     @Generated
     @Selector("subscribeToMetricEvents:")

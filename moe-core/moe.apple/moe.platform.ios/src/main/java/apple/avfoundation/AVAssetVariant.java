@@ -23,14 +23,12 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSURL;
 
 /**
- * AVAssetVariant
- * 
- * An AVAssetVariant represents a bit rate variant.
- * Each asset contains a collection of variants that represent a combination of audio, video, text, closed captions, and
- * subtitles for a particular bit rate.
- * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * An AVAssetVariant represents a bit rate variant. Each asset contains a collection of variants that represent a
+ * combination of audio, video, text, closed captions, and subtitles for a particular bit rate. Subclasses of this type
+ * that are used from Swift must fulfill the requirements of a Sendable type.
  * 
  * API-Since: 15.0
  */
@@ -63,8 +61,6 @@ public class AVAssetVariant extends NSObject {
     public static native AVAssetVariant allocWithZone(VoidPtr zone);
 
     /**
-     * [@property] audioAttributes
-     * 
      * Provides variant's audio rendition attributes. If no audio attributes are declared, it will be nil.
      * 
      * API-Since: 15.0
@@ -79,8 +75,6 @@ public class AVAssetVariant extends NSObject {
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
-     * [@property] averageBitRate
-     * 
      * If it is not declared, the value will be negative.
      * 
      * API-Since: 15.0
@@ -155,8 +149,6 @@ public class AVAssetVariant extends NSObject {
     public static native AVAssetVariant new_objc();
 
     /**
-     * [@property] peakBitRate
-     * 
      * If it is not declared, the value will be negative.
      * 
      * API-Since: 15.0
@@ -187,8 +179,6 @@ public class AVAssetVariant extends NSObject {
     public static native long version_static();
 
     /**
-     * [@property] videoAttributes
-     * 
      * Provides variant's video rendition attributes. If no video attributes are declared, it will be nil.
      * 
      * API-Since: 15.0
@@ -202,4 +192,14 @@ public class AVAssetVariant extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Provides URL to media playlist corresponding to variant
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("URL")
+    @NotNull
+    public native NSURL URL();
 }

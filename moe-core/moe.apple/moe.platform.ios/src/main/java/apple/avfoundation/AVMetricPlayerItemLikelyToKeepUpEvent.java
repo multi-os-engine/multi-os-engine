@@ -28,8 +28,6 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * AVMetricPlayerItemLikelyToKeepUpEvent
- * 
  * Represents a metric event when playback was likely to play through without stalling.
  * 
  * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
@@ -133,8 +131,6 @@ public class AVMetricPlayerItemLikelyToKeepUpEvent extends AVMetricEvent {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
-     * [@property] loadedTimeRanges
-     * 
      * This property provides a collection of time ranges for which the player has the media data readily available. The
      * ranges provided might be discontinuous.
      * 
@@ -179,8 +175,6 @@ public class AVMetricPlayerItemLikelyToKeepUpEvent extends AVMetricEvent {
     }
 
     /**
-     * [@property] timeTaken
-     * 
      * Returns the total time taken to reach likely to keep up.
      * 
      * API-Since: 18.0
@@ -195,8 +189,6 @@ public class AVMetricPlayerItemLikelyToKeepUpEvent extends AVMetricEvent {
     public static native boolean useStoredAccessor();
 
     /**
-     * [@property] variant
-     * 
      * Returns the variant selected at the time likely to keep up is achieved. If no value is present, returns nil.
      * 
      * API-Since: 18.0

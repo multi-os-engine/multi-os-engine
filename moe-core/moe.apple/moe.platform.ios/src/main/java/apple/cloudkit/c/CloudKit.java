@@ -279,7 +279,7 @@ public final class CloudKit {
     public static native String CKRecordNameZoneWideShare();
 
     /**
-     * For use in queries to match on record properties. Matches `record.recordID`. Value is a `CKRecordID`
+     * For use in queries to match on record properties. Matches `record.recordID`. Value is a ``CKRecordID``
      * 
      * API-Since: 8.0
      */
@@ -290,7 +290,7 @@ public final class CloudKit {
     public static native String CKRecordRecordIDKey();
 
     /**
-     * For use in queries to match on record properties. Matches `record.creatorUserRecordID`. Value is a `CKRecordID`
+     * For use in queries to match on record properties. Matches `record.creatorUserRecordID`. Value is a ``CKRecordID``
      * 
      * API-Since: 8.0
      */
@@ -313,7 +313,7 @@ public final class CloudKit {
 
     /**
      * For use in queries to match on record properties. Matches `record.lastModifiedUserRecordID`. Value is a
-     * `CKRecordID`
+     * ``CKRecordID``
      * 
      * API-Since: 8.0
      */

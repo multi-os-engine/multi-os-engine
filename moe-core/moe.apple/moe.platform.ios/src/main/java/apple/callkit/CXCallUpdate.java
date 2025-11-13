@@ -194,7 +194,7 @@ public class CXCallUpdate extends NSObject implements NSCopying {
     public native String localizedCallerName();
 
     /**
-     * Handle for the remote party (for an incoming call, the caller; for an outgoing call, the callee)
+     * Handle for the remote party (for an incoming call, the caller; for an outgoing call, the callee).
      * 
      * API-Since: 10.0
      */
@@ -224,7 +224,7 @@ public class CXCallUpdate extends NSObject implements NSCopying {
     public native void setLocalizedCallerName(@Nullable String value);
 
     /**
-     * Handle for the remote party (for an incoming call, the caller; for an outgoing call, the callee)
+     * Handle for the remote party (for an incoming call, the caller; for an outgoing call, the callee).
      * 
      * API-Since: 10.0
      */

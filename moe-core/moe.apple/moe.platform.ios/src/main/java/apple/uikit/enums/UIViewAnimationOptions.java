@@ -25,6 +25,8 @@ import org.moe.natj.general.ann.NUInt;
 @Generated
 public final class UIViewAnimationOptions {
     /**
+     * resized views will perform layout; consider using UIViewAnimationOptionFlushUpdates instead
+     * 
      * API-Since: 4.0
      */
     @Generated @NUInt public static final long LayoutSubviews = 0x0000000000000001L;
@@ -151,4 +153,18 @@ public final class UIViewAnimationOptions {
      * API-Since: 4.0
      */
     @Generated @NUInt public static final long PreferredFramesPerSecond30 = 0x0000000007000000L;
+    /**
+     * Flush all pending updates (including traits, properties, and layout) whenever the animation context changes.
+     * This includes flushing updates:
+     * - Before entering an animation scope, for invalidations that happened previously without animation.
+     * - Before entering a nested animation scope, for invalidations that happened in the outer animation scope.
+     * - Before exiting any animation scope, for invalidations that happened in that animation scope.
+     * - Before disabling animations, for invalidations that happened in the animation scope with animations enabled.
+     * - Before re-enabling animations, for invalidations that happened in the scope with animations disabled.
+     * This animation option implicitly applies to any nested animation scopes, even if they don't explicitly use this
+     * option.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated @NUInt public static final long FlushUpdates = 0x0000000010000000L;
 }

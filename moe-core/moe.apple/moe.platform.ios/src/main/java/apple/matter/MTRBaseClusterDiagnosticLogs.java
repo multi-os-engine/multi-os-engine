@@ -528,7 +528,7 @@ public class MTRBaseClusterDiagnosticLogs extends MTRGenericBaseCluster {
     /**
      * Command RetrieveLogsRequest
      * 
-     * Retrieving diagnostic logs from a Node
+     * Reception of this command starts the process of retrieving diagnostic logs from a Node.
      * 
      * API-Since: 16.4
      */

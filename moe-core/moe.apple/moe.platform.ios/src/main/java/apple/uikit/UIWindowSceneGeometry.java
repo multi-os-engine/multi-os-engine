@@ -25,6 +25,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.protocol.UICoordinateSpace;
 
 /**
  * API-Since: 16.0
@@ -119,6 +120,9 @@ public class UIWindowSceneGeometry extends NSObject implements NSCopying {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * The interface orientation of the scene
+     */
     @Generated
     @Selector("interfaceOrientation")
     @NInt
@@ -163,4 +167,34 @@ public class UIWindowSceneGeometry extends NSObject implements NSCopying {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The coordinate space of the scene
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("coordinateSpace")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native UICoordinateSpace coordinateSpace();
+
+    /**
+     * Returns true when the scene is being resized interactively, otherwise false.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isInteractivelyResizing")
+    public native boolean isInteractivelyResizing();
+
+    /**
+     * If the scene's interface orientation is locked and preventing changes. To express a preference for this value,
+     * override `UIViewController`'s `prefersInterfaceOrientationLocked`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isInterfaceOrientationLocked")
+    public native boolean isInterfaceOrientationLocked();
 }

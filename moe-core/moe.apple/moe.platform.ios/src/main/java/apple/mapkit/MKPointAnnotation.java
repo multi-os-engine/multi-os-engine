@@ -17,7 +17,6 @@ limitations under the License.
 package apple.mapkit;
 
 import apple.NSObject;
-import apple.corelocation.struct.CLLocationCoordinate2D;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -42,7 +41,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.corelocation.struct.CLLocationCoordinate2D;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -157,15 +160,24 @@ public class MKPointAnnotation extends MKShape implements MKGeoJSONObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("coordinate")
     @ByValue
     public native CLLocationCoordinate2D coordinate();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("init")
     public native MKPointAnnotation init();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("setCoordinate:")
     public native void setCoordinate(@ByValue CLLocationCoordinate2D value);

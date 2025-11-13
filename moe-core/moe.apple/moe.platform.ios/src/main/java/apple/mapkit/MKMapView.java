@@ -17,7 +17,6 @@ limitations under the License.
 package apple.mapkit;
 
 import apple.NSObject;
-import apple.corelocation.struct.CLLocationCoordinate2D;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -59,6 +58,7 @@ import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.corelocation.struct.CLLocationCoordinate2D;
 
 @Generated
 @Library("MapKit")
@@ -695,6 +695,7 @@ public class MKMapView extends UIView implements NSCoding {
      * 
      * API-Since: 3.0
      * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use respective MKMapConfiguration
      */
     @Deprecated
     @Generated
@@ -827,6 +828,7 @@ public class MKMapView extends UIView implements NSCoding {
      * 
      * API-Since: 3.0
      * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use respective MKMapConfiguration
      */
     @Deprecated
     @Generated
@@ -890,6 +892,7 @@ public class MKMapView extends UIView implements NSCoding {
      * 
      * API-Since: 9.0
      * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use showsTraffic on respective MKMapConfiguration
      */
     @Deprecated
     @Generated
@@ -983,6 +986,7 @@ public class MKMapView extends UIView implements NSCoding {
      * 
      * API-Since: 9.0
      * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use showsTraffic on respective MKMapConfiguration
      */
     @Deprecated
     @Generated
@@ -1026,6 +1030,7 @@ public class MKMapView extends UIView implements NSCoding {
      * 
      * API-Since: 4.0
      * Deprecated-Since: 13.0
+     * Deprecated-Message: Use -rendererForOverlay:
      */
     @NotNull
     @Deprecated
@@ -1088,6 +1093,7 @@ public class MKMapView extends UIView implements NSCoding {
     /**
      * API-Since: 13.0
      * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use pointOfInterestFilter on respective MKMapConfiguration
      */
     @Nullable
     @Deprecated
@@ -1126,6 +1132,7 @@ public class MKMapView extends UIView implements NSCoding {
     /**
      * API-Since: 13.0
      * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use pointOfInterestFilter on respective MKMapConfiguration
      */
     @Deprecated
     @Generated

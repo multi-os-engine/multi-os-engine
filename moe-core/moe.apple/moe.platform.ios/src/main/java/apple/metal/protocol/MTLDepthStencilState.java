@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.metal.struct.MTLResourceID;
+import org.moe.natj.general.ann.ByValue;
 
 /**
  * Device-specific compiled depth/stencil state object
@@ -61,4 +63,16 @@ public interface MTLDepthStencilState {
     @Generated
     @Selector("label")
     String label();
+
+    /**
+     * [@property] gpuResourceID
+     * 
+     * Handle of the GPU resource suitable for storing in an Argument Buffer
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("gpuResourceID")
+    @ByValue
+    MTLResourceID gpuResourceID();
 }

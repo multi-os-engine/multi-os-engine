@@ -32,6 +32,20 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
+ * CLBeaconIdentityCondition
+ * 
+ * Discussion:
+ * A condition that describes the identity caracteristics of a beacon.
+ * 
+ * A beacon identity is defined by UUID, major and minor values.
+ * UUID must be specified. If only UUID is specified, the major and
+ * minor values will be wildcarded and any beacons with the same
+ * UUID will satisfy the condition. Similarly if only UUID and
+ * major value are specified, the minor value will be wildcarded
+ * and any beacons with the same UUID and major value will satisfy
+ * the condition.
+ * 
+ * 
  * API-Since: 17.0
  */
 @Generated

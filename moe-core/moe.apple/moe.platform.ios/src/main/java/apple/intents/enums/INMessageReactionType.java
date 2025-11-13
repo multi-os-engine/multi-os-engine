@@ -4,8 +4,6 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * Constants that describe the type of the message reaction.
- * 
  * API-Since: 18.0
  */
 @Generated

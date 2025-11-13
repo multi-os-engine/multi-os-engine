@@ -238,8 +238,8 @@ public class AVCaptureConnection extends NSObject {
      * This property is only applicable to AVCaptureConnection instances involving video. On devices where the video
      * stabilization feature is supported, only a subset of available source formats may be stabilized. The
      * activeVideoStabilizationMode property returns a value other than AVCaptureVideoStabilizationModeOff if video
-     * stabilization is currently in use. This property never returns AVCaptureVideoStabilizationModeAuto. This property
-     * is key-value observable.
+     * stabilization is currently in use (or in the case of ProRes RAW, if stabilization metadata is being attached).
+     * This property never returns AVCaptureVideoStabilizationModeAuto. This property is key-value observable.
      * 
      * API-Since: 8.0
      */
@@ -551,9 +551,9 @@ public class AVCaptureConnection extends NSObject {
      * This property is only applicable to AVCaptureConnection instances involving video. In such connections, the
      * -enablesVideoStabilizationWhenAvailable property may only be set if -supportsVideoStabilization returns YES. This
      * property returns YES if the connection's input device has one or more formats that support video stabilization
-     * and the connection's output supports video stabilization. See [AVCaptureDeviceFormat
-     * isVideoStabilizationModeSupported:] to check which video stabilization modes are supported by the active device
-     * format.
+     * and the connection's output supports video stabilization (or in the case of ProRes RAW, support stabilization
+     * metadata attachments). See [AVCaptureDeviceFormat isVideoStabilizationModeSupported:] to check which video
+     * stabilization modes are supported by the active device format.
      * 
      * API-Since: 6.0
      */
@@ -583,17 +583,22 @@ public class AVCaptureConnection extends NSObject {
      * This property is only applicable to AVCaptureConnection instances involving video. On devices where the video
      * stabilization feature is supported, only a subset of available source formats may be available for stabilization.
      * By setting the preferredVideoStabilizationMode property to a value other than AVCaptureVideoStabilizationModeOff,
-     * video flowing through the receiver is stabilized when the mode is available. Enabling video stabilization
-     * introduces additional latency into the video capture pipeline and may consume more system memory depending on the
-     * stabilization mode and format. If the preferred stabilization mode isn't available, the
-     * activeVideoStabilizationMode will be set to AVCaptureVideoStabilizationModeOff. Clients may key-value observe the
-     * activeVideoStabilizationMode property to know which stabilization mode is in use or when it is off. The default
-     * value is AVCaptureVideoStabilizationModeOff. When setting this property to AVCaptureVideoStabilizationModeAuto,
-     * an appropriate stabilization mode will be chosen based on the format and frame rate. For apps linked before iOS
-     * 6.0, the default value is AVCaptureVideoStabilizationModeStandard for a video connection attached to an
-     * AVCaptureMovieFileOutput instance. For apps linked on or after iOS 6.0, the default value is always
-     * AVCaptureVideoStabilizationModeOff. Setting a video stabilization mode using this property may change the value
-     * of enablesVideoStabilizationWhenAvailable.
+     * video flowing through the receiver is stabilized when the mode is available. In the case of ProRes RAW, this
+     * property enables stabilization metadata to be generated, which an application supporting ProRes RAW can
+     * optionally apply at playback time using the ProRes RAW SDK. To learn more about the ProRes RAW SDK, refer to the
+     * Apple ProRes and ProRes RAW Authorized Products article on support.apple.com. See
+     * https://support.apple.com/en-us/118584.
+     * 
+     * Enabling video stabilization introduces additional latency into the video capture pipeline and may consume more
+     * system memory depending on the stabilization mode and format. If the preferred stabilization mode isn't
+     * available, the activeVideoStabilizationMode will be set to AVCaptureVideoStabilizationModeOff. Clients may
+     * key-value observe the activeVideoStabilizationMode property to know which stabilization mode is in use or when it
+     * is off. The default value is AVCaptureVideoStabilizationModeOff. When setting this property to
+     * AVCaptureVideoStabilizationModeAuto, an appropriate stabilization mode will be chosen based on the format and
+     * frame rate. For apps linked before iOS 6.0, the default value is AVCaptureVideoStabilizationModeStandard for a
+     * video connection attached to an AVCaptureMovieFileOutput instance. For apps linked on or after iOS 6.0, the
+     * default value is always AVCaptureVideoStabilizationModeOff. Setting a video stabilization mode using this
+     * property may change the value of enablesVideoStabilizationWhenAvailable.
      * 
      * API-Since: 8.0
      */
@@ -649,17 +654,22 @@ public class AVCaptureConnection extends NSObject {
      * This property is only applicable to AVCaptureConnection instances involving video. On devices where the video
      * stabilization feature is supported, only a subset of available source formats may be available for stabilization.
      * By setting the preferredVideoStabilizationMode property to a value other than AVCaptureVideoStabilizationModeOff,
-     * video flowing through the receiver is stabilized when the mode is available. Enabling video stabilization
-     * introduces additional latency into the video capture pipeline and may consume more system memory depending on the
-     * stabilization mode and format. If the preferred stabilization mode isn't available, the
-     * activeVideoStabilizationMode will be set to AVCaptureVideoStabilizationModeOff. Clients may key-value observe the
-     * activeVideoStabilizationMode property to know which stabilization mode is in use or when it is off. The default
-     * value is AVCaptureVideoStabilizationModeOff. When setting this property to AVCaptureVideoStabilizationModeAuto,
-     * an appropriate stabilization mode will be chosen based on the format and frame rate. For apps linked before iOS
-     * 6.0, the default value is AVCaptureVideoStabilizationModeStandard for a video connection attached to an
-     * AVCaptureMovieFileOutput instance. For apps linked on or after iOS 6.0, the default value is always
-     * AVCaptureVideoStabilizationModeOff. Setting a video stabilization mode using this property may change the value
-     * of enablesVideoStabilizationWhenAvailable.
+     * video flowing through the receiver is stabilized when the mode is available. In the case of ProRes RAW, this
+     * property enables stabilization metadata to be generated, which an application supporting ProRes RAW can
+     * optionally apply at playback time using the ProRes RAW SDK. To learn more about the ProRes RAW SDK, refer to the
+     * Apple ProRes and ProRes RAW Authorized Products article on support.apple.com. See
+     * https://support.apple.com/en-us/118584.
+     * 
+     * Enabling video stabilization introduces additional latency into the video capture pipeline and may consume more
+     * system memory depending on the stabilization mode and format. If the preferred stabilization mode isn't
+     * available, the activeVideoStabilizationMode will be set to AVCaptureVideoStabilizationModeOff. Clients may
+     * key-value observe the activeVideoStabilizationMode property to know which stabilization mode is in use or when it
+     * is off. The default value is AVCaptureVideoStabilizationModeOff. When setting this property to
+     * AVCaptureVideoStabilizationModeAuto, an appropriate stabilization mode will be chosen based on the format and
+     * frame rate. For apps linked before iOS 6.0, the default value is AVCaptureVideoStabilizationModeStandard for a
+     * video connection attached to an AVCaptureMovieFileOutput instance. For apps linked on or after iOS 6.0, the
+     * default value is always AVCaptureVideoStabilizationModeOff. Setting a video stabilization mode using this
+     * property may change the value of enablesVideoStabilizationWhenAvailable.
      * 
      * API-Since: 8.0
      */
@@ -963,6 +973,11 @@ public class AVCaptureConnection extends NSObject {
      * however it is recommended that clients rotating video data themselves incorporate the default rotation value into
      * their workflows for all devices.
      * 
+     * Clients using AVCaptureVideoDataOutput with ProRes Raw should set videoRotationAngle to 0 as rotation is not
+     * supported for RAW buffers. If clients want to rotate these buffers themselves they need to apply rotation angles
+     * (videoRotationAngleForHorizonLevelPreview, videoRotationAngleForHorizonLevelCapture) provided by
+     * AVCaptureDeviceRotationCoordinator.
+     * 
      * API-Since: 17.0
      */
     @Generated
@@ -997,6 +1012,11 @@ public class AVCaptureConnection extends NSObject {
      * AVCaptureDeviceRotationCoordinator. Note that this change in default value is currently limited to these iPads,
      * however it is recommended that clients rotating video data themselves incorporate the default rotation value into
      * their workflows for all devices.
+     * 
+     * Clients using AVCaptureVideoDataOutput with ProRes Raw should set videoRotationAngle to 0 as rotation is not
+     * supported for RAW buffers. If clients want to rotate these buffers themselves they need to apply rotation angles
+     * (videoRotationAngleForHorizonLevelPreview, videoRotationAngleForHorizonLevelCapture) provided by
+     * AVCaptureDeviceRotationCoordinator.
      * 
      * API-Since: 17.0
      */

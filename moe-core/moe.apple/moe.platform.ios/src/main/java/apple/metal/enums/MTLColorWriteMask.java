@@ -52,4 +52,13 @@ public final class MTLColorWriteMask {
     @Generated
     private MTLColorWriteMask() {
     }
+
+    /**
+     * Defers assigning the color write mask.
+     * 
+     * Until you specialize this value in the pipeline state, it behaves as `MTLColorWriteMaskAll`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated @NUInt public static final long Unspecialized = 0x0000000000000010L;
 }

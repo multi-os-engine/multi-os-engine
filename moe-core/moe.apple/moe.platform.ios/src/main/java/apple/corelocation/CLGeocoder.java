@@ -47,7 +47,10 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 5.0
+ * Deprecated-Since: 26.0
+ * Deprecated-Message: Use MapKit
  */
+@Deprecated
 @Generated
 @Library("CoreLocation")
 @Runtime(ObjCRuntime.class)
@@ -164,15 +167,23 @@ public class CLGeocoder extends NSObject {
 
     /**
      * API-Since: 5.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use MKGeocodingRequest
      */
+    @Deprecated
     @Generated
     @Selector("cancelGeocode")
     public native void cancelGeocode();
 
     /**
+     * forward geocode requests
+     * geocodeAddressDictionary:completionHandler: takes an address dictionary as defined by the AddressBook framework.
+     * You can obtain an address dictionary from an ABPerson by retrieving the kABPersonAddressProperty property.
+     * Alternately, one can be constructed using the kABPersonAddress* keys defined in <AddressBook/ABPerson.h>.
+     * 
      * API-Since: 5.0
      * Deprecated-Since: 11.0
-     * Deprecated-Message: Use -geocodePostalAddress:completionHandler:
+     * Deprecated-Message: Use MKReverseGeocodingRequest
      */
     @Deprecated
     @Generated
@@ -182,15 +193,15 @@ public class CLGeocoder extends NSObject {
 
     /**
      * API-Since: 5.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use MKGeocodingRequest
      */
+    @Deprecated
     @Generated
     @Selector("geocodeAddressString:completionHandler:")
     public native void geocodeAddressStringCompletionHandler(@NotNull String addressString,
             @NotNull @ObjCBlock(name = "call_geocodeAddressStringCompletionHandler") Block_geocodeAddressStringCompletionHandler completionHandler);
 
-    /**
-     * API-Since: 5.0
-     */
     @Generated
     @Selector("geocodeAddressString:inRegion:completionHandler:")
     public native void geocodeAddressStringInRegionCompletionHandler(@NotNull String addressString,
@@ -203,7 +214,10 @@ public class CLGeocoder extends NSObject {
 
     /**
      * API-Since: 5.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use MapKit
      */
+    @Deprecated
     @Generated
     @Selector("isGeocoding")
     public native boolean isGeocoding();
@@ -212,7 +226,10 @@ public class CLGeocoder extends NSObject {
      * reverse geocode requests
      * 
      * API-Since: 5.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use MKReverseGeocodingRequest
      */
+    @Deprecated
     @Generated
     @Selector("reverseGeocodeLocation:completionHandler:")
     public native void reverseGeocodeLocationCompletionHandler(@NotNull CLLocation location,
@@ -252,7 +269,10 @@ public class CLGeocoder extends NSObject {
 
     /**
      * API-Since: 11.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use MKGeocodingRequest
      */
+    @Deprecated
     @Generated
     @Selector("geocodeAddressString:inRegion:preferredLocale:completionHandler:")
     public native void geocodeAddressStringInRegionPreferredLocaleCompletionHandler(@NotNull String addressString,
@@ -269,7 +289,10 @@ public class CLGeocoder extends NSObject {
 
     /**
      * API-Since: 11.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use MKReverseGeocodingRequest
      */
+    @Deprecated
     @Generated
     @Selector("geocodePostalAddress:completionHandler:")
     public native void geocodePostalAddressCompletionHandler(@NotNull CNPostalAddress postalAddress,
@@ -285,7 +308,10 @@ public class CLGeocoder extends NSObject {
 
     /**
      * API-Since: 11.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use MKReverseGeocodingRequest
      */
+    @Deprecated
     @Generated
     @Selector("geocodePostalAddress:preferredLocale:completionHandler:")
     public native void geocodePostalAddressPreferredLocaleCompletionHandler(@NotNull CNPostalAddress postalAddress,
@@ -302,7 +328,10 @@ public class CLGeocoder extends NSObject {
 
     /**
      * API-Since: 11.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use MKReverseGeocodingRequest
      */
+    @Deprecated
     @Generated
     @Selector("reverseGeocodeLocation:preferredLocale:completionHandler:")
     public native void reverseGeocodeLocationPreferredLocaleCompletionHandler(@NotNull CLLocation location,

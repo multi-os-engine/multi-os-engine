@@ -12,9 +12,9 @@ public final class CGImagePixelFormatInfo {
     }
 
     /**
-     * API-Since: 12.0
+     * Deprecated-Since: 100000.0
      */
-    @Generated public static final int Mask = 0x000F0000;
+    @Deprecated @Generated public static final int Mask = 0x000F0000;
     /**
      * API-Since: 12.0
      */

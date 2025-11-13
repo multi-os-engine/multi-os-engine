@@ -2,7 +2,6 @@ package apple.arkit;
 
 import apple.NSObject;
 import apple.arkit.protocol.ARTrackable;
-import apple.corelocation.struct.CLLocationCoordinate2D;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -28,6 +27,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.corelocation.struct.CLLocationCoordinate2D;
 
 /**
  * An anchor representing a geographical location in the world.
@@ -78,7 +78,8 @@ public class ARGeoAnchor extends ARAnchor implements ARTrackable {
 
     /**
      * The source of altitude information. If the user did not provide the altitude, ARKit populates this property to
-     * indicate the expected accuracy depending on the available altitude data.
+     * indicate the expected accuracy
+     * depending on the available altitude data.
      * 
      * API-Since: 14.0
      */

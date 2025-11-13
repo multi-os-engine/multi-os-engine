@@ -26,6 +26,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@protocol] MTLCommandEncoder
@@ -119,4 +120,35 @@ public interface MTLCommandEncoder {
     @Generated
     @Selector("setLabel:")
     void setLabel(@Nullable String value);
+
+    /**
+     * Encodes a consumer barrier on work you commit to the same command queue.
+     * 
+     * Encode a barrier that guarantees that any subsequent work you encode in the current command encoder that
+     * corresponds
+     * to the `beforeStages` stages doesn't proceed until Metal completes all work prior to the current command encoder
+     * corresponding to the `afterQueueStages` stages, completes.
+     * 
+     * Metal can reorder the exact point where it applies the barrier, so use this method for synchronizing between
+     * different passes.
+     * 
+     * If you need to synchronize work within a pass that you encode with an instance of a subclass of
+     * ``MTLCommandEncoder``,
+     * use memory barriers instead. For subclasses of ``MTL4CommandEncoder``, use encoder barriers.
+     * 
+     * You can specify `afterQueueStages` and `beforeStages` that contain ``MTLStages`` unrelated to the current command
+     * encoder.
+     * 
+     * - Parameters:
+     * - afterQueueStages: ``MTLStages`` mask that represents the stages of work to wait for.
+     * This argument applies to work corresponding to these stages you
+     * encode in prior command encoders, and not for the current encoder.
+     * - beforeStages: ``MTLStages`` mask that represents the stages of work that wait.
+     * This argument applies to work you encode in the current command encoder.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("barrierAfterQueueStages:beforeStages:")
+    void barrierAfterQueueStagesBeforeStages(@NUInt long afterQueueStages, @NUInt long beforeStages);
 }

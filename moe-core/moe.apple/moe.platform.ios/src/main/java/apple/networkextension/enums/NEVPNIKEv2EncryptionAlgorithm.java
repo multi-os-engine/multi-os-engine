@@ -33,7 +33,7 @@ public final class NEVPNIKEv2EncryptionAlgorithm {
      * 
      * API-Since: 8.0
      * Deprecated-Since: 17.0
-     * Deprecated-Message: Use an encryption algorithm with 256-bit keys instead
+     * Deprecated-Message: DES is not supported
      */
     @Deprecated @Generated @NInt public static final long AlgorithmDES = 0x0000000000000001L;
     /**
@@ -41,7 +41,7 @@ public final class NEVPNIKEv2EncryptionAlgorithm {
      * 
      * API-Since: 8.0
      * Deprecated-Since: 17.0
-     * Deprecated-Message: Use an encryption algorithm with 256-bit keys instead
+     * Deprecated-Message: 3DES is not supported
      */
     @Deprecated @Generated @NInt public static final long Algorithm3DES = 0x0000000000000002L;
     /**

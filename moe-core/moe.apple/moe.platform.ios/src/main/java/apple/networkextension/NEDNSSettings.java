@@ -331,4 +331,26 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] allowFailover
+     * 
+     * A boolean indicating if failover to the default system resolver is permitted on resolution failure.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("allowFailover")
+    public native boolean allowFailover();
+
+    /**
+     * [@property] allowFailover
+     * 
+     * A boolean indicating if failover to the default system resolver is permitted on resolution failure.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setAllowFailover:")
+    public native void setAllowFailover(boolean value);
 }

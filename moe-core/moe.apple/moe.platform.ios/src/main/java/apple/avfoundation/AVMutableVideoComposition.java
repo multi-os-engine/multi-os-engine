@@ -164,8 +164,6 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     public static native long version_static();
 
     /**
-     * videoComposition
-     * 
      * Returns a new instance of AVMutableVideoComposition.
      * 
      * The returned AVMutableVideoComposition will have a frameDuration of kCMTimeZero, a renderSize of {0.0, 0.0}, a
@@ -179,8 +177,6 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     public static native AVMutableVideoComposition videoComposition();
 
     /**
-     * videoCompositionWithAsset:applyingCIFiltersWithHandler:
-     * 
      * Returns a new instance of AVMutableVideoComposition with values and instructions that will apply the specified
      * handler block to video frames represented as instances of CIImage.
      * 
@@ -205,7 +201,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      * - macOS: sRGB color space
      * 
      * Example usage:
-     * 
+     * ```objc
      * playerItem.videoComposition = [AVMutableVideoComposition videoCompositionWithAsset:srcAsset
      * applyingCIFiltersWithHandler:
      * ^(AVAsynchronousCIImageFilteringRequest *request)
@@ -217,14 +213,15 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      * else
      * [request finishWithError:err];
      * }];
+     * ```
+     * - Parameter asset: An instance of AVAsset. For best performance, ensure that the duration and tracks properties
+     * of the asset are already loaded before invoking this method.
+     * 
+     * - Returns: An instance of AVMutableVideoComposition.
      * 
      * API-Since: 9.0
      * Deprecated-Since: 18.0
      * Deprecated-Message: Use videoCompositionWithAsset:applyingCIFiltersWithHandler:completionHandler: instead
-     * 
-     * @param asset An instance of AVAsset. For best performance, ensure that the duration and tracks properties of the
-     *              asset are already loaded before invoking this method.
-     * @return An instance of AVMutableVideoComposition.
      */
     @NotNull
     @Deprecated
@@ -235,8 +232,6 @@ public class AVMutableVideoComposition extends AVVideoComposition {
             @NotNull @ObjCBlock(name = "call_videoCompositionWithAssetApplyingCIFiltersWithHandler") Block_videoCompositionWithAssetApplyingCIFiltersWithHandler applier);
 
     /**
-     * videoCompositionWithPropertiesOfAsset:
-     * 
      * Returns a new instance of AVMutableVideoComposition with values and instructions suitable for presenting the
      * video tracks of the specified asset according to its temporal and geometric properties and those of its tracks.
      * 
@@ -258,14 +253,14 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      * If the specified asset has no video tracks, this method will return an AVMutableVideoComposition instance with an
      * empty collection of instructions.
      * 
+     * - Parameter asset: An instance of AVAsset. For best performance, ensure that the duration and tracks properties
+     * of the asset are already loaded before invoking this method.
+     * 
+     * - Returns: An instance of AVMutableVideoComposition.
      * 
      * API-Since: 6.0
      * Deprecated-Since: 18.0
      * Deprecated-Message: Use videoCompositionWithPropertiesOfAsset:completionHandler: instead
-     * 
-     * @param asset An instance of AVAsset. For best performance, ensure that the duration and tracks properties of the
-     *              asset are already loaded before invoking this method.
-     * @return An instance of AVMutableVideoComposition.
      */
     @NotNull
     @Deprecated
@@ -274,7 +269,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     public static native AVMutableVideoComposition videoCompositionWithPropertiesOfAsset(@NotNull AVAsset asset);
 
     /**
-     * indicates a special video composition tool for use of Core Animation; may be nil
+     * Indicates a special video composition tool for use of Core Animation; may be nil
      * 
      * API-Since: 4.0
      */
@@ -284,8 +279,6 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     public native AVVideoCompositionCoreAnimationTool animationTool();
 
     /**
-     * [@property] colorPrimaries
-     * 
      * Rendering will use these primaries and frames will be tagged as such. If the value of this property is nil then
      * the source's primaries will be propagated and used.
      * 
@@ -300,8 +293,6 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     public native String colorPrimaries();
 
     /**
-     * [@property] colorTransferFunction
-     * 
      * Rendering will use this transfer function and frames will be tagged as such. If the value of this property is nil
      * then the source's transfer function will be propagated and used.
      * 
@@ -316,8 +307,6 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     public native String colorTransferFunction();
 
     /**
-     * [@property] colorYCbCrMatrix
-     * 
      * Rendering will use this matrix and frames will be tagged as such. If the value of this property is nil then the
      * source's matrix will be propagated and used.
      * 
@@ -332,7 +321,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     public native String colorYCbCrMatrix();
 
     /**
-     * indicates the custom compositor class to use. If nil, the default, internal video compositor is used
+     * Indicates the custom compositor class to use. If nil, the default, internal video compositor is used
      * 
      * API-Since: 7.0
      */
@@ -342,7 +331,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     public native Class customVideoCompositorClass();
 
     /**
-     * indicates the interval which the video composition, when enabled, should render composed video frames
+     * Indicates the interval which the video composition, when enabled, should render composed video frames
      * 
      * API-Since: 4.0
      */
@@ -358,13 +347,13 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     /**
      * Indicates instructions for video composition via an NSArray of instances of classes implementing the
      * AVVideoCompositionInstruction protocol.
+     * 
      * For the first instruction in the array, timeRange.start must be less than or equal to the earliest time for which
-     * playback or other processing will be attempted
-     * (note that this will typically be kCMTimeZero). For subsequent instructions, timeRange.start must be equal to the
-     * prior instruction's end time. The end time of
-     * the last instruction must be greater than or equal to the latest time for which playback or other processing will
-     * be attempted (note that this will often be
-     * the duration of the asset with which the instance of AVVideoComposition is associated).
+     * playback or other processing will be attempted (note that this will typically be kCMTimeZero). For subsequent
+     * instructions, timeRange.start must be equal to the prior instruction's end time. The end time of the last
+     * instruction must be greater than or equal to the latest time for which playback or other processing will be
+     * attempted (note that this will often be the duration of the asset with which the instance of AVVideoComposition
+     * is associated).
      * 
      * API-Since: 4.0
      */
@@ -374,7 +363,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     public native NSArray<?> instructions();
 
     /**
-     * indicates the scale at which the video composition should render. May only be other than 1.0 for a video
+     * Indicates the scale at which the video composition should render. May only be other than 1.0 for a video
      * composition set on an AVPlayerItem
      * 
      * API-Since: 4.0
@@ -384,7 +373,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     public native float renderScale();
 
     /**
-     * indicates the size at which the video composition, when enabled, should render
+     * Indicates the size at which the video composition, when enabled, should render
      * 
      * API-Since: 4.0
      */
@@ -394,7 +383,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     public native CGSize renderSize();
 
     /**
-     * indicates a special video composition tool for use of Core Animation; may be nil
+     * Indicates a special video composition tool for use of Core Animation; may be nil
      * 
      * API-Since: 4.0
      */
@@ -403,8 +392,6 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     public native void setAnimationTool(@Nullable AVVideoCompositionCoreAnimationTool value);
 
     /**
-     * [@property] colorPrimaries
-     * 
      * Rendering will use these primaries and frames will be tagged as such. If the value of this property is nil then
      * the source's primaries will be propagated and used.
      * 
@@ -418,8 +405,6 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     public native void setColorPrimaries(@Nullable String value);
 
     /**
-     * [@property] colorTransferFunction
-     * 
      * Rendering will use this transfer function and frames will be tagged as such. If the value of this property is nil
      * then the source's transfer function will be propagated and used.
      * 
@@ -433,8 +418,6 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     public native void setColorTransferFunction(@Nullable String value);
 
     /**
-     * [@property] colorYCbCrMatrix
-     * 
      * Rendering will use this matrix and frames will be tagged as such. If the value of this property is nil then the
      * source's matrix will be propagated and used.
      * 
@@ -448,7 +431,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     public native void setColorYCbCrMatrix(@Nullable String value);
 
     /**
-     * indicates the custom compositor class to use. If nil, the default, internal video compositor is used
+     * Indicates the custom compositor class to use. If nil, the default, internal video compositor is used
      * 
      * API-Since: 7.0
      */
@@ -457,7 +440,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     public native void setCustomVideoCompositorClass(@Nullable Class value);
 
     /**
-     * indicates the interval which the video composition, when enabled, should render composed video frames
+     * Indicates the interval which the video composition, when enabled, should render composed video frames
      * 
      * API-Since: 4.0
      */
@@ -468,13 +451,13 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     /**
      * Indicates instructions for video composition via an NSArray of instances of classes implementing the
      * AVVideoCompositionInstruction protocol.
+     * 
      * For the first instruction in the array, timeRange.start must be less than or equal to the earliest time for which
-     * playback or other processing will be attempted
-     * (note that this will typically be kCMTimeZero). For subsequent instructions, timeRange.start must be equal to the
-     * prior instruction's end time. The end time of
-     * the last instruction must be greater than or equal to the latest time for which playback or other processing will
-     * be attempted (note that this will often be
-     * the duration of the asset with which the instance of AVVideoComposition is associated).
+     * playback or other processing will be attempted (note that this will typically be kCMTimeZero). For subsequent
+     * instructions, timeRange.start must be equal to the prior instruction's end time. The end time of the last
+     * instruction must be greater than or equal to the latest time for which playback or other processing will be
+     * attempted (note that this will often be the duration of the asset with which the instance of AVVideoComposition
+     * is associated).
      * 
      * API-Since: 4.0
      */
@@ -483,7 +466,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     public native void setInstructions(@NotNull NSArray<?> value);
 
     /**
-     * indicates the scale at which the video composition should render. May only be other than 1.0 for a video
+     * Indicates the scale at which the video composition should render. May only be other than 1.0 for a video
      * composition set on an AVPlayerItem
      * 
      * API-Since: 4.0
@@ -493,7 +476,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     public native void setRenderScale(float value);
 
     /**
-     * indicates the size at which the video composition, when enabled, should render
+     * Indicates the size at which the video composition, when enabled, should render
      * 
      * API-Since: 4.0
      */
@@ -534,8 +517,6 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     public native int sourceTrackIDForFrameTiming();
 
     /**
-     * videoCompositionWithPropertiesOfAsset:prototypeInstruction:
-     * 
      * Returns a new instance of AVMutableVideoComposition with values and instructions suitable for presenting the
      * video tracks of the specified asset according to its temporal and geometric properties and those of its tracks,
      * and also overrides default properties with those from a prototypeInstruction.
@@ -545,20 +526,21 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      * specified asset's video tracks. Anything not pertaining to spatial layout and timing, such as background color
      * for their composition or post-processing behaviors, is eligible to be specified via a prototype instruction.
      * Example: To add a background color,
+     * ```objc
      * myPrototypeInstruction = [[AVMutableVideoCompositionInstruction alloc] init];
      * myPrototypeInstruction.backgroundColor = myCGColorRef; // Do not use constant CGColorRef colors here.
      * myVideoComposition = [AVVideoComposition videoCompositionWithPropertiesOfAsset:myAsset
      * prototypeInstruction:myPrototypeInstruction];
+     * ```
+     * - Parameter asset: An instance of AVAsset. For best performance, ensure that the duration and tracks properties
+     * of the asset are already loaded before invoking this method.
+     * - Parameter prototypeInstruction: Custom instructions that the client can choose to override.
      * 
+     * - Returns: An instance of AVMutableVideoComposition.
      * 
      * API-Since: 13.0
      * Deprecated-Since: 18.0
      * Deprecated-Message: Use videoCompositionWithPropertiesOfAsset:prototypeInstruction:completionHandler: instead
-     * 
-     * @param asset                An instance of AVAsset. For best performance, ensure that the duration and tracks
-     *                             properties of the asset are already loaded before invoking this method.
-     * @param prototypeInstruction Custom instructions that the client can choose to override.
-     * @return An instance of AVMutableVideoComposition.
      */
     @NotNull
     @Deprecated
@@ -589,8 +571,6 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     public native NSArray<? extends NSNumber> sourceSampleDataTrackIDs();
 
     /**
-     * videoCompositionWithAsset:applyingCIFiltersWithHandler:completionHandler:
-     * 
      * Vends a new instance of AVMutableVideoComposition with values and instructions that will apply the specified
      * handler block to video frames represented as instances of CIImage.
      * 
@@ -615,7 +595,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      * - macOS: sRGB color space
      * 
      * Example usage:
-     * 
+     * ```objc
      * [AVMutableVideoComposition videoCompositionWithAsset:srcAsset applyingCIFiltersWithHandler:
      * ^(AVAsynchronousCIImageFilteringRequest *request)
      * {
@@ -633,15 +613,12 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      * else {
      * // handle error
      * }];
+     * ```
+     * - Parameter asset: An instance of AVAsset.
+     * - Parameter completionHandler: A block that is invoked when the new video composition has finished being created.
+     * If the `videoComposition` parameter is nil, the `error` parameter describes the failure that occurred.
      * 
      * API-Since: 16.0
-     * 
-     * @param asset
-     *                          An instance of AVAsset.
-     * @param completionHandler
-     *                          A block that is invoked when the new video composition has finished being created. If
-     *                          the `videoComposition` parameter is nil, the `error` parameter describes the failure
-     *                          that occurred.
      */
     @Generated
     @Selector("videoCompositionWithAsset:applyingCIFiltersWithHandler:completionHandler:")
@@ -667,8 +644,6 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     }
 
     /**
-     * videoCompositionWithPropertiesOfAsset:completionHandler:
-     * 
      * Vends a new instance of AVMutableVideoComposition with values and instructions suitable for presenting the video
      * tracks of the specified asset according to its temporal and geometric properties and those of its tracks.
      * 
@@ -690,15 +665,11 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      * If the specified asset has no video tracks, this method will return an AVMutableVideoComposition instance with an
      * empty collection of instructions.
      * 
+     * - Parameter asset: An instance of AVAsset.
+     * - Parameter completionHandler: A block that is invoked when the new video composition has finished being created.
+     * If the `videoComposition` parameter is nil, the `error` parameter describes the failure that occurred.
      * 
      * API-Since: 16.0
-     * 
-     * @param asset
-     *                          An instance of AVAsset.
-     * @param completionHandler
-     *                          A block that is invoked when the new video composition has finished being created. If
-     *                          the `videoComposition` parameter is nil, the `error` parameter describes the failure
-     *                          that occurred.
      */
     @Generated
     @Selector("videoCompositionWithPropertiesOfAsset:completionHandler:")
@@ -714,8 +685,6 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     }
 
     /**
-     * videoCompositionWithPropertiesOfAsset:prototypeInstruction:completionHandler:
-     * 
      * Vends a new instance of AVMutableVideoComposition with values and instructions suitable for presenting the video
      * tracks of the specified asset according to its temporal and geometric properties and those of its tracks, and
      * also overrides default properties with those from a prototypeInstruction.
@@ -726,6 +695,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      * color for their composition or post-processing behaviors, is eligible to be specified via a prototype
      * instruction.
      * Example: To add a background color,
+     * ```objc
      * myPrototypeInstruction = [[AVMutableVideoCompositionInstruction alloc] init];
      * myPrototypeInstruction.backgroundColor = myCGColorRef; // Do not use constant CGColorRef colors here.
      * myVideoComposition = [AVVideoComposition videoCompositionWithPropertiesOfAsset:myAsset
@@ -738,18 +708,13 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      * // handle error
      * }
      * }];
-     * 
+     * ```
+     * - Parameter asset: An instance of AVAsset.
+     * - Parameter prototypeInstruction: Custom instructions that the client can choose to override.
+     * - Parameter completionHandler: A block that is invoked when the new video composition has finished being created.
+     * If the `videoComposition` parameter is nil, the `error` parameter describes the failure that occurred.
      * 
      * API-Since: 16.0
-     * 
-     * @param asset
-     *                             An instance of AVAsset.
-     * @param prototypeInstruction
-     *                             Custom instructions that the client can choose to override.
-     * @param completionHandler
-     *                             A block that is invoked when the new video composition has finished being created. If
-     *                             the `videoComposition` parameter is nil, the `error` parameter describes the failure
-     *                             that occurred.
      */
     @Generated
     @Selector("videoCompositionWithPropertiesOfAsset:prototypeInstruction:completionHandler:")
@@ -766,8 +731,6 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     }
 
     /**
-     * [@property] perFrameHDRDisplayMetadataPolicy
-     * 
      * Configures policy for per frame HDR display metadata on the rendered frame
      * 
      * Allows the system to identify situations where HDR metadata can be generated and attached to the rendered video
@@ -783,8 +746,6 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     public native String perFrameHDRDisplayMetadataPolicy();
 
     /**
-     * [@property] perFrameHDRDisplayMetadataPolicy
-     * 
      * Configures policy for per frame HDR display metadata on the rendered frame
      * 
      * Allows the system to identify situations where HDR metadata can be generated and attached to the rendered video
@@ -802,4 +763,39 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The output buffers of the video composition can be specified with the outputBufferDescription. The value is an
+     * array of CMTagCollectionRef objects that describes the output buffers.
+     * 
+     * If the video composition will output tagged buffers, the details of those buffers should be specified with
+     * CMTags. Specifically, the StereoView (eyes) and ProjectionKind must be specified. The behavior is undefined if
+     * the output tagged buffers do not match the outputBufferDescription.
+     * The default is nil, which means monoscopic output. Note that an empty array is not valid. An exception will be
+     * thrown if the objects in the array are not of type CMTagCollectionRef.
+     * Note that tagged buffers are only supported for custom compositors.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("outputBufferDescription")
+    @Nullable
+    public native NSArray<?> outputBufferDescription();
+
+    /**
+     * The output buffers of the video composition can be specified with the outputBufferDescription. The value is an
+     * array of CMTagCollectionRef objects that describes the output buffers.
+     * 
+     * If the video composition will output tagged buffers, the details of those buffers should be specified with
+     * CMTags. Specifically, the StereoView (eyes) and ProjectionKind must be specified. The behavior is undefined if
+     * the output tagged buffers do not match the outputBufferDescription.
+     * The default is nil, which means monoscopic output. Note that an empty array is not valid. An exception will be
+     * thrown if the objects in the array are not of type CMTagCollectionRef.
+     * Note that tagged buffers are only supported for custom compositors.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setOutputBufferDescription:")
+    public native void setOutputBufferDescription(@Nullable NSArray<?> value);
 }

@@ -60,6 +60,33 @@ import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * The Core Image context class provides an evaluation context for Core Image processing with Metal, OpenGL, or OpenCL.
+ * 
+ * You use a `CIContext` instance to render a ``CIImage`` instance which represents a graph of image processing
+ * operations
+ * which are built using other Core Image classes, such as ``CIFilter-class``, ``CIKernel``, ``CIColor`` and
+ * ``CIImage``.
+ * You can also use a `CIContext` with the ``CIDetector`` class to analyze images — for example, to detect faces
+ * or barcodes.
+ * 
+ * Contexts support automatic color management by performing all processing operations in a working color space.
+ * This means that unless told otherwise:
+ * * All input images are color matched from the input's color space to the working space.
+ * * All renders are color matched from the working space to the destination space.
+ * (For more information on `CGColorSpace` see <doc://com.apple.documentation/documentation/coregraphics/cgcolorspace>)
+ * 
+ * `CIContext` and ``CIImage`` instances are immutable, so multiple threads can use the same ``CIContext`` instance
+ * to render ``CIImage`` instances. However, ``CIFilter-class`` instances are mutable and thus cannot be shared safely
+ * among
+ * threads. Each thread must take case not to access or modify a ``CIFilter-class`` instance while it is being used by
+ * another thread.
+ * 
+ * The `CIContext` manages various internal state such as `MTLCommandQueue` and caches for compiled kernels
+ * and intermediate buffers. For this reason it is not recommended to create many `CIContext` instances. As a rule,
+ * it recommended that you create one `CIContext` instance for each view that renders ``CIImage`` or each background
+ * task.
+ */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -299,10 +326,24 @@ public class CIContext extends NSObject {
     public native void clearCaches();
 
     /**
-     * Render the region 'fromRect' of image 'image' into a temporary buffer using
-     * the context, then create and return a new CoreGraphics image with
-     * the results. The caller is responsible for releasing the returned image.
-     * The return value will be null if size is empty or too big.
+     * Creates a Core Graphics image from a region of a Core Image image instance.
+     * 
+     * The color space of the created `CGImage` will be sRGB unless the receiving ``CIContext``
+     * was created with a `kCIContextOutputColorSpace` option.
+     * 
+     * Normally the pixel format of the created CGImage will be 8 bits-per-component.
+     * It will be 16 bits-per-component float if the above color space is HDR.
+     * 
+     * - Parameters:
+     * - image: A ``CIImage`` image instance for which to create a `CGImage`.
+     * - fromRect: The `CGRect` region of the `image` to use.
+     * This region relative to the cartesean coordinate system of `image`.
+     * This region will be intersected with integralized and intersected with `image.extent`.
+     * 
+     * - Returns:
+     * Returns a new `CGImage` instance.
+     * You are responsible for releasing the returned image when you no longer need it.
+     * The returned value will be `null` if the extent is empty or too big.
      */
     @Nullable
     @Generated
@@ -310,11 +351,25 @@ public class CIContext extends NSObject {
     public native CGImageRef createCGImageFromRect(@NotNull CIImage image, @ByValue CGRect fromRect);
 
     /**
-     * Create a new CGImage from the specified subrect of the image. If
-     * non-nil the new image will be created in the specified format and colorspace.
-     * The CGColorSpace must be kCGColorSpaceModelRGB or kCGColorSpaceModelMonochrome
-     * and must match the specified CIFormat.
-     * This will return null if fromRect is empty or infinite or the format isn't supported.
+     * Creates a Core Graphics image from a region of a Core Image image instance
+     * with an option for controlling the pixel format and color space of the `CGImage`.
+     * 
+     * - Parameters:
+     * - image: A ``CIImage`` image instance for which to create a `CGImage`.
+     * - fromRect: The `CGRect` region of the `image` to use.
+     * This region relative to the cartesean coordinate system of `image`.
+     * This region will be intersected with integralized and intersected with `image.extent`.
+     * - format: A ``CIFormat`` to specify the pixel format of the created `CGImage`.
+     * For example, if `kCIFormatRGBX16` is specified, then the created `CGImage` will
+     * be 16 bits-per-component and opaque.
+     * - colorSpace: The `CGColorSpace` for the output image.
+     * This color space must have either `CGColorSpaceModel.rgb` or `CGColorSpaceModel.monochrome`
+     * and be compatible with the specified pixel format.
+     * 
+     * - Returns:
+     * Returns a new `CGImage` instance.
+     * You are responsible for releasing the returned image when you no longer need it.
+     * The returned value will be `null` if the extent is empty or too big.
      */
     @Nullable
     @Generated
@@ -323,14 +378,29 @@ public class CIContext extends NSObject {
             int format, @Nullable CGColorSpaceRef colorSpace);
 
     /**
-     * Create a new CGImage from the specified subrect of the image.
-     * The new CGImageRef will be created in the specified format and colorspace.
-     * The return value will be null if fromRect is empty or infinite.
-     * The CGColorSpace must be kCGColorSpaceModelRGB or kCGColorSpaceModelMonochrome
-     * and must match the specified CIFormat.
-     * This will return null if fromRect is empty or infinite or the format isn't supported.
-     * If deferred is NO, then the CIImage will be rendered once when this method is called.
-     * If deferred is YES, then the CIImage will be rendered whenever the CGImage is rendered.
+     * Creates a Core Graphics image from a region of a Core Image image instance
+     * with an option for controlling when the image is rendered.
+     * 
+     * - Parameters:
+     * - image: A ``CIImage`` image instance for which to create a `CGImage`.
+     * - fromRect: The `CGRect` region of the `image` to use.
+     * This region relative to the cartesean coordinate system of `image`.
+     * This region will be intersected with integralized and intersected with `image.extent`.
+     * - format: A ``CIFormat`` to specify the pixel format of the created `CGImage`.
+     * For example, if `kCIFormatRGBX16` is specified, then the created `CGImage` will
+     * be 16 bits-per-component and opaque.
+     * - colorSpace: The `CGColorSpace` for the output image.
+     * This color space must have either `CGColorSpaceModel.rgb` or `CGColorSpaceModel.monochrome`
+     * and be compatible with the specified pixel format.
+     * - deferred: Controls when Core Image renders `image`.
+     * * True: rendering of `image` is deferred until the created `CGImage` rendered.
+     * * False: the `image` is rendered immediately.
+     * 
+     * - Returns:
+     * Returns a new `CGImage` instance.
+     * You are responsible for releasing the returned image when you no longer need it.
+     * The returned value will be `null` if the extent is empty or too big.
+     * 
      * 
      * API-Since: 10.0
      */
@@ -429,7 +499,7 @@ public class CIContext extends NSObject {
 
     /**
      * Render 'image' to the given CVPixelBufferRef.
-     * Point (0,0) in the image coordinate sysyem will align to the lower left corner of 'buffer'.
+     * Point (0,0) in the image coordinate system will align to the lower left corner of 'buffer'.
      * The 'bounds' parameter acts as a clip rect to limit what region of 'buffer' is modified.
      * If 'colorSpace' is nil, CI will not color match to the destination.
      * 
@@ -459,8 +529,15 @@ public class CIContext extends NSObject {
             @NotNull CGColorSpaceRef colorSpace);
 
     /**
-     * The working color space of the CIContext
-     * The property will be null if the context was created with color management disabled.
+     * The working color space of the CIContext.
+     * 
+     * The working color space determines the color space used when executing filter kernels.
+     * You specify a working color space using the ``kCIContextWorkingColorSpace`` option when creating a ``CIContext``.
+     * * All input images are color matched from the input's color space to the working space.
+     * * All renders are color matched from the working space to the destination space.
+     * 
+     * The property will be `null` if the context was created with color management disabled.
+     * 
      * 
      * API-Since: 9.0
      */
@@ -470,7 +547,12 @@ public class CIContext extends NSObject {
     public native CGColorSpaceRef workingColorSpace();
 
     /**
-     * The working pixel format of the CIContext used for intermediate buffers
+     * The working pixel format that the CIContext uses for intermediate buffers.
+     * 
+     * The working format determines the pixel format that Core Image uses to create intermediate buffers for rendering
+     * images.
+     * You specify a working pixel format using the ``kCIContextWorkingFormat`` option when creating a ``CIContext``.
+     * 
      * 
      * API-Since: 9.0
      */
@@ -554,7 +636,7 @@ public class CIContext extends NSObject {
 
     /**
      * Render 'image' to the given IOSurface.
-     * Point (0,0) in the image coordinate sysyem will align to the lower left corner of 'surface'.
+     * Point (0,0) in the image coordinate system will align to the lower left corner of 'surface'.
      * The 'bounds' parameter acts as a clip rect to limit what region of 'surface' is modified.
      * If 'colorSpace' is nil, CI will not color match to the destination.
      * 
@@ -811,4 +893,116 @@ public class CIContext extends NSObject {
     public native boolean writeOpenEXRRepresentationOfImageToURLOptionsError(@NotNull CIImage image, @NotNull NSURL url,
             @NotNull NSDictionary<String, ?> options,
             @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> errorPtr);
+
+    /**
+     * Given a Core Graphics image, use the receiving Core Image context to calculate its
+     * HDR statistics (content headroom and content average light level)
+     * and then return a new Core Graphics image that has the calculated values.
+     * 
+     * - Parameters:
+     * - cgimage: An immutable `CGImage` for which to calculate statistics.
+     * - Returns:
+     * Returns a new `CGImage` instance that has the calculated statistics attached.
+     * 
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @Selector("calculateHDRStatsForCGImage:")
+    @NotNull
+    public native CGImageRef calculateHDRStatsForCGImage(@NotNull CGImageRef cgimage);
+
+    /**
+     * Given a CVPixelBuffer, use the receiving Core Image context to calculate its
+     * HDR statistics (content headroom and content average light level)
+     * and then update the buffers's attachments to store the values.
+     * 
+     * If the `CVPixelBuffer` has a Clean Aperture rectangle then only pixels within
+     * that rectangle are considered.
+     * 
+     * - Parameters:
+     * - buffer: A mutable `CVPixelBuffer` for which to calculate and attach statistics.
+     * 
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @Selector("calculateHDRStatsForCVPixelBuffer:")
+    public native void calculateHDRStatsForCVPixelBuffer(@NotNull CVBufferRef buffer);
+
+    /**
+     * Given an IOSurface, use the receiving Core Image context to calculate its
+     * HDR statistics (content headroom and content average light level)
+     * and then update the surface's attachments to store the values.
+     * 
+     * If the `IOSurface` has a Clean Aperture rectangle then only pixels within
+     * that rectangle are considered.
+     * 
+     * - Parameters:
+     * - surface: A mutable `IOSurfaceRef` for which to calculate and attach statistics.
+     * 
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @Selector("calculateHDRStatsForIOSurface:")
+    public native void calculateHDRStatsForIOSurface(@NotNull IOSurfaceRef surface);
+
+    /**
+     * Given a Core Image image, use the receiving Core Image context to calculate its
+     * HDR statistics (content headroom and content average light level)
+     * and then return a new Core Image image that has the calculated values.
+     * 
+     * If the image extent is not finite, then nil will be returned.
+     * 
+     * - Parameters:
+     * - image: An immutable ``CIImage`` for which to calculate statistics.
+     * - Returns:
+     * Returns a new ``CIImage`` instance that has the calculated statistics attached.
+     * 
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @Selector("calculateHDRStatsForImage:")
+    @Nullable
+    public native CIImage calculateHDRStatsForImage(@NotNull CIImage image);
+
+    /**
+     * Creates a Core Graphics image from a region of a Core Image image instance
+     * with an option for calculating HDR statistics.
+     * 
+     * - Parameters:
+     * - image: A ``CIImage`` image instance for which to create a `CGImage`.
+     * - fromRect: The `CGRect` region of the `image` to use.
+     * This region relative to the cartesean coordinate system of `image`.
+     * This region will be intersected with integralized and intersected with `image.extent`.
+     * - format: A ``CIFormat`` to specify the pixel format of the created `CGImage`.
+     * For example, if `kCIFormatRGBX16` is specified, then the created `CGImage` will
+     * be 16 bits-per-component and opaque.
+     * - colorSpace: The `CGColorSpace` for the output image.
+     * This color space must have either `CGColorSpaceModel.rgb` or `CGColorSpaceModel.monochrome`
+     * and be compatible with the specified pixel format.
+     * - deferred: Controls when Core Image renders `image`.
+     * * True: rendering of `image` is deferred until the created `CGImage` rendered.
+     * * False: the `image` is rendered immediately.
+     * - calculateHDRStats: Controls if Core Image calculates HDR statistics.
+     * * True: Core Image will immediately render `image`, calculate the HDR statistics
+     * and create a `CGImage` that has the calculated values.
+     * * False: the created `CGImage` will not have any HDR statistics.
+     * 
+     * - Returns:
+     * Returns a new `CGImage` instance.
+     * You are responsible for releasing the returned image when you no longer need it.
+     * The returned value will be `null` if the extent is empty or too big.
+     * 
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @Selector("createCGImage:fromRect:format:colorSpace:deferred:calculateHDRStats:")
+    @Nullable
+    public native CGImageRef createCGImageFromRectFormatColorSpaceDeferredCalculateHDRStats(@NotNull CIImage image,
+            @ByValue CGRect fromRect, int format, @Nullable CGColorSpaceRef colorSpace, boolean deferred,
+            boolean calculateHDRStats);
 }

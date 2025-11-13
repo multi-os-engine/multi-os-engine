@@ -210,6 +210,10 @@ public class AVCaptureMetadataOutput extends AVCaptureOutput {
      * an NSInvalidArgumentException if any elements in the array are not present in the -availableMetadataObjectTypes
      * array.
      * 
+     * If you've set your AVCaptureMetadataOutput's connected input's `cinematicVideoCaptureEnabled` property to YES,
+     * you must set your `metadataObjectTypes` property to `requiredMetadataObjectTypesForCinematicVideoCapture` or an
+     * NSInvalidArgumentException is thrown.
+     * 
      * API-Since: 6.0
      */
     @Generated
@@ -280,6 +284,10 @@ public class AVCaptureMetadataOutput extends AVCaptureOutput {
      * an NSInvalidArgumentException if any elements in the array are not present in the -availableMetadataObjectTypes
      * array.
      * 
+     * If you've set your AVCaptureMetadataOutput's connected input's `cinematicVideoCaptureEnabled` property to YES,
+     * you must set your `metadataObjectTypes` property to `requiredMetadataObjectTypesForCinematicVideoCapture` or an
+     * NSInvalidArgumentException is thrown.
+     * 
      * API-Since: 6.0
      */
     @Generated
@@ -341,4 +349,19 @@ public class AVCaptureMetadataOutput extends AVCaptureOutput {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The required metadata object types when Cinematic Video capture is enabled.
+     * 
+     * Since the Cinematic Video algorithm requires a particular set of metadata objects to function optimally, you must
+     * set your ``metadataObjectTypes`` property to this property's returned value if you've set
+     * ``AVCaptureDeviceInput/cinematicVideoCaptureEnabled`` to `true` on the connected device input, otherwise an
+     * `NSInvalidArgumentException` is thrown.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("requiredMetadataObjectTypesForCinematicVideoCapture")
+    @NotNull
+    public native NSArray<String> requiredMetadataObjectTypesForCinematicVideoCapture();
 }

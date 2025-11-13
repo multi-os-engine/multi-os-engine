@@ -42,8 +42,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVAssetWriterInputPassDescription
- * 
  * Defines an interface for querying information about the requirements of the current pass, such as the time ranges of
  * media data to append.
  * 
@@ -170,8 +168,6 @@ public class AVAssetWriterInputPassDescription extends NSObject {
     public native AVAssetWriterInputPassDescription init();
 
     /**
-     * [@property] sourceTimeRanges
-     * 
      * An NSArray of NSValue objects wrapping CMTimeRange structures, each representing one source time range.
      * 
      * The value of this property is suitable for using as a parameter for -[AVAssetReaderOutput

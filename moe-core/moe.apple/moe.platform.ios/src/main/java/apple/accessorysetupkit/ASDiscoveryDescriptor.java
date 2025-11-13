@@ -378,4 +378,84 @@ public class ASDiscoveryDescriptor extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * The accessory's Wi-Fi Aware model name and matching options.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setWifiAwareModelNameMatch:")
+    public native void setWifiAwareModelNameMatch(@Nullable ASPropertyCompareString value);
+
+    /**
+     * The accessory's Wi-Fi Aware's service name if available.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setWifiAwareServiceName:")
+    public native void setWifiAwareServiceName(@Nullable String value);
+
+    /**
+     * The role of the accessory's Wi-Fi Aware's service.
+     * 
+     * This property defaults to ``ASDiscoveryDescriptor/WiFiAwareServiceRole/subscriber``
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setWifiAwareServiceRole:")
+    public native void setWifiAwareServiceRole(@NInt long value);
+
+    /**
+     * The accessory's Wi-Fi Aware vendor name and matching options.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setWifiAwareVendorNameMatch:")
+    public native void setWifiAwareVendorNameMatch(@Nullable ASPropertyCompareString value);
+
+    /**
+     * The accessory's Wi-Fi Aware model name and matching options.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("wifiAwareModelNameMatch")
+    @Nullable
+    public native ASPropertyCompareString wifiAwareModelNameMatch();
+
+    /**
+     * The accessory's Wi-Fi Aware's service name if available.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("wifiAwareServiceName")
+    @Nullable
+    public native String wifiAwareServiceName();
+
+    /**
+     * The role of the accessory's Wi-Fi Aware's service.
+     * 
+     * This property defaults to ``ASDiscoveryDescriptor/WiFiAwareServiceRole/subscriber``
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("wifiAwareServiceRole")
+    @NInt
+    public native long wifiAwareServiceRole();
+
+    /**
+     * The accessory's Wi-Fi Aware vendor name and matching options.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("wifiAwareVendorNameMatch")
+    @Nullable
+    public native ASPropertyCompareString wifiAwareVendorNameMatch();
 }

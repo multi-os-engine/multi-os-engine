@@ -110,14 +110,14 @@ public final class vm_statistics64 extends StructObject {
     public native void setReactivations(long value);
 
     /**
-     * # of pageins
+     * # of pageins (lifetime)
      */
     @Generated
     @StructureField(order = 6, isGetter = true)
     public native long pageins();
 
     /**
-     * # of pageins
+     * # of pageins (lifetime)
      */
     @Generated
     @StructureField(order = 6, isGetter = false)
@@ -236,56 +236,56 @@ public final class vm_statistics64 extends StructObject {
     public native void setSpeculative_count(int value);
 
     /**
-     * # of pages decompressed
+     * # of pages decompressed (lifetime)
      */
     @Generated
     @StructureField(order = 15, isGetter = true)
     public native long decompressions();
 
     /**
-     * # of pages decompressed
+     * # of pages decompressed (lifetime)
      */
     @Generated
     @StructureField(order = 15, isGetter = false)
     public native void setDecompressions(long value);
 
     /**
-     * # of pages compressed
+     * # of pages compressed (lifetime)
      */
     @Generated
     @StructureField(order = 16, isGetter = true)
     public native long compressions();
 
     /**
-     * # of pages compressed
+     * # of pages compressed (lifetime)
      */
     @Generated
     @StructureField(order = 16, isGetter = false)
     public native void setCompressions(long value);
 
     /**
-     * # of pages swapped in (via compression segments)
+     * # of pages swapped in via compressor segments (lifetime)
      */
     @Generated
     @StructureField(order = 17, isGetter = true)
     public native long swapins();
 
     /**
-     * # of pages swapped in (via compression segments)
+     * # of pages swapped in via compressor segments (lifetime)
      */
     @Generated
     @StructureField(order = 17, isGetter = false)
     public native void setSwapins(long value);
 
     /**
-     * # of pages swapped out (via compression segments)
+     * # of pages swapped out via compressor segments (lifetime)
      */
     @Generated
     @StructureField(order = 18, isGetter = true)
     public native long swapouts();
 
     /**
-     * # of pages swapped out (via compression segments)
+     * # of pages swapped out via compressor segments (lifetime)
      */
     @Generated
     @StructureField(order = 18, isGetter = false)
@@ -360,4 +360,18 @@ public final class vm_statistics64 extends StructObject {
     @Generated
     @StructureField(order = 23, isGetter = false)
     public native void setTotal_uncompressed_pages_in_compressor(long value);
+
+    /**
+     * # of compressor-stored pages currently stored in swap
+     */
+    @Generated
+    @StructureField(order = 24, isGetter = true)
+    public native long swapped_count();
+
+    /**
+     * # of compressor-stored pages currently stored in swap
+     */
+    @Generated
+    @StructureField(order = 24, isGetter = false)
+    public native void setSwapped_count(long value);
 }

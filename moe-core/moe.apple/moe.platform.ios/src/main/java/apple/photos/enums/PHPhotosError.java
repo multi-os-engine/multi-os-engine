@@ -145,4 +145,10 @@ public final class PHPhotosError {
      * API-Since: 16.0
      */
     @Generated @NInt public static final long PersistentChangeDetailsUnavailable = 0x0000000000000C8AL;
+    /**
+     * The request could not be completed because a limit would be exceeded
+     * 
+     * API-Since: 26.1
+     */
+    @Generated @NInt public static final long LimitExceeded = 0x0000000000000CEBL;
 }

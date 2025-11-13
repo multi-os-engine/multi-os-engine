@@ -49,6 +49,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -142,23 +145,35 @@ public class MKPolygon extends MKMultiPoint implements MKOverlay, MKGeoJSONObjec
     @Selector("new")
     public static native MKPolygon new_objc();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("polygonWithCoordinates:count:")
     public static native MKPolygon polygonWithCoordinatesCount(
             @NotNull @ReferenceInfo(type = CLLocationCoordinate2D.class) ConstPtr<CLLocationCoordinate2D> coords,
             @NUInt long count);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("polygonWithCoordinates:count:interiorPolygons:")
     public static native MKPolygon polygonWithCoordinatesCountInteriorPolygons(
             @NotNull @ReferenceInfo(type = CLLocationCoordinate2D.class) ConstPtr<CLLocationCoordinate2D> coords,
             @NUInt long count, @Nullable NSArray<? extends MKPolygon> interiorPolygons);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("polygonWithPoints:count:")
     public static native MKPolygon polygonWithPointsCount(
             @NotNull @ReferenceInfo(type = MKMapPoint.class) ConstPtr<MKMapPoint> points, @NUInt long count);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("polygonWithPoints:count:interiorPolygons:")
     public static native MKPolygon polygonWithPointsCountInteriorPolygons(
@@ -205,6 +220,9 @@ public class MKPolygon extends MKMultiPoint implements MKOverlay, MKGeoJSONObjec
     @Selector("init")
     public native MKPolygon init();
 
+    /**
+     * API-Since: 4.0
+     */
     @Nullable
     @Generated
     @Selector("interiorPolygons")

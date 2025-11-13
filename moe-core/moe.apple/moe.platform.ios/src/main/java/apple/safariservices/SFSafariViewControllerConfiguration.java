@@ -63,7 +63,11 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
-     * API-Since: 11.0
+     * Indicates if SFSafariViewController should enable collapsing of the navigation bar and hiding of the bottom
+     * toolbar
+     * when the user scrolls web content.
+     * 
+     * The default value is YES.
      */
     @Generated
     @Selector("barCollapsingEnabled")
@@ -160,7 +164,11 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * API-Since: 11.0
+     * Indicates if SFSafariViewController should enable collapsing of the navigation bar and hiding of the bottom
+     * toolbar
+     * when the user scrolls web content.
+     * 
+     * The default value is YES.
      */
     @Generated
     @Selector("setBarCollapsingEnabled:")
@@ -190,6 +198,12 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
     public static native long version_static();
 
     /**
+     * An additional button to be shown in SFSafariViewController's toolbar. See @link
+     * SFSafariViewControllerActivityButton @/link for more details.
+     * 
+     * This allows the user to access powerful functionality from your extension without needing to first show the
+     * UIActivityViewController.
+     * 
      * API-Since: 15.0
      */
     @Nullable
@@ -198,6 +212,12 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
     public native SFSafariViewControllerActivityButton activityButton();
 
     /**
+     * An additional button to be shown in SFSafariViewController's toolbar. See @link
+     * SFSafariViewControllerActivityButton @/link for more details.
+     * 
+     * This allows the user to access powerful functionality from your extension without needing to first show the
+     * UIActivityViewController.
+     * 
      * API-Since: 15.0
      */
     @Generated

@@ -20,31 +20,21 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum] AVCaptureColorSpace
- * 
  * Constants indicating active or supported video color space.
- * 
- * [@constant] AVCaptureColorSpace_sRGB
- * The sRGB color space ( https://www.w3.org/Graphics/Color/srgb )
- * [@constant] AVCaptureColorSpace_P3_D65
- * The P3 D65 wide color space which uses Illuminant D65 as the white point.
- * [@constant] AVCaptureColorSpace_HLG_BT2020
- * The BT2020 wide color space which uses Illuminant D65 as the white point and Hybrid Log-Gamma as the transfer
- * function.
- * [@constant] AVCaptureColorSpace_AppleLog
- * The Apple Log Color space, which uses BT2020 as the color primaries, and an Apple defined Log curve as a transfer
- * function. When this is set as the active color space on an AVCaptureDevice, any AVCapturePhotoOutput or
- * AVCaptureStillImageOutput connected to the same AVCaptureDevice will have its video connection disabled.
  * 
  * API-Since: 10.0
  */
 @Generated
 public final class AVCaptureColorSpace {
     /**
+     * The sRGB color space ( https://www.w3.org/Graphics/Color/srgb ).
+     * 
      * API-Since: 10.0
      */
     @Generated @NInt public static final long _sRGB = 0x0000000000000000L;
     /**
+     * The P3 D65 wide color space which uses Illuminant D65 as the white point.
+     * 
      * API-Since: 10.0
      */
     @Generated @NInt public static final long _P3_D65 = 0x0000000000000001L;
@@ -54,11 +44,28 @@ public final class AVCaptureColorSpace {
     }
 
     /**
+     * The BT2020 wide color space which uses Illuminant D65 as the white point and Hybrid Log-Gamma as the transfer
+     * function.
+     * 
      * API-Since: 14.1
      */
     @Generated @NInt public static final long _HLG_BT2020 = 0x0000000000000002L;
     /**
+     * The Apple Log Color space, which uses BT2020 as the color primaries, and an Apple defined Log curve as a transfer
+     * function. When you set this as the active color space on an ``AVCaptureDevice``, any ``AVCapturePhotoOutput`` or
+     * ``AVCaptureStillImageOutput`` connected to the same ``AVCaptureDevice`` is made inactive (its
+     * ``AVCaptureConnection/active`` property returns `false`).
+     * 
      * API-Since: 17.0
      */
     @Generated @NInt public static final long _AppleLog = 0x0000000000000003L;
+    /**
+     * The Apple Log 2 Color space, which uses Apple Gamut as the color primaries, and an Apple defined Log curve as a
+     * transfer function. When you set this as the active color space on an ``AVCaptureDevice``, any
+     * ``AVCapturePhotoOutput`` or ``AVCaptureStillImageOutput`` connected to the same ``AVCaptureDevice`` is made
+     * inactive (its ``AVCaptureConnection/active`` property returns `false`).
+     * 
+     * API-Since: 26.0
+     */
+    @Generated @NInt public static final long _AppleLog2 = 0x0000000000000004L;
 }

@@ -535,4 +535,41 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Specifies if the render pass should support color attachment mapping.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setSupportColorAttachmentMapping:")
+    public native void setSupportColorAttachmentMapping(boolean value);
+
+    /**
+     * Specifies if Metal accumulates visibility results between render encoders or resets them.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setVisibilityResultType:")
+    public native void setVisibilityResultType(@NInt long value);
+
+    /**
+     * Specifies if the render pass should support color attachment mapping.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("supportColorAttachmentMapping")
+    public native boolean supportColorAttachmentMapping();
+
+    /**
+     * Specifies if Metal accumulates visibility results between render encoders or resets them.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("visibilityResultType")
+    @NInt
+    public native long visibilityResultType();
 }

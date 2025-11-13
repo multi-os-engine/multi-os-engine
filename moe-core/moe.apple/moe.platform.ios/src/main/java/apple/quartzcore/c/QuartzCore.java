@@ -1288,4 +1288,69 @@ public final class QuartzCore {
     @MappedReturn(ObjCStringMapper.class)
     @NotNull
     public static native String CAToneMapModeIfSupported();
+
+    /**
+     * Automatic dynamic range. The system will decide how much dynamic range to use.
+     * If you want to render the content in an SDR form, you should explicitly use
+     * CADynamicRangeStandard. If user will be primarily focused on this view, such
+     * as a fullscreen layer or an editing canvas, you may explicitly set
+     * CADynamicRangeHigh.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String CADynamicRangeAutomatic();
+
+    /**
+     * Standard dynamic range. Any tonemapped images or colors with headroom tagging
+     * will be tonemapped to a maximum pixel value of 1.0.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String CADynamicRangeStandard();
+
+    /**
+     * Uses extended dynamic range, but brightness is modulated to optimize for
+     * co-existence with other composited content. For best results, images should
+     * contain contentAverageLightLevel metadata. Refer to CGImage API for more
+     * details.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String CADynamicRangeConstrainedHigh();
+
+    /**
+     * High dynamic range. Provides the best HDR quality. This should be reserved
+     * for situations where the user is expected to be focused on the media, such as
+     * larger views in an image editing/viewing app, or annotating/drawing with HDR colors.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String CADynamicRangeHigh();
+
+    /**
+     * Automatically choose optimal format for CG drawing commands
+     * 
+     * API-Since: 12.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String kCAContentsFormatAutomatic();
 }

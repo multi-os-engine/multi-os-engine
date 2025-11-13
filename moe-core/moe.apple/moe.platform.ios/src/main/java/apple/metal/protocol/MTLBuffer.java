@@ -31,6 +31,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSError;
+import apple.metal.MTLTensorDescriptor;
+import org.moe.natj.general.ann.NInt;
+import org.moe.natj.general.ann.ReferenceInfo;
+import org.moe.natj.general.ptr.Ptr;
 
 /**
  * [@protocol] MTLBuffer
@@ -127,4 +132,41 @@ public interface MTLBuffer extends MTLResource {
     @Generated
     @Selector("gpuAddress")
     long gpuAddress();
+
+    /**
+     * Creates a tensor that shares storage with this buffer.
+     * 
+     * - Parameters:
+     * - descriptor: A description of the properties for the new tensor.
+     * - offset: Offset into the buffer at which the data of the tensor begins.
+     * - error: If an error occurs during creation, Metal populates this parameter to provide you information about it.
+     * 
+     * If the descriptor specifies `MTLTensorUsageMachineLearning` usage, you need to observe the following
+     * restrictions:
+     * * pass in `0` for the `offset` parameter
+     * * set the element stride the descriptor to `1`
+     * * ensure that number of bytes per row is a multiple of `64`
+     * * for dimensions greater than `2`, make sure `strides[dim] = strides[dim -1] * dimensions[dim - 1]`
+     * 
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("newTensorWithDescriptor:offset:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    MTLTensor newTensorWithDescriptorOffsetError(@NotNull MTLTensorDescriptor descriptor, @NUInt long offset,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    /**
+     * [@property] sparseBufferTier
+     * 
+     * Query support tier for sparse buffers.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("sparseBufferTier")
+    @NInt
+    long sparseBufferTier();
 }

@@ -116,8 +116,8 @@ public class MTRBaseClusterThreadBorderRouterManagement extends MTRGenericBaseCl
     /**
      * Command GetActiveDatasetRequest
      * 
-     * Command to request the active operational dataset of the Thread network to which the border router is connected.
-     * This command must be sent over a valid CASE session
+     * This command SHALL be used to request the active operational dataset of the Thread network to which the border
+     * router is connected.
      * 
      * API-Since: 18.4
      */
@@ -154,8 +154,8 @@ public class MTRBaseClusterThreadBorderRouterManagement extends MTRGenericBaseCl
     /**
      * Command GetPendingDatasetRequest
      * 
-     * Command to request the pending dataset of the Thread network to which the border router is connected. This
-     * command must be sent over a valid CASE session
+     * This command SHALL be used to request the pending dataset of the Thread network to which the border router is
+     * connected.
      * 
      * API-Since: 18.4
      */
@@ -594,7 +594,8 @@ public class MTRBaseClusterThreadBorderRouterManagement extends MTRGenericBaseCl
     /**
      * Command SetActiveDatasetRequest
      * 
-     * Command to set or update the active Dataset of the Thread network to which the Border Router is connected.
+     * This command SHALL be used to set the active Dataset of the Thread network to which the Border Router is
+     * connected, when there is no active dataset already.
      * 
      * API-Since: 18.4
      */
@@ -614,7 +615,8 @@ public class MTRBaseClusterThreadBorderRouterManagement extends MTRGenericBaseCl
     /**
      * Command SetPendingDatasetRequest
      * 
-     * Command set or update the pending Dataset of the Thread network to which the Border Router is connected.
+     * This command SHALL be used to set or update the pending Dataset of the Thread network to which the Border Router
+     * is connected, if the Border Router supports PANChange Feature.
      * 
      * API-Since: 18.4
      */

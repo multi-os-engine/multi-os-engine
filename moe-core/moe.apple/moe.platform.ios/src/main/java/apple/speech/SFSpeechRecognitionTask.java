@@ -42,6 +42,15 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * A task object for monitoring the speech recognition progress.
+ * 
+ * Use an `SFSpeechRecognitionTask` object to determine the state of a speech recognition task, to cancel an ongoing
+ * task, or to signal the end of the task.
+ * 
+ * You don't create speech recognition task objects directly. Instead, you receive one of these objects after calling
+ * ``SFSpeechRecognizer/recognitionTask(with:resultHandler:)`` or ``SFSpeechRecognizer/recognitionTask(with:delegate:)``
+ * on your ``SFSpeechRecognizer`` object.
+ * 
  * API-Since: 10.0
  */
 @Generated
@@ -159,6 +168,14 @@ public class SFSpeechRecognitionTask extends NSObject {
     public static native long version_static();
 
     /**
+     * Cancels the current speech recognition task.
+     * 
+     * You can cancel recognition tasks for both prerecorded and live audio input. For example, you might cancel a task
+     * in response to a user action or because the recording was interrupted.
+     * 
+     * When canceling a task, be sure to release any resources associated with the task, such as the audio input
+     * resources you are using to capture audio samples.
+     * 
      * API-Since: 10.0
      */
     @Generated
@@ -166,7 +183,22 @@ public class SFSpeechRecognitionTask extends NSObject {
     public native void cancel();
 
     /**
-     * Reports error that occurred during recognition, if applicable
+     * An error object that specifies the error that occurred during a speech recognition task.
+     * 
+     * The system may return one of the errors listed in the table below.
+     * 
+     * | Error Code | Error Domain | Description |
+     * |---|---|---|
+     * | `102` | `kLSRErrorDomain` | Assets are not installed. |
+     * | `201` | `kLSRErrorDomain` | Siri or Dictation is disabled. |
+     * | `300` | `kLSRErrorDomain` | Failed to initialize recognizer. |
+     * | `301` | `kLSRErrorDomain` | Request was canceled. |
+     * | `203` | `kAFAssistantErrorDomain` | Failure occurred during speech recognition. |
+     * | `1100` | `kAFAssistantErrorDomain` | Trying to start recognition while an earlier instance is still active. |
+     * | `1101` | `kAFAssistantErrorDomain` | Connection to speech process was invalidated. |
+     * | `1107` | `kAFAssistantErrorDomain` | Connection to speech process was interrupted. |
+     * | `1110` | `kAFAssistantErrorDomain` | Failed to recognize any speech. |
+     * | `1700` | `kAFAssistantErrorDomain` | Request is not authorized. |
      * 
      * API-Since: 10.0
      */
@@ -176,8 +208,10 @@ public class SFSpeechRecognitionTask extends NSObject {
     public native NSError error();
 
     /**
-     * Instructs the task to stop accepting new audio (e.g. stop recording) but complete processing on audio already
-     * buffered.
+     * Stops accepting new audio and finishes processing on the audio input that has already been accepted.
+     * 
+     * For audio buffer–based recognition, recognition does not finish until this method is called, so be sure to call
+     * it when the audio source is exhausted.
      * This has no effect on URL-based recognition requests, which effectively buffer the entire file immediately.
      * 
      * API-Since: 10.0
@@ -191,7 +225,9 @@ public class SFSpeechRecognitionTask extends NSObject {
     public native SFSpeechRecognitionTask init();
 
     /**
-     * True if recognition has been cancelled
+     * A Boolean value that indicates whether the speech recognition task was canceled.
+     * 
+     * By default, the value of this property is `false`.
      * 
      * API-Since: 10.0
      */
@@ -200,7 +236,9 @@ public class SFSpeechRecognitionTask extends NSObject {
     public native boolean isCancelled();
 
     /**
-     * True if recognition audio input has stopped
+     * A Boolean value that indicates whether audio input has stopped.
+     * 
+     * By default, the value of this property is `false`.
      * 
      * API-Since: 10.0
      */
@@ -209,6 +247,11 @@ public class SFSpeechRecognitionTask extends NSObject {
     public native boolean isFinishing();
 
     /**
+     * The current state of the speech recognition task.
+     * 
+     * Check the value of this property to get the state of the in-progress speech recognition session. For valid
+     * values, see ``SFSpeechRecognitionTaskState``.
+     * 
      * API-Since: 10.0
      */
     @Generated

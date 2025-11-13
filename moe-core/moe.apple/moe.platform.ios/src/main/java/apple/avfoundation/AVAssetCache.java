@@ -39,10 +39,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSDictionary;
 
 /**
- * AVAssetCache
- * 
  * AVAssetCache is a class vended by an AVAsset used for the inspection of locally available media data.
  * 
  * AVAssetCaches are vended by AVURLAsset's assetCache property.
@@ -170,8 +169,6 @@ public class AVAssetCache extends NSObject {
     public native AVAssetCache init();
 
     /**
-     * [@property] playableOffline
-     * 
      * Returns YES if a complete rendition of an AVAsset is available to be played without a network connection.
      * 
      * An answer of YES does not indicate that any given media selection is available for offline playback. To determine
@@ -184,8 +181,6 @@ public class AVAssetCache extends NSObject {
     public native boolean isPlayableOffline();
 
     /**
-     * mediaSelectionOptionsInMediaSelectionGroup:
-     * 
      * Returns an array of AVMediaSelectionOptions in an AVMediaSelectionGroup that are available for offline
      * operations, e.g. playback.
      * 
@@ -201,4 +196,28 @@ public class AVAssetCache extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Returns an array of extended language tags for languages that can be selected for offline operations via use of
+     * the AVMediaSelectionGroup's AVCustomMediaSelectionScheme.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("mediaPresentationLanguagesForMediaSelectionGroup:")
+    @NotNull
+    public native NSArray<String> mediaPresentationLanguagesForMediaSelectionGroup(
+            @NotNull AVMediaSelectionGroup mediaSelectionGroup);
+
+    /**
+     * For each AVMediaPresentationSelector defined by the AVCustomMediaSelectionScheme of an AVMediaSelectionGroup,
+     * returns the AVMediaPresentationSettings that can be satisfied for offline operations, e.g. playback.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("mediaPresentationSettingsForMediaSelectionGroup:")
+    @NotNull
+    public native NSDictionary<? extends AVMediaPresentationSelector, ? extends NSArray<? extends AVMediaPresentationSetting>> mediaPresentationSettingsForMediaSelectionGroup(
+            @NotNull AVMediaSelectionGroup mediaSelectionGroup);
 }

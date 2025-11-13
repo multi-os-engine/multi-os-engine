@@ -400,4 +400,154 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Configures whether the indirect command buffer inherits the cull mode from the encoder.
+     * 
+     * The property's default value is <doc://com.apple.documentation/documentation/swift/true>.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("inheritCullMode")
+    public native boolean inheritCullMode();
+
+    /**
+     * Configures whether the indirect command buffer inherits the depth bias from the encoder.
+     * 
+     * The property's default value is <doc://com.apple.documentation/documentation/swift/true>.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("inheritDepthBias")
+    public native boolean inheritDepthBias();
+
+    /**
+     * Configures whether the indirect command buffer inherits the depth clip mode from the encoder.
+     * 
+     * The property's default value is <doc://com.apple.documentation/documentation/swift/true>.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("inheritDepthClipMode")
+    public native boolean inheritDepthClipMode();
+
+    /**
+     * Configures whether the indirect command buffer inherits the depth stencil state from the encoder.
+     * 
+     * The property's default value is <doc://com.apple.documentation/documentation/swift/true>.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("inheritDepthStencilState")
+    public native boolean inheritDepthStencilState();
+
+    /**
+     * Configures whether the indirect command buffer inherits the front facing winding from the encoder.
+     * 
+     * The property's default value is <doc://com.apple.documentation/documentation/swift/true>.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("inheritFrontFacingWinding")
+    public native boolean inheritFrontFacingWinding();
+
+    /**
+     * Configures whether the indirect command buffer inherits the triangle fill mode from the encoder.
+     * 
+     * The property's default value is <doc://com.apple.documentation/documentation/swift/true>.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("inheritTriangleFillMode")
+    public native boolean inheritTriangleFillMode();
+
+    /**
+     * Configures whether the indirect command buffer inherits the cull mode from the encoder.
+     * 
+     * The property's default value is <doc://com.apple.documentation/documentation/swift/true>.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setInheritCullMode:")
+    public native void setInheritCullMode(boolean value);
+
+    /**
+     * Configures whether the indirect command buffer inherits the depth bias from the encoder.
+     * 
+     * The property's default value is <doc://com.apple.documentation/documentation/swift/true>.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setInheritDepthBias:")
+    public native void setInheritDepthBias(boolean value);
+
+    /**
+     * Configures whether the indirect command buffer inherits the depth clip mode from the encoder.
+     * 
+     * The property's default value is <doc://com.apple.documentation/documentation/swift/true>.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setInheritDepthClipMode:")
+    public native void setInheritDepthClipMode(boolean value);
+
+    /**
+     * Configures whether the indirect command buffer inherits the depth stencil state from the encoder.
+     * 
+     * The property's default value is <doc://com.apple.documentation/documentation/swift/true>.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setInheritDepthStencilState:")
+    public native void setInheritDepthStencilState(boolean value);
+
+    /**
+     * Configures whether the indirect command buffer inherits the front facing winding from the encoder.
+     * 
+     * The property's default value is <doc://com.apple.documentation/documentation/swift/true>.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setInheritFrontFacingWinding:")
+    public native void setInheritFrontFacingWinding(boolean value);
+
+    /**
+     * Configures whether the indirect command buffer inherits the triangle fill mode from the encoder.
+     * 
+     * The property's default value is <doc://com.apple.documentation/documentation/swift/true>.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setInheritTriangleFillMode:")
+    public native void setInheritTriangleFillMode(boolean value);
+
+    /**
+     * Specifies if the indirect command buffer should support color attachment mapping.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setSupportColorAttachmentMapping:")
+    public native void setSupportColorAttachmentMapping(boolean value);
+
+    /**
+     * Specifies if the indirect command buffer should support color attachment mapping.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("supportColorAttachmentMapping")
+    public native boolean supportColorAttachmentMapping();
 }

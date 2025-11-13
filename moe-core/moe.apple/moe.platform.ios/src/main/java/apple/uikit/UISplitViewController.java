@@ -226,7 +226,7 @@ public class UISplitViewController extends UIViewController {
             @Nullable NSBundle nibBundleOrNil);
 
     /**
-     * Specifies whether the split view controller has collapsed its primary and secondary view controllers together
+     * Specifies whether the split view controller has collapsed its primary and secondary view controllers together.
      * 
      * API-Since: 8.0
      */
@@ -235,7 +235,8 @@ public class UISplitViewController extends UIViewController {
     public native boolean isCollapsed();
 
     /**
-     * default: UISplitViewControllerAutomaticDimension
+     * An animatable property that specifies the maximum absolute width of the primary column in the split view
+     * controller. Default is UISplitViewControllerAutomaticDimension.
      * 
      * API-Since: 8.0
      */
@@ -245,7 +246,8 @@ public class UISplitViewController extends UIViewController {
     public native double maximumPrimaryColumnWidth();
 
     /**
-     * default: UISplitViewControllerAutomaticDimension
+     * An animatable property that specifies the minimum absolute width of the primary column in the split view
+     * controller. Default is UISplitViewControllerAutomaticDimension.
      * 
      * API-Since: 8.0
      */
@@ -267,7 +269,8 @@ public class UISplitViewController extends UIViewController {
     public native long preferredDisplayMode();
 
     /**
-     * default: UISplitViewControllerAutomaticDimension
+     * An animatable property that specifies the preferred relative width of the primary column in the split view
+     * controller. Default is UISplitViewControllerAutomaticDimension.
      * 
      * API-Since: 8.0
      */
@@ -286,7 +289,7 @@ public class UISplitViewController extends UIViewController {
     public native boolean presentsWithGesture();
 
     /**
-     * The current primary view controller's column width.
+     * The current width of the primary column.
      * 
      * API-Since: 8.0
      */
@@ -319,7 +322,8 @@ public class UISplitViewController extends UIViewController {
     }
 
     /**
-     * default: UISplitViewControllerAutomaticDimension
+     * An animatable property that specifies the maximum absolute width of the primary column in the split view
+     * controller. Default is UISplitViewControllerAutomaticDimension.
      * 
      * API-Since: 8.0
      */
@@ -328,7 +332,8 @@ public class UISplitViewController extends UIViewController {
     public native void setMaximumPrimaryColumnWidth(@NFloat double value);
 
     /**
-     * default: UISplitViewControllerAutomaticDimension
+     * An animatable property that specifies the minimum absolute width of the primary column in the split view
+     * controller. Default is UISplitViewControllerAutomaticDimension.
      * 
      * API-Since: 8.0
      */
@@ -348,7 +353,8 @@ public class UISplitViewController extends UIViewController {
     public native void setPreferredDisplayMode(@NInt long value);
 
     /**
-     * default: UISplitViewControllerAutomaticDimension
+     * An animatable property that specifies the preferred relative width of the primary column in the split view
+     * controller. Default is UISplitViewControllerAutomaticDimension.
      * 
      * API-Since: 8.0
      */
@@ -485,6 +491,9 @@ public class UISplitViewController extends UIViewController {
     public native UISplitViewController initWithStyle(@NInt long style);
 
     /**
+     * An animatable property that specifies the maximum absolute width of the supplementary column in the split view
+     * controller. Default is UISplitViewControllerAutomaticDimension.
+     * 
      * API-Since: 14.0
      */
     @Generated
@@ -493,6 +502,9 @@ public class UISplitViewController extends UIViewController {
     public native double maximumSupplementaryColumnWidth();
 
     /**
+     * An animatable property that specifies the minimum absolute width of the supplementary column in the split view
+     * controller. Default is UISplitViewControllerAutomaticDimension.
+     * 
      * API-Since: 14.0
      */
     @Generated
@@ -501,7 +513,9 @@ public class UISplitViewController extends UIViewController {
     public native double minimumSupplementaryColumnWidth();
 
     /**
-     * default: UISplitViewControllerAutomaticDimension
+     * An animatable property that specifies the preferred absolute width of the primary column in the split view
+     * controller. Default is UISplitViewControllerAutomaticDimension.
+     * If set to non-automatic, takes precedence over preferredPrimaryColumnWidthFraction.
      * 
      * API-Since: 14.0
      */
@@ -521,6 +535,10 @@ public class UISplitViewController extends UIViewController {
     public native long preferredSplitBehavior();
 
     /**
+     * An animatable property that specifies the preferred absolute width of the supplementary column in the split view
+     * controller. Default is UISplitViewControllerAutomaticDimension.
+     * If set to non-automatic, takes precedence over preferredSupplementaryColumnWidthFraction.
+     * 
      * API-Since: 14.0
      */
     @Generated
@@ -529,8 +547,8 @@ public class UISplitViewController extends UIViewController {
     public native double preferredSupplementaryColumnWidth();
 
     /**
-     * Same as the "Primary" versions but applying to the Supplementary column for the triple-column style
-     * UISplitViewController
+     * An animatable property that specifies the preferred relative width of the supplementary column in the split view
+     * controller. Default is UISplitViewControllerAutomaticDimension.
      * 
      * API-Since: 14.0
      */
@@ -540,6 +558,9 @@ public class UISplitViewController extends UIViewController {
     public native double preferredSupplementaryColumnWidthFraction();
 
     /**
+     * An animatable property that specifies the maximum absolute width of the supplementary column in the split view
+     * controller. Default is UISplitViewControllerAutomaticDimension.
+     * 
      * API-Since: 14.0
      */
     @Generated
@@ -547,6 +568,9 @@ public class UISplitViewController extends UIViewController {
     public native void setMaximumSupplementaryColumnWidth(@NFloat double value);
 
     /**
+     * An animatable property that specifies the minimum absolute width of the supplementary column in the split view
+     * controller. Default is UISplitViewControllerAutomaticDimension.
+     * 
      * API-Since: 14.0
      */
     @Generated
@@ -554,7 +578,9 @@ public class UISplitViewController extends UIViewController {
     public native void setMinimumSupplementaryColumnWidth(@NFloat double value);
 
     /**
-     * default: UISplitViewControllerAutomaticDimension
+     * An animatable property that specifies the preferred absolute width of the primary column in the split view
+     * controller. Default is UISplitViewControllerAutomaticDimension.
+     * If set to non-automatic, takes precedence over preferredPrimaryColumnWidthFraction.
      * 
      * API-Since: 14.0
      */
@@ -572,6 +598,10 @@ public class UISplitViewController extends UIViewController {
     public native void setPreferredSplitBehavior(@NInt long value);
 
     /**
+     * An animatable property that specifies the preferred absolute width of the supplementary column in the split view
+     * controller. Default is UISplitViewControllerAutomaticDimension.
+     * If set to non-automatic, takes precedence over preferredSupplementaryColumnWidthFraction.
+     * 
      * API-Since: 14.0
      */
     @Generated
@@ -579,8 +609,8 @@ public class UISplitViewController extends UIViewController {
     public native void setPreferredSupplementaryColumnWidth(@NFloat double value);
 
     /**
-     * Same as the "Primary" versions but applying to the Supplementary column for the triple-column style
-     * UISplitViewController
+     * An animatable property that specifies the preferred relative width of the supplementary column in the split view
+     * controller. Default is UISplitViewControllerAutomaticDimension.
      * 
      * API-Since: 14.0
      */
@@ -641,6 +671,8 @@ public class UISplitViewController extends UIViewController {
     public native long style();
 
     /**
+     * The current width of the supplementary column.
+     * 
      * API-Since: 14.0
      */
     @Generated
@@ -679,4 +711,164 @@ public class UISplitViewController extends UIViewController {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Returns whether a given column is visible in the split view controller.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isShowingColumn:")
+    public native boolean isShowingColumn(@NInt long column);
+
+    /**
+     * An animatable property that specifies the maximum absolute width of the inspector column in the split view
+     * controller. Default is UISplitViewControllerAutomaticDimension.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("maximumInspectorColumnWidth")
+    @NFloat
+    public native double maximumInspectorColumnWidth();
+
+    /**
+     * An animatable property that specifies the minimum absolute width of the inspector column in the split view
+     * controller. Default is UISplitViewControllerAutomaticDimension.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("minimumInspectorColumnWidth")
+    @NFloat
+    public native double minimumInspectorColumnWidth();
+
+    /**
+     * An animatable property that specifies the minimum absolute width of the secondary column in the split view
+     * controller. Default is UISplitViewControllerAutomaticDimension.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("minimumSecondaryColumnWidth")
+    @NFloat
+    public native double minimumSecondaryColumnWidth();
+
+    /**
+     * An animatable property that specifies the preferred absolute width of the inspector column in the split view
+     * controller. Default is UISplitViewControllerAutomaticDimension.
+     * If set to non-automatic, takes precedence over preferredInspectorColumnWidthFraction.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("preferredInspectorColumnWidth")
+    @NFloat
+    public native double preferredInspectorColumnWidth();
+
+    /**
+     * An animatable property that specifies the preferred relative width of the inspector column in the split view
+     * controller. Default is UISplitViewControllerAutomaticDimension.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("preferredInspectorColumnWidthFraction")
+    @NFloat
+    public native double preferredInspectorColumnWidthFraction();
+
+    /**
+     * An animatable property that specifies the preferred absolute width of the secondary column in the split view
+     * controller. Default is UISplitViewControllerAutomaticDimension.
+     * If set to non-automatic, takes precedence over preferredSecondaryColumnWidthFraction.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("preferredSecondaryColumnWidth")
+    @NFloat
+    public native double preferredSecondaryColumnWidth();
+
+    /**
+     * An animatable property that specifies the preferred relative width of the secondary column in the split view
+     * controller. Default is UISplitViewControllerAutomaticDimension.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("preferredSecondaryColumnWidthFraction")
+    @NFloat
+    public native double preferredSecondaryColumnWidthFraction();
+
+    /**
+     * An animatable property that specifies the maximum absolute width of the inspector column in the split view
+     * controller. Default is UISplitViewControllerAutomaticDimension.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setMaximumInspectorColumnWidth:")
+    public native void setMaximumInspectorColumnWidth(@NFloat double value);
+
+    /**
+     * An animatable property that specifies the minimum absolute width of the inspector column in the split view
+     * controller. Default is UISplitViewControllerAutomaticDimension.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setMinimumInspectorColumnWidth:")
+    public native void setMinimumInspectorColumnWidth(@NFloat double value);
+
+    /**
+     * An animatable property that specifies the minimum absolute width of the secondary column in the split view
+     * controller. Default is UISplitViewControllerAutomaticDimension.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setMinimumSecondaryColumnWidth:")
+    public native void setMinimumSecondaryColumnWidth(@NFloat double value);
+
+    /**
+     * An animatable property that specifies the preferred absolute width of the inspector column in the split view
+     * controller. Default is UISplitViewControllerAutomaticDimension.
+     * If set to non-automatic, takes precedence over preferredInspectorColumnWidthFraction.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setPreferredInspectorColumnWidth:")
+    public native void setPreferredInspectorColumnWidth(@NFloat double value);
+
+    /**
+     * An animatable property that specifies the preferred relative width of the inspector column in the split view
+     * controller. Default is UISplitViewControllerAutomaticDimension.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setPreferredInspectorColumnWidthFraction:")
+    public native void setPreferredInspectorColumnWidthFraction(@NFloat double value);
+
+    /**
+     * An animatable property that specifies the preferred absolute width of the secondary column in the split view
+     * controller. Default is UISplitViewControllerAutomaticDimension.
+     * If set to non-automatic, takes precedence over preferredSecondaryColumnWidthFraction.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setPreferredSecondaryColumnWidth:")
+    public native void setPreferredSecondaryColumnWidth(@NFloat double value);
+
+    /**
+     * An animatable property that specifies the preferred relative width of the secondary column in the split view
+     * controller. Default is UISplitViewControllerAutomaticDimension.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setPreferredSecondaryColumnWidthFraction:")
+    public native void setPreferredSecondaryColumnWidthFraction(@NFloat double value);
 }

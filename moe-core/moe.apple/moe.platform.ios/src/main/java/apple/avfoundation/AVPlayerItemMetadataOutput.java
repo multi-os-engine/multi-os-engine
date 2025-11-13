@@ -50,6 +50,8 @@ import apple.opaque.dispatch_queue_t;
  * 
  * Setting the value of suppressesPlayerRendering on an instance of AVPlayerItemMetadataOutput has no effect.
  * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 8.0
  */
 @Generated

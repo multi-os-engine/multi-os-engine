@@ -28,13 +28,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * A @c SHMatch indicates that a Signature matched a reference Signature in the target @c SHCatalog
+ * An object that represents the catalog media items that match a query.
  * 
- * A @c SHSignature can match many reference Signatures in a catalog and in turn a Signature can map to
- * many @c SHMediaItem. Therefore a match encapsulates the query Signature and all of the various @c SHMediaItem it
- * matched
- * 
- * [@note] @c SHMatch is not intended to be subclassed
+ * A single query signature may match more than one reference signature. In addition, one reference signature may map to
+ * many media items.
  * 
  * API-Since: 15.0
  */
@@ -139,11 +136,7 @@ public class SHMatch extends NSObject implements NSSecureCoding {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
-     * The @c SHMatchedMediaItem belonging to the instance of @c SHSignature that we matched
-     * 
-     * One Signature may match multiple @c SHMediaItem, especially in the case of audio that uses samples. The array
-     * of @c SHMatchedMediaItem
-     * is ordered by the quality of the match. Use the first @c SHMatchedMediaItem if you intend to only show one result
+     * An array of the media items in the catalog that match the query signature, in order of the quality of the match.
      * 
      * API-Since: 15.0
      */
@@ -158,8 +151,7 @@ public class SHMatch extends NSObject implements NSSecureCoding {
     public static native SHMatch new_objc();
 
     /**
-     * The @c SHSignature used to query the @c SHCatalog
-     * [@note] This Signature is the query Signature, not the reference Signature contained in the @c SHCatalog
+     * The query signature for the match.
      * 
      * API-Since: 15.0
      */

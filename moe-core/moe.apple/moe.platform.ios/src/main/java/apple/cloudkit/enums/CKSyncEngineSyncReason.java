@@ -14,7 +14,8 @@ public final class CKSyncEngineSyncReason {
      */
     @Generated @NInt public static final long Scheduled = 0x0000000000000000L;
     /**
-     * This sync was requested manually by calling `fetchChanges` or `sendChanges`.
+     * This sync was requested manually by calling ``CKSyncEngine/fetchChanges(_:)`` or
+     * ``CKSyncEngine/sendChanges(_:)``.
      */
     @Generated @NInt public static final long Manual = 0x0000000000000001L;
 }

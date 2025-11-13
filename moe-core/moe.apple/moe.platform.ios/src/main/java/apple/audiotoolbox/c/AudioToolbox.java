@@ -90,6 +90,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import apple.opaque.dispatch_queue_t;
 import apple.opaque.os_workgroup_t;
+import apple.coreaudiotypes.struct.AudioStreamPacketDependencyDescription;
 
 @Generated
 @Library("AudioToolbox")
@@ -5913,7 +5914,7 @@ public final class AudioToolbox {
      * 
      * The iterator will still be pointing to the same event, but as the event will have moved,
      * it may or may not have a next or previous event now (depending of course on the time
-     * you moved it too).
+     * you moved it to).
      * 
      * @param inIterator  the iterator
      * @param inTimeStamp the new time stamp of the event
@@ -7739,4 +7740,131 @@ public final class AudioToolbox {
             @UncertainArgument("Options: reference, array Fallback: reference") @NotNull AudioStreamBasicDescription inSourceFormat,
             @UncertainArgument("Options: reference, array Fallback: reference") @NotNull AudioStreamBasicDescription inDestinationFormat,
             int inOptions, @NotNull Ptr<AudioConverterRef> outAudioConverter);
+
+    /**
+     * [@function] AudioConverterFillComplexBufferRealtimeSafe
+     * 
+     * Identical to AudioConverterFillComplexBuffer, with the addition of a realtime-safety
+     * guarantee.
+     * 
+     * Conversions involving only PCM formats -- interleaving, deinterleaving, channel count changes,
+     * sample rate conversions -- are realtime-safe. Such conversions may use this API in order to
+     * obtain compiler checks involving the `CA_REALTIME_API` attributes.
+     * 
+     * At runtime, this function returns `kAudioConverterErr_OperationNotSupported` if the conversion
+     * requires non-realtime-safe functionality.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    public static native int AudioConverterFillComplexBufferRealtimeSafe(@NotNull AudioConverterRef inAudioConverter,
+            @FunctionPtr(name = "call_AudioConverterFillComplexBufferRealtimeSafe") @NotNull Function_AudioConverterFillComplexBufferRealtimeSafe inInputDataProc,
+            @Nullable VoidPtr inInputDataProcUserData, @NotNull IntPtr ioOutputDataPacketSize,
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull AudioBufferList outOutputData,
+            @UncertainArgument("Options: reference, array Fallback: reference") @Nullable AudioStreamPacketDescription outPacketDescription);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AudioConverterFillComplexBufferRealtimeSafe {
+        @Generated
+        int call_AudioConverterFillComplexBufferRealtimeSafe(@NotNull AudioConverterRef arg0, @NotNull IntPtr arg1,
+                @UncertainArgument("Options: reference, array Fallback: reference") @NotNull AudioBufferList arg2,
+                @ReferenceInfo(type = AudioStreamPacketDescription.class, depth = 2) @Nullable Ptr<Ptr<AudioStreamPacketDescription>> arg3,
+                @Nullable VoidPtr arg4);
+    }
+
+    /**
+     * [@function] AudioConverterFillComplexBufferWithPacketDependencies
+     * 
+     * Converts audio data supplied by a callback function, supporting non-interleaved and
+     * packetized formats, and also supporting packet dependency descriptions.
+     * 
+     * For output formats that use packet dependency descriptions, this must be used instead of
+     * AudioConverterFillComplexBuffer, which will return an error for such formats.
+     * 
+     * @param inAudioConverter        The audio converter to use for format conversion.
+     * @param inInputDataProc         A callback function that supplies audio data to convert.
+     *                                This callback is invoked repeatedly as the converter is ready for
+     *                                new input data.
+     * @param inInputDataProcUserData Custom data for use by your application when receiving a
+     *                                callback invocation.
+     * @param ioOutputDataPacketSize  On input, the size of the output buffer (in the `outOutputData`
+     *                                parameter), expressed in number packets in the audio converter’s
+     *                                output format. On output, the number of packets of converted data
+     *                                that were written to the output buffer.
+     * @param outOutputData           The converted output data is written to this buffer. On entry, the
+     *                                buffers' `mDataByteSize` fields (which must all be the same) reflect
+     *                                buffer capacity. On exit, `mDataByteSize` is set to the number of
+     *                                bytes written.
+     * @param outPacketDescriptions   If not `NULL`, and if the audio converter's output format uses packet
+     *                                descriptions, this must point to a block of memory capable of holding
+     *                                the number of packet descriptions specified in the `ioOutputDataPacketSize`
+     *                                parameter. (See _Audio Format Services Reference_ for functions that
+     *                                let you determine whether an audio format uses packet descriptions).
+     *                                If not `NULL` on output and if the audio converter's output format
+     *                                uses packet descriptions, then this parameter contains an array of
+     *                                packet descriptions.
+     * @param outPacketDependencies   Should point to a memory block capable of holding the number of
+     *                                packet dependency description structures specified in the
+     *                                `ioOutputDataPacketSize` parameter. Must not be `NULL`. This array
+     *                                will be filled out only by encoders that produce a format which has a
+     *                                non-zero value for `kAudioFormatProperty_FormatEmploysDependentPackets`.
+     * @return A result code.
+     * 
+     *         API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    public static native int AudioConverterFillComplexBufferWithPacketDependencies(
+            @NotNull AudioConverterRef inAudioConverter,
+            @FunctionPtr(name = "call_AudioConverterFillComplexBufferWithPacketDependencies") @NotNull Function_AudioConverterFillComplexBufferWithPacketDependencies inInputDataProc,
+            @Nullable VoidPtr inInputDataProcUserData, @NotNull IntPtr ioOutputDataPacketSize,
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull AudioBufferList outOutputData,
+            @UncertainArgument("Options: reference, array Fallback: reference") @Nullable AudioStreamPacketDescription outPacketDescriptions,
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull AudioStreamPacketDependencyDescription outPacketDependencies);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AudioConverterFillComplexBufferWithPacketDependencies {
+        @Generated
+        int call_AudioConverterFillComplexBufferWithPacketDependencies(@NotNull AudioConverterRef arg0,
+                @NotNull IntPtr arg1,
+                @UncertainArgument("Options: reference, array Fallback: reference") @NotNull AudioBufferList arg2,
+                @ReferenceInfo(type = AudioStreamPacketDescription.class, depth = 2) @Nullable Ptr<Ptr<AudioStreamPacketDescription>> arg3,
+                @Nullable VoidPtr arg4);
+    }
+
+    /**
+     * [@function] AudioFileWritePacketsWithDependencies
+     * 
+     * Write packets of audio data with corresponding packet dependencies to an audio data file.
+     * 
+     * For all uncompressed formats, `packets == frames`.
+     * 
+     * @param inAudioFile          The audio file to write to.
+     * @param inUseCache           Set to `true` if you want to cache the data. Otherwise, set to `false`.
+     * @param inNumBytes           The number of bytes of audio data being written.
+     * @param inPacketDescriptions A pointer to an array of packet descriptions for the audio data.
+     *                             Not all formats require packet descriptions. If no packet descriptions
+     *                             are required, for instance, if you are writing CBR data, pass `NULL`.
+     * @param inPacketDependencies A pointer to an array of packet dependencies for the audio data.
+     *                             This must not be `NULL`. To write packets without dependencies,
+     *                             use ``AudioFileWritePackets`` instead.
+     * @param inStartingPacket     The packet index for the placement of the first provided packet.
+     * @param ioNumPackets         On input, a pointer to the number of packets to write.
+     *                             On output, a pointer to the number of packets actually written.
+     * @param inBuffer             A pointer to user-allocated memory containing the new audio data
+     *                             to write to the audio data file.
+     * @return A result code. See Result Codes.
+     * 
+     *         API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    public static native int AudioFileWritePacketsWithDependencies(@NotNull AudioFileID inAudioFile, byte inUseCache,
+            int inNumBytes,
+            @UncertainArgument("Options: reference, array Fallback: reference") @Nullable AudioStreamPacketDescription inPacketDescriptions,
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull AudioStreamPacketDependencyDescription inPacketDependencies,
+            long inStartingPacket, @NotNull IntPtr ioNumPackets, @NotNull ConstVoidPtr inBuffer);
 }

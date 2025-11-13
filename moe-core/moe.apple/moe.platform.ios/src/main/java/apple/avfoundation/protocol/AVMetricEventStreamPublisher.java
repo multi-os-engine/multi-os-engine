@@ -7,8 +7,6 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 
 /**
- * [@protocol] AVMetricEventStreamPublisher
- * 
  * This protocol needs to be implemented by interfaces intending to publish metric events to the event stream.
  * 
  * API-Since: 18.0

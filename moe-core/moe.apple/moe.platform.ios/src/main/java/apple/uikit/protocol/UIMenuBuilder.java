@@ -172,4 +172,175 @@ public interface UIMenuBuilder {
     @Generated
     @Selector("system")
     UIMenuSystem system();
+
+    /**
+     * Insert elements after an identified action.
+     * 
+     * @param insertedElements  The elements to insert.
+     * @param siblingIdentifier The identifier of the action to insert elements after.
+     * 
+     *                          API-Since: 26.0
+     */
+    @Generated
+    @Selector("insertElements:afterActionForIdentifier:")
+    void insertElementsAfterActionForIdentifier(@NotNull NSArray<? extends UIMenuElement> insertedElements,
+            @NotNull String siblingIdentifier);
+
+    /**
+     * Insert elements after an identified command.
+     * 
+     * @param insertedElements    The elements to insert.
+     * @param siblingAction       The action of the command to insert elements after.
+     * @param siblingPropertyList Property list object to distinguish commands, if needed.
+     * 
+     *                            API-Since: 26.0
+     */
+    @Generated
+    @Selector("insertElements:afterCommandForAction:propertyList:")
+    void insertElementsAfterCommandForActionPropertyList(@NotNull NSArray<? extends UIMenuElement> insertedElements,
+            @NotNull SEL siblingAction, @Mapped(ObjCObjectMapper.class) @Nullable Object siblingPropertyList);
+
+    /**
+     * Insert elements after an identified menu.
+     * 
+     * @param insertedElements  The elements to insert.
+     * @param siblingIdentifier The identifier of the menu to insert elements after.
+     * 
+     *                          API-Since: 26.0
+     */
+    @Generated
+    @Selector("insertElements:afterMenuForIdentifier:")
+    void insertElementsAfterMenuForIdentifier(@NotNull NSArray<? extends UIMenuElement> insertedElements,
+            @NotNull String siblingIdentifier);
+
+    /**
+     * Insert elements at the end of an identified parent menu.
+     * 
+     * @param childElements    The child elements to insert.
+     * @param parentIdentifier The identifier of the parent menu to insert elements at the end of.
+     * 
+     *                         API-Since: 26.0
+     */
+    @Generated
+    @Selector("insertElements:atEndOfMenuForIdentifier:")
+    void insertElementsAtEndOfMenuForIdentifier(@NotNull NSArray<? extends UIMenuElement> childElements,
+            @NotNull String parentIdentifier);
+
+    /**
+     * Insert elements at the start of an identified parent menu.
+     * 
+     * @param childElements    The child elements to insert.
+     * @param parentIdentifier The identifier of the parent menu to insert elements at the start of.
+     * 
+     *                         API-Since: 26.0
+     */
+    @Generated
+    @Selector("insertElements:atStartOfMenuForIdentifier:")
+    void insertElementsAtStartOfMenuForIdentifier(@NotNull NSArray<? extends UIMenuElement> childElements,
+            @NotNull String parentIdentifier);
+
+    /**
+     * Insert elements before an identified action.
+     * 
+     * @param insertedElements  The elements to insert.
+     * @param siblingIdentifier The identifier of the action to insert elements before.
+     * 
+     *                          API-Since: 26.0
+     */
+    @Generated
+    @Selector("insertElements:beforeActionForIdentifier:")
+    void insertElementsBeforeActionForIdentifier(@NotNull NSArray<? extends UIMenuElement> insertedElements,
+            @NotNull String siblingIdentifier);
+
+    /**
+     * Insert elements before an identified command.
+     * 
+     * @param insertedElements    The elements to insert.
+     * @param siblingAction       The action of the command to insert elements before.
+     * @param siblingPropertyList Property list object to distinguish commands, if needed.
+     * 
+     *                            API-Since: 26.0
+     */
+    @Generated
+    @Selector("insertElements:beforeCommandForAction:propertyList:")
+    void insertElementsBeforeCommandForActionPropertyList(@NotNull NSArray<? extends UIMenuElement> insertedElements,
+            @NotNull SEL siblingAction, @Mapped(ObjCObjectMapper.class) @Nullable Object siblingPropertyList);
+
+    /**
+     * Insert elements before an identified menu.
+     * 
+     * @param insertedElements  The elements to insert.
+     * @param siblingIdentifier The identifier of the menu to insert elements before.
+     * 
+     *                          API-Since: 26.0
+     */
+    @Generated
+    @Selector("insertElements:beforeMenuForIdentifier:")
+    void insertElementsBeforeMenuForIdentifier(@NotNull NSArray<? extends UIMenuElement> insertedElements,
+            @NotNull String siblingIdentifier);
+
+    /**
+     * Remove an identified action.
+     * 
+     * @param removedIdentifier The identifier of the action to remove.
+     * 
+     *                          API-Since: 26.0
+     */
+    @Generated
+    @Selector("removeActionForIdentifier:")
+    void removeActionForIdentifier(@NotNull String removedIdentifier);
+
+    /**
+     * Remove an identified command.
+     * 
+     * @param removedAction       The action of the command to remove.
+     * @param removedPropertyList Property list object to distinguish commands, if needed.
+     * 
+     *                            API-Since: 26.0
+     */
+    @Generated
+    @Selector("removeCommandForAction:propertyList:")
+    void removeCommandForActionPropertyList(@NotNull SEL removedAction,
+            @Mapped(ObjCObjectMapper.class) @Nullable Object removedPropertyList);
+
+    /**
+     * Replace an identified action with menu elements.
+     * 
+     * @param replacedIdentifier  The identifier of the action to be replaced.
+     * @param replacementElements The replacement elements.
+     * 
+     *                            API-Since: 26.0
+     */
+    @Generated
+    @Selector("replaceActionForIdentifier:withElements:")
+    void replaceActionForIdentifierWithElements(@NotNull String replacedIdentifier,
+            @NotNull NSArray<? extends UIMenuElement> replacementElements);
+
+    /**
+     * Replace an identified command with menu elements.
+     * 
+     * @param replacedAction       The action of the command to be replaced.
+     * @param replacedPropertyList Property list object to distinguish commands, if needed.
+     * @param replacementElements  The replacement elements.
+     * 
+     *                             API-Since: 26.0
+     */
+    @Generated
+    @Selector("replaceCommandForAction:propertyList:withElements:")
+    void replaceCommandForActionPropertyListWithElements(@NotNull SEL replacedAction,
+            @Mapped(ObjCObjectMapper.class) @Nullable Object replacedPropertyList,
+            @NotNull NSArray<? extends UIMenuElement> replacementElements);
+
+    /**
+     * Replace an identified menu with menu elements.
+     * 
+     * @param replacedIdentifier  The identifier of the menu to be replaced.
+     * @param replacementElements The replacement elements.
+     * 
+     *                            API-Since: 26.0
+     */
+    @Generated
+    @Selector("replaceMenuForIdentifier:withElements:")
+    void replaceMenuForIdentifierWithElements(@NotNull String replacedIdentifier,
+            @NotNull NSArray<? extends UIMenuElement> replacementElements);
 }

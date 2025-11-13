@@ -49,8 +49,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVAssetDownloadURLSession
- * 
  * A subclass of NSURLSession to support AVAssetDownloadTask.
  * 
  * API-Since: 9.0
@@ -162,19 +160,14 @@ public class AVAssetDownloadURLSession extends NSURLSession {
     public static native NSURLSession sessionWithConfiguration(@NotNull NSURLSessionConfiguration configuration);
 
     /**
-     * sessionWithConfiguration:assetDownloadDelegate:delegateQueue:
-     * 
      * Creates and initializes an AVAssetDownloadURLSession for use with AVAssetDownloadTasks.
      * 
-     * @param configuration
-     *                      The configuration for this URLSession. Must be a background configuration.
-     * @param delegate
-     *                      The delegate object to handle asset download progress updates and other session related
-     *                      events.
-     * @param delegateQueue
-     *                      The queue to receive delegate callbacks on. If nil, a serial queue will be provided.
+     * - Parameter configuration: The configuration for this URLSession. Must be a background configuration.
+     * - Parameter delegate: The delegate object to handle asset download progress updates and other session related
+     * events.
+     * - Parameter delegateQueue: The queue to receive delegate callbacks on. If nil, a serial queue will be provided.
      * 
-     *                      API-Since: 9.0
+     * API-Since: 9.0
      */
     @NotNull
     @Generated
@@ -210,27 +203,21 @@ public class AVAssetDownloadURLSession extends NSURLSession {
     public static native long version_static();
 
     /**
-     * assetDownloadTaskWithURLAsset:assetTitle:assetArtworkData:options:
-     * 
      * Creates and initializes an AVAssetDownloadTask to be used with this AVAssetDownloadURLSession.
      * 
      * This method may return nil if the URLSession has been invalidated.
      * 
-     * @param URLAsset
-     *                    The AVURLAsset to download locally.
-     * @param title
-     *                    A human readable title for this asset, expected to be as suitable as possible for the user's
-     *                    preferred languages. Will show up in the usage pane of the settings app.
-     * @param artworkData
-     *                    NSData representing artwork data for this asset. Optional. Will show up in the usage pane of
-     *                    the settings app. Must work with +[UIImage imageWithData:].
-     * @param options
-     *                    See AVAssetDownloadTask*Key above. Configures non-default behavior for the download task.
-     *                    Using this parameter is required for downloading non-default media selections for HLS assets.
+     * - Parameter URLAsset: The AVURLAsset to download locally.
+     * - Parameter title: A human readable title for this asset, expected to be as suitable as possible for the user's
+     * preferred languages. Will show up in the usage pane of the settings app.
+     * - Parameter artworkData: NSData representing artwork data for this asset. Optional. Will show up in the usage
+     * pane of the settings app. Must work with +[UIImage imageWithData:].
+     * - Parameter options: See AVAssetDownloadTask*Key above. Configures non-default behavior for the download task.
+     * Using this parameter is required for downloading non-default media selections for HLS assets.
      * 
-     *                    API-Since: 10.0
-     *                    Deprecated-Since: 100000.0
-     *                    Deprecated-Message: Use assetDownloadTaskWithConfiguration: instead
+     * API-Since: 10.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use assetDownloadTaskWithConfiguration: instead
      */
     @Deprecated
     @Nullable
@@ -241,25 +228,18 @@ public class AVAssetDownloadURLSession extends NSURLSession {
             @Nullable NSDictionary<String, ?> options);
 
     /**
-     * assetDownloadTaskWithURLAsset:destinationURL:options:
-     * 
      * Creates and initializes an AVAssetDownloadTask to be used with this AVAssetDownloadURLSession.
      * 
      * This method may return nil if the URLSession has been invalidated.
      * 
-     * @param URLAsset
-     *                       The AVURLAsset to download locally.
-     * @param destinationURL
-     *                       The local URL to download the asset to. This must be a file URL.
-     * @param options
-     *                       See AVAssetDownloadTask*Key above. Configures non-default behavior for the download task.
-     *                       Using this parameter is required for downloading non-default media selections for HLS
-     *                       assets.
+     * - Parameter URLAsset: The AVURLAsset to download locally.
+     * - Parameter destinationURL: The local URL to download the asset to. This must be a file URL.
+     * - Parameter options: See AVAssetDownloadTask*Key above. Configures non-default behavior for the download task.
+     * Using this parameter is required for downloading non-default media selections for HLS assets.
      * 
-     *                       API-Since: 9.0
-     *                       Deprecated-Since: 10.0
-     *                       Deprecated-Message: Use assetDownloadTaskWithURLAsset:assetTitle:assetArtworkData:options:
-     *                       instead
+     * API-Since: 9.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use assetDownloadTaskWithURLAsset:assetTitle:assetArtworkData:options: instead
      */
     @Nullable
     @Deprecated
@@ -273,30 +253,23 @@ public class AVAssetDownloadURLSession extends NSURLSession {
     public native AVAssetDownloadURLSession init();
 
     /**
-     * aggregateAssetDownloadTaskWithURLAsset:mediaSelections:assetTitle:assetArtworkData:options:
-     * 
      * Creates and initializes an AVAggregateAssetDownloadTask to download multiple AVMediaSelections on an AVURLAsset.
      * 
      * This method may return nil if the URLSession has been invalidated. The value of
      * AVAssetDownloadTaskMediaSelectionKey will be ignored.
      * 
-     * @param URLAsset
-     *                        The AVURLAsset to download locally.
-     * @param mediaSelections
-     *                        A list of AVMediaSelections. Each AVMediaSelection will correspond to a
-     *                        childAssetDownloadTask. Use -[AVAsset allMediaSelections] to download all
-     *                        AVMediaSelections on this AVAsset.
-     * @param title
-     *                        A human readable title for this asset, expected to be as suitable as possible for the
-     *                        user's preferred languages. Will show up in the usage pane of the settings app.
-     * @param artworkData
-     *                        Artwork data for this asset. Optional. Will show up in the usage pane of the settings app.
-     * @param options
-     *                        See AVAssetDownloadTask*Key above. Configures non-default behavior for the download task.
+     * - Parameter URLAsset: The AVURLAsset to download locally.
+     * - Parameter mediaSelections: A list of AVMediaSelections. Each AVMediaSelection will correspond to a
+     * childAssetDownloadTask. Use -[AVAsset allMediaSelections] to download all AVMediaSelections on this AVAsset.
+     * - Parameter title: A human readable title for this asset, expected to be as suitable as possible for the user's
+     * preferred languages. Will show up in the usage pane of the settings app.
+     * - Parameter artworkData: Artwork data for this asset. Optional. Will show up in the usage pane of the settings
+     * app.
+     * - Parameter options: See AVAssetDownloadTask*Key above. Configures non-default behavior for the download task.
      * 
-     *                        API-Since: 11.0
-     *                        Deprecated-Since: 100000.0
-     *                        Deprecated-Message: Use assetDownloadTaskWithConfiguration: instead
+     * API-Since: 11.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use assetDownloadTaskWithConfiguration: instead
      */
     @Deprecated
     @Nullable
@@ -307,16 +280,13 @@ public class AVAssetDownloadURLSession extends NSURLSession {
             @NotNull String title, @Nullable NSData artworkData, @Nullable NSDictionary<String, ?> options);
 
     /**
-     * assetDownloadTaskWithConfiguration:
-     * 
      * Creates and initializes an AVAssetDownloadTask to be used with this AVAssetDownloadURLSession.
      * 
      * This method will throw an exception if the URLSession has been invalidated.
      * 
-     * @param downloadConfiguration
-     *                              The configuration to be used to create the download task.
+     * - Parameter downloadConfiguration: The configuration to be used to create the download task.
      * 
-     *                              API-Since: 15.0
+     * API-Since: 15.0
      */
     @NotNull
     @Generated

@@ -308,4 +308,69 @@ public class AVCaptureOutput extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * A `BOOL` value that indicates whether to defer starting this capture output.
+     * 
+     * When this value is `true`, the session does not prepare the output's resources until some time after
+     * ``AVCaptureSession/startRunning`` returns. You can start the visual parts of your user interface (e.g. preview)
+     * prior to other parts (e.g. photo/movie capture, metadata output, etc..) to improve startup performance. Set this
+     * value to `false` for outputs that your app needs for startup, and `true` for the ones it does not need to start
+     * immediately. For example, an ``AVCaptureVideoDataOutput`` that you intend to use for displaying preview should
+     * set this value to `false`, so that the frames are available as soon as possible.
+     * 
+     * By default, for apps that are linked on or after iOS 26, this property value is `true` for
+     * ``AVCapturePhotoOutput`` and ``AVCaptureFileOutput`` subclasses if supported, and `false` otherwise. When set to
+     * `true` for ``AVCapturePhotoOutput``, if you want to support multiple capture requests before running deferred
+     * start, set ``AVCapturePhotoOutput/responsiveCaptureEnabled`` to `true` on that output.
+     * 
+     * If ``deferredStartSupported`` is `false`, setting this property value to `true` results in the system throwing an
+     * `NSInvalidArgumentException`.
+     * 
+     * - Note: Set this value before calling ``AVCaptureSession/commitConfiguration`` as it requires a lengthy
+     * reconfiguration of the capture render pipeline.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isDeferredStartEnabled")
+    public native boolean isDeferredStartEnabled();
+
+    /**
+     * A `BOOL` value that indicates whether the output supports deferred start.
+     * 
+     * You can only set the ``deferredStartEnabled`` property value to `true` if the output supports deferred start.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isDeferredStartSupported")
+    public native boolean isDeferredStartSupported();
+
+    /**
+     * A `BOOL` value that indicates whether to defer starting this capture output.
+     * 
+     * When this value is `true`, the session does not prepare the output's resources until some time after
+     * ``AVCaptureSession/startRunning`` returns. You can start the visual parts of your user interface (e.g. preview)
+     * prior to other parts (e.g. photo/movie capture, metadata output, etc..) to improve startup performance. Set this
+     * value to `false` for outputs that your app needs for startup, and `true` for the ones it does not need to start
+     * immediately. For example, an ``AVCaptureVideoDataOutput`` that you intend to use for displaying preview should
+     * set this value to `false`, so that the frames are available as soon as possible.
+     * 
+     * By default, for apps that are linked on or after iOS 26, this property value is `true` for
+     * ``AVCapturePhotoOutput`` and ``AVCaptureFileOutput`` subclasses if supported, and `false` otherwise. When set to
+     * `true` for ``AVCapturePhotoOutput``, if you want to support multiple capture requests before running deferred
+     * start, set ``AVCapturePhotoOutput/responsiveCaptureEnabled`` to `true` on that output.
+     * 
+     * If ``deferredStartSupported`` is `false`, setting this property value to `true` results in the system throwing an
+     * `NSInvalidArgumentException`.
+     * 
+     * - Note: Set this value before calling ``AVCaptureSession/commitConfiguration`` as it requires a lengthy
+     * reconfiguration of the capture render pipeline.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setDeferredStartEnabled:")
+    public native void setDeferredStartEnabled(boolean value);
 }

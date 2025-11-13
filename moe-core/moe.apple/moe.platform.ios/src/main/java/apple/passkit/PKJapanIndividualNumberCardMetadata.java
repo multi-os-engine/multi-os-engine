@@ -123,7 +123,7 @@ public class PKJapanIndividualNumberCardMetadata extends PKIdentityDocumentMetad
     @Selector("initWithProvisioningCredentialIdentifier:sharingInstanceIdentifier:cardConfigurationIdentifier:preview:")
     public native PKJapanIndividualNumberCardMetadata initWithProvisioningCredentialIdentifierSharingInstanceIdentifierCardConfigurationIdentifierPreview(
             @NotNull String credentialIdentifier, @NotNull String sharingInstanceIdentifier,
-            @NotNull String templateIdentifier, @NotNull PKAddPassMetadataPreview preview);
+            @NotNull String cardConfigurationIdentifier, @NotNull PKAddPassMetadataPreview preview);
 
     /**
      * Initialize with parameters configured by issuer's server to indicate the specific product instance to provision.

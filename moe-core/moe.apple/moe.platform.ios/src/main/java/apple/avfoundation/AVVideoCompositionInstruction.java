@@ -52,6 +52,12 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * An AVVideoCompositionInstruction object represents an operation to be performed by a compositor.
+ * 
+ * An AVVideoComposition object maintains an array of instructions to perform its composition. This class is not
+ * intended to be subclassed; instead, conform to AVVideoCompositionInstructionProtocol ("AVVideoCompositionInstruction"
+ * in Objective-C). Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 4.0
  */
 @Generated
@@ -174,10 +180,12 @@ public class AVVideoCompositionInstruction extends NSObject implements NSSecureC
     public static native long version_static();
 
     /**
-     * Indicates the background color of the composition. Solid BGRA colors only are supported; patterns and other color
-     * refs that are not supported will be ignored.
-     * If the background color is not specified the video compositor will use a default backgroundColor of opaque black.
-     * If the rendered pixel buffer does not have alpha, the alpha value of the backgroundColor will be ignored.
+     * Indicates the background color of the composition.
+     * 
+     * Solid BGRA colors only are supported; patterns and other color refs that are not supported will be ignored.
+     * - If the background color is not specified the video compositor will use a default backgroundColor of opaque
+     * black.
+     * - If the rendered pixel buffer does not have alpha, the alpha value of the backgroundColor will be ignored.
      * 
      * API-Since: 4.0
      */
@@ -216,11 +224,11 @@ public class AVVideoCompositionInstruction extends NSObject implements NSSecureC
     /**
      * Provides an array of instances of AVVideoCompositionLayerInstruction that specify how video frames from source
      * tracks should be layered and composed.
+     * 
      * Tracks are layered in the composition according to the top-to-bottom order of the layerInstructions array; the
-     * track with trackID of the first instruction
-     * in the array will be layered on top, with the track with the trackID of the second instruction immediately
-     * underneath, etc.
-     * If this key is nil, the output will be a fill of the background color.
+     * track with trackID of the first instruction in the array will be layered on top, with the track with the trackID
+     * of the second instruction immediately underneath, etc. If this key is nil, the output will be a fill of the
+     * background color.
      * 
      * API-Since: 4.0
      */

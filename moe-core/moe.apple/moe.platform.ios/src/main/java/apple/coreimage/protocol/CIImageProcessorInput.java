@@ -34,14 +34,35 @@ import apple.corefoundation.struct.CGRect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * Your app does not define classes that adopt this protocol; Core Image provides an object of this type
+ * when rendering a custom image processor you create with a ``CIImageProcessorKernel`` subclass.
+ * 
+ * When a `CIImage` containing your `CIImageProcessorKernel` class is rendered, your
+ * ``CIImageProcessorKernel/processWithInputs:arguments:output:error:`` class method will be called as
+ * needed for that render. The method may be called more than once if Core Image needs to tile to
+ * limit memory usage.
+ * 
+ * When your image processor class method is called, use the provided `CIImageProcessorInput` object to
+ * access the image data and supporting information to perform your custom image processing routine.
+ * For example, if you process the image using a Metal shader, use the `metalTexture` property to bind the
+ * image as an input texture. Or, if you process the image using a CPU-based routine, use the `baseAddress`
+ * property to access pixel data in memory.
+ * 
+ * You should use the input's `region` property to determine which portion of the input image is available
+ * to be processed.
+ * 
+ * To finish setting up or performing your image processing routine, use the provided ``CIImageProcessorOutput``
+ * object to return processed pixel data to Core Image.
+ */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CIImageProcessorInput")
 public interface CIImageProcessorInput {
     /**
-     * The base address of the input buffer that the processor block can read from.
-     * This memory must not be modified by the block.
+     * The base address of CPU memory that your Core Image Processor Kernel can read pixels from.
+     * > Warning: This memory must not be modified by the ``CIImageProcessorKernel``.
      */
     @NotNull
     @Generated
@@ -49,7 +70,7 @@ public interface CIImageProcessorInput {
     ConstVoidPtr baseAddress();
 
     /**
-     * The bytes per row of the input buffer that the processor block can read from.
+     * The bytes per row of the CPU memory that your Core Image Processor Kernel can read pixelsfrom.
      */
     @Generated
     @Selector("bytesPerRow")
@@ -57,15 +78,15 @@ public interface CIImageProcessorInput {
     long bytesPerRow();
 
     /**
-     * The pixel format of the input buffer that the processor block can read from.
+     * The pixel format of the CPU memory that your Core Image Processor Kernel can read pixels from.
      */
     @Generated
     @Selector("format")
     int format();
 
     /**
-     * A MTLTexture object that can be bound as input (if processing using Metal).
-     * This texture must not be modified by the block.
+     * A MTLTexture object that can be bound for input using Metal.
+     * > Warning: This texture must not be modified by the ``CIImageProcessorKernel``.
      */
     @Nullable
     @Generated
@@ -74,8 +95,8 @@ public interface CIImageProcessorInput {
     MTLTexture metalTexture();
 
     /**
-     * An input CVPixelBuffer that the processor block can read from.
-     * This buffer must not be modified by the block.
+     * An input pixel buffer object that your Core Image Processor Kernel can read from.
+     * > Warning: This buffer must not be modified by the ``CIImageProcessorKernel``.
      */
     @Nullable
     @Generated
@@ -83,8 +104,8 @@ public interface CIImageProcessorInput {
     CVBufferRef pixelBuffer();
 
     /**
-     * The rectangular region of the input image that the processor block can use to provide the output.
-     * This will be contain (but may be larger than) the rect returned by 'roiCallback'.
+     * The rectangular region of the input image that your Core Image Processor Kernel can use to provide the output.
+     * > Note: This will contain but may be larger than the rect returned by 'roiCallback'.
      */
     @Generated
     @Selector("region")
@@ -92,8 +113,8 @@ public interface CIImageProcessorInput {
     CGRect region();
 
     /**
-     * An input IOSurface that the processor block can read from.
-     * This surface must not be modified by the block.
+     * An input surface object that your Core Image Processor Kernel can read from.
+     * > Warning: This surface must not be modified by the ``CIImageProcessorKernel``.
      */
     @NotNull
     @Generated
@@ -102,6 +123,7 @@ public interface CIImageProcessorInput {
 
     /**
      * A 64-bit digest that uniquely describes the contents of the input to a processor.
+     * 
      * This digest will change if the graph of the input changes in any way.
      * 
      * API-Since: 16.0
@@ -111,6 +133,13 @@ public interface CIImageProcessorInput {
     long digest();
 
     /**
+     * This property tells a tiled-input processor how many input tiles will be processed.
+     * 
+     * This property is only relevant if your processor implements
+     * ``/CIImageProcessorKernel/roiTileArrayForInput:arguments:outputRect:``
+     * 
+     * This can be useful if the processor needs to do work ``CIImageProcessorOutput`` after the last tile is processed.
+     * 
      * API-Since: 17.0
      */
     @Generated
@@ -119,7 +148,13 @@ public interface CIImageProcessorInput {
     long roiTileCount();
 
     /**
-     * For processors that implement 'roiTileArrayForInput:arguments:outputRect:'
+     * This property tells a tiled-input processor which input tile index is being processed.
+     * 
+     * This property is only relevant if your processor implements
+     * ``/CIImageProcessorKernel/roiTileArrayForInput:arguments:outputRect:``
+     * 
+     * This can be useful if the processor needs to clear the ``CIImageProcessorOutput`` before the first tile is
+     * processed.
      * 
      * API-Since: 17.0
      */

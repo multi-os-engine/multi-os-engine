@@ -48,6 +48,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * CMPedometerData
+ * 
+ * Discussion:
+ * A description of the user's pedestrian activity. At a minimum this
+ * object contains a step count. On supported platforms it also contains
+ * distance, flights of stairs, pace, and cadence.
+ * 
  * API-Since: 8.0
  */
 @Generated

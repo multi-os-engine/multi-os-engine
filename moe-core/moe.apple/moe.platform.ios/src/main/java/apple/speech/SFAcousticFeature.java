@@ -31,7 +31,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * An acoustic feature
+ * The value of a voice analysis metric.
  * 
  * API-Since: 13.0
  */
@@ -54,7 +54,7 @@ public class SFAcousticFeature extends NSObject implements NSCopying, NSSecureCo
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * Array of feature values per audio frame, corresponding to a segment of recorded audio
+     * An array of feature values, one value per audio frame, corresponding to a transcript segment of recorded audio.
      * 
      * API-Since: 13.0
      */
@@ -118,7 +118,7 @@ public class SFAcousticFeature extends NSObject implements NSCopying, NSSecureCo
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
-     * Duration of an audio frame
+     * The duration of the audio frame.
      * 
      * API-Since: 13.0
      */

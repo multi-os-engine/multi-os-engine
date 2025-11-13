@@ -321,4 +321,48 @@ public interface UIMutableTraits {
     @Generated
     @Selector("setListEnvironment:")
     void setListEnvironment(@NInt long value);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("resolvesNaturalAlignmentWithBaseWritingDirection")
+    boolean resolvesNaturalAlignmentWithBaseWritingDirection();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setResolvesNaturalAlignmentWithBaseWritingDirection:")
+    void setResolvesNaturalAlignmentWithBaseWritingDirection(boolean value);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setSplitViewControllerLayoutEnvironment:")
+    void setSplitViewControllerLayoutEnvironment(@NInt long value);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setTabAccessoryEnvironment:")
+    void setTabAccessoryEnvironment(@NInt long value);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("splitViewControllerLayoutEnvironment")
+    @NInt
+    long splitViewControllerLayoutEnvironment();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("tabAccessoryEnvironment")
+    @NInt
+    long tabAccessoryEnvironment();
 }

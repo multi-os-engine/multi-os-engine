@@ -47,6 +47,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * Standard view controller for sending friend requests to other players. Present modally from the top view controller.
+ * 
  * API-Since: 4.2
  * Deprecated-Since: 10.0
  * Deprecated-Message: No longer supported.

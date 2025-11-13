@@ -41,11 +41,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVAssetReaderOutputMetadataAdaptor
- * 
- * Defines an interface for reading metadata, packaged as instances of AVTimedMetadataGroup, from a single
- * AVAssetReaderTrackOutput object.
- * 
  * API-Since: 8.0
  */
 @Generated

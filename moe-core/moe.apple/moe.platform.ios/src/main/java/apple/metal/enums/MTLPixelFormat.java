@@ -881,4 +881,10 @@ public final class MTLPixelFormat {
      * API-Since: 16.4
      */
     @Generated @NUInt public static final long BC7_RGBAUnorm_sRGB = 0x0000000000000099L;
+    /**
+     * Depth Stencil
+     * 
+     * API-Since: 26.0
+     */
+    @Generated @NUInt public static final long Unspecialized = 0x0000000000000107L;
 }

@@ -22,4 +22,8 @@ public final class AEAssessmentErrorCode {
      * API-Since: 17.5
      */
     @Generated @NInt public static final long ConfigurationUpdatesNotSupported = 0x0000000000000004L;
+    /**
+     * API-Since: 26.0
+     */
+    @Generated @NInt public static final long RequiredParticipantsNotAvailable = 0x0000000000000005L;
 }

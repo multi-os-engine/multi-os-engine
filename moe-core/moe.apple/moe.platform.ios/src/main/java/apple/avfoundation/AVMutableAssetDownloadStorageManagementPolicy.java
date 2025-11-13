@@ -26,8 +26,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVMutableAssetDownloadStorageManagementPolicy
- * 
  * A mutable subclass of AVAssetDownloadStorageManagementPolicy.
  * 
  * System will put in best-effort to evict all the assets based on expirationDate before evicting based on priority.
@@ -96,8 +94,6 @@ public class AVMutableAssetDownloadStorageManagementPolicy extends AVAssetDownlo
     public static native String description_static();
 
     /**
-     * [@property] expirationDate
-     * 
      * Returns the expiration date of asset.
      * 
      * API-Since: 11.0
@@ -144,8 +140,6 @@ public class AVMutableAssetDownloadStorageManagementPolicy extends AVAssetDownlo
     public static native AVMutableAssetDownloadStorageManagementPolicy new_objc();
 
     /**
-     * [@property] priority
-     * 
      * Indicates the eviction priority of downloaded asset.
      * 
      * Assets with default priority will be purged first before assets with higher priorities.
@@ -167,8 +161,6 @@ public class AVMutableAssetDownloadStorageManagementPolicy extends AVAssetDownlo
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property] expirationDate
-     * 
      * Returns the expiration date of asset.
      * 
      * API-Since: 11.0
@@ -178,8 +170,6 @@ public class AVMutableAssetDownloadStorageManagementPolicy extends AVAssetDownlo
     public native void setExpirationDate(@NotNull NSDate value);
 
     /**
-     * [@property] priority
-     * 
      * Indicates the eviction priority of downloaded asset.
      * 
      * Assets with default priority will be purged first before assets with higher priorities.

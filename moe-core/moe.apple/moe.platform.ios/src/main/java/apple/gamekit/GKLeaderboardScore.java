@@ -25,6 +25,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * A `GKLeaderboardScore` object represents a score on a leaderboard for scores you report for challenges or turn-based
+ * games.
+ * 
  * API-Since: 14.0
  */
 @Generated
@@ -81,6 +84,8 @@ public class GKLeaderboardScore extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
+     * An integer value that your game uses.
+     * 
      * API-Since: 14.0
      */
     @Generated
@@ -128,6 +133,8 @@ public class GKLeaderboardScore extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
+     * The ID that Game Center uses for the leaderboard.
+     * 
      * API-Since: 14.0
      */
     @NotNull
@@ -141,6 +148,8 @@ public class GKLeaderboardScore extends NSObject {
     public static native GKLeaderboardScore new_objc();
 
     /**
+     * The player who earns the score.
+     * 
      * API-Since: 14.0
      */
     @NotNull
@@ -157,6 +166,8 @@ public class GKLeaderboardScore extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
+     * An integer value that your game uses.
+     * 
      * API-Since: 14.0
      */
     @Generated
@@ -164,6 +175,8 @@ public class GKLeaderboardScore extends NSObject {
     public native void setContext(@NUInt long value);
 
     /**
+     * The ID that Game Center uses for the leaderboard.
+     * 
      * API-Since: 14.0
      */
     @Generated
@@ -171,6 +184,8 @@ public class GKLeaderboardScore extends NSObject {
     public native void setLeaderboardID(@NotNull String value);
 
     /**
+     * The player who earns the score.
+     * 
      * API-Since: 14.0
      */
     @Generated
@@ -178,6 +193,8 @@ public class GKLeaderboardScore extends NSObject {
     public native void setPlayer(@NotNull GKPlayer value);
 
     /**
+     * The score that the player earns.
+     * 
      * API-Since: 14.0
      */
     @Generated
@@ -193,6 +210,8 @@ public class GKLeaderboardScore extends NSObject {
     public static native Class superclass_static();
 
     /**
+     * The score that the player earns.
+     * 
      * API-Since: 14.0
      */
     @Generated

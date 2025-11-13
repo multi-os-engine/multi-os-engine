@@ -125,7 +125,7 @@ public class UITabSidebarItem extends NSObject implements NSCopying {
     public native UICellConfigurationState configurationState();
 
     /**
-     * The content coinfiguration to use when displaying this item.
+     * The content configuration to use when displaying this item.
      * 
      * API-Since: 18.0
      */
@@ -244,7 +244,7 @@ public class UITabSidebarItem extends NSObject implements NSCopying {
     public native void setBackgroundConfiguration(@NotNull UIBackgroundConfiguration value);
 
     /**
-     * The content coinfiguration to use when displaying this item.
+     * The content configuration to use when displaying this item.
      * 
      * API-Since: 18.0
      */

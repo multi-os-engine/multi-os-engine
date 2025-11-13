@@ -17,7 +17,6 @@ limitations under the License.
 package apple.mapkit;
 
 import apple.NSObject;
-import apple.corelocation.struct.CLLocationCoordinate2D;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -44,7 +43,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.corelocation.struct.CLLocationCoordinate2D;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -88,6 +91,9 @@ public class MKCircle extends MKShape implements MKOverlay {
             @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("circleWithCenterCoordinate:radius:")
     public static native MKCircle circleWithCenterCoordinateRadius(@ByValue CLLocationCoordinate2D coord,
@@ -95,6 +101,8 @@ public class MKCircle extends MKShape implements MKOverlay {
 
     /**
      * radius will be determined from MAX(width, height)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("circleWithMapRect:")
@@ -195,6 +203,9 @@ public class MKCircle extends MKShape implements MKOverlay {
     @Selector("intersectsMapRect:")
     public native boolean intersectsMapRect(@ByValue MKMapRect mapRect);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("radius")
     public native double radius();

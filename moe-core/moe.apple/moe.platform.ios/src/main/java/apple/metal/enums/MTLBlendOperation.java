@@ -48,4 +48,13 @@ public final class MTLBlendOperation {
     @Generated
     private MTLBlendOperation() {
     }
+
+    /**
+     * Defers assigning the blend operation.
+     * 
+     * Until you specialize this value in the pipeline state, it behaves as `MTLBlendOperationAdd`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated @NUInt public static final long Unspecialized = 0x0000000000000005L;
 }

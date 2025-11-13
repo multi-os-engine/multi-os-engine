@@ -43,7 +43,14 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * Generic feature found by a CIDetector.
+ * The abstract superclass for objects representing notable features detected in an image.
+ * 
+ * > Note: In macOS 10.13, iOS 11, and tvOS 11 or later, the Vision framework replaces these classes
+ * for identifying and analyzing image features.
+ * See <doc://com.apple.documentation/documentation/vision/vnobservation>)
+ * 
+ * A `CIFeature` object represents a portion of an image that a detector believes matches its criteria.
+ * Subclasses of CIFeature holds additional information specific to the detector that discovered the feature.
  */
 @Generated
 @Library("CoreImage")
@@ -160,7 +167,9 @@ public class CIFeature extends NSObject {
     public static native long version_static();
 
     /**
-     * The bounds of the feature in the image it was detected in.
+     * The rectangle that bounds the location of discovered feature.
+     * 
+     * The rectangle is in the cartesian coordinate system of the image.
      */
     @Generated
     @Selector("bounds")
@@ -172,7 +181,13 @@ public class CIFeature extends NSObject {
     public native CIFeature init();
 
     /**
-     * The type of the feature.
+     * The type of feature that was discovered.
+     * 
+     * The type can be one of:
+     * * ``CIFeatureTypeFace``
+     * * ``CIFeatureTypeRectangle``
+     * * ``CIFeatureTypeQRCode``
+     * * ``CIFeatureTypeText``
      */
     @NotNull
     @Generated

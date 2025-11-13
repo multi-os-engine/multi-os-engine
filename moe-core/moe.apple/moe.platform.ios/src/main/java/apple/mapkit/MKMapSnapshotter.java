@@ -43,6 +43,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import apple.opaque.dispatch_queue_t;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -157,6 +160,9 @@ public class MKMapSnapshotter extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("cancel")
     public native void cancel();
@@ -165,22 +171,33 @@ public class MKMapSnapshotter extends NSObject {
     @Selector("init")
     public native MKMapSnapshotter init();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("initWithOptions:")
     public native MKMapSnapshotter initWithOptions(@NotNull MKMapSnapshotOptions options);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("isLoading")
     public native boolean isLoading();
 
     /**
      * defaults to the main queue
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("startWithCompletionHandler:")
     public native void startWithCompletionHandler(
             @NotNull @ObjCBlock(name = "call_startWithCompletionHandler") Block_startWithCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("startWithQueue:completionHandler:")
     public native void startWithQueueCompletionHandler(@NotNull dispatch_queue_t queue,

@@ -561,4 +561,61 @@ public class MTLSamplerDescriptor extends NSObject implements NSCopying {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Sets the level-of-detail (lod) bias when sampling from a texture.
+     * 
+     * The property's default value is `0.0f`.
+     * The precision format is `S4.6`, and the range is `[-16.0, 15.999]`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("lodBias")
+    public native float lodBias();
+
+    /**
+     * Sets the reduction mode for filtering contributing samples.
+     * 
+     * The property's default value is ``MTLSamplerReductionModeWeightedAverage``.
+     * The sampler ignores this property if any of the following property values are equal to a specific value:
+     * - The sampler's ``mipFilter`` property is equal to ``MTLSamplerMipFilterNotMipmapped``.
+     * - The sampler's ``mipFilter`` property is equal to ``MTLSamplerMipFilterNearest``.
+     * - The sampler's ``minFilter`` property is equal to ``MTLSamplerMinMagFilterNearest``.
+     * - The sampler's ``magFilter`` property is equal to ``MTLSamplerMinMagFilterNearest``.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("reductionMode")
+    @NUInt
+    public native long reductionMode();
+
+    /**
+     * Sets the level-of-detail (lod) bias when sampling from a texture.
+     * 
+     * The property's default value is `0.0f`.
+     * The precision format is `S4.6`, and the range is `[-16.0, 15.999]`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setLodBias:")
+    public native void setLodBias(float value);
+
+    /**
+     * Sets the reduction mode for filtering contributing samples.
+     * 
+     * The property's default value is ``MTLSamplerReductionModeWeightedAverage``.
+     * The sampler ignores this property if any of the following property values are equal to a specific value:
+     * - The sampler's ``mipFilter`` property is equal to ``MTLSamplerMipFilterNotMipmapped``.
+     * - The sampler's ``mipFilter`` property is equal to ``MTLSamplerMipFilterNearest``.
+     * - The sampler's ``minFilter`` property is equal to ``MTLSamplerMinMagFilterNearest``.
+     * - The sampler's ``magFilter`` property is equal to ``MTLSamplerMinMagFilterNearest``.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setReductionMode:")
+    public native void setReductionMode(@NUInt long value);
 }

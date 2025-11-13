@@ -30,6 +30,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.metal.protocol.MTL4CommandQueue;
 
 /**
  * API-Since: 11.0
@@ -299,4 +300,16 @@ public class MTLCaptureManager extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Creates a new capture scope for the given Metal 4 command queue
+     * 
+     * API-Since: 11.0
+     */
+    @Generated
+    @Selector("newCaptureScopeWithMTL4CommandQueue:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native MTLCaptureScope newCaptureScopeWithMTL4CommandQueue(
+            @Mapped(ObjCObjectMapper.class) @NotNull MTL4CommandQueue commandQueue);
 }

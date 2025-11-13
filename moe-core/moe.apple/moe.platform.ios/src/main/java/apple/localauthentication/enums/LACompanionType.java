@@ -17,5 +17,11 @@ public final class LACompanionType {
      * 
      * API-Since: 18.0
      */
-    @Generated @NInt public static final long LACompanionTypeMac = 0x0000000000000002L;
+    @Generated @NInt public static final long Mac = 0x0000000000000002L;
+    /**
+     * Paired Vision Pro
+     * 
+     * API-Since: 26.0
+     */
+    @Generated @NInt public static final long Vision = 0x0000000000000004L;
 }

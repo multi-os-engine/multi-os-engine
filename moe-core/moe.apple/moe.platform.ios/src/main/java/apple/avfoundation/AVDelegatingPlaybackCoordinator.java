@@ -30,10 +30,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVDelegatingPlaybackCoordinator
- * 
  * An AVPlaybackCoordinator subclass for controlling a custom playback object.
- * [@note] Use AVPlayer's playbackCoordinator property to get an AVPlaybackCoordinator for an AVPlayer.
+ * 
+ * - NOTE: Use AVPlayer's playbackCoordinator property to get an AVPlaybackCoordinator for an AVPlayer.
  * 
  * API-Since: 15.0
  */
@@ -91,8 +90,6 @@ public class AVDelegatingPlaybackCoordinator extends AVPlaybackCoordinator {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * coordinateRateChangeToRate:options:
-     * 
      * Coordinaties a rate change across the group of connected participants, waiting for other participants to become
      * ready if necessary.
      * 
@@ -106,46 +103,41 @@ public class AVDelegatingPlaybackCoordinator extends AVPlaybackCoordinator {
      * If other participants pause is dependent on the coordinator's configuration.
      * The suspension will stop the coordinator from issuing further commands to its playbackControlDelegate. After
      * beginning the suspension, the playback object can be reconfigured as necessary.
-     * [@note] Calling this method while the coordinator is suspended affects only the local playback object. The group
+     * 
+     * - Parameter rate: The playback rate the group should be using.
+     * - Parameter options: Additional configuration of the rate change. For details see
+     * AVDelegatingPlaybackCoordinatorRateChangeOptions.
+     * 
+     * - NOTE: Calling this method while the coordinator is suspended affects only the local playback object. The group
      * state will not be affected, even after the suspension ends.
      * 
-     * @param rate
-     *                The playback rate the group should be using.
-     * @param options
-     *                Additional configuration of the rate change. For details see
-     *                AVDelegatingPlaybackCoordinatorRateChangeOptions.
-     * 
-     *                API-Since: 15.0
+     * API-Since: 15.0
      */
     @Generated
     @Selector("coordinateRateChangeToRate:options:")
     public native void coordinateRateChangeToRateOptions(float rate, @NUInt long options);
 
     /**
-     * coordinateSeekToTime:
-     * 
      * Triggers a seek to the requested time for all connected participants.
      * 
      * For behavior around resuming playback after the seek is complete and suspensions, see the discussion of
      * coordinateRateChangeToRate:options.
-     * [@note] Calling this method while the coordinator is suspended affects only the local playback object. The group
+     * 
+     * - Parameter time: The time the group should seek to when the command ends.
+     * - Parameter options: Additional configuration of the seek. For details see
+     * AVDelegatingPlaybackCoordinatorSeekOptions.
+     * 
+     * - NOTE: Calling this method while the coordinator is suspended affects only the local playback object. The group
      * state will not be affected, even after the suspension ends.
      * To end a suspension and also affect the group timing see -[AVCoordinatedPlaybackSuspension endProposingNewTime:]
      * 
-     * @param time
-     *                The time the group should seek to when the command ends.
-     * @param options
-     *                Additional configuration of the seek. For details see AVDelegatingPlaybackCoordinatorSeekOptions.
-     * 
-     *                API-Since: 15.0
+     * API-Since: 15.0
      */
     @Generated
     @Selector("coordinateSeekToTime:options:")
     public native void coordinateSeekToTimeOptions(@ByValue CMTime time, @NUInt long options);
 
     /**
-     * [@property] currentItemIdentifier
-     * 
      * The item identifier of the current item. Previously set by a call to
      * transitionToItemWithIdentifier:proposingInitialTimingBasedOnTimebase:
      * 
@@ -174,19 +166,16 @@ public class AVDelegatingPlaybackCoordinator extends AVPlaybackCoordinator {
     public native AVDelegatingPlaybackCoordinator init();
 
     /**
-     * initWithPlaybackControlDelegate:
-     * 
      * Creates an AVPlaybackCoordinator for a custom playback object.
      * 
      * Use this to create an AVPlaybackCoordinator when playback is not driven by an AVPlayer.
-     * [@note] See AVPlayer's playbackCoordinator property to get an AVPlaybackCoordinator for an AVPlayer.
+     * 
+     * - Parameter playbackControlDelegate: An object conforming to the AVPlaybackCoordinatorPlaybackControlDelegate
+     * protocol representing a custom playback object. The coordinator will only hold a weak reference to its delegate.
+     * 
+     * - NOTE: See AVPlayer's playbackCoordinator property to get an AVPlaybackCoordinator for an AVPlayer.
      * 
      * API-Since: 15.0
-     * 
-     * @param playbackControlDelegate
-     *                                An object conforming to the AVPlaybackCoordinatorPlaybackControlDelegate protocol
-     *                                representing a custom playback object.
-     *                                The coordinator will only hold a weak reference to its delegate.
      */
     @Generated
     @Selector("initWithPlaybackControlDelegate:")
@@ -221,8 +210,6 @@ public class AVDelegatingPlaybackCoordinator extends AVPlaybackCoordinator {
     public static native AVDelegatingPlaybackCoordinator new_objc();
 
     /**
-     * [@property] playbackControlDelegate
-     * 
      * The custom player implementation controlled by the coordinator.
      * 
      * API-Since: 15.0
@@ -234,8 +221,6 @@ public class AVDelegatingPlaybackCoordinator extends AVPlaybackCoordinator {
     public native AVPlaybackCoordinatorPlaybackControlDelegate playbackControlDelegate();
 
     /**
-     * reapplyCurrentItemStateToPlaybackControlDelegate
-     * 
      * Instructs the coordinator to re-issue commands to synchronize the current item back to the state of the other
      * participants.
      * 
@@ -265,8 +250,6 @@ public class AVDelegatingPlaybackCoordinator extends AVPlaybackCoordinator {
     public static native Class superclass_static();
 
     /**
-     * transitionToItemWithIdentifier:proposingInitialTimingBasedOnTimebase:
-     * 
      * Informs the coordinator to transition to a new current item.
      * 
      * The coordinator will stop sending commands for any previous item identifier and begin sending commands for the
@@ -275,21 +258,19 @@ public class AVDelegatingPlaybackCoordinator extends AVPlaybackCoordinator {
      * already existing reference timing.
      * If the proposed timing doesn't match such an existing reference timing, the coordinator will use the
      * playbackControlDelegate to issue appropriate commands to match up the timing.
-     * [@note] This is not a way to affect the play queue of other participants. All other participants must do this
+     * 
+     * - Parameter itemIdentifier: The identifier for the new current item. May be nil if nothing is playing.
+     * - Parameter snapshotTimebase: A timebase used to communicate the initial playback state of the new item. If NULL,
+     * the coordinator will assume that playback is paused at kCMTimeZero. An appropriate timebase to pass to the
+     * completion handler may be retreived from AVFoundation playback objects such as AVSampleBufferRenderSynchronizer.
+     * It can also be created manually using CMTimebaseCreateWithSourceClock. The timebase will only be used to take a
+     * snapshot of its immediate timing. It will not be observed further.
+     * 
+     * - NOTE: This is not a way to affect the play queue of other participants. All other participants must do this
      * independently, e.g. as a side-effect of an automatic item transition or an out-of-band communication requesting a
      * similar item change.
      * 
-     * @param itemIdentifier
-     *                         The identifier for the new current item. May be nil if nothing is playing.
-     * @param snapshotTimebase
-     *                         A timebase used to communicate the initial playback state of the new item. If NULL, the
-     *                         coordinator will assume that playback is paused at kCMTimeZero.
-     *                         An appropriate timebase to pass to the completion handler may be retreived from
-     *                         AVFoundation playback objects such as AVSampleBufferRenderSynchronizer.
-     *                         It can also be created manually using CMTimebaseCreateWithSourceClock. The timebase will
-     *                         only be used to take a snapshot of its immediate timing. It will not be observed further.
-     * 
-     *                         API-Since: 15.0
+     * API-Since: 15.0
      */
     @Generated
     @Selector("transitionToItemWithIdentifier:proposingInitialTimingBasedOnTimebase:")

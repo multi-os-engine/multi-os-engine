@@ -32,10 +32,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * [@protocol] AVVideoCompositionInstruction
- * 
  * The AVVideoCompositionInstruction protocol is implemented by objects to represent operations to be performed by a
- * compositor.
+ * compositor. Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
  * 
  * API-Since: 7.0
  */
@@ -46,8 +44,8 @@ import org.jetbrains.annotations.Nullable;
 public interface AVVideoCompositionInstruction {
     /**
      * If YES, rendering a frame from the same source buffers and the same composition instruction at 2 different
-     * compositionTime may yield different output frames. If NO, 2 such compositions would yield the
-     * same frame. The media pipeline may be able to avoid some duplicate processing when containsTweening is NO
+     * compositionTime may yield different output frames. If NO, 2 such compositions would yield the same frame. The
+     * media pipeline may be able to avoid some duplicate processing when containsTweening is NO
      * 
      * API-Since: 7.0
      */

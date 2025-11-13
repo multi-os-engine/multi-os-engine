@@ -33,4 +33,8 @@ public final class NSURLErrorNetworkUnavailableReason {
      * API-Since: 13.0
      */
     @Generated @NInt public static final long Constrained = 0x0000000000000002L;
+    /**
+     * API-Since: 26.1
+     */
+    @Generated @NInt public static final long UltraConstrained = 0x0000000000000003L;
 }

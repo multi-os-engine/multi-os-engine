@@ -30,6 +30,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * The metadata of speech in the audio of a speech recognition request.
+ * 
  * API-Since: 14.5
  */
 @Generated
@@ -65,7 +67,7 @@ public class SFSpeechRecognitionMetadata extends NSObject implements NSCopying, 
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
-     * Measures average pause between words (in seconds)
+     * The average pause duration between words, measured in seconds.
      * 
      * API-Since: 14.5
      */
@@ -166,7 +168,7 @@ public class SFSpeechRecognitionMetadata extends NSObject implements NSCopying, 
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * Measures the number of words spoken per minute
+     * The number of words spoken per minute.
      * 
      * API-Since: 14.5
      */
@@ -175,7 +177,7 @@ public class SFSpeechRecognitionMetadata extends NSObject implements NSCopying, 
     public native double speakingRate();
 
     /**
-     * Duration of speech in audio
+     * The duration in seconds of speech in the audio.
      * 
      * API-Since: 14.5
      */
@@ -184,7 +186,7 @@ public class SFSpeechRecognitionMetadata extends NSObject implements NSCopying, 
     public native double speechDuration();
 
     /**
-     * Timestamp of start of speech in audio
+     * The start timestamp of speech in the audio.
      * 
      * API-Since: 14.5
      */
@@ -212,6 +214,8 @@ public class SFSpeechRecognitionMetadata extends NSObject implements NSCopying, 
     public static native long version_static();
 
     /**
+     * An analysis of the transcription segment's vocal properties.
+     * 
      * API-Since: 14.5
      */
     @Nullable

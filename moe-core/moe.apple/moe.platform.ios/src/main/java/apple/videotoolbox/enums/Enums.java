@@ -86,4 +86,5 @@ public final class Enums {
     @Generated public static final int kVTQPModulationLevel_Disable = 0x00000000;
     @Generated public static final int kVTCouldNotFindExtensionErr = 0xFFFFB3CA;
     @Generated public static final int kVTExtensionConflictErr = 0xFFFFB3C9;
+    @Generated public static final int kVTVideoEncoderAutoWhiteBalanceNotLockedErr = 0xFFFFB3C8;
 }

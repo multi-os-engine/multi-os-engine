@@ -44,6 +44,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 6.1
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -165,6 +168,9 @@ public class MKLocalSearchRequest extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 6.1
+     */
     @Generated
     @Selector("init")
     public native MKLocalSearchRequest init();
@@ -176,20 +182,32 @@ public class MKLocalSearchRequest extends NSObject implements NSCopying {
     @Selector("initWithCompletion:")
     public native MKLocalSearchRequest initWithCompletion(@NotNull MKLocalSearchCompletion completion);
 
+    /**
+     * API-Since: 6.1
+     */
     @Nullable
     @Generated
     @Selector("naturalLanguageQuery")
     public native String naturalLanguageQuery();
 
+    /**
+     * API-Since: 6.1
+     */
     @Generated
     @Selector("region")
     @ByValue
     public native MKCoordinateRegion region();
 
+    /**
+     * API-Since: 6.1
+     */
     @Generated
     @Selector("setNaturalLanguageQuery:")
     public native void setNaturalLanguageQuery(@Nullable String value);
 
+    /**
+     * API-Since: 6.1
+     */
     @Generated
     @Selector("setRegion:")
     public native void setRegion(@ByValue MKCoordinateRegion value);

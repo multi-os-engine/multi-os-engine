@@ -26,8 +26,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVCoordinatedPlaybackParticipant
- * 
  * A participant in a coordinated playback group connected through AVPlaybackCoordinator.
  * 
  * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
@@ -101,8 +99,6 @@ public class AVCoordinatedPlaybackParticipant extends NSObject {
     public static native long hash_static();
 
     /**
-     * [@property] identifier
-     * 
      * A unique id for the participant.
      * 
      * Use this identifier to distinguish participants.
@@ -132,8 +128,6 @@ public class AVCoordinatedPlaybackParticipant extends NSObject {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * [@property] readyToPlay
-     * 
      * YES if the participant is ready to play.
      * 
      * API-Since: 15.0
@@ -173,8 +167,6 @@ public class AVCoordinatedPlaybackParticipant extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * [@property] suspensionReasons
-     * 
      * The reason, if any, this participant is currently not participating in coordinated playback.
      * 
      * API-Since: 15.0

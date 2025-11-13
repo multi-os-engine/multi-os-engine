@@ -220,7 +220,8 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
      * Objects to detect in the scene.
      * 
      * If set the session will attempt to detect the specified objects. When an object is detected an ARObjectAnchor
-     * will be added to the session.
+     * will be added to the
+     * session.
      * 
      * API-Since: 12.0
      */
@@ -358,7 +359,8 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
      * Objects to detect in the scene.
      * 
      * If set the session will attempt to detect the specified objects. When an object is detected an ARObjectAnchor
-     * will be added to the session.
+     * will be added to the
+     * session.
      * 
      * API-Since: 12.0
      */

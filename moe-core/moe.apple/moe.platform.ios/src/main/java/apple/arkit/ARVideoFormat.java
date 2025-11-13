@@ -27,6 +27,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.avfoundation.AVCapturePhotoSettings;
 
 /**
  * API-Since: 11.3
@@ -218,4 +219,32 @@ public class ARVideoFormat extends NSObject implements NSCopying {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The color space ARKit uses to configure the capture session when this video format is selected.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("defaultColorSpace")
+    @NInt
+    public native long defaultColorSpace();
+
+    /**
+     * The default AVCapturePhotoSettings object that ARKit uses when capturing a high resolution frame using this video
+     * format.
+     * 
+     * Calling this getter will return a new instance that may be mutated to customize settings. Pass that instance to
+     * `captureHighResolutionFrameUsingPhotoSettings:completion:` to capture a high resolution frame with custom
+     * settings.
+     * 
+     * @see [ARSession captureHighResolutionFrameUsingPhotoSettings:completion:]
+     * @return An AVCapturePhotoSettings object.
+     * 
+     *         API-Since: 26.0
+     */
+    @Generated
+    @Selector("defaultPhotoSettings")
+    @NotNull
+    public native AVCapturePhotoSettings defaultPhotoSettings();
 }

@@ -20,4 +20,8 @@ public final class MKScaleViewAlignment {
      * API-Since: 11.0
      */
     @Generated @NInt public static final long Trailing = 0x0000000000000001L;
+    /**
+     * API-Since: 26.0
+     */
+    @Generated @NInt public static final long Center = 0x0000000000000002L;
 }

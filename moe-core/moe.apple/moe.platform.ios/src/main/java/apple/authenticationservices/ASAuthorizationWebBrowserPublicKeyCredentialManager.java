@@ -192,4 +192,11 @@ public class ASAuthorizationWebBrowserPublicKeyCredentialManager extends NSObjec
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API-Since: 26.2
+     */
+    @Generated
+    @Selector("isDeviceConfiguredForPasskeys")
+    public static native boolean isDeviceConfiguredForPasskeys();
 }

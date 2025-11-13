@@ -277,4 +277,24 @@ public class WKHTTPCookieStore extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Set multiple cookies.
+     * 
+     * @param cookies           An array of cookies to set.
+     * @param completionHandler A block to invoke once the cookies have been stored.
+     * 
+     *                          API-Since: 26.0
+     */
+    @Generated
+    @Selector("setCookies:completionHandler:")
+    public native void setCookiesCompletionHandler(@NotNull NSArray<? extends NSHTTPCookie> cookies,
+            @ObjCBlock(name = "call_setCookiesCompletionHandler") @Nullable Block_setCookiesCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setCookiesCompletionHandler {
+        @Generated
+        void call_setCookiesCompletionHandler();
+    }
 }

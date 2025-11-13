@@ -26,4 +26,25 @@ public final class AXSettingsFeature {
      * API-Since: 18.2
      */
     @Generated @NInt public static final long AllowAppsToAddAudioToCalls = 0x0000000000000002L;
+    /**
+     * Jump to the setting for "Allow Apps to Add Audio to Calls." This is relevant for the
+     * AVAudioSession.preferredMicrophoneInjectionMode API.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated @NInt public static final long AssistiveTouch = 0x0000000000000003L;
+    /**
+     * Jump to the setting for "Allow Apps to Add Audio to Calls." This is relevant for the
+     * AVAudioSession.preferredMicrophoneInjectionMode API.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated @NInt public static final long AssistiveTouchDevices = 0x0000000000000004L;
+    /**
+     * Jump to the setting for "Allow Apps to Add Audio to Calls." This is relevant for the
+     * AVAudioSession.preferredMicrophoneInjectionMode API.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated @NInt public static final long DwellControl = 0x0000000000000005L;
 }

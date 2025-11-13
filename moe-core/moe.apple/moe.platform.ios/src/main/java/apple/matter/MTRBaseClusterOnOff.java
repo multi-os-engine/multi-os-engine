@@ -371,7 +371,7 @@ public class MTRBaseClusterOnOff extends MTRGenericBaseCluster {
     /**
      * Command OnWithRecallGlobalScene
      * 
-     * The OnWithRecallGlobalScene command allows the recall of the settings when the device was turned off.
+     * This command allows the recall of the settings when the device was turned off.
      * 
      * API-Since: 16.4
      */
@@ -410,9 +410,9 @@ public class MTRBaseClusterOnOff extends MTRGenericBaseCluster {
     /**
      * Command OnWithTimedOff
      * 
-     * The OnWithTimedOff command allows devices to be turned on for a specific duration with a guarded off duration so
-     * that SHOULD the device be subsequently switched off, further OnWithTimedOff commands, received during this time,
-     * are prevented from turning the devices back on.
+     * This command allows devices to be turned on for a specific duration with a guarded off duration so that SHOULD
+     * the device be subsequently turned off, further OnWithTimedOff commands, received during this time, are prevented
+     * from turning the devices back on.
      * 
      * API-Since: 16.4
      */

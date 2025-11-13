@@ -279,7 +279,8 @@ public class AVCaptureDeviceFormat extends NSObject {
      * Returns whether the format supports the given video stabilization mode.
      * 
      * isVideoStabilizationModeSupported: returns a boolean value indicating whether the format can be stabilized using
-     * the given mode with -[AVCaptureConnection setPreferredVideoStabilizationMode:].
+     * the given mode with -[AVCaptureConnection setPreferredVideoStabilizationMode:]. In the case of ProRes RAW
+     * formats, video stabilization metadata is attached to the unstabilized video buffers instead.
      * 
      * API-Since: 8.0
      * 
@@ -950,4 +951,146 @@ public class AVCaptureDeviceFormat extends NSObject {
     @Selector("videoFrameRateRangeForBackgroundReplacement")
     @Nullable
     public native AVFrameRateRange videoFrameRateRangeForBackgroundReplacement();
+
+    /**
+     * Default shallow depth of field simulated aperture.
+     * 
+     * This property return a non-zero value on devices that support the shallow depth of field effect.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("defaultSimulatedAperture")
+    public native float defaultSimulatedAperture();
+
+    /**
+     * Whether camera lens smudge detection is supported.
+     * 
+     * This property returns `true` if the session's current configuration supports lens smudge detection. When
+     * switching cameras or formats, this property may change. When this property changes from `true` to `false`,
+     * ``AVCaptureDevice/cameraLensSmudgeDetectionEnabled`` also reverts to `false`. If you opt in for lens smudge
+     * detection and then change configurations, you should set ``AVCaptureDevice/cameraLensSmudgeDetectionEnabled`` to
+     * `true` again.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isCameraLensSmudgeDetectionSupported")
+    public native boolean isCameraLensSmudgeDetectionSupported();
+
+    /**
+     * Indicates whether the format supports Cinematic Video capture.
+     * 
+     * This property returns `true` if the format supports Cinematic Video that produces a controllable, simulated depth
+     * of field and adds beautiful focus transitions for a cinema-grade look.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isCinematicVideoCaptureSupported")
+    public native boolean isCinematicVideoCaptureSupported();
+
+    /**
+     * Returns `true` if smart framing is supported by the current format.
+     * 
+     * An ultra wide camera device that supports dynamic aspect ratio configuration may also support "smart framing
+     * monitoring" on particular formats.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isSmartFramingSupported")
+    public native boolean isSmartFramingSupported();
+
+    /**
+     * Maximum supported shallow depth of field simulated aperture.
+     * 
+     * On devices that do not support changing the simulated aperture value, this returns a value of `0`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("maxSimulatedAperture")
+    public native float maxSimulatedAperture();
+
+    /**
+     * Minimum supported shallow depth of field simulated aperture.
+     * 
+     * On devices that do not support changing the simulated aperture value, this returns a value of `0`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("minSimulatedAperture")
+    public native float minSimulatedAperture();
+
+    /**
+     * Indicates the supported aspect ratios for the device format.
+     * 
+     * An array that describes the aspect ratios that are supported for this format. If this device format does not
+     * support dynamic aspect ratio, this property returns an empty array.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("supportedDynamicAspectRatios")
+    @NotNull
+    public native NSArray<String> supportedDynamicAspectRatios();
+
+    /**
+     * Indicates the horizontal field of view for an aspect ratio, either uncorrected or corrected for geometric
+     * distortion.
+     * 
+     * A float indicating the field of view for the corresponding ``AVCaptureAspectRatio``. Set
+     * ``AVCaptureDevice/geometricDistortionCorrected`` to `true` to receive the field of view corrected for geometric
+     * distortion. If this device format does not support dynamic aspect ratio, this function returns `0`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("videoFieldOfViewForAspectRatio:geometricDistortionCorrected:")
+    public native float videoFieldOfViewForAspectRatioGeometricDistortionCorrected(@NotNull String aspectRatio,
+            boolean geometricDistortionCorrected);
+
+    /**
+     * Indicates the minimum / maximum frame rates available when Cinematic Video capture is enabled on the device
+     * input.
+     * 
+     * Devices may support a limited frame rate range when Cinematic Video capture is active. If this device format does
+     * not support Cinematic Video capture, this property returns `nil`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("videoFrameRateRangeForCinematicVideo")
+    @Nullable
+    public native AVFrameRateRange videoFrameRateRangeForCinematicVideo();
+
+    /**
+     * Indicates the maximum zoom factor available for the ``AVCaptureDevice/videoZoomFactor`` property when Cinematic
+     * Video capture is enabled on the device input.
+     * 
+     * Devices support a limited zoom range when Cinematic Video capture is active. If this device format does not
+     * support Cinematic Video capture, this property returns `1.0`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("videoMaxZoomFactorForCinematicVideo")
+    @NFloat
+    public native double videoMaxZoomFactorForCinematicVideo();
+
+    /**
+     * Indicates the minimum zoom factor available for the ``AVCaptureDevice/videoZoomFactor`` property when Cinematic
+     * Video capture is enabled on the device input.
+     * 
+     * Devices support a limited zoom range when Cinematic Video capture is active. If this device format does not
+     * support Cinematic Video capture, this property returns `1.0`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("videoMinZoomFactorForCinematicVideo")
+    @NFloat
+    public native double videoMinZoomFactorForCinematicVideo();
 }

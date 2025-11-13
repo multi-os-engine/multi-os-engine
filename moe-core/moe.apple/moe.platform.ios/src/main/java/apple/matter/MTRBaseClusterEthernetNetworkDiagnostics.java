@@ -1201,8 +1201,7 @@ public class MTRBaseClusterEthernetNetworkDiagnostics extends MTRGenericBaseClus
     /**
      * Command ResetCounts
      * 
-     * Reception of this command SHALL reset the attributes: PacketRxCount, PacketTxCount, TxErrCount, CollisionCount,
-     * OverrunCount to 0
+     * This command is used to reset the count attributes.
      * 
      * API-Since: 16.4
      */

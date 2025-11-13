@@ -41,6 +41,9 @@ import org.moe.natj.general.ann.NInt;
  * [@constant] MTLBindingTypeObjectPayload
  * This binding represents an object payload.
  * 
+ * [@constant] MTLBindingTypeTensor
+ * This binding represents a tensor object.
+ * 
  * API-Since: 14.0
  */
 @Generated
@@ -93,4 +96,8 @@ public final class MTLBindingType {
      * API-Since: 14.0
      */
     @Generated @NInt public static final long ObjectPayload = 0x0000000000000022L;
+    /**
+     * API-Since: 26.0
+     */
+    @Generated @NInt public static final long Tensor = 0x0000000000000025L;
 }

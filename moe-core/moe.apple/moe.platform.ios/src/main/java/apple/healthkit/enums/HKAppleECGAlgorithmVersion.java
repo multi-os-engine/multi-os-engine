@@ -9,6 +9,7 @@ import org.moe.natj.general.ann.NInt;
  * Indicates which algorithm version number was used by the ECG app on Apple Watch.
  * 
  * [@constant] HKAppleECGAlgorithmVersion1 Apple Watch used a version 1 algorithm to generate this ECG.
+ * [@constant] HKAppleECGAlgorithmVersion2 Apple Watch used a version 2 algorithm to generate this ECG.
  * 
  * API-Since: 14.0
  */

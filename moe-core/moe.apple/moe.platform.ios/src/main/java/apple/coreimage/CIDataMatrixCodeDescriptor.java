@@ -28,10 +28,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * CIDataMatrixCodeDescriptor
+ * A concrete subclass the Core Image Barcode Descriptor that represents an Data Matrix code symbol.
  * 
- * CIDataMatrixCodeDescriptor is a concrete subclass of CIBarcodeDescriptor that defines an abstract representation of a
- * Data Matrix code symbol.
+ * A Data Matrix code symbol is a 2D barcode format defined by the ISO/IEC 16022:2006(E) standard.
+ * It encodes data in square or rectangular symbol with solid lines on the left and bottom sides
  */
 @Generated
 @Library("CoreImage")
@@ -87,9 +87,7 @@ public class CIDataMatrixCodeDescriptor extends CIBarcodeDescriptor {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property] columnCount
-     * 
-     * The number of module columns.
+     * The number of columns in the Data Matrix code symbol.
      * 
      * Refer to ISO/IEC 16022:2006(E) for valid module row and column count combinations.
      */
@@ -107,7 +105,16 @@ public class CIDataMatrixCodeDescriptor extends CIBarcodeDescriptor {
     public static native String description_static();
 
     /**
-     * Construct an autoreleased descriptor that can be used as input to CIBarcodeGenerator
+     * Creates a Data Matrix code descriptor for the given payload and parameters.
+     * 
+     * - Parameters:
+     * - errorCorrectedPayload: The data to encode in the Data Matrix code symbol.
+     * - rowCount: The number of rows in the Data Matrix code symbol.
+     * - columnCount: The number of columns in the Data Matrix code symbol.
+     * - eccVersion: The ``CIDataMatrixCodeECCVersion`` for the Data Matrix code symbol.
+     * - Returns:
+     * An autoreleased ``CIAztecCodeDescriptor`` instance
+     * or `nil` if the parameters are invalid
      */
     @Generated
     @Selector("descriptorWithPayload:rowCount:columnCount:eccVersion:")
@@ -115,12 +122,10 @@ public class CIDataMatrixCodeDescriptor extends CIBarcodeDescriptor {
             @NotNull NSData errorCorrectedPayload, @NInt long rowCount, @NInt long columnCount, @NInt long eccVersion);
 
     /**
-     * [@property] eccVersion
+     * The error correction version of the Data Matrix code symbol.
      * 
-     * The Data Matrix code ECC version.
-     * 
-     * Valid values are 000, 050, 080, 100, 140, and 200. Any symbol with an even number of rows and columns will be ECC
-     * 200.
+     * The possible error correction version are enumerated in ``CIDataMatrixCodeECCVersion``.
+     * Any symbol with an even number of rows and columns will be ECC 200.
      */
     @Generated
     @Selector("eccVersion")
@@ -128,16 +133,14 @@ public class CIDataMatrixCodeDescriptor extends CIBarcodeDescriptor {
     public native long eccVersion();
 
     /**
-     * [@property] errorCorrectedPayload
+     * The error-corrected payload containing the data encoded in the Data Matrix code symbol.
      * 
-     * The error corrected payload that comprise the Data Matrix code symbol.
+     * DataMatrix symbols are specified bn ISO/IEC 16022:2006(E). ECC 200-type symbols will always
+     * have an even number of rows and columns.
      * 
-     * DataMatrix symbols are specified bn ISO/IEC 16022:2006(E). ECC 200-type symbols will always have an even number
-     * of rows and columns.
-     * 
-     * For ECC 200-type symbols, the phases of encoding data into a symbol are described in section 5.1 -- Encode
-     * procedure overview. The error corrected payload comprises the de-interleaved bits of the message described at the
-     * end of Step 1: Data encodation.
+     * For ECC 200-type symbols, the phases of encoding data into a symbol are described in
+     * section 5.1 -- Encode procedure overview. The error corrected payload comprises the
+     * de-interleaved bits of the message described at the end of Step 1: Data encodation.
      */
     @NotNull
     @Generated
@@ -159,6 +162,16 @@ public class CIDataMatrixCodeDescriptor extends CIBarcodeDescriptor {
 
     /**
      * Initializes a descriptor that can be used as input to CIBarcodeGenerator
+     * Initializes a Data Matrix code descriptor for the given payload and parameters.
+     * 
+     * - Parameters:
+     * - errorCorrectedPayload: The data to encode in the Data Matrix code symbol.
+     * - rowCount: The number of rows in the Data Matrix code symbol.
+     * - columnCount: The number of columns in the Data Matrix code symbol.
+     * - eccVersion: The ``CIDataMatrixCodeECCVersion`` for the Data Matrix code symbol.
+     * - Returns:
+     * An initialized ``CIAztecCodeDescriptor`` instance
+     * or `nil` if the parameters are invalid
      */
     @Generated
     @Selector("initWithPayload:rowCount:columnCount:eccVersion:")
@@ -201,9 +214,7 @@ public class CIDataMatrixCodeDescriptor extends CIBarcodeDescriptor {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property] rowCount
-     * 
-     * The number of module rows.
+     * The number of rows in the Data Matrix code symbol.
      * 
      * Refer to ISO/IEC 16022:2006(E) for valid module row and column count combinations.
      */

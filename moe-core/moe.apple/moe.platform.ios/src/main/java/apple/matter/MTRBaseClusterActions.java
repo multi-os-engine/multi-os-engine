@@ -100,7 +100,7 @@ public class MTRBaseClusterActions extends MTRGenericBaseCluster {
     /**
      * Command DisableActionWithDuration
      * 
-     * This command disables a certain action or automation with a duration.
+     * This command is used to disable an action with a duration.
      * 
      * API-Since: 16.4
      */
@@ -139,7 +139,7 @@ public class MTRBaseClusterActions extends MTRGenericBaseCluster {
     /**
      * Command DisableAction
      * 
-     * This command disables a certain action or automation.
+     * This command is used to disable an action.
      * 
      * API-Since: 16.4
      */
@@ -176,7 +176,7 @@ public class MTRBaseClusterActions extends MTRGenericBaseCluster {
     /**
      * Command EnableActionWithDuration
      * 
-     * This command enables a certain action or automation with a duration.
+     * This command is used to enable an action with a duration.
      * 
      * API-Since: 16.4
      */
@@ -215,7 +215,7 @@ public class MTRBaseClusterActions extends MTRGenericBaseCluster {
     /**
      * Command EnableAction
      * 
-     * This command enables a certain action or automation.
+     * This command is used to enable an action.
      * 
      * API-Since: 16.4
      */
@@ -296,7 +296,7 @@ public class MTRBaseClusterActions extends MTRGenericBaseCluster {
     /**
      * Command InstantAction
      * 
-     * This command triggers an action (state change) on the involved endpoints.
+     * This command is used to trigger an instantaneous action.
      * 
      * API-Since: 16.4
      */
@@ -333,8 +333,7 @@ public class MTRBaseClusterActions extends MTRGenericBaseCluster {
     /**
      * Command InstantActionWithTransition
      * 
-     * This command triggers an action (state change) on the involved endpoints, with a specified time to transition
-     * from the current state to the new state.
+     * This command is used to trigger an instantaneous action with a transition over a given time.
      * 
      * API-Since: 16.4
      */
@@ -387,7 +386,7 @@ public class MTRBaseClusterActions extends MTRGenericBaseCluster {
     /**
      * Command PauseActionWithDuration
      * 
-     * This command pauses an ongoing action with a duration.
+     * This command is used to pause an action with a duration.
      * 
      * API-Since: 16.4
      */
@@ -426,7 +425,7 @@ public class MTRBaseClusterActions extends MTRGenericBaseCluster {
     /**
      * Command PauseAction
      * 
-     * This command pauses an ongoing action.
+     * This command is used to pause an action.
      * 
      * API-Since: 16.4
      */
@@ -1049,7 +1048,7 @@ public class MTRBaseClusterActions extends MTRGenericBaseCluster {
     /**
      * Command ResumeAction
      * 
-     * This command resumes a previously paused action.
+     * This command is used to resume an action.
      * 
      * API-Since: 16.4
      */
@@ -1090,7 +1089,7 @@ public class MTRBaseClusterActions extends MTRGenericBaseCluster {
     /**
      * Command StartActionWithDuration
      * 
-     * This command triggers the commencement of an action (with a duration) on the involved endpoints.
+     * This command is used to trigger the commencement of an action with a duration.
      * 
      * API-Since: 16.4
      */
@@ -1129,7 +1128,7 @@ public class MTRBaseClusterActions extends MTRGenericBaseCluster {
     /**
      * Command StartAction
      * 
-     * This command triggers the commencement of an action on the involved endpoints.
+     * This command is used to trigger the commencement of an action.
      * 
      * API-Since: 16.4
      */
@@ -1166,7 +1165,7 @@ public class MTRBaseClusterActions extends MTRGenericBaseCluster {
     /**
      * Command StopAction
      * 
-     * This command stops the ongoing action on the involved endpoints.
+     * This command is used to stop an action.
      * 
      * API-Since: 16.4
      */

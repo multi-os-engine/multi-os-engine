@@ -104,7 +104,9 @@ public class UIToolbarAppearance extends UIBarAppearance {
      * The appearance for done-style bar button items
      * 
      * API-Since: 13.0
+     * Deprecated-Since: 26.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("doneButtonAppearance")
@@ -179,7 +181,9 @@ public class UIToolbarAppearance extends UIBarAppearance {
      * The appearance for done-style bar button items
      * 
      * API-Since: 13.0
+     * Deprecated-Since: 26.0
      */
+    @Deprecated
     @Generated
     @Selector("setDoneButtonAppearance:")
     public native void setDoneButtonAppearance(@NotNull UIBarButtonItemAppearance value);
@@ -211,4 +215,29 @@ public class UIToolbarAppearance extends UIBarAppearance {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The appearance attributes for Prominent buttons.
+     * 
+     * Use this property to configure the appearance of bar button items that use `UIBarButtonItemStyleProminent`.
+     * If the navigation bar doesn't have any buttons using this style, this property has no effect.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("prominentButtonAppearance")
+    @NotNull
+    public native UIBarButtonItemAppearance prominentButtonAppearance();
+
+    /**
+     * The appearance attributes for Prominent buttons.
+     * 
+     * Use this property to configure the appearance of bar button items that use `UIBarButtonItemStyleProminent`.
+     * If the navigation bar doesn't have any buttons using this style, this property has no effect.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setProminentButtonAppearance:")
+    public native void setProminentButtonAppearance(@NotNull UIBarButtonItemAppearance value);
 }

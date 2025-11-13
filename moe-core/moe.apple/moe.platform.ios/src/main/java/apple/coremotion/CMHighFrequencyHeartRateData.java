@@ -28,6 +28,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
+ * CMHighFrequencyHeartRateData
+ * Heart rate data collected at 1Hz.
+ * 
  * API-Since: 17.0
  */
 @Generated

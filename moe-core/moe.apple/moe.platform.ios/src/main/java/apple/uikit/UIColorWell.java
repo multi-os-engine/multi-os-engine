@@ -496,4 +496,41 @@ public class UIColorWell extends UIControl {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The maximum exposure to apply to a color when returned by the color well.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("maximumLinearExposure")
+    @NFloat
+    public native double maximumLinearExposure();
+
+    /**
+     * The maximum exposure to apply to a color when returned by the color well.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setMaximumLinearExposure:")
+    public native void setMaximumLinearExposure(@NFloat double value);
+
+    /**
+     * If set to `NO` the eyedropper functionality is not supported for this color well.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setSupportsEyedropper:")
+    public native void setSupportsEyedropper(boolean value);
+
+    /**
+     * If set to `NO` the eyedropper functionality is not supported for this color well.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("supportsEyedropper")
+    public native boolean supportsEyedropper();
 }

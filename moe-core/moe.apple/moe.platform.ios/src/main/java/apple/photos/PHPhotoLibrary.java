@@ -428,4 +428,31 @@ public class PHPhotoLibrary extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 26.1
+     */
+    @Generated
+    @Selector("isUploadJobExtensionEnabled")
+    public native boolean isUploadJobExtensionEnabled();
+
+    /**
+     * Enables or disables the background asset resource upload job processing. This must be called before creating
+     * `PHAssetResourceUploadJob`, by the extension's host application.
+     * 
+     * Enabling BackgroundUploadJobs requires full library access and the extension registered to the extension point:
+     * "com.apple.photos.background-upload".
+     * 
+     * - Parameters:
+     * - enable: YES to enable the upload job extension processing and allow the creation of PHAssetResourceUploadJobs.
+     * NO to disable processing the host application's extension.
+     * - error: If enabling or disabling was unsuccessful, `NO` is returned and an error is set on the `error`
+     * parameter.
+     * 
+     * API-Since: 26.1
+     */
+    @Generated
+    @Selector("setUploadJobExtensionEnabled:error:")
+    public native boolean setUploadJobExtensionEnabledError(boolean enable,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
 }

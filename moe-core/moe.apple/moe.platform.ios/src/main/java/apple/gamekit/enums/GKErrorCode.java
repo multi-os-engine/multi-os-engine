@@ -98,8 +98,9 @@ public final class GKErrorCode {
     @Generated @NInt public static final long UnexpectedConnection = 0x0000000000000012L;
     /**
      * API-Since: 6.0
+     * Deprecated-Since: 26.0
      */
-    @Generated @NInt public static final long ChallengeInvalid = 0x0000000000000013L;
+    @Deprecated @Generated @NInt public static final long ChallengeInvalid = 0x0000000000000013L;
     /**
      * API-Since: 6.0
      */

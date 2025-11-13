@@ -17,7 +17,6 @@ limitations under the License.
 package apple.foundation;
 
 import apple.NSObject;
-import apple.corelocation.struct.CLLocationCoordinate2D;
 import apple.coremedia.struct.CMTime;
 import apple.coremedia.struct.CMTimeMapping;
 import apple.coremedia.struct.CMTimeRange;
@@ -63,6 +62,7 @@ import apple.corefoundation.struct.CGVector;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import apple.gamecontroller.struct.GCPoint2;
+import apple.corelocation.struct.CLLocationCoordinate2D;
 
 @Generated
 @Library("Foundation")

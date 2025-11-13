@@ -19,6 +19,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import apple.matter.MTRMetrics;
 
 /**
  * The protocol definition for the MTROTAProviderDelegate
@@ -69,6 +70,10 @@ public interface MTROTAProviderDelegate {
      * Notify the delegate when a BDX Query message has been received for some node.
      * The controller identifies the fabric the node is on, and the nodeID
      * identifies the node within that fabric.
+     * 
+     * The data passed to the completion must be of size blockSize, unless it's the
+     * last block of data. In that case, it may be smaller than blockSize, and
+     * isEOF must be set to YES.
      * 
      * API-Since: 16.4
      */
@@ -162,10 +167,10 @@ public interface MTROTAProviderDelegate {
     }
 
     /**
-     * Notify the delegate when a BDX Session ends for some node. The controller
-     * identifies the fabric the node is on, and the nodeID identifies the node
-     * within that fabric.
+     * API-Since: 16.1
+     * Deprecated-Since: 26.1
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("handleBDXTransferSessionEndForNodeID:controller:error:")
@@ -235,5 +240,20 @@ public interface MTROTAProviderDelegate {
         @Generated
         void call_handleQueryImageForNodeIDControllerParamsCompletion(
                 @Nullable MTROTASoftwareUpdateProviderClusterQueryImageResponseParams data, @Nullable NSError error);
+    }
+
+    /**
+     * Notify the delegate when a BDX Session ends for some node. The controller
+     * identifies the fabric the node is on, and the nodeID identifies the node
+     * within that fabric.
+     * 
+     * API-Since: 26.1
+     */
+    @Generated
+    @IsOptional
+    @Selector("handleBDXTransferSessionEndForNodeID:controller:metrics:error:")
+    default void handleBDXTransferSessionEndForNodeIDControllerMetricsError(@NotNull NSNumber nodeID,
+            @NotNull MTRDeviceController controller, @NotNull MTRMetrics metrics, @Nullable NSError error) {
+        throw new java.lang.UnsupportedOperationException();
     }
 }

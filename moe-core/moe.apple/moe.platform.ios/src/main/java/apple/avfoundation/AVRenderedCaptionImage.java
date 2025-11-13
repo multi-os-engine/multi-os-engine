@@ -43,6 +43,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * CVPixelBufferRef for the caption is 100 x 100 pixels. The client shall provide videoDisplaySize value in pixels only
  * and the position value of the caption image shall also be returned in pixels only.
  * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
  * 
  * API-Since: 18.0
  */

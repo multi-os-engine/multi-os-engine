@@ -104,7 +104,7 @@ public class MTRBaseClusterIdentify extends MTRGenericBaseCluster {
     /**
      * Command Identify
      * 
-     * Command description for Identify
+     * This command starts or stops the receiving device identifying itself.
      * 
      * API-Since: 16.4
      */
@@ -1087,7 +1087,7 @@ public class MTRBaseClusterIdentify extends MTRGenericBaseCluster {
     /**
      * Command TriggerEffect
      * 
-     * Command description for TriggerEffect
+     * This command allows the support of feedback to the user, such as a certain light effect.
      * 
      * API-Since: 16.4
      */

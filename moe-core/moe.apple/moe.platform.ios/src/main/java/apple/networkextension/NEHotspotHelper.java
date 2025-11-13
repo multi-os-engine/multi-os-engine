@@ -50,7 +50,10 @@ import apple.opaque.dispatch_queue_t;
  * HotspotHelper.
  * 
  * API-Since: 9.0
+ * Deprecated-Since: 26.0
+ * Deprecated-Message: Use NEHotspotManager API
  */
+@Deprecated
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -161,10 +164,13 @@ public class NEHotspotHelper extends NSObject {
      * kNEHotspotHelperResultSuccess, the Wi-Fi network is disassociated.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use NEHotspotManager API
      * 
      * @return
      *         YES if the logoff command was successfully queued, NO otherwise.
      */
+    @Deprecated
     @Generated
     @Selector("logoff:")
     public static native boolean logoff(@NotNull NEHotspotNetwork network);
@@ -199,6 +205,8 @@ public class NEHotspotHelper extends NSObject {
      * value true.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use NEHotspotManager API
      * 
      * @param options If not nil, 'options' is an NSDictionary containing
      *                kNEHotspotHelperOption* keys (currently just
@@ -209,6 +217,7 @@ public class NEHotspotHelper extends NSObject {
      * @return
      *         YES if the registration was successful, NO otherwise.
      */
+    @Deprecated
     @Generated
     @Selector("registerWithOptions:queue:handler:")
     public static native boolean registerWithOptionsQueueHandler(
@@ -235,7 +244,10 @@ public class NEHotspotHelper extends NSObject {
      * of NEHotspotNetwork
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use NEHotspotManager API
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("supportedNetworkInterfaces")

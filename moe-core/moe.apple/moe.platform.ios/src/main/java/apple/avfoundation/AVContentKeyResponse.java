@@ -26,8 +26,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVContentKeyResponse
- * 
  * AVContentKeyResponse is used to represent the data returned from the key server when requesting a key for decrypting
  * content.
  * 
@@ -89,22 +87,19 @@ public class AVContentKeyResponse extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * contentKeyResponseWithClearKeyData:initializationVector:
-     * 
      * Create an AVContentKeyResponse from the key and IV when using AVContentKeySystemClearKey as the key system
      * 
      * The object created by this method is typically used with an AVContentKeyRequest created by an AVContentKeySession
      * using keySystem AVContentKeySystemClearKey. It is passed to AVContentKeyRequest -processContentKeyResponse: in
      * order to supply the decryptor with key data.
      * 
-     * API-Since: 11.0
+     * - Parameter keyData: The key used for decrypting content.
+     * - Parameter initializationVector: The initialization vector used for decrypting content, or nil if initialization
+     * vector is available in the media to be decrypted
      * 
-     * @param keyData
-     *                             The key used for decrypting content.
-     * @param initializationVector
-     *                             The initialization vector used for decrypting content, or nil if initialization
-     *                             vector is available in the media to be decrypted
-     * @return A new AVContentKeyResponse holding Clear Key data.
+     * - Returns: A new AVContentKeyResponse holding Clear Key data.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("contentKeyResponseWithClearKeyData:initializationVector:")
@@ -112,8 +107,6 @@ public class AVContentKeyResponse extends NSObject {
             @NotNull NSData keyData, @Nullable NSData initializationVector);
 
     /**
-     * contentKeyResponseWithFairPlayStreamingKeyResponseData:
-     * 
      * Create an AVContentKeyResponse from the server response to a key request made when using FairPlayStreaming (FPS)
      * as the method of key delivery.
      * 
@@ -121,12 +114,12 @@ public class AVContentKeyResponse extends NSObject {
      * using keySystem AVContentKeySystemFairPlayStreaming. It is passed to AVContentKeyRequest
      * -processContentKeyResponse: in order to supply the decryptor with key data
      * 
-     * API-Since: 10.3
+     * - Parameter keyResponseData: The response from the FairPlayStreaming key server
      * 
-     * @param keyResponseData
-     *                        The response from the FairPlayStreaming key server
-     * @return A new AVContentKeyResponse holding data from a FairPlayStreaming key server that is used to decrypt the
-     *         content
+     * - Returns: A new AVContentKeyResponse holding data from a FairPlayStreaming key server that is used to decrypt
+     * the content
+     * 
+     * API-Since: 10.3
      */
     @Generated
     @Selector("contentKeyResponseWithFairPlayStreamingKeyResponseData:")
@@ -199,8 +192,6 @@ public class AVContentKeyResponse extends NSObject {
     public static native long version_static();
 
     /**
-     * contentKeyResponseWithAuthorizationTokenData:
-     * 
      * Create an AVContentKeyResponse from authorization token data when using AVContentKeySystemAuthorizationToken key
      * system.
      * 
@@ -208,11 +199,11 @@ public class AVContentKeyResponse extends NSObject {
      * using keySystem AVContentKeySystemAuthorizationToken. It is passed to AVContentKeyRequest
      * -processContentKeyResponse: in order to supply the authorization token data.
      * 
-     * API-Since: 13.0
+     * - Parameter authorizationTokenData: Data blob containing the authorization token.
      * 
-     * @param authorizationTokenData
-     *                               Data blob containing the authorization token.
-     * @return A new AVContentKeyResponse holding the authorization token data.
+     * - Returns: A new AVContentKeyResponse holding the authorization token data.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("contentKeyResponseWithAuthorizationTokenData:")

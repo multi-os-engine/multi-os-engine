@@ -646,4 +646,50 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] cameraSensorOrientationCompensationEnabled
+     * 
+     * A BOOL value indicating that still image buffers will be rotated to match the sensor orientation of earlier
+     * generation hardware.
+     * 
+     * Default is YES when cameraSensorOrientationCompensationSupported is YES. Set to NO if your app does not require
+     * sensor orientation compensation.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isCameraSensorOrientationCompensationEnabled")
+    public native boolean isCameraSensorOrientationCompensationEnabled();
+
+    /**
+     * [@property] cameraSensorOrientationCompensationSupported
+     * 
+     * A read-only BOOL value indicating whether still image buffers may be rotated to match the sensor orientation of
+     * earlier generation hardware.
+     * 
+     * Value is YES for camera configurations which support compensation for the sensor orientation, which is applied to
+     * HEIC, JPEG, and uncompressed processed photos only; compensation is never applied to Bayer RAW or Apple ProRaw
+     * captures.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isCameraSensorOrientationCompensationSupported")
+    public native boolean isCameraSensorOrientationCompensationSupported();
+
+    /**
+     * [@property] cameraSensorOrientationCompensationEnabled
+     * 
+     * A BOOL value indicating that still image buffers will be rotated to match the sensor orientation of earlier
+     * generation hardware.
+     * 
+     * Default is YES when cameraSensorOrientationCompensationSupported is YES. Set to NO if your app does not require
+     * sensor orientation compensation.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setCameraSensorOrientationCompensationEnabled:")
+    public native void setCameraSensorOrientationCompensationEnabled(boolean value);
 }

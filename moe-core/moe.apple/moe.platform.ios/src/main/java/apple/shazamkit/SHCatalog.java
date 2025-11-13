@@ -25,10 +25,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * An abstract base class for storing signatures
+ * An abstract base class for storing reference signatures and their associated metadata.
  * 
- * You should not create instances of this class directly, instead use subclasses to provide the
- * functionality that you need
+ * This is the base class of your custom catalog.
  * 
  * API-Since: 15.0
  */
@@ -125,10 +124,7 @@ public class SHCatalog extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
-     * The maximum @c SHSignature duration that can be used to perform searches against this Catalog
-     * 
-     * A @c SHSignature over this duration will be rejected without matching. A well scoped @c SHSignature
-     * is more likely to provide accurate matches.
+     * The maximum duration of a query signature that you use to match reference signatures in the catalog.
      * 
      * API-Since: 15.0
      */
@@ -137,10 +133,7 @@ public class SHCatalog extends NSObject {
     public native double maximumQuerySignatureDuration();
 
     /**
-     * The minimum @c SHSignature duration that can be used to perform searches against this Catalog
-     * 
-     * A @c SHSignature that contains less than the minimum duration in seconds will be discarded without matching.
-     * [@note] A @c SHSignature under this duration does not have enough entropy to provide accurate matches.
+     * The minimum duration of a query signature that you use to match reference signatures in the catalog.
      * 
      * API-Since: 15.0
      */

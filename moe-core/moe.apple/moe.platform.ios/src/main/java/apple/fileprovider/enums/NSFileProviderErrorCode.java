@@ -197,4 +197,11 @@ public final class NSFileProviderErrorCode {
      * API-Since: 17.1
      */
     @Generated @NInt public static final long ApplicationExtensionNotFound = 0xFFFFFFFFFFFFF822L;
+    /**
+     * Returned by the provider when a modifyItem with the failUploadOnConflict policy fails
+     * because of a conflict with the server version.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated @NInt public static final long LocalVersionConflictingWithServer = 0xFFFFFFFFFFFFF821L;
 }

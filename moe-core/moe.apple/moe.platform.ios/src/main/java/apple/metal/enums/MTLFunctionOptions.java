@@ -56,4 +56,12 @@ public final class MTLFunctionOptions {
      * API-Since: 18.0
      */
     @Generated @NUInt public static final long FailOnBinaryArchiveMiss = 0x0000000000000004L;
+    /**
+     * Compiles the function to have its function handles return a constant MTLResourceID across
+     * all pipeline states. The function needs to be linked to the pipeline that will use this function.
+     * This function option can only be used for functions that are compiled with `MTLFunctionOptionCompileToBinary`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated @NUInt public static final long PipelineIndependent = 0x0000000000000008L;
 }

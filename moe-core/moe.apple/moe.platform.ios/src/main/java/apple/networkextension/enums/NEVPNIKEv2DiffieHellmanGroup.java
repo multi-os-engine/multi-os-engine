@@ -39,7 +39,7 @@ public final class NEVPNIKEv2DiffieHellmanGroup {
      * 
      * API-Since: 8.0
      * Deprecated-Since: 17.0
-     * Deprecated-Message: Use Diffie Hellman group 14 or greater instead
+     * Deprecated-Message: Diffie Hellman groups less than 14 are not supported
      */
     @Deprecated @Generated @NInt public static final long Group1 = 0x0000000000000001L;
     /**
@@ -47,7 +47,7 @@ public final class NEVPNIKEv2DiffieHellmanGroup {
      * 
      * API-Since: 8.0
      * Deprecated-Since: 17.0
-     * Deprecated-Message: Use Diffie Hellman group 14 or greater instead
+     * Deprecated-Message: Diffie Hellman groups less than 14 are not supported
      */
     @Deprecated @Generated @NInt public static final long Group2 = 0x0000000000000002L;
     /**
@@ -55,7 +55,7 @@ public final class NEVPNIKEv2DiffieHellmanGroup {
      * 
      * API-Since: 8.0
      * Deprecated-Since: 17.0
-     * Deprecated-Message: Use Diffie Hellman group 14 or greater instead
+     * Deprecated-Message: Diffie Hellman groups less than 14 are not supported
      */
     @Deprecated @Generated @NInt public static final long Group5 = 0x0000000000000005L;
     /**

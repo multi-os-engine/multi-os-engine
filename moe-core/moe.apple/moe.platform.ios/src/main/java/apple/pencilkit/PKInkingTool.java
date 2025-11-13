@@ -277,4 +277,22 @@ public class PKInkingTool extends PKTool {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The base angle of the ink.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("azimuth")
+    @NFloat
+    public native double azimuth();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("initWithInkType:color:width:azimuth:")
+    public native PKInkingTool initWithInkTypeColorWidthAzimuth(@NotNull String type, @NotNull UIColor color,
+            @NFloat double width, @NFloat double angle);
 }

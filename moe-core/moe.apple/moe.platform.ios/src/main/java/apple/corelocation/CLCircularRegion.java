@@ -17,7 +17,6 @@ limitations under the License.
 package apple.corelocation;
 
 import apple.NSObject;
-import apple.corelocation.struct.CLLocationCoordinate2D;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -43,8 +42,14 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.corelocation.struct.CLLocationCoordinate2D;
 
 /**
+ * CLCircularRegion
+ * 
+ * Discussion:
+ * A circular geographic area.
+ * 
  * API-Since: 7.0
  * Deprecated-Since: 100000.0
  */

@@ -611,4 +611,12 @@ public final class PassKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PKPaymentNetworkJaywan();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PKPaymentNetworkMyDebit();
 }

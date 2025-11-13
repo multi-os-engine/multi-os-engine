@@ -262,4 +262,11 @@ public final class CKErrorCode {
      * API-Since: 15.0
      */
     @Generated @NInt public static final long AccountTemporarilyUnavailable = 0x0000000000000024L;
+    /**
+     * The user is already an invited participant on this share. They must accept the existing share invitation before
+     * continuing.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated @NInt public static final long ParticipantAlreadyInvited = 0x0000000000000025L;
 }

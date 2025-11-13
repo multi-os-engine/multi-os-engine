@@ -26,8 +26,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVAggregateAssetDownloadTask
- * 
  * An AVAssetDownloadTask used for downloading multiple AVMediaSelections for a single AVAsset, under the umbrella of a
  * single download task.
  * 
@@ -57,8 +55,6 @@ public class AVAggregateAssetDownloadTask extends NSURLSessionTask {
     }
 
     /**
-     * [@property] URLAsset
-     * 
      * The asset supplied to the download task upon initialization.
      * 
      * API-Since: 11.0

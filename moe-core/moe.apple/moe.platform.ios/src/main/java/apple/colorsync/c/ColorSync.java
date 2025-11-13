@@ -74,6 +74,7 @@ public final class ColorSync {
 
     /**
      * url - URL to the profile data.
+     * options - a dictionary with creation options, e.g. kColorSyncDoNotSubstituteProfiles
      * error - (optional) pointer to the error which will be returned in case of failure
      * 
      * returns ColorSyncProfileRef or NULL in case of failure
@@ -431,8 +432,7 @@ public final class ColorSync {
             @NotNull CFDictionaryRef options);
 
     /**
-     * 15.0.0.2 BCD; uint32_t BCD = ((uint32_t)majorOS (= << 24) | (minorOS << 16) | (dotOS << 8) | (API version &
-     * 0xFF);
+     * 26.1.0.0 BCD; uint32_t BCD = (uint32_t)((majorOS << 24) | (minorOS << 16) | (dotOS << 8) | (API version & 0xFF));
      */
     @Generated
     @CFunction
@@ -1528,4 +1528,46 @@ public final class ColorSync {
     @CVariable()
     @NotNull
     public static native CFStringRef kColorSyncTransformUseITU709OETF();
+
+    /**
+     * Use the above key with kCFBooleanTrue value to skip substitution with a matching system provided profile
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native ColorSyncProfileRef ColorSyncProfileCreateWithURLAndOptions(@NotNull CFURLRef url,
+            @Nullable CFDictionaryRef options, @Nullable Ptr<CFErrorRef> error);
+
+    /**
+     * A utility function verifying if a profile is using ITU BT.2100 HLG transfer functions
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long ColorSyncProfileGetTagCount(@NotNull ColorSyncProfileRef arg1);
+
+    /**
+     * A utility function returning number of tags contained in the profile.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CFunction
+    public static native float ColorSyncProfileEstimateGamma(@NotNull ColorSyncProfileRef prof,
+            @Nullable Ptr<CFErrorRef> error);
+
+    /**
+     * url - URL to the profile data.
+     * error - (optional) pointer to the error which will be returned in case of failure
+     * 
+     * returns ColorSyncProfileRef or NULL in case of failure
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kColorSyncDoNotSubstituteProfiles();
 }

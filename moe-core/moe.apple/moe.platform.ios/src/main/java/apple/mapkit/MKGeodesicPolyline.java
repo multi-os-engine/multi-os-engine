@@ -47,6 +47,8 @@ import org.jetbrains.annotations.Nullable;
 /**
  * An MKGeodesicPolyline follows the shortest path along the surface of the earth,
  * which may appear as a curved line when drawn on the projected MKMapView.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("MapKit")
@@ -141,12 +143,18 @@ public class MKGeodesicPolyline extends MKPolyline {
     @Selector("new")
     public static native MKGeodesicPolyline new_objc();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("polylineWithCoordinates:count:")
     public static native MKGeodesicPolyline polylineWithCoordinatesCount(
             @NotNull @ReferenceInfo(type = CLLocationCoordinate2D.class) ConstPtr<CLLocationCoordinate2D> coords,
             @NUInt long count);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("polylineWithPoints:count:")
     public static native MKGeodesicPolyline polylineWithPointsCount(

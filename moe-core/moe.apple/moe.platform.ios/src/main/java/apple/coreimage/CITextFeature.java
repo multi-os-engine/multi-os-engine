@@ -43,6 +43,22 @@ import apple.corefoundation.struct.CGRect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * Information about a text that was detected in a still or video image.
+ * 
+ * > Note: In macOS 10.13, iOS 11, and tvOS 11 or later, the Vision framework replaces these classes
+ * for identifying and analyzing image features.
+ * See <doc://com.apple.documentation/documentation/vision/vnrecognizetextrequest>)
+ * 
+ * A detected text feature is not necessarily rectangular in the plane of the image; rather, the
+ * feature identifies a shape that may be rectangular in space (for example a text on a sign) but which
+ * appears as a four-sided polygon in the image. The properties of a `CITextFeature` object
+ * identify its four corners in image coordinates.
+ * 
+ * To detect text in an image or video, choose the ``CIDetectorTypeText`` type when initializing a
+ * ``CIDetector`` object, and use the `CIDetectorImageOrientation` option to specify the desired
+ * orientation for finding upright text.
+ */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -157,16 +173,30 @@ public class CITextFeature extends CIFeature {
     @NInt
     public static native long version_static();
 
+    /**
+     * The image coordinate of the lower-left corner of the detected text.
+     */
     @Generated
     @Selector("bottomLeft")
     @ByValue
     public native CGPoint bottomLeft();
 
+    /**
+     * The image coordinate of the lower-right corner of the detected text.
+     */
     @Generated
     @Selector("bottomRight")
     @ByValue
     public native CGPoint bottomRight();
 
+    /**
+     * A rectangle that indicates the position and extent of the text feature in image coordinates.
+     * 
+     * This property identifies the rectangular region of the image containing the detected text,
+     * not necessarily the shape of the text box. A detected feature is rectangular in space, but may
+     * appear as a four-sided polygon in the image. Use the properties listed in `CITextFeature` to find the
+     * corners of the rectangle as it appears in perspective.
+     */
     @Generated
     @Selector("bounds")
     @ByValue
@@ -176,16 +206,32 @@ public class CITextFeature extends CIFeature {
     @Selector("init")
     public native CITextFeature init();
 
+    /**
+     * An array containing additional features detected within the feature.
+     * 
+     * A text detector can identify both a major region that is likely to contain text as well
+     * as the areas within that region that likely to contain individual text features. Such
+     * features might be single characters, groups of closely-packed characters, or entire words.
+     * 
+     * To detect sub-features, ``/CIDetector/featuresInImage:options:`` needs to be called with
+     * the ``CIDetectorReturnSubFeatures`` option set to true.
+     */
     @Nullable
     @Generated
     @Selector("subFeatures")
     public native NSArray<?> subFeatures();
 
+    /**
+     * The image coordinate of the upper-left corner of the detected text.
+     */
     @Generated
     @Selector("topLeft")
     @ByValue
     public native CGPoint topLeft();
 
+    /**
+     * The image coordinate of the upper-right corner of the detected text.
+     */
     @Generated
     @Selector("topRight")
     @ByValue

@@ -379,4 +379,39 @@ public class MTLHeapDescriptor extends NSObject implements NSCopying {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Specifies the largest sparse page size that the Metal heap supports.
+     * 
+     * This parameter only affects the heap if you set the ``type`` property of this descriptor
+     * to ``MTLHeapType/MTLHeapTypePlacement``.
+     * 
+     * The value you assign to this property determines the compatibility of the Metal heap with with placement sparse
+     * resources, because placement sparse resources require that their sparse page size be less than or equal to the
+     * placement sparse page of the Metal heap that this property controls.
+     * 
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("maxCompatiblePlacementSparsePageSize")
+    @NInt
+    public native long maxCompatiblePlacementSparsePageSize();
+
+    /**
+     * Specifies the largest sparse page size that the Metal heap supports.
+     * 
+     * This parameter only affects the heap if you set the ``type`` property of this descriptor
+     * to ``MTLHeapType/MTLHeapTypePlacement``.
+     * 
+     * The value you assign to this property determines the compatibility of the Metal heap with with placement sparse
+     * resources, because placement sparse resources require that their sparse page size be less than or equal to the
+     * placement sparse page of the Metal heap that this property controls.
+     * 
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setMaxCompatiblePlacementSparsePageSize:")
+    public native void setMaxCompatiblePlacementSparsePageSize(@NInt long value);
 }

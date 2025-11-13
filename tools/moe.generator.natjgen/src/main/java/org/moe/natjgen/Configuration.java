@@ -82,6 +82,9 @@ public class Configuration implements IConfigurationElement {
     private static final String APPLE_SDK_SYSTEM_LIBRARY_FRAMEWORKS_PATH =
             "${" + SDK_VARIABLE + "}/System/Library/Frameworks";
 
+    private static final String APPLE_SDK_SYSTEM_LIBRARY_SUB_FRAMEWORKS_PATH =
+            "${" + SDK_VARIABLE + "}/System/Library/SubFrameworks";
+
     /**
      * Create an empty Configuration
      */
@@ -106,6 +109,7 @@ public class Configuration implements IConfigurationElement {
         Configuration conf = new Configuration();
         conf.headerFileResolvingPaths.add(SDK_USR_INCLUDE_PATH);
         conf.headerFileResolvingPaths.add(APPLE_SDK_SYSTEM_LIBRARY_FRAMEWORKS_PATH);
+        conf.headerFileResolvingPaths.add(APPLE_SDK_SYSTEM_LIBRARY_SUB_FRAMEWORKS_PATH);
         return conf;
     }
 
@@ -2772,6 +2776,15 @@ public class Configuration implements IConfigurationElement {
                     location = location.substring(File.separator.length());
                 }
                 if (APPLE_SDK_SYSTEM_LIBRARY_FRAMEWORKS_PATH.equals(rPath)) {
+                    final String frameworkFix = ".framework/Headers";
+                    int idx = location.indexOf(frameworkFix);
+                    if (idx != -1) {
+                        location = location.substring(0, idx) + location
+                                .substring(idx + frameworkFix.length(), location.length());
+                    }
+                }
+
+                if (APPLE_SDK_SYSTEM_LIBRARY_SUB_FRAMEWORKS_PATH.equals(rPath)) {
                     final String frameworkFix = ".framework/Headers";
                     int idx = location.indexOf(frameworkFix);
                     if (idx != -1) {

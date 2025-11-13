@@ -528,4 +528,31 @@ public class PKPassLibrary extends NSObject {
     @Selector("passesWithReaderIdentifier:")
     @NotNull
     public native NSSet<? extends PKSecureElementPass> passesWithReaderIdentifier(@NotNull String readerIdentifier);
+
+    /**
+     * Check TCC authorization for capability
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("authorizationStatusForCapability:")
+    @NInt
+    public native long authorizationStatusForCapability(@NInt long capability);
+
+    /**
+     * Request authorization for capability, saved in TCC
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("requestAuthorizationForCapability:completion:")
+    public native void requestAuthorizationForCapabilityCompletion(@NInt long capability,
+            @ObjCBlock(name = "call_requestAuthorizationForCapabilityCompletion") @NotNull Block_requestAuthorizationForCapabilityCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestAuthorizationForCapabilityCompletion {
+        @Generated
+        void call_requestAuthorizationForCapabilityCompletion(@NInt long status);
+    }
 }

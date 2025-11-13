@@ -49,6 +49,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -142,12 +145,18 @@ public class MKPolyline extends MKMultiPoint implements MKOverlay, MKGeoJSONObje
     @Selector("new")
     public static native MKPolyline new_objc();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("polylineWithCoordinates:count:")
     public static native MKPolyline polylineWithCoordinatesCount(
             @NotNull @ReferenceInfo(type = CLLocationCoordinate2D.class) ConstPtr<CLLocationCoordinate2D> coords,
             @NUInt long count);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("polylineWithPoints:count:")
     public static native MKPolyline polylineWithPointsCount(

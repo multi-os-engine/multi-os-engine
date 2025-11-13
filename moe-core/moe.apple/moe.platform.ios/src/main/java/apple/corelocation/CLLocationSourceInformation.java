@@ -7,6 +7,8 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSSecureCoding;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -26,8 +28,6 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 /**
  * CLLocationSourceInformation
@@ -60,8 +60,8 @@ public class CLLocationSourceInformation extends NSObject implements NSCopying, 
     @Selector("alloc")
     public static native CLLocationSourceInformation alloc();
 
-    @Owned
     @Generated
+    @Owned
     @Selector("allocWithZone:")
     public static native CLLocationSourceInformation allocWithZone(VoidPtr zone);
 
@@ -72,29 +72,29 @@ public class CLLocationSourceInformation extends NSObject implements NSCopying, 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
     public static native void cancelPreviousPerformRequestsWithTarget(
-            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
+            @Mapped(ObjCObjectMapper.class) @NotNull Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
-            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @Mapped(ObjCObjectMapper.class) @NotNull Object aTarget, @NotNull SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) @Nullable Object anArgument);
 
-    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
+    @NotNull
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
-    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
+    @NotNull
     public static native Class classForKeyedUnarchiver();
 
-    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
@@ -171,9 +171,9 @@ public class CLLocationSourceInformation extends NSObject implements NSCopying, 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
-    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
+    @NotNull
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
@@ -208,12 +208,12 @@ public class CLLocationSourceInformation extends NSObject implements NSCopying, 
     }
 
     @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
-
-    @Generated
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
 }

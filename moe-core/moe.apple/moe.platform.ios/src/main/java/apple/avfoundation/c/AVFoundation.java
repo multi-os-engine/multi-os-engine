@@ -44,6 +44,8 @@ import apple.avfoundation.struct.AVCaptionPoint;
 import apple.avfoundation.struct.AVCaptionSize;
 import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
+import apple.avfoundation.struct.AVCaptureTimecode;
+import apple.avfoundation.struct.AVCaptureWhiteBalanceTemperatureAndTintValues;
 
 @Generated
 @Library("AVFoundation")
@@ -137,10 +139,9 @@ public final class AVFoundation {
     public static native String AVLayerVideoGravityResize();
 
     /**
-     * [@constant] AVURLAssetPreferPreciseDurationAndTimingKey
-     * 
      * Indicates whether the asset should be prepared to indicate a precise duration and provide precise random access
      * by time.
+     * 
      * The value for this key is a boolean NSNumber.
      * 
      * If nil is passed as the value of the options parameter to -[AVURLAsset initWithURL:options:], or if a dictionary
@@ -163,7 +164,6 @@ public final class AVFoundation {
      * If precise duration and timing is not possible for the timed media resource referenced by the asset's URL,
      * AVAsset.providesPreciseDurationAndTiming will be NO even if precise timing is requested via the use of this key.
      * 
-     * 
      * API-Since: 4.0
      */
     @NotNull
@@ -173,8 +173,6 @@ public final class AVFoundation {
     public static native String AVURLAssetPreferPreciseDurationAndTimingKey();
 
     /**
-     * [@constant] AVURLAssetReferenceRestrictionsKey
-     * 
      * Indicates the restrictions used by the asset when resolving references to external media data. The value of this
      * key is an NSNumber wrapping an AVAssetReferenceRestrictions enum value or the logical combination of multiple
      * such values.
@@ -194,9 +192,8 @@ public final class AVFoundation {
     public static native String AVURLAssetReferenceRestrictionsKey();
 
     /**
-     * [@constant] AVURLAssetHTTPCookiesKey
-     * 
      * HTTP cookies that the AVURLAsset may send with HTTP requests
+     * 
      * Standard cross-site policy still applies: cookies will only be sent to domains to which they apply.
      * 
      * By default, an AVURLAsset will only have access to cookies in the client's default cookie storage
@@ -217,8 +214,6 @@ public final class AVFoundation {
     public static native String AVURLAssetHTTPCookiesKey();
 
     /**
-     * [@constant] AVURLAssetAllowsCellularAccessKey
-     * 
      * Indicates whether network requests on behalf of this asset are allowed to use the cellular interface.
      * 
      * Default is YES.
@@ -232,8 +227,6 @@ public final class AVFoundation {
     public static native String AVURLAssetAllowsCellularAccessKey();
 
     /**
-     * [@constant] AVAssetDurationDidChangeNotification
-     * 
      * Posted when the duration of an AVFragmentedAsset changes while it's being minded by an AVFragmentedAssetMinder,
      * but only for changes that occur after the status of the value of @"duration" has reached AVKeyValueStatusLoaded.
      * 
@@ -246,8 +239,6 @@ public final class AVFoundation {
     public static native String AVAssetDurationDidChangeNotification();
 
     /**
-     * [@constant] AVAssetChapterMetadataGroupsDidChangeNotification
-     * 
      * Posted when the collection of arrays of timed metadata groups representing chapters of an AVAsset change and when
      * any of the contents of the timed metadata groups change, but only for changes that occur after the status of the
      * value of @"availableChapterLocales" has reached AVKeyValueStatusLoaded.
@@ -261,8 +252,6 @@ public final class AVFoundation {
     public static native String AVAssetChapterMetadataGroupsDidChangeNotification();
 
     /**
-     * [@constant] AVAssetMediaSelectionGroupsDidChangeNotification
-     * 
      * Posted when the collection of media selection groups provided by an AVAsset changes and when any of the contents
      * of its media selection groups change, but only for changes that occur after the status of the value
      * of @"availableMediaCharacteristicsWithMediaSelectionOptions" has reached AVKeyValueStatusLoaded.
@@ -450,8 +439,6 @@ public final class AVFoundation {
     public static native String AVAssetResourceLoadingRequestStreamingContentKeyRequestRequiresPersistentKey();
 
     /**
-     * [@constant] AVTrackAssociationTypeAudioFallback
-     * 
      * Indicates an association between an audio track with another audio track that contains the same content but is
      * typically encoded in a different format that's more widely supported, used to nominate a track that should be
      * used in place of an unsupported track.
@@ -467,7 +454,6 @@ public final class AVFoundation {
      * kAudioFormatAC3 and a 5.1 channel layout. This would ensure that all clients are capable of playing back some
      * form of the audio.
      * 
-     * 
      * API-Since: 7.0
      */
     @NotNull
@@ -477,8 +463,6 @@ public final class AVFoundation {
     public static native String AVTrackAssociationTypeAudioFallback();
 
     /**
-     * [@constant] AVTrackAssociationTypeChapterList
-     * 
      * Indicates an association between a track with another track that contains chapter information. The track
      * containing chapter information may be a text track, a video track, or a timed metadata track.
      * 
@@ -496,8 +480,6 @@ public final class AVFoundation {
     public static native String AVTrackAssociationTypeChapterList();
 
     /**
-     * [@constant] AVTrackAssociationTypeForcedSubtitlesOnly
-     * 
      * Indicates an association between a subtitle track typically containing both forced and non-forced subtitles with
      * another subtitle track that contains only forced subtitles, for use when the user indicates that only essential
      * subtitles should be displayed. When such an association is established, the forced subtitles in both tracks are
@@ -518,8 +500,6 @@ public final class AVFoundation {
     public static native String AVTrackAssociationTypeForcedSubtitlesOnly();
 
     /**
-     * [@constant] AVTrackAssociationTypeSelectionFollower
-     * 
      * Indicates an association between a pair of tracks that specifies that, when the first of the pair is selected,
      * the second of the pair should be considered an appropriate default for selection also. Example: a subtitle track
      * in the same language as an audio track may be associated with that audio track using
@@ -541,8 +521,6 @@ public final class AVFoundation {
     public static native String AVTrackAssociationTypeSelectionFollower();
 
     /**
-     * [@constant] AVTrackAssociationTypeTimecode
-     * 
      * Indicates an association between a track with another track that contains timecode information. The track
      * containing timecode information should be a timecode track.
      * 
@@ -560,8 +538,6 @@ public final class AVFoundation {
     public static native String AVTrackAssociationTypeTimecode();
 
     /**
-     * [@constant] AVTrackAssociationTypeMetadataReferent
-     * 
      * Indicates an association between a metadata track and the track that's described or annotated via the contents of
      * the metadata track.
      * 
@@ -581,8 +557,6 @@ public final class AVFoundation {
     public static native String AVTrackAssociationTypeMetadataReferent();
 
     /**
-     * [@constant] AVAssetTrackTimeRangeDidChangeNotification
-     * 
      * Posted when the timeRange of an AVFragmentedAssetTrack changes while the associated instance of AVFragmentedAsset
      * is being minded by an AVFragmentedAssetMinder, but only for changes that occur after the status of the value
      * of @"timeRange" has reached AVKeyValueStatusLoaded.
@@ -596,8 +570,6 @@ public final class AVFoundation {
     public static native String AVAssetTrackTimeRangeDidChangeNotification();
 
     /**
-     * [@constant] AVAssetTrackSegmentsDidChangeNotification
-     * 
      * Posted when the array of segments of an AVFragmentedAssetTrack changes while the associated instance of
      * AVFragmentedAsset is being minded by an AVFragmentedAssetMinder, but only for changes that occur after the status
      * of the value of @"segments" has reached AVKeyValueStatusLoaded.
@@ -611,8 +583,6 @@ public final class AVFoundation {
     public static native String AVAssetTrackSegmentsDidChangeNotification();
 
     /**
-     * [@constant] AVAssetTrackTrackAssociationsDidChangeNotification
-     * 
      * Posted when the collection of track associations of an AVAssetTrack changes, but only for changes that occur
      * after the status of the value of @"availableTrackAssociationTypes" has reached AVKeyValueStatusLoaded.
      * 
@@ -679,8 +649,6 @@ public final class AVFoundation {
     public static native String AVAudioTimePitchAlgorithmVarispeed();
 
     /**
-     * [@constant] AVAssetDownloadTaskMinimumRequiredMediaBitrateKey
-     * 
      * The lowest media bitrate greater than or equal to this value will be selected. Value should be a NSNumber in bps.
      * If no suitable media bitrate is found, the highest media bitrate will be selected.
      * The value for this key should be a NSNumber.
@@ -700,8 +668,6 @@ public final class AVFoundation {
     public static native String AVAssetDownloadTaskMinimumRequiredMediaBitrateKey();
 
     /**
-     * [@constant] AVAssetDownloadTaskMediaSelectionKey
-     * 
      * The media selection for this download.
      * The value for this key should be an AVMediaSelection.
      * 
@@ -1435,8 +1401,6 @@ public final class AVFoundation {
     public static native String AVMediaTypeMuxed();
 
     /**
-     * [@constant] AVMediaTypeMetadataObject
-     * 
      * mediaType of AVCaptureInputPorts that provide AVMetadataObjects.
      * 
      * Prior to iOS 9.0, camera AVCaptureDeviceInputs provide metadata (detected faces and barcodes) to an
@@ -1476,8 +1440,6 @@ public final class AVFoundation {
     public static native String AVMediaTypeMetadataObject();
 
     /**
-     * [@constant] AVMediaCharacteristicVisual
-     * 
      * A media characteristic that indicates that a track or media selection option includes visual content.
      * 
      * AVMediaTypeVideo, AVMediaTypeSubtitle, AVMediaTypeClosedCaption are examples of media types with the
@@ -1492,8 +1454,6 @@ public final class AVFoundation {
     public static native String AVMediaCharacteristicVisual();
 
     /**
-     * [@constant] AVMediaCharacteristicAudible
-     * 
      * A media characteristic that indicates that a track or media selection option includes audible content.
      * 
      * AVMediaTypeAudio is a media type with the characteristic AVMediaCharacteristicAudible.
@@ -1507,8 +1467,6 @@ public final class AVFoundation {
     public static native String AVMediaCharacteristicAudible();
 
     /**
-     * [@constant] AVMediaCharacteristicLegible
-     * 
      * A media characteristic that indicates that a track or media selection option includes legible content.
      * 
      * AVMediaTypeSubtitle and AVMediaTypeClosedCaption are examples of media types with the characteristic
@@ -1523,8 +1481,6 @@ public final class AVFoundation {
     public static native String AVMediaCharacteristicLegible();
 
     /**
-     * [@constant] AVMediaCharacteristicFrameBased
-     * 
      * A media characteristic that indicates that a track or media selection option includes content that's frame-based.
      * 
      * Frame-based content typically comprises discrete media samples that, once rendered, can remain current for
@@ -1542,8 +1498,6 @@ public final class AVFoundation {
     public static native String AVMediaCharacteristicFrameBased();
 
     /**
-     * [@constant] AVMediaCharacteristicUsesWideGamutColorSpace
-     * 
      * A media characteristic that indicates that a track uses a wide gamut color space and therefore may make use of
      * colors that cannot be accurately represented otherwise.
      * 
@@ -1559,8 +1513,6 @@ public final class AVFoundation {
     public static native String AVMediaCharacteristicUsesWideGamutColorSpace();
 
     /**
-     * [@constant] AVMediaCharacteristicIsMainProgramContent
-     * 
      * A media characteristic that indicates that a track or media selection option includes content that's marked by
      * the content author as intrinsic to the presentation of the asset.
      * 
@@ -1581,8 +1533,6 @@ public final class AVFoundation {
     public static native String AVMediaCharacteristicIsMainProgramContent();
 
     /**
-     * [@constant] AVMediaCharacteristicIsAuxiliaryContent
-     * 
      * A media characteristic that indicates that a track or media selection option includes content that's marked by
      * the content author as auxiliary to the presentation of the asset.
      * 
@@ -1604,8 +1554,6 @@ public final class AVFoundation {
     public static native String AVMediaCharacteristicIsAuxiliaryContent();
 
     /**
-     * [@constant] AVMediaCharacteristicContainsOnlyForcedSubtitles
-     * 
      * A media characteristic that indicates that a track or media selection option presents only forced subtitles.
      * 
      * Media options with forced-only subtitles are typically selected when 1) the user has not selected a legible
@@ -1628,8 +1576,6 @@ public final class AVFoundation {
     public static native String AVMediaCharacteristicContainsOnlyForcedSubtitles();
 
     /**
-     * [@constant] AVMediaCharacteristicTranscribesSpokenDialogForAccessibility
-     * 
      * A media characteristic that indicates that a track or media selection option includes legible content in the
      * language of its specified locale that:
      * - transcribes spoken dialog and
@@ -1658,8 +1604,6 @@ public final class AVFoundation {
     public static native String AVMediaCharacteristicTranscribesSpokenDialogForAccessibility();
 
     /**
-     * [@constant] AVMediaCharacteristicDescribesMusicAndSoundForAccessibility
-     * 
      * A media characteristic that indicates that a track or media selection option includes legible content in the
      * language of its specified locale that:
      * - describes music and
@@ -1690,8 +1634,6 @@ public final class AVFoundation {
     public static native String AVMediaCharacteristicDescribesMusicAndSoundForAccessibility();
 
     /**
-     * [@constant] AVMediaCharacteristicEasyToRead
-     * 
      * A media characteristic that indicates that a track or media selection option provides legible content in the
      * language of its specified locale that has been edited for ease of reading.
      * 
@@ -1714,8 +1656,6 @@ public final class AVFoundation {
     public static native String AVMediaCharacteristicEasyToRead();
 
     /**
-     * [@constant] AVMediaCharacteristicDescribesVideoForAccessibility
-     * 
      * A media characteristic that indicates that a track or media selection option provides descriptions of the visual
      * portion of the presentation that are sufficient to comprehend essential information that it depicts, such as
      * action and setting.
@@ -1737,8 +1677,6 @@ public final class AVFoundation {
     public static native String AVMediaCharacteristicDescribesVideoForAccessibility();
 
     /**
-     * [@constant] AVMediaCharacteristicLanguageTranslation
-     * 
      * A media characteristic that indicates that a track or media selection option contains a language or dialect
      * translation of originally or previously produced content, intended to be used as a substitute for that content by
      * users who prefer its designated language.
@@ -1757,8 +1695,6 @@ public final class AVFoundation {
     public static native String AVMediaCharacteristicLanguageTranslation();
 
     /**
-     * [@constant] AVMediaCharacteristicDubbedTranslation
-     * 
      * A media characteristic that indicates that a track or media selection option contains a language or dialect
      * translation of originally or previously produced content, created by substituting most or all of the dialog in a
      * previous mix of audio content with dialog spoken in its designated language.
@@ -1779,8 +1715,6 @@ public final class AVFoundation {
     public static native String AVMediaCharacteristicDubbedTranslation();
 
     /**
-     * [@constant] AVMediaCharacteristicVoiceOverTranslation
-     * 
      * A media characteristic that indicates that a track or media selection option contains a language translation of
      * originally or previously produced content, created by adding, in its designated language, a verbal interpretation
      * of dialog and translations of other important information to a new mix of the audio content.
@@ -1801,8 +1735,6 @@ public final class AVFoundation {
     public static native String AVMediaCharacteristicVoiceOverTranslation();
 
     /**
-     * [@constant] AVFileTypeQuickTimeMovie
-     * 
      * A UTI for the QuickTime movie file format.
      * 
      * The value of this UTI is @"com.apple.quicktime-movie".
@@ -1816,8 +1748,6 @@ public final class AVFoundation {
     public static native String AVFileTypeQuickTimeMovie();
 
     /**
-     * [@constant] AVFileTypeMPEG4
-     * 
      * A UTI for the MPEG-4 file format.
      * 
      * The value of this UTI is @"public.mpeg-4".
@@ -1831,8 +1761,6 @@ public final class AVFoundation {
     public static native String AVFileTypeMPEG4();
 
     /**
-     * [@constant] AVFileTypeAppleM4V
-     * 
      * The value of this UTI is @"com.apple.m4v-video".
      * Files are identified with the .m4v extension.
      * 
@@ -1844,8 +1772,6 @@ public final class AVFoundation {
     public static native String AVFileTypeAppleM4V();
 
     /**
-     * [@constant] AVFileTypeAppleM4A
-     * 
      * The value of this UTI is @"com.apple.m4a-audio".
      * Files are identified with the .m4a extension.
      * 
@@ -1857,8 +1783,6 @@ public final class AVFoundation {
     public static native String AVFileTypeAppleM4A();
 
     /**
-     * [@constant] AVFileType3GPP
-     * 
      * A UTI for the 3GPP file format.
      * 
      * The value of this UTI is @"public.3gpp".
@@ -1872,8 +1796,6 @@ public final class AVFoundation {
     public static native String AVFileType3GPP();
 
     /**
-     * [@constant] AVFileType3GPP2
-     * 
      * A UTI for the 3GPP file format.
      * 
      * The value of this UTI is @"public.3gpp2".
@@ -1887,8 +1809,6 @@ public final class AVFoundation {
     public static native String AVFileType3GPP2();
 
     /**
-     * [@constant] AVFileTypeCoreAudioFormat
-     * 
      * A UTI for the CoreAudio file format.
      * 
      * The value of this UTI is @"com.apple.coreaudio-format".
@@ -1902,8 +1822,6 @@ public final class AVFoundation {
     public static native String AVFileTypeCoreAudioFormat();
 
     /**
-     * [@constant] AVFileTypeWAVE
-     * 
      * A UTI for the WAVE audio file format.
      * 
      * The value of this UTI is @"com.microsoft.waveform-audio".
@@ -1917,8 +1835,6 @@ public final class AVFoundation {
     public static native String AVFileTypeWAVE();
 
     /**
-     * [@constant] AVFileTypeAIFF
-     * 
      * A UTI for the AIFF audio file format.
      * 
      * The value of this UTI is @"public.aiff-audio".
@@ -1932,8 +1848,6 @@ public final class AVFoundation {
     public static native String AVFileTypeAIFF();
 
     /**
-     * [@constant] AVFileTypeAIFC
-     * 
      * A UTI for the AIFC audio file format.
      * 
      * The value of this UTI is @"public.aifc-audio".
@@ -1947,8 +1861,6 @@ public final class AVFoundation {
     public static native String AVFileTypeAIFC();
 
     /**
-     * [@constant] AVFileTypeAMR
-     * 
      * A UTI for the adaptive multi-rate audio file format.
      * 
      * The value of this UTI is @"org.3gpp.adaptive-multi-rate-audio".
@@ -1962,8 +1874,6 @@ public final class AVFoundation {
     public static native String AVFileTypeAMR();
 
     /**
-     * [@constant] AVFileTypeMPEGLayer3
-     * 
      * A UTI for the MPEG layer 3 audio file format.
      * 
      * The value of this UTI is @"public.mp3".
@@ -1977,8 +1887,6 @@ public final class AVFoundation {
     public static native String AVFileTypeMPEGLayer3();
 
     /**
-     * [@constant] AVFileTypeSunAU
-     * 
      * A UTI for the Sun/NeXT audio file format.
      * 
      * The value of this UTI is @"public.au-audio".
@@ -1992,8 +1900,6 @@ public final class AVFoundation {
     public static native String AVFileTypeSunAU();
 
     /**
-     * [@constant] AVFileTypeAC3
-     * 
      * A UTI for the AC-3 audio file format.
      * 
      * The value of this UTI is @"public.ac3-audio".
@@ -2007,8 +1913,6 @@ public final class AVFoundation {
     public static native String AVFileTypeAC3();
 
     /**
-     * [@constant] AVFileTypeEnhancedAC3
-     * 
      * A UTI for the enhanced AC-3 audio file format.
      * 
      * The value of this UTI is @"public.enhanced-ac3-audio".
@@ -2022,8 +1926,6 @@ public final class AVFoundation {
     public static native String AVFileTypeEnhancedAC3();
 
     /**
-     * [@constant] AVStreamingKeyDeliveryContentKeyType
-     * 
      * A UTI for streaming key delivery content keys
      * 
      * The value of this UTI is @"com.apple.streamingkeydelivery.contentkey".
@@ -2036,8 +1938,6 @@ public final class AVFoundation {
     public static native String AVStreamingKeyDeliveryContentKeyType();
 
     /**
-     * [@constant] AVStreamingKeyDeliveryPersistentContentKeyType
-     * 
      * A UTI for persistent streaming key delivery content keys
      * 
      * The value of this UTI is @"com.apple.streamingkeydelivery.persistentcontentkey".
@@ -2606,8 +2506,6 @@ public final class AVFoundation {
     public static native String AVMetadataISOUserDataKeyTaggedCharacteristic();
 
     /**
-     * [@constant] AVMetadataISOUserDataKeyDate
-     * 
      * ISO User data key for the content creation date/time.
      * 
      * The value is date and time, formatted according to ISO 8601, when the content was created. For clips captured by
@@ -4493,8 +4391,6 @@ public final class AVFoundation {
     public static native String AVMetadataKeySpaceHLSDateRange();
 
     /**
-     * [@constant] AVMetadataExtraAttributeValueURIKey
-     * 
      * When present in an item's extraAttributes dictionary, identifies the resource to be used as the item's value.
      * Values for this key are of type NSString.
      * 
@@ -4506,8 +4402,6 @@ public final class AVFoundation {
     public static native String AVMetadataExtraAttributeValueURIKey();
 
     /**
-     * [@constant] AVMetadataExtraAttributeBaseURIKey
-     * 
      * When present in an item's extraAttributes dictionary, identifies the base URI against which other URIs related to
      * the item are to be resolved, e.g. AVMetadataExtraAttributeValueURIKey. Values for this key are of type NSString.
      * 
@@ -4519,10 +4413,7 @@ public final class AVFoundation {
     public static native String AVMetadataExtraAttributeBaseURIKey();
 
     /**
-     * [@constant] AVMetadataExtraAttributeInfoKey
-     * 
-     * More information about the item; specific to the
-     * item keySpace & key.
+     * More information about the item; specific to the item keySpace & key.
      * 
      * For example, this key is used with the following ID3 tags:
      * TXXX, WXXX, APIC, GEOB: carries the Description
@@ -7134,8 +7025,6 @@ public final class AVFoundation {
     public static native String AVOutputSettingsPreset3840x2160();
 
     /**
-     * [@constant] AVPlayerWaitingToMinimizeStallsReason
-     * 
      * Indicates that the player is waiting for appropriate playback buffer conditions before starting playback
      * 
      * The player is waiting for playback because automaticallyWaitToMinimizeStalling is YES and playback at the
@@ -7154,8 +7043,6 @@ public final class AVFoundation {
     public static native String AVPlayerWaitingToMinimizeStallsReason();
 
     /**
-     * [@constant] AVPlayerWaitingWhileEvaluatingBufferingRateReason
-     * 
      * Indicates that the player is monitoring the playback buffer fill rate to determine if playback is likely to
      * complete without interruptions.
      * 
@@ -7175,8 +7062,6 @@ public final class AVFoundation {
     public static native String AVPlayerWaitingWhileEvaluatingBufferingRateReason();
 
     /**
-     * [@constant] AVPlayerWaitingWithNoItemToPlayReason
-     * 
      * Indicates that the AVPlayer is waiting because its currentItem is nil
      * 
      * The player is waiting for playback because automaticallyWaitToMinimizeStalling is YES and the value of
@@ -7877,8 +7762,6 @@ public final class AVFoundation {
     public static native String AVVideoAverageNonDroppableFrameRateKey();
 
     /**
-     * [@constant] AVContentKeySystemFairPlayStreaming
-     * 
      * Used to specify FairPlay Streaming (FPS) as the method of key delivery.
      * 
      * API-Since: 10.3
@@ -7890,8 +7773,6 @@ public final class AVFoundation {
     public static native String AVContentKeySystemFairPlayStreaming();
 
     /**
-     * [@constant] AVContentKeySystemClearKey
-     * 
      * Used to specify clear key as the method of key delivery.
      * 
      * API-Since: 11.0
@@ -7903,8 +7784,6 @@ public final class AVFoundation {
     public static native String AVContentKeySystemClearKey();
 
     /**
-     * [@constant] AVContentKeyRequestRetryReasonTimedOut
-     * 
      * Indicates that the content key request should be retried because the key response was not set soon enough either
      * due the initial request/response was taking too long, or a lease was expiring in the meantime.
      * 
@@ -7917,8 +7796,6 @@ public final class AVFoundation {
     public static native String AVContentKeyRequestRetryReasonTimedOut();
 
     /**
-     * [@constant] AVContentKeyRequestRetryReasonReceivedResponseWithExpiredLease
-     * 
      * Indicates that the content key request should be retried because a key response with expired lease was set on the
      * previous content key request.
      * 
@@ -7931,8 +7808,6 @@ public final class AVFoundation {
     public static native String AVContentKeyRequestRetryReasonReceivedResponseWithExpiredLease();
 
     /**
-     * [@constant] AVContentKeyRequestRetryReasonReceivedObsoleteContentKey
-     * 
      * Indicates that the content key request should be retried because an obsolete key response was set on the previous
      * content key request.
      * 
@@ -7945,8 +7820,6 @@ public final class AVFoundation {
     public static native String AVContentKeyRequestRetryReasonReceivedObsoleteContentKey();
 
     /**
-     * [@constant] AVContentKeyRequestProtocolVersionsKey
-     * 
      * Specifies the versions of the content protection protocol supported by the application as an NSArray of one or
      * more NSNumber objects.
      * 
@@ -7967,8 +7840,6 @@ public final class AVFoundation {
     public static native String AVMediaTypeDepthData();
 
     /**
-     * [@constant] AVFileTypeJPEG
-     * 
      * A UTI for the JPEG (JFIF) format.
      * 
      * The value of this UTI is @"public.jpeg".
@@ -7982,8 +7853,6 @@ public final class AVFoundation {
     public static native String AVFileTypeJPEG();
 
     /**
-     * [@constant] AVFileTypeDNG
-     * 
      * A UTI for the Adobe digital negative file format.
      * 
      * The value of this UTI is @"com.adobe.raw-image".
@@ -7997,8 +7866,6 @@ public final class AVFoundation {
     public static native String AVFileTypeDNG();
 
     /**
-     * [@constant] AVFileTypeHEIC
-     * 
      * A UTI for the high efficiency image file format containing HEVC compressed images.
      * 
      * The value of this UTI is @"public.heic".
@@ -8012,8 +7879,6 @@ public final class AVFoundation {
     public static native String AVFileTypeHEIC();
 
     /**
-     * [@constant] AVFileTypeAVCI
-     * 
      * A UTI for the high efficiency image file format containing H.264 compressed images.
      * 
      * The value of this UTI is @"public.avci".
@@ -8027,8 +7892,6 @@ public final class AVFoundation {
     public static native String AVFileTypeAVCI();
 
     /**
-     * [@constant] AVFileTypeHEIF
-     * 
      * A UTI for the high efficiency image file format containing images compressed with any codec.
      * 
      * The value of this UTI is @"public.heif".
@@ -8042,8 +7905,6 @@ public final class AVFoundation {
     public static native String AVFileTypeHEIF();
 
     /**
-     * [@constant] AVFileTypeTIFF
-     * 
      * A UTI for the tagged image file format.
      * 
      * The value of this UTI is @"public.tiff".
@@ -8113,7 +7974,6 @@ public final class AVFoundation {
     public static native String AVAssetExportPresetHEVC3840x2160();
 
     /**
-     * [@constant] AVAssetWriterInputMediaDataLocationInterleavedWithMainMediaData
      * Indicates that the media data should be interleaved with all other media data with this constant.
      * 
      * API-Since: 11.0
@@ -8125,7 +7985,6 @@ public final class AVFoundation {
     public static native String AVAssetWriterInputMediaDataLocationInterleavedWithMainMediaData();
 
     /**
-     * [@constant] AVAssetWriterInputMediaDataLocationBeforeMainMediaDataNotInterleaved
      * Indicates that the media data should be laid out before all the media data with
      * AVAssetWriterInputMediaDataLocationInterleavedWithMainMediaData and not be interleaved.
      * 
@@ -8138,14 +7997,7 @@ public final class AVFoundation {
     public static native String AVAssetWriterInputMediaDataLocationBeforeMainMediaDataNotInterleaved();
 
     /**
-     * [@enum] AVAssetDownloadedAssetEvictionPriority
-     * 
-     * These constants represents the eviction priority of downloaded assets.
-     * 
-     * [@constant] AVAssetDownloadedAssetEvictionPriorityImportant
      * Used to mark assets with the highest priority. They will be the last to be purged.
-     * [@constant] AVAssetDownloadedAssetEvictionPriorityDefault
-     * Used to mark assets have the default priority. They will be the first to be purged.
      * 
      * API-Since: 11.0
      */
@@ -8156,6 +8008,8 @@ public final class AVFoundation {
     public static native String AVAssetDownloadedAssetEvictionPriorityImportant();
 
     /**
+     * Used to mark assets have the default priority. They will be the first to be purged.
+     * 
      * API-Since: 11.0
      */
     @NotNull
@@ -8385,8 +8239,6 @@ public final class AVFoundation {
     public static native String AVSampleBufferAudioRendererFlushTimeKey();
 
     /**
-     * [@constant] AVContentKeySystemAuthorizationToken
-     * 
      * Used to specify a token that could be used to authorize playback of associated content key recipients.
      * 
      * API-Since: 13.0
@@ -8398,8 +8250,6 @@ public final class AVFoundation {
     public static native String AVContentKeySystemAuthorizationToken();
 
     /**
-     * [@constant] AVContentKeySessionServerPlaybackContextOptionProtocolVersions
-     * 
      * Specifies the versions of the content protection protocol supported by the application; as an NSArray of one or
      * more NSNumber objects. If this option is not set, an appropriate protocol version will be selected based on
      * sideband information such as an associated HLS playlist. If such information is not available, a protocol version
@@ -8414,8 +8264,6 @@ public final class AVFoundation {
     public static native String AVContentKeySessionServerPlaybackContextOptionProtocolVersions();
 
     /**
-     * [@constant] AVContentKeySessionServerPlaybackContextOptionServerChallenge
-     * 
      * Specifies a nonce as a 8-byte NSData object to be included in the secure server playback context (SPC) in order
      * to prevent replay attacks. If not specified default server challenge of 0 is assumed.
      * 
@@ -8428,8 +8276,6 @@ public final class AVFoundation {
     public static native String AVContentKeySessionServerPlaybackContextOptionServerChallenge();
 
     /**
-     * [@constant] AVContentKeyRequestRequiresValidationDataInSecureTokenKey
-     * 
      * Request secure token to have extended validation data. The value for the key should be previously created offline
      * key using -[AVContentKeyRequest persistableContentKeyFromKeyVendorResponse:options:error:].
      * 
@@ -8442,8 +8288,6 @@ public final class AVFoundation {
     public static native String AVContentKeyRequestRequiresValidationDataInSecureTokenKey();
 
     /**
-     * [@constant] AVMediaCharacteristicContainsAlphaChannel
-     * 
      * A media characteristic that indicates that a track contains an alpha channel.
      * 
      * To determine whether alpha is straight or pre-multiplied, look for the format description extension with key
@@ -8457,8 +8301,6 @@ public final class AVFoundation {
     public static native String AVMediaCharacteristicContainsAlphaChannel();
 
     /**
-     * [@constant] AVMediaCharacteristicIsOriginalContent
-     * 
      * A media characteristic that indicates that a track or media selection option includes content that's marked by
      * the content author as original to the principal production of the media, as opposed to supplementary or
      * derivative content created by means of language translation or by other means.
@@ -8482,8 +8324,6 @@ public final class AVFoundation {
     public static native String AVMediaCharacteristicIsOriginalContent();
 
     /**
-     * [@constant] AVURLAssetAllowsExpensiveNetworkAccessKey
-     * 
      * Indicates whether network requests on behalf of this asset are allowed to use the expensive interface (e.g.
      * cellular, tethered, constrained).
      * 
@@ -8498,8 +8338,6 @@ public final class AVFoundation {
     public static native String AVURLAssetAllowsExpensiveNetworkAccessKey();
 
     /**
-     * [@constant] AVURLAssetAllowsConstrainedNetworkAccessKey
-     * 
      * Indicates whether network requests on behalf of this asset are allowed to use the constrained interface (e.g.
      * interfaces marked as being in data saver mode).
      * 
@@ -8514,8 +8352,6 @@ public final class AVFoundation {
     public static native String AVURLAssetAllowsConstrainedNetworkAccessKey();
 
     /**
-     * [@constant] AVAssetContainsFragmentsDidChangeNotification
-     * 
      * Posted after the value of @"containsFragments" has already been loaded and the AVFragmentedAsset is added to an
      * AVFragmentedAssetMinder, either when 1) fragments are detected in the asset on disk after it had previously
      * contained none or when 2) no fragments are detected in the asset on disk after it had previously contained one or
@@ -8530,8 +8366,6 @@ public final class AVFoundation {
     public static native String AVAssetContainsFragmentsDidChangeNotification();
 
     /**
-     * [@constant] AVAssetWasDefragmentedNotification
-     * 
      * Posted when the asset on disk is defragmented while an AVFragmentedAsset is being minded by an
      * AVFragmentedAssetMinder, but only if the defragmentation occurs after the status of the value
      * of @"canContainFragments" has reached AVKeyValueStatusLoaded.
@@ -8575,8 +8409,6 @@ public final class AVFoundation {
     public static native String AVAssetExportPresetHEVC3840x2160WithAlpha();
 
     /**
-     * [@constant] AVAssetDownloadTaskMediaSelectionPrefersMultichannelKey
-     * 
      * Download the specified media selections with or without support for multichannel playback.
      * The value for this key should be an NSNumber representing a BOOL.
      * 
@@ -8926,8 +8758,6 @@ public final class AVFoundation {
     public static native String AVMetadataIdentifierQuickTimeMetadataDetectedSalientObject();
 
     /**
-     * [@constant] AVMetadataIdentifierQuickTimeMetadataAutoLivePhoto
-     * 
      * A value of type kCMMetadataBaseDataType_UInt8 indicating whether this Live Photo movie was captured in "Auto"
      * mode.
      * 
@@ -8943,8 +8773,6 @@ public final class AVFoundation {
     public static native String AVMetadataIdentifierQuickTimeMetadataAutoLivePhoto();
 
     /**
-     * [@constant] AVMetadataIdentifierQuickTimeMetadataLivePhotoVitalityScore
-     * 
      * A value of type kCMMetadataBaseDataType_Float32.
      * 
      * Live Photo movies may be algorithmically scored from 0. to 1. on their level of vitality. A Live Photo movie with
@@ -8965,8 +8793,6 @@ public final class AVFoundation {
     public static native String AVMetadataIdentifierQuickTimeMetadataLivePhotoVitalityScore();
 
     /**
-     * [@constant] AVMetadataIdentifierQuickTimeMetadataLivePhotoVitalityScoringVersion
-     * 
      * A value of type kCMMetadataBaseDataType_UInt32.
      * 
      * The version of the algorithm that scored the Live Photo movie for vitality.
@@ -8979,8 +8805,6 @@ public final class AVFoundation {
     public static native String AVMetadataIdentifierQuickTimeMetadataLivePhotoVitalityScoringVersion();
 
     /**
-     * [@constant] AVMetadataIdentifierQuickTimeMetadataSpatialOverCaptureQualityScore
-     * 
      * A value of type kCMMetadataBaseDataType_Float32.
      * 
      * The video may be scored by a heuristic which considers factors such as exposure and focus. The value ranges from
@@ -8994,8 +8818,6 @@ public final class AVFoundation {
     public static native String AVMetadataIdentifierQuickTimeMetadataSpatialOverCaptureQualityScore();
 
     /**
-     * [@constant] AVMetadataIdentifierQuickTimeMetadataSpatialOverCaptureQualityScoringVersion
-     * 
      * A value of type kCMMetadataBaseDataType_UInt32.
      * 
      * The version of the algorithm that provided the spatial over capture quality score.
@@ -9122,15 +8944,13 @@ public final class AVFoundation {
     public static native String AVOutputSettingsPresetHEVC3840x2160WithAlpha();
 
     /**
-     * [@constant] AVPlayerAvailableHDRModesDidChangeNotification
-     * 
      * A notification that fires whenever availableHDRModes changes.
      * 
      * This notification fires when a value is added or removed from the list of availableHDRModes. This can be caused
      * by display connection/disconnection or resource changes.
      * 
      * API-Since: 11.2
-     * Deprecated-Since: 100000.0
+     * Deprecated-Since: 26.0
      */
     @Deprecated
     @NotNull
@@ -9162,8 +8982,6 @@ public final class AVFoundation {
     public static native String AVPlayerItemMediaSelectionDidChangeNotification();
 
     /**
-     * [@constant] AVSampleBufferRenderSynchronizerRateDidChangeNotification
-     * 
      * A notification that fires whenever the value of the "rate" property changes.
      * 
      * The rate can change as a result of setting the rate property, either by directly setting the property or calling
@@ -9181,8 +8999,6 @@ public final class AVFoundation {
     public static native String AVSampleBufferRenderSynchronizerRateDidChangeNotification();
 
     /**
-     * [@constant] eligibleForHDRPlaybackDidChangeNotification
-     * 
      * A notification that fires whenever eligibleForHDRPlayback changes.
      * 
      * This notification fires when eligibleForHDRPlayback changes. This can be caused by display
@@ -9197,8 +9013,6 @@ public final class AVFoundation {
     public static native String AVPlayerEligibleForHDRPlaybackDidChangeNotification();
 
     /**
-     * [@constant] AVMediaCharacteristicContainsHDRVideo
-     * 
      * A media characteristic that indicates that a track contains HDR video.
      * 
      * HDR video contains extended dynamic range that requires explicit support when compositing.
@@ -9214,8 +9028,6 @@ public final class AVFoundation {
     public static native String AVMediaCharacteristicContainsHDRVideo();
 
     /**
-     * [@constant] AVFileTypeProfileMPEG4AppleHLS
-     * 
      * Apple HTTP Live Streaming profile
      * 
      * The profile that is suitable for Apple HTTP Live Streaming.
@@ -9228,8 +9040,6 @@ public final class AVFoundation {
     public static native String AVFileTypeProfileMPEG4AppleHLS();
 
     /**
-     * [@constant] AVFileTypeProfileMPEG4CMAFCompliant
-     * 
      * CMAF compliant profile
      * 
      * The profile that is compliance with CMAF format.
@@ -9274,8 +9084,6 @@ public final class AVFoundation {
     public static native String AVMetadataQuickTimeMetadataKeyAccessibilityDescription();
 
     /**
-     * [@constant] AVAssetDownloadTaskMinimumRequiredPresentationSizeKey
-     * 
      * The lowest media presentation size greater than or equal to this value will be selected. If no suitable media
      * presentation size is found, the highest media presentation size will be selected.
      * The value for this key should be a NSValue of CGSize.
@@ -9295,8 +9103,6 @@ public final class AVFoundation {
     public static native String AVAssetDownloadTaskMinimumRequiredPresentationSizeKey();
 
     /**
-     * [@constant] AVAssetDownloadTaskPrefersHDRKey
-     * 
      * Download the specified media selections with or without HDR content.
      * The value for this key should be an NSNumber representing a BOOL.
      * 
@@ -9347,8 +9153,6 @@ public final class AVFoundation {
     public static native String AVMetadataIdentifierQuickTimeMetadataAccessibilityDescription();
 
     /**
-     * [@constant] AVMetadataIdentifierQuickTimeMetadataLocationHorizontalAccuracyInMeters
-     * 
      * A value of type kCMMetadataBaseDataType_Float32.
      * 
      * The horizontal accuracy of the provided location data (usually specified by
@@ -9386,8 +9190,6 @@ public final class AVFoundation {
     public static native String AVSemanticSegmentationMatteTypeGlasses();
 
     /**
-     * [@function] AVSampleBufferAttachContentKey
-     * 
      * Attaches an AVContentKey to a CMSampleBuffer for the purpose of content decryption.
      * 
      * The client is expected to attach AVContentKeys to CMSampleBuffers that have been created by the client for
@@ -9395,15 +9197,12 @@ public final class AVFoundation {
      * matches indications of suitability that are available to the client according to the content key system that's in
      * use.
      * 
-     * API-Since: 14.5
+     * - Parameter sbuf: The sample buffer to which the content key is to be attached.
+     * - Parameter contentKey: The content key to be attached.
+     * - Parameter outError: If the result is NO and errorOut is non-NULL, the location referenced by errorOut receives
+     * an instance of NSError that describes the reason for failure to attach the content key.
      * 
-     * @param sbuf
-     *                   The sample buffer to which the content key is to be attached.
-     * @param contentKey
-     *                   The content key to be attached.
-     * @param outError
-     *                   If the result is NO and errorOut is non-NULL, the location referenced by errorOut receives an
-     *                   instance of NSError that describes the reason for failure to attach the content key.
+     * API-Since: 14.5
      */
     @Generated
     @CFunction
@@ -9411,6 +9210,8 @@ public final class AVFoundation {
             @NotNull AVContentKey contentKey, @Nullable Ptr<NSError> outError);
 
     /**
+     * Indicates that the video range as SDR
+     * 
      * API-Since: 15.0
      */
     @Generated
@@ -9419,6 +9220,8 @@ public final class AVFoundation {
     public static native String AVVideoRangeSDR();
 
     /**
+     * Indicates that the video range as HLG
+     * 
      * API-Since: 15.0
      */
     @Generated
@@ -9427,6 +9230,8 @@ public final class AVFoundation {
     public static native String AVVideoRangeHLG();
 
     /**
+     * Indicates that the video range as PQ
+     * 
      * API-Since: 15.0
      */
     @Generated
@@ -9453,8 +9258,6 @@ public final class AVFoundation {
     public static native String AVVideoAppleProRAWBitDepthKey();
 
     /**
-     * [@constant] AVURLAssetURLRequestAttributionKey
-     * 
      * Specifies the attribution of the URLs requested by this asset.
      * 
      * Value is an NSNumber whose value is an NSURLRequestAttribution (see NSURLRequest.h).
@@ -9493,8 +9296,6 @@ public final class AVFoundation {
     public static native String AVAssetExportPresetAppleProRes4444LPCM();
 
     /**
-     * [@constant] AVAssetDownloadTaskPrefersLosslessAudioKey
-     * 
      * Download the specified media selections in lossless audio representation.
      * The value for this key should be an NSNumber representing a BOOL.
      * 
@@ -9547,8 +9348,6 @@ public final class AVFoundation {
     public static native String AVMovieShouldSupportAliasDataReferencesKey();
 
     /**
-     * [@constant] AVPlayerRateDidChangeNotification
-     * 
      * Indicates a player rate change.
      * 
      * Posted by the player when its rate changes. Similar to KVO of AVPlayer.rate, but providing additional information
@@ -9563,8 +9362,6 @@ public final class AVFoundation {
     public static native String AVPlayerRateDidChangeNotification();
 
     /**
-     * [@constant] AVPlayerRateDidChangeReasonKey
-     * 
      * Indicates a reason for the rate change notification.
      * 
      * The value corresponding to this key is of type AVPlayerRateDidChangeReason.
@@ -9578,8 +9375,6 @@ public final class AVFoundation {
     public static native String AVPlayerRateDidChangeReasonKey();
 
     /**
-     * [@constant] AVPlayerRateDidChangeOriginatingParticipantKey
-     * 
      * Indicates a rate change was caused by another participant connected through AVPlayerPlaybackCoordinator.
      * 
      * Informs the receiver of an AVPlayerRateDidChangeNotification about a rate change originated from another
@@ -9632,8 +9427,6 @@ public final class AVFoundation {
     public static native String AVPlayerRateDidChangeReasonAppBackgrounded();
 
     /**
-     * [@constant] AVPlayerWaitingForCoordinatedPlaybackReason
-     * 
      * Indicates that the player is waiting for another participant connected through its AVPlayerPlaybackCoordinator.
      * 
      * The player is waiting for playback because its connected AVPlayerPlaybackCoordinator requires information from
@@ -9648,8 +9441,6 @@ public final class AVFoundation {
     public static native String AVPlayerWaitingForCoordinatedPlaybackReason();
 
     /**
-     * [@constant] AVCoordinatedPlaybackSuspensionReasonAudioSessionInterrupted
-     * 
      * The participant's audio session was interrupted.
      * 
      * API-Since: 15.0
@@ -9661,8 +9452,6 @@ public final class AVFoundation {
     public static native String AVCoordinatedPlaybackSuspensionReasonAudioSessionInterrupted();
 
     /**
-     * [@constant] AVCoordinatedPlaybackSuspensionReasonStallRecovery
-     * 
      * The player is buffering data after a stall.
      * 
      * API-Since: 15.0
@@ -9674,8 +9463,6 @@ public final class AVFoundation {
     public static native String AVCoordinatedPlaybackSuspensionReasonStallRecovery();
 
     /**
-     * [@constant] AVCoordinatedPlaybackSuspensionReasonPlayingInterstitial
-     * 
      * The participant is presented with interstitial content instead of the main player.
      * 
      * API-Since: 15.0
@@ -9687,8 +9474,6 @@ public final class AVFoundation {
     public static native String AVCoordinatedPlaybackSuspensionReasonPlayingInterstitial();
 
     /**
-     * [@constant] AVCoordinatedPlaybackSuspensionReasonCoordinatedPlaybackNotPossible
-     * 
      * The participant cannot participate in coordinated playback.
      * 
      * API-Since: 15.0
@@ -9700,8 +9485,6 @@ public final class AVFoundation {
     public static native String AVCoordinatedPlaybackSuspensionReasonCoordinatedPlaybackNotPossible();
 
     /**
-     * [@constant] AVCoordinatedPlaybackSuspensionReasonUserActionRequired
-     * 
      * The participant's playback object is in a state that requires manual intervention by the user to resume playback.
      * 
      * API-Since: 15.0
@@ -9713,8 +9496,6 @@ public final class AVFoundation {
     public static native String AVCoordinatedPlaybackSuspensionReasonUserActionRequired();
 
     /**
-     * [@constant] AVCoordinatedPlaybackSuspensionReasonUserIsChangingCurrentTime
-     * 
      * The participant is actively changing current time.
      * 
      * API-Since: 15.0
@@ -9726,8 +9507,6 @@ public final class AVFoundation {
     public static native String AVCoordinatedPlaybackSuspensionReasonUserIsChangingCurrentTime();
 
     /**
-     * [@constant] AVPlaybackCoordinatorOtherParticipantsDidChangeNotification
-     * 
      * Posted by the playback coordinator when its otherParticipants property changes.
      * 
      * API-Since: 15.0
@@ -9739,8 +9518,6 @@ public final class AVFoundation {
     public static native String AVPlaybackCoordinatorOtherParticipantsDidChangeNotification();
 
     /**
-     * [@constant] AVPlaybackCoordinatorSuspensionReasonsDidChangeNotification
-     * 
      * Posted by the playback coordinator when its suspensionReasons property changes.
      * 
      * API-Since: 15.0
@@ -9752,8 +9529,6 @@ public final class AVFoundation {
     public static native String AVPlaybackCoordinatorSuspensionReasonsDidChangeNotification();
 
     /**
-     * [@constant] AVPlayerItemTimeJumpedOriginatingParticipantKey
-     * 
      * Indicates a time jump was caused by another participant connected through AVPlayerPlaybackCoordinator.
      * 
      * Informs the receiver of an AVPlayerItemTimeJumpedNotification that a time jump originated from another
@@ -9770,8 +9545,6 @@ public final class AVFoundation {
     public static native String AVPlayerItemTimeJumpedOriginatingParticipantKey();
 
     /**
-     * [@constant] AVPlayerInterstitialEventMonitorEventsDidChangeNotification
-     * 
      * A notification that's posted whenever the value of events of an AVPlayerInterstitialEventMonitor is changed.
      * 
      * API-Since: 15.0
@@ -9783,8 +9556,6 @@ public final class AVFoundation {
     public static native String AVPlayerInterstitialEventMonitorEventsDidChangeNotification();
 
     /**
-     * [@constant] AVPlayerInterstitialEventMonitorCurrentEventDidChangeNotification
-     * 
      * A notification that's posted whenever the currentEvent of an AVPlayerInterstitialEventMonitor changes.
      * 
      * API-Since: 15.0
@@ -9796,8 +9567,6 @@ public final class AVFoundation {
     public static native String AVPlayerInterstitialEventMonitorCurrentEventDidChangeNotification();
 
     /**
-     * [@constant] AVPlayerWaitingDuringInterstitialEventReason
-     * 
      * Indicates that the player is waiting for the completion of an interstitial event.
      * 
      * The player is waiting for playback because an interstitial event is currently in progress. Interstitial events
@@ -9851,8 +9620,6 @@ public final class AVFoundation {
     public static native String AVVideoTransferFunction_Linear();
 
     /**
-     * [@constant] AVURLAssetHTTPUserAgentKey
-     * 
      * Specifies the value of the User-Agent header to add to HTTP requests made by this asset.
      * 
      * Value is an NSString
@@ -9867,8 +9634,6 @@ public final class AVFoundation {
     public static native String AVURLAssetHTTPUserAgentKey();
 
     /**
-     * [@constant] AVURLAssetPrimarySessionIdentifierKey
-     * 
      * Specifies a UUID to append as the value of the query parameter "_HLS_primary_id" to selected HTTP requests issued
      * on behalf of the asset. Supported for HLS assets only.
      * 
@@ -9888,8 +9653,6 @@ public final class AVFoundation {
     public static native String AVURLAssetPrimarySessionIdentifierKey();
 
     /**
-     * [@constant] AVAssetPlaybackConfigurationOptionStereoVideo
-     * 
      * Indicates whether or not the asset can be rendered as stereo video.
      * 
      * Clients may use this property to determine whether to configure stereo video rendering.
@@ -9903,8 +9666,6 @@ public final class AVFoundation {
     public static native String AVAssetPlaybackConfigurationOptionStereoVideo();
 
     /**
-     * [@constant] AVAssetPlaybackConfigurationOptionStereoMultiviewVideo
-     * 
      * Indicates whether or not the asset can rendered as stereo video and is also in a multiview compression format.
      * 
      * Clients may use this property to determine whether to configure stereo video rendering.
@@ -9918,6 +9679,8 @@ public final class AVFoundation {
     public static native String AVAssetPlaybackConfigurationOptionStereoMultiviewVideo();
 
     /**
+     * No cue specified; event playback should start at event time (or date).
+     * 
      * API-Since: 16.0
      */
     @NotNull
@@ -9927,6 +9690,8 @@ public final class AVFoundation {
     public static native String AVPlayerInterstitialEventNoCue();
 
     /**
+     * Event playback should occur before starting primary playback, regardless of initial primary playback position.
+     * 
      * API-Since: 16.0
      */
     @NotNull
@@ -9936,6 +9701,9 @@ public final class AVFoundation {
     public static native String AVPlayerInterstitialEventJoinCue();
 
     /**
+     * Event playback should occur after primary playback ends without error, either at the end of the primary asset or
+     * at the client-specified forward playback end time.
+     * 
      * API-Since: 16.0
      */
     @NotNull
@@ -10107,8 +9875,6 @@ public final class AVFoundation {
     public static native String AVMediaTypeHaptic();
 
     /**
-     * [@constant] AVMediaCharacteristicEnhancesSpeechIntelligibility
-     * 
      * A media characteristic that indicates that a track or media selection option includes audio that has been
      * prepared or otherwise processed to heighten the intelligibility of speech.
      * 
@@ -10129,8 +9895,6 @@ public final class AVFoundation {
     public static native String AVMediaCharacteristicEnhancesSpeechIntelligibility();
 
     /**
-     * [@constant] AVMediaCharacteristicTactileMinimal
-     * 
      * A media characteristic that indicates that a track or media selection option includes haptic content that's
      * marked by the content author as providing minimal tactile stimulation.
      * 
@@ -10150,8 +9914,6 @@ public final class AVFoundation {
     public static native String AVMediaCharacteristicTactileMinimal();
 
     /**
-     * [@constant] AVMediaCharacteristicContainsStereoMultiviewVideo
-     * 
      * A media characteristic that indicates that a track contains stereoscopic video captured in a multiview
      * compression format.
      * 
@@ -10173,8 +9935,6 @@ public final class AVFoundation {
     public static native String AVMediaCharacteristicContainsStereoMultiviewVideo();
 
     /**
-     * [@constant] AVMediaCharacteristicCarriesVideoStereoMetadata
-     * 
      * A media characteristic that indicates that the stereoscopic video track carries additional information related to
      * the stereoscopic video.
      * 
@@ -10193,8 +9953,6 @@ public final class AVFoundation {
     public static native String AVMediaCharacteristicCarriesVideoStereoMetadata();
 
     /**
-     * [@constant] AVMediaCharacteristicIndicatesHorizontalFieldOfView
-     * 
      * A media characteristic that indicates the video track carries information related to the horizontal field of
      * view.
      * 
@@ -10213,8 +9971,6 @@ public final class AVFoundation {
     public static native String AVMediaCharacteristicIndicatesHorizontalFieldOfView();
 
     /**
-     * [@constant] AVFileTypeAHAP
-     * 
      * A UTI for the Apple Haptics Audio Pattern file format.
      * 
      * The value of this UTI is @"public.haptics-content".
@@ -10238,8 +9994,6 @@ public final class AVFoundation {
     public static native String AVVideoDecompressionPropertiesKey();
 
     /**
-     * [@constant] AVURLAssetOverrideMIMETypeKey
-     * 
      * Indicates the MIME type that should be used to identify the format of the media resource.
      * 
      * When a value for this key is provided, only the specified MIME type is considered in determining how to handle or
@@ -10273,6 +10027,8 @@ public final class AVFoundation {
     public static native String AVAssetExportPresetMVHEVC1440x1440();
 
     /**
+     * Default. Pass the HDR metadata through, if present on the composed frame.
+     * 
      * API-Since: 17.0
      */
     @Generated
@@ -10282,6 +10038,10 @@ public final class AVFoundation {
     public static native String AVVideoCompositionPerFrameHDRDisplayMetadataPolicyPropagate();
 
     /**
+     * AVVideoComposition may generate HDR metadata and attach it to the rendered frame. HDR metadata generation is
+     * influenced by the color space of the rendered frame, device, and HDR metadata format platform support. Any
+     * previously attached HDR metadata of the same metadata format will be overwritten.
+     * 
      * API-Since: 17.0
      */
     @Generated
@@ -10309,8 +10069,6 @@ public final class AVFoundation {
     public static native String AVOutputSettingsPresetMVHEVC1440x1440();
 
     /**
-     * [@constant] AVPlayerInterstitialEventMonitorAssetListResponseStatusDidChangeNotification
-     * 
      * A notification that is posted whenever an AVPlayerInterstitialEvent's asset list response status changes.
      * 
      * Carries a userInfo dictionary that can contain the following keys and values:
@@ -10331,8 +10089,6 @@ public final class AVFoundation {
     public static native String AVPlayerInterstitialEventMonitorAssetListResponseStatusDidChangeNotification();
 
     /**
-     * [@constant] AVPlayerInterstitialEventMonitorAssetListResponseStatusDidChangeEventKey
-     * 
      * The dictionary key for the AVPlayerInterstitial event that had its asset list response status changed in the
      * payload of the AVPlayerInterstitialEventMonitorAssetListResponseStatusDidChangeNotification.
      * 
@@ -10347,8 +10103,6 @@ public final class AVFoundation {
     public static native String AVPlayerInterstitialEventMonitorAssetListResponseStatusDidChangeEventKey();
 
     /**
-     * [@constant] AVPlayerInterstitialEventMonitorAssetListResponseStatusDidChangeStatusKey
-     * 
      * The dictionary key for the asset list response status in the payload of the
      * AVPlayerInterstitialEventMonitorAssetListResponseStatusDidChangeNotification.
      * 
@@ -10363,8 +10117,6 @@ public final class AVFoundation {
     public static native String AVPlayerInterstitialEventMonitorAssetListResponseStatusDidChangeStatusKey();
 
     /**
-     * [@constant] AVPlayerInterstitialEventMonitorAssetListResponseStatusDidChangeErrorKey
-     * 
      * The dictionary key for the NSError in the payload of the
      * AVPlayerInterstitialEventMonitorAssetListResponseStatusDidChangeNotification.
      * 
@@ -10530,8 +10282,8 @@ public final class AVFoundation {
      * Otherwise, external cameras on Mac Catalyst report that their device type is
      * AVCaptureDeviceTypeBuiltInWideAngleCamera.
      * 
-     * On visionOS, your app must have the `com.apple.developer.avfoundation.uvc-device-access` entitlement in order to
-     * discover and use devices of type `AVCaptureDeviceTypeExternal`.
+     * Prior to visionOS 3.0, your app must have the `com.apple.developer.avfoundation.uvc-device-access` entitlement in
+     * order to discover and use devices of type `AVCaptureDeviceTypeExternal` on visionOS.
      * 
      * API-Since: 17.0
      */
@@ -10632,8 +10384,6 @@ public final class AVFoundation {
             @ByValue AVCaptionDimension height);
 
     /**
-     * [@constant] AVMediaTypeAuxiliaryPicture
-     * 
      * This media type is used only to identify the track type. An Auxiliary Picture track is not intended to be
      * displayed; as such, the track_in_movie flag in TrackHeaderBox of these tracks will be 0.
      * A track with this media type contain video samples the media type of the format description of which is
@@ -10647,8 +10397,6 @@ public final class AVFoundation {
     public static native String AVMediaTypeAuxiliaryPicture();
 
     /**
-     * [@constant] AVFileTypeAppleiTT
-     * 
      * A UTI for the Apple iTT caption file format
      * 
      * The value of this UTI is @"com.apple.itunes-timed-text".
@@ -10662,8 +10410,6 @@ public final class AVFoundation {
     public static native String AVFileTypeAppleiTT();
 
     /**
-     * [@constant] AVFileTypeSCC
-     * 
      * A UTI for the Scenarist closed caption file format
      * 
      * The value of this UTI is @"com.scenarist.closed-caption".
@@ -10677,8 +10423,6 @@ public final class AVFoundation {
     public static native String AVFileTypeSCC();
 
     /**
-     * [@constant] AVMetadataQuickTimeMetadataKeyFullFrameRatePlaybackIntent
-     * 
      * A value of type kCMMetadataBaseDataType_UInt8 indicating whether this movie is intended to be played back at the
      * full frame rate (1), or at a slow motion rate (0).
      * 
@@ -10741,8 +10485,6 @@ public final class AVFoundation {
     public static native String AVAssetImageGeneratorDynamicRangePolicyMatchSource();
 
     /**
-     * [@constant] AVAssetPlaybackConfigurationOptionSpatialVideo
-     * 
      * Indicates whether or not the asset can be rendered as spatial video.
      * 
      * Clients may use this property to determine whether to configure spatial video rendering.
@@ -10841,8 +10583,6 @@ public final class AVFoundation {
     public static native String AVCaptionConversionAdjustmentTypeTimeRange();
 
     /**
-     * [@constant] AVMetadataIdentifierQuickTimeMetadataFullFrameRatePlaybackIntent
-     * 
      * A value of type kCMMetadataBaseDataType_UInt8 indicating whether this movie is intended to be played back at the
      * full frame rate (1), or at a slow motion rate (0).
      * 
@@ -10948,4 +10688,900 @@ public final class AVFoundation {
     @MappedReturn(ObjCStringMapper.class)
     @NotNull
     public static native String AVSpatialCaptureDiscomfortReasonSubjectTooClose();
+
+    /**
+     * Creates a sample buffer containing Timecode Media Description metadata for integration with a video track.
+     * 
+     * - Parameter timecode: The ``AVCaptureTimecode`` instance providing the timecode details to encode.
+     * - Parameter presentationTimeStamp: The presentation time stamp that determines the exact moment in the media
+     * timeline where the metadata should be applied. It is embedded in the sample timing info (``CMSampleTimingInfo``)
+     * and ensures that the packaged metadata synchronizes accurately with the corresponding video frame.
+     * - Returns: A ``CMSampleBufferRef`` with the encoded Timecode Media Description metadata for video
+     * synchronization, or `nil` if sample buffer creation fails.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native CMSampleBufferRef AVCaptureTimecodeCreateMetadataSampleBufferAssociatedWithPresentationTimeStamp(
+            @ByValue AVCaptureTimecode timecode, @ByValue CMTime presentationTimeStamp);
+
+    /**
+     * Creates a sample buffer containing Timecode Media Description metadata for a specified duration.
+     * 
+     * - Parameter timecode: The ``AVCaptureTimecode`` instance providing the timecode details for the metadata sample.
+     * - Parameter duration: The duration that the metadata sample buffer should represent.
+     * - Returns: A ``CMSampleBufferRef`` with encoded Timecode Media Description metadata for the given duration, or
+     * `nil` if sample buffer creation fails.
+     * 
+     * Use this function for scenarios where timecode metadata needs to span a custom interval (not just a single
+     * frame), such as non-frame-accurate workflows or for describing a segment of media with a consistent timecode.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native CMSampleBufferRef AVCaptureTimecodeCreateMetadataSampleBufferForDuration(
+            @ByValue AVCaptureTimecode timecode, @ByValue CMTime duration);
+
+    /**
+     * Generates a new timecode by adding a specified number of frames to the given timecode, handling overflow for
+     * seconds, minutes, and hours.
+     * 
+     * - Parameter timecode: The original ``AVCaptureTimecode`` to be incremented.
+     * - Parameter framesToAdd: The number of frames to add to the timecode.
+     * - Returns: A new ``AVCaptureTimecode`` struct with the updated time values after adding the specified frames.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    @ByValue
+    public static native AVCaptureTimecode AVCaptureTimecodeAdvancedByFrames(@ByValue AVCaptureTimecode timecode,
+            long framesToAdd);
+
+    /**
+     * Value is an Boolean indicating whether the user's deviceID contained in the SPC blob during FairPlay key exchange
+     * should be randomized using a system generated seed
+     * 
+     * Content providers use the SPC to distinguish the playback device from other devices, typically to enforce
+     * per-screen business rule limits.
+     * If the app developer, in cooperation with the content vendor, does not require to distinguish the playback
+     * device, they can further enhance user
+     * privacy by making this identifier non-constant, using this option.
+     * In either case, apps are not allowed to store or use the FairPlay anonymized device ID for anything other than to
+     * enforce business rule limits.
+     * App developers must use the AppTrackingTransparency framework to disclose to users if the application or the
+     * related FairPlay Key Server collect
+     * data about end users and share it with other companies for purposes of tracking across apps and web sites.
+     * When true, the system generates a random seed with which the device id will be randomized. To override the seed
+     * used; use this property in conjunction with AVContentKeyRequestRandomDeviceIdentifierSeedKey
+     * to provide a seed generated by your application.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVContentKeyRequestShouldRandomizeDeviceIdentifierKey();
+
+    /**
+     * Value is an NSData containing a 16-byte seed to randomize the user's deviceID contained in the SPC blob during
+     * FairPlay key exchange
+     * 
+     * This property must be used in conjunction with AVContentKeyRequestShouldRandomizeDeviceIdentifierKey. Use a RND
+     * function to generate a 16 byte seed.
+     * This seed will be used to randomize the user's anonymized device ID if
+     * AVContentKeyRequestShouldRandomizeDeviceIdentifierKey is true.
+     * Content providers use the SPC to distinguish the playback device from other devices, typically to enforce
+     * per-screen business rule limits.
+     * If the app developer, in cooperation with the content vendor, does not require to distinguish the playback
+     * device, they can further enhance user
+     * privacy by making this identifier non-constant, using this option.
+     * In either case, apps are not allowed to store or use the FairPlay anonymized device ID for anything other than to
+     * enforce business rule limits.
+     * App developers must use the AppTrackingTransparency framework to disclose to users if the application or the
+     * related FairPlay Key Server collect
+     * data about end users and share it with other companies for purposes of tracking across apps and web sites.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVContentKeyRequestRandomDeviceIdentifierSeedKey();
+
+    /**
+     * A media characteristic that indicates the video track carries information related to how it should be projected
+     * for display.
+     * 
+     * This media characteristic is currently synthesized if the CMVideoFormatDescription specifies a non-rectilinear
+     * projection. To determine which kind of projection is indicated, look for the format description extension with
+     * key kCMFormatDescriptionExtension_ProjectionKind.
+     * The value of this characteristic is @“public.indicates-non-rectilinear-projection".
+     * Note for content authors: the presence of this characteristic is strictly inferred from the format description of
+     * the associated track.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMediaCharacteristicIndicatesNonRectilinearProjection();
+
+    /**
+     * A media characteristic that indicates that a track was generated in an automated fashion by a machine.
+     * 
+     * This media characteristic can be used to distinguish machine generated content from human authored content.
+     * The value of this characteristic is @“public.machine-generated".
+     * 
+     * Note for content authors: for QuickTime movie and .m4v files and for HTTP Live Streaming, a media option is
+     * considered to have the characteristic AVMediaCharacteristicIsOriginalContent only if it's explicitly tagged with
+     * the characteristic.
+     * See the discussion of the tagging of tracks with media characteristics below.
+     * 
+     * Also see -[AVAssetTrack hasMediaCharacteristic:] and -[AVMediaSelectionOption hasMediaCharacteristic:].
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMediaCharacteristicMachineGenerated();
+
+    /**
+     * A UTI for the QuickTime audio file format
+     * 
+     * The value of this UTI is @"com.apple.quicktime-audio".
+     * Files are identified with the .qta extension.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVFileTypeQuickTimeAudio();
+
+    /**
+     * A UTI for the Digital Imaging and Communications in Medicine (DICOM) file format.
+     * 
+     * The value of this UTI is @"org.nema.dicom".
+     * Files are identified with the .dcm extension.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVFileTypeDICOM();
+
+    /**
+     * A value of type `kCMMetadataBaseDataType_UInt8` indicating whether this movie is intended as a Cinematic Video
+     * (1) or not (0).
+     * 
+     * This movie-level metadata is automatically added (with a value of 1) to a movie recorded using the Cinematic
+     * Video API. Clients can override it with a value of 0 to signal that this movie is not to be treated as a
+     * Cinematic Video by Apple's software like Photos.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataQuickTimeMetadataKeyCinematicVideoIntent();
+
+    /**
+     * A value of type kCMMetadataBaseDataType_UTF8 indicating the sensitivity of the camera to light in terms of ISO
+     * exposure index (e.g. "800"). See SMPTE RDD 18.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataQuickTimeMetadataKeyCameraISOSensitivity();
+
+    /**
+     * A value of type kCMMetadataBaseDataType_UTF8 indicating the white balance value defined by the temperature in
+     * Kelvin units (e.g. "5500K" or "5500"). See SMPTE RDD 18.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataQuickTimeMetadataKeyCameraWhiteBalance();
+
+    /**
+     * A value of type kCMMetadataBaseDataType_RawData indicating the reference white balance multiplication factor data
+     * for ProRes RAW.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataQuickTimeMetadataKeyWhiteBalanceByCCTWhiteBalanceFactors();
+
+    /**
+     * A value of type kCMMetadataBaseDataType_RawData indicating the reference color translation matrix data for ProRes
+     * RAW.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataQuickTimeMetadataKeyWhiteBalanceByCCTColorMatrices();
+
+    /**
+     * A value of type kCMMetadataBaseDataType_UTF8 indicating the exposure period expressed as an angle in minutes
+     * (1/60 degree) (e.g. "21600" or "360.00deg"").
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataQuickTimeMetadataKeyCameraShutterSpeedAngle();
+
+    /**
+     * A value of type kCMMetadataBaseDataType_UTF8 indicating the exposure period expressed as a time per one
+     * frame/field period in seconds.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataQuickTimeMetadataKeyCameraShutterSpeedTime();
+
+    /**
+     * A value of type kCMMetadataBaseDataType_UTF8 indicating measure of the amount of light transmitted through the
+     * lens. It is the focal length divided by the effective lens aperture diameter (e.g. "F2.8" or "2.8").
+     * 
+     * This is track-level metadata for video track that is associated with the camera.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataQuickTimeMetadataKeyCameraLensIrisFNumber();
+
+    /**
+     * A value of type kCMMetadataBaseDataType_UTF8 indicating the lens model (e.g. "iPhone 16 Pro back camera 6.765mm
+     * f/1.78").
+     * 
+     * This is track-level metadata for video track that is associated with the camera.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataQuickTimeMetadataKeyCameraLensModel();
+
+    /**
+     * A value of type kCMMetadataBaseDataType_UTF8 indicating focal length normalized to the 35mm film equivalent value
+     * (e.g. "50.00mm").
+     * 
+     * This is track-level metadata for video track that is associated with the camera.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataQuickTimeMetadataKeyCameraFocalLength35mmEquivalent();
+
+    /**
+     * @"aprn"
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVVideoCodecTypeAppleProResRAW();
+
+    /**
+     * @"aprh"
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVVideoCodecTypeAppleProResRAWHQ();
+
+    /**
+     * Indicates whether additional projected media signaling in the asset should be parsed and resolved as format
+     * description extensions.
+     * 
+     * Default is NO.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVURLAssetShouldParseExternalSphericalTagsKey();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVAssetExportPresetHEVC4320x2160();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVAssetExportPresetHEVC7680x4320();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVAssetExportPresetMVHEVC4320x4320();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVAssetExportPresetMVHEVC7680x7680();
+
+    /**
+     * Indicates an association between a metadata track and another track where the metadata provides additional
+     * information for rendering of that track.
+     * 
+     * This track association is not symmetric; when used with -[AVAssetWriterInput
+     * addTrackAssociationWithTrackOfInput:type:], the receiver should be an instance of AVAssetWriterInput with
+     * mediaType, AVMediaTypeMetadata, while the input parameter should be an instance of AVAssetWriterInput for the
+     * target track that would be rendered (for example, a video track).
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVTrackAssociationTypeRenderMetadataSource();
+
+    /**
+     * Indicates that there may be large segments of time without any media data from this track. When mediaDataLocation
+     * is set to this value, AVAssetWriter will interleave the media data, but will not wait for media data from this
+     * track to achieve tight interleaving with other tracks.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVAssetWriterInputMediaDataLocationSparselyInterleavedWithMainMediaData();
+
+    /**
+     * Indicates whether the asset calls for the use of a non-rectilinear projection for rendering video.
+     * 
+     * Clients may use this property to determine whether to configure a non-rectilinear projection when displaying
+     * video.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVAssetPlaybackConfigurationOptionNonRectilinearProjection();
+
+    /**
+     * A value of type `kCMMetadataBaseDataType_UInt8` indicating whether this movie is intended as a Cinematic Video
+     * (1) or not (0).
+     * 
+     * This movie-level metadata is automatically added (with a value of 1) to a movie recorded using the Cinematic
+     * Video API. Clients can override it with a value of 0 to signal that this movie is not to be treated as a
+     * Cinematic Video by Apple's software like Photos.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataIdentifierQuickTimeMetadataCinematicVideoIntent();
+
+    /**
+     * A value of type kCMMetadataBaseDataType_UTF8 indicating the sensitivity of the camera to light in terms of ISO
+     * exposure index (e.g. "800"). See SMPTE RDD 18.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataIdentifierQuickTimeMetadataCameraISOSensitivity();
+
+    /**
+     * A value of type kCMMetadataBaseDataType_UTF8 indicating the white balance value defined by the temperature in
+     * Kelvin units (e.g. "5500K" or "5500"). See SMPTE RDD 18.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataIdentifierQuickTimeMetadataCameraWhiteBalance();
+
+    /**
+     * A value of type kCMMetadataBaseDataType_RawData indicating the reference white balance multiplication factor data
+     * for ProRes RAW.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataIdentifierQuickTimeMetadataWhiteBalanceByCCTWhiteBalanceFactors();
+
+    /**
+     * A value of type kCMMetadataBaseDataType_RawData indicating the reference color translation matrix data for ProRes
+     * RAW.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataIdentifierQuickTimeMetadataWhiteBalanceByCCTColorMatrices();
+
+    /**
+     * A value of type kCMMetadataBaseDataType_UTF8 indicating the exposure period expressed as an angle in minutes
+     * (1/60 degree) (e.g. "21600" or "360.00deg"").
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataIdentifierQuickTimeMetadataCameraShutterSpeedAngle();
+
+    /**
+     * A value of type kCMMetadataBaseDataType_UTF8 indicating the exposure period expressed as a time per one
+     * frame/field period in seconds.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataIdentifierQuickTimeMetadataCameraShutterSpeedTime();
+
+    /**
+     * A value of type kCMMetadataBaseDataType_UTF8 indicating measure of the amount of light transmitted through the
+     * lens. It is the focal length divided by the effective lens aperture diameter (e.g. "F2.8" or "2.8").
+     * 
+     * This is track-level metadata for video track that is associated with the camera.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataIdentifierQuickTimeMetadataCameraLensIrisFNumber();
+
+    /**
+     * A value of type kCMMetadataBaseDataType_UTF8 indicating the lens model (e.g. "iPhone 16 Pro back camera 6.765mm
+     * f/1.78").
+     * 
+     * This is track-level metadata for video track that is associated with the camera.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataIdentifierQuickTimeMetadataCameraLensModel();
+
+    /**
+     * A value of type kCMMetadataBaseDataType_UTF8 indicating focal length normalized to the 35mm film equivalent value
+     * (e.g. "50.00mm").
+     * 
+     * This is track-level metadata for video track that is associated with the camera.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataIdentifierQuickTimeMetadataCameraFocalLength35mmEquivalent();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVOutputSettingsPresetHEVC4320x2160();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVOutputSettingsPresetHEVC7680x4320();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVOutputSettingsPresetMVHEVC4320x4320();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVOutputSettingsPresetMVHEVC7680x7680();
+
+    /**
+     * A notification that's posted whenever the currentEventSkippableState of an AVPlayerInterstitialEventMonitor
+     * changes.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVPlayerInterstitialEventMonitorCurrentEventSkippableStateDidChangeNotification();
+
+    /**
+     * The dictionary key for the AVPlayerInterstitial event that had its skippable event state changed in the payload
+     * of the AVPlayerInterstitialEventMonitorCurrentEventSkippableStateDidChangeNotification.
+     * 
+     * The value corresponding to this key is of type AVPlayerInterstitialEvent.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVPlayerInterstitialEventMonitorCurrentEventSkippableStateDidChangeEventKey();
+
+    /**
+     * The dictionary key for the skippable event state in the payload of the
+     * AVPlayerInterstitialEventMonitorCurrentEventSkippableStateDidChangeNotification.
+     * 
+     * The value corresponding to this key is an NSNumber containing type AVPlayerInterstitialEventSkippableEventState.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVPlayerInterstitialEventMonitorCurrentEventSkippableStateDidChangeStateKey();
+
+    /**
+     * The dictionary key for the skip label of the event in the payload of the
+     * AVPlayerInterstitialEventMonitorCurrentEventSkippableStateDidChangeNotification.
+     * 
+     * The value corresponding to this key is an NSString that's the localized skip label if a localizedStringsBundle is
+     * set on the AVPlayerInterstitialEventController and a skipControlLocalizedLabelBundleKey on the
+     * AVPlayerInterstitialEvent whose skippable event state changed. Note that this key will not be present if there is
+     * no localizedStringsBundle set, or if the currentEventSkippableState changed to
+     * AVPlayerInterstitialEventSkippableEventStateNotSkippable.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVPlayerInterstitialEventMonitorCurrentEventSkippableStateDidChangeSkipControlLabelKey();
+
+    /**
+     * A notification that's posted whenever an event was skipped via skip control.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVPlayerInterstitialEventMonitorCurrentEventSkippedNotification();
+
+    /**
+     * The dictionary key for the AVPlayerInterstitialEvent that was skipped in the payload of the
+     * AVPlayerInterstitialEventMonitorCurrentEventSkippedNotification.
+     * 
+     * The value corresponding to this key is of type AVPlayerInterstitialEvent.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVPlayerInterstitialEventMonitorCurrentEventSkippedEventKey();
+
+    /**
+     * A notification that is posted whenever an AVPlayerInterstitialEvent with loaded assets was unscheduled prior to
+     * playing.
+     * 
+     * Carries a userInfo dictionary that can contain the following keys and values:
+     * 1. AVPlayerInterstitialEventMonitorInterstitialEventWasUnscheduledEventKey, with a value that indicates which
+     * AVPlayerInterstitialEvent was unscheduled.
+     * 2. AVPlayerInterstitialEventMonitorInterstitialEventWasUnscheduledErrorKey, with an NSError value. This key will
+     * only be present if the AVPlayerInterstitialEvent was unscheduled due to an error.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVPlayerInterstitialEventMonitorInterstitialEventWasUnscheduledNotification();
+
+    /**
+     * The dictionary key for the AVPlayerInterstitialEvent that was unscheduled in the payload of the
+     * AVPlayerInterstitialEventMonitorInterstitialEventWasUnscheduledNotification.
+     * 
+     * The value corresponding to this key is of type AVPlayerInterstitialEvent.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVPlayerInterstitialEventMonitorInterstitialEventWasUnscheduledEventKey();
+
+    /**
+     * The dictionary key to indicate whether the event that was unscheduled was due to an error.
+     * 
+     * The value corresponding to this key is of type NSError. This key only exists in the payload of
+     * AVPlayerInterstitialEventMonitorInterstitialEventWasUnscheduledNotification if the interstitial event was
+     * unscheduled due to an error.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVPlayerInterstitialEventMonitorInterstitialEventWasUnscheduledErrorKey();
+
+    /**
+     * A notification that is posted whenever an AVPlayerInterstitialEvent finished playing.
+     * 
+     * Carries a userInfo dictionary that can contain the following keys and values:
+     * 1. AVPlayerInterstitialEventMonitorInterstitialEventDidFinishEventKey, with a value that indicates the
+     * AVPlayerInterstitialEvent that finished playing.
+     * 2. AVPlayerInterstitialEventMonitorInterstitialEventDidFinishPlayoutTimeKey, with a value that indicates how long
+     * that AVPlayerInterstitialEvent played out for.
+     * 3. AVPlayerInterstitialEventMonitorInterstitialEventDidFinishDidPlayEntireEventKey, with a value that indicates
+     * whether the AVPlayerInterstitialEvent was fully played out.
+     * 
+     * Note that cancelling an AVPlayerInterstitialEvent after playback started but prior to playback finishing will
+     * also trigger this event.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVPlayerInterstitialEventMonitorInterstitialEventDidFinishNotification();
+
+    /**
+     * The dictionary key for the AVPlayerInterstitialEvent that finished playing in the payload of the
+     * AVPlayerInterstitialEventMonitorInterstitialEventDidFinishNotification.
+     * 
+     * The value corresponding to this key is of type AVPlayerInterstitialEvent.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVPlayerInterstitialEventMonitorInterstitialEventDidFinishEventKey();
+
+    /**
+     * The dictionary key for the playout time of the event that finished playing in the payload of the
+     * AVPlayerInterstitialEventMonitorInterstitialEventDidFinishNotification.
+     * 
+     * The value corresponding to this key is of type CMTime as a NSDictionary.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVPlayerInterstitialEventMonitorInterstitialEventDidFinishPlayoutTimeKey();
+
+    /**
+     * The dictionary key to indicate whether the event that finished playing was fully played out in the payload of the
+     * AVPlayerInterstitialEventMonitorInterstitialEventDidFinishNotification.
+     * 
+     * The value corresponding to this key is of type NSNumber with a BOOL value.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVPlayerInterstitialEventMonitorInterstitialEventDidFinishDidPlayEntireEventKey();
+
+    /**
+     * Temperature and tint values ideal for scenes illuminated with a tungsten light source.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native AVCaptureWhiteBalanceTemperatureAndTintValues AVCaptureWhiteBalanceTemperatureAndTintValuesTungsten();
+
+    /**
+     * Temperature and tint values ideal for scenes illuminated with a fluorescent light source.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native AVCaptureWhiteBalanceTemperatureAndTintValues AVCaptureWhiteBalanceTemperatureAndTintValuesFluorescent();
+
+    /**
+     * Temperature and tint values ideal for scenes illuminated with natural daylight.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native AVCaptureWhiteBalanceTemperatureAndTintValues AVCaptureWhiteBalanceTemperatureAndTintValuesDaylight();
+
+    /**
+     * Temperature and tint values ideal for scenes illuminated with natural cloudy daylight.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native AVCaptureWhiteBalanceTemperatureAndTintValues AVCaptureWhiteBalanceTemperatureAndTintValuesCloudy();
+
+    /**
+     * Temperature and tint values ideal for scenes illuminated with daylight but in heavy shade.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native AVCaptureWhiteBalanceTemperatureAndTintValues AVCaptureWhiteBalanceTemperatureAndTintValuesShadow();
+
+    /**
+     * The light level of the current scene is insufficient for the current set of features to function optimally.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVCaptureSceneMonitoringStatusNotEnoughLight();
+
+    /**
+     * An aspect ratio of 1x1.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVCaptureAspectRatio1x1();
+
+    /**
+     * An aspect ratio of 16x9.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVCaptureAspectRatio16x9();
+
+    /**
+     * An aspect ratio of 9x16.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVCaptureAspectRatio9x16();
+
+    /**
+     * An aspect ratio of 4x3.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVCaptureAspectRatio4x3();
+
+    /**
+     * An aspect ratio of 3x4.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVCaptureAspectRatio3x4();
+
+    /**
+     * An identifier for an instance of a cat head object.
+     * 
+     * ``AVMetadataCatHeadObject`` objects return this constant as their type.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVMetadataObjectTypeCatHead();
+
+    /**
+     * An identifier for an instance of a dog head object.
+     * 
+     * ``AVMetadataDogHeadObject`` objects return this constant as their type.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVMetadataObjectTypeDogHead();
 }

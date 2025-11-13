@@ -276,4 +276,16 @@ public class AVAudioSessionPortDescription extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * An optional port extension that describes capabilities relevant to Bluetooth microphone ports.
+     * 
+     * This property is optional and will be `nil` for all ports for which this capability set doesn't apply.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("bluetoothMicrophoneExtension")
+    @Nullable
+    public native AVAudioSessionPortExtensionBluetoothMicrophone bluetoothMicrophoneExtension();
 }

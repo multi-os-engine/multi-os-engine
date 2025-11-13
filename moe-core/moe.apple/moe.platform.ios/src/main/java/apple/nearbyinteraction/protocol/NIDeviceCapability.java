@@ -51,4 +51,13 @@ public interface NIDeviceCapability {
     @Generated
     @Selector("supportsExtendedDistanceMeasurement")
     boolean supportsExtendedDistanceMeasurement();
+
+    /**
+     * Whether or not this device is capable of participating in a nearby interaction DL-TDOA ranging.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("supportsDLTDOAMeasurement")
+    boolean supportsDLTDOAMeasurement();
 }

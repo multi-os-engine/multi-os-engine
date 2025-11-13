@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.coreaudiotypes.struct.AudioStreamPacketDependencyDescription;
+import org.moe.natj.general.ann.UncertainReturn;
 
 /**
  * AVAudioCompressedBuffer
@@ -312,4 +314,19 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] packetDependencies
+     * 
+     * Access the buffer's array of packet dependencies, if any.
+     * 
+     * If the format doesn't employ packet dependencies, this will be nil.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("packetDependencies")
+    @UncertainReturn("Options: reference, array Fallback: reference")
+    @Nullable
+    public native AudioStreamPacketDependencyDescription packetDependencies();
 }

@@ -41,6 +41,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uniformtypeidentifiers.UTType;
 
 /**
  * API-Since: 9.0
@@ -203,11 +204,11 @@ public class PHAssetResourceCreationOptions extends NSObject implements NSCopyin
     public native void setShouldMoveFile(boolean value);
 
     /**
-     * The uniform type identifier for the resource. If not specified, one will be inferred from the
-     * PHAssetResourceType.
-     * 
      * API-Since: 9.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use contentType instead
      */
+    @Deprecated
     @Generated
     @Selector("setUniformTypeIdentifier:")
     public native void setUniformTypeIdentifier(@Nullable String value);
@@ -224,11 +225,11 @@ public class PHAssetResourceCreationOptions extends NSObject implements NSCopyin
     public native boolean shouldMoveFile();
 
     /**
-     * The uniform type identifier for the resource. If not specified, one will be inferred from the
-     * PHAssetResourceType.
-     * 
      * API-Since: 9.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use contentType instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("uniformTypeIdentifier")
@@ -238,4 +239,25 @@ public class PHAssetResourceCreationOptions extends NSObject implements NSCopyin
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The type of data being provided for this asset resource. If not specified, one will be inferred from the
+     * PHAssetResourceType or file URL extension (if provided).
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("contentType")
+    @Nullable
+    public native UTType contentType();
+
+    /**
+     * The type of data being provided for this asset resource. If not specified, one will be inferred from the
+     * PHAssetResourceType or file URL extension (if provided).
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setContentType:")
+    public native void setContentType(@Nullable UTType value);
 }

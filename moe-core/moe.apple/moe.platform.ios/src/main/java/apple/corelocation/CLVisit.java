@@ -17,7 +17,6 @@ limitations under the License.
 package apple.corelocation;
 
 import apple.NSObject;
-import apple.corelocation.struct.CLLocationCoordinate2D;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -47,8 +46,15 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.corelocation.struct.CLLocationCoordinate2D;
 
 /**
+ * CLVisit
+ * 
+ * Discussion
+ * An instance of this class represents a possibly open-ended event
+ * during which the device was at the specified coordinate.
+ * 
  * API-Since: 8.0
  */
 @Generated

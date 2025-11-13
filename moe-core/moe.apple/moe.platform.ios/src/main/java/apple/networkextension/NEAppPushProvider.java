@@ -276,4 +276,19 @@ public class NEAppPushProvider extends NEProvider {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * unmatchEthernet
+     * 
+     * This method is called by the provider when it does not require runtime while the device is connected to the
+     * current Ethernet network.
+     * This method is applicable only when NEAppPushManager has set matchEthernet property to YES and the provider is
+     * running because the device is connected to an
+     * Ethernet network.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("unmatchEthernet")
+    public native void unmatchEthernet();
 }

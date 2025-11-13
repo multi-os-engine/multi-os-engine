@@ -29,10 +29,9 @@ import apple.foundation.protocol.NSCopying;
 import org.moe.natj.general.ann.MappedReturn;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.coremedia.struct.CMTimeRange;
 
 /**
- * AVPlayerInterstitialEvent
- * 
  * An AVPlayerInterstitialEvent provides instructions for temporarily suspending the playback of primary content in
  * order to play alternative interstitial content instead, resuming playback of the primary content when playback of the
  * interstitial content is complete or is canceled.
@@ -110,8 +109,6 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property] date
-     * 
      * The date within the date range of the primary item at which playback of the primary content should be temporarily
      * suspended and the interstitial items played.
      * 
@@ -138,8 +135,6 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
     public static native long hash_static();
 
     /**
-     * [@property] identifier
-     * 
      * An external identifier for the event.
      * 
      * If an event is set on an AVPlayerInterstitialEventController that already has an event with the same identifier,
@@ -170,45 +165,34 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * interstitialEventWithPrimaryItem:date:templateItems:restrictions:resumptionOffset:
-     * 
      * Returns an instance of AVPlayerInterstitialEvent for use in scheduling interstitial playback.
      * 
-     * @param primaryItem
-     *                              An AVPlayerItem representing the primary content during the playback of which the
-     *                              interstitial event should occur. The primaryItem must have an AVAsset that provides
-     *                              an intrinsic mapping from its timeline to real-time dates.
-     * @param identifier
-     *                              An external identifier for the event.
-     * @param date
-     *                              The date within the date range of the primary item at which playback of the primary
-     *                              content should be temporarily suspended and the interstitial items played.
-     * @param templateItems
-     *                              An array of AVPlayerItems with configurations that will be reproduced for the
-     *                              playback of interstitial content. An NSInvalidArgumentException will be raised if
-     *                              any of the template items employs an AVAsset that lacks a URL, such as an
-     *                              AVComposition.
-     * @param restrictions
-     *                              Indicates restrictions on the use of end user playback controls that are imposed by
-     *                              the event.
-     * @param resumptionOffset
-     *                              Specifies the offset in time at which playback of the primary item should resume
-     *                              after interstitial playback has finished. Definite numeric values are supported. The
-     *                              value kCMTimeIndefinite can also be used, in order to specify that the effective
-     *                              resumption time offset should accord with the wallclock time elapsed during
-     *                              interstitial playback.
-     * @param playoutLimit
-     *                              Specifies the offset from the beginning of the interstitial at which interstitial
-     *                              playback should end, if the interstitial asset(s) are longer. Pass a positive
-     *                              numeric value, or kCMTimeInvalid to indicate no playout limit.
-     * @param userDefinedAttributes
-     *                              Storage for attributes defined by the client or the content vendor. Attribute names
-     *                              should begin with X- for uniformity with server insertion.
-     * @return An instance of AVPlayerInterstitialEvent.
+     * - Parameter primaryItem: An AVPlayerItem representing the primary content during the playback of which the
+     * interstitial event should occur. The primaryItem must have an AVAsset that provides an intrinsic mapping from its
+     * timeline to real-time dates.
+     * - Parameter identifier: An external identifier for the event.
+     * - Parameter date: The date within the date range of the primary item at which playback of the primary content
+     * should be temporarily suspended and the interstitial items played.
+     * - Parameter templateItems: An array of AVPlayerItems with configurations that will be reproduced for the playback
+     * of interstitial content. An NSInvalidArgumentException will be raised if any of the template items employs an
+     * AVAsset that lacks a URL, such as an AVComposition.
+     * - Parameter restrictions: Indicates restrictions on the use of end user playback controls that are imposed by the
+     * event.
+     * - Parameter resumptionOffset: Specifies the offset in time at which playback of the primary item should resume
+     * after interstitial playback has finished. Definite numeric values are supported. The value kCMTimeIndefinite can
+     * also be used, in order to specify that the effective resumption time offset should accord with the wallclock time
+     * elapsed during interstitial playback.
+     * - Parameter playoutLimit: Specifies the offset from the beginning of the interstitial at which interstitial
+     * playback should end, if the interstitial asset(s) are longer. Pass a positive numeric value, or kCMTimeInvalid to
+     * indicate no playout limit.
+     * - Parameter userDefinedAttributes: Storage for attributes defined by the client or the content vendor. Attribute
+     * names should begin with X- for uniformity with server insertion.
      * 
-     *         API-Since: 15.0
-     *         Deprecated-Since: 18.0
-     *         Deprecated-Message: Use interstitialEventWithPrimaryItem:date: instead
+     * - Returns: An instance of AVPlayerInterstitialEvent.
+     * 
+     * API-Since: 15.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use interstitialEventWithPrimaryItem:date: instead
      */
     @Deprecated
     @Generated
@@ -220,45 +204,34 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
             @Nullable NSDictionary<?, ?> userDefinedAttributes);
 
     /**
-     * interstitialEventWithPrimaryItem:time:templateItems:restrictions:resumptionOffset:
-     * 
      * Returns an instance of AVPlayerInterstitialEvent for use in scheduling interstitial playback.
      * 
-     * @param primaryItem
-     *                              An AVPlayerItem representing the primary content during the playback of which the
-     *                              interstitial event should occur. The primaryItem must have an AVAsset that provides
-     *                              an intrinsic mapping from its timeline to real-time dates.
-     * @param identifier
-     *                              An external identifier for the event.
-     * @param time
-     *                              The time within the duration of the primary item at which playback of the primary
-     *                              content should be temporarily suspended and the interstitial items played.
-     * @param templateItems
-     *                              An array of AVPlayerItems with configurations that will be reproduced for the
-     *                              playback of interstitial content. An NSInvalidArgumentException will be raised if
-     *                              any of the template items employs an AVAsset that lacks a URL, such as an
-     *                              AVComposition.
-     * @param restrictions
-     *                              Indicates restrictions on the use of end user playback controls that are imposed by
-     *                              the event.
-     * @param resumptionOffset
-     *                              Specifies the offset in time at which playback of the primary item should resume
-     *                              after interstitial playback has finished. Definite numeric values are supported. The
-     *                              value kCMTimeIndefinite can also be used, in order to specify that the effective
-     *                              resumption time offset should accord with the wallclock time elapsed during
-     *                              interstitial playback.
-     * @param playoutLimit
-     *                              Specifies the offset from the beginning of the interstitial at which interstitial
-     *                              playback should end, if the interstitial asset(s) are longer. Pass a positive
-     *                              numeric value, or kCMTimeInvalid to indicate no playout limit.
-     * @param userDefinedAttributes
-     *                              Storage for attributes defined by the client or the content vendor. Attribute names
-     *                              should begin with X- for uniformity with server insertion.
-     * @return An instance of AVPlayerInterstitialEvent.
+     * - Parameter primaryItem: An AVPlayerItem representing the primary content during the playback of which the
+     * interstitial event should occur. The primaryItem must have an AVAsset that provides an intrinsic mapping from its
+     * timeline to real-time dates.
+     * - Parameter identifier: An external identifier for the event.
+     * - Parameter time: The time within the duration of the primary item at which playback of the primary content
+     * should be temporarily suspended and the interstitial items played.
+     * - Parameter templateItems: An array of AVPlayerItems with configurations that will be reproduced for the playback
+     * of interstitial content. An NSInvalidArgumentException will be raised if any of the template items employs an
+     * AVAsset that lacks a URL, such as an AVComposition.
+     * - Parameter restrictions: Indicates restrictions on the use of end user playback controls that are imposed by the
+     * event.
+     * - Parameter resumptionOffset: Specifies the offset in time at which playback of the primary item should resume
+     * after interstitial playback has finished. Definite numeric values are supported. The value kCMTimeIndefinite can
+     * also be used, in order to specify that the effective resumption time offset should accord with the wallclock time
+     * elapsed during interstitial playback.
+     * - Parameter playoutLimit: Specifies the offset from the beginning of the interstitial at which interstitial
+     * playback should end, if the interstitial asset(s) are longer. Pass a positive numeric value, or kCMTimeInvalid to
+     * indicate no playout limit.
+     * - Parameter userDefinedAttributes: Storage for attributes defined by the client or the content vendor. Attribute
+     * names should begin with X- for uniformity with server insertion.
      * 
-     *         API-Since: 15.0
-     *         Deprecated-Since: 18.0
-     *         Deprecated-Message: Use interstitialEventWithPrimaryItem:time: instead
+     * - Returns: An instance of AVPlayerInterstitialEvent.
+     * 
+     * API-Since: 15.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use interstitialEventWithPrimaryItem:time: instead
      */
     @Deprecated
     @Generated
@@ -284,8 +257,6 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
     public static native AVPlayerInterstitialEvent new_objc();
 
     /**
-     * [@property] playoutLimit
-     * 
      * Specifies the offset in time at which playback of the interstitial event should end.
      * 
      * Can be any positive numeric value, or invalid. The default value is kCMTimeInvalid, which means there is no
@@ -299,8 +270,6 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
     public native CMTime playoutLimit();
 
     /**
-     * [@property] primaryItem
-     * 
      * An AVPlayerItem representing the primary content during the playback of which the interstitial event should
      * occur. The primaryItem must have an AVAsset that provides an intrinsic mapping from its timeline to real-time
      * dates.
@@ -321,8 +290,6 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property] restrictions
-     * 
      * Indicates restrictions on the use of end user playback controls that are imposed by the event.
      * 
      * API-Since: 15.0
@@ -333,8 +300,6 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
     public native long restrictions();
 
     /**
-     * [@property] resumptionOffset
-     * 
      * Specifies the offset in time at which playback of the primary item should resume after interstitial playback has
      * finished.
      * 
@@ -358,8 +323,6 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
     public static native Class superclass_static();
 
     /**
-     * [@property] templateItems
-     * 
      * An array of AVPlayerItems with configurations that will be reproduced for the playback of interstitial content.
      * 
      * If you want the instances of AVURLAsset used during interstitial playback to be identical to the ones you specify
@@ -380,8 +343,6 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
     public native NSArray<? extends AVPlayerItem> templateItems();
 
     /**
-     * [@property] time
-     * 
      * The time within the duration of the primary item at which playback of the primary content should be temporarily
      * suspended and the interstitial items played.
      * 
@@ -395,8 +356,6 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
     public native CMTime time();
 
     /**
-     * [@property] userDefinedAttributes
-     * 
      * Attributes of the event defined by the content vendor or the client.
      * 
      * Dictionary keys are attribute names. Dictionary values are attribute values.
@@ -414,8 +373,6 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
     public static native long version_static();
 
     /**
-     * [@property] alignsResumptionWithPrimarySegmentBoundary
-     * 
      * Specifies that the resumption time of primary playback should be snapped to a segment boundary of the primary
      * asset
      * 
@@ -429,8 +386,6 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
     public native boolean alignsResumptionWithPrimarySegmentBoundary();
 
     /**
-     * [@property] alignsStartWithPrimarySegmentBoundary
-     * 
      * Specifies that the start time of interstitial playback should be snapped to a segment boundary of the primary
      * asset
      * 
@@ -451,8 +406,6 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
-     * [@property] cue
-     * 
      * The cue property is used to schedule event playback at a predefined position of primary playback.
      * 
      * API-Since: 16.0
@@ -463,20 +416,17 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
     public native String cue();
 
     /**
-     * interstitialEventWithPrimaryItem:date:
-     * 
      * Returns an instance of AVPlayerInterstitialEvent for use in scheduling interstitial playback.
      * 
-     * @param primaryItem
-     *                    An AVPlayerItem representing the primary content during the playback of which the interstitial
-     *                    event should occur. The primaryItem must have an AVAsset that provides an intrinsic mapping
-     *                    from its timeline to real-time dates.
-     * @param date
-     *                    The date within the date range of the primary item at which playback of the primary content
-     *                    should be temporarily suspended and the interstitial items played.
-     * @return An instance of AVPlayerInterstitialEvent.
+     * - Parameter primaryItem: An AVPlayerItem representing the primary content during the playback of which the
+     * interstitial event should occur. The primaryItem must have an AVAsset that provides an intrinsic mapping from its
+     * timeline to real-time dates.
+     * - Parameter date: The date within the date range of the primary item at which playback of the primary content
+     * should be temporarily suspended and the interstitial items played.
      * 
-     *         API-Since: 16.0
+     * - Returns: An instance of AVPlayerInterstitialEvent.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("interstitialEventWithPrimaryItem:date:")
@@ -484,20 +434,17 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
             @NotNull AVPlayerItem primaryItem, @NotNull NSDate date);
 
     /**
-     * interstitialEventWithPrimaryItem:time:
-     * 
      * Returns an instance of AVPlayerInterstitialEvent for use in scheduling interstitial playback.
      * 
-     * @param primaryItem
-     *                    An AVPlayerItem representing the primary content during the playback of which the interstitial
-     *                    event should occur. The primaryItem must have an AVAsset that provides an intrinsic mapping
-     *                    from its timeline to real-time dates.
-     * @param time
-     *                    The time within the duration of the primary item at which playback of the primary content
-     *                    should be temporarily suspended and the interstitial items played.
-     * @return An instance of AVPlayerInterstitialEvent.
+     * - Parameter primaryItem: An AVPlayerItem representing the primary content during the playback of which the
+     * interstitial event should occur. The primaryItem must have an AVAsset that provides an intrinsic mapping from its
+     * timeline to real-time dates.
+     * - Parameter time: The time within the duration of the primary item at which playback of the primary content
+     * should be temporarily suspended and the interstitial items played.
      * 
-     *         API-Since: 16.0
+     * - Returns: An instance of AVPlayerInterstitialEvent.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("interstitialEventWithPrimaryItem:time:")
@@ -611,8 +558,6 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
     public native void setWillPlayOnce(boolean value);
 
     /**
-     * [@property] willPlayOnce
-     * 
      * Specifies that the interstitial should be scheduled for playback once only, and suppressed for subsequent replay.
      * 
      * The "once" provision takes effect at the start of interstitial playback. The interstitial will not be scheduled
@@ -625,8 +570,6 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
     public native boolean willPlayOnce();
 
     /**
-     * [@property] assetListResponse
-     * 
      * The asset list JSON response as a dictionary, or nil if no asset list response has been loaded for the event.
      * 
      * If the AVPlayerInterstitialEvent's templateItems is empty and the assetListResponse is nil, then an asset list
@@ -646,8 +589,6 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
     public static native boolean useStoredAccessor();
 
     /**
-     * [@property] contentMayVary
-     * 
      * Indicates this event's content is dynamic and server may respond with different interstitial assets for other
      * particpants in coordinated playback.
      * 
@@ -662,8 +603,6 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
     public native boolean contentMayVary();
 
     /**
-     * [@property] plannedDuration
-     * 
      * Indicates the event's planned duration. The default value is kCMTimeInvalid.
      * 
      * API-Since: 18.0
@@ -681,8 +620,6 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
     public native void setContentMayVary(boolean value);
 
     /**
-     * [@property] plannedDuration
-     * 
      * Indicates the event's planned duration. The default value is kCMTimeInvalid.
      * 
      * API-Since: 18.0
@@ -706,8 +643,6 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
     public native void setTimelineOccupancy(@NInt long value);
 
     /**
-     * [@property] supplementsPrimaryContent
-     * 
      * Indicates this event will supplement the primary content and should be presented unified with the primary item.
      * The default value is NO.
      * 
@@ -718,8 +653,6 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
     public native boolean supplementsPrimaryContent();
 
     /**
-     * [@property] timelineOccupancy
-     * 
      * Indicates this event's occupancy on AVPlayerItemIntegratedTimeline. The default value is
      * AVPlayerInterstitialEventTimelineSinglePointOccupancy.
      * 
@@ -729,4 +662,50 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
     @Selector("timelineOccupancy")
     @NInt
     public native long timelineOccupancy();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setSkipControlLocalizedLabelBundleKey:")
+    public native void setSkipControlLocalizedLabelBundleKey(@Nullable String value);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setSkipControlTimeRange:")
+    public native void setSkipControlTimeRange(@ByValue CMTimeRange value);
+
+    /**
+     * The key defined in the AVPlayerInterstitialEventController's localizedStringsBundle that points to the localized
+     * label for the skip button.
+     * 
+     * If the value of the property is nil, the skip button may contain a generic label depending on the implementation
+     * of the UI that's in use. To ensure the best available user experience in various playback configurations,
+     * including external playback, set a value for this property that provides localized translations of skip control
+     * labels.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("skipControlLocalizedLabelBundleKey")
+    @Nullable
+    public native String skipControlLocalizedLabelBundleKey();
+
+    /**
+     * The time range within the duration of the interstitial event for which a skip button should be displayed.
+     * 
+     * The start of the time range should indicate at which point the skip button should appear. The duration of the
+     * time range should indicate how long the skip button should be available. If this value is set to
+     * kCMTimePositiveInfinity, then the skip button will be available for the remainder of the interstitial's duration
+     * after appearing. If either the start or duration of the time range is kCMTimeInvalid, then the interstitial will
+     * NOT be eligible to be skipped.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("skipControlTimeRange")
+    @ByValue
+    public native CMTimeRange skipControlTimeRange();
 }

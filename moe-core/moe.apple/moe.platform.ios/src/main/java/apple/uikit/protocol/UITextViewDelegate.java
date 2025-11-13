@@ -48,6 +48,11 @@ import apple.uikit.UIInputSuggestion;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITextViewDelegate")
 public interface UITextViewDelegate extends UIScrollViewDelegate {
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("textView:shouldChangeTextInRange:replacementText:")
@@ -164,7 +169,9 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
      * @return Return a UIMenu describing the desired menu hierarchy. Return @c nil to present the default system menu.
      * 
      *         API-Since: 16.0
+     *         Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @IsOptional
@@ -411,6 +418,55 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
     @Selector("textView:insertInputSuggestion:")
     default void textViewInsertInputSuggestion(@NotNull UITextView textView,
             @NotNull UIInputSuggestion inputSuggestion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Asks the delegate for the menu to be shown for the specified text ranges.
+     * 
+     * If the delegate does not implement this method then the `textView:editMenuForTextInRange:suggestedActions:`
+     * method will be called and passed the union range instead. If the delegate also does not implement that method
+     * then `nil` is assumed.
+     * 
+     * @param textView         The text view requesting the menu.
+     * @param ranges           The text ranges for which the menu is presented for.
+     * @param suggestedActions The actions and commands that the system suggests.
+     * 
+     * @return Return a UIMenu describing the desired menu hierarchy. Return @c nil to present the default system menu.
+     * 
+     *         API-Since: 26.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("textView:editMenuForTextInRanges:suggestedActions:")
+    @Nullable
+    default UIMenu textViewEditMenuForTextInRangesSuggestedActions(@NotNull UITextView textView,
+            @NotNull NSArray<? extends NSValue> ranges, @NotNull NSArray<? extends UIMenuElement> suggestedActions) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Asks the delegate if the text at the specified `ranges` should be replaced with `text`.
+     * 
+     * If this method returns YES then the text view will, at its own discretion, choose any one of the specified
+     * `ranges` of text and replace it with the specified `replacementText` before deleting the text at the other
+     * ranges. If the delegate does not implement this method then the
+     * `textView:shouldChangeTextInRange:replacementText:` method will be called and passed the union range instead. If
+     * the delegate also does not implement that method then YES is assumed.
+     * 
+     * @param textView        The text view asking the delegate
+     * @param ranges          The ranges of the text that should be deleted before replacing
+     * @param replacementText The replacement text
+     * 
+     * @return Returns true if the text at the `ranges` should be replaced.
+     * 
+     *         API-Since: 26.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("textView:shouldChangeTextInRanges:replacementText:")
+    default boolean textViewShouldChangeTextInRangesReplacementText(@NotNull UITextView textView,
+            @NotNull NSArray<? extends NSValue> ranges, @NotNull String text) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

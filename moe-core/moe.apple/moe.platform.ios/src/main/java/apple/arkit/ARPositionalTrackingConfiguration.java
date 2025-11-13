@@ -29,7 +29,8 @@ import org.jetbrains.annotations.Nullable;
  * A configuration for running positional tracking.
  * 
  * Positional tracking provides 6 degrees of freedom tracking of the device by running the camera at lowest possible
- * resolution and frame rate.
+ * resolution and frame
+ * rate.
  * 
  * API-Since: 13.0
  */

@@ -93,6 +93,8 @@ public class GKAccessPoint extends NSObject {
     public static native String description_static();
 
     /**
+     * observable property that contains the current frame needed to display the widget
+     * 
      * API-Since: 14.0
      */
     @Generated
@@ -173,6 +175,9 @@ public class GKAccessPoint extends NSObject {
     public static native GKAccessPoint new_objc();
 
     /**
+     * the following is a platform specific window that you wish to have the access point in. If not set then a best
+     * attempt will be made to choose the main window of the app.
+     * 
      * API-Since: 14.0
      */
     @Nullable
@@ -208,6 +213,9 @@ public class GKAccessPoint extends NSObject {
     public native void setLocation(@NInt long value);
 
     /**
+     * the following is a platform specific window that you wish to have the access point in. If not set then a best
+     * attempt will be made to choose the main window of the app.
+     * 
      * API-Since: 14.0
      */
     @Generated
@@ -215,6 +223,9 @@ public class GKAccessPoint extends NSObject {
     public native void setParentWindow_unsafe(@Nullable UIWindow value);
 
     /**
+     * the following is a platform specific window that you wish to have the access point in. If not set then a best
+     * attempt will be made to choose the main window of the app.
+     * 
      * API-Since: 14.0
      */
     @Generated
@@ -234,7 +245,10 @@ public class GKAccessPoint extends NSObject {
      * leaderboard, etc
      * 
      * API-Since: 14.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @Selector("setShowHighlights:")
     public native void setShowHighlights(boolean value);
@@ -256,7 +270,10 @@ public class GKAccessPoint extends NSObject {
      * leaderboard, etc
      * 
      * API-Since: 14.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @Selector("showHighlights")
     public native boolean showHighlights();
@@ -368,5 +385,107 @@ public class GKAccessPoint extends NSObject {
     public interface Block_triggerAccessPointWithPlayerHandler {
         @Generated
         void call_triggerAccessPointWithPlayerHandler();
+    }
+
+    /**
+     * Displays the view that allows players to engage each other with challenges.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("triggerAccessPointForChallengesWithHandler:")
+    public native void triggerAccessPointForChallengesWithHandler(
+            @ObjCBlock(name = "call_triggerAccessPointForChallengesWithHandler") @Nullable Block_triggerAccessPointForChallengesWithHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_triggerAccessPointForChallengesWithHandler {
+        @Generated
+        void call_triggerAccessPointForChallengesWithHandler();
+    }
+
+    /**
+     * Brings up the invite friends view.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("triggerAccessPointForFriendingWithHandler:")
+    public native void triggerAccessPointForFriendingWithHandler(
+            @ObjCBlock(name = "call_triggerAccessPointForFriendingWithHandler") @Nullable Block_triggerAccessPointForFriendingWithHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_triggerAccessPointForFriendingWithHandler {
+        @Generated
+        void call_triggerAccessPointForFriendingWithHandler();
+    }
+
+    /**
+     * Displays the view that allows players to engage each other with activities and challenges.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("triggerAccessPointForPlayTogetherWithHandler:")
+    public native void triggerAccessPointForPlayTogetherWithHandler(
+            @ObjCBlock(name = "call_triggerAccessPointForPlayTogetherWithHandler") @Nullable Block_triggerAccessPointForPlayTogetherWithHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_triggerAccessPointForPlayTogetherWithHandler {
+        @Generated
+        void call_triggerAccessPointForPlayTogetherWithHandler();
+    }
+
+    /**
+     * Displays the challenge creation view for the provided challenge definition ID.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("triggerAccessPointWithChallengeDefinitionID:handler:")
+    public native void triggerAccessPointWithChallengeDefinitionIDHandler(@NotNull String challengeDefinitionID,
+            @ObjCBlock(name = "call_triggerAccessPointWithChallengeDefinitionIDHandler") @Nullable Block_triggerAccessPointWithChallengeDefinitionIDHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_triggerAccessPointWithChallengeDefinitionIDHandler {
+        @Generated
+        void call_triggerAccessPointWithChallengeDefinitionIDHandler();
+    }
+
+    /**
+     * Displays the game activity view for the provided activity instance.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("triggerAccessPointWithGameActivity:handler:")
+    public native void triggerAccessPointWithGameActivityHandler(@NotNull GKGameActivity gameActivity,
+            @ObjCBlock(name = "call_triggerAccessPointWithGameActivityHandler") @Nullable Block_triggerAccessPointWithGameActivityHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_triggerAccessPointWithGameActivityHandler {
+        @Generated
+        void call_triggerAccessPointWithGameActivityHandler();
+    }
+
+    /**
+     * Displays the game activity creation view for the provided activity definition ID.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("triggerAccessPointWithGameActivityDefinitionID:handler:")
+    public native void triggerAccessPointWithGameActivityDefinitionIDHandler(@NotNull String gameActivityDefinitionID,
+            @ObjCBlock(name = "call_triggerAccessPointWithGameActivityDefinitionIDHandler") @Nullable Block_triggerAccessPointWithGameActivityDefinitionIDHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_triggerAccessPointWithGameActivityDefinitionIDHandler {
+        @Generated
+        void call_triggerAccessPointWithGameActivityDefinitionIDHandler();
     }
 }

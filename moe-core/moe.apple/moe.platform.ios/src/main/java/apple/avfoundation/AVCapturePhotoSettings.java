@@ -801,7 +801,7 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
     public native NSDictionary<String, ?> metadata();
 
     /**
-     * photoSettingsWithRawPixelFormatType:processedFormat:fileType:
+     * photoSettingsWithRawPixelFormatType:rawFileType:processedFormat:processedFileType:
      * 
      * Creates an instance of AVCapturePhotoSettings specifying RAW + a processed format (such as JPEG) and a file
      * container to which it will be written.
@@ -815,10 +815,11 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
      * uncompressed processedFormat. If you wish a compressed format, your dictionary must contain AVVideoCodecKey and
      * the codec specified must be present in AVCapturePhotoOutput's -availablePhotoCodecTypes array. If you are
      * specifying a compressed format, the AVVideoCompressionPropertiesKey is also supported, with a payload dictionary
-     * containing a single AVVideoQualityKey. If you are specifying a processedFileType, it must be present in
-     * AVCapturePhotoOutput's -availablePhotoFileTypes array. Pass a nil processedFormat dictionary if you only desire a
-     * RAW photo capture. See AVCapturePhotoOutput's -capturePhotoWithSettings:delegate: inline documentation for a
-     * discussion of restrictions on AVCapturePhotoSettings when requesting RAW capture.
+     * containing a single AVVideoQualityKey. If you are specifying a processedFileType (such as AVFileTypeJPEG,
+     * AVFileTypeHEIC or AVFileTypeDICOM), it must be present in AVCapturePhotoOutput's -availablePhotoFileTypes array.
+     * Pass a nil processedFormat dictionary if you only desire a RAW photo capture. See AVCapturePhotoOutput's
+     * -capturePhotoWithSettings:delegate: inline documentation for a discussion of restrictions on
+     * AVCapturePhotoSettings when requesting RAW capture.
      * 
      * API-Since: 11.0
      * 

@@ -26,6 +26,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.metal.protocol.MTLTensor;
 
 /**
  * The representation of a compute data type.
@@ -265,4 +266,19 @@ public class MPSGraphTensorData extends MPSGraphObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Initializes an MPSGraphTensorData with an MTLTensor.
+     * 
+     * The internal storage of the MTLTensor will be aliased. Requires tensor to support MTLTensorUsageMachineLearning.
+     * 
+     * - Parameters:
+     * - tensor: MTLTensor to be used within the MPSGraphTensorData
+     * - Returns: A valid MPSGraphTensorData, or nil if allocation failure.
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @Selector("initWithMTLTensor:")
+    public native MPSGraphTensorData initWithMTLTensor(@Mapped(ObjCObjectMapper.class) @NotNull MTLTensor tensor);
 }

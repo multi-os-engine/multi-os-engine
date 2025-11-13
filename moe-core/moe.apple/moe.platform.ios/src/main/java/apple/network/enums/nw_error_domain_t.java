@@ -29,4 +29,11 @@ public final class nw_error_domain_t {
      * [@const] nw_error_domain_tls The error code will be a TLS error as defined in <Security/SecBase.h>
      */
     @Generated public static final int _tls = 0x00000003;
+    /**
+     * [@const] nw_error_domain_wifi_aware The error code will be a Wi-Fi Aware error as defined in
+     * <WifiAware/errors.swift>
+     * 
+     * API-Since: 26.0
+     */
+    @Generated public static final int _wifi_aware = 0x00000004;
 }

@@ -45,6 +45,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.UIColor;
+import org.moe.natj.general.ann.NFloat;
 
 @Generated
 @Library("Messages")
@@ -414,4 +416,18 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("invalidateMessageTintColor")
+    public native void invalidateMessageTintColor();
+
+    @Generated
+    @Selector("messageCornerRadius")
+    @NFloat
+    public native double messageCornerRadius();
+
+    @Generated
+    @Selector("messageTintColor")
+    @Nullable
+    public native UIColor messageTintColor();
 }

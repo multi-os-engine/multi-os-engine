@@ -35,16 +35,43 @@ import org.jetbrains.annotations.Nullable;
 import apple.foundation.NSDate;
 
 /**
- * [@c] SHMediaItem represents metadata associated with a @c SHSignature
+ * An object that represents the metadata for a reference signature.
  * 
- * A @c SHMediaItem is used in two distinct ways
- * 1. As the base class of a @c SHMatchedMediaItem, and therefore as the result of a match
- * 2. As a way of associating metadata with reference signatures in a @c SHCustomCatalog
+ * This class uses subscripting for the data elements of a custom media item that an existing property doesn't already
+ * represent.
  * 
- * A SHMediaItem contains no required fields and may be entirely blank, they can also contain custom data set with
- * custom keys when making a @c SHCustomCatalog.
+ * Add a readable custom property by extending ``SHMediaItemProperty-struct`` with a key for that property, and by
+ * extending this class with a property that uses the key. The following code shows the extensions for an episode
+ * number:
  * 
- * [@note] @c SHMediaItem is not intended to be subclassed further.
+ * ```swift
+ * // Add an episode number to the list of properties.
+ * extension SHMediaItemProperty {
+ * static let episode = SHMediaItemProperty("Episode")
+ * }
+ * 
+ * // Add a property for returning the episode number using a subscript.
+ * extension SHMediaItem {
+ * var episode: Int? {
+ * return self[.episode] as? Int
+ * }
+ * }
+ * ```
+ * 
+ * 
+ * Add your custom property when you create the media item as the following code shows:
+ * 
+ * ```swift
+ * // Create a new media item and set the title, subtitle, and episode properties.
+ * let mediaItem = SHMediaItem(properties: [.episode: 42,
+ * .title: "Question",
+ * .subtitle: "The Answer"])
+ * ```
+ * 
+ * 
+ * > Note:
+ * > The class of the object that represents a custom object must be one of: `Dictionary`, `Array`, `URL`, `Number`,
+ * `String`, `Date`, or `Data`.
  * 
  * API-Since: 15.0
  */
@@ -77,8 +104,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     public static native SHMediaItem allocWithZone(VoidPtr zone);
 
     /**
-     * The Apple Music ID
-     * [@note] This may be fetched using the key @c SHMediaItemAppleMusicID
+     * The Apple Music ID for the song.
      * 
      * API-Since: 15.0
      */
@@ -88,8 +114,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     public native String appleMusicID();
 
     /**
-     * The Apple Music URL
-     * [@note] This may be fetched using the key @c SHMediaItemAppleMusicURL
+     * A link to the Apple Music page that contains the full information for the song.
      * 
      * API-Since: 15.0
      */
@@ -99,8 +124,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     public native NSURL appleMusicURL();
 
     /**
-     * The Artist
-     * [@note] This may be fetched using the key @c SHMediaItemArtist
+     * The name of the artist for the media item, such as the performer of a song.
      * 
      * API-Since: 15.0
      */
@@ -110,8 +134,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     public native String artist();
 
     /**
-     * The Artwork URL
-     * [@note] This may be fetched using the key @c SHMediaItemArtworkURL
+     * The URL for artwork for the media item, such as an album cover.
      * 
      * API-Since: 15.0
      */
@@ -165,8 +188,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
-     * Whether this object represents explicit material
-     * [@note] This may be fetched using the key @c SHMediaItemExplicitContent
+     * A Boolean value that indicates whether the media item contains explicit content.
      * 
      * API-Since: 15.0
      */
@@ -175,9 +197,28 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     public native boolean explicitContent();
 
     /**
-     * Fetch a @c SHMediaItem by Shazam ID
+     * Requests the media item for the song with the specified Shazam ID.
      * 
-     * The completionHandler will contain a @c SHMediaItem if the ShazamID is valid, otherwise nil and an error
+     * > Important:
+     * > You can call this method from synchronous code using a completion handler, as shown on this page, or you can
+     * call it as an asynchronous method that has the following declaration:
+     * >
+     * > ```swift
+     * > class func fetch(shazamID: String) async throws -> SHMediaItem
+     * > ```
+     * >
+     * > For information about concurrency and asynchronous code in Swift, see
+     * <doc://com.apple.documentation/documentation/swift/calling-objective-c-apis-asynchronously>.
+     * 
+     * - Parameters:
+     * - shazamID: The Shazam ID of the song.
+     * - completionHandler: The completion handler that the system calls with the result of the request.
+     * 
+     * This block takes the following parameters:
+     * 
+     * - term `mediaItem`: A media item.
+     * - term `error`: An error object if a problem occurs when fetching the media item; otherwise, `nil`.
+     * 
      * 
      * API-Since: 15.0
      */
@@ -194,10 +235,9 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     }
 
     /**
-     * The Genre Names
-     * [@note] This may be fetched using the key @c SHMediaItemGenres
+     * An array of genre names for the media item.
      * 
-     * An array of strings representing the genres of the media item. Will return an empty array if there are no genres.
+     * The array is empty if there are no media items.
      * 
      * API-Since: 15.0
      */
@@ -237,8 +277,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * The International Standard Recording Code
-     * [@note] This may be fetched using the key @c SHMediaItemISRC
+     * The International Standard Recording Code (ISRC) for the media item.
      * 
      * API-Since: 15.0
      */
@@ -253,13 +292,12 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
-     * Construct a new instance with the provided dictionary
+     * Creates a media item object with a dictionary of properties and their associated values.
      * 
-     * You may add your own keys here to return custom data, custom data should conform to NSCoding
+     * - Parameters:
+     * - properties: A dictionary that contains the media item properties and their associated values.
      * 
      * API-Since: 15.0
-     * 
-     * @param properties A dictionary of @c SHMediaItemProperty and their values
      */
     @Generated
     @Selector("mediaItemWithProperties:")
@@ -271,11 +309,14 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     public static native SHMediaItem new_objc();
 
     /**
-     * Use subscripting to retrieve values
+     * Accesses the property for the specified key for reading.
      * 
-     * @param key The `SHMediaItemProperty` or custom key for a value
+     * - Parameters:
+     * - key: The key for the media item property.
      * 
-     *            API-Since: 15.0
+     * - Returns: The value of the property; otherwise, `nil`.
+     * 
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -296,8 +337,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * The Shazam Media ID
-     * [@note] This may be fetched using the key @c SHMediaItemShazamID
+     * The Shazam ID for the song.
      * 
      * API-Since: 15.0
      */
@@ -307,8 +347,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     public native String shazamID();
 
     /**
-     * The Subtitle
-     * [@note] This may be fetched using the key @c SHMediaItemSubtitle
+     * A subtitle for the media item.
      * 
      * API-Since: 15.0
      */
@@ -332,8 +371,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     }
 
     /**
-     * The Title
-     * [@note] This may be fetched using the key @c SHMediaItemTitle
+     * A title for the media item.
      * 
      * API-Since: 15.0
      */
@@ -343,9 +381,12 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     public native String title();
 
     /**
-     * Retrieve a value using a known key
+     * Accesses the property for the specified key for reading.
      * 
-     * @param property The `SHMediaItemProperty` for a value
+     * - Parameters:
+     * - property: The key for the property.
+     * 
+     * - Returns: The value of the property; otherwise, `nil`.
      */
     @NotNull
     @Generated
@@ -359,8 +400,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     public static native long version_static();
 
     /**
-     * The VideoURL
-     * [@note] This may be fetched using the key @c SHMediaItemVideoURL
+     * The URL for a video for the media item, such as a music video.
      * 
      * API-Since: 15.0
      */
@@ -370,10 +410,9 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     public native NSURL videoURL();
 
     /**
-     * The Web URL
+     * A link to the Shazam Music catalog page that contains the full information for the song.
      * 
-     * The URL will point to a page that displays the current object in its entirety
-     * [@note] This may be fetched using the key @c SHMediaItemWebURL
+     * This link opens the Shazam app or App Clip if it's available on the device.
      * 
      * API-Since: 15.0
      */
@@ -383,8 +422,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     public native NSURL webURL();
 
     /**
-     * An array of @c SHRange that indicate the frequency skews in the reference signature that this media item
-     * describes
+     * An array of ranges that indicate the frequency skews in the reference signature that this media item describes.
      * 
      * API-Since: 16.0
      */
@@ -394,7 +432,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     public native NSArray<? extends SHRange> frequencySkewRanges();
 
     /**
-     * An array of @c SHRange that indicate the offsets within the reference signature that this media item describes
+     * An array of ranges that indicate the offsets within the reference signature that this media item describes.
      * 
      * API-Since: 16.0
      */
@@ -404,8 +442,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     public native NSArray<? extends SHRange> timeRanges();
 
     /**
-     * The date when the @c SHMediaItem was created
-     * [@note] This may be fetched using the key @c SHMediaItemCreationDate
+     * The date the media item was created.
      * 
      * API-Since: 17.0
      */

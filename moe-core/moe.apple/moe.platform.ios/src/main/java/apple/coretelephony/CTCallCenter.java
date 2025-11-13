@@ -165,7 +165,8 @@ public class CTCallCenter extends NSObject {
      * 
      * API-Since: 4.0
      * Deprecated-Since: 10.0
-     * Deprecated-Message: Replaced by <CallKit/CXCallObserver.h>
+     * Deprecated-Message: Obsolete and will be a useless stub before final removal. Replaced by
+     * <CallKit/CXCallObserver.h>
      */
     @Nullable
     @Deprecated
@@ -184,7 +185,8 @@ public class CTCallCenter extends NSObject {
      * 
      * API-Since: 4.0
      * Deprecated-Since: 10.0
-     * Deprecated-Message: Replaced by <CallKit/CXCallObserver.h>
+     * Deprecated-Message: Obsolete and will be a useless stub before final removal. Replaced by
+     * <CallKit/CXCallObserver.h>
      */
     @Nullable
     @Deprecated
@@ -206,7 +208,8 @@ public class CTCallCenter extends NSObject {
      * 
      * API-Since: 4.0
      * Deprecated-Since: 10.0
-     * Deprecated-Message: Replaced by <CallKit/CXCallObserver.h>
+     * Deprecated-Message: Obsolete and will be a useless stub before final removal. Replaced by
+     * <CallKit/CXCallObserver.h>
      */
     @Deprecated
     @Generated

@@ -18,6 +18,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.map.ObjCStringMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.c.ann.Inline;
 
 @Generated
 @Library("IOSurface")
@@ -1163,4 +1164,16 @@ public final class IOSurface {
     @CVariable()
     @NotNull
     public static native CFStringRef kIOSurfaceContentHeadroom();
+
+    @Generated
+    @Inline
+    @CFunction
+    @NotNull
+    public static native apple.iosurface.IOSurface _IOSurfaceRefToObj(@NotNull IOSurfaceRef ref);
+
+    @Generated
+    @Inline
+    @CFunction
+    @NotNull
+    public static native IOSurfaceRef _IOSurfaceObjToRef(@NotNull apple.iosurface.IOSurface obj);
 }

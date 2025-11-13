@@ -46,15 +46,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVAssetWriterInputPixelBufferAdaptor
- * 
- * Defines an interface for appending video samples packaged as CVPixelBuffer objects to a single AVAssetWriterInput
- * object.
- * 
- * Instances of AVAssetWriterInputPixelBufferAdaptor provide a CVPixelBufferPool that can be used to allocate pixel
- * buffers for writing to the output file. Using the provided pixel buffer pool for buffer allocation is typically more
- * efficient than appending pixel buffers allocated using a separate pool.
- * 
  * API-Since: 4.1
  */
 @Generated
@@ -86,8 +77,6 @@ public class AVAssetWriterInputPixelBufferAdaptor extends NSObject {
     public static native AVAssetWriterInputPixelBufferAdaptor allocWithZone(VoidPtr zone);
 
     /**
-     * assetWriterInputPixelBufferAdaptorWithAssetWriterInput:sourcePixelBufferAttributes:
-     * 
      * Creates a new pixel buffer adaptor to receive pixel buffers for writing to the output file.
      * 
      * In order to take advantage of the improved efficiency of appending buffers created from the adaptor's pixel
@@ -107,17 +96,15 @@ public class AVAssetWriterInputPixelBufferAdaptor extends NSObject {
      * adaptor or if the input has already started writing (the asset writer has progressed beyond
      * AVAssetWriterStatusUnknown).
      * 
-     * API-Since: 4.1
+     * - Parameter input: An instance of AVAssetWriterInput to which the receiver should append pixel buffers.
+     * Currently, only asset writer inputs that accept media data of type AVMediaTypeVideo can be used to initialize a
+     * pixel buffer adaptor.
+     * - Parameter sourcePixelBufferAttributes: Specifies the attributes of pixel buffers that will be vended by the
+     * input's CVPixelBufferPool.
      * 
-     * @param input
-     *                                    An instance of AVAssetWriterInput to which the receiver should append pixel
-     *                                    buffers. Currently, only asset writer inputs that accept media data of type
-     *                                    AVMediaTypeVideo can be used to initialize a pixel buffer adaptor.
-     * @param sourcePixelBufferAttributes
-     *                                    Specifies the attributes of pixel buffers that will be vended by the input's
-     *                                    CVPixelBufferPool.
-     * @return
-     *         An instance of AVAssetWriterInputPixelBufferAdaptor.
+     * - Returns: An instance of AVAssetWriterInputPixelBufferAdaptor.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("assetWriterInputPixelBufferAdaptorWithAssetWriterInput:sourcePixelBufferAttributes:")
@@ -211,8 +198,6 @@ public class AVAssetWriterInputPixelBufferAdaptor extends NSObject {
     public static native long version_static();
 
     /**
-     * appendPixelBuffer:withPresentationTime:
-     * 
      * Appends a pixel buffer to the receiver.
      * 
      * The receiver will retain the CVPixelBuffer until it is done with it, and then release it. Do not modify a
@@ -253,19 +238,17 @@ public class AVAssetWriterInputPixelBufferAdaptor extends NSObject {
      * This method throws an exception if the presentation time is is non-numeric (see CMTIME_IS_NUMERIC) or if
      * "readyForMoreMediaData" is NO.
      * 
-     * API-Since: 4.1
+     * - Parameter pixelBuffer: The CVPixelBuffer to be appended.
+     * - Parameter presentationTime: The presentation time for the pixel buffer to be appended. This time will be
+     * considered relative to the time passed to -[AVAssetWriter startSessionAtSourceTime:] to determine the timing of
+     * the frame in the output file.
      * 
-     * @param pixelBuffer
-     *                         The CVPixelBuffer to be appended.
-     * @param presentationTime
-     *                         The presentation time for the pixel buffer to be appended. This time will be considered
-     *                         relative to the time passed to -[AVAssetWriter startSessionAtSourceTime:] to determine
-     *                         the timing of the frame in the output file.
-     * @return
-     *         A BOOL value indicating success of appending the pixel buffer. If a result of NO is returned, clients can
-     *         check the value of AVAssetWriter.status to determine whether the writing operation completed, failed, or
-     *         was cancelled. If the status is AVAssetWriterStatusFailed, AVAsset.error will contain an instance of
-     *         NSError that describes the failure.
+     * - Returns: A BOOL value indicating success of appending the pixel buffer. If a result of NO is returned, clients
+     * can check the value of AVAssetWriter.status to determine whether the writing operation completed, failed, or was
+     * cancelled. If the status is AVAssetWriterStatusFailed, AVAsset.error will contain an instance of NSError that
+     * describes the failure.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("appendPixelBuffer:withPresentationTime:")
@@ -273,8 +256,6 @@ public class AVAssetWriterInputPixelBufferAdaptor extends NSObject {
             @ByValue CMTime presentationTime);
 
     /**
-     * [@property] assetWriterInput
-     * 
      * The asset writer input to which the receiver should append pixel buffers.
      * 
      * API-Since: 4.1
@@ -289,8 +270,6 @@ public class AVAssetWriterInputPixelBufferAdaptor extends NSObject {
     public native AVAssetWriterInputPixelBufferAdaptor init();
 
     /**
-     * initWithAssetWriterInput:sourcePixelBufferAttributes:
-     * 
      * Creates a new pixel buffer adaptor to receive pixel buffers for writing to the output file.
      * 
      * In order to take advantage of the improved efficiency of appending buffers created from the adaptor's pixel
@@ -310,17 +289,15 @@ public class AVAssetWriterInputPixelBufferAdaptor extends NSObject {
      * adaptor or if the input has already started writing (the asset writer has progressed beyond
      * AVAssetWriterStatusUnknown).
      * 
-     * API-Since: 4.1
+     * - Parameter input: An instance of AVAssetWriterInput to which the receiver should append pixel buffers.
+     * Currently, only asset writer inputs that accept media data of type AVMediaTypeVideo can be used to initialize a
+     * pixel buffer adaptor.
+     * - Parameter sourcePixelBufferAttributes: Specifies the attributes of pixel buffers that will be vended by the
+     * input's CVPixelBufferPool.
      * 
-     * @param input
-     *                                    An instance of AVAssetWriterInput to which the receiver should append pixel
-     *                                    buffers. Currently, only asset writer inputs that accept media data of type
-     *                                    AVMediaTypeVideo can be used to initialize a pixel buffer adaptor.
-     * @param sourcePixelBufferAttributes
-     *                                    Specifies the attributes of pixel buffers that will be vended by the input's
-     *                                    CVPixelBufferPool.
-     * @return
-     *         An instance of AVAssetWriterInputPixelBufferAdaptor.
+     * - Returns: An instance of AVAssetWriterInputPixelBufferAdaptor.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("initWithAssetWriterInput:sourcePixelBufferAttributes:")
@@ -328,8 +305,6 @@ public class AVAssetWriterInputPixelBufferAdaptor extends NSObject {
             @NotNull AVAssetWriterInput input, @Nullable NSDictionary<String, ?> sourcePixelBufferAttributes);
 
     /**
-     * [@property] pixelBufferPool
-     * 
      * A pixel buffer pool that will vend and efficiently recycle CVPixelBuffer objects that can be appended to the
      * receiver.
      * 
@@ -353,8 +328,6 @@ public class AVAssetWriterInputPixelBufferAdaptor extends NSObject {
     public native CVPixelBufferPoolRef pixelBufferPool();
 
     /**
-     * [@property] sourcePixelBufferAttributes
-     * 
      * The pixel buffer attributes of pixel buffers that will be vended by the receiver's CVPixelBufferPool.
      * 
      * The value of this property is a dictionary containing pixel buffer attributes keys defined in

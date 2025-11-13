@@ -24,6 +24,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSError;
 
 /**
  * Represents pool of SmartCard reader slots.
@@ -194,4 +195,44 @@ public class TKSmartCardSlotManager extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Creates an NFC smart card slot using the device's hardware and presents a system UI.
+     * 
+     * To finish the NFC session and dismiss the system-presented UI use `TKSmartCardSlotNFCSession.endSession`.
+     * 
+     * [@warning] Caller requires `com.apple.developer.nfc.readersession.iso7816.select-identifiers` Info.plist record
+     * which specifies application identifiers of the NFC cards @link
+     * https://developer.apple.com/documentation/bundleresources/information-property-list/com.apple.developer.nfc.readersession.iso7816.select-identifiers
+     * 
+     * API-Since: 26.0
+     * 
+     * @param message    Message shown in the system-presented UI
+     * @param completion Completion handler which returns the NFC session of the created slot or an error on failure.
+     *                   If an NFC slot already exists and current caller is not the initial creator
+     *                   `TKErrorCodeObjectNotFound` error is returned.
+     */
+    @Generated
+    @Selector("createNFCSlotWithMessage:completion:")
+    public native void createNFCSlotWithMessageCompletion(@Nullable String message,
+            @ObjCBlock(name = "call_createNFCSlotWithMessageCompletion") @NotNull Block_createNFCSlotWithMessageCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_createNFCSlotWithMessageCompletion {
+        @Generated
+        void call_createNFCSlotWithMessageCompletion(@Nullable TKSmartCardSlotNFCSession session,
+                @Nullable NSError error);
+    }
+
+    /**
+     * Determines whether NFC (Near Field Communication) is supported on this device.
+     * 
+     * @return `YES` if NFC is supported and available for use, NO otherwise.
+     * 
+     *         API-Since: 26.0
+     */
+    @Generated
+    @Selector("isNFCSupported")
+    public native boolean isNFCSupported();
 }

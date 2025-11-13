@@ -165,10 +165,11 @@ public class PHCachingImageManager extends PHImageManager {
     public static native long version_static();
 
     /**
-     * Defaults to YES
-     * 
      * API-Since: 8.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: This property is unused and will be removed in a future release
      */
+    @Deprecated
     @Generated
     @Selector("allowsCachingHighQualityImages")
     public native boolean allowsCachingHighQualityImages();
@@ -178,10 +179,11 @@ public class PHCachingImageManager extends PHImageManager {
     public native PHCachingImageManager init();
 
     /**
-     * Defaults to YES
-     * 
      * API-Since: 8.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: This property is unused and will be removed in a future release
      */
+    @Deprecated
     @Generated
     @Selector("setAllowsCachingHighQualityImages:")
     public native void setAllowsCachingHighQualityImages(boolean value);

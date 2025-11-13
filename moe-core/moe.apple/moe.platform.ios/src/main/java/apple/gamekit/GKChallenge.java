@@ -49,7 +49,9 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 6.0
+ * Deprecated-Since: 26.0
  */
+@Deprecated
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -143,7 +145,9 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
      * guaranteed to be pointer equivalent across calls, but equal GKChallenge objects will have equal hashes
      * 
      * API-Since: 6.0
+     * Deprecated-Since: 26.0
      */
+    @Deprecated
     @Generated
     @Selector("loadReceivedChallengesWithCompletionHandler:")
     public static native void loadReceivedChallengesWithCompletionHandler(
@@ -183,7 +187,9 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
      * Date the challenge was completed or aborted
      * 
      * API-Since: 6.0
+     * Deprecated-Since: 26.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("completionDate")
@@ -194,7 +200,9 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
      * cancelled
      * 
      * API-Since: 6.0
+     * Deprecated-Since: 26.0
      */
+    @Deprecated
     @Generated
     @Selector("decline")
     public native void decline();
@@ -215,7 +223,9 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
      * Date the challenge was issued
      * 
      * API-Since: 6.0
+     * Deprecated-Since: 26.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("issueDate")
@@ -247,7 +257,9 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
      * The message sent to receivers of this challenge
      * 
      * API-Since: 6.0
+     * Deprecated-Since: 26.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("message")
@@ -279,7 +291,9 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
      * Current state of the challenge
      * 
      * API-Since: 6.0
+     * Deprecated-Since: 26.0
      */
+    @Deprecated
     @Generated
     @Selector("state")
     @NInt

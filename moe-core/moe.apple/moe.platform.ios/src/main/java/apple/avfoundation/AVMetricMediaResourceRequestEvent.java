@@ -32,8 +32,6 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * AVMetricMediaResourceRequestEvent
- * 
  * Represents a metric event associated with media resource requests.
  * 
  * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
@@ -73,8 +71,6 @@ public class AVMetricMediaResourceRequestEvent extends AVMetricEvent {
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
-     * [@property] byteRange
-     * 
      * Returns the byte range downloaded for the resource request. If not available, the range start and end will be 0.
      * 
      * API-Since: 18.0
@@ -114,8 +110,6 @@ public class AVMetricMediaResourceRequestEvent extends AVMetricEvent {
     public static native String description_static();
 
     /**
-     * [@property] errorEvent
-     * 
      * Returns the error event, if any, encountered during the resource request. If no value is present, returns nil.
      * 
      * API-Since: 18.0
@@ -161,8 +155,6 @@ public class AVMetricMediaResourceRequestEvent extends AVMetricEvent {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
-     * [@property] networkTransactionMetrics
-     * 
      * Returns the NSURLSessionTaskMetrics associated with the resource request. If no value is present, returns nil
      * 
      * API-Since: 18.0
@@ -178,8 +170,6 @@ public class AVMetricMediaResourceRequestEvent extends AVMetricEvent {
     public static native AVMetricMediaResourceRequestEvent new_objc();
 
     /**
-     * [@property] requestEndTime
-     * 
      * Returns the end time of the resource request.
      * 
      * API-Since: 18.0
@@ -190,8 +180,6 @@ public class AVMetricMediaResourceRequestEvent extends AVMetricEvent {
     public native NSDate requestEndTime();
 
     /**
-     * [@property] requestStartTime
-     * 
      * Returns the start time of the resource request.
      * 
      * API-Since: 18.0
@@ -210,8 +198,6 @@ public class AVMetricMediaResourceRequestEvent extends AVMetricEvent {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property] responseEndTime
-     * 
      * Returns the end time of the resource request response.
      * 
      * API-Since: 18.0
@@ -222,8 +208,6 @@ public class AVMetricMediaResourceRequestEvent extends AVMetricEvent {
     public native NSDate responseEndTime();
 
     /**
-     * [@property] responseStartTime
-     * 
      * Returns the start time of the resource request response.
      * 
      * API-Since: 18.0
@@ -234,8 +218,6 @@ public class AVMetricMediaResourceRequestEvent extends AVMetricEvent {
     public native NSDate responseStartTime();
 
     /**
-     * [@property] serverAddress
-     * 
      * The IP address of the server. If not available, the value is nil.
      * 
      * API-Since: 18.0
@@ -264,8 +246,6 @@ public class AVMetricMediaResourceRequestEvent extends AVMetricEvent {
     }
 
     /**
-     * [@property] url
-     * 
      * Returns the URL of the resource request. If no value is available, returns nil.
      * 
      * API-Since: 18.0
@@ -286,8 +266,6 @@ public class AVMetricMediaResourceRequestEvent extends AVMetricEvent {
     public static native long version_static();
 
     /**
-     * [@property] readFromCache
-     * 
      * Returns true if the resource was read from the cache.
      * 
      * API-Since: 18.0

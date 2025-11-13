@@ -570,4 +570,24 @@ public class UIWritingToolsCoordinator extends NSObject implements UIInteraction
     @Generated
     @Selector("willMoveToView:")
     public native void willMoveToView(@Nullable UIView view);
+
+    /**
+     * When YES, the Writing Tools subsystem interprets and generates the text list paragraph incorporating the text
+     * list marker string. By default, it employs ``NSTextList.includesTextListMarkers`` as the value.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("includesTextListMarkers")
+    public native boolean includesTextListMarkers();
+
+    /**
+     * When YES, the Writing Tools subsystem interprets and generates the text list paragraph incorporating the text
+     * list marker string. By default, it employs ``NSTextList.includesTextListMarkers`` as the value.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setIncludesTextListMarkers:")
+    public native void setIncludesTextListMarkers(boolean value);
 }

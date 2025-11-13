@@ -1949,10 +1949,13 @@ public final class UIKit {
     public static native String UIApplicationProtectedDataDidBecomeAvailable();
 
     /**
-     * userInfo contains NSURL with launch URL
+     * UserInfo contains a ``NSURL`` with launch URL to open
      * 
      * API-Since: 3.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use UIScene lifecycle and UIScene.ConnectionOptions.URLContexts instead.
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -1960,11 +1963,14 @@ public final class UIKit {
     public static native String UIApplicationLaunchOptionsURLKey();
 
     /**
-     * userInfo contains NSString with bundle ID of the originating application; non-nil if the originating application
-     * and this application share the same team identifier
+     * UserInfo contains a ``NSString`` with the bundle ID of the originating application; non-nil if the originating
+     * application and this application share the same team identifier
      * 
      * API-Since: 3.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use UIScene lifecycle and UIScene.ConnectionOptions.sourceApplication instead.
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -1972,10 +1978,15 @@ public final class UIKit {
     public static native String UIApplicationLaunchOptionsSourceApplicationKey();
 
     /**
-     * userInfo contains NSDictionary with payload
+     * UserInfo contains a ``NSDictionary`` notification payload with property-list objects plus ``NSNull``
      * 
      * API-Since: 3.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Continue using UIApplicationDelegate's
+     * application(_:didReceiveRemoteNotification:fetchCompletionHandler:) to process silent remote notifications after
+     * scene connection.
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -1983,7 +1994,7 @@ public final class UIKit {
     public static native String UIApplicationLaunchOptionsRemoteNotificationKey();
 
     /**
-     * userInfo contains a UILocalNotification
+     * UserInfo contains a ``UILocalNotification``
      * 
      * API-Since: 4.0
      * Deprecated-Since: 10.0
@@ -1998,7 +2009,7 @@ public final class UIKit {
     public static native String UIApplicationLaunchOptionsLocalNotificationKey();
 
     /**
-     * userInfo contains object with annotation property list
+     * UserInfo contains a property list annotation object
      * 
      * API-Since: 3.2
      * Deprecated-Since: 16.0
@@ -2012,10 +2023,14 @@ public final class UIKit {
     public static native String UIApplicationLaunchOptionsAnnotationKey();
 
     /**
-     * app was launched in response to a CoreLocation event.
+     * The app was launched in response to a CoreLocation event
      * 
      * API-Since: 4.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Adopt CLLocationUpdate or CLMonitor, or use CLLocationManagerDelegate from CoreLocation to
+     * handle expected location events after scene connection.
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -2023,10 +2038,13 @@ public final class UIKit {
     public static native String UIApplicationLaunchOptionsLocationKey();
 
     /**
-     * userInfo contains an NSArray of NKAssetDownload identifiers
+     * UserInfo contains an ``NSArray`` of ``NKAssetDownload`` identifiers
      * 
      * API-Since: 5.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: This dictionary key is no longer used.
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -2034,10 +2052,14 @@ public final class UIKit {
     public static native String UIApplicationLaunchOptionsNewsstandDownloadsKey();
 
     /**
-     * userInfo contains an NSArray of CBCentralManager restore identifiers
+     * UserInfo contains an ``NSArray`` of ``CBCentralManager`` restore identifiers
      * 
      * API-Since: 7.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Store restoration identifiers and reinstantiate central managers with those identifiers on
+     * app launch to resume previous functionality.
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -2045,10 +2067,14 @@ public final class UIKit {
     public static native String UIApplicationLaunchOptionsBluetoothCentralsKey();
 
     /**
-     * userInfo contains an NSArray of CBPeripheralManager restore identifiers
+     * UserInfo contains an ``NSArray`` of ``CBPeripheralManager`` restore identifiers
      * 
      * API-Since: 7.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Store restoration identifiers and reinstantiate peripheral managers with those identifiers on
+     * app launch to resume previous functionality.
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -2056,10 +2082,13 @@ public final class UIKit {
     public static native String UIApplicationLaunchOptionsBluetoothPeripheralsKey();
 
     /**
-     * userInfo contains the UIApplicationShortcutItem used to launch the app.
+     * UserInfo contains the ``UIApplicationShortcutItem`` used to launch the app
      * 
-     * API-Since: 9.0
+     * API-Since: 3.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use UIScene lifecycle and UIScene.ConnectionOptions.shortcutItem instead.
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -2067,10 +2096,16 @@ public final class UIKit {
     public static native String UIApplicationLaunchOptionsShortcutItemKey();
 
     /**
-     * Sub-Dictionary present in launch options when user activity is present
+     * Key in options dictionary passed to `application(_:willFinishLaunchingWithOptions:)` and
+     * `application(_:didFinishLaunchingWithOptions:)`
+     * and info for `UIApplication.didFinishLaunchingNotification`. Sub-Dictionary present in launch options when user
+     * activity is present.
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use UIScene lifecycle and UIScene.ConnectionOptions.userActivities instead.
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -2081,7 +2116,10 @@ public final class UIKit {
      * Key in user activity dictionary for the activity type
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use UIScene lifecycle and UIScene.ConnectionOptions.handoffUserActivityType instead.
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -2090,10 +2128,13 @@ public final class UIKit {
 
     /**
      * The presence of this key indicates that the app was launched in order to handle a CloudKit sharing invitation.
-     * The value of this key is a CKShareMetadata object.
+     * The value of this key is a ``CKShareMetadata`` object.
      * 
      * API-Since: 10.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use UIScene lifecycle and UIScene.ConnectionOptions.cloudKitShareMetadata instead.
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -2110,11 +2151,16 @@ public final class UIKit {
     public static native String UIApplicationOpenSettingsURLString();
 
     /**
-     * value is an NSString containing the bundle ID of the originating application; non-nil if the originating
-     * application and this application share the same team identifier
+     * An options key for `application(_:open:options:)`. The value is an ``NSString`` containing the bundle ID of the
+     * originating application; non-nil if the originating
+     * application and this application share the same team identifier.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use UIScene lifecycle and UISceneOpenURLOptions.sourceApplication from a UIOpenURLContext in
+     * UIScene.ConnectionOptions.URLContexts instead.
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -2122,11 +2168,16 @@ public final class UIKit {
     public static native String UIApplicationOpenURLOptionsSourceApplicationKey();
 
     /**
-     * value is a property-list typed object corresponding to what the originating application passed in
-     * UIDocumentInteractionController's annotation property
+     * An options key for `application(_:open:options:)`. The value is a property-list typed object corresponding to
+     * what the originating application passed in
+     * `UIDocumentInteractionController`'s annotation property.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use UIScene lifecycle and UISceneOpenURLOptions.annotation from a UIOpenURLContext in
+     * UIScene.ConnectionOptions.URLContexts instead.
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -2134,10 +2185,15 @@ public final class UIKit {
     public static native String UIApplicationOpenURLOptionsAnnotationKey();
 
     /**
-     * value is a bool NSNumber. Copy the file before use if this value is NO, or is not present.
+     * An options key for `application(_:open:options:)`. The value is a bool `NSNumber`. Copy the file before use if
+     * this value is NO, or is not present.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use UIScene lifecycle and UISceneOpenURLOptions.openInPlace from a UIOpenURLContext in
+     * UIScene.ConnectionOptions.URLContexts instead.
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -4461,7 +4517,7 @@ public final class UIKit {
      */
     @Generated @NFloat public static final double UIStackViewSpacingUseSystem = org.moe.natj.general.NatJ.is64Bit() ?
             1.1754943508222875E-38 :
-            (float)1.17549435E-38;
+            (float)1.1754944E-38;
 
     /**
      * API-Since: 11.0
@@ -4665,7 +4721,9 @@ public final class UIKit {
      * New scene menu
      * 
      * API-Since: 13.0
+     * Deprecated-Since: 26.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -4717,8 +4775,7 @@ public final class UIKit {
     public static native String UIMenuStandardEdit();
 
     /**
-     * Find menu; empty in the default menubar configuration. Applications should use this when adding their own
-     * Find-related menu items.
+     * Find menu, containing Find Panel items and other finding operations like Use Selection for Find
      * 
      * API-Since: 13.0
      */
@@ -5654,7 +5711,9 @@ public final class UIKit {
      * Returns whether the system preference for button shapes is enabled
      * 
      * API-Since: 14.0
+     * Deprecated-Since: 26.1
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native boolean UIAccessibilityButtonShapesEnabled();
@@ -5756,7 +5815,9 @@ public final class UIKit {
 
     /**
      * API-Since: 14.0
+     * Deprecated-Since: 26.1
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -5948,10 +6009,13 @@ public final class UIKit {
     public static native String UITextContentTypeDateTime();
 
     /**
-     * userInfo contains a UIEventAttribution to go along with a URL open on launch
+     * UserInfo contains a ``UIEventAttribution`` to go along with a URL open on launch
      * 
      * API-Since: 14.5
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use UIScene lifecycle and UIScene.ConnectionOptions.eventAttribution instead.
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -5959,10 +6023,15 @@ public final class UIKit {
     public static native String UIApplicationLaunchOptionsEventAttributionKey();
 
     /**
-     * value is a UIEventAttribution to go along with the URL to open
+     * An options key for `application(_:open:options:)`. The value is a `UIEventAttribution` to go along with the URL
+     * to open.
      * 
      * API-Since: 14.5
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use UIScene lifecycle and UISceneOpenURLOptions.eventAttribution from a UIOpenURLContext in
+     * UIScene.ConnectionOptions.URLContexts instead.
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -7484,4 +7553,70 @@ public final class UIKit {
 
     @Generated public static final double __NSWRITING_DIRECTION_SHARED_SECTION__ = 1.0;
     @Generated public static final double __NSTEXT_ALIGNMENT_SHARED_SECTION__ = 1.0;
+
+    /**
+     * New item menu
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UIMenuNewItem();
+
+    /**
+     * Find panel menu (Find, Find and Replace, Find Next, Find Previous)
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UIMenuFindPanel();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UIActionNewFromPasteboard();
+
+    /**
+     * A notification that the document posts when copying the file from a readonly location in order to write changes.
+     * This notification will be posted on the file presenter queue.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UIDocumentDidMoveToWritableLocationNotification();
+
+    /**
+     * The key in a `UIDocumentDidMoveToWritableLocationNotification`'s `userInfo` dictionary that contains the previous
+     * readonly file URL.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UIDocumentDidMoveToWritableLocationOldURLKey();
+
+    /**
+     * A session role which defines an application for Assistive Access
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UIWindowSceneSessionRoleAssistiveAccessApplication();
 }

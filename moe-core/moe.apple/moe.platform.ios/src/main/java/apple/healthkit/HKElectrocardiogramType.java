@@ -239,4 +239,14 @@ public class HKElectrocardiogramType extends HKSampleType {
     @Selector("stateOfMindType")
     @NotNull
     public static native HKStateOfMindType stateOfMindType();
+
+    @Generated
+    @Selector("medicationDoseEventType")
+    @NotNull
+    public static native HKMedicationDoseEventType medicationDoseEventType();
+
+    @Generated
+    @Selector("userAnnotatedMedicationType")
+    @NotNull
+    public static native HKUserAnnotatedMedicationType userAnnotatedMedicationType();
 }

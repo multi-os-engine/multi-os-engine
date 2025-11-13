@@ -41,7 +41,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * A request for a speech recognition from an audio source
+ * An abstract class that represents a request to recognize speech from an audio source.
+ * 
+ * Don't create ``SFSpeechRecognitionRequest`` objects directly. Create an ``SFSpeechURLRecognitionRequest`` or
+ * ``SFSpeechAudioBufferRecognitionRequest`` object instead. Use the properties of this class to configure various
+ * aspects of your request object before you start the speech recognition process. For example, use the
+ * ``shouldReportPartialResults`` property to specify whether you want partial results or only the final result of
+ * speech recognition.
  * 
  * API-Since: 10.0
  */
@@ -160,7 +166,17 @@ public class SFSpeechRecognitionRequest extends NSObject {
     public static native long version_static();
 
     /**
-     * Phrases which should be recognized even if they are not in the system vocabulary
+     * An array of phrases that should be recognized, even if they are not in the system vocabulary.
+     * 
+     * Use this property to specify short custom phrases that are unique to your app. You might include phrases with the
+     * names of characters, products, or places that are specific to your app. You might also include domain-specific
+     * terminology or unusual or made-up words. Assigning custom phrases to this property improves the likelihood of
+     * those phrases being recognized.
+     * 
+     * Keep phrases relatively brief, limiting them to one or two words whenever possible. Lengthy phrases are less
+     * likely to be recognized. In addition, try to limit each phrase to something the user can say without pausing.
+     * 
+     * Limit the total number of phrases to no more than 100.
      * 
      * API-Since: 10.0
      */
@@ -174,7 +190,13 @@ public class SFSpeechRecognitionRequest extends NSObject {
     public native SFSpeechRecognitionRequest init();
 
     /**
-     * String which can be used to identify the receiver by the developer
+     * An identifier string that you use to describe the type of interaction associated with the speech recognition
+     * request.
+     * 
+     * If different parts of your app have different speech recognition needs, you can use this property to identify the
+     * part of your app that is making each request. For example, if one part of your app lets users speak phone numbers
+     * and another part lets users speak street addresses, consistently identifying the part of the app that makes a
+     * recognition request may help improve the accuracy of the results.
      * 
      * API-Since: 10.0
      * Deprecated-Since: 15.0
@@ -187,7 +209,17 @@ public class SFSpeechRecognitionRequest extends NSObject {
     public native String interactionIdentifier();
 
     /**
-     * Phrases which should be recognized even if they are not in the system vocabulary
+     * An array of phrases that should be recognized, even if they are not in the system vocabulary.
+     * 
+     * Use this property to specify short custom phrases that are unique to your app. You might include phrases with the
+     * names of characters, products, or places that are specific to your app. You might also include domain-specific
+     * terminology or unusual or made-up words. Assigning custom phrases to this property improves the likelihood of
+     * those phrases being recognized.
+     * 
+     * Keep phrases relatively brief, limiting them to one or two words whenever possible. Lengthy phrases are less
+     * likely to be recognized. In addition, try to limit each phrase to something the user can say without pausing.
+     * 
+     * Limit the total number of phrases to no more than 100.
      * 
      * API-Since: 10.0
      */
@@ -196,7 +228,13 @@ public class SFSpeechRecognitionRequest extends NSObject {
     public native void setContextualStrings(@NotNull NSArray<String> value);
 
     /**
-     * String which can be used to identify the receiver by the developer
+     * An identifier string that you use to describe the type of interaction associated with the speech recognition
+     * request.
+     * 
+     * If different parts of your app have different speech recognition needs, you can use this property to identify the
+     * part of your app that is making each request. For example, if one part of your app lets users speak phone numbers
+     * and another part lets users speak street addresses, consistently identifying the part of the app that makes a
+     * recognition request may help improve the accuracy of the results.
      * 
      * API-Since: 10.0
      * Deprecated-Since: 15.0
@@ -208,8 +246,11 @@ public class SFSpeechRecognitionRequest extends NSObject {
     public native void setInteractionIdentifier(@Nullable String value);
 
     /**
+     * A Boolean value that indicates whether you want intermediate results returned for each utterance.
+     * 
+     * The default value of this property is `true`. If you want only final results (and you don't care about
+     * intermediate results), set this property to `false` to prevent the system from doing extra work.
      * If true, partial (non-final) results for each utterance will be reported.
-     * Default is true
      * 
      * API-Since: 10.0
      */
@@ -218,6 +259,11 @@ public class SFSpeechRecognitionRequest extends NSObject {
     public native void setShouldReportPartialResults(boolean value);
 
     /**
+     * A value that indicates the type of speech recognition being performed.
+     * 
+     * The default value of this property is ``SFSpeechRecognitionTaskHint/unspecified``. For a valid list of values,
+     * see ``SFSpeechRecognitionTaskHint``.
+     * 
      * API-Since: 10.0
      */
     @Generated
@@ -225,8 +271,11 @@ public class SFSpeechRecognitionRequest extends NSObject {
     public native void setTaskHint(@NInt long value);
 
     /**
+     * A Boolean value that indicates whether you want intermediate results returned for each utterance.
+     * 
+     * The default value of this property is `true`. If you want only final results (and you don't care about
+     * intermediate results), set this property to `false` to prevent the system from doing extra work.
      * If true, partial (non-final) results for each utterance will be reported.
-     * Default is true
      * 
      * API-Since: 10.0
      */
@@ -235,6 +284,11 @@ public class SFSpeechRecognitionRequest extends NSObject {
     public native boolean shouldReportPartialResults();
 
     /**
+     * A value that indicates the type of speech recognition being performed.
+     * 
+     * The default value of this property is ``SFSpeechRecognitionTaskHint/unspecified``. For a valid list of values,
+     * see ``SFSpeechRecognitionTaskHint``.
+     * 
      * API-Since: 10.0
      */
     @Generated
@@ -243,10 +297,14 @@ public class SFSpeechRecognitionRequest extends NSObject {
     public native long taskHint();
 
     /**
-     * If true, speech recognition will not send any audio over the Internet
-     * This will reduce accuracy but enables certain applications where it is
-     * inappropriate to transmit user speech to a remote service.
-     * Default is false
+     * A Boolean value that determines whether a request must keep its audio data on the device.
+     * 
+     * Set this property to `true` to prevent an ``SFSpeechRecognitionRequest`` from sending audio over the network.
+     * However, on-device requests won't be as accurate.
+     * 
+     * > Note:
+     * > The request only honors this setting if the ``SFSpeechRecognizer/supportsOnDeviceRecognition``
+     * (``SFSpeechRecognizer``) property is also `true`.
      * 
      * API-Since: 13.0
      */
@@ -255,10 +313,14 @@ public class SFSpeechRecognitionRequest extends NSObject {
     public native boolean requiresOnDeviceRecognition();
 
     /**
-     * If true, speech recognition will not send any audio over the Internet
-     * This will reduce accuracy but enables certain applications where it is
-     * inappropriate to transmit user speech to a remote service.
-     * Default is false
+     * A Boolean value that determines whether a request must keep its audio data on the device.
+     * 
+     * Set this property to `true` to prevent an ``SFSpeechRecognitionRequest`` from sending audio over the network.
+     * However, on-device requests won't be as accurate.
+     * 
+     * > Note:
+     * > The request only honors this setting if the ``SFSpeechRecognizer/supportsOnDeviceRecognition``
+     * (``SFSpeechRecognizer``) property is also `true`.
      * 
      * API-Since: 13.0
      */
@@ -267,7 +329,10 @@ public class SFSpeechRecognitionRequest extends NSObject {
     public native void setRequiresOnDeviceRecognition(boolean value);
 
     /**
-     * If true, punctuations will be automatically included in the recognition results
+     * A Boolean value that indicates whether to add punctuation to speech recognition results.
+     * 
+     * Set this property to `true` for the speech framework to automatically include punctuation in the recognition
+     * results. Punctuation includes a period or question mark at the end of a sentence, and a comma within a sentence.
      * 
      * API-Since: 16.0
      */
@@ -276,7 +341,10 @@ public class SFSpeechRecognitionRequest extends NSObject {
     public native boolean addsPunctuation();
 
     /**
-     * If true, punctuations will be automatically included in the recognition results
+     * A Boolean value that indicates whether to add punctuation to speech recognition results.
+     * 
+     * Set this property to `true` for the speech framework to automatically include punctuation in the recognition
+     * results. Punctuation includes a period or question mark at the end of a sentence, and a comma within a sentence.
      * 
      * API-Since: 16.0
      */

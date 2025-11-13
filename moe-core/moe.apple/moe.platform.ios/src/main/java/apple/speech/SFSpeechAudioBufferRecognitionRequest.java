@@ -44,7 +44,20 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * A request to recognize speech from arbitrary audio buffers
+ * A request to recognize speech from captured audio content, such as audio from the device's microphone.
+ * 
+ * Use an ``SFSpeechAudioBufferRecognitionRequest`` object to perform speech recognition on live audio, or on a set of
+ * existing audio buffers. For example, use this request object to route audio from a device's microphone to the speech
+ * recognizer.
+ * 
+ * The request object contains no audio initially. As you capture audio, call ``append(_:)`` or
+ * ``appendAudioSampleBuffer(_:)`` to add audio samples to the request object. The speech recognizer continuously
+ * analyzes the audio you appended, stopping only when you call the ``endAudio()`` method. You must call ``endAudio()``
+ * explicitly to stop the speech recognition process.
+ * 
+ * For a complete example of how to use audio buffers with speech recognition, see [SpeakToMe: Using Speech Recognition
+ * with
+ * AVAudioEngine](https://developer.apple.com/library/archive/samplecode/SpeakToMe/Introduction/Intro.html#//apple_ref/doc/uid/TP40017110).
  * 
  * API-Since: 10.0
  */
@@ -163,7 +176,12 @@ public class SFSpeechAudioBufferRecognitionRequest extends SFSpeechRecognitionRe
     public static native long version_static();
 
     /**
-     * Append audio to the end of the recognition stream. Must currently be in native format.
+     * Appends audio in the PCM format to the end of the recognition request.
+     * 
+     * The audio must be in a native format and uncompressed.
+     * 
+     * - Parameters:
+     * - audioPCMBuffer: An audio buffer that contains audio in the PCM format.
      * 
      * API-Since: 10.0
      */
@@ -172,6 +190,13 @@ public class SFSpeechAudioBufferRecognitionRequest extends SFSpeechRecognitionRe
     public native void appendAudioPCMBuffer(@NotNull AVAudioPCMBuffer audioPCMBuffer);
 
     /**
+     * Appends audio to the end of the recognition request.
+     * 
+     * The audio must be in a native format.
+     * 
+     * - Parameters:
+     * - sampleBuffer: A buffer of audio.
+     * 
      * API-Since: 10.0
      */
     @Generated
@@ -179,7 +204,9 @@ public class SFSpeechAudioBufferRecognitionRequest extends SFSpeechRecognitionRe
     public native void appendAudioSampleBuffer(@NotNull CMSampleBufferRef sampleBuffer);
 
     /**
-     * Indicate that the audio source is finished and no more audio will be appended
+     * Marks the end of audio input for the recognition request.
+     * 
+     * Call this method explicitly to let the speech recognizer know that no more audio input is coming.
      * 
      * API-Since: 10.0
      */
@@ -192,7 +219,10 @@ public class SFSpeechAudioBufferRecognitionRequest extends SFSpeechRecognitionRe
     public native SFSpeechAudioBufferRecognitionRequest init();
 
     /**
-     * Preferred audio format for optimal speech recognition
+     * The preferred audio format for optimal speech recognition.
+     * 
+     * Use the audio format in this property as a hint for optimal recording, but don't depend on the value remaining
+     * unchanged.
      * 
      * API-Since: 10.0
      */

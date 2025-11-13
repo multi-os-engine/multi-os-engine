@@ -27,7 +27,11 @@ public final class GKGameCenterViewControllerState {
     @Generated @NInt public static final long Default = 0xFFFFFFFFFFFFFFFFL;
     @Generated @NInt public static final long Leaderboards = 0x0000000000000000L;
     @Generated @NInt public static final long Achievements = 0x0000000000000001L;
-    @Generated @NInt public static final long Challenges = 0x0000000000000002L;
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 26.0
+     */
+    @Deprecated @Generated @NInt public static final long Challenges = 0x0000000000000002L;
 
     @Generated
     private GKGameCenterViewControllerState() {

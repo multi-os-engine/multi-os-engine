@@ -26,6 +26,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
+ * `CLMonitor` is a name scoped instance which monitors all the conditions
+ * added to it
+ * 
+ * 
  * API-Since: 17.0
  */
 @Generated

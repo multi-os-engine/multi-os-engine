@@ -30,12 +30,11 @@ import org.jetbrains.annotations.Nullable;
 import apple.foundation.NSData;
 
 /**
- * Configure a custom catalog of @c SHSignature objects to match against
+ * An object for storing the reference signatures for custom audio recordings and their associated metadata.
  * 
- * Use a custom catalog if you intend to search against reference signatures that you have provided yourself. All
- * matches will be performed locally on the device against the signatures added to this Catalog.
- * [@c] SHMediaItem can be built using custom data that will be returned when a match is made.
- * Once this catalog has been built it can be written to disk and loaded again at a later date.
+ * Create a custom catalog by adding reference signatures that you generate from audio that you provide. You also add
+ * the associated metadata for each signature. Save your custom catalog and share it with others. You can also load a
+ * saved catalog.
  * 
  * API-Since: 15.0
  */
@@ -58,13 +57,13 @@ public class SHCustomCatalog extends SHCatalog {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * Load a `shazamcatalog` file from a file path URL
+     * Loads a saved custom catalog from a file.
      * 
-     * @param customCatalogURL The path to the `shazamcatalog` file.
-     * @param error            An error if the catalog could not be loaded
-     * @return YES if the data was successfully added, NO on failure with a populated error parameter
+     * - Parameters:
+     * - customCatalogURL: The file URL for a custom catalog.
+     * - error: An output value in Objective-C that indicates the type of error; otherwise, `nil`.
      * 
-     *         API-Since: 15.0
+     * API-Since: 15.0
      */
     @Generated
     @Selector("addCustomCatalogFromURL:error:")
@@ -72,15 +71,18 @@ public class SHCustomCatalog extends SHCatalog {
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * Add a reference @c SHSignature and its associated @c SHMediaItem for matching
+     * Adds a reference signature and its associated metadata to a catalog.
      * 
-     * Once the @c SHCatalog had been added to a @c SHSession further calls to this method will be ignored
      * 
-     * @param signature  The reference to match against
-     * @param mediaItems The metadata associated with the @c SHSignature
-     * @return YES if the data was successfully added, NO on failure with a populated error parameter
+     * > Note:
+     * > This system ignores calls to `addReferenceSignature(_:representing:)` after adding the catalog to an
+     * `SHSession`.
      * 
-     *         API-Since: 15.0
+     * - Parameters:
+     * - signature: The reference signature for the audio recording.
+     * - mediaItems: The metadata for the recording.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("addReferenceSignature:representingMediaItems:error:")
@@ -137,6 +139,8 @@ public class SHCustomCatalog extends SHCatalog {
     public static native long hash_static();
 
     /**
+     * Creates a new custom catalog object for storing reference audio signatures and their associated metadata.
+     * 
      * API-Since: 15.0
      */
     @Generated
@@ -166,6 +170,10 @@ public class SHCustomCatalog extends SHCatalog {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
+     * Creates a new custom catalog object for storing reference audio signatures and their associated metadata.
+     * 
+     * - Returns: A new custom catalog for storing processed reference audio recordings and their associated metadata.
+     * 
      * API-Since: 15.0
      */
     @Generated
@@ -195,18 +203,19 @@ public class SHCustomCatalog extends SHCatalog {
     public static native long version_static();
 
     /**
-     * Write this Catalog to a URL
+     * Saves the custom catalog to a local file.
      * 
-     * A Catalog can safely be shared among devices
-     * [@note] If the `destinationURL` is a directory, a file named Signatures.shazamcatalog will be created
+     * If `destinationURL` is a directory, the system creates a `Signatures.shazamcatalog` file.
      * 
-     * @param destinationURL The location to write to
-     * @param error          populated on error, otherwise nil
-     * @return YES on success, NO on failure with a populated error parameter
+     * - Parameters:
+     * - destinationURL: A URL for the saved custom catalog file.
+     * - error: An output value in Objective-C that indicates the type of error; otherwise, `nil`.
      * 
-     *         API-Since: 15.0
-     *         Deprecated-Since: 18.0
-     *         Deprecated-Message: Use dataRepresentation
+     * - Returns: `YES` if the catalog writes to the file; otherwise, `NO`.
+     * 
+     * API-Since: 15.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use dataRepresentation
      */
     @Deprecated
     @Generated

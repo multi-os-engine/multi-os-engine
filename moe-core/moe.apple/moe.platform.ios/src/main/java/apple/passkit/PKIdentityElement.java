@@ -168,7 +168,7 @@ public class PKIdentityElement extends NSObject implements NSCopying {
     public static native PKIdentityElement documentIssueDateElement();
 
     /**
-     * The doument's number, as defined by the document's issuing authority.
+     * The document's number, as defined by the document's issuing authority.
      * 
      * API-Since: 16.0
      */
@@ -310,4 +310,64 @@ public class PKIdentityElement extends NSObject implements NSCopying {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The user's eye color on record with the issuer.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("eyeColorElement")
+    @NotNull
+    public static native PKIdentityElement eyeColorElement();
+
+    /**
+     * The user's hair color on record with the issuer.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("hairColorElement")
+    @NotNull
+    public static native PKIdentityElement hairColorElement();
+
+    /**
+     * The user's height on record with the issuer.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("heightElement")
+    @NotNull
+    public static native PKIdentityElement heightElement();
+
+    /**
+     * The user's organ donor status on record with the issuer.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("organDonorStatusElement")
+    @NotNull
+    public static native PKIdentityElement organDonorStatusElement();
+
+    /**
+     * The user's veteran status on record with the issuer.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("veteranStatusElement")
+    @NotNull
+    public static native PKIdentityElement veteranStatusElement();
+
+    /**
+     * The user's weight on record with the issuer.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("weightElement")
+    @NotNull
+    public static native PKIdentityElement weightElement();
 }

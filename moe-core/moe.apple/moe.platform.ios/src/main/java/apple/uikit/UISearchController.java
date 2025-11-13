@@ -226,7 +226,9 @@ public class UISearchController extends UIViewController implements UIViewContro
     public native boolean dimsBackgroundDuringPresentation();
 
     /**
-     * default is YES
+     * Default is `YES` for apps linked before iOS 26.0, other than on MacCatalyst, where the default is `NO`.
+     * On iOS 26.0 for apps linked on iOS 26.0 and later, the value is determined by context unless directly set through
+     * the API. The default remains `NO` on MacCatalyst.
      * 
      * API-Since: 8.0
      */
@@ -393,7 +395,9 @@ public class UISearchController extends UIViewController implements UIViewContro
     public native void setDimsBackgroundDuringPresentation(boolean value);
 
     /**
-     * default is YES
+     * Default is `YES` for apps linked before iOS 26.0, other than on MacCatalyst, where the default is `NO`.
+     * On iOS 26.0 for apps linked on iOS 26.0 and later, the value is determined by context unless directly set through
+     * the API. The default remains `NO` on MacCatalyst.
      * 
      * API-Since: 8.0
      */

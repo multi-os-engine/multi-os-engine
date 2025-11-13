@@ -48,8 +48,14 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.coremedia.opaque.CMTaggedBufferGroupRef;
 
 /**
+ * An AVAsynchronousVideoCompositionRequest instance contains the information necessary for a video compositor to render
+ * an output pixel buffer. The video compositor must implement the AVVideoCompositing protocol.
+ * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 7.0
  */
 @Generated
@@ -193,14 +199,12 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
     public native void finishCancelledRequest();
 
     /**
-     * finishWithComposedVideoFrame:
-     * 
      * The method that the custom compositor calls when composition succeeds.
      * 
-     * @param composedVideoFrame
-     *                           The video frame to finish with.
+     * - Parameter composedVideoFrame: The video frame to finish with. Call finishWithComposedTaggedBufferGroup: instead
+     * if outputBufferDescription is non-nil.
      * 
-     *                           API-Since: 7.0
+     * API-Since: 7.0
      */
     @Generated
     @Selector("finishWithComposedVideoFrame:")
@@ -231,14 +235,13 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
     public native AVVideoCompositionRenderContext renderContext();
 
     /**
-     * sourceFrameByTrackID:
-     * 
      * Returns the source CVPixelBufferRef for the given track ID
      * 
-     * @param trackID
-     *                The track ID for the requested source frame
+     * If the track contains tagged buffers, a pixel buffer from one of the tagged buffers will be returned.
      * 
-     *                API-Since: 7.0
+     * - Parameter trackID: The track ID for the requested source frame
+     * 
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -267,14 +270,11 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
     public native AVVideoCompositionInstruction videoCompositionInstruction();
 
     /**
-     * sourceSampleBufferByTrackID:
-     * 
      * Returns the source CMSampleBufferRef for the given track ID
      * 
-     * @param trackID
-     *                The track ID for the requested source sample buffer
+     * - Parameter trackID: The track ID for the requested source sample buffer
      * 
-     *                API-Since: 15.0
+     * API-Since: 7.0
      */
     @Nullable
     @Generated
@@ -292,14 +292,11 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
     public native NSArray<? extends NSNumber> sourceSampleDataTrackIDs();
 
     /**
-     * sourceTimedMetadataByTrackID:
-     * 
      * Returns the source AVTimedMetadataGroup * for the given track ID
      * 
-     * @param trackID
-     *                The track ID for the requested source timed metadata group.
+     * - Parameter trackID: The track ID for the requested source timed metadata group.
      * 
-     *                API-Since: 15.0
+     * API-Since: 15.0
      */
     @Nullable
     @Generated
@@ -310,4 +307,57 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Associates the pixel buffer with the specified spatial configuration.
+     * - Parameters:
+     * - spatialVideoConfiguration: The spatial configuration to associate with the pixel buffer.
+     * - pixelBuffer: The pixel buffer to associate with the spatial configuration.
+     * NOTE: The spatial configuration must be one of the spatial configurations specified in the
+     * ``AVVideoComposition/spatialConfigurations`` property. An exception will be thrown otherwise.
+     * NOTE: All pixel buffers from the custom compositor must be associated with the same spatial configuration. An
+     * exception will be thrown otherwise.
+     * A spatial configuration with all nil values indicates the video is not spatial. A nil spatial configuration also
+     * indicates the video is not spatial. The value can be nil, which indicates the output will not be spatial, but a
+     * spatial configuration with all nil values must be in the ``AVVideoComposition/spatialConfigurations`` property or
+     * an exception will be thrown.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("attachSpatialVideoConfiguration:toPixelBuffer:")
+    public native void attachSpatialVideoConfigurationToPixelBuffer(
+            @Nullable AVSpatialVideoConfiguration spatialVideoConfiguration, @NotNull CVBufferRef pixelBuffer);
+
+    /**
+     * The method that the custom compositor calls when composition succeeds.
+     * 
+     * - Parameter taggedBufferGroup: The tagged buffer group containing the composed tagged buffers. The tagged buffers
+     * must be compatible with the outputBufferDescription specified in the video composition. The
+     * outputBufferDescription must not be nil when calling this function.
+     * NOTE: If ``AVVideoComposition/spatialConfigurations`` is not empty, then
+     * ``attach(spatialVideoConfiguration:to:)`` must be called with one of the spatial configurations. An exception
+     * will be thrown otherwise. Also, all pixel buffers must be associated with the same spatial configuration. An
+     * exception will be thrown otherwise.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("finishWithComposedTaggedBufferGroup:")
+    public native void finishWithComposedTaggedBufferGroup(@NotNull CMTaggedBufferGroupRef taggedBufferGroup);
+
+    /**
+     * Returns the source CMTaggedBufferGroupRef for the given track ID.
+     * 
+     * Returns nil if the video track does not contain tagged buffers. Returns nil if the track does not contain video.
+     * This function should only be called when supportsSourceTaggedBuffers is YES.
+     * 
+     * - Parameter trackID: The track ID for the requested source tagged buffer group.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("sourceTaggedBufferGroupByTrackID:")
+    @Nullable
+    public native CMTaggedBufferGroupRef sourceTaggedBufferGroupByTrackID(int trackID);
 }

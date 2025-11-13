@@ -44,6 +44,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.avfoundation.protocol.AVExternalSyncDeviceDelegate;
 
 /**
  * AVCaptureDeviceInput
@@ -500,4 +501,311 @@ public class AVCaptureDeviceInput extends AVCaptureInput {
     @Generated
     @Selector("setWindNoiseRemovalEnabled:")
     public native void setWindNoiseRemovalEnabled(boolean value);
+
+    /**
+     * The receiver's external sync frame duration (the reciprocal of its frame rate) when being driven by an external
+     * sync device.
+     * 
+     * Set up your input to follow an external sync device by calling
+     * ``followExternalSyncDevice:videoFrameDuration:delegate:``.
+     * - Note: The value of this readonly property is `kCMTimeInvalid` unless the ``AVExternalSyncDevice`` is actively
+     * driving the ``AVCaptureDeviceInput``. This is reflected by the ``AVExternalSyncDevice/status`` being either
+     * ``AVExternalSyncDeviceStatusActiveSync`` or ``AVExternalSyncDeviceStatusFreeRunSync``.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("activeExternalSyncVideoFrameDuration")
+    @ByValue
+    public native CMTime activeExternalSyncVideoFrameDuration();
+
+    /**
+     * The receiver's locked frame duration (the reciprocal of its frame rate). Setting this property guarantees the
+     * intra-frame duration delivered by the device input is precisely the frame duration you request.
+     * 
+     * Set this property to run the receiver's associated ``AVCaptureDevice`` at precisely your provided frame rate
+     * (expressed as a duration). Query ``AVCaptureDevice/minSupportedLockedVideoFrameDuration`` to find the minimum
+     * value supported by this ``AVCaptureDeviceInput``. In order to disable locked video frame duration, set this
+     * property to `kCMTimeInvalid`. This property resets itself to `kCMTimeInvalid` when the receiver's attached
+     * ``AVCaptureDevice/activeFormat`` changes. When you set this property, its value is also reflected in the
+     * receiver's ``AVCaptureDevice/activeVideoMinFrameDuration`` and ``AVCaptureDevice/activeVideoMaxFrameDuration``.
+     * 
+     * - Note: Locked frame duration availability may change depending on the device configuration. For example, locked
+     * frame duration is unsupported when ``AVCaptureDevice/autoVideoFrameRateEnabled`` or
+     * ``AVCaptureMovieFileOutput/spatialVideoCaptureEnabled`` is set to `true`.
+     * 
+     * - Note: Only one ``AVCaptureDeviceInput`` added to an ``AVCaptureMultiCamSession`` can follow an external sync
+     * device or run at a locked frame duration.
+     * 
+     * - Note: Setting this property may cause a lengthy reconfiguration of the receiver, similar to setting
+     * ``AVCaptureDevice/activeFormat`` or ``AVCaptureSession/sessionPreset``.
+     * 
+     * - Important: If you set this property to a valid value while the receiver's
+     * ``AVCaptureDevice/minSupportedLockedVideoFrameDuration`` is `kCMTimeInvalid`, it throws an
+     * `NSInvalidArgumentException`.
+     * 
+     * - Important: If you set this property while the receiver's ``lockedVideoFrameDurationSupported`` property returns
+     * `false`, it throws an `NSInvalidArgumentException`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("activeLockedVideoFrameDuration")
+    @ByValue
+    public native CMTime activeLockedVideoFrameDuration();
+
+    /**
+     * The external sync device currently being followed by this input.
+     * 
+     * This readonly property returns the ``AVExternalSyncDevice`` instance you provided in
+     * ``followExternalSyncDevice:videoFrameDuration:delegate:``. This property returns `nil` when an external sync
+     * device is disconnected or fails to calibrate.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("externalSyncDevice")
+    @Nullable
+    public native AVExternalSyncDevice externalSyncDevice();
+
+    /**
+     * Configures the the device input to follow an external sync device at the given frame duration.
+     * 
+     * - Parameter externalSyncDevice: The ``AVExternalSyncDevice`` hardware to follow.
+     * - Parameter videoFrameDuration: The frame duration to which the ``AVExternalSyncDevice`` is calibrated.
+     * - Parameter delegate: The delegate to notify when the connection status changes, or an error occurs.
+     * 
+     * Call this method to direct your ``AVCaptureDeviceInput`` to follow the external sync pulse from a sync device at
+     * the given frame duration.
+     * 
+     * Your provided `videoFrameDuration` value must match the sync pulse duration of the external sync device. If it
+     * does not, the request times out, the external sync device's status returns to
+     * ``AVExternalSyncDeviceStatusReady``, and your session stops running, posting a
+     * ``AVCaptureSessionRuntimeErrorNotification`` with ``AVErrorFollowExternalSyncDeviceTimedOut``.
+     * 
+     * The ability to follow an external sync device may change depending on the device configuration. For example,
+     * ``followExternalSyncDevice:videoFrameDuration:delegate:`` cannot be used when
+     * ``AVCaptureDevice/autoVideoFrameRateEnabled`` is `true`.
+     * 
+     * To stop following an external pulse, call ``unfollowExternalSyncDevice``. External sync device following is also
+     * disabled when your device's ``AVCaptureDeviceFormat`` changes.
+     * 
+     * Your provided delegate's ``AVExternalSyncDeviceDelegate/externalSyncDeviceStatusDidChange:`` method is called
+     * with a status of ``AVExternalSyncDeviceStatusReady`` if the external pulse signal is not close enough to the
+     * provided `videoFrameDuration` for successful calibration.
+     * 
+     * Once your ``AVExternalSyncDevice/status`` changes to ``AVExternalSyncDeviceStatusActiveSync``, your input's
+     * ``AVCaptureInput/activeExternalSyncVideoFrameDuration`` property reports the up-to-date frame duration.
+     * ``AVCaptureInput/activeExternalSyncVideoFrameDuration`` is also reflected in the
+     * ``AVCaptureDevice/activeVideoMinFrameDuration`` and ``AVCaptureDevice/activeVideoMaxFrameDuration`` of your
+     * input's associated device.
+     * 
+     * - Note: Calling this method may cause a lengthy reconfiguration of the receiver, similar to setting a new active
+     * format or ``AVCaptureSession/sessionPreset``.
+     * 
+     * - Important: Calling this method throws an `NSInvalidArgumentException` if
+     * ``AVCaptureDeviceInput/externalSyncSupported`` returns `false`.
+     * 
+     * - Important: The provided external sync device's ``status`` must be ``AVExternalSyncDeviceStatusReady`` when you
+     * call this method, otherwise an `NSInvalidArgumentException` is thrown.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("followExternalSyncDevice:videoFrameDuration:delegate:")
+    public native void followExternalSyncDeviceVideoFrameDurationDelegate(
+            @NotNull AVExternalSyncDevice externalSyncDevice, @ByValue CMTime frameDuration,
+            @Mapped(ObjCObjectMapper.class) @Nullable AVExternalSyncDeviceDelegate delegate);
+
+    /**
+     * A BOOL value specifying whether the Cinematic Video effect is being applied to any movie file output, video data
+     * output, metadata output, or video preview layer added to the capture session.
+     * 
+     * Default is `false`. Set to `true` to enable support for Cinematic Video capture.
+     * 
+     * When you set this property to `true`, your input's associated ``AVCaptureDevice/focusMode`` changes to
+     * ``AVCaptureFocusModeContinuousAutoFocus``. While Cinematic Video capture is enabled, you are not permitted to
+     * change your device's focus mode, and any attempt to do so results in an `NSInvalidArgumentException`. You may
+     * only set this property to `true` if ``cinematicVideoCaptureSupported`` is `true`.
+     * 
+     * - Note: Enabling Cinematic Video capture requires a lengthy reconfiguration of the capture render pipeline, so if
+     * you intend to capture Cinematic Video, you should set this property to `true` before calling
+     * ``AVCaptureSession/startRunning`` or within ``AVCaptureSession/beginConfiguration`` and
+     * ``AVCaptureSession/commitConfiguration`` while running.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isCinematicVideoCaptureEnabled")
+    public native boolean isCinematicVideoCaptureEnabled();
+
+    /**
+     * A BOOL value specifying whether Cinematic Video capture is supported.
+     * 
+     * With Cinematic Video capture, you get a simulated depth-of-field effect that keeps your subjects (people, pets,
+     * and more) in sharp focus while applying a pleasing blur to the background (or foreground). Depending on the focus
+     * mode (see ``AVCaptureCinematicVideoFocusMode`` for detail), the camera either uses machine learning to
+     * automatically detect and focus on subjects in the scene, or it fixes focus on a subject until it exits the scene.
+     * Cinematic Videos can be played back and edited using the Cinematic framework.
+     * 
+     * You can adjust the video's simulated aperture before starting a recording using the ``simulatedAperture``
+     * property. With Cinematic Video specific focus methods on ``AVCaptureDevice``, you can dynamically control focus
+     * transitions.
+     * 
+     * Movie files captured with Cinematic Video enabled can be played back and edited with the [Cinematic framework]
+     * (https://developer.apple.com/documentation/cinematic/playing-and-editing-cinematic-mode-video?language=objc).
+     * 
+     * This property returns `true` if the session's current configuration allows Cinematic Video capture. When
+     * switching cameras or formats, this property may change. When this property changes from `true` to `false`,
+     * ``cinematicVideoCaptureEnabled`` also reverts to `false`. If you've previously opted in for Cinematic Video
+     * capture and then change configuration, you may need to set ``cinematicVideoCaptureEnabled`` to `true` again. This
+     * property is key-value observable.
+     * 
+     * - Note: ``AVCaptureDepthDataOutput`` is not supported when ``cinematicVideoCaptureEnabled`` is set to `true`.
+     * Running an ``AVCaptureSession`` with both of these features throws an `NSInvalidArgumentException`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isCinematicVideoCaptureSupported")
+    public native boolean isCinematicVideoCaptureSupported();
+
+    /**
+     * Indicates whether the device input supports being configured to follow an external sync device.
+     * 
+     * See ``AVCaptureDeviceInput/followExternalSyncDevice:videoFrameDuration:delegate:`` for more information on
+     * external sync.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isExternalSyncSupported")
+    public native boolean isExternalSyncSupported();
+
+    /**
+     * Indicates whether the device input supports locked frame durations.
+     * 
+     * See ``AVCaptureDeviceInput/activeLockedVideoFrameDuration`` for more information on video frame duration locking.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isLockedVideoFrameDurationSupported")
+    public native boolean isLockedVideoFrameDurationSupported();
+
+    /**
+     * The receiver's locked frame duration (the reciprocal of its frame rate). Setting this property guarantees the
+     * intra-frame duration delivered by the device input is precisely the frame duration you request.
+     * 
+     * Set this property to run the receiver's associated ``AVCaptureDevice`` at precisely your provided frame rate
+     * (expressed as a duration). Query ``AVCaptureDevice/minSupportedLockedVideoFrameDuration`` to find the minimum
+     * value supported by this ``AVCaptureDeviceInput``. In order to disable locked video frame duration, set this
+     * property to `kCMTimeInvalid`. This property resets itself to `kCMTimeInvalid` when the receiver's attached
+     * ``AVCaptureDevice/activeFormat`` changes. When you set this property, its value is also reflected in the
+     * receiver's ``AVCaptureDevice/activeVideoMinFrameDuration`` and ``AVCaptureDevice/activeVideoMaxFrameDuration``.
+     * 
+     * - Note: Locked frame duration availability may change depending on the device configuration. For example, locked
+     * frame duration is unsupported when ``AVCaptureDevice/autoVideoFrameRateEnabled`` or
+     * ``AVCaptureMovieFileOutput/spatialVideoCaptureEnabled`` is set to `true`.
+     * 
+     * - Note: Only one ``AVCaptureDeviceInput`` added to an ``AVCaptureMultiCamSession`` can follow an external sync
+     * device or run at a locked frame duration.
+     * 
+     * - Note: Setting this property may cause a lengthy reconfiguration of the receiver, similar to setting
+     * ``AVCaptureDevice/activeFormat`` or ``AVCaptureSession/sessionPreset``.
+     * 
+     * - Important: If you set this property to a valid value while the receiver's
+     * ``AVCaptureDevice/minSupportedLockedVideoFrameDuration`` is `kCMTimeInvalid`, it throws an
+     * `NSInvalidArgumentException`.
+     * 
+     * - Important: If you set this property while the receiver's ``lockedVideoFrameDurationSupported`` property returns
+     * `false`, it throws an `NSInvalidArgumentException`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setActiveLockedVideoFrameDuration:")
+    public native void setActiveLockedVideoFrameDuration(@ByValue CMTime value);
+
+    /**
+     * A BOOL value specifying whether the Cinematic Video effect is being applied to any movie file output, video data
+     * output, metadata output, or video preview layer added to the capture session.
+     * 
+     * Default is `false`. Set to `true` to enable support for Cinematic Video capture.
+     * 
+     * When you set this property to `true`, your input's associated ``AVCaptureDevice/focusMode`` changes to
+     * ``AVCaptureFocusModeContinuousAutoFocus``. While Cinematic Video capture is enabled, you are not permitted to
+     * change your device's focus mode, and any attempt to do so results in an `NSInvalidArgumentException`. You may
+     * only set this property to `true` if ``cinematicVideoCaptureSupported`` is `true`.
+     * 
+     * - Note: Enabling Cinematic Video capture requires a lengthy reconfiguration of the capture render pipeline, so if
+     * you intend to capture Cinematic Video, you should set this property to `true` before calling
+     * ``AVCaptureSession/startRunning`` or within ``AVCaptureSession/beginConfiguration`` and
+     * ``AVCaptureSession/commitConfiguration`` while running.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setCinematicVideoCaptureEnabled:")
+    public native void setCinematicVideoCaptureEnabled(boolean value);
+
+    /**
+     * Shallow depth of field simulated aperture.
+     * 
+     * When capturing a Cinematic Video, use this property to control the amount of blur in the simulated depth of field
+     * effect.
+     * 
+     * This property only takes effect when ``cinematicVideoCaptureEnabled`` is set to `true`.
+     * 
+     * - Important: Setting this property to a value less than the ``AVCaptureDevice/activeFormat/minSimulatedAperture``
+     * or greater than the ``AVCaptureDevice/activeFormat/maxSimulatedAperture`` throws an `NSRangeException`. you may
+     * only set this property if ``AVCaptureDevice/activeFormat/minSimulatedAperture`` returns a non-zero value,
+     * otherwise an `NSInvalidArgumentException` is thrown. You must set this property before starting a Cinematic Video
+     * capture. If you attempt to set it while a recording is in progress, an `NSInvalidArgumentException` is thrown.
+     * 
+     * This property is initialized to the associated ``AVCaptureDevice/activeFormat/defaultSimulatedAperture``.
+     * 
+     * This property is key-value observable.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setSimulatedAperture:")
+    public native void setSimulatedAperture(float value);
+
+    /**
+     * Shallow depth of field simulated aperture.
+     * 
+     * When capturing a Cinematic Video, use this property to control the amount of blur in the simulated depth of field
+     * effect.
+     * 
+     * This property only takes effect when ``cinematicVideoCaptureEnabled`` is set to `true`.
+     * 
+     * - Important: Setting this property to a value less than the ``AVCaptureDevice/activeFormat/minSimulatedAperture``
+     * or greater than the ``AVCaptureDevice/activeFormat/maxSimulatedAperture`` throws an `NSRangeException`. you may
+     * only set this property if ``AVCaptureDevice/activeFormat/minSimulatedAperture`` returns a non-zero value,
+     * otherwise an `NSInvalidArgumentException` is thrown. You must set this property before starting a Cinematic Video
+     * capture. If you attempt to set it while a recording is in progress, an `NSInvalidArgumentException` is thrown.
+     * 
+     * This property is initialized to the associated ``AVCaptureDevice/activeFormat/defaultSimulatedAperture``.
+     * 
+     * This property is key-value observable.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("simulatedAperture")
+    public native float simulatedAperture();
+
+    /**
+     * Discontinues external sync.
+     * 
+     * This method stops your input from syncing to the external sync device you specified in
+     * ``followExternalSyncDevice:videoFrameDuration:delegate:``.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("unfollowExternalSyncDevice")
+    public native void unfollowExternalSyncDevice();
 }

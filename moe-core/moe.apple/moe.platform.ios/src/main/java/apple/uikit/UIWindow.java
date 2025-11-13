@@ -462,6 +462,12 @@ public class UIWindow extends UIView {
     @ByValue
     public native CGRect convertRectToWindow(@ByValue CGRect rect, @Nullable UIWindow window);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use init(windowScene:) instead.
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native UIWindow init();
@@ -470,6 +476,12 @@ public class UIWindow extends UIView {
     @Selector("initWithCoder:")
     public native UIWindow initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use init(windowScene:) instead.
+     */
+    @Deprecated
     @Generated
     @Selector("initWithFrame:")
     public native UIWindow initWithFrame(@ByValue CGRect frame);

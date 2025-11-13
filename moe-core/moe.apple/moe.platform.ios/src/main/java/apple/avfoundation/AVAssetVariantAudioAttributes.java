@@ -26,8 +26,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVAssetVariantAudioAttributes
- * 
  * Audio attributes for an asset variant.
  * 
  * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
@@ -96,8 +94,6 @@ public class AVAssetVariantAudioAttributes extends NSObject {
     public static native String description_static();
 
     /**
-     * [@property] formatIDs
-     * 
      * Provides an array of audio formats present in the variant's renditions if any are declared. Each value in the
      * array is a NSNumber representation of AudioFormatID.
      * 
@@ -145,15 +141,12 @@ public class AVAssetVariantAudioAttributes extends NSObject {
     public static native AVAssetVariantAudioAttributes new_objc();
 
     /**
-     * renditionSpecificAttributesForMediaOption:
-     * 
      * Provides attributes for a specific audio media selection option. If no rendition specific attributes are
      * declared, it will be nil.
      * 
-     * @param mediaSelectionOption
-     *                             The option to return rendition specific information for.
+     * - Parameter mediaSelectionOption: The option to return rendition specific information for.
      * 
-     *                             API-Since: 15.0
+     * API-Since: 15.0
      */
     @Nullable
     @Generated

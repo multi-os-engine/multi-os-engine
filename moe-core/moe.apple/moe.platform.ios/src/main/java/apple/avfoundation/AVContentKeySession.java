@@ -34,6 +34,34 @@ import org.jetbrains.annotations.Nullable;
 import apple.opaque.dispatch_queue_t;
 
 /**
+ * An AVContentKeySession is used to create and track decryption keys for media data. Objects conforming to the
+ * AVContentKeyRecipient protocol, such as AVURLAssets, can be added to an AVContentKeySession to employ the services of
+ * the AVContentKeySession in handling new key requests and to obtain access to the session's already existing keys.
+ * 
+ * Its secondary purpose is to provide a report of expired sessions to assist a controlling entity that wishes to track
+ * the set of sessions that are still active. If initialized with a location at which to store them, AVContentKeySession
+ * maintains a global collection of pending "expired session reports", each associated with an identifier for the app
+ * that created the session. The contents of this identifier are specified by the controlling entity that provides media
+ * data or that grants permission for its use.
+ * 
+ * Expired sessions are tracked as follows: a stream processing session is considered to be started after an instance of
+ * AVContentKeySession is created and the first object conforming to the AVContentKeyRecipient protocol is added to it.
+ * If an instance of AVContentKeySession that has reached this state does not receive an expire message before it's
+ * deallocated or the process in which it's running is terminated, an "expired session report" will subsequently be
+ * added to the pending list of expired session reports that indicates that the session expired abnormally. In contrast,
+ * for AVContentKeySessions that reach the state of having at least one object conforming to the AVContentKeyRecipient
+ * protocol added to them and later receive an expire message, "expired session reports" will be generated that indicate
+ * that the session expired normally.
+ * 
+ * To obtain the collection of pending expired session reports in order to provide them to the controlling entity
+ * associated with a specific app identifier, use +pendingExpiredSessionReportsWithAppIdentifier:.
+ * 
+ * After pending expired session reports have been sent to the controlling entity and their receipt has been
+ * acknowledged, they can be removed from the collection of pending expired session reports maintained by
+ * AVContentKeySession by using +removePendingExpiredSessionReports:withAppIdentifier:.
+ * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 10.3
  */
 @Generated
@@ -55,8 +83,6 @@ public class AVContentKeySession extends NSObject {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * addContentKeyRecipient:
-     * 
      * Informs the receiver that the specified recipient will be used for the session.
      * 
      * It is an error to add recipient to sessions that have received an expire message. It is also an error to add
@@ -106,8 +132,6 @@ public class AVContentKeySession extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property] contentKeyRecipients
-     * 
      * The array of recipients of content keys currently associated with the AVContentKeySession.
      * 
      * API-Since: 10.3
@@ -118,41 +142,36 @@ public class AVContentKeySession extends NSObject {
     public native NSArray<?> contentKeyRecipients();
 
     /**
-     * contentKeySessionWithKeySystem:
-     * 
      * Creates a new instance of AVContentKeySession to manage a collection of media content keys.
      * 
      * This method returns an AVContentKeySession instance that is capable of managing collection of media content keys
      * corresponding to the input keySystem. An NSInvalidArgumentException will be raised if the value of keySystem is
      * unsupported.
      * 
-     * API-Since: 11.0
+     * - Parameter keySystem: A valid key system for retrieving keys.
      * 
-     * @param keySystem
-     *                  A valid key system for retrieving keys.
-     * @return A new AVContentKeySession.
+     * - Returns: A new AVContentKeySession.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("contentKeySessionWithKeySystem:")
     public static native AVContentKeySession contentKeySessionWithKeySystem(@NotNull String keySystem);
 
     /**
-     * contentKeySessionWithKeySystem:storageDirectoryAtURL:
-     * 
      * Creates a new instance of AVContentKeySession to manage a collection of media content keys.
      * 
      * This method returns an AVContentKeySession instance that is capable of managing collection of media content keys
      * corresponding to the input keySystem. An NSInvalidArgumentException will be raised if the value of keySystem is
      * unsupported.
      * 
-     * API-Since: 10.3
+     * - Parameter keySystem: A valid key system for retrieving keys.
+     * - Parameter storageURL: URL to a writable directory that the session will use to facilitate expired session
+     * reports after abnormal session termination.
      * 
-     * @param keySystem
-     *                   A valid key system for retrieving keys.
-     * @param storageURL
-     *                   URL to a writable directory that the session will use to facilitate expired session reports
-     *                   after abnormal session termination.
-     * @return A new AVContentKeySession.
+     * - Returns: A new AVContentKeySession.
+     * 
+     * API-Since: 10.3
      */
     @Generated
     @Selector("contentKeySessionWithKeySystem:storageDirectoryAtURL:")
@@ -160,8 +179,6 @@ public class AVContentKeySession extends NSObject {
             @NotNull String keySystem, @NotNull NSURL storageURL);
 
     /**
-     * [@property] contentProtectionSessionIdentifier
-     * 
      * An opaque identifier for the current content protection session.
      * 
      * May be nil. Will call the delegate's contentKeySessionContentProtectionSessionIdentifierDidChange: when the
@@ -180,8 +197,6 @@ public class AVContentKeySession extends NSObject {
     public static native String debugDescription_static();
 
     /**
-     * [@property] delegate
-     * 
      * The receiver's delegate.
      * 
      * The value of this property is an object conforming to the AVContentKeySessionDelegate protocol. The delegate is
@@ -196,8 +211,6 @@ public class AVContentKeySession extends NSObject {
     public native AVContentKeySessionDelegate delegate();
 
     /**
-     * [@property] delegateQueue
-     * 
      * The dispatch queue on which all delegate methods will be invoked whenever processes requiring content keys are
      * executed asynchronously.
      * 
@@ -215,8 +228,6 @@ public class AVContentKeySession extends NSObject {
     public static native String description_static();
 
     /**
-     * expire
-     * 
      * Tells the receiver to treat the session as having been intentionally and normally expired.
      * 
      * When an instance of AVContentKeySession receives an expire message, all of its associated objects conforming to
@@ -261,8 +272,6 @@ public class AVContentKeySession extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
-     * [@property] keySystem
-     * 
      * The key system used for retrieving keys
      * 
      * API-Since: 10.3
@@ -273,21 +282,16 @@ public class AVContentKeySession extends NSObject {
     public native String keySystem();
 
     /**
-     * makeSecureTokenForExpirationDateOfPersistableContentKey:completionHandler:
-     * 
      * Creates a secure server playback context (SPC) that the client could send to the key server to obtain an
      * expiration date for the provided persistable content key data.
      * 
-     * @param persistableContentKeyData
-     *                                  Persistable content key data that was previously created using
-     *                                  -[AVContentKeyRequest persistableContentKeyFromKeyVendorResponse:options:error:]
-     *                                  or obtained via AVContentKeySessionDelegate callback
-     *                                  -contentKeySession:didUpdatePersistableContentKey:forContentKeyIdentifier:.
-     * @param handler
-     *                                  Once the secure token is ready, this block will be called with the token or an
-     *                                  error describing the failure.
+     * - Parameter persistableContentKeyData: Persistable content key data that was previously created using
+     * -[AVContentKeyRequest persistableContentKeyFromKeyVendorResponse:options:error:] or obtained via
+     * AVContentKeySessionDelegate callback -contentKeySession:didUpdatePersistableContentKey:forContentKeyIdentifier:.
+     * - Parameter handler: Once the secure token is ready, this block will be called with the token or an error
+     * describing the failure.
      * 
-     *                                  API-Since: 11.0
+     * API-Since: 11.0
      */
     @Generated
     @Selector("makeSecureTokenForExpirationDateOfPersistableContentKey:completionHandler:")
@@ -309,24 +313,21 @@ public class AVContentKeySession extends NSObject {
     public static native AVContentKeySession new_objc();
 
     /**
-     * pendingExpiredSessionReportsWithAppIdentifier:storageDirectoryAtURL:
-     * 
      * Provides "expired session reports" for prior AVContentKeySessions created with the specified app identifier that
      * have expired either normally or abnormally.
      * 
      * Note that no reports for sessions still in progress will be included.
      * 
-     * API-Since: 10.3
+     * - Parameter appIdentifier: An opaque identifier for the application. The contents of this identifier depend on
+     * the particular protocol in use by the entity that controls the use of the media data.
+     * - Parameter storageURL: URL to a directory previously used with one or more instances of AVContentKeySession for
+     * the storage of expired session reports.
      * 
-     * @param appIdentifier
-     *                      An opaque identifier for the application. The contents of this identifier depend on the
-     *                      particular protocol in use by the entity that controls the use of the media data.
-     * @param storageURL
-     *                      URL to a directory previously used with one or more instances of AVContentKeySession for the
-     *                      storage of expired session reports.
-     * @return An NSArray containing instances of NSData, each containing a pending expired session report as a
-     *         property-list serialization of an NSDictionary object. The contents of expired session reports depend on
-     *         the particular protocol in use by the entity that controls the use of the media data.
+     * - Returns: An NSArray containing instances of NSData, each containing a pending expired session report as a
+     * property-list serialization of an NSDictionary object. The contents of expired session reports depend on the
+     * particular protocol in use by the entity that controls the use of the media data.
+     * 
+     * API-Since: 10.3
      */
     @NotNull
     @Generated
@@ -335,27 +336,22 @@ public class AVContentKeySession extends NSObject {
             @NotNull NSData appIdentifier, @NotNull NSURL storageURL);
 
     /**
-     * processContentKeyRequestWithIdentifier:initializationData:options:
-     * 
      * Informs the receiver that it should attempt to instantiate a content decryption key using the specified
      * initialization data.
      * 
      * May be used to generate an AVContentKeyRequest from request initialization data already in hand, without awaiting
      * such data during the processing of media data of an associated recipient.
      * 
-     * API-Since: 10.3
+     * - Parameter identifier: Container- and protocol-specific identifier to be used to obtain a key response. Either
+     * identifier or initializationData must be non-nil. Both can be non-nil, if the content protection protocol
+     * requires both.
+     * - Parameter initializationData: Container- and protocol-specific data to be used to obtain a key response. Either
+     * identifier or initializationData must be non-nil. Both can be non-nil, if the content protection protocol
+     * requires both.
+     * - Parameter options: Additional information necessary to obtain the key, or nil if none. See
+     * AVContentKeyRequest*Key below.
      * 
-     * @param identifier
-     *                           Container- and protocol-specific identifier to be used to obtain a key response. Either
-     *                           identifier or initializationData must be non-nil. Both can be non-nil, if the content
-     *                           protection protocol requires both.
-     * @param initializationData
-     *                           Container- and protocol-specific data to be used to obtain a key response. Either
-     *                           identifier or initializationData must be non-nil. Both can be non-nil, if the content
-     *                           protection protocol requires both.
-     * @param options
-     *                           Additional information necessary to obtain the key, or nil if none. See
-     *                           AVContentKeyRequest*Key below.
+     * API-Since: 10.3
      */
     @Generated
     @Selector("processContentKeyRequestWithIdentifier:initializationData:options:")
@@ -364,8 +360,6 @@ public class AVContentKeySession extends NSObject {
             @Nullable NSDictionary<String, ?> options);
 
     /**
-     * removeContentKeyRecipient:
-     * 
      * Informs the receiver that the specified recipient will no longer be used.
      * 
      * After the specified recipient is removed from the receiver it will become inoperable. Remove the recipient only
@@ -380,24 +374,18 @@ public class AVContentKeySession extends NSObject {
             @NotNull @Mapped(ObjCObjectMapper.class) AVContentKeyRecipient recipient);
 
     /**
-     * removePendingExpiredSessionReports:withAppIdentifier:storageDirectoryAtURL:
-     * 
      * Removes expired session reports for prior AVContentKeySessions from storage. Once they have been removed, they
      * will no longer be available via subsequent invocations of +pendingExpiredSessionReportsWithAppIdentifier:.
      * 
      * This method is most suitable for use only after the specified expired session reports have been sent to the
      * entity that controls the use of the media data and the entity has acknowledged their receipt.
      * 
-     * API-Since: 10.3
+     * - Parameter expiredSessionReports: An array of expired session reports to be discarded.
+     * - Parameter appIdentifier: An opaque identifier for the application. The contents of this identifier depend on
+     * the particular protocol in use by the entity that controls the use of the media data.
+     * - Parameter storageURL: URL to a writable folder.
      * 
-     * @param expiredSessionReports
-     *                              An array of expired session reports to be discarded.
-     * @param appIdentifier
-     *                              An opaque identifier for the application. The contents of this identifier depend on
-     *                              the particular protocol in use by the entity that controls the use of the media
-     *                              data.
-     * @param storageURL
-     *                              URL to a writable folder.
+     * API-Since: 10.3
      */
     @Generated
     @Selector("removePendingExpiredSessionReports:withAppIdentifier:storageDirectoryAtURL:")
@@ -406,8 +394,6 @@ public class AVContentKeySession extends NSObject {
             @NotNull NSURL storageURL);
 
     /**
-     * renewExpiringResponseDataForContentKeyRequest:
-     * 
      * Informs the receiver that the already provided response data for an earlier AVContentKeyRequest will imminently
      * expire.
      * 
@@ -429,19 +415,14 @@ public class AVContentKeySession extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * setDelegate:queue:
-     * 
      * Sets the receiver's delegate. A delegate is required to handle content key initialization.
      * 
-     * @param delegate
-     *                      An object conforming to the AVContentKeySessionDelegate protocol.
-     * @param delegateQueue
-     *                      A dispatch queue on which delegate methods will be invoked whenever processes requiring
-     *                      content keys are executed asynchronously. Passing a value of nil for the delegateQueue
-     *                      parameter along with a non-nil value for the delegate parameter will result in an invalid
-     *                      argument exception.
+     * - Parameter delegate: An object conforming to the AVContentKeySessionDelegate protocol.
+     * - Parameter delegateQueue: A dispatch queue on which delegate methods will be invoked whenever processes
+     * requiring content keys are executed asynchronously. Passing a value of nil for the delegateQueue parameter along
+     * with a non-nil value for the delegate parameter will result in an invalid argument exception.
      * 
-     *                      API-Since: 10.3
+     * API-Since: 10.3
      */
     @Generated
     @Selector("setDelegate:queue:")
@@ -453,8 +434,6 @@ public class AVContentKeySession extends NSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property] storageURL
-     * 
      * The storage URL provided when the AVContentKeySession was created. May be nil.
      * 
      * URL to a writable directory; may be nil. The session will use this to facilitate expired session reports after
@@ -477,24 +456,19 @@ public class AVContentKeySession extends NSObject {
     public static native long version_static();
 
     /**
-     * invalidateAllPersistableContentKeysForApp:options:completionHandler:
-     * 
      * Invalidates all persistable content keys associated with the application and creates a secure server playback
      * context (SPC) that the client could send to the key server to verify the outcome of invalidation request.
      * 
      * Once invalidated, persistable content keys cannot be used to answer key requests during later playback sessions.
      * 
-     * API-Since: 12.2
+     * - Parameter appIdentifier: An opaque identifier for the application. The contents of this identifier depend on
+     * the particular protocol in use by the entity that controls the use of the media data.
+     * - Parameter options: Additional information necessary to generate the server playback context, or nil if none.
+     * See AVContentKeySessionServerPlaybackContextOption for supported options.
+     * - Parameter handler: Once the server playback context is ready, this block will be called with the data or an
+     * error describing the failure.
      * 
-     * @param appIdentifier
-     *                      An opaque identifier for the application. The contents of this identifier depend on the
-     *                      particular protocol in use by the entity that controls the use of the media data.
-     * @param options
-     *                      Additional information necessary to generate the server playback context, or nil if none.
-     *                      See AVContentKeySessionServerPlaybackContextOption for supported options.
-     * @param handler
-     *                      Once the server playback context is ready, this block will be called with the data or an
-     *                      error describing the failure.
+     * API-Since: 12.2
      */
     @Generated
     @Selector("invalidateAllPersistableContentKeysForApp:options:completionHandler:")
@@ -511,27 +485,20 @@ public class AVContentKeySession extends NSObject {
     }
 
     /**
-     * invalidatePersistableContentKey:options:completionHandler:
-     * 
      * Invalidates the persistable content key and creates a secure server playback context (SPC) that the client could
      * send to the key server to verify the outcome of invalidation request.
      * 
      * Once invalidated, a persistable content key cannot be used to answer key requests during later playback sessions.
      * 
-     * API-Since: 12.2
+     * - Parameter persistableContentKeyData: Persistable content key data that was previously created using
+     * -[AVContentKeyRequest persistableContentKeyFromKeyVendorResponse:options:error:] or obtained via
+     * AVContentKeySessionDelegate callback -contentKeySession:didUpdatePersistableContentKey:forContentKeyIdentifier:.
+     * - Parameter options: Additional information necessary to generate the server playback context, or nil if none.
+     * See AVContentKeySessionServerPlaybackContextOption for supported options.
+     * - Parameter handler: Once the server playback context is ready, this block will be called with the data or an
+     * error describing the failure.
      * 
-     * @param persistableContentKeyData
-     *                                  Persistable content key data that was previously created using
-     *                                  -[AVContentKeyRequest persistableContentKeyFromKeyVendorResponse:options:error:]
-     *                                  or obtained via AVContentKeySessionDelegate callback
-     *                                  -contentKeySession:didUpdatePersistableContentKey:forContentKeyIdentifier:.
-     * @param options
-     *                                  Additional information necessary to generate the server playback context, or nil
-     *                                  if none. See AVContentKeySessionServerPlaybackContextOption for supported
-     *                                  options.
-     * @param handler
-     *                                  Once the server playback context is ready, this block will be called with the
-     *                                  data or an error describing the failure.
+     * API-Since: 12.2
      */
     @Generated
     @Selector("invalidatePersistableContentKey:options:completionHandler:")

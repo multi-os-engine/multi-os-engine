@@ -113,6 +113,13 @@ public class CLLocationUpdater extends NSObject {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
+     * invalidate
+     * 
+     * Discussion:
+     * Invalidate CLLocationUpdater instance. Any further message to CLLocationUpdater
+     * instance after invalidation results in no-op.
+     * 
+     * 
      * API-Since: 17.0
      */
     @Generated
@@ -209,6 +216,15 @@ public class CLLocationUpdater extends NSObject {
     public static native CLLocationUpdater new_objc();
 
     /**
+     * pause
+     * 
+     * Discussion:
+     * Pause delivery of Updates to the handler, if they are started. If
+     * invoked from the configured queue, guarantees no further Update until
+     * -resume is called again. -resume can be used to restart location
+     * updates where they were left off.
+     * 
+     * 
      * API-Since: 17.0
      */
     @Generated
@@ -224,6 +240,13 @@ public class CLLocationUpdater extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
+     * resume
+     * 
+     * Discussion:
+     * Start delivery of Updates to the handler, or resume from where -pause
+     * was called. -resume must be called to start the flow of updates when
+     * a CLLocationUpdater is first obtained.
+     * 
      * API-Since: 17.0
      */
     @Generated

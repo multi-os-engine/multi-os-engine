@@ -27,8 +27,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVContentKeySpecifier
- * 
  * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
  * 
  * API-Since: 14.5
@@ -87,22 +85,18 @@ public class AVContentKeySpecifier extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * contentKeySpecifierForKeySystem:identifier:options:
-     * 
      * Creates a new instance of AVContentKeySpecifier.
      * 
      * This method returns an AVContentKeySpecifier instance that represents a content key in a specific content key
      * system.
      * 
-     * API-Since: 14.5
+     * - Parameter keySystem: A valid key system for content keys.
+     * - Parameter contentKeyIdentifier: Container and protocol-specific key identifier.
+     * - Parameter options: Additional information necessary to obtain the key, can be empty if none needed.
      * 
-     * @param keySystem
-     *                             A valid key system for content keys.
-     * @param contentKeyIdentifier
-     *                             Container and protocol-specific key identifier.
-     * @param options
-     *                             Additional information necessary to obtain the key, can be empty if none needed.
-     * @return A new AVContentKeySpecifier
+     * - Returns: A new AVContentKeySpecifier
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("contentKeySpecifierForKeySystem:identifier:options:")
@@ -124,8 +118,6 @@ public class AVContentKeySpecifier extends NSObject {
     public static native long hash_static();
 
     /**
-     * [@property] identifier
-     * 
      * Container and protocol-specific key identifier.
      * 
      * API-Since: 14.5
@@ -141,22 +133,18 @@ public class AVContentKeySpecifier extends NSObject {
     public native AVContentKeySpecifier init();
 
     /**
-     * initForKeySystem:identifier:options:
-     * 
      * Initialize an instance of AVContentKeySpecifier.
      * 
      * This method returns an AVContentKeySpecifier instance that represents a content key in a specific content key
      * system.
      * 
-     * API-Since: 14.5
+     * - Parameter keySystem: A valid key system for content keys.
+     * - Parameter contentKeyIdentifier: Container and protocol-specific key identifier.
+     * - Parameter options: Additional information necessary to obtain the key, can be empty if none needed.
      * 
-     * @param keySystem
-     *                             A valid key system for content keys.
-     * @param contentKeyIdentifier
-     *                             Container and protocol-specific key identifier.
-     * @param options
-     *                             Additional information necessary to obtain the key, can be empty if none needed.
-     * @return An instance of AVContentKeySpecifier
+     * - Returns: An instance of AVContentKeySpecifier
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("initForKeySystem:identifier:options:")
@@ -187,8 +175,6 @@ public class AVContentKeySpecifier extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
-     * [@property] keySystem
-     * 
      * A valid key system for content keys.
      * 
      * API-Since: 14.5
@@ -204,8 +190,6 @@ public class AVContentKeySpecifier extends NSObject {
     public static native AVContentKeySpecifier new_objc();
 
     /**
-     * [@property] options
-     * 
      * Additional information necessary to obtain the key, can be empty if none needed.
      * 
      * API-Since: 14.5

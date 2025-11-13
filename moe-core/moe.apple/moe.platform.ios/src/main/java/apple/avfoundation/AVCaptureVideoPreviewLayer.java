@@ -673,4 +673,78 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * A `BOOL` value that indicates whether to defer starting this preview layer.
+     * 
+     * When this value is `true`, the session does not prepare the output's resources until some time after
+     * ``AVCaptureSession/startRunning`` returns. You can start the visual parts of your user interface (e.g. preview)
+     * prior to other parts (e.g. photo/movie capture, metadata output, etc..) to improve startup performance. Set this
+     * value to `false` if your app needs video preview immediately for startup, and `true` if it does not.
+     * 
+     * By default, this value is `false` for ``AVCaptureVideoPreviewLayer`` objects, since this object is used to
+     * display preview. For best session start performance, set ``deferredStartEnabled`` to `false` for preview layers.
+     * If your app contains multiple preview layers, you may want to display the main preview layer as soon as possible
+     * and allow the remaining layers to display subsequently. In this case, set ``deferredStartEnabled`` to `true` for
+     * the remaining layers.
+     * 
+     * - Note: Setting this property to the same value for all outputs, including ``AVCaptureVideoPreviewLayer`` and
+     * ``AVCaptureOutput``, is equivalent to not using deferred start.
+     * 
+     * If ``deferredStartSupported`` is `false`, setting this property value to `true` results in the session throwing
+     * an `NSInvalidArgumentException`.
+     * 
+     * - Note: Set this value before calling ``AVCaptureSession/commitConfiguration`` as it requires a lengthy
+     * reconfiguration of the capture render pipeline.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isDeferredStartEnabled")
+    public native boolean isDeferredStartEnabled();
+
+    /**
+     * A `BOOL` value that indicates whether the preview layer supports deferred start.
+     * 
+     * You can only set the ``deferredStartEnabled`` property to `true` if the preview layer supports deferred start.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isDeferredStartSupported")
+    public native boolean isDeferredStartSupported();
+
+    @Generated
+    @Selector("layerWithRemoteClientId:")
+    @NotNull
+    public static native CALayer layerWithRemoteClientId(int client_id);
+
+    /**
+     * A `BOOL` value that indicates whether to defer starting this preview layer.
+     * 
+     * When this value is `true`, the session does not prepare the output's resources until some time after
+     * ``AVCaptureSession/startRunning`` returns. You can start the visual parts of your user interface (e.g. preview)
+     * prior to other parts (e.g. photo/movie capture, metadata output, etc..) to improve startup performance. Set this
+     * value to `false` if your app needs video preview immediately for startup, and `true` if it does not.
+     * 
+     * By default, this value is `false` for ``AVCaptureVideoPreviewLayer`` objects, since this object is used to
+     * display preview. For best session start performance, set ``deferredStartEnabled`` to `false` for preview layers.
+     * If your app contains multiple preview layers, you may want to display the main preview layer as soon as possible
+     * and allow the remaining layers to display subsequently. In this case, set ``deferredStartEnabled`` to `true` for
+     * the remaining layers.
+     * 
+     * - Note: Setting this property to the same value for all outputs, including ``AVCaptureVideoPreviewLayer`` and
+     * ``AVCaptureOutput``, is equivalent to not using deferred start.
+     * 
+     * If ``deferredStartSupported`` is `false`, setting this property value to `true` results in the session throwing
+     * an `NSInvalidArgumentException`.
+     * 
+     * - Note: Set this value before calling ``AVCaptureSession/commitConfiguration`` as it requires a lengthy
+     * reconfiguration of the capture render pipeline.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setDeferredStartEnabled:")
+    public native void setDeferredStartEnabled(boolean value);
 }

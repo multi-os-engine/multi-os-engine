@@ -65,4 +65,8 @@ public final class ASAccessoryEventType {
      * [ASAccessoryEvent] Picker started rename of accessory.
      */
     @Generated @NInt public static final long PickerSetupRename = 0x000000000000005AL;
+    /**
+     * [ASAccessoryEvent] Accessory discovered.
+     */
+    @Generated @NInt public static final long AccessoryDiscovered = 0x0000000000000021L;
 }

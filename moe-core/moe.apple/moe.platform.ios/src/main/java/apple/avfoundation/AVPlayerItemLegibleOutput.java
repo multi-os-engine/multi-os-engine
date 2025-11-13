@@ -51,6 +51,8 @@ import apple.opaque.dispatch_queue_t;
  * 
  * An instance of AVPlayerItemLegibleOutput is typically initialized using the -init method.
  * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 7.0
  */
 @Generated

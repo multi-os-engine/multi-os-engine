@@ -215,4 +215,15 @@ public class ASAccessory extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * The accessory's Wi-Fi Aware Pairing Identifier.
+     * 
+     * Use this identifier to establish a connection to the accessory using Wi-Fi Aware Framework.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("wifiAwarePairedDeviceID")
+    public native long wifiAwarePairedDeviceID();
 }

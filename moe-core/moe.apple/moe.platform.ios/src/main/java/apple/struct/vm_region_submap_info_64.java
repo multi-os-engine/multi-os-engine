@@ -259,17 +259,37 @@ public final class vm_region_submap_info_64 extends StructObject {
 
     @Generated
     @StructureField(order = 17, isGetter = true)
-    public native int pages_reusable();
+    public native char flags();
 
     @Generated
     @StructureField(order = 17, isGetter = false)
-    public native void setPages_reusable(int value);
+    public native void setFlags(char value);
 
+    /**
+     * v1 fields
+     */
     @Generated
     @StructureField(order = 18, isGetter = true)
-    public native long object_id_full();
+    public native int pages_reusable();
 
+    /**
+     * v1 fields
+     */
     @Generated
     @StructureField(order = 18, isGetter = false)
+    public native void setPages_reusable(int value);
+
+    /**
+     * v2 fields
+     */
+    @Generated
+    @StructureField(order = 19, isGetter = true)
+    public native long object_id_full();
+
+    /**
+     * v2 fields
+     */
+    @Generated
+    @StructureField(order = 19, isGetter = false)
     public native void setObject_id_full(long value);
 }

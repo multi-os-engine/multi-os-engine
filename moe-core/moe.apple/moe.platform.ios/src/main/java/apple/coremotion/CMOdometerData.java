@@ -215,7 +215,7 @@ public class CMOdometerData extends NSObject implements NSSecureCoding, NSCopyin
      * The maximum absolute slope at current location towards all directions measured in degrees.
      * nil if invalid due to low GPS accuracy.
      * 
-     * API-Since: 15.4
+     * API-Since: 17.0
      */
     @Generated
     @Selector("maxAbsSlope")
@@ -259,7 +259,7 @@ public class CMOdometerData extends NSObject implements NSSecureCoding, NSCopyin
      * The slope at the current location towards the direction of travel measured in degrees.
      * nil if the measurement is invalid.
      * 
-     * API-Since: 15.4
+     * API-Since: 17.0
      */
     @Generated
     @Selector("slope")

@@ -23,7 +23,6 @@ import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
-import apple.uikit.protocol.UICoordinateSpace;
 import apple.uikit.protocol.UIFocusItemScrollableContainer;
 import apple.uikit.struct.UIEdgeInsets;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -54,6 +53,7 @@ import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.protocol.UICoordinateSpace;
 
 /**
  * API-Since: 2.0
@@ -1392,4 +1392,44 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
         @Generated
         void call_withScrollIndicatorsShownForContentOffsetChanges();
     }
+
+    /**
+     * The effect for the bottom edge of the scroll view.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("bottomEdgeEffect")
+    @NotNull
+    public native UIScrollEdgeEffect bottomEdgeEffect();
+
+    /**
+     * The effect for the left edge of the scroll view.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("leftEdgeEffect")
+    @NotNull
+    public native UIScrollEdgeEffect leftEdgeEffect();
+
+    /**
+     * The effect for the right edge of the scroll view.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("rightEdgeEffect")
+    @NotNull
+    public native UIScrollEdgeEffect rightEdgeEffect();
+
+    /**
+     * The effect for the top edge of the scroll view.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("topEdgeEffect")
+    @NotNull
+    public native UIScrollEdgeEffect topEdgeEffect();
 }

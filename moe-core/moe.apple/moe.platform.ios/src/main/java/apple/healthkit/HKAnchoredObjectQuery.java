@@ -584,4 +584,54 @@ public class HKAnchoredObjectQuery extends HKQuery {
     @NotNull
     public static native NSPredicate predicateForWorkoutEffortSamplesRelatedToWorkoutActivity(
             @NotNull HKWorkout workout, @Nullable HKWorkoutActivity activity);
+
+    @Generated
+    @Selector("predicateForMedicationDoseEventWithMedicationConceptIdentifier:")
+    @NotNull
+    public static native NSPredicate predicateForMedicationDoseEventWithMedicationConceptIdentifier(
+            @NotNull HKHealthConceptIdentifier medicationConceptIdentifier);
+
+    @Generated
+    @Selector("predicateForMedicationDoseEventWithMedicationConceptIdentifiers:")
+    @NotNull
+    public static native NSPredicate predicateForMedicationDoseEventWithMedicationConceptIdentifiers(
+            @NotNull NSSet<? extends HKHealthConceptIdentifier> medicationConceptIdentifiers);
+
+    @Generated
+    @Selector("predicateForMedicationDoseEventWithScheduledDate:")
+    @NotNull
+    public static native NSPredicate predicateForMedicationDoseEventWithScheduledDate(@NotNull NSDate scheduledDate);
+
+    @Generated
+    @Selector("predicateForMedicationDoseEventWithScheduledDates:")
+    @NotNull
+    public static native NSPredicate predicateForMedicationDoseEventWithScheduledDates(
+            @NotNull NSSet<? extends NSDate> scheduledDates);
+
+    @Generated
+    @Selector("predicateForMedicationDoseEventWithScheduledStartDate:endDate:")
+    @NotNull
+    public static native NSPredicate predicateForMedicationDoseEventWithScheduledStartDateEndDate(
+            @Nullable NSDate startDate, @Nullable NSDate endDate);
+
+    @Generated
+    @Selector("predicateForMedicationDoseEventWithStatus:")
+    @NotNull
+    public static native NSPredicate predicateForMedicationDoseEventWithStatus(@NInt long status);
+
+    @Generated
+    @Selector("predicateForMedicationDoseEventWithStatuses:")
+    @NotNull
+    public static native NSPredicate predicateForMedicationDoseEventWithStatuses(
+            @NotNull NSSet<? extends NSNumber> statuses);
+
+    @Generated
+    @Selector("predicateForUserAnnotatedMedicationsWithHasSchedule:")
+    @NotNull
+    public static native NSPredicate predicateForUserAnnotatedMedicationsWithHasSchedule(boolean hasSchedule);
+
+    @Generated
+    @Selector("predicateForUserAnnotatedMedicationsWithIsArchived:")
+    @NotNull
+    public static native NSPredicate predicateForUserAnnotatedMedicationsWithIsArchived(boolean isArchived);
 }

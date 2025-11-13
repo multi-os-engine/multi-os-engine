@@ -28,7 +28,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * An abstract class for representing task requests.
+ * An abstract class that represents a request for the app to be launched in the background to perform work.
+ * Do not instantiate instances of this class directly. Instead, use one of its concrete subclasses.
  * 
  * API-Since: 13.0
  */

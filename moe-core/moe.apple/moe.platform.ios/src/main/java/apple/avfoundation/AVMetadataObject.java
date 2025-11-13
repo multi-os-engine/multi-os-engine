@@ -241,4 +241,56 @@ public class AVMetadataObject extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The current focus mode when an object is detected during a Cinematic Video recording.
+     * 
+     * Default is ``AVCaptureCinematicVideoFocusMode/AVCaptureCinematicVideoFocusModeNone``.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("cinematicVideoFocusMode")
+    @NInt
+    public native long cinematicVideoFocusMode();
+
+    /**
+     * An identifier associated with a metadata object used to group it with other metadata objects belonging to a
+     * common parent.
+     * 
+     * When presented with a collection of ``AVMetadataObject`` instances of different types, you may use the objects'
+     * ``groupID`` to combine them into groups. For example, a human body and face belonging to the same person have the
+     * same ``groupID``. If an object's ``groupID`` property is set to -1, it is invalid. When set to a value of >=0, it
+     * is unique across all object groups.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("groupID")
+    @NInt
+    public native long groupID();
+
+    /**
+     * A BOOL indicating whether this metadata object represents a fixed focus.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isFixedFocus")
+    public native boolean isFixedFocus();
+
+    /**
+     * A unique identifier for each detected object type (face, body, hands, heads and salient objects) in a collection.
+     * 
+     * Defaults to a value of -1 when invalid or not available. When used in conjunction with an
+     * ``AVCaptureMetadataOutput``, each newly detected object that enters the scene is assigned a unique identifier.
+     * ``objectID``s are never re-used as objects leave the picture and new ones enter. Objects that leave the picture
+     * and then re-enter are assigned a new ``objectID``.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("objectID")
+    @NInt
+    public native long objectID();
 }

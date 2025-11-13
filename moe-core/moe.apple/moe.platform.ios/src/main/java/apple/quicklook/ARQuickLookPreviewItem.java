@@ -1,4 +1,4 @@
-package apple.arkit;
+package apple.quicklook;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
@@ -6,6 +6,8 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
 import apple.quicklook.protocol.QLPreviewItem;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -24,14 +26,12 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
  */
 @Generated
-@Library("ARKit")
+@Library("QuickLook")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
 public class ARQuickLookPreviewItem extends NSObject implements QLPreviewItem {
@@ -53,8 +53,8 @@ public class ARQuickLookPreviewItem extends NSObject implements QLPreviewItem {
     @Selector("alloc")
     public static native ARQuickLookPreviewItem alloc();
 
-    @Owned
     @Generated
+    @Owned
     @Selector("allocWithZone:")
     public static native ARQuickLookPreviewItem allocWithZone(VoidPtr zone);
 
@@ -75,13 +75,13 @@ public class ARQuickLookPreviewItem extends NSObject implements QLPreviewItem {
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
     public static native void cancelPreviousPerformRequestsWithTarget(
-            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
+            @Mapped(ObjCObjectMapper.class) @NotNull Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
-            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @Mapped(ObjCObjectMapper.class) @NotNull Object aTarget, @NotNull SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) @Nullable Object anArgument);
 
     /**
      * An optional canonical web page URL for the 3D content that will be shared.
@@ -93,19 +93,19 @@ public class ARQuickLookPreviewItem extends NSObject implements QLPreviewItem {
      * 
      * API-Since: 13.0
      */
-    @Nullable
     @Generated
     @Selector("canonicalWebPageURL")
+    @Nullable
     public native NSURL canonicalWebPageURL();
 
-    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
+    @NotNull
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
-    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
+    @NotNull
     public static native Class classForKeyedUnarchiver();
 
     @Generated
@@ -166,9 +166,9 @@ public class ARQuickLookPreviewItem extends NSObject implements QLPreviewItem {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
-    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
+    @NotNull
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
@@ -176,15 +176,15 @@ public class ARQuickLookPreviewItem extends NSObject implements QLPreviewItem {
     @Selector("new")
     public static native ARQuickLookPreviewItem new_objc();
 
-    @Nullable
     @Generated
     @IsOptional
     @Selector("previewItemTitle")
+    @Nullable
     public native String previewItemTitle();
 
-    @Nullable
     @Generated
     @Selector("previewItemURL")
+    @Nullable
     public native NSURL previewItemURL();
 
     @Generated
@@ -228,12 +228,12 @@ public class ARQuickLookPreviewItem extends NSObject implements QLPreviewItem {
     public static native Class superclass_static();
 
     @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
-
-    @Generated
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
 }

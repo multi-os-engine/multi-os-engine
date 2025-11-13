@@ -27,11 +27,17 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 9.3
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MKLocalSearchCompleterDelegate")
 public interface MKLocalSearchCompleterDelegate {
+    /**
+     * API-Since: 9.3
+     */
     @Generated
     @IsOptional
     @Selector("completer:didFailWithError:")
@@ -39,6 +45,9 @@ public interface MKLocalSearchCompleterDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 9.3
+     */
     @Generated
     @IsOptional
     @Selector("completerDidUpdateResults:")

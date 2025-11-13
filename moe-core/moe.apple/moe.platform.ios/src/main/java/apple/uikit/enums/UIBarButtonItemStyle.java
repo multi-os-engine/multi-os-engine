@@ -23,13 +23,43 @@ import org.moe.natj.general.ann.NInt;
 public final class UIBarButtonItemStyle {
     @Generated @NInt public static final long Plain = 0x0000000000000000L;
     /**
+     * A button item style for a prominent button.
+     * 
+     * For example, use this for a button that completes or finalizes some task.
+     * Buttons with this style will not be visually grouped with other items
+     * in a navigation bar or toolbar, and will also have other styling changes
+     * appropriate to their context to indicate their prominence.
+     * 
      * API-Since: 2.0
      * Deprecated-Since: 8.0
      */
     @Deprecated @Generated @NInt public static final long Bordered = 0x0000000000000001L;
-    @Generated @NInt public static final long Done = 0x0000000000000002L;
+    /**
+     * A button item style for a prominent button.
+     * 
+     * For example, use this for a button that completes or finalizes some task.
+     * Buttons with this style will not be visually grouped with other items
+     * in a navigation bar or toolbar, and will also have other styling changes
+     * appropriate to their context to indicate their prominence.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 26.0
+     */
+    @Deprecated @Generated @NInt public static final long Done = 0x0000000000000002L;
 
     @Generated
     private UIBarButtonItemStyle() {
     }
+
+    /**
+     * A button item style for a prominent button.
+     * 
+     * For example, use this for a button that completes or finalizes some task.
+     * Buttons with this style will not be visually grouped with other items
+     * in a navigation bar or toolbar, and will also have other styling changes
+     * appropriate to their context to indicate their prominence.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated @NInt public static final long Prominent = 0x0000000000000002L;
 }

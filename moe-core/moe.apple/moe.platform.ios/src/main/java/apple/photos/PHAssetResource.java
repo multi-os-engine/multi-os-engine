@@ -39,6 +39,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uniformtypeidentifiers.UTType;
 
 /**
  * API-Since: 9.0
@@ -203,7 +204,10 @@ public class PHAssetResource extends NSObject {
 
     /**
      * API-Since: 9.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use contentType instead
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("uniformTypeIdentifier")
@@ -229,4 +233,14 @@ public class PHAssetResource extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The type of data associated with this asset resource (the data can be retrieved via PHAssetResourceManager)
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("contentType")
+    @NotNull
+    public native UTType contentType();
 }

@@ -28,6 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.avfaudio.AVAudioTime;
 
 /**
  * [@interface] PHASESoundEvent
@@ -403,4 +404,91 @@ public class PHASESoundEvent extends NSObject {
     @Selector("pullStreamNodes")
     @NotNull
     public native NSDictionary<String, ? extends PHASEPullStreamNode> pullStreamNodes();
+
+    /**
+     * resumeAtTime
+     * 
+     * Resume the sound event at a specific time
+     * 
+     * A nil time parameter will resume immediately.
+     * The device time is not scaled by UnitsPerSecond and is in seconds.
+     * 
+     * API-Since: 26.0
+     * 
+     * @param time The desired start time based on the engine time retrieved from [PHASEEngine lastRenderTime]
+     */
+    @Generated
+    @Selector("resumeAtTime:")
+    public native void resumeAtTime(@Nullable AVAudioTime time);
+
+    /**
+     * seekToTime:resumeAtEngineTime:completion
+     * 
+     * Seeks all leaf nodes in a PHASESoundEvent to the specified time, and automatically resumes playback at the
+     * specified engine time.
+     * 
+     * This is a low latency convenience method that allows for tight deadlines to be met. However if the seek fails the
+     * node state will not be changed. You should check the callback and handle the failure appropriately.
+     * The time parameter will seek the nodes to the equivalent sample position based on the sample rate of the asset.
+     * The engineTime parameter is the engine timestamp to resume rendering at, based off of [PHASEEngine
+     * lastRenderTime].
+     * If any leaf nodes do not support seeking, those nodes will ignore this command.
+     * Nodes that have finished playing or have stopped will not seek.
+     * The time parameter is in seconds and will be scaled by unitsPerSecond.
+     * The time in the AVAudioTime structure is not scaled by unitsPerSecond.
+     * The engineTime parameter will use the sample time if valid, if not, then the host time if valid.
+     * 
+     * API-Since: 26.0
+     * 
+     * @param time       The desired time position in seconds to seek the nodes to.
+     * @param engineTime The engine time to resume playback.
+     * @param handler    The completion callback that will be called when seeking is complete.
+     */
+    @Generated
+    @Selector("seekToTime:resumeAtEngineTime:completion:")
+    public native void seekToTimeResumeAtEngineTimeCompletion(double time, @NotNull AVAudioTime engineTime,
+            @ObjCBlock(name = "call_seekToTimeResumeAtEngineTimeCompletion") @Nullable Block_seekToTimeResumeAtEngineTimeCompletion handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_seekToTimeResumeAtEngineTimeCompletion {
+        @Generated
+        void call_seekToTimeResumeAtEngineTimeCompletion(@NInt long reason);
+    }
+
+    /**
+     * startAtTime:completion
+     * 
+     * Start the sound event
+     * 
+     * This function notifies the engine to start the sound event, then returns immediately.
+     * Once the sound event is playing (or has failed to start), you will receive a callback via the completion.
+     * Playback will begin at the requested time if the sound event has finished preparing in time.
+     * You may wait for preparation to finish with the [PHASESoundEvent prepare:completion] method before calling
+     * startAtTime, to ensure that the sound event will start at the desired time.
+     * However if the desired time is far enough into the future to allow for preparation to happen, you may skip
+     * calling prepare entirely and just call startAtTime.
+     * 
+     * API-Since: 26.0
+     * 
+     * @param when
+     *                The desired start time based on the engine time retrieved from [PHASEEngine lastRenderTime]
+     *                If the sound event starts immediately with an audible sound, it will begin rendering at this time.
+     *                The sound event will otherwise begin operating at this time.
+     *                A nil value will start the sound event immediately
+     *                This time is not scaled by unitsPerSecond.
+     * @param handler
+     *                The block that will be called when the sound event has stopped.
+     */
+    @Generated
+    @Selector("startAtTime:completion:")
+    public native void startAtTimeCompletion(@Nullable AVAudioTime when,
+            @ObjCBlock(name = "call_startAtTimeCompletion") @Nullable Block_startAtTimeCompletion handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_startAtTimeCompletion {
+        @Generated
+        void call_startAtTimeCompletion(@NInt long reason);
+    }
 }

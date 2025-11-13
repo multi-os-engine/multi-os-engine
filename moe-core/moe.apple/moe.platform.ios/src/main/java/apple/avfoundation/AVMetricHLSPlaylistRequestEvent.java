@@ -28,8 +28,6 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * AVMetricHLSPlaylistRequestEvent
- * 
  * Represents a metric event associated with a HLS playlist resource request.
  * 
  * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
@@ -124,8 +122,6 @@ public class AVMetricHLSPlaylistRequestEvent extends AVMetricEvent {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * [@property] isMultivariantPlaylist
-     * 
      * Returns true if the playlist request is for a multivariant playlist.
      * 
      * API-Since: 18.0
@@ -144,8 +140,6 @@ public class AVMetricHLSPlaylistRequestEvent extends AVMetricEvent {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
-     * [@property] mediaResourceRequestEvent
-     * 
      * Returns the media resource request event which was used to satisfy the playlist.
      * 
      * API-Since: 18.0
@@ -156,8 +150,6 @@ public class AVMetricHLSPlaylistRequestEvent extends AVMetricEvent {
     public native AVMetricMediaResourceRequestEvent mediaResourceRequestEvent();
 
     /**
-     * [@property] mediaType
-     * 
      * Returns the media type. If the value cannot be determined, returns AVMediaTypeMuxed.
      * 
      * API-Since: 18.0
@@ -199,8 +191,6 @@ public class AVMetricHLSPlaylistRequestEvent extends AVMetricEvent {
     }
 
     /**
-     * [@property] url
-     * 
      * Returns the URL of the playlist. If no value is available, returns nil.
      * 
      * API-Since: 18.0

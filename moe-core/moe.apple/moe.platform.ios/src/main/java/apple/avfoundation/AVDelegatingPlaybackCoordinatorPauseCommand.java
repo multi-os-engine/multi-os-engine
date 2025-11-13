@@ -25,8 +25,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVDelegatingPlaybackCoordinatorPauseCommand
- * 
  * A playback command requesting a pause
  * 
  * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
@@ -62,8 +60,6 @@ public class AVDelegatingPlaybackCoordinatorPauseCommand extends AVDelegatingPla
     public static native AVDelegatingPlaybackCoordinatorPauseCommand allocWithZone(VoidPtr zone);
 
     /**
-     * [@property] anticipatedPlaybackRate
-     * 
      * The rate to prepare for if shouldBufferInAnticipationOfPlayback is YES.
      * 
      * API-Since: 15.0
@@ -154,8 +150,6 @@ public class AVDelegatingPlaybackCoordinatorPauseCommand extends AVDelegatingPla
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property] shouldBufferInAnticipationOfPlayback
-     * 
      * Indicates that playback is anticipated and the player should begin buffering if necessary.
      * 
      * When shouldBufferInAnticipationOfPlayback is YES, some participant wants to resume playback at the rate indicated

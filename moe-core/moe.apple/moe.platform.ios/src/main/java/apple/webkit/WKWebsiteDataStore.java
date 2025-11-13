@@ -46,6 +46,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import apple.foundation.NSError;
 import apple.foundation.NSUUID;
+import apple.foundation.NSData;
 
 /**
  * A WKWebsiteDataStore represents various types of data that a website might
@@ -396,4 +397,48 @@ public class WKWebsiteDataStore extends NSObject implements NSSecureCoding {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Called when the client wants to fetch WKWebsiteDataStore data.
+     * 
+     * @param dataTypes         The set of WKWebsiteDataStore data types whose data the client wants to fetch.
+     * @param completionHandler The completion handler that should be invoked with the retrieved data and possibly an
+     *                          error. The retrieved data will be a serialized blob. If an error occurred, the retrieved
+     *                          data will be nil. An error may occur if a requested data type is not supported or if the
+     *                          data cannot be retrieved for some other reason (such as a crash).
+     * 
+     *                          API-Since: 26.0
+     */
+    @Generated
+    @Selector("fetchDataOfTypes:completionHandler:")
+    public native void fetchDataOfTypesCompletionHandler(@NotNull NSSet<String> dataTypes,
+            @ObjCBlock(name = "call_fetchDataOfTypesCompletionHandler") @NotNull Block_fetchDataOfTypesCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_fetchDataOfTypesCompletionHandler {
+        @Generated
+        void call_fetchDataOfTypesCompletionHandler(@Nullable NSData data, @Nullable NSError error);
+    }
+
+    /**
+     * Called when the client wants to restore WKWebsiteDataStore data.
+     * 
+     * @param data              The serialized blob containing the data that the client wants to restore.
+     * @param completionHandler The completion handler that may be invoked with an error if the data is in an invalid
+     *                          format or if the data cannot be restored for some other reason (such as a crash).
+     * 
+     *                          API-Since: 26.0
+     */
+    @Generated
+    @Selector("restoreData:completionHandler:")
+    public native void restoreDataCompletionHandler(@NotNull NSData data,
+            @ObjCBlock(name = "call_restoreDataCompletionHandler") @NotNull Block_restoreDataCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_restoreDataCompletionHandler {
+        @Generated
+        void call_restoreDataCompletionHandler(@Nullable NSError error);
+    }
 }

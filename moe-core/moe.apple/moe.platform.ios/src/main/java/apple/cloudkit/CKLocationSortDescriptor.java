@@ -17,7 +17,6 @@ limitations under the License.
 package apple.cloudkit;
 
 import apple.NSObject;
-import apple.corelocation.CLLocation;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -45,6 +44,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.corelocation.CLLocation;
 
 /**
  * API-Since: 8.0

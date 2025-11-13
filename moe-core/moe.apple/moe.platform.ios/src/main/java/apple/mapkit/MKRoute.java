@@ -40,6 +40,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -156,6 +159,8 @@ public class MKRoute extends NSObject {
 
     /**
      * localized notices of route conditions. e.g. "Avoid during winter storms"
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -164,11 +169,16 @@ public class MKRoute extends NSObject {
 
     /**
      * overall route distance in meters
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("distance")
     public native double distance();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("expectedTravelTime")
     public native double expectedTravelTime();
@@ -179,6 +189,8 @@ public class MKRoute extends NSObject {
 
     /**
      * localized description of the route's significant feature, e.g. "US-101"
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
@@ -187,12 +199,17 @@ public class MKRoute extends NSObject {
 
     /**
      * detailed route geometry
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated
     @Selector("polyline")
     public native MKPolyline polyline();
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("steps")
@@ -200,6 +217,8 @@ public class MKRoute extends NSObject {
 
     /**
      * overall route transport type
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("transportType")

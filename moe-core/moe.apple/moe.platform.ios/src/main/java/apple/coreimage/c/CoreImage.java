@@ -161,7 +161,7 @@ public final class CoreImage {
     /**
      * A CGColorSpaceRef defining the color space of the image. This value
      * overrides the image's implicit color space.
-     * If [NSNull null] then dont color manage the image.
+     * If [NSNull null] then don't color manage the image.
      */
     @NotNull
     @Generated
@@ -244,8 +244,21 @@ public final class CoreImage {
     public static native String kCIImageAutoAdjustLevel();
 
     /**
-     * A CGColorSpaceRef object defining the color space that images are
-     * converted to before rendering into the context.
+     * A Core Image context option key to specify the default destination color space for rendering.
+     * 
+     * This option only affects how Core Image renders using the following methods:
+     * * ``/CIContext/createCGImage:fromRect:``
+     * * ``/CIContext/drawImage:atPoint:fromRect:``
+     * * ``/CIContext/drawImage:inRect:fromRect:``
+     * 
+     * With all other render methods, the destination color space is either specified as a parameter
+     * or can be determined from the object being rendered to.
+     * 
+     * The value of this option can be either:
+     * * A `CGColorSpace` instance with an RGB or monochrome color model that supports output.
+     * * An `NSNull` instance to indicate that the context should not match from the working space to the destination.
+     * 
+     * If this option is not specified, then the default output space is sRGB.
      */
     @NotNull
     @Generated
@@ -254,8 +267,21 @@ public final class CoreImage {
     public static native String kCIContextOutputColorSpace();
 
     /**
-     * A CGColorSpaceRef object defining the color space in which all
-     * intermediate operations are performed.
+     * A Core Image context option key to specify the working color space for rendering.
+     * 
+     * Contexts support automatic color management by performing all processing operations
+     * in a working color space. This means that unless told otherwise:
+     * * All input images are color matched from the input's color space to the working space.
+     * * All renders are color matched from the working space to the destination's color space.
+     * 
+     * The default working space is the extended sRGB color space with linear gamma.
+     * On macOS before 10.10, the default is extended Generic RGB with linear gamma.
+     * 
+     * The value of this option can be either:
+     * * A `CGColorSpace` instance with an RGB color model that supports output.
+     * * An `NSNull` instance to request that Core Image perform no color management.
+     * 
+     * If this option is not specified, then the default working space is used.
      */
     @NotNull
     @Generated
@@ -264,11 +290,21 @@ public final class CoreImage {
     public static native String kCIContextWorkingColorSpace();
 
     /**
-     * An NSNumber with a CIFormat value defining the pixel format to use for intermediate buffers.
-     * On iOS the supported values for this key are RGBA8 and RGBAh. If not specified:
-     * RGBA8 is used if app is linked against iOS 12 SDK or earlier.
-     * RGBAh is used if app is linked against iOS 13 SDK or later.
-     * On OSX the supported values for this key are RGBA8, RGBAh and RGBAf. If not specified, RGBAh is used.
+     * A Core Image context option key to specify the pixel format to for intermediate results when rendering.
+     * 
+     * The value for this key is an `NSNumber` instance containing a ``CIFormat`` value.
+     * 
+     * The supported values for the working pixel format are:
+     * ``CIFormat`` | Notes
+     * ------------------- | --------------
+     * ``kCIFormatRGBA8`` | Uses less memory but has less precision an range
+     * ``kCIFormatRGBAh`` | Uses 8 bytes per pixel, supports HDR
+     * ``kCIFormatRGBAf`` | Only on macOS
+     * 
+     * If this option is not specified, then the default is ``kCIFormatRGBAh``.
+     * 
+     * (The default is ``kCIFormatRGBA8`` if your if app is linked against iOS 12 SDK or earlier.)
+     * 
      * 
      * API-Since: 8.0
      */
@@ -279,10 +315,24 @@ public final class CoreImage {
     public static native String kCIContextWorkingFormat();
 
     /**
-     * A boolean NSNumber controlling the quality of affine downsample operations.
-     * [@YES] implies that more quality is desired.
-     * On iOS the default value is @NO.
-     * On OSX the default value is @YES.
+     * A Boolean value to control the quality of image downsampling operations performed by the
+     * Core Image context.
+     * 
+     * The higher quality behavior performs downsampling operations in multiple passes
+     * in order to reduce aliasing artifacts.
+     * 
+     * The lower quality behavior performs downsampling operations a single pass
+     * in order to improve performance.
+     * 
+     * If the value for this option is:
+     * * True: The higher quality behavior will be used.
+     * * False: The lower quality behavior will be used.
+     * * Not specified: the default behavior is True on macOS and False on other platforms.
+     * 
+     * > Note:
+     * > * This option does affect how ``/CIImage/imageByApplyingTransform:`` operations are performed by the context.
+     * > * This option does not affect how ``/CIImage/imageByApplyingTransform:highQualityDownsample:`` behaves.
+     * 
      * 
      * API-Since: 9.0
      */
@@ -293,8 +343,24 @@ public final class CoreImage {
     public static native String kCIContextHighQualityDownsample();
 
     /**
-     * A boolean NSNumber controlling whether output renders produce alpha-premultiplied pixels.
-     * The default value is @YES.
+     * A Boolean value to control how a Core Image context render produces alpha-premultiplied pixels.
+     * 
+     * This option only affects how a context is rendered when using methods where the destination's
+     * alpha mode cannot be determined such as:
+     * * ``/CIContext/render:toBitmap:rowBytes:bounds:format:colorSpace:``
+     * * ``/CIContext/render:toCVPixelBuffer:``
+     * * ``/CIContext/render:toIOSurface:bounds:colorSpace:``
+     * * ``/CIContext/render:toMTLTexture:commandBuffer:bounds:colorSpace:``
+     * * ``/CIContext/createCGImage:fromRect:``
+     * 
+     * If the value for this option is:
+     * * True: The output will produce alpha-premultiplied pixels.
+     * * False: The output will produce un-premultiplied pixels.
+     * * Not specified: the default behavior True.
+     * 
+     * This option does not affect how a context is rendered to a ``CIRenderDestination`` because
+     * that API allows you to set or override the alpha behavior using ``/CIRenderDestination/alphaMode``.
+     * 
      * 
      * API-Since: 7.0
      */
@@ -305,9 +371,21 @@ public final class CoreImage {
     public static native String kCIContextOutputPremultiplied();
 
     /**
-     * A boolean NSNumber controlling how intermediate buffers are cached.
-     * If @NO, the context will empty intermediates during and after renders.
-     * The default value is @YES.
+     * A Boolean value to control how a Core Image context caches the contents of any intermediate image buffers it uses
+     * during rendering.
+     * 
+     * If a context caches intermediate buffers, then subsequent renders of a similar image using the same context
+     * may be able to render faster. If a context does not cache intermediate buffers, then it may use less memory.
+     * 
+     * If the value for this option is:
+     * * True: The context will cache intermediate results for future renders using the same context.
+     * * False: The context will not cache intermediate results.
+     * * Not specified: the default behavior True.
+     * 
+     * > Note:
+     * > * This option does affect how ``/CIImage/imageByInsertingIntermediate`` behaves.
+     * > * This option does not affect how ``/CIImage/imageByInsertingIntermediate:`` behaves.
+     * 
      * 
      * API-Since: 10.0
      */
@@ -318,8 +396,9 @@ public final class CoreImage {
     public static native String kCIContextCacheIntermediates();
 
     /**
-     * An NSNumber with a boolean value. When @YES the context will use
-     * software rendering on macOS.
+     * A Boolean value to control if a Core Image context will use a software renderer.
+     * 
+     * > Note: This option has no effect if the platform does not support OpenCL.
      */
     @NotNull
     @Generated
@@ -328,8 +407,12 @@ public final class CoreImage {
     public static native String kCIContextUseSoftwareRenderer();
 
     /**
-     * An NSNumber with a boolean value. When @YES the context will use
-     * low priority rendering on the GPU.
+     * A Boolean value to control the priority Core Image context renders.
+     * 
+     * If this value is True, then rendering with the context from a background thread takes lower priority
+     * than other GPU usage from the main thread. This allows your app to perform Core Image rendering without
+     * disturbing the frame rate of UI animations.
+     * 
      * 
      * API-Since: 8.0
      */
@@ -511,7 +594,7 @@ public final class CoreImage {
     public static native String kCIUIParameterSet();
 
     /**
-     * Constant for requesting controls that are appropiate in an basic user scenario, meaning the bare minimum of
+     * Constant for requesting controls that are appropriate in a basic user scenario, meaning the bare minimum of
      * settings to control the filter.
      * 
      * API-Since: 9.0
@@ -523,7 +606,7 @@ public final class CoreImage {
     public static native String kCIUISetBasic();
 
     /**
-     * Constant for requesting controls that are appropiate in an intermediate user scenario.
+     * Constant for requesting controls that are appropriate in an intermediate user scenario.
      * 
      * API-Since: 9.0
      */
@@ -534,7 +617,7 @@ public final class CoreImage {
     public static native String kCIUISetIntermediate();
 
     /**
-     * Constant for requesting controls that are appropiate in an advanced user scenario.
+     * Constant for requesting controls that are appropriate in an advanced user scenario.
      * 
      * API-Since: 9.0
      */
@@ -830,7 +913,9 @@ public final class CoreImage {
     public static native String kCICategoryFilterGenerator();
 
     /**
-     * common filter parameter keys
+     * A key to get the output image of a Core Image filter.
+     * 
+     * The value for this key will be a ``CIImage`` instance.
      * 
      * API-Since: 5.0
      */
@@ -841,6 +926,10 @@ public final class CoreImage {
     public static native String kCIOutputImageKey();
 
     /**
+     * A key to get or set the background image of a Core Image filter.
+     * 
+     * The value for this key needs to be a ``CIImage`` instance.
+     * 
      * API-Since: 5.0
      */
     @NotNull
@@ -850,6 +939,11 @@ public final class CoreImage {
     public static native String kCIInputBackgroundImageKey();
 
     /**
+     * A key to get or set the input image of a Core Image filter.
+     * 
+     * The value for this key needs to be a ``CIImage`` instance.
+     * For filters that also use a background image, this key refers to the foreground image.
+     * 
      * API-Since: 5.0
      */
     @NotNull
@@ -859,6 +953,10 @@ public final class CoreImage {
     public static native String kCIInputImageKey();
 
     /**
+     * A key to get or set the scalar time value of a Core Image filter.
+     * 
+     * The value for this key needs to be an `NSNumber` instance.
+     * 
      * API-Since: 7.0
      */
     @NotNull
@@ -868,6 +966,9 @@ public final class CoreImage {
     public static native String kCIInputTimeKey();
 
     /**
+     * A key to get or set the geometric 2x3 matrix transform value of a Core Image filter.
+     * The value for this key needs to be an `NSAffineTransformStruct` or an `NSValue` instance.
+     * 
      * API-Since: 7.0
      */
     @NotNull
@@ -877,6 +978,10 @@ public final class CoreImage {
     public static native String kCIInputTransformKey();
 
     /**
+     * A key to get or set the geometric scale value of a Core Image filter.
+     * 
+     * The value for this key needs to be an `NSNumber` instance.
+     * 
      * API-Since: 7.0
      */
     @NotNull
@@ -886,6 +991,9 @@ public final class CoreImage {
     public static native String kCIInputScaleKey();
 
     /**
+     * A key to get or set the geometric aspect ratio value of a Core Image filter.
+     * The value for this key needs to be an `NSNumber` instance containing the `horizontal/vertical` scale ratio .
+     * 
      * API-Since: 7.0
      */
     @NotNull
@@ -895,6 +1003,9 @@ public final class CoreImage {
     public static native String kCIInputAspectRatioKey();
 
     /**
+     * A key to get or set the center value of a Core Image filter.
+     * The value for this key needs to be a ``CIVector`` instance containing the `x,y` coordinate.
+     * 
      * API-Since: 7.0
      */
     @NotNull
@@ -904,6 +1015,10 @@ public final class CoreImage {
     public static native String kCIInputCenterKey();
 
     /**
+     * A key to get or set the geometric radius value of a Core Image filter.
+     * 
+     * The value for this key needs to be an `NSNumber` instance.
+     * 
      * API-Since: 7.0
      */
     @NotNull
@@ -913,6 +1028,10 @@ public final class CoreImage {
     public static native String kCIInputRadiusKey();
 
     /**
+     * A key to get or set the geometric angle value of a Core Image filter. Typically the angle is in radians.
+     * 
+     * The value for this key needs to be an `NSNumber` instance.
+     * 
      * API-Since: 7.0
      */
     @NotNull
@@ -922,6 +1041,10 @@ public final class CoreImage {
     public static native String kCIInputAngleKey();
 
     /**
+     * A key to get or set the scalar optical refraction value of a Core Image filter.
+     * 
+     * The value for this key needs to be an `NSNumber` instance.
+     * 
      * API-Since: 9.0
      */
     @NotNull
@@ -931,6 +1054,10 @@ public final class CoreImage {
     public static native String kCIInputRefractionKey();
 
     /**
+     * A key to get or set the geometric width value of a Core Image filter.
+     * 
+     * The value for this key needs to be an `NSNumber` instance.
+     * 
      * API-Since: 7.0
      */
     @NotNull
@@ -940,6 +1067,10 @@ public final class CoreImage {
     public static native String kCIInputWidthKey();
 
     /**
+     * A key to get or set the scalar sharpness value of a Core Image filter.
+     * 
+     * The value for this key needs to be an `NSNumber` instance.
+     * 
      * API-Since: 7.0
      */
     @NotNull
@@ -949,6 +1080,10 @@ public final class CoreImage {
     public static native String kCIInputSharpnessKey();
 
     /**
+     * A key to get or set the scalar intensity value of a Core Image filter.
+     * 
+     * The value for this key needs to be an `NSNumber` instance.
+     * 
      * API-Since: 7.0
      */
     @NotNull
@@ -958,6 +1093,11 @@ public final class CoreImage {
     public static native String kCIInputIntensityKey();
 
     /**
+     * A key to get or set the scalar EV value of a Core Image filter that specifies how many F-stops brighter or darker
+     * to make the image.
+     * 
+     * The value for this key needs to be an `NSNumber` instance.
+     * 
      * API-Since: 7.0
      */
     @NotNull
@@ -967,6 +1107,10 @@ public final class CoreImage {
     public static native String kCIInputEVKey();
 
     /**
+     * A key to get or set the scalar saturation value of a Core Image filter.
+     * 
+     * The value for this key needs to be an `NSNumber` instance.
+     * 
      * API-Since: 7.0
      */
     @NotNull
@@ -976,6 +1120,10 @@ public final class CoreImage {
     public static native String kCIInputSaturationKey();
 
     /**
+     * A key to get or set the color value of a Core Image filter.
+     * 
+     * The value for this key needs to be a ``CIColor`` instance.
+     * 
      * API-Since: 7.0
      */
     @NotNull
@@ -985,6 +1133,10 @@ public final class CoreImage {
     public static native String kCIInputColorKey();
 
     /**
+     * A key to get or set the scalar brightness value of a Core Image filter.
+     * 
+     * The value for this key needs to be an `NSNumber` instance.
+     * 
      * API-Since: 7.0
      */
     @NotNull
@@ -994,6 +1146,10 @@ public final class CoreImage {
     public static native String kCIInputBrightnessKey();
 
     /**
+     * A key to get or set the scalar contrast value of a Core Image filter.
+     * 
+     * The value for this key needs to be an `NSNumber` instance.
+     * 
      * API-Since: 7.0
      */
     @NotNull
@@ -1003,6 +1159,10 @@ public final class CoreImage {
     public static native String kCIInputContrastKey();
 
     /**
+     * A key to get or set the scalar bias value of a Core Image filter.
+     * 
+     * The value for this key needs to be an `NSNumber` instance.
+     * 
      * API-Since: 9.0
      */
     @NotNull
@@ -1012,6 +1172,10 @@ public final class CoreImage {
     public static native String kCIInputBiasKey();
 
     /**
+     * A key to get or set the vector weights value of a convolution Core Image filter.
+     * 
+     * The value for this key needs to be a ``CIVector`` instance.
+     * 
      * API-Since: 9.0
      */
     @NotNull
@@ -1021,6 +1185,10 @@ public final class CoreImage {
     public static native String kCIInputWeightsKey();
 
     /**
+     * A key to get or set the gradient map image of a Core Image filter that maps luminance to a color with alpha.
+     * 
+     * The value for this key needs to be a 1 pixel tall ``CIImage`` instance.
+     * 
      * API-Since: 9.0
      */
     @NotNull
@@ -1030,6 +1198,10 @@ public final class CoreImage {
     public static native String kCIInputGradientImageKey();
 
     /**
+     * A key to get or set the mask image of a Core Image filter.
+     * 
+     * The value for this key needs to be a ``CIImage`` instance.
+     * 
      * API-Since: 7.0
      */
     @NotNull
@@ -1039,6 +1211,11 @@ public final class CoreImage {
     public static native String kCIInputMaskImageKey();
 
     /**
+     * A key to get or set the environment map image of a Core Image filter that maps normal directions to a color with
+     * alpha.
+     * 
+     * The value for this key needs to be a ``CIImage`` instance.
+     * 
      * API-Since: 9.0
      */
     @NotNull
@@ -1048,6 +1225,10 @@ public final class CoreImage {
     public static native String kCIInputShadingImageKey();
 
     /**
+     * A key to get or set the target image for a transition Core Image filter.
+     * 
+     * The value for this key needs to be a ``CIImage`` instance.
+     * 
      * API-Since: 7.0
      */
     @NotNull
@@ -1057,6 +1238,9 @@ public final class CoreImage {
     public static native String kCIInputTargetImageKey();
 
     /**
+     * A key to get or set the vector extent value of a Core Image filterthat defines the extent of the effect.
+     * The value for this key needs to be a ``CIVector`` instance.
+     * 
      * API-Since: 7.0
      */
     @NotNull
@@ -1066,6 +1250,9 @@ public final class CoreImage {
     public static native String kCIInputExtentKey();
 
     /**
+     * A key to get or set a coordinate value of a Core Image filter.
+     * The value for this key needs to be a ``CIVector`` instance containing the `x,y` coordinate.
+     * 
      * API-Since: 6.0
      */
     @NotNull
@@ -1108,6 +1295,8 @@ public final class CoreImage {
     public static native String CIDetectorTypeQRCode();
 
     /**
+     * Specifies a detector type for text detection.
+     * 
      * API-Since: 9.0
      */
     @NotNull
@@ -1199,10 +1388,20 @@ public final class CoreImage {
     public static native String CIDetectorNumberOfAngles();
 
     /**
-     * The value for this key is an integer NSNumber from 1..8 such as that
-     * found in kCGImagePropertyOrientation. If present, the detection will be done
-     * based on that orientation but the coordinates in the returned features will
-     * still be based on those of the image.
+     * A dictionary key that configures a Core Image feature detection operation
+     * to account for the orientation the image.
+     * 
+     * This option is used with ``/CIDetector/featuresInImage:options:``
+     * 
+     * The value of this key is an number object whose value is an integer between 1 and 8.
+     * The TIFF and EXIF specifications define the orientation values that describe how the image should be displayed.
+     * The default value is 1. For further details, see `CGImagePropertyOrientation`.
+     * 
+     * The ``CIDetectorTypeFace`` and ``CIDetectorTypeText`` can use this option to correctly find faces or text.
+     * 
+     * Regardless of the orientation values the ``/CIFeature/bounds-property`` which is always measured in
+     * the cartesean coordinates system of the image that you pass to the detector.
+     * 
      * 
      * API-Since: 5.0
      */
@@ -1213,8 +1412,15 @@ public final class CoreImage {
     public static native String CIDetectorImageOrientation();
 
     /**
-     * The value for this key is a bool NSNumber. If true, facial expressions, such as blinking and closed eyes are
-     * extracted
+     * A dictionary key that configures a Core Image face feature detection operation
+     * to perform additional processing to recognize closed eyes in detected faces.
+     * 
+     * This option is used with ``/CIDetector/featuresInImage:options:``
+     * 
+     * If the value of the key is true, then facial expressions such as blinking and smiles are extracted.
+     * This is needed for the ``/CIFaceFeature/leftEyeClosed-property`` and ``/CIFaceFeature/rightEyeClosed-property``
+     * to function.
+     * 
      * 
      * API-Since: 7.0
      */
@@ -1225,7 +1431,14 @@ public final class CoreImage {
     public static native String CIDetectorEyeBlink();
 
     /**
-     * The value for this key is a bool NSNumber. If true, facial expressions, such as smile are extracted
+     * A dictionary key that configures a Core Image face feature detection operation
+     * to perform additional processing to recognize smiles in detected faces.
+     * 
+     * This option is used with ``/CIDetector/featuresInImage:options:``
+     * 
+     * If the value of the key is true, then facial expressions such as blinking and smiles eyes are extracted.
+     * This is needed for the ``/CIFaceFeature/hasSmile-property`` to function.
+     * 
      * 
      * API-Since: 7.0
      */
@@ -1236,7 +1449,49 @@ public final class CoreImage {
     public static native String CIDetectorSmile();
 
     /**
-     * The value for this key is a float NSNumber. Specifies the per frame focal length.
+     * A dictionary key that configures a Core Image rectangle feature detection operation
+     * to account for the focal length of the camera used for the image.
+     * 
+     * This option is used with ``/CIDetector/featuresInImage:options:``
+     * 
+     * The value of this key is an NSNumber object whose value is a floating-point number. Use this option with the
+     * CIDetectorTypeRectangle
+     * detector type to control the effect of the CIDetectorAspectRatio option on feature detection.
+     * 
+     * This option’s value can be 0.0, -1.0, or any positive value:
+     * * The special value of -1.0 (the default) disables the aspect ratio test for the returned rectangle.
+     * * The special value of 0.0 enables a less precise test of aspect ratio that approximates an orthographic
+     * (non-perspective) projection.
+     * Use this value if you want to specify the aspect ratio of the rectangle via the CIDetectorAspectRatio option, but
+     * have no means of
+     * determining the value for the focal length in pixels. See below for a method to compute an approximate value for
+     * the focal length in pixels.
+     * * Any other value specifies the camera focal length, in pixels, allowing the aspect ratio specification to
+     * account for perspective distortion
+     * of rectangles in the input image.
+     * 
+     * If you know the diagonal field of view of the camera (the scene angle subtended by the diagonal corners of an
+     * image), you can use the
+     * following formula to compute an approximate focal length in pixels:
+     * 
+     * `focal_length_pixels = (image_diagonal_pixels/2)/tan(FOV/2)`
+     * 
+     * In this formula, `image_diagonal_pixels` is the length (in pixels) of the image diagonal of the maximum
+     * resolution of the camera sensor.
+     * For example, this value is:
+     * * `4080` pixels for a `3264 x 2448` (8 megapixel) sensor
+     * * `5000` pixels for a `4096 x 3024` (12 megapixel) sensor.
+     * 
+     * To measure diagonal field of view, put the camera on a tripod so that it is perpendicular to a surface and the
+     * center of the image is
+     * oriented on a mark on the surface. Measure the distance from the mark to one of the corner points of the image
+     * (Y). Measure the distance
+     * from the camera to the surface (Z). The field of view is then `2*arctan(Y/Z)`.
+     * 
+     * You must specify this value in terms of the maximum sensor resolution. If the supplied CIImage has been scaled
+     * relative relative to the
+     * maximum sensor resolution, the supplied focal length must also be similarly scaled.
+     * 
      * 
      * API-Since: 8.0
      */
@@ -1247,7 +1502,19 @@ public final class CoreImage {
     public static native String CIDetectorFocalLength();
 
     /**
-     * The value for this key is a float NSNumber. Specifies the aspect ratio of the rectangle detected.
+     * A dictionary key that configures a Core Image rectangle feature detection operation
+     * to search for a rectangle of a desired aspect ratio (width divided by height).
+     * 
+     * This option is used with ``/CIDetector/featuresInImage:options:``
+     * 
+     * The value for this key needs to be is a positive float number.
+     * Use this option with a ``CIDetectorTypeRectangle`` detector to fine-tune the accuracy of the detector.
+     * 
+     * For example, to more accurately find a business card (3.5 x 2 inches) in an image, specify an aspect ratio of
+     * 1.75.
+     * 
+     * If this key is not specified, the a default value of 1.6 is used.
+     * 
      * 
      * API-Since: 8.0
      */
@@ -1258,8 +1525,17 @@ public final class CoreImage {
     public static native String CIDetectorAspectRatio();
 
     /**
-     * The value for this key is a bool NSNumber. Controls whether the text detector should detect subfeatures or not.
-     * The default value is NO
+     * A dictionary key that configures a Core Image text feature detection operation
+     * to return feature information for components of detected features.
+     * 
+     * This option is used with ``/CIDetector/featuresInImage:options:``
+     * 
+     * If the value for this option configures the ``CIDetectorTypeText`` detector as follows:
+     * * False: detect only in regions likely to contain text.
+     * * True: detect in regions likely to contain individual characters.
+     * 
+     * If this key is not specified, the a default is False.
+     * 
      * 
      * API-Since: 9.0
      */
@@ -1270,7 +1546,11 @@ public final class CoreImage {
     public static native String CIDetectorReturnSubFeatures();
 
     /**
-     * Specifies the type of a feature that is a face.
+     * A Core Image feature type for person’s face.
+     * 
+     * To detect faces in an image or video, pass this to ``/CIDetector/detectorOfType:context:options:``
+     * 
+     * Use the ``CIFaceFeature`` class to find more information about the detected face.
      */
     @NotNull
     @Generated
@@ -1279,7 +1559,11 @@ public final class CoreImage {
     public static native String CIFeatureTypeFace();
 
     /**
-     * Specifies the type of a feature that is a rectangle.
+     * A Core Image feature type for rectangular object.
+     * 
+     * To detect rectangles in an image or video, pass this to ``/CIDetector/detectorOfType:context:options:``
+     * 
+     * Use the ``CIRectangleFeature`` class to find more information about the detected rectangle.
      */
     @NotNull
     @Generated
@@ -1288,7 +1572,11 @@ public final class CoreImage {
     public static native String CIFeatureTypeRectangle();
 
     /**
-     * Specifies the type of a feature that is a QR code.
+     * A Core Image feature type for QR code object.
+     * 
+     * To detect QR codes in an image or video, pass this to ``/CIDetector/detectorOfType:context:options:``
+     * 
+     * Use the ``CIQRCodeFeature`` class to find more information about the detected QR code.
      */
     @NotNull
     @Generated
@@ -1297,7 +1585,11 @@ public final class CoreImage {
     public static native String CIFeatureTypeQRCode();
 
     /**
-     * Specifies the type of a feature that is a text.
+     * A Core Image feature type for text.
+     * 
+     * To detect text in an image or video, pass this to ``/CIDetector/detectorOfType:context:options:``
+     * 
+     * Use the ``CITextFeature`` class to find more information about the detected text.
      */
     @NotNull
     @Generated
@@ -1306,15 +1598,21 @@ public final class CoreImage {
     public static native String CIFeatureTypeText();
 
     /**
-     * Specifies the the tile size that the provideImageData: method will be called for.
-     * If the value is:
-     * An NSNumber, then the value specifies a square tile size.
+     * Specifies the tile size that the Provide Image Data method will be called for.
      * 
-     * An NSArray or CIVector with two values, then it specifies a rectangular tile width and height.
+     * This key and its value may be passed to:
+     * * ``/CIImage/imageWithImageProvider:size::format:colorSpace:options:``
+     * * ``/CIImage/initWithImageProvider:size::format:colorSpace:options:``
      * 
-     * Not specified, then provideImageData: will be called for the entire image.
+     * If the value of this key is:
+     * Value | Behavior of sub-rect passed to ``provideImageData:bytesPerRow:origin::size::userData:``
+     * -------------------------- | ----------------------------
+     * Not specified | the entire image
+     * `NSNumber` | square tiles of size x size
+     * `NSArray` with 2 numbers | rectangular tiles of width x height.
+     * ``CIVector`` with 2 values | rectangular tiles of width x height.
+     * `NSNull` | can be called for any possible origin and size.
      * 
-     * NSNull, then provideImageData: can be called for any possible origin and size.
      * 
      * API-Since: 9.0
      */
@@ -1325,8 +1623,15 @@ public final class CoreImage {
     public static native String kCIImageProviderTileSize();
 
     /**
-     * The object passed when the provideImageData: method is called.
-     * It is retained until the image is deallocated.
+     * A key for any data needed by the image provider object.
+     * The associated value is an object that contains the needed data.
+     * 
+     * This key and its value may be passed to:
+     * * ``/CIImage/imageWithImageProvider:size::format:colorSpace:options:``
+     * * ``/CIImage/initWithImageProvider:size::format:colorSpace:options:``
+     * 
+     * The value object is retained until the image is deallocated.
+     * 
      * 
      * API-Since: 9.0
      */
@@ -1925,7 +2230,9 @@ public final class CoreImage {
     public static native String kCIImageAuxiliaryDisparity();
 
     /**
-     * The value for kCIImageRepresentationAVDepthData should be an AVDepthData object.
+     * An optional key and value to save additional depth channel information to a JPEG or HEIF representations.
+     * 
+     * The value for this key needs to be an `AVDepthData` instance.
      * 
      * API-Since: 11.0
      */
@@ -1936,7 +2243,9 @@ public final class CoreImage {
     public static native String kCIImageRepresentationAVDepthData();
 
     /**
-     * The value for kCIImageRepresentationDepthImage should be a monochome CIImage object.
+     * An optional key and value to save additional depth channel information to a JPEG or HEIF.
+     * 
+     * The value for this key needs to be a monochrome depth ``CIImage`` instance.
      * 
      * API-Since: 11.0
      */
@@ -1947,7 +2256,9 @@ public final class CoreImage {
     public static native String kCIImageRepresentationDepthImage();
 
     /**
-     * The value for kCIImageRepresentationDisparityImage should be a monochome CIImage object.
+     * An optional key and value to save additional depth channel information to a JPEG or HEIF.
+     * 
+     * The value for this key needs to be a monochrome disparity ``CIImage`` instance.
      * 
      * API-Since: 11.0
      */
@@ -1958,6 +2269,10 @@ public final class CoreImage {
     public static native String kCIImageRepresentationDisparityImage();
 
     /**
+     * A key to get or set the depth map image of a Core Image filter.
+     * 
+     * The value for this key needs to be a ``CIImage`` instance.
+     * 
      * API-Since: 11.0
      */
     @NotNull
@@ -1967,6 +2282,10 @@ public final class CoreImage {
     public static native String kCIInputDepthImageKey();
 
     /**
+     * A key to get or set the disparity map image of a Core Image filter.
+     * 
+     * The value for this key needs to be a ``CIImage`` instance.
+     * 
      * API-Since: 11.0
      */
     @NotNull
@@ -2025,9 +2344,15 @@ public final class CoreImage {
     public static native String kCIImageAuxiliarySemanticSegmentationTeethMatte();
 
     /**
-     * A boolean value specifying whether or not to allow use of low-power devices for GPU rendering.
-     * If @YES, the context will use a low power GPU if available and the high power device is not already in use.
-     * The default value is @NO which instructs the context to use the highest power/performance device.
+     * A Boolean value to control the power level of Core Image context renders.
+     * 
+     * This option only affects certain macOS devices with more than one available GPU device.
+     * 
+     * If this value is True, then rendering with the context will use a use allow power GPU device
+     * if available and the high power device is not already in use.
+     * 
+     * Otherwise, the context will use the highest power/performance GPU device.
+     * 
      * 
      * API-Since: 13.0
      */
@@ -2038,7 +2363,9 @@ public final class CoreImage {
     public static native String kCIContextAllowLowPower();
 
     /**
-     * The value for kCIImageRepresentationAVPortraitEffectsMatte should be an AVPortraitEffectsMatte object.
+     * An optional key and value to save a portrait matte channel information to a JPEG or HEIF.
+     * 
+     * The value for this key needs to be a an `AVPortraitEffectsMatte` instance.
      * 
      * API-Since: 12.0
      */
@@ -2049,7 +2376,11 @@ public final class CoreImage {
     public static native String kCIImageRepresentationAVPortraitEffectsMatte();
 
     /**
-     * The value for kCIImageRepresentationPortraitEffectsMatteImage should be a monochome CIImage object.
+     * An optional key and value to save a portrait matte channel to a JPEG or HEIF.
+     * 
+     * The value for this key needs to be a portrait matte ``CIImage`` instance where black pixels
+     * represent the background region and white pixels represent the primary people in the image.
+     * The image will be converted to monochrome before it is saved to the JPEG or HEIF.
      * 
      * API-Since: 12.0
      */
@@ -2060,8 +2391,9 @@ public final class CoreImage {
     public static native String kCIImageRepresentationPortraitEffectsMatteImage();
 
     /**
-     * The value for kCIImageRepresentationAVSemanticSegmentationMattes should be an array of
-     * AVSemanticSegmentationMatte objects.
+     * An optional key and value to save one or more segmentation matte channels to a JPEG or HEIF.
+     * 
+     * The value for this key needs to be an array of AVSemanticSegmentationMatte instances.
      * 
      * API-Since: 13.0
      */
@@ -2072,7 +2404,11 @@ public final class CoreImage {
     public static native String kCIImageRepresentationAVSemanticSegmentationMattes();
 
     /**
-     * The value for kCIImageRepresentationSemanticSegmentationSkinMatteImage should be a monochome CIImage object.
+     * An optional key and value to save a skin segmentation channel to a JPEG or HEIF.
+     * 
+     * The value for this key needs to be a ``CIImage`` instance where white pixels
+     * represent the areas of person's skin are found in the image.
+     * The image will be converted to monochrome before it is saved to the JPEG or HEIF.
      * 
      * API-Since: 13.0
      */
@@ -2083,7 +2419,11 @@ public final class CoreImage {
     public static native String kCIImageRepresentationSemanticSegmentationSkinMatteImage();
 
     /**
-     * The value for kCIImageRepresentationSemanticSegmentationHairMatteImage should be a monochome CIImage object.
+     * An optional key and value to save a skin segmentation channel to a JPEG or HEIF.
+     * 
+     * The value for this key needs to be a ``CIImage`` instance where white pixels
+     * represent the areas of person's head and facial hair are found in the image.
+     * The image will be converted to monochrome before it is saved to the JPEG or HEIF.
      * 
      * API-Since: 13.0
      */
@@ -2094,7 +2434,11 @@ public final class CoreImage {
     public static native String kCIImageRepresentationSemanticSegmentationHairMatteImage();
 
     /**
-     * The value for kCIImageRepresentationSemanticSegmentationTeethMatteImage should be a monochome CIImage object.
+     * An optional key and value to save a skin segmentation channel to a JPEG or HEIF.
+     * 
+     * The value for this key needs to be a ``CIImage`` instance where white pixels
+     * represent the areas where a person's teeth are found in the image.
+     * The image will be converted to monochrome before it is saved to the JPEG or HEIF.
      * 
      * API-Since: 13.0
      */
@@ -2105,6 +2449,10 @@ public final class CoreImage {
     public static native String kCIImageRepresentationSemanticSegmentationTeethMatteImage();
 
     /**
+     * A key to get or set the scalar amount value of a Core Image filter.
+     * 
+     * The value for this key needs to be an `NSNumber` instance.
+     * 
      * API-Since: 12.0
      */
     @NotNull
@@ -2114,6 +2462,10 @@ public final class CoreImage {
     public static native String kCIInputAmountKey();
 
     /**
+     * A key to get or set the matte image of a Core Image filter.
+     * 
+     * The value for this key needs to be a ``CIImage`` instance.
+     * 
      * API-Since: 12.0
      */
     @NotNull
@@ -2136,8 +2488,10 @@ public final class CoreImage {
     public static native String kCIInputEnableEDRModeKey();
 
     /**
-     * An NSString specifying a client-provided name for a context.
+     * A Boolean value to specify a client-provided name for a context.
+     * 
      * This name will be used in QuickLook graphs and the output of CI_PRINT_TREE.
+     * 
      * 
      * API-Since: 12.0
      */
@@ -2175,7 +2529,11 @@ public final class CoreImage {
     public static native String kCIImageAuxiliarySemanticSegmentationGlassesMatte();
 
     /**
-     * The value for kCIImageRepresentationSemanticSegmentationGlassesMatteImage should be a monochome CIImage object.
+     * An optional key and value to save a skin segmentation channel to a JPEG or HEIF.
+     * 
+     * The value for this key needs to be a ``CIImage`` instance where white pixels
+     * represent the areas where a person's glasses are found in the image.
+     * The image will be converted to monochrome before it is saved to the JPEG or HEIF.
      * 
      * API-Since: 14.1
      */
@@ -2195,7 +2553,11 @@ public final class CoreImage {
     public static native String kCIImageAuxiliarySemanticSegmentationSkyMatte();
 
     /**
-     * The value for kCIImageRepresentationSemanticSegmentationSkyMatteImage should be a monochome CIImage object.
+     * An optional key and value to save a skin segmentation channel to a JPEG or HEIF.
+     * 
+     * The value for this key needs to be a ``CIImage`` instance where white pixels
+     * represent the areas where a person's skin are found in the image.
+     * The image will be converted to monochrome before it is saved to the JPEG or HEIF.
      * 
      * API-Since: 14.3
      */
@@ -2352,9 +2714,10 @@ public final class CoreImage {
     public static native String kCIImageAuxiliaryHDRGainMap();
 
     /**
-     * A NSNumber that specifies the maximum memory footprint (in megabytes) that
-     * the CIContext allocates for render tasks. Larger values could increase memory
-     * footprint while smaller values could reduce performance.
+     * A number value to control the maximum memory in megabytes that the context allocates for render tasks.
+     * 
+     * Larger values could increase memory footprint while smaller values could reduce performance.
+     * 
      * 
      * API-Since: 17.0
      */
@@ -2367,16 +2730,10 @@ public final class CoreImage {
     @Generated public static final double COREIMAGE_SUPPORTS_OPENGLES = 1.0;
 
     /**
-     * A float value for overriding the image's content headroom.
-     * This option is supported by:
-     * imageWithContentsOfURL:options:, initWithContentsOfURL:options,
-     * imageWithData:options:, initWithData:options:,
-     * imageWithCGImage:options:, initWithCGImage:options:,
-     * imageWithCGImageSource:options:, initWithCGImageSource:options:,
-     * imageWithIOSurface:options:, initWithIOSurface:options:,
+     * A value for overriding the automatic behavior of the Content Headroom property
+     * when creating an image.
      * 
-     * If the value for this option is a NSNumber greater than or equal to 1.0,
-     * then it will override the automatic behavior of the 'headroom' property.
+     * The value for this key should be an `NSNumber` instance.
      * 
      * API-Since: 18.0
      */
@@ -2387,14 +2744,15 @@ public final class CoreImage {
     public static native String kCIImageContentHeadroom();
 
     /**
-     * The value for kCIImageRepresentationHDRImage should be a HDR CIImage object.
-     * This optional image can be passed to JPEGRepresentationOfImage or HEIFRepresentationOfImage.
+     * An optional key and value to save a HDR image using the gain map channel to a JPEG or HEIF.
      * 
-     * When provided, Core Image will calculate a HDRGainMap image from the ratio of the HDR image to
-     * the primary SDR image.
+     * The value for this key needs to be a HDR CIImage instance.
      * 
-     * If the the HDR CIImage has a .contentHeadroom property, then that will be used when calculating the
-     * HDRGainMap image and metadata.
+     * When provided, Core Image will calculate a gain map auxiliary image
+     * from the ratio of the HDR image to the primary SDR image.
+     * 
+     * If the the HDR ``CIImage`` instance has a ``/CIImage/contentHeadroom`` property,
+     * then that will be used when calculating the HDRGainMap image and metadata.
      * 
      * 
      * API-Since: 18.0
@@ -2406,9 +2764,15 @@ public final class CoreImage {
     public static native String kCIImageRepresentationHDRImage();
 
     /**
-     * The value for kCIImageRepresentationHDRGainMapImage should be a monochome CIImage object.
-     * The image.properties should contain information equivalent to what is returned when initialtizing
-     * an image using the kCIImageAuxiliaryHDRGainMap option.
+     * An optional key and value to save a gain map channel to a JPEG or HEIF.
+     * 
+     * The value for this key needs to be a monochrome ``CIImage`` instance.
+     * 
+     * If the ``kCIImageRepresentationHDRGainMapAsRGB`` option it true, then it needs to
+     * be an RGB ``CIImage`` instance.
+     * 
+     * The ``/CIImage/properties`` should contain metadata information equivalent to what is returned when
+     * initializing an image using ``kCIImageAuxiliaryHDRGainMap``.
      * 
      * 
      * API-Since: 14.1
@@ -2418,4 +2782,320 @@ public final class CoreImage {
     @MappedReturn(ObjCStringMapper.class)
     @NotNull
     public static native String kCIImageRepresentationHDRGainMapImage();
+
+    @Generated
+    @CVariable()
+    public static native int kCIFormatRGBX8();
+
+    /**
+     * A Boolean value to control whether an image created with a CVPixelBuffer or an IOSurface
+     * should be cropped and offset according clean aperture attachments.
+     * 
+     * For a `CVPixelBuffer` this will use `kCVImageBufferPreferredCleanApertureKey`
+     * or `kCVImageBufferCleanApertureKey`.
+     * 
+     * If the value for this option is:
+     * * True: then image will be cropped and offset to the clean aperture.
+     * * False: then the full image is returned.
+     * * ``CIVector`` : then use it as a `CGRect` to crop and offset.
+     * * Not specified : then it will behave as if False was specified.
+     * 
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String kCIImageApplyCleanAperture();
+
+    /**
+     * A value for overriding the automatic behavior of the Content Average Light Level property
+     * when creating an image.
+     * 
+     * The value for this key should be an `NSNumber` instance.
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String kCIImageContentAverageLightLevel();
+
+    /**
+     * A Core Video Metal texture cache object to improve the performance of Core Image context
+     * renders that use Core Video pixel buffers.
+     * 
+     * Creating a Core Image context with this optional `CVMetalTextureCache` can improve the
+     * performance of creating a Metal texture from a `CVPixelBuffer`. It is recommended
+     * to specify this option if the context renders to or from pixel buffers that come
+     * from a `CVPixelBufferPool`.
+     * 
+     * It is the client's responsibility to flush the cache when appropriate.
+     * 
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String kCIContextCVMetalTextureCache();
+
+    /**
+     * An optional key and value to request the gain map channel to be color instead of monochrome.
+     * 
+     * This key affects how the gain map image is calculated from the SDR receiver and
+     * the ``kCIImageRepresentationHDRImage`` image value.
+     * 
+     * The value for this is a Boolean where:
+     * * True: the gain map is created as a color ratio between the HDR and SDR images.
+     * * False: the gain map is created as a brightness ratio between the HDR and SDR images.
+     * * Not specified: the default behavior False.
+     * 
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String kCIImageRepresentationHDRGainMapAsRGB();
+
+    /**
+     * A key to get or set the scalar count value of a Core Image filter.
+     * 
+     * The value for this key needs to be an integer `NSNumber` instance.
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String kCIInputCountKey();
+
+    /**
+     * A key to get or set the scalar threshold value of a Core Image filter.
+     * 
+     * The value for this key needs to be an `NSNumber` instance.
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String kCIInputThresholdKey();
+
+    /**
+     * A key to get or set the geometric radius value of a Core Image filter.
+     * 
+     * The value for this key needs to be an `NSNumber` instance.
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String kCIInputRadius0Key();
+
+    /**
+     * A key to get or set the geometric radius value of a Core Image filter.
+     * 
+     * The value for this key needs to be an `NSNumber` instance.
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String kCIInputRadius1Key();
+
+    /**
+     * A key to get or set a color value of a Core Image filter.
+     * 
+     * The value for this key needs to be a ``CIColor`` instance.
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String kCIInputColor0Key();
+
+    /**
+     * A key to get or set a color value of a Core Image filter.
+     * 
+     * The value for this key needs to be a ``CIColor`` instance.
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String kCIInputColor1Key();
+
+    /**
+     * A key to get or set a color space value of a Core Image filter.
+     * 
+     * The value for this key needs to be a `CGColorSpace` instance.
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String kCIInputColorSpaceKey();
+
+    /**
+     * A key to get or set the boolean behavior of a Core Image filter that specifies if the filter should extrapolate a
+     * table beyond the defined range.
+     * 
+     * The value for this key needs to be an `NSNumber` instance.
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String kCIInputExtrapolateKey();
+
+    /**
+     * A key to get or set the boolean behavior of a Core Image filter that specifies if the filter should operate in
+     * linear or perceptual colors.
+     * 
+     * The value for this key needs to be an `NSNumber` instance.
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String kCIInputPerceptualKey();
+
+    /**
+     * A key to get or set the vector bias value of a Core Image filter.
+     * 
+     * The value for this key needs to be a ``CIVector`` instance.
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String kCIInputBiasVectorKey();
+
+    /**
+     * A key to get or set the backside image for a transition Core Image filter.
+     * 
+     * The value for this key needs to be a ``CIImage`` instance.
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String kCIInputBacksideImageKey();
+
+    /**
+     * A key to get or set the palette image for a Core Image filter.
+     * 
+     * The value for this key needs to be a 1 pixel tall ``CIImage`` instance.
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String kCIInputPaletteImageKey();
+
+    /**
+     * A key to get or set the coordinate value of a Core Image filter.
+     * The value for this key needs to be a ``CIVector`` instance containing the `x,y` coordinate.
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String kCIInputPoint0Key();
+
+    /**
+     * A key to get or set a coordinate value of a Core Image filter.
+     * The value for this key needs to be a ``CIVector`` instance containing the `x,y` coordinate.
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String kCIInputPoint1Key();
+
+    /**
+     * Use Standard dynamic range.
+     * 
+     * Images with `contentHeadroom` metadata will be tone mapped to a maximum pixel value of 1.0.
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String kCIDynamicRangeStandard();
+
+    /**
+     * Use extended dynamic range, but brightness is modulated to optimize for
+     * co-existence with other composited content.
+     * 
+     * For best results, images should contain `contentAverageLightLevel` metadata.
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String kCIDynamicRangeConstrainedHigh();
+
+    /**
+     * Use High dynamic range.
+     * 
+     * The provides the best HDR quality and needs to be reserved
+     * for situations where the user is focused on the media, such as larger views in
+     * an image editing/viewing app, or annotating/drawing with HDR colors
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String kCIDynamicRangeHigh();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String CIRAWDecoderVersion9();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String CIRAWDecoderVersion9DNG();
 }

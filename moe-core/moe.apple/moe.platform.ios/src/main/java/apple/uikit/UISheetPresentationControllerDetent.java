@@ -229,4 +229,23 @@ public class UISheetPresentationControllerDetent extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Set the background effect for this detent. Set to nil to use default background. Default is nil.
+     * 
+     * API-Since: 26.1
+     */
+    @Generated
+    @Selector("backgroundEffect")
+    @Nullable
+    public native UIVisualEffect backgroundEffect();
+
+    /**
+     * Set the background effect for this detent. Set to nil to use default background. Default is nil.
+     * 
+     * API-Since: 26.1
+     */
+    @Generated
+    @Selector("setBackgroundEffect:")
+    public native void setBackgroundEffect(@Nullable UIVisualEffect value);
 }

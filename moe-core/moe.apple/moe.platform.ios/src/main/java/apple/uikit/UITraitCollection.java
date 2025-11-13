@@ -720,4 +720,77 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @Selector("traitCollectionWithListEnvironment:")
     @NotNull
     public static native UITraitCollection traitCollectionWithListEnvironment(@NInt long listEnvironment);
+
+    /**
+     * If HDR headroom should be used for the current UI configuration. Headroom usage is disabled in certain UI
+     * configurations, such as when all an application's windows are in the background.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("hdrHeadroomUsageLimit")
+    @NInt
+    public native long hdrHeadroomUsageLimit();
+
+    /**
+     * Specifies the behavior for resolving ``NSTextAlignment.natural`` to the visual alignment.
+     * 
+     * When set to ``true``, the resolved visual alignment is determined by the resolved base writing direction;
+     * otherwise, it is using the user’s preferred language.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("resolvesNaturalAlignmentWithBaseWritingDirection")
+    public native boolean resolvesNaturalAlignmentWithBaseWritingDirection();
+
+    /**
+     * The split view controller layout environment represents whether an ancestor split view controller is expanded or
+     * collapsed.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("splitViewControllerLayoutEnvironment")
+    @NInt
+    public native long splitViewControllerLayoutEnvironment();
+
+    /**
+     * The tab accessory environment represents whether a given trait collection is from a view in a `UITabAccessory`
+     * content view.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("tabAccessoryEnvironment")
+    @NInt
+    public native long tabAccessoryEnvironment();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("traitCollectionWithHDRHeadroomUsageLimit:")
+    @NotNull
+    public static native UITraitCollection traitCollectionWithHDRHeadroomUsageLimit(@NInt long hdrHeadroomUsageLimit);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("traitCollectionWithResolvesNaturalAlignmentWithBaseWritingDirection:")
+    @NotNull
+    public static native UITraitCollection traitCollectionWithResolvesNaturalAlignmentWithBaseWritingDirection(
+            boolean resolvesNaturalAlignmentWithBaseWritingDirection);
+
+    /**
+     * Constructs a new trait collection with the given `tabAccessoryEnvironment`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("traitCollectionWithTabAccessoryEnvironment:")
+    @NotNull
+    public static native UITraitCollection traitCollectionWithTabAccessoryEnvironment(
+            @NInt long tabAccessoryEnvironment);
 }

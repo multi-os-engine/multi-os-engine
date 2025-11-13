@@ -44,8 +44,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVPlayerItemAccessLog
- * 
  * An AVPlayerItemAccessLog provides methods to retrieve the access log in a format suitable for serialization.
  * 
  * An AVPlayerItemAccessLog acculumulates key metrics about network playback and presents them as a collection
@@ -178,8 +176,6 @@ public class AVPlayerItemAccessLog extends NSObject implements NSCopying {
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
-     * [@property] events
-     * 
      * An ordered collection of AVPlayerItemAccessLogEvent instances.
      * 
      * An ordered collection of AVPlayerItemAccessLogEvent instances that represent the chronological
@@ -194,17 +190,15 @@ public class AVPlayerItemAccessLog extends NSObject implements NSCopying {
     public native NSArray<? extends AVPlayerItemAccessLogEvent> events();
 
     /**
-     * extendedLogData
-     * 
      * Serializes an AVPlayerItemAccessLog in the Extended Log File Format.
      * 
      * This method converts the webserver access log into a textual format that conforms to the
      * W3C Extended Log File Format for web server log files.
      * For more information see: http://www.w3.org/pub/WWW/TR/WD-logfile.html
      * 
-     * @return An autoreleased NSData instance.
+     * - Returns: An autoreleased NSData instance.
      * 
-     *         API-Since: 4.3
+     * API-Since: 4.3
      */
     @Nullable
     @Generated
@@ -212,8 +206,6 @@ public class AVPlayerItemAccessLog extends NSObject implements NSCopying {
     public native NSData extendedLogData();
 
     /**
-     * [@property] extendedLogDataStringEncoding
-     * 
      * Returns the NSStringEncoding for extendedLogData, see above.
      * 
      * A string suitable for console output is obtainable by:

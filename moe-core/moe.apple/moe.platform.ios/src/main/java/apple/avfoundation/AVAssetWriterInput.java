@@ -51,8 +51,6 @@ import org.jetbrains.annotations.Nullable;
 import apple.opaque.dispatch_queue_t;
 
 /**
- * AVAssetWriterInput
- * 
  * AVAssetWriterInput defines an interface for appending either new media samples or references to existing media
  * samples packaged as CMSampleBuffer objects to a single track of the output file of an AVAssetWriter.
  * 
@@ -97,8 +95,6 @@ public class AVAssetWriterInput extends NSObject {
     public static native AVAssetWriterInput allocWithZone(VoidPtr zone);
 
     /**
-     * assetWriterInputWithMediaType:outputSettings:
-     * 
      * Creates a new input of the specified media type to receive sample buffers for writing to the output file.
      * 
      * Each new input accepts data for a new track of the AVAssetWriter's output file. Inputs are added to an asset
@@ -132,18 +128,16 @@ public class AVAssetWriterInput extends NSObject {
      * AVVideoCodecTypeJPEG. AVVideoCodecTypeH264 is not supported on iPhone 3G. For AVVideoScalingModeKey, the value
      * AVVideoScalingModeFit is not supported.
      * 
-     * API-Since: 4.1
+     * - Parameter mediaType: The media type of samples that will be accepted by the input. Media types are defined in
+     * AVMediaFormat.h.
+     * - Parameter outputSettings: The settings used for encoding the media appended to the output. See
+     * AVAudioSettings.h for AVMediaTypeAudio or AVVideoSettings.h for AVMediaTypeVideo and for more information on how
+     * to construct an output settings dictionary. If you only require simple preset-based output settings, see
+     * AVOutputSettingsAssistant.
      * 
-     * @param mediaType
-     *                       The media type of samples that will be accepted by the input. Media types are defined in
-     *                       AVMediaFormat.h.
-     * @param outputSettings
-     *                       The settings used for encoding the media appended to the output. See AVAudioSettings.h for
-     *                       AVMediaTypeAudio or AVVideoSettings.h for AVMediaTypeVideo and for more information on how
-     *                       to construct an output settings dictionary. If you only require simple preset-based output
-     *                       settings, see AVOutputSettingsAssistant.
-     * @return
-     *         An instance of AVAssetWriterInput.
+     * - Returns: An instance of AVAssetWriterInput.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("assetWriterInputWithMediaType:outputSettings:")
@@ -151,8 +145,6 @@ public class AVAssetWriterInput extends NSObject {
             @Nullable NSDictionary<String, ?> outputSettings);
 
     /**
-     * assetWriterInputWithMediaType:outputSettings:sourceFormatHint:
-     * 
      * Creates a new input of the specified media type to receive sample buffers for writing to the output file.
      * 
      * A version of +assetWriterInputWithMediaType:outputSettings: that includes the ability to hint at the format of
@@ -172,20 +164,17 @@ public class AVAssetWriterInput extends NSObject {
      * - the output scaling mode is AVVideoScalingModeFit
      * - the output settings contain AVSampleRateConverterAudioQualityKey or AVVideoDecompressionPropertiesKey
      * 
-     * API-Since: 6.0
+     * - Parameter mediaType: The media type of samples that will be accepted by the input. Media types are defined in
+     * AVMediaFormat.h.
+     * - Parameter outputSettings: The settings used for encoding the media appended to the output. See
+     * AVAudioSettings.h for AVMediaTypeAudio or AVVideoSettings.h for AVMediaTypeVideo and for more information on how
+     * to construct an output settings dictionary. If you only require simple preset-based output settings, see
+     * AVOutputSettingsAssistant.
+     * - Parameter sourceFormatHint: A hint about the format of media data that will be appended to the new input.
      * 
-     * @param mediaType
-     *                         The media type of samples that will be accepted by the input. Media types are defined in
-     *                         AVMediaFormat.h.
-     * @param outputSettings
-     *                         The settings used for encoding the media appended to the output. See AVAudioSettings.h
-     *                         for AVMediaTypeAudio or AVVideoSettings.h for AVMediaTypeVideo and for more information
-     *                         on how to construct an output settings dictionary. If you only require simple
-     *                         preset-based output settings, see AVOutputSettingsAssistant.
-     * @param sourceFormatHint
-     *                         A hint about the format of media data that will be appended to the new input.
-     * @return
-     *         An instance of AVAssetWriterInput.
+     * - Returns: An instance of AVAssetWriterInput.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("assetWriterInputWithMediaType:outputSettings:sourceFormatHint:")
@@ -280,8 +269,6 @@ public class AVAssetWriterInput extends NSObject {
     public static native long version_static();
 
     /**
-     * addTrackAssociationWithTrackOfInput:type:
-     * 
      * Associates the track corresponding to the specified input with the track corresponding with the receiver.
      * 
      * If the type of association requires tracks of specific media types that don't match the media types of the
@@ -292,14 +279,12 @@ public class AVAssetWriterInput extends NSObject {
      * This method throws an exception if the input and track association type cannot be added (see
      * -canAddTrackAssociationWithTrackOfInput:type:).
      * 
-     * API-Since: 7.0
+     * - Parameter input: The instance of AVAssetWriterInput with a corresponding track to associate with track
+     * corresponding to the receiver.
+     * - Parameter trackAssociationType: The type of track association to add. Common track association types, such as
+     * AVTrackAssociationTypeTimecode, are defined in AVAssetTrack.h.
      * 
-     * @param input
-     *                             The instance of AVAssetWriterInput with a corresponding track to associate with track
-     *                             corresponding to the receiver.
-     * @param trackAssociationType
-     *                             The type of track association to add. Common track association types, such as
-     *                             AVTrackAssociationTypeTimecode, are defined in AVAssetTrack.h.
+     * API-Since: 7.0
      */
     @Generated
     @Selector("addTrackAssociationWithTrackOfInput:type:")
@@ -307,8 +292,6 @@ public class AVAssetWriterInput extends NSObject {
             @NotNull String trackAssociationType);
 
     /**
-     * appendSampleBuffer:
-     * 
      * Appends samples to the receiver.
      * 
      * The timing information in the sample buffer, considered relative to the time passed to -[AVAssetWriter
@@ -391,37 +374,32 @@ public class AVAssetWriterInput extends NSObject {
      * This method throws an exception if the sample buffer's media type does not match the asset writer input's media
      * type.
      * 
-     * API-Since: 4.1
+     * - Parameter sampleBuffer: The CMSampleBuffer to be appended.
      * 
-     * @param sampleBuffer
-     *                     The CMSampleBuffer to be appended.
-     * @return
-     *         A BOOL value indicating success of appending the sample buffer. If a result of NO is returned, clients
-     *         can check the value of AVAssetWriter.status to determine whether the writing operation completed, failed,
-     *         or was cancelled. If the status is AVAssetWriterStatusFailed, AVAsset.error will contain an instance of
-     *         NSError that describes the failure.
+     * - Returns: A BOOL value indicating success of appending the sample buffer. If a result of NO is returned, clients
+     * can check the value of AVAssetWriter.status to determine whether the writing operation completed, failed, or was
+     * cancelled. If the status is AVAssetWriterStatusFailed, AVAsset.error will contain an instance of NSError that
+     * describes the failure.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("appendSampleBuffer:")
     public native boolean appendSampleBuffer(@NotNull CMSampleBufferRef sampleBuffer);
 
     /**
-     * canAddTrackAssociationWithTrackOfInput:type:
-     * 
      * Tests whether an association between the tracks corresponding to a pair of inputs is valid.
      * 
      * If the type of association requires tracks of specific media types that don't match the media types of the
      * inputs, or if the output file type does not support track associations,
      * -canAddTrackAssociationWithTrackOfInput:type: will return NO.
      * 
-     * API-Since: 7.0
+     * - Parameter input: The instance of AVAssetWriterInput with a corresponding track to associate with track
+     * corresponding with the receiver.
+     * - Parameter trackAssociationType: The type of track association to test. Common track association types, such as
+     * AVTrackAssociationTypeTimecode, are defined in AVAssetTrack.h.
      * 
-     * @param input
-     *                             The instance of AVAssetWriterInput with a corresponding track to associate with track
-     *                             corresponding with the receiver.
-     * @param trackAssociationType
-     *                             The type of track association to test. Common track association types, such as
-     *                             AVTrackAssociationTypeTimecode, are defined in AVAssetTrack.h.
+     * API-Since: 7.0
      */
     @Generated
     @Selector("canAddTrackAssociationWithTrackOfInput:type:")
@@ -429,8 +407,6 @@ public class AVAssetWriterInput extends NSObject {
             @NotNull String trackAssociationType);
 
     /**
-     * [@property] canPerformMultiplePasses
-     * 
      * Indicates whether the input might perform multiple passes over appended media data.
      * 
      * When the value for this property is YES, your source for media data should be configured for random access. After
@@ -455,8 +431,6 @@ public class AVAssetWriterInput extends NSObject {
     public native boolean canPerformMultiplePasses();
 
     /**
-     * [@property] currentPassDescription
-     * 
      * Provides an object that describes the requirements, such as source time ranges to append or re-append, for the
      * current pass.
      * 
@@ -483,8 +457,6 @@ public class AVAssetWriterInput extends NSObject {
     public native AVAssetWriterInputPassDescription currentPassDescription();
 
     /**
-     * [@property] expectsMediaDataInRealTime
-     * 
      * Indicates whether the input should tailor its processing of media data for real-time sources.
      * 
      * Clients appending media data to an input from a real-time source, such as an AVCaptureOutput, should set
@@ -502,8 +474,6 @@ public class AVAssetWriterInput extends NSObject {
     public native boolean expectsMediaDataInRealTime();
 
     /**
-     * [@property] extendedLanguageTag
-     * 
      * Indicates the language tag to associate with the track corresponding to the receiver, as an IETF BCP 47 (RFC
      * 4646) language identifier; can be nil.
      * 
@@ -528,8 +498,6 @@ public class AVAssetWriterInput extends NSObject {
     public native AVAssetWriterInput init();
 
     /**
-     * initWithMediaType:outputSettings:
-     * 
      * Creates a new input of the specified media type to receive sample buffers for writing to the output file.
      * 
      * Each new input accepts data for a new track of the AVAssetWriter's output file. Inputs are added to an asset
@@ -570,18 +538,16 @@ public class AVAssetWriterInput extends NSObject {
      * - the output scaling mode is AVVideoScalingModeFit
      * - the output settings contain AVSampleRateConverterAudioQualityKey or AVVideoDecompressionPropertiesKey
      * 
-     * API-Since: 4.1
+     * - Parameter mediaType: The media type of samples that will be accepted by the input. Media types are defined in
+     * AVMediaFormat.h.
+     * - Parameter outputSettings: The settings used for encoding the media appended to the output. See
+     * AVAudioSettings.h for AVMediaTypeAudio or AVVideoSettings.h for AVMediaTypeVideo and for more information on how
+     * to construct an output settings dictionary. If you only require simple preset-based output settings, see
+     * AVOutputSettingsAssistant.
      * 
-     * @param mediaType
-     *                       The media type of samples that will be accepted by the input. Media types are defined in
-     *                       AVMediaFormat.h.
-     * @param outputSettings
-     *                       The settings used for encoding the media appended to the output. See AVAudioSettings.h for
-     *                       AVMediaTypeAudio or AVVideoSettings.h for AVMediaTypeVideo and for more information on how
-     *                       to construct an output settings dictionary. If you only require simple preset-based output
-     *                       settings, see AVOutputSettingsAssistant.
-     * @return
-     *         An instance of AVAssetWriterInput.
+     * - Returns: An instance of AVAssetWriterInput.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("initWithMediaType:outputSettings:")
@@ -589,8 +555,6 @@ public class AVAssetWriterInput extends NSObject {
             @Nullable NSDictionary<String, ?> outputSettings);
 
     /**
-     * initWithMediaType:outputSettings:sourceFormatHint:
-     * 
      * Creates a new input of the specified media type to receive sample buffers for writing to the output file. This is
      * the designated initializer of AVAssetWriterInput.
      * 
@@ -611,20 +575,17 @@ public class AVAssetWriterInput extends NSObject {
      * - the output scaling mode is AVVideoScalingModeFit
      * - the output settings contain AVSampleRateConverterAudioQualityKey or AVVideoDecompressionPropertiesKey
      * 
-     * API-Since: 6.0
+     * - Parameter mediaType: The media type of samples that will be accepted by the input. Media types are defined in
+     * AVMediaFormat.h.
+     * - Parameter outputSettings: The settings used for encoding the media appended to the output. See
+     * AVAudioSettings.h for AVMediaTypeAudio or AVVideoSettings.h for AVMediaTypeVideo and for more information on how
+     * to construct an output settings dictionary. If you only require simple preset-based output settings, see
+     * AVOutputSettingsAssistant.
+     * - Parameter sourceFormatHint: A hint about the format of media data that will be appended to the new input.
      * 
-     * @param mediaType
-     *                         The media type of samples that will be accepted by the input. Media types are defined in
-     *                         AVMediaFormat.h.
-     * @param outputSettings
-     *                         The settings used for encoding the media appended to the output. See AVAudioSettings.h
-     *                         for AVMediaTypeAudio or AVVideoSettings.h for AVMediaTypeVideo and for more information
-     *                         on how to construct an output settings dictionary. If you only require simple
-     *                         preset-based output settings, see AVOutputSettingsAssistant.
-     * @param sourceFormatHint
-     *                         A hint about the format of media data that will be appended to the new input.
-     * @return
-     *         An instance of AVAssetWriterInput.
+     * - Returns: An instance of AVAssetWriterInput.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("initWithMediaType:outputSettings:sourceFormatHint:")
@@ -632,8 +593,6 @@ public class AVAssetWriterInput extends NSObject {
             @Nullable NSDictionary<String, ?> outputSettings, @Nullable CMFormatDescriptionRef sourceFormatHint);
 
     /**
-     * [@property] readyForMoreMediaData
-     * 
      * Indicates the readiness of the input to accept more media data.
      * 
      * When there are multiple inputs, AVAssetWriter tries to write media data in an ideal interleaving pattern for
@@ -671,8 +630,6 @@ public class AVAssetWriterInput extends NSObject {
     public native boolean isReadyForMoreMediaData();
 
     /**
-     * [@property] languageCode
-     * 
      * Indicates the language to associate with the track corresponding to the receiver, as an ISO 639-2/T language
      * code; can be nil.
      * 
@@ -691,8 +648,6 @@ public class AVAssetWriterInput extends NSObject {
     public native String languageCode();
 
     /**
-     * markAsFinished
-     * 
      * Indicates to the AVAssetWriter that no more buffers will be appended to this input.
      * 
      * Clients that are monitoring each input's readyForMoreMediaData value must call markAsFinished on an input when
@@ -713,8 +668,6 @@ public class AVAssetWriterInput extends NSObject {
     public native void markAsFinished();
 
     /**
-     * markCurrentPassAsFinished
-     * 
      * Instructs the receiver to analyze the media data that has been appended and determine whether the results could
      * be improved by re-encoding certain segments.
      * 
@@ -749,8 +702,6 @@ public class AVAssetWriterInput extends NSObject {
     public native void markCurrentPassAsFinished();
 
     /**
-     * [@property] marksOutputTrackAsEnabled
-     * 
      * For file types that support enabled and disabled tracks, such as QuickTime Movie files, specifies whether the
      * track corresponding to the receiver should be enabled by default for playback and processing. The default value
      * is YES.
@@ -770,8 +721,6 @@ public class AVAssetWriterInput extends NSObject {
     public native boolean marksOutputTrackAsEnabled();
 
     /**
-     * [@property] mediaTimeScale
-     * 
      * For file types that support media time scales, such as QuickTime Movie files, specifies the media time scale to
      * be used.
      * 
@@ -789,8 +738,6 @@ public class AVAssetWriterInput extends NSObject {
     public native int mediaTimeScale();
 
     /**
-     * [@property] mediaType
-     * 
      * The media type of the samples that can be appended to the receiver.
      * 
      * The value of this property is one of the media types defined in AVMediaFormat.h.
@@ -803,8 +750,6 @@ public class AVAssetWriterInput extends NSObject {
     public native String mediaType();
 
     /**
-     * [@property] metadata
-     * 
      * A collection of metadata to be written to the track corresponding to the receiver.
      * 
      * The value of this property is an array of AVMetadataItem objects representing the collection of track-level
@@ -820,8 +765,6 @@ public class AVAssetWriterInput extends NSObject {
     public native NSArray<? extends AVMetadataItem> metadata();
 
     /**
-     * [@property] naturalSize
-     * 
      * The size specified in the output file as the natural dimensions of the visual media data for display purposes.
      * 
      * If the default value, CGSizeZero, is specified, the naturalSize of the track corresponding to the receiver is set
@@ -837,8 +780,6 @@ public class AVAssetWriterInput extends NSObject {
     public native CGSize naturalSize();
 
     /**
-     * [@property] outputSettings
-     * 
      * The settings used for encoding the media appended to the output.
      * 
      * The value of this property is an NSDictionary that contains values for keys as specified by either
@@ -853,8 +794,6 @@ public class AVAssetWriterInput extends NSObject {
     public native NSDictionary<String, ?> outputSettings();
 
     /**
-     * [@property] performsMultiPassEncodingIfSupported
-     * 
      * Indicates whether the input should attempt to encode the source media data using multiple passes.
      * 
      * The input may be able to achieve higher quality and/or lower data rate by performing multiple passes over the
@@ -889,8 +828,6 @@ public class AVAssetWriterInput extends NSObject {
     public native boolean performsMultiPassEncodingIfSupported();
 
     /**
-     * [@property] preferredMediaChunkAlignment
-     * 
      * For file types that support media chunk alignment, such as QuickTime Movie files, specifies the boundary for
      * media chunk alignment in bytes (e.g. 512).
      * 
@@ -908,8 +845,6 @@ public class AVAssetWriterInput extends NSObject {
     public native long preferredMediaChunkAlignment();
 
     /**
-     * [@property] preferredMediaChunkDuration
-     * 
      * For file types that support media chunk duration, such as QuickTime Movie files, specifies the duration to be
      * used for each chunk of sample data in the output file.
      * 
@@ -936,8 +871,6 @@ public class AVAssetWriterInput extends NSObject {
     public native CMTime preferredMediaChunkDuration();
 
     /**
-     * [@property] preferredVolume
-     * 
      * The preferred volume level to be stored in the output file.
      * 
      * The value for this property should typically be in the range of 0.0 to 1.0. The default value is 1.0, which is
@@ -952,8 +885,6 @@ public class AVAssetWriterInput extends NSObject {
     public native float preferredVolume();
 
     /**
-     * requestMediaDataWhenReadyOnQueue:usingBlock:
-     * 
      * Instructs the receiver to invoke a client-supplied block repeatedly, at its convenience, in order to gather media
      * data for writing to the output file.
      * 
@@ -965,7 +896,7 @@ public class AVAssetWriterInput extends NSObject {
      * 
      * A typical use of this method, with a block that supplies media data to an input while respecting the input's
      * readyForMoreMediaData property, might look like this:
-     * 
+     * ```objc
      * [myAVAssetWriterInput requestMediaDataWhenReadyOnQueue:myInputSerialQueue usingBlock:^{
      * while ([myAVAssetWriterInput isReadyForMoreMediaData])
      * {
@@ -982,7 +913,7 @@ public class AVAssetWriterInput extends NSObject {
      * }
      * }
      * }];
-     * 
+     * ```
      * This method is not recommended for use with a push-style buffer source, such as AVCaptureAudioDataOutput or
      * AVCaptureVideoDataOutput, because such a combination will likely require intermediate queueing of buffers.
      * Instead, this method is better suited to a pull-style buffer source such as AVAssetReaderOutput, as illustrated
@@ -999,12 +930,10 @@ public class AVAssetWriterInput extends NSObject {
      * 
      * This method throws an exception if this method is called more than once.
      * 
-     * API-Since: 4.1
+     * - Parameter queue: The queue on which the block should be invoked.
+     * - Parameter block: The block the input should invoke to obtain media data.
      * 
-     * @param queue
-     *              The queue on which the block should be invoked.
-     * @param block
-     *              The block the input should invoke to obtain media data.
+     * API-Since: 4.1
      */
     @Generated
     @Selector("requestMediaDataWhenReadyOnQueue:usingBlock:")
@@ -1012,8 +941,6 @@ public class AVAssetWriterInput extends NSObject {
             @NotNull @ObjCBlock(name = "call_requestMediaDataWhenReadyOnQueueUsingBlock") Block_requestMediaDataWhenReadyOnQueueUsingBlock block);
 
     /**
-     * respondToEachPassDescriptionOnQueue:usingBlock:
-     * 
      * Instructs the receiver to invoke a client-supplied block whenever a new pass has begun.
      * 
      * A typical block passed to this method will perform the following steps:
@@ -1034,12 +961,10 @@ public class AVAssetWriterInput extends NSObject {
      * 
      * This method throws an exception if called more than once.
      * 
-     * API-Since: 8.0
+     * - Parameter queue: The queue on which the block should be invoked.
+     * - Parameter block: A block the receiver should invoke whenever a new pass has begun.
      * 
-     * @param queue
-     *              The queue on which the block should be invoked.
-     * @param block
-     *              A block the receiver should invoke whenever a new pass has begun.
+     * API-Since: 8.0
      */
     @Generated
     @Selector("respondToEachPassDescriptionOnQueue:usingBlock:")
@@ -1047,8 +972,6 @@ public class AVAssetWriterInput extends NSObject {
             @NotNull @ObjCBlock(name = "call_respondToEachPassDescriptionOnQueueUsingBlock") Block_respondToEachPassDescriptionOnQueueUsingBlock block);
 
     /**
-     * [@property] sampleReferenceBaseURL
-     * 
      * For file types that support writing sample references, such as QuickTime Movie files, specifies the base URL
      * sample references are relative to.
      * 
@@ -1080,8 +1003,6 @@ public class AVAssetWriterInput extends NSObject {
     public native NSURL sampleReferenceBaseURL();
 
     /**
-     * [@property] expectsMediaDataInRealTime
-     * 
      * Indicates whether the input should tailor its processing of media data for real-time sources.
      * 
      * Clients appending media data to an input from a real-time source, such as an AVCaptureOutput, should set
@@ -1099,8 +1020,6 @@ public class AVAssetWriterInput extends NSObject {
     public native void setExpectsMediaDataInRealTime(boolean value);
 
     /**
-     * [@property] extendedLanguageTag
-     * 
      * Indicates the language tag to associate with the track corresponding to the receiver, as an IETF BCP 47 (RFC
      * 4646) language identifier; can be nil.
      * 
@@ -1120,8 +1039,6 @@ public class AVAssetWriterInput extends NSObject {
     public native void setExtendedLanguageTag(@Nullable String value);
 
     /**
-     * [@property] languageCode
-     * 
      * Indicates the language to associate with the track corresponding to the receiver, as an ISO 639-2/T language
      * code; can be nil.
      * 
@@ -1139,8 +1056,6 @@ public class AVAssetWriterInput extends NSObject {
     public native void setLanguageCode(@Nullable String value);
 
     /**
-     * [@property] marksOutputTrackAsEnabled
-     * 
      * For file types that support enabled and disabled tracks, such as QuickTime Movie files, specifies whether the
      * track corresponding to the receiver should be enabled by default for playback and processing. The default value
      * is YES.
@@ -1160,8 +1075,6 @@ public class AVAssetWriterInput extends NSObject {
     public native void setMarksOutputTrackAsEnabled(boolean value);
 
     /**
-     * [@property] mediaTimeScale
-     * 
      * For file types that support media time scales, such as QuickTime Movie files, specifies the media time scale to
      * be used.
      * 
@@ -1179,8 +1092,6 @@ public class AVAssetWriterInput extends NSObject {
     public native void setMediaTimeScale(int value);
 
     /**
-     * [@property] metadata
-     * 
      * A collection of metadata to be written to the track corresponding to the receiver.
      * 
      * The value of this property is an array of AVMetadataItem objects representing the collection of track-level
@@ -1195,8 +1106,6 @@ public class AVAssetWriterInput extends NSObject {
     public native void setMetadata(@NotNull NSArray<? extends AVMetadataItem> value);
 
     /**
-     * [@property] naturalSize
-     * 
      * The size specified in the output file as the natural dimensions of the visual media data for display purposes.
      * 
      * If the default value, CGSizeZero, is specified, the naturalSize of the track corresponding to the receiver is set
@@ -1211,8 +1120,6 @@ public class AVAssetWriterInput extends NSObject {
     public native void setNaturalSize(@ByValue CGSize value);
 
     /**
-     * [@property] performsMultiPassEncodingIfSupported
-     * 
      * Indicates whether the input should attempt to encode the source media data using multiple passes.
      * 
      * The input may be able to achieve higher quality and/or lower data rate by performing multiple passes over the
@@ -1247,8 +1154,6 @@ public class AVAssetWriterInput extends NSObject {
     public native void setPerformsMultiPassEncodingIfSupported(boolean value);
 
     /**
-     * [@property] preferredMediaChunkAlignment
-     * 
      * For file types that support media chunk alignment, such as QuickTime Movie files, specifies the boundary for
      * media chunk alignment in bytes (e.g. 512).
      * 
@@ -1265,8 +1170,6 @@ public class AVAssetWriterInput extends NSObject {
     public native void setPreferredMediaChunkAlignment(@NInt long value);
 
     /**
-     * [@property] preferredMediaChunkDuration
-     * 
      * For file types that support media chunk duration, such as QuickTime Movie files, specifies the duration to be
      * used for each chunk of sample data in the output file.
      * 
@@ -1292,8 +1195,6 @@ public class AVAssetWriterInput extends NSObject {
     public native void setPreferredMediaChunkDuration(@ByValue CMTime value);
 
     /**
-     * [@property] preferredVolume
-     * 
      * The preferred volume level to be stored in the output file.
      * 
      * The value for this property should typically be in the range of 0.0 to 1.0. The default value is 1.0, which is
@@ -1308,8 +1209,6 @@ public class AVAssetWriterInput extends NSObject {
     public native void setPreferredVolume(float value);
 
     /**
-     * [@property] sampleReferenceBaseURL
-     * 
      * For file types that support writing sample references, such as QuickTime Movie files, specifies the base URL
      * sample references are relative to.
      * 
@@ -1340,8 +1239,6 @@ public class AVAssetWriterInput extends NSObject {
     public native void setSampleReferenceBaseURL(@Nullable NSURL value);
 
     /**
-     * [@property] transform
-     * 
      * The transform specified in the output file as the preferred transformation of the visual media data for display
      * purposes.
      * 
@@ -1356,8 +1253,6 @@ public class AVAssetWriterInput extends NSObject {
     public native void setTransform(@ByValue CGAffineTransform value);
 
     /**
-     * [@property] sourceFormatHint
-     * 
      * The hint given at initialization time about the format of incoming media data.
      * 
      * AVAssetWriterInput may be able to use this hint to fill in missing output settings or perform more upfront
@@ -1372,8 +1267,6 @@ public class AVAssetWriterInput extends NSObject {
     public native CMFormatDescriptionRef sourceFormatHint();
 
     /**
-     * [@property] transform
-     * 
      * The transform specified in the output file as the preferred transformation of the visual media data for display
      * purposes.
      * 
@@ -1403,8 +1296,6 @@ public class AVAssetWriterInput extends NSObject {
     }
 
     /**
-     * [@property] mediaDataLocation
-     * 
      * Specifies where the media data will be laid out and whether the media data will be interleaved as the main media
      * data.
      * 
@@ -1435,8 +1326,6 @@ public class AVAssetWriterInput extends NSObject {
     public native String mediaDataLocation();
 
     /**
-     * [@property] mediaDataLocation
-     * 
      * Specifies where the media data will be laid out and whether the media data will be interleaved as the main media
      * data.
      * 

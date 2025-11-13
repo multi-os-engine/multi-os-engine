@@ -349,4 +349,115 @@ public class ASAccessorySession extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Finish the discovery session in the picker and show a timeout error.
+     * 
+     * Use this method if you previously set the picker display setting ``ASPickerDisplaySettings/discoveryTimeout`` to
+     * ``ASPickerDisplaySettings/DiscoveryTimeout/unbounded`` in order to perform manual filtering of discovered
+     * accessories.
+     * Calling this method finishes the discovery session in the picker and shows a timeout error if the session didn't
+     * find any desired accessories.
+     * 
+     * Calling this method after updating the picker with discovered accessories has no effect.
+     * 
+     * - Parameters:
+     * - completionHandler: A block or closure that executes after this operation completes. The completion handler
+     * receives an <doc://com.apple.documentation/documentation/Foundation/NSError> instance if the operation encounters
+     * an error.
+     * 
+     * API-Since: 26.1
+     */
+    @Generated
+    @Selector("finishPickerDiscovery:")
+    public native void finishPickerDiscovery(
+            @ObjCBlock(name = "call_finishPickerDiscovery") @NotNull Block_finishPickerDiscovery completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_finishPickerDiscovery {
+        @Generated
+        void call_finishPickerDiscovery(@Nullable NSError error);
+    }
+
+    /**
+     * Settings that affect the display of the accessory picker.
+     * 
+     * Use this property to configure settings like the picker timeout.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("pickerDisplaySettings")
+    @Nullable
+    public native ASPickerDisplaySettings pickerDisplaySettings();
+
+    /**
+     * Settings that affect the display of the accessory picker.
+     * 
+     * Use this property to configure settings like the picker timeout.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setPickerDisplaySettings:")
+    public native void setPickerDisplaySettings(@Nullable ASPickerDisplaySettings value);
+
+    /**
+     * Displays a view to upgrade an accessory with additional technology permissions.
+     * 
+     * Call this method to upgrade previously-added SSID-based accessories to use WiFi Aware.
+     * 
+     * - Parameters:
+     * - accessory: The accessory to update.
+     * - descriptor: An updated descriptor that the picker uses to add new technology authorization for the provided
+     * accessory.
+     * - completionHandler: A block or closure that executes after the picker is shown. The completion handler receives
+     * an <doc://com.apple.documentation/documentation/Foundation/NSError> instance if the upgrade operation encounters
+     * an error. In Swift, you can omit the completion handler by calling the method asynchronously and catching any
+     * error thrown by the method.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("updateAuthorization:descriptor:completionHandler:")
+    public native void updateAuthorizationDescriptorCompletionHandler(@NotNull ASAccessory accessory,
+            @NotNull ASDiscoveryDescriptor descriptor,
+            @ObjCBlock(name = "call_updateAuthorizationDescriptorCompletionHandler") @NotNull Block_updateAuthorizationDescriptorCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_updateAuthorizationDescriptorCompletionHandler {
+        @Generated
+        void call_updateAuthorizationDescriptorCompletionHandler(@Nullable NSError error);
+    }
+
+    /**
+     * Updates the picker with app-filtered accessories.
+     * 
+     * You use this method when your picker uses the ``ASPickerDisplaySettings/Options/filterDiscoveryResults`` option
+     * to enable manual filtering of discovered accessories.
+     * After creating customized ``ASDiscoveredDisplayItem`` instances for included accessories, call this method to
+     * update the picker to show your app-filtered accessories with updated assets.
+     * 
+     * - Parameters:
+     * - displayItems: The app-filtered accessories to show in the picker.
+     * - completionHandler: A block or closure that executes after the updatePicker operation completes. The completion
+     * handler receives an <doc://com.apple.documentation/documentation/Foundation/NSError> instance if the operation
+     * encounters an error.
+     * 
+     * API-Since: 26.1
+     */
+    @Generated
+    @Selector("updatePickerShowingDiscoveredDisplayItems:completionHandler:")
+    public native void updatePickerShowingDiscoveredDisplayItemsCompletionHandler(
+            @NotNull NSArray<? extends ASDiscoveredDisplayItem> displayItems,
+            @ObjCBlock(name = "call_updatePickerShowingDiscoveredDisplayItemsCompletionHandler") @NotNull Block_updatePickerShowingDiscoveredDisplayItemsCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_updatePickerShowingDiscoveredDisplayItemsCompletionHandler {
+        @Generated
+        void call_updatePickerShowingDiscoveredDisplayItemsCompletionHandler(@Nullable NSError error);
+    }
 }

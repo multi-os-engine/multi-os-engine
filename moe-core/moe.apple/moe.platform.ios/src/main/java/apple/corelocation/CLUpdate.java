@@ -141,6 +141,12 @@ public class CLUpdate extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
+     * location
+     * 
+     * Discussion:
+     * Return the user's location if available, otherwise returns nil.
+     * 
+     * 
      * API-Since: 17.0
      */
     @Generated

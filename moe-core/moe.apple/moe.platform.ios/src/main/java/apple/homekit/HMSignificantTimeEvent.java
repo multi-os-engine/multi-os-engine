@@ -169,7 +169,7 @@ public class HMSignificantTimeEvent extends HMTimeEvent implements NSCopying, NS
     public static native HMSignificantTimeEvent new_objc();
 
     /**
-     * offset An offset from the time of the signficant event. To specify an offset before the significant event, the
+     * offset An offset from the time of the significant event. To specify an offset before the significant event, the
      * properties of the NSDateComponents must be negative value. e.g. To specify 30 mins before sunset, the
      * 'minute' property must be set to -30.
      * 

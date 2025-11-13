@@ -211,7 +211,7 @@ public class MXMetric extends NSObject implements NSSecureCoding {
      * 
      * @return An NSDictionary object containing the dictionary representation
      * 
-     *         API-Since: 14.0
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated

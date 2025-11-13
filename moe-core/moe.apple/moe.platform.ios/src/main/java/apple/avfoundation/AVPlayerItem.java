@@ -56,6 +56,21 @@ import org.jetbrains.annotations.Nullable;
 import apple.avfoundation.protocol.AVMetricEventStreamPublisher;
 
 /**
+ * An AVPlayerItem carries a reference to an AVAsset as well as presentation settings for that asset.
+ * 
+ * Note that inspection of media assets is provided by AVAsset.
+ * This class is intended to represent presentation state for an asset that's played by an AVPlayer and to permit
+ * observation of that state.
+ * 
+ * It is important to avoid key-value observation with a key path containing the asset's property. Observe the
+ * AVPlayerItem's property instead. For example, use the "duration" key path instead of the "asset.duration" key path.
+ * 
+ * To allow clients to add and remove their objects as key-value observers safely, AVPlayerItem serializes notifications
+ * of
+ * changes that occur dynamically during playback on the same dispatch queue on which notifications of playback state
+ * changes
+ * are serialized by its associated AVPlayer. By default, this queue is the main queue. See dispatch_get_main_queue().
+ * 
  * API-Since: 4.0
  */
 @Generated
@@ -152,8 +167,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public static native AVPlayerItem new_objc();
 
     /**
-     * playerItemWithAsset:
-     * 
      * Returns an instance of AVPlayerItem for playing an AVAsset.
      * 
      * Equivalent to +playerItemWithAsset:automaticallyLoadedAssetKeys:, passing @[ @"duration" ] as the value of
@@ -164,18 +177,17 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
      * initializer will be chosen automatically to allow you to initialize an AVPlayerItem while not running on the main
      * actor.
      * 
-     * API-Since: 4.0
+     * - Parameter asset:
      * 
-     * @param asset
-     * @return An instance of AVPlayerItem.
+     * - Returns: An instance of AVPlayerItem.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("playerItemWithAsset:")
     public static native AVPlayerItem playerItemWithAsset(@NotNull AVAsset asset);
 
     /**
-     * playerItemWithAsset:automaticallyLoadedAssetKeys:
-     * 
      * Returns an instance of AVPlayerItem for playing an AVAsset.
      * 
      * The value of each key in automaticallyLoadedAssetKeys will be automatically be loaded by the underlying AVAsset
@@ -187,13 +199,13 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
      * is not Sendable. If you are using a Sendable subclass of AVAsset, such as AVURLAsset, you can use
      * `init(asset:automaticallyLoadedAssetKeys:)` to initialize an AVPlayerItem while not running on the main actor.
      * 
-     * API-Since: 7.0
+     * - Parameter asset:
+     * - Parameter automaticallyLoadedAssetKeys: An NSArray of NSStrings, each representing a property key defined by
+     * AVAsset. See AVAsset.h for property keys, e.g. duration.
      * 
-     * @param asset
-     * @param automaticallyLoadedAssetKeys
-     *                                     An NSArray of NSStrings, each representing a property key defined by AVAsset.
-     *                                     See AVAsset.h for property keys, e.g. duration.
-     * @return An instance of AVPlayerItem.
+     * - Returns: An instance of AVPlayerItem.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("playerItemWithAsset:automaticallyLoadedAssetKeys:")
@@ -201,16 +213,15 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
             @Nullable NSArray<String> automaticallyLoadedAssetKeys);
 
     /**
-     * playerItemWithURL:
-     * 
      * Returns an instance of AVPlayerItem for playing a resource at the specified location.
      * 
      * Equivalent to +playerItemWithAsset:, passing [AVAsset assetWithURL:URL] as the value of asset.
      * 
-     * API-Since: 4.0
+     * - Parameter URL:
      * 
-     * @param URL
-     * @return An instance of AVPlayerItem.
+     * - Returns: An instance of AVPlayerItem.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("playerItemWithURL:")
@@ -238,8 +249,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public static native long version_static();
 
     /**
-     * accessLog
-     * 
      * Returns an object that represents a snapshot of the network access log. Can be nil.
      * 
      * An AVPlayerItemAccessLog provides methods to retrieve the network access log in a format suitable for
@@ -248,9 +257,14 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
      * An AVPlayerItemNewAccessLogEntryNotification will be posted when new logging information becomes available.
      * However, accessLog might already return a non-nil value even before the first notification is posted.
      * 
-     * @return An autoreleased AVPlayerItemAccessLog instance.
+     * In certain situations, this method may temporarily block the calling thread during the ongoing log collection
+     * process.
+     * It is strongly recommended that the caller take appropriate measures to prevent blocking essential services such
+     * as the user interface, for example, by avoiding calling this method in the main thread.
      * 
-     *         API-Since: 4.3
+     * - Returns: An autoreleased AVPlayerItemAccessLog instance.
+     * 
+     * API-Since: 4.3
      */
     @Nullable
     @Generated
@@ -258,25 +272,20 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native AVPlayerItemAccessLog accessLog();
 
     /**
-     * addMediaDataCollector:
-     * 
      * Adds the specified instance of AVPlayerItemMediaDataCollector to the receiver's collection of
      * mediaDataCollectors.
      * 
      * This method may incur additional I/O to collect the requested media data asynchronously.
      * 
-     * @param collector
-     *                  An instance of AVPlayerItemMediaDataCollector
+     * - Parameter collector: An instance of AVPlayerItemMediaDataCollector
      * 
-     *                  API-Since: 9.3
+     * API-Since: 9.3
      */
     @Generated
     @Selector("addMediaDataCollector:")
     public native void addMediaDataCollector(@NotNull AVPlayerItemMediaDataCollector collector);
 
     /**
-     * addOutput:
-     * 
      * Adds the specified instance of AVPlayerItemOutput to the receiver's collection of outputs.
      * 
      * The class of AVPlayerItemOutput provided dictates the data structure that decoded samples are vended in.
@@ -287,18 +296,15 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
      * the instructions provided via AVPlayerItem.videoComposition, if present. Audio media will be mixed according to
      * the parameters provided via AVPlayerItem.audioMix, if present.
      * 
-     * @param output
-     *               An instance of AVPlayerItemOutput
+     * - Parameter output: An instance of AVPlayerItemOutput
      * 
-     *               API-Since: 6.0
+     * API-Since: 6.0
      */
     @Generated
     @Selector("addOutput:")
     public native void addOutput(@NotNull AVPlayerItemOutput output);
 
     /**
-     * [@property] asset
-     * 
      * Accessor for underlying AVAsset.
      * 
      * API-Since: 4.0
@@ -309,8 +315,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native AVAsset asset();
 
     /**
-     * [@property] audioMix
-     * 
      * Indicates the audio mix parameters to be applied during playback
      * 
      * The inputParameters of the AVAudioMix must have trackIDs that correspond to a track of the receiver's asset.
@@ -325,8 +329,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native AVAudioMix audioMix();
 
     /**
-     * [@property] audioTimePitchAlgorithm
-     * 
      * Indicates the processing algorithm used to manage audio pitch at varying rates and for scaled audio edits.
      * 
      * Constants for various time pitch algorithms, e.g. AVAudioTimePitchSpectral, are defined in
@@ -344,8 +346,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native String audioTimePitchAlgorithm();
 
     /**
-     * [@property] automaticallyLoadedAssetKeys
-     * 
      * An array of property keys defined on AVAsset. The value of each key in the array is automatically loaded while
      * the receiver is being made ready to play.
      * 
@@ -375,7 +375,7 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native boolean canPlayFastForward();
 
     /**
-     * indicates whether the item can be played at rates less than -1.0
+     * Indicates whether the item can be played at rates less than -1.0
      * 
      * API-Since: 5.0
      */
@@ -384,7 +384,7 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native boolean canPlayFastReverse();
 
     /**
-     * indicates whether the item can be played at rate -1.0
+     * Indicates whether the item can be played at rate -1.0
      * 
      * API-Since: 6.0
      */
@@ -393,7 +393,7 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native boolean canPlayReverse();
 
     /**
-     * indicates whether the item can be played at rates between 0.0 and 1.0
+     * Indicates whether the item can be played at rates between 0.0 and 1.0
      * 
      * API-Since: 6.0
      */
@@ -402,7 +402,7 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native boolean canPlaySlowForward();
 
     /**
-     * indicates whether the item can be played at rates less between 0.0 and -1.0
+     * Indicates whether the item can be played at rates less between 0.0 and -1.0
      * 
      * API-Since: 6.0
      */
@@ -411,7 +411,7 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native boolean canPlaySlowReverse();
 
     /**
-     * indicates whether the item supports stepping backward; see -stepByCount:. Once the item has become ready to play,
+     * Indicates whether the item supports stepping backward; see -stepByCount:. Once the item has become ready to play,
      * the value of canStepBackward does not change even when boundary conditions are reached, such as when the item's
      * currentTime is equal to kCMTimeZero.
      * 
@@ -433,8 +433,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native boolean canStepForward();
 
     /**
-     * [@property] canUseNetworkResourcesForLiveStreamingWhilePaused
-     * 
      * Indicates whether the player item can use network resources to keep playback state up to date while paused
      * 
      * For live streaming content, the player item may need to use extra networking and power resources to keep playback
@@ -451,8 +449,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native boolean canUseNetworkResourcesForLiveStreamingWhilePaused();
 
     /**
-     * cancelPendingSeeks
-     * 
      * Cancel any pending seek requests and invoke the corresponding completion handlers if present.
      * 
      * Use this method to cancel and release the completion handlers of pending seeks. The finished parameter of the
@@ -473,13 +469,11 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
-     * currentDate
-     * 
      * If currentTime is mapped to a particular (real-time) date, return that date.
      * 
-     * @return Returns the date of current playback, or nil if playback is not mapped to any date.
+     * - Returns: Returns the date of current playback, or nil if playback is not mapped to any date.
      * 
-     *         API-Since: 4.0
+     * API-Since: 4.0
      */
     @Nullable
     @Generated
@@ -487,8 +481,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native NSDate currentDate();
 
     /**
-     * [@property] currentMediaSelection
-     * 
      * Provides an instance of AVMediaSelection carrying current selections for each of the receiver's media selection
      * groups.
      * 
@@ -500,16 +492,14 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native AVMediaSelection currentMediaSelection();
 
     /**
-     * currentTime
-     * 
      * Returns the current time of the item.
      * 
      * Returns the current time of the item. Not key-value observable; use -[AVPlayer
      * addPeriodicTimeObserverForInterval:queue:usingBlock:] instead.
      * 
-     * API-Since: 4.0
+     * - Returns: A CMTime
      * 
-     * @return A CMTime
+     * API-Since: 4.0
      */
     @Generated
     @Selector("currentTime")
@@ -517,8 +507,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native CMTime currentTime();
 
     /**
-     * [@property] customVideoCompositor
-     * 
      * Indicates the custom video compositor instance.
      * 
      * This property is nil if there is no video compositor, or if the internal video compositor is in use. This
@@ -536,8 +524,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native AVVideoCompositing customVideoCompositor();
 
     /**
-     * [@property] duration
-     * 
      * Indicates the duration of the item, not considering either its forwardPlaybackEndTime or reversePlaybackEndTime.
      * 
      * This property is observable. The duration of an item can change dynamically during playback.
@@ -562,8 +548,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native CMTime duration();
 
     /**
-     * [@property] error
-     * 
      * If the receiver's status is AVPlayerItemStatusFailed, this describes the error that caused the failure.
      * 
      * The value of this property is an NSError that describes what caused the receiver to no longer be able to be
@@ -578,16 +562,19 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native NSError error();
 
     /**
-     * errorLog
-     * 
      * Returns an object that represents a snapshot of the error log. Can be nil.
      * 
      * An AVPlayerItemErrorLog provides methods to retrieve the error log in a format suitable for serialization.
      * If nil is returned then there is no logging information currently available for this AVPlayerItem.
      * 
-     * @return An autoreleased AVPlayerItemErrorLog instance.
+     * In certain situations, this method may temporarily block the calling thread during the ongoing log collection
+     * process.
+     * It is strongly recommended that the caller take appropriate measures to prevent blocking essential services such
+     * as the user interface, for example, by avoiding calling this method in the main thread.
      * 
-     *         API-Since: 4.3
+     * - Returns: An autoreleased AVPlayerItemErrorLog instance.
+     * 
+     * API-Since: 4.3
      */
     @Nullable
     @Generated
@@ -595,8 +582,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native AVPlayerItemErrorLog errorLog();
 
     /**
-     * [@property] forwardPlaybackEndTime
-     * 
      * The end time for forward playback.
      * 
      * Specifies the time at which playback should end when the playback rate is positive (see AVPlayer's rate
@@ -622,8 +607,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native AVPlayerItem init();
 
     /**
-     * initWithAsset:
-     * 
      * Initializes an AVPlayerItem with an AVAsset.
      * 
      * Equivalent to -initWithAsset:automaticallyLoadedAssetKeys:, passing @[ @"duration" ] as the value of
@@ -634,18 +617,17 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
      * initializer will be chosen automatically to allow you to initialize an AVPlayerItem while not running on the main
      * actor.
      * 
-     * API-Since: 4.0
+     * - Parameter asset:
      * 
-     * @param asset
-     * @return An instance of AVPlayerItem
+     * - Returns: An instance of AVPlayerItem
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("initWithAsset:")
     public native AVPlayerItem initWithAsset(@NotNull AVAsset asset);
 
     /**
-     * initWithAsset:automaticallyLoadedAssetKeys:
-     * 
      * Initializes an AVPlayerItem with an AVAsset.
      * 
      * The value of each key in automaticallyLoadedAssetKeys will be automatically be loaded by the underlying AVAsset
@@ -657,14 +639,13 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
      * is not Sendable. If you are using a Sendable subclass of AVAsset, such as AVURLAsset, you can use
      * `init(asset:automaticallyLoadedAssetKeys:)` to initialize an AVPlayerItem while not running on the main actor.
      * 
-     * API-Since: 7.0
+     * - Parameter asset: An instance of AVAsset.
+     * - Parameter automaticallyLoadedAssetKeys: An NSArray of NSStrings, each representing a property key defined by
+     * AVAsset. See AVAsset.h for property keys, e.g. duration.
      * 
-     * @param asset
-     *                                     An instance of AVAsset.
-     * @param automaticallyLoadedAssetKeys
-     *                                     An NSArray of NSStrings, each representing a property key defined by AVAsset.
-     *                                     See AVAsset.h for property keys, e.g. duration.
-     * @return An instance of AVPlayerItem
+     * - Returns: An instance of AVPlayerItem
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("initWithAsset:automaticallyLoadedAssetKeys:")
@@ -672,16 +653,15 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
             @Nullable NSArray<String> automaticallyLoadedAssetKeys);
 
     /**
-     * initWithURL:
-     * 
      * Initializes an AVPlayerItem with an NSURL.
      * 
      * Equivalent to -initWithAsset:, passing [AVAsset assetWithURL:URL] as the value of asset.
      * 
-     * API-Since: 4.0
+     * - Parameter URL:
      * 
-     * @param URL
-     * @return An instance of AVPlayerItem
+     * - Returns: An instance of AVPlayerItem
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("initWithURL:")
@@ -697,8 +677,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native boolean isPlaybackBufferEmpty();
 
     /**
-     * [@property] playbackBufferFull
-     * 
      * Indicates that the internal media buffer is full and that further I/O is suspended.
      * 
      * This property reports that the data buffer used for playback has reach capacity.
@@ -712,8 +690,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native boolean isPlaybackBufferFull();
 
     /**
-     * [@property] playbackLikelyToKeepUp
-     * 
      * Indicates whether the item will likely play through without stalling.
      * 
      * This property communicates a prediction of playability. Factors considered in this prediction
@@ -730,8 +706,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native boolean isPlaybackLikelyToKeepUp();
 
     /**
-     * [@property] loadedTimeRanges
-     * 
      * This property provides a collection of time ranges for which the player has the media data readily available. The
      * ranges provided might be discontinuous.
      * 
@@ -745,8 +719,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native NSArray<? extends NSValue> loadedTimeRanges();
 
     /**
-     * [@property] mediaDataCollectors
-     * 
      * The collection of associated mediaDataCollectors.
      * 
      * API-Since: 9.3
@@ -757,8 +729,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native NSArray<? extends AVPlayerItemMediaDataCollector> mediaDataCollectors();
 
     /**
-     * [@property] outputs
-     * 
      * The collection of associated outputs.
      * 
      * API-Since: 6.0
@@ -769,8 +739,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native NSArray<? extends AVPlayerItemOutput> outputs();
 
     /**
-     * [@property] preferredForwardBufferDuration
-     * 
      * Indicates the media duration the caller prefers the player to buffer from the network ahead of the playhead to
      * guard against playback disruption.
      * 
@@ -787,8 +755,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native double preferredForwardBufferDuration();
 
     /**
-     * [@property] preferredPeakBitRate
-     * 
      * Indicates the desired limit of network bandwidth consumption for this item.
      * 
      * Set preferredPeakBitRate to non-zero to indicate that the player should attempt to limit item playback to that
@@ -804,8 +770,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native double preferredPeakBitRate();
 
     /**
-     * [@property] presentationSize
-     * 
      * The size of the receiver as presented by the player.
      * 
      * Indicates the size at which the visual portion of the item is presented by the player; can be scaled from this
@@ -828,37 +792,29 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native CGSize presentationSize();
 
     /**
-     * removeMediaDataCollector:
-     * 
      * Removes the specified instance of AVPlayerItemMediaDataCollector from the receiver's collection of
      * mediaDataCollectors.
      * 
-     * @param collector
-     *                  An instance of AVPlayerItemMediaDataCollector
+     * - Parameter collector: An instance of AVPlayerItemMediaDataCollector
      * 
-     *                  API-Since: 9.3
+     * API-Since: 9.3
      */
     @Generated
     @Selector("removeMediaDataCollector:")
     public native void removeMediaDataCollector(@NotNull AVPlayerItemMediaDataCollector collector);
 
     /**
-     * removeOutput:
-     * 
      * Removes the specified instance of AVPlayerItemOutput from the receiver's collection of outputs.
      * 
-     * @param output
-     *               An instance of AVPlayerItemOutput
+     * - Parameter output: An instance of AVPlayerItemOutput
      * 
-     *               API-Since: 6.0
+     * API-Since: 6.0
      */
     @Generated
     @Selector("removeOutput:")
     public native void removeOutput(@NotNull AVPlayerItemOutput output);
 
     /**
-     * [@property] reversePlaybackEndTime
-     * 
      * The end time for reverse playback.
      * 
      * Specifies the time at which playback should end when the playback rate is negative (see AVPlayer's rate
@@ -880,21 +836,20 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native CMTime reversePlaybackEndTime();
 
     /**
-     * seekToDate
-     * 
      * move playhead to a point corresponding to a particular date.
      * 
      * For playback content that is associated with a range of dates, move the
      * playhead to point within that range. Will fail if the supplied date is outside
      * the range or if the content is not associated with a range of dates.
      * 
-     * @param date The new position for the playhead.
-     * @return Returns true if the playhead was moved to the supplied date.
+     * - Parameter date: The new position for the playhead.
      * 
-     *         API-Since: 4.0
-     *         Deprecated-Since: 11.0
-     *         Deprecated-Message: Use -seekToDate:completionHandler:, passing nil for the completionHandler if you
-     *         don't require notification of completion
+     * - Returns: Returns true if the playhead was moved to the supplied date.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use -seekToDate:completionHandler:, passing nil for the completionHandler if you don't
+     * require notification of completion
      */
     @Deprecated
     @Generated
@@ -902,8 +857,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native boolean seekToDate(@NotNull NSDate date);
 
     /**
-     * seekToDate:completionHandler:
-     * 
      * move playhead to a point corresponding to a particular date, and invokes the specified block when the seek
      * operation has either been completed or been interrupted.
      * 
@@ -916,11 +869,12 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
      * operation, the specified
      * completion handler will be invoked with the finished parameter set to YES.
      * 
-     * @param date              The new position for the playhead.
-     * @param completionHandler The block to invoke when seek operation is complete
-     * @return Returns true if the playhead was moved to the supplied date.
+     * - Parameter date: The new position for the playhead.
+     * - Parameter completionHandler: The block to invoke when seek operation is complete
      * 
-     *         API-Since: 6.0
+     * - Returns: Returns true if the playhead was moved to the supplied date.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("seekToDate:completionHandler:")
@@ -928,8 +882,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
             @Nullable @ObjCBlock(name = "call_seekToDateCompletionHandler") Block_seekToDateCompletionHandler completionHandler);
 
     /**
-     * seekToTime:
-     * 
      * Moves the playback cursor.
      * 
      * Use this method to seek to a specified time for the item.
@@ -938,12 +890,12 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
      * If the seek time is outside of seekable time ranges as indicated by seekableTimeRanges property, the seek request
      * will be cancelled.
      * 
+     * - Parameter time:
+     * 
      * API-Since: 4.0
      * Deprecated-Since: 11.0
      * Deprecated-Message: Use -seekToTime:completionHandler:, passing nil for the completionHandler if you don't
      * require notification of completion
-     * 
-     * @param time
      */
     @Deprecated
     @Generated
@@ -951,8 +903,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native void seekToTime(@ByValue CMTime time);
 
     /**
-     * seekToTime:completionHandler:
-     * 
      * Moves the playback cursor and invokes the specified block when the seek operation has either been completed or
      * been interrupted.
      * 
@@ -967,10 +917,10 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
      * 
      * This method throws an exception if time is invalid or indefinite.
      * 
-     * API-Since: 5.0
+     * - Parameter time:
+     * - Parameter completionHandler:
      * 
-     * @param time
-     * @param completionHandler
+     * API-Since: 5.0
      */
     @Generated
     @Selector("seekToTime:completionHandler:")
@@ -978,8 +928,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
             @Nullable @ObjCBlock(name = "call_seekToTimeCompletionHandler") Block_seekToTimeCompletionHandler completionHandler);
 
     /**
-     * seekToTime:toleranceBefore:toleranceAfter:
-     * 
      * Moves the playback cursor within a specified time bound.
      * 
      * Use this method to seek to a specified time for the item.
@@ -995,14 +943,14 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
      * If the seek time is outside of seekable time ranges as indicated by seekableTimeRanges property, the seek request
      * will be cancelled.
      * 
+     * - Parameter time:
+     * - Parameter toleranceBefore:
+     * - Parameter toleranceAfter:
+     * 
      * API-Since: 4.0
      * Deprecated-Since: 11.0
      * Deprecated-Message: Use -seekToTime:toleranceBefore:toleranceAfter:completionHandler:, passing nil for the
      * completionHandler if you don't require notification of completion
-     * 
-     * @param time
-     * @param toleranceBefore
-     * @param toleranceAfter
      */
     @Deprecated
     @Generated
@@ -1011,8 +959,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
             @ByValue CMTime toleranceAfter);
 
     /**
-     * seekToTime:toleranceBefore:toleranceAfter:completionHandler:
-     * 
      * Moves the playback cursor within a specified time bound and invokes the specified block when the seek operation
      * has either been completed or been interrupted.
      * 
@@ -1034,12 +980,12 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
      * This method throws an exception if time is invalid or indefinite or if tolerance before or tolerance after is
      * invalid or negative.
      * 
-     * API-Since: 5.0
+     * - Parameter time:
+     * - Parameter toleranceBefore:
+     * - Parameter toleranceAfter:
+     * - Parameter completionHandler:
      * 
-     * @param time
-     * @param toleranceBefore
-     * @param toleranceAfter
-     * @param completionHandler
+     * API-Since: 5.0
      */
     @Generated
     @Selector("seekToTime:toleranceBefore:toleranceAfter:completionHandler:")
@@ -1048,8 +994,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
             @Nullable @ObjCBlock(name = "call_seekToTimeToleranceBeforeToleranceAfterCompletionHandler") Block_seekToTimeToleranceBeforeToleranceAfterCompletionHandler completionHandler);
 
     /**
-     * [@property] seekableTimeRanges
-     * 
      * This property provides a collection of time ranges that the player item can seek to. The ranges provided might be
      * discontinous.
      * 
@@ -1063,8 +1007,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native NSArray<? extends NSValue> seekableTimeRanges();
 
     /**
-     * [@property] seekingWaitsForVideoCompositionRendering
-     * 
      * Indicates whether the item's timing follows the displayed video frame when seeking with a video composition
      * 
      * By default, item timing is updated as quickly as possible, not waiting for media at new times to be rendered when
@@ -1083,7 +1025,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
      * 
      * This property has no effect on items for which videoComposition is nil.
      * 
-     * 
      * API-Since: 6.0
      */
     @Generated
@@ -1091,8 +1032,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native boolean seekingWaitsForVideoCompositionRendering();
 
     /**
-     * selectMediaOption:inMediaSelectionGroup:
-     * 
      * Selects the media option described by the specified instance of AVMediaSelectionOption in the specified
      * AVMediaSelectionGroup and deselects all other options in that group.
      * 
@@ -1108,11 +1047,11 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
      * 
      * Before macOS 13, iOS 16, tvOS 16, and watchOS 9, this method must be invoked on the main thread/queue.
      * 
-     * API-Since: 5.0
+     * - Parameter mediaSelectionOption: The option to select.
+     * - Parameter mediaSelectionGroup: The media selection group, obtained from the receiver's asset, that contains the
+     * specified option.
      * 
-     * @param mediaSelectionOption The option to select.
-     * @param mediaSelectionGroup  The media selection group, obtained from the receiver's asset, that contains the
-     *                             specified option.
+     * API-Since: 5.0
      */
     @Generated
     @Selector("selectMediaOption:inMediaSelectionGroup:")
@@ -1120,8 +1059,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
             @NotNull AVMediaSelectionGroup mediaSelectionGroup);
 
     /**
-     * selectMediaOptionAutomaticallyInMediaSelectionGroup:
-     * 
      * Selects the media option in the specified media selection group that best matches the AVPlayer's current
      * automatic selection criteria. Also allows automatic selection to be re-applied to the specified group
      * subsequently if the relevant criteria are changed.
@@ -1132,10 +1069,10 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
      * 
      * Before macOS 13, iOS 16, tvOS 16, and watchOS 9, this method must be invoked on the main thread/queue.
      * 
-     * API-Since: 7.0
+     * - Parameter mediaSelectionGroup: The media selection group, obtained from the receiver's asset, that contains the
+     * specified option.
      * 
-     * @param mediaSelectionGroup The media selection group, obtained from the receiver's asset, that contains the
-     *                            specified option.
+     * API-Since: 7.0
      */
     @Generated
     @Selector("selectMediaOptionAutomaticallyInMediaSelectionGroup:")
@@ -1143,20 +1080,19 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
             @NotNull AVMediaSelectionGroup mediaSelectionGroup);
 
     /**
-     * selectedMediaOptionInMediaSelectionGroup:
-     * 
      * Indicates the media selection option that's currently selected from the specified group. May be nil.
      * 
      * If the value of the property allowsEmptySelection of the AVMediaSelectionGroup is YES, the currently selected
      * option in the group may be nil.
      * 
+     * - Parameter mediaSelectionGroup: A media selection group obtained from the receiver's asset.
+     * 
+     * - Returns: An instance of AVMediaSelectionOption that describes the currently selection option in the group.
+     * 
      * API-Since: 5.0
      * Deprecated-Since: 11.0
      * Deprecated-Message: Use currentMediaSelection to obtain an instance of AVMediaSelection, which encompasses the
      * currently selected AVMediaSelectionOption in each of the available AVMediaSelectionGroups
-     * 
-     * @param mediaSelectionGroup A media selection group obtained from the receiver's asset.
-     * @return An instance of AVMediaSelectionOption that describes the currently selection option in the group.
      */
     @Nullable
     @Deprecated
@@ -1166,8 +1102,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
             @NotNull AVMediaSelectionGroup mediaSelectionGroup);
 
     /**
-     * [@property] audioMix
-     * 
      * Indicates the audio mix parameters to be applied during playback
      * 
      * The inputParameters of the AVAudioMix must have trackIDs that correspond to a track of the receiver's asset.
@@ -1181,8 +1115,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native void setAudioMix(@Nullable AVAudioMix value);
 
     /**
-     * [@property] audioTimePitchAlgorithm
-     * 
      * Indicates the processing algorithm used to manage audio pitch at varying rates and for scaled audio edits.
      * 
      * Constants for various time pitch algorithms, e.g. AVAudioTimePitchSpectral, are defined in
@@ -1199,8 +1131,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native void setAudioTimePitchAlgorithm(@NotNull String value);
 
     /**
-     * [@property] canUseNetworkResourcesForLiveStreamingWhilePaused
-     * 
      * Indicates whether the player item can use network resources to keep playback state up to date while paused
      * 
      * For live streaming content, the player item may need to use extra networking and power resources to keep playback
@@ -1217,8 +1147,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native void setCanUseNetworkResourcesForLiveStreamingWhilePaused(boolean value);
 
     /**
-     * [@property] forwardPlaybackEndTime
-     * 
      * The end time for forward playback.
      * 
      * Specifies the time at which playback should end when the playback rate is positive (see AVPlayer's rate
@@ -1239,8 +1167,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native void setForwardPlaybackEndTime(@ByValue CMTime value);
 
     /**
-     * [@property] preferredForwardBufferDuration
-     * 
      * Indicates the media duration the caller prefers the player to buffer from the network ahead of the playhead to
      * guard against playback disruption.
      * 
@@ -1257,8 +1183,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native void setPreferredForwardBufferDuration(double value);
 
     /**
-     * [@property] preferredPeakBitRate
-     * 
      * Indicates the desired limit of network bandwidth consumption for this item.
      * 
      * Set preferredPeakBitRate to non-zero to indicate that the player should attempt to limit item playback to that
@@ -1274,8 +1198,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native void setPreferredPeakBitRate(double value);
 
     /**
-     * [@property] reversePlaybackEndTime
-     * 
      * The end time for reverse playback.
      * 
      * Specifies the time at which playback should end when the playback rate is negative (see AVPlayer's rate
@@ -1296,8 +1218,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native void setReversePlaybackEndTime(@ByValue CMTime value);
 
     /**
-     * [@property] seekingWaitsForVideoCompositionRendering
-     * 
      * Indicates whether the item's timing follows the displayed video frame when seeking with a video composition
      * 
      * By default, item timing is updated as quickly as possible, not waiting for media at new times to be rendered when
@@ -1316,7 +1236,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
      * 
      * This property has no effect on items for which videoComposition is nil.
      * 
-     * 
      * API-Since: 6.0
      */
     @Generated
@@ -1324,8 +1243,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native void setSeekingWaitsForVideoCompositionRendering(boolean value);
 
     /**
-     * [@property] textStyleRules
-     * 
      * An array of AVTextStyleRules representing text styling that can be applied to subtitles and other legible media.
      * 
      * The styling information contained in each AVTextStyleRule object in the array is used only when no equivalent
@@ -1341,8 +1258,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native void setTextStyleRules(@Nullable NSArray<? extends AVTextStyleRule> value);
 
     /**
-     * [@property] videoComposition
-     * 
      * Indicates the video composition settings to be applied during playback.
      * 
      * Before macOS 13, iOS 16, tvOS 16, and watchOS 9, this property must be accessed on the main thread/queue.
@@ -1359,8 +1274,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native void setVideoComposition(@Nullable AVVideoComposition value);
 
     /**
-     * [@property] status
-     * 
      * The ability of the receiver to be used for playback.
      * 
      * The value of this property is an AVPlayerItemStatus that indicates whether the receiver can be used for playback.
@@ -1378,27 +1291,22 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native long status();
 
     /**
-     * stepByCount:
-     * 
      * Moves player's current item's current time forward or backward by the specified number of steps.
      * 
      * The size of each step depends on the enabled AVPlayerItemTracks of the AVPlayerItem.
      * 
      * Before macOS 13, iOS 16, tvOS 16, and watchOS 9, this method must be invoked on the main thread/queue.
      * 
-     * API-Since: 4.0
+     * - Parameter stepCount: The number of steps by which to move. A positive number results in stepping forward, a
+     * negative number in stepping backward.
      * 
-     * @param stepCount
-     *                  The number of steps by which to move. A positive number results in stepping forward, a negative
-     *                  number in stepping backward.
+     * API-Since: 4.0
      */
     @Generated
     @Selector("stepByCount:")
     public native void stepByCount(@NInt long stepCount);
 
     /**
-     * [@property] textStyleRules
-     * 
      * An array of AVTextStyleRules representing text styling that can be applied to subtitles and other legible media.
      * 
      * The styling information contained in each AVTextStyleRule object in the array is used only when no equivalent
@@ -1415,8 +1323,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native NSArray<? extends AVTextStyleRule> textStyleRules();
 
     /**
-     * [@property] timebase
-     * 
      * The item's timebase.
      * 
      * You can examine the timebase to discover the relationship between the item's time and the source clock used for
@@ -1431,8 +1337,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native CMTimebaseRef timebase();
 
     /**
-     * [@property] timedMetadata
-     * 
      * Provides an NSArray of AVMetadataItems representing the timed metadata encountered most recently within the media
      * as it plays. May be nil.
      * 
@@ -1454,8 +1358,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native NSArray<? extends AVMetadataItem> timedMetadata();
 
     /**
-     * [@property] tracks
-     * 
      * Provides array of AVPlayerItem tracks. Observable (can change dynamically during playback).
      * 
      * The value of this property will accord with the properties of the underlying media resource when the receiver
@@ -1472,8 +1374,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native NSArray<? extends AVPlayerItemTrack> tracks();
 
     /**
-     * [@property] videoComposition
-     * 
      * Indicates the video composition settings to be applied during playback.
      * 
      * Before macOS 13, iOS 16, tvOS 16, and watchOS 9, this property must be accessed on the main thread/queue.
@@ -1512,8 +1412,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     }
 
     /**
-     * [@property] preferredMaximumResolution
-     * 
      * Indicates a preferred upper limit on the resolution of the video to be downloaded (or otherwise transferred) and
      * rendered by the player.
      * 
@@ -1529,8 +1427,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native CGSize preferredMaximumResolution();
 
     /**
-     * [@property] preferredMaximumResolution
-     * 
      * Indicates a preferred upper limit on the resolution of the video to be downloaded (or otherwise transferred) and
      * rendered by the player.
      * 
@@ -1545,8 +1441,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native void setPreferredMaximumResolution(@ByValue CGSize value);
 
     /**
-     * [@property] videoApertureMode
-     * 
      * Specifies the video aperture mode to apply during playback.
      * 
      * See AVVideoApertureMode constants defined in AVVideoSettings.h. Default is AVVideoApertureModeCleanAperture.
@@ -1558,8 +1452,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native void setVideoApertureMode(@NotNull String value);
 
     /**
-     * [@property] videoApertureMode
-     * 
      * Specifies the video aperture mode to apply during playback.
      * 
      * See AVVideoApertureMode constants defined in AVVideoSettings.h. Default is AVVideoApertureModeCleanAperture.
@@ -1572,8 +1464,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native String videoApertureMode();
 
     /**
-     * [@property] automaticallyPreservesTimeOffsetFromLive
-     * 
      * Indicates that after the player spends a period of time buffering media, it will skip forward if necessary to
      * restore the playhead's distance from the live edge of the presentation to what it was when buffering began.
      * 
@@ -1596,8 +1486,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native boolean automaticallyPreservesTimeOffsetFromLive();
 
     /**
-     * [@property] configuredTimeOffsetFromLive
-     * 
      * Indicates how close to the latest content in a live stream playback will begin after a live start or a seek to
      * kCMTimePositiveInfinity.
      * 
@@ -1611,8 +1499,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native CMTime configuredTimeOffsetFromLive();
 
     /**
-     * [@property] audioSpatializationAllowed
-     * 
      * Indicates whether audio spatialization is allowed
      * 
      * When audio spatialization is allowed for an AVPlayerItem, the AVPlayer may render multichannel audio if available
@@ -1630,8 +1516,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native boolean isAudioSpatializationAllowed();
 
     /**
-     * [@property] recommendedTimeOffsetFromLive
-     * 
      * A recommended value for configuredTimeOffsetFromLive, based on observed network conditions.
      * 
      * For non-live assets this value is kCMTimeInvalid.
@@ -1644,8 +1528,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native CMTime recommendedTimeOffsetFromLive();
 
     /**
-     * [@property] audioSpatializationAllowed
-     * 
      * Indicates whether audio spatialization is allowed
      * 
      * When audio spatialization is allowed for an AVPlayerItem, the AVPlayer may render multichannel audio if available
@@ -1663,8 +1545,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native void setAudioSpatializationAllowed(boolean value);
 
     /**
-     * [@property] automaticallyPreservesTimeOffsetFromLive
-     * 
      * Indicates that after the player spends a period of time buffering media, it will skip forward if necessary to
      * restore the playhead's distance from the live edge of the presentation to what it was when buffering began.
      * 
@@ -1687,8 +1567,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native void setAutomaticallyPreservesTimeOffsetFromLive(boolean value);
 
     /**
-     * [@property] configuredTimeOffsetFromLive
-     * 
      * Indicates how close to the latest content in a live stream playback will begin after a live start or a seek to
      * kCMTimePositiveInfinity.
      * 
@@ -1740,8 +1618,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native void setExternalMetadata(@NotNull NSArray<? extends AVMetadataItem> value);
 
     /**
-     * [@property] allowedAudioSpatializationFormats
-     * 
      * Indicates the source audio channel layouts allowed by the receiver for spatialization.
      * 
      * Spatialization uses psychoacoustic methods to create a more immersive audio rendering when the content is played
@@ -1767,8 +1643,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native long allowedAudioSpatializationFormats();
 
     /**
-     * [@property] allowedAudioSpatializationFormats
-     * 
      * Indicates the source audio channel layouts allowed by the receiver for spatialization.
      * 
      * Spatialization uses psychoacoustic methods to create a more immersive audio rendering when the content is played
@@ -1793,8 +1667,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native void setAllowedAudioSpatializationFormats(@NUInt long value);
 
     /**
-     * [@property] startsOnFirstEligibleVariant
-     * 
      * Directs the player to start playback with the first eligible variant that appears in the stream's master
      * playlist.
      * 
@@ -1822,8 +1694,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native void setStartsOnFirstEligibleVariant(boolean value);
 
     /**
-     * [@property] startsOnFirstEligibleVariant
-     * 
      * Directs the player to start playback with the first eligible variant that appears in the stream's master
      * playlist.
      * 
@@ -1869,8 +1739,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native void setAppliesPerFrameHDRDisplayMetadata(boolean value);
 
     /**
-     * [@property] automaticallyHandlesInterstitialEvents
-     * 
      * Allows interstitials to be played according to a schedule that's specified by server-side directives. The default
      * value is YES. A value of NO prevents automatic scheduling of future server-side interstitial events. Events
      * specified by an AVPlayerInterstitialEventController override server-side events, regardless of the value of this
@@ -1895,8 +1763,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native Object copy();
 
     /**
-     * [@property] preferredMaximumResolutionForExpensiveNetworks
-     * 
      * Indicates a preferred upper limit on the resolution of the video to be downloaded that applies only when the
      * download occurs over expensive networks.
      * 
@@ -1919,8 +1785,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native CGSize preferredMaximumResolutionForExpensiveNetworks();
 
     /**
-     * [@property] preferredPeakBitRateForExpensiveNetworks
-     * 
      * Indicates the desired limit of network bandwidth consumption for this item over expensive networks.
      * 
      * When preferredPeakBitRateForExpensiveNetworks is set to non-zero, the player will attempt to limit item playback
@@ -1941,8 +1805,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native double preferredPeakBitRateForExpensiveNetworks();
 
     /**
-     * [@property] automaticallyHandlesInterstitialEvents
-     * 
      * Allows interstitials to be played according to a schedule that's specified by server-side directives. The default
      * value is YES. A value of NO prevents automatic scheduling of future server-side interstitial events. Events
      * specified by an AVPlayerInterstitialEventController override server-side events, regardless of the value of this
@@ -1957,8 +1819,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native void setAutomaticallyHandlesInterstitialEvents(boolean value);
 
     /**
-     * [@property] preferredMaximumResolutionForExpensiveNetworks
-     * 
      * Indicates a preferred upper limit on the resolution of the video to be downloaded that applies only when the
      * download occurs over expensive networks.
      * 
@@ -1980,8 +1840,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native void setPreferredMaximumResolutionForExpensiveNetworks(@ByValue CGSize value);
 
     /**
-     * [@property] preferredPeakBitRateForExpensiveNetworks
-     * 
      * Indicates the desired limit of network bandwidth consumption for this item over expensive networks.
      * 
      * When preferredPeakBitRateForExpensiveNetworks is set to non-zero, the player will attempt to limit item playback
@@ -2002,8 +1860,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native void setPreferredPeakBitRateForExpensiveNetworks(double value);
 
     /**
-     * [@property] variantPreferences
-     * 
      * Indicates preferences for variant switching.
      * 
      * Changing variant preferences during playback may result in a variant switch.
@@ -2016,8 +1872,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native void setVariantPreferences(@NUInt long value);
 
     /**
-     * [@property] templatePlayerItem
-     * 
      * If the item was created automatically according to a template item for looping, for interstitial playback, or for
      * other purposes, indicates the AVPlayerItem that was used as the template.
      * 
@@ -2029,8 +1883,6 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     public native AVPlayerItem templatePlayerItem();
 
     /**
-     * [@property] variantPreferences
-     * 
      * Indicates preferences for variant switching.
      * 
      * Changing variant preferences during playback may result in a variant switch.
@@ -2100,4 +1952,148 @@ public class AVPlayerItem extends NSObject implements NSCopying, AVMetricEventSt
     @Selector("integratedTimeline")
     @NotNull
     public native AVPlayerItemIntegratedTimeline integratedTimeline();
+
+    /**
+     * Indicates the media presentation settings with media characteristics that are possessed by the currently selected
+     * AVMediaSelectionOption in the specified AVMediaSelectionGroup.
+     * 
+     * Effective media presentation settings can differ from the currently effective media presentation settings if no
+     * AVMediaSelectionOption of the specified AVMediaSelectionGroup with the currently selected media presentation
+     * language possesses all of the characteristics associated with the currently selected settings.
+     * A value of NSNull for an AVMediaPresentationSelector can occur if either the content is inappropriately authored
+     * for the use of the AVCustomMediaSelectionScheme or if the currently selected AVMediaSelectionOption has been
+     * selected by means other than through the use of AVMediaPresentationSettings.
+     * 
+     * - Parameter mediaSelectionGroup: An AVMediaSelectionGroup obtained from the receiver's asset for which the
+     * currently effective media presentation settings are desired.
+     * 
+     * - Returns: A dictionary with AVMediaPresentationSelectors as keys and AVMediaPresentationSettings as values,
+     * unless the AVMediaSelectionOption currently selected in the group possesses none of the characteristics
+     * associated with the selector's settings. In that case the dictionary value will be NSNull.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("effectiveMediaPresentationSettingsForMediaSelectionGroup:")
+    @NotNull
+    public native NSDictionary<? extends AVMediaPresentationSelector, ?> effectiveMediaPresentationSettingsForMediaSelectionGroup(
+            @NotNull AVMediaSelectionGroup mediaSelectionGroup);
+
+    /**
+     * Indicates the AVCustomMediaSelectionSchemes of AVMediaSelectionGroups of the receiver's asset with which an
+     * associated UI implementation should configure its interface for media selection.
+     * 
+     * Recommended usage: if use of a custom media selection scheme is desired, set this property before either
+     * replacing an AVPlayer's current item with the receiver or adding the receiver to an AVQueuePlayer's play queue.
+     * This will satisfy requirements of UI implementations that commit to a configuration of UI elements as the
+     * receiver becomes ready to play.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("preferredCustomMediaSelectionSchemes")
+    @NotNull
+    public native NSArray<? extends AVCustomMediaSelectionScheme> preferredCustomMediaSelectionSchemes();
+
+    /**
+     * When the associated AVPlayer's appliesMediaSelectionCriteriaAutomatically property is set to YES, configures the
+     * player item to prefer a particular language, replacing any previous preference for available languages of the
+     * specified group's custom media selection scheme.
+     * 
+     * Overrides preferences for languages specified by the AVPlayer's current media selection criteria.
+     * This method has no effect when the associated AVPlayer's appliesMediaSelectionCriteriaAutomatically property has
+     * a value of NO, in which case you must use -selectMediaOption:inMediaSelectionGroup: instead in order to alter the
+     * presentation state of the media.
+     * 
+     * - Parameter languages: A BCP 47 language tag, typically obtained from the availableLanguages of the
+     * AVCustomMediaSelectionScheme of the specified AVMediaSelectionGroup.
+     * - Parameter mediaSelectionGroup: The media selection group, obtained from the receiver's asset, to which the
+     * specified setting is to be applied.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("selectMediaPresentationLanguage:forMediaSelectionGroup:")
+    public native void selectMediaPresentationLanguageForMediaSelectionGroup(@NotNull String language,
+            @NotNull AVMediaSelectionGroup mediaSelectionGroup);
+
+    /**
+     * When the associated AVPlayer's appliesMediaSelectionCriteriaAutomatically property is set to YES, configures the
+     * player item to prefer a particular presentation setting, replacing any previous preference for settings of the
+     * same media presentation selector.
+     * 
+     * Note that preferences for media characteristics indicated by selected AVMediaPresentationSettings are treated as
+     * supplemental to the associated AVPlayer's media selection criteria for the AVMediaSelectionGroup. An AVPlayer's
+     * default media selection criteria can also indicate preferences for media characteristics, such as those
+     * indicating the availability of accessibility affordances such as audio descriptions, and these media
+     * characteristics can be left up to the AVPlayer to manage even when an AVCustomMediaSelectionScheme is in use. But
+     * if you wish to do so, you can use AVMediaPresentationSettings offered by a AVCustomMediaSelectionScheme in
+     * combination with custom AVPlayerMediaSelectionCriteria.
+     * If the specified setting isn't offered by an AVMediaPresentationSelector of the AVCustomMediaSelectionScheme of
+     * the specified AVMediaSelectionGroup, no change in the presentation of the media will result.
+     * This method has no effect when the associated AVPlayer's appliesMediaSelectionCriteriaAutomatically property has
+     * a value of NO, in which case you must use -selectMediaOption:inMediaSelectionGroup: instead in order to alter the
+     * presentation state of the media.
+     * 
+     * - Parameter mediaPresentationSetting: The setting to select.
+     * - Parameter mediaSelectionGroup: The media selection group, obtained from the receiver's asset, to which the
+     * specified setting is to be applied.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("selectMediaPresentationSetting:forMediaSelectionGroup:")
+    public native void selectMediaPresentationSettingForMediaSelectionGroup(
+            @NotNull AVMediaPresentationSetting mediaPresentationSetting,
+            @NotNull AVMediaSelectionGroup mediaSelectionGroup);
+
+    /**
+     * Returns the selected media presentation language for the specified media selection group, if any language has
+     * previously been selected via use of -selectMediaPresentationLanguages:forMediaSelectionGroup:.
+     * 
+     * - Parameter mediaSelectionGroup: The media selection group, obtained from the receiver's asset, for which the
+     * selected media presentation language is requested.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("selectedMediaPresentationLanguageForMediaSelectionGroup:")
+    @Nullable
+    public native String selectedMediaPresentationLanguageForMediaSelectionGroup(
+            @NotNull AVMediaSelectionGroup mediaSelectionGroup);
+
+    /**
+     * Indicates the media presentation settings that have most recently been selected for each
+     * AVMediaPresentationSelector of the AVCustomMediaSelectionScheme of the specified AVMediaSelectionGroup.
+     * 
+     * - Parameter mediaSelectionGroup: An AVMediaSelectionGroup obtained from the receiver's asset for which the
+     * currently selected media presentation settings are desired.
+     * 
+     * - Returns: A dictionary with AVMediaPresentationSelectors as keys and AVMediaPresentationSettings as values,
+     * providing the most recently selected setting for each selector or, if no setting has previously been selected,
+     * NSNull.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("selectedMediaPresentationSettingsForMediaSelectionGroup:")
+    @NotNull
+    public native NSDictionary<? extends AVMediaPresentationSelector, ?> selectedMediaPresentationSettingsForMediaSelectionGroup(
+            @NotNull AVMediaSelectionGroup mediaSelectionGroup);
+
+    /**
+     * Indicates the AVCustomMediaSelectionSchemes of AVMediaSelectionGroups of the receiver's asset with which an
+     * associated UI implementation should configure its interface for media selection.
+     * 
+     * Recommended usage: if use of a custom media selection scheme is desired, set this property before either
+     * replacing an AVPlayer's current item with the receiver or adding the receiver to an AVQueuePlayer's play queue.
+     * This will satisfy requirements of UI implementations that commit to a configuration of UI elements as the
+     * receiver becomes ready to play.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setPreferredCustomMediaSelectionSchemes:")
+    public native void setPreferredCustomMediaSelectionSchemes(
+            @NotNull NSArray<? extends AVCustomMediaSelectionScheme> value);
 }

@@ -29,7 +29,18 @@ import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Recognition result receiver, to be used for complex or multi-utterance speech recognition requests
+ * A protocol with methods for managing multi-utterance speech recognition requests.
+ * 
+ * The methods of this protocol give you fine-grained control over the speech recognition process. Specifically, you use
+ * this protocol when you want to know the following:
+ * 
+ * - When the first utterances of speech occur in the audio.
+ * - When the speech recognizer stops accepting audio.
+ * - When the speech recognition process finishes or is canceled.
+ * - When the speech recognizer generates a potential transcription.
+ * 
+ * Adopt the methods of this protocol in an object and pass that object in to the `delegate` parameter of
+ * ``SFSpeechRecognizer/recognitionTask(with:delegate:)`` when starting your speech recognition task.
  * 
  * API-Since: 10.0
  */
@@ -39,7 +50,10 @@ import org.jetbrains.annotations.NotNull;
 @ObjCProtocolName("SFSpeechRecognitionTaskDelegate")
 public interface SFSpeechRecognitionTaskDelegate {
     /**
-     * Called when the task first detects speech in the source audio
+     * Tells the delegate when the task first detects speech in the source audio.
+     * 
+     * - Parameters:
+     * - task: The speech recognition task (an ``SFSpeechRecognitionTask`` object) that represents the request.
      * 
      * API-Since: 10.0
      */
@@ -51,7 +65,14 @@ public interface SFSpeechRecognitionTaskDelegate {
     }
 
     /**
-     * Called only for final recognitions of utterances. No more about the utterance will be reported
+     * Tells the delegate when the final utterance is recognized.
+     * 
+     * When this method is called, the delegate should expect no further information about the utterance to be reported.
+     * 
+     * - Parameters:
+     * - task: The speech recognition task (an ``SFSpeechRecognitionTask`` object) that represents the request.
+     * - recognitionResult: A recognized utterance that contains one or more transcription hypotheses in an
+     * ``SFSpeechRecognitionResult`` object.
      * 
      * API-Since: 10.0
      */
@@ -64,8 +85,13 @@ public interface SFSpeechRecognitionTaskDelegate {
     }
 
     /**
-     * Called when recognition of all requested utterances is finished.
-     * If successfully is false, the error property of the task will contain error information
+     * Tells the delegate when the recognition of all requested utterances is finished.
+     * 
+     * - Parameters:
+     * - task: The speech recognition task (an ``SFSpeechRecognitionTask`` object) that represents the request.
+     * - successfully: A Boolean value that indicates whether the task was successful. When this parameter is `false`,
+     * use the ``SFSpeechRecognitionTask/error`` property of the task to get information about why the task was
+     * unsuccessful.
      * 
      * API-Since: 10.0
      */
@@ -78,7 +104,13 @@ public interface SFSpeechRecognitionTaskDelegate {
     }
 
     /**
-     * Called for all recognitions, including non-final hypothesis
+     * Tells the delegate that a hypothesized transcription is available.
+     * 
+     * This method is called for all recognitions, including partial recognitions.
+     * 
+     * - Parameters:
+     * - task: The speech recognition task (an ``SFSpeechRecognitionTask`` object) that represents the request.
+     * - transcription: The hypothesized transcription in an ``SFTranscription`` object.
      * 
      * API-Since: 10.0
      */
@@ -91,7 +123,10 @@ public interface SFSpeechRecognitionTaskDelegate {
     }
 
     /**
-     * Called when the task is no longer accepting new audio but may be finishing final processing
+     * Tells the delegate when the task is no longer accepting new audio input, even if final processing is in progress.
+     * 
+     * - Parameters:
+     * - task: The speech recognition task (an ``SFSpeechRecognitionTask`` object) that represents the request.
      * 
      * API-Since: 10.0
      */
@@ -103,7 +138,12 @@ public interface SFSpeechRecognitionTaskDelegate {
     }
 
     /**
-     * Called when the task has been cancelled, either by client app, the user, or the system
+     * Tells the delegate that the task has been canceled.
+     * 
+     * A speech recognition task can be canceled by the user, by your app, or by the system.
+     * 
+     * - Parameters:
+     * - task: The speech recognition task (an ``SFSpeechRecognitionTask`` object) that represents the request.
      * 
      * API-Since: 10.0
      */
@@ -115,7 +155,11 @@ public interface SFSpeechRecognitionTaskDelegate {
     }
 
     /**
-     * Returns amount of audio processed by the task
+     * Tells the delegate how much audio has been processed by the task.
+     * 
+     * - Parameters:
+     * - task: The speech recognition task (an ``SFSpeechRecognitionTask`` object) that represents the request.
+     * - duration: The seconds of audio input that the recognizer has processed.
      * 
      * API-Since: 10.0
      */

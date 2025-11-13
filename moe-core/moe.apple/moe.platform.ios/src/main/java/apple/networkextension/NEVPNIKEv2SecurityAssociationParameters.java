@@ -44,6 +44,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSNumber;
 
 /**
  * NEVPNIKEv2SecurityAssociationParameters
@@ -311,4 +312,31 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] postQuantumKeyExchangeMethods
+     * 
+     * The post-quantum key exchange method(s) used by the Security Association, if any. Values are taken from
+     * NEVPNIKEv2PostQuantumKeyExchangeMethod. Up to 7 methods may be specified, mapping to ADDKE1 - ADDKE7 from RFC
+     * 9370.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("postQuantumKeyExchangeMethods")
+    @NotNull
+    public native NSArray<? extends NSNumber> postQuantumKeyExchangeMethods();
+
+    /**
+     * [@property] postQuantumKeyExchangeMethods
+     * 
+     * The post-quantum key exchange method(s) used by the Security Association, if any. Values are taken from
+     * NEVPNIKEv2PostQuantumKeyExchangeMethod. Up to 7 methods may be specified, mapping to ADDKE1 - ADDKE7 from RFC
+     * 9370.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setPostQuantumKeyExchangeMethods:")
+    public native void setPostQuantumKeyExchangeMethods(@NotNull NSArray<? extends NSNumber> value);
 }

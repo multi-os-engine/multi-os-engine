@@ -55,4 +55,17 @@ public final class ASAuthorizationError {
      * API-Since: 18.2
      */
     @Generated @NInt public static final long CredentialExport = 0x00000000000003F0L;
+    /**
+     * This error signals the user has an existing Sign in with Apple account that they would prefer to use instead of
+     * continuing the current request.
+     * 
+     * API-Since: 19.0
+     */
+    @Generated @NInt public static final long PreferSignInWithApple = 0x00000000000003F1L;
+    /**
+     * This error signals that the device is not currently set up to create passkeys.
+     * 
+     * API-Since: 19.0
+     */
+    @Generated @NInt public static final long DeviceNotConfiguredForPasskeyCreation = 0x00000000000003F2L;
 }

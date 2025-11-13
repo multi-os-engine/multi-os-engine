@@ -45,6 +45,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSAttributedString;
 
 /**
  * API-Since: 2.0
@@ -416,7 +417,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      * If this property is true (the default), the searchController’s search bar will hide as the user scrolls in the
      * top view controller’s scroll view. If false, the search bar will remain visible and pinned underneath the
      * navigation bar.
-     * Not appicable and ignored for UINavigationItemSearchBarPlacementInline
+     * Not applicable and ignored for `UINavigationItemSearchBarPlacementIntegrated`
      * 
      * API-Since: 11.0
      */
@@ -450,7 +451,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
      * If this property is true (the default), the searchController’s search bar will hide as the user scrolls in the
      * top view controller’s scroll view. If false, the search bar will remain visible and pinned underneath the
      * navigation bar.
-     * Not appicable and ignored for UINavigationItemSearchBarPlacementInline
+     * Not applicable and ignored for `UINavigationItemSearchBarPlacementIntegrated`
      * 
      * API-Since: 11.0
      */
@@ -916,4 +917,284 @@ public class UINavigationItem extends NSObject implements NSCoding {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * An attributed string to display as the subtitle in the navigation bar.
+     * 
+     * If non-nil, this property takes precedence over the `subtitle` property.
+     * If `subtitleView` is non-nil, this property is ignored.
+     * If `titleView` is non-nil, this property is ignored.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("attributedSubtitle")
+    @Nullable
+    public native NSAttributedString attributedSubtitle();
+
+    /**
+     * An attributed string that is rendered as the title in the navigation bar.
+     * 
+     * If `titleView` is non-nil, this property is ignored.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("attributedTitle")
+    @Nullable
+    public native NSAttributedString attributedTitle();
+
+    /**
+     * An attributed string to be rendered below the large title.
+     * 
+     * When `nil`, the navigation bar will fall back to the `largeSubtitle`.
+     * If a `largeSubtitleView` is set, this property is ignored.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("largeAttributedSubtitle")
+    @Nullable
+    public native NSAttributedString largeAttributedSubtitle();
+
+    /**
+     * String to be rendered below the large title.
+     * 
+     * When `nil`, the navigation bar will fall back to the `subtitle`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("largeSubtitle")
+    @Nullable
+    public native String largeSubtitle();
+
+    /**
+     * A custom view to display below the large title.
+     * 
+     * When non-nil, this takes precedence over any other subtitle.
+     * The view's layout constraints will determine its size, or the view may override `sizeThatFits(_:)`
+     * to return its desired size.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("largeSubtitleView")
+    @Nullable
+    public native UIView largeSubtitleView();
+
+    /**
+     * String to be used as the large title.
+     * 
+     * When `nil`, the navigation bar will use the navigation item's current title.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("largeTitle")
+    @Nullable
+    public native String largeTitle();
+
+    /**
+     * `AllowsExternalIntegration` means that something at a higher scope may take the search bar and integrate it
+     * somewhere other than the navigation bar (or toolbar) directly associated with this navigation item.
+     * On iOS 26, UISplitViewController uses this to allow Mac-like placement of the search bar on iPad.
+     * Defaults to `NO`
+     * Set to `YES` to allow the containing UISplitViewController to place the search bar in the navigation bar for the
+     * trailingmost column independent of the column used for this view controller.
+     * Ignored when `searchController` is `nil`, when `searchBarPlacement` is `.stacked`, or when not contained in a
+     * UISplitViewController.
+     * When the top view controller's navigation item has this property set to `YES` in more than one column at the same
+     * time, only one will be respected; the columns are checked in order of `.inspector`, `.secondary`,
+     * `.supplementary`, `.primary`
+     * If the search bar has a scope bar, the scope bar will not be moved into a different column.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("searchBarPlacementAllowsExternalIntegration")
+    public native boolean searchBarPlacementAllowsExternalIntegration();
+
+    /**
+     * Defaults to `YES`
+     * Set to `NO` to prevent the search bar from being placed among other UIToolbar items on iPhone
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("searchBarPlacementAllowsToolbarIntegration")
+    public native boolean searchBarPlacementAllowsToolbarIntegration();
+
+    /**
+     * When `searchBarPlacement` is `.integrated` or `.integratedButton` and a search controller is present, use this
+     * bar button item in the view controller's `toolbarItems` to control the placement of the search bar among them
+     * when the search bar is appearing in the UIToolbar on iPhone.
+     * Without this bar button item, the positioning for the search bar defaults to trailingmost for the UIToolbar case.
+     * This bar button item will be ignored during toolbar layout if `searchController` is `nil`.
+     * UIBarButtonItemGroup will throw an NSInvalidArgumentException when this bar button item is included in its
+     * initialization.
+     * UINavigationItem will throw an NSInvalidArgumentException when this bar button item is included in
+     * leftBarButtonItems or rightBarButtonItems.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("searchBarPlacementBarButtonItem")
+    @NotNull
+    public native UIBarButtonItem searchBarPlacementBarButtonItem();
+
+    /**
+     * An attributed string to display as the subtitle in the navigation bar.
+     * 
+     * If non-nil, this property takes precedence over the `subtitle` property.
+     * If `subtitleView` is non-nil, this property is ignored.
+     * If `titleView` is non-nil, this property is ignored.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setAttributedSubtitle:")
+    public native void setAttributedSubtitle(@Nullable NSAttributedString value);
+
+    /**
+     * An attributed string that is rendered as the title in the navigation bar.
+     * 
+     * If `titleView` is non-nil, this property is ignored.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setAttributedTitle:")
+    public native void setAttributedTitle(@Nullable NSAttributedString value);
+
+    /**
+     * An attributed string to be rendered below the large title.
+     * 
+     * When `nil`, the navigation bar will fall back to the `largeSubtitle`.
+     * If a `largeSubtitleView` is set, this property is ignored.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setLargeAttributedSubtitle:")
+    public native void setLargeAttributedSubtitle(@Nullable NSAttributedString value);
+
+    /**
+     * String to be rendered below the large title.
+     * 
+     * When `nil`, the navigation bar will fall back to the `subtitle`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setLargeSubtitle:")
+    public native void setLargeSubtitle(@Nullable String value);
+
+    /**
+     * A custom view to display below the large title.
+     * 
+     * When non-nil, this takes precedence over any other subtitle.
+     * The view's layout constraints will determine its size, or the view may override `sizeThatFits(_:)`
+     * to return its desired size.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setLargeSubtitleView:")
+    public native void setLargeSubtitleView(@Nullable UIView value);
+
+    /**
+     * String to be used as the large title.
+     * 
+     * When `nil`, the navigation bar will use the navigation item's current title.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setLargeTitle:")
+    public native void setLargeTitle(@Nullable String value);
+
+    /**
+     * `AllowsExternalIntegration` means that something at a higher scope may take the search bar and integrate it
+     * somewhere other than the navigation bar (or toolbar) directly associated with this navigation item.
+     * On iOS 26, UISplitViewController uses this to allow Mac-like placement of the search bar on iPad.
+     * Defaults to `NO`
+     * Set to `YES` to allow the containing UISplitViewController to place the search bar in the navigation bar for the
+     * trailingmost column independent of the column used for this view controller.
+     * Ignored when `searchController` is `nil`, when `searchBarPlacement` is `.stacked`, or when not contained in a
+     * UISplitViewController.
+     * When the top view controller's navigation item has this property set to `YES` in more than one column at the same
+     * time, only one will be respected; the columns are checked in order of `.inspector`, `.secondary`,
+     * `.supplementary`, `.primary`
+     * If the search bar has a scope bar, the scope bar will not be moved into a different column.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setSearchBarPlacementAllowsExternalIntegration:")
+    public native void setSearchBarPlacementAllowsExternalIntegration(boolean value);
+
+    /**
+     * Defaults to `YES`
+     * Set to `NO` to prevent the search bar from being placed among other UIToolbar items on iPhone
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setSearchBarPlacementAllowsToolbarIntegration:")
+    public native void setSearchBarPlacementAllowsToolbarIntegration(boolean value);
+
+    /**
+     * A string to display as the subtitle in the navigation bar.
+     * 
+     * If `attributedSubtitle` is `non-nil`, this property just returns the `String`
+     * representation of the `attributedString`.
+     * If `subtitleView` is non-nil, this property is ignored.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setSubtitle:")
+    public native void setSubtitle(@Nullable String value);
+
+    /**
+     * A custom view to display below the title in the navigation bar.
+     * 
+     * If non-nil, this property takes precedence over the `subtitle` and `attributedSubtitle` properties.
+     * The view's layout constraints will determine its size, or the view may override `sizeThatFits(_:)`
+     * to return its desired size.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setSubtitleView:")
+    public native void setSubtitleView(@Nullable UIView value);
+
+    /**
+     * A string to display as the subtitle in the navigation bar.
+     * 
+     * If `attributedSubtitle` is `non-nil`, this property just returns the `String`
+     * representation of the `attributedString`.
+     * If `subtitleView` is non-nil, this property is ignored.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("subtitle")
+    @Nullable
+    public native String subtitle();
+
+    /**
+     * A custom view to display below the title in the navigation bar.
+     * 
+     * If non-nil, this property takes precedence over the `subtitle` and `attributedSubtitle` properties.
+     * The view's layout constraints will determine its size, or the view may override `sizeThatFits(_:)`
+     * to return its desired size.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("subtitleView")
+    @Nullable
+    public native UIView subtitleView();
 }

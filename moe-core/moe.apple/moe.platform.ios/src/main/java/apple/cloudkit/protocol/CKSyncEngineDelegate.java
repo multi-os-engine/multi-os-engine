@@ -115,8 +115,8 @@ public interface CKSyncEngineDelegate {
      * 
      * ## Sending changes for specific zones
      * 
-     * When you call `sendChanges` for a specific set of zone IDs, you should make sure to only send changes for those
-     * zones.
+     * When you call ``CKSyncEngine/sendChanges(_:)`` for a specific set of zone IDs, you should make sure to only send
+     * changes for those zones.
      * You can do this by checking the `zoneIDs` property on ``CKSyncEngineSendChangesContext/options``.
      * 
      * For example, you might have some code like this:

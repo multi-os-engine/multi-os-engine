@@ -4421,10 +4421,11 @@ public final class Security {
      * is a CFStringRef that represents a user-visible string describing
      * the operation for which the application is attempting to authenticate.
      * The application is responsible for the text localization.
-     * [@constant] kSecUseNoAuthenticationUI macOS only. Specifies a dictionary key whose value
+     * [@constant] kSecUseNoAuthenticationUI Specifies a dictionary key whose value
      * is a CFBooleanRef. If provided with a value of kCFBooleanTrue, the error
      * errSecInteractionNotAllowed will be returned if the item is attempting
-     * to authenticate with UI.
+     * to authenticate with UI. Note: on macOS, this attribute only applies to items stored
+     * in the Data Protection keychain. Legacy keychain items will still activate UI if needed.
      * [@constant] kSecUseAuthenticationUI Specifies a dictionary key whose value
      * is one of kSecUseAuthenticationUIAllow, kSecUseAuthenticationUIFail, kSecUseAuthenticationUISkip.
      * [@constant] kSecUseAuthenticationContext Specifies a dictionary key whose value
@@ -7703,4 +7704,24 @@ public final class Security {
     @CVariable()
     @NotNull
     public static native CFStringRef kSecTrustQWACValidation();
+
+    /**
+     * [@function] SecIdentityCreate
+     * 
+     * create a new identity object from the provided certificate and its associated private key.
+     * 
+     * This interface returns null if the private does not key correspond to the public key in the certifcate.
+     * 
+     * API-Since: 11.2
+     * 
+     * @param allocator   CFAllocator to allocate the identity object. Pass NULL to use the default allocator.
+     * @param certificate A certificate reference.
+     * @param privateKey  A private key reference.
+     * @return An identity reference.
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native SecIdentityRef SecIdentityCreate(@Nullable CFAllocatorRef allocator,
+            @NotNull SecCertificateRef certificate, @NotNull SecKeyRef privateKey);
 }

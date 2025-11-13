@@ -229,4 +229,17 @@ public class MTLArrayType extends MTLType {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Provides a description of the underlying tensor type when this array holds tensors as its elements.
+     * 
+     * - Returns: A description of the tensor type that this array holds, or `nil` if this struct member doesn't hold a
+     * tensor.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("elementTensorReferenceType")
+    @Nullable
+    public native MTLTensorReferenceType elementTensorReferenceType();
 }

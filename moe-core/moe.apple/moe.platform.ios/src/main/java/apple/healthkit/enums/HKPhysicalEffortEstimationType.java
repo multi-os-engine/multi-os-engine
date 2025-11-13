@@ -10,8 +10,8 @@ import org.moe.natj.general.ann.NInt;
  * 
  * [@constant] HKPhysicalEffortEstimationTypeActivityLookup Indicates the value was calculated based on external
  * standard such as a stationary bike
- * [@constant] HKPhysicalEffortEstimationTypeDeviceSensed Indicates the value was calculated based on movement signals
- * (walking, running etc.)
+ * [@constant] HKPhysicalEffortEstimationTypeDeviceSensed Indicates the value was calculated based on movement
+ * signals (walking, running etc.)
  * 
  * API-Since: 17.0
  */

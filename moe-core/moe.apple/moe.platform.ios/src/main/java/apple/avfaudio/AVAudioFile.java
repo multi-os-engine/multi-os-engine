@@ -136,6 +136,12 @@ public class AVAudioFile extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Deprecated - use initForReading or initForWriting
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native AVAudioFile init();

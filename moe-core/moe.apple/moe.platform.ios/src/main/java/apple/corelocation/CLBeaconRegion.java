@@ -17,7 +17,6 @@ limitations under the License.
 package apple.corelocation;
 
 import apple.NSObject;
-import apple.corelocation.struct.CLLocationCoordinate2D;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -46,8 +45,23 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.corelocation.struct.CLLocationCoordinate2D;
 
 /**
+ * CLBeaconRegion
+ * 
+ * Discussion:
+ * A region containing similar beacons.
+ * 
+ * Such a region can be defined by UUID, major and minor values.
+ * UUID must be specified. If only UUID is specified, the major and
+ * minor values will be wildcarded and the region will match any
+ * beacons with the same UUID. Similarly if only UUID and major
+ * value are specified, the minor value will be wildcarded and the
+ * region will match against any beacons with the same UUID and
+ * major value.
+ * 
+ * 
  * API-Since: 7.0
  * Deprecated-Since: 100000.0
  */
@@ -315,6 +329,12 @@ public class CLBeaconRegion extends CLRegion {
     }
 
     /**
+     * UUID
+     * 
+     * Discussion:
+     * UUID associated with the region.
+     * 
+     * 
      * API-Since: 13.0
      */
     @NotNull
@@ -323,6 +343,11 @@ public class CLBeaconRegion extends CLRegion {
     public native NSUUID UUID();
 
     /**
+     * beaconIdentityConstraint
+     * 
+     * Discussion:
+     * Returns a CLBeaconIdentityConstraint describing the beacons this region monitors.
+     * 
      * API-Since: 13.0
      */
     @NotNull
@@ -331,6 +356,13 @@ public class CLBeaconRegion extends CLRegion {
     public native CLBeaconIdentityConstraint beaconIdentityConstraint();
 
     /**
+     * initWithBeaconIdentityConstraint:identifier:
+     * 
+     * Discussion:
+     * Initialize a beacon region described by a beacon identity
+     * constraint.
+     * 
+     * 
      * API-Since: 13.0
      */
     @Generated
@@ -339,6 +371,12 @@ public class CLBeaconRegion extends CLRegion {
             @NotNull CLBeaconIdentityConstraint beaconIdentityConstraint, @NotNull String identifier);
 
     /**
+     * initWithUUID:identifier:
+     * 
+     * Discussion:
+     * Initialize a beacon region with a UUID. Major and minor values will be wildcarded.
+     * 
+     * 
      * API-Since: 13.0
      */
     @Generated
@@ -346,6 +384,12 @@ public class CLBeaconRegion extends CLRegion {
     public native CLBeaconRegion initWithUUIDIdentifier(@NotNull NSUUID uuid, @NotNull String identifier);
 
     /**
+     * initWithUUID:major:identifier:
+     * 
+     * Discussion:
+     * Initialize a beacon region with a UUID and major value. Minor value will be wildcarded.
+     * 
+     * 
      * API-Since: 13.0
      */
     @Generated
@@ -354,6 +398,12 @@ public class CLBeaconRegion extends CLRegion {
             @NotNull String identifier);
 
     /**
+     * initWithUUID:major:minor:identifier:
+     * 
+     * Discussion:
+     * Initialize a beacon region identified by a UUID, major and minor values.
+     * 
+     * 
      * API-Since: 13.0
      */
     @Generated

@@ -710,7 +710,7 @@ public class UIImageView extends UIView implements UIAccessibilityContentSizeCat
     /**
      * The resolved treatment to use for HDR images.
      * 
-     * API-Since: 2.0
+     * API-Since: 17.0
      */
     @Generated
     @Selector("imageDynamicRange")
@@ -721,7 +721,7 @@ public class UIImageView extends UIView implements UIAccessibilityContentSizeCat
      * The preferred treatment to use for HDR images. By default the image view will defer to the value from its
      * traitCollection.
      * 
-     * API-Since: 2.0
+     * API-Since: 17.0
      */
     @Generated
     @Selector("preferredImageDynamicRange")
@@ -811,7 +811,7 @@ public class UIImageView extends UIView implements UIAccessibilityContentSizeCat
      * The preferred treatment to use for HDR images. By default the image view will defer to the value from its
      * traitCollection.
      * 
-     * API-Since: 2.0
+     * API-Since: 17.0
      */
     @Generated
     @Selector("setPreferredImageDynamicRange:")

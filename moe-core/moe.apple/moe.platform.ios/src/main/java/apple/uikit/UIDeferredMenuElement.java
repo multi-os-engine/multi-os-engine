@@ -230,4 +230,36 @@ public class UIDeferredMenuElement extends UIMenuElement {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Returns a placeholder menu element that is replaced with elements provided from the responder chain.
+     * A loading UI takes the place of the element in the menu until it is fulfilled. The element may be stored
+     * and re-used across menus.
+     * 
+     * @param identifier       An identifier for this deferred element that responders can check to determine which
+     *                         elements
+     *                         to provide.
+     * @param shouldCacheItems Whether or not the deferred element caches items. Passing in @c YES causes this deferred
+     *                         element to
+     *                         ask the responder chain for elements only once, when the element is first encountered in
+     *                         a menu.
+     *                         Passing in @c NO asks the responder chain for elements every time the element is
+     *                         displayed.
+     * 
+     *                         API-Since: 26.0
+     */
+    @Generated
+    @Selector("elementUsingFocusWithIdentifier:shouldCacheItems:")
+    public static native UIDeferredMenuElement elementUsingFocusWithIdentifierShouldCacheItems(
+            @NotNull String identifier, boolean shouldCacheItems);
+
+    /**
+     * The identifier of this deferred menu element.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("identifier")
+    @NotNull
+    public native String identifier();
 }

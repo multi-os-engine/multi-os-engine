@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 18.0
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
@@ -78,6 +81,9 @@ public class MDLUtility extends NSObject {
     @NotNull
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 18.0
+     */
     @Generated
     @Selector("convertToUSDZ:writeToURL:")
     public static native void convertToUSDZWriteToURL(@NotNull NSURL inputURL, @NotNull NSURL outputURL);

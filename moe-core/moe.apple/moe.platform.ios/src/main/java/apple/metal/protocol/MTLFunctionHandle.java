@@ -10,6 +10,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
+import apple.metal.struct.MTLResourceID;
+import org.moe.natj.general.ann.ByValue;
 
 /**
  * API-Since: 14.0
@@ -43,4 +45,19 @@ public interface MTLFunctionHandle {
     @Generated
     @Selector("name")
     String name();
+
+    /**
+     * [@property] gpuResourceID
+     * 
+     * Handle of the GPU resource suitable for storing in an Intersection Function Buffer.
+     * 
+     * The handle must have been created from an intersection function annotated with the `intersection_function_buffer`
+     * tag.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("gpuResourceID")
+    @ByValue
+    MTLResourceID gpuResourceID();
 }

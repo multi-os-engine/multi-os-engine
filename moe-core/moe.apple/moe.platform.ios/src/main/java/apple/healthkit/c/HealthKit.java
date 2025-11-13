@@ -4608,4 +4608,271 @@ public final class HealthKit {
     @MappedReturn(ObjCStringMapper.class)
     @NotNull
     public static native String HKMetadataKeyAppleFitnessPlusCatalogIdentifier();
+
+    /**
+     * The key path you use to create predicates that query by a dose event’s log status.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKPredicateKeyPathStatus();
+
+    /**
+     * The key path you use to create predicates that query by the dose event's medication log origin.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKPredicateKeyPathLogOrigin();
+
+    /**
+     * The key path you use to create predicates that query by the dose event's scheduled date.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKPredicateKeyPathScheduledDate();
+
+    /**
+     * The key path you use to create predicates that query by the dose event's medication concept identifier.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKPredicateKeyPathMedicationConceptIdentifier();
+
+    /**
+     * Medication Tracking
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKMedicationDoseEventTypeIdentifierMedicationDoseEvent();
+
+    /**
+     * Medication Tracking
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKDataTypeIdentifierUserAnnotatedMedicationConcept();
+
+    /**
+     * The domain that represents medication concepts.
+     * 
+     * Use with identifiers for medications, such as ibuprofen or insulin.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKHealthConceptDomainMedication();
+
+    /**
+     * The medication comes in capsule form, such as a hard-shell capsule or softgel.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKMedicationGeneralFormCapsule();
+
+    /**
+     * The medication is applied as a cream.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKMedicationGeneralFormCream();
+
+    /**
+     * The medication is administered through a device, such as an infusion pump for controlled fluid delivery.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKMedicationGeneralFormDevice();
+
+    /**
+     * The medication is taken as drops, for example eye drops or ear drops.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKMedicationGeneralFormDrops();
+
+    /**
+     * The medication is applied as a foam.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKMedicationGeneralFormFoam();
+
+    /**
+     * The medication is applied as a gel.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKMedicationGeneralFormGel();
+
+    /**
+     * The medication is delivered through an inhaler.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKMedicationGeneralFormInhaler();
+
+    /**
+     * The medication is given as an injection.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKMedicationGeneralFormInjection();
+
+    /**
+     * The medication is taken as a liquid, such as a syrup.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKMedicationGeneralFormLiquid();
+
+    /**
+     * The medication is applied as a lotion.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKMedicationGeneralFormLotion();
+
+    /**
+     * The medication is applied as an ointment.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKMedicationGeneralFormOintment();
+
+    /**
+     * The medication is applied as a patch worn on the skin.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKMedicationGeneralFormPatch();
+
+    /**
+     * The medication is taken as a powder.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKMedicationGeneralFormPowder();
+
+    /**
+     * The medication is delivered as a spray, for example a nasal spray or throat spray.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKMedicationGeneralFormSpray();
+
+    /**
+     * The medication is delivered as a suppository.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKMedicationGeneralFormSuppository();
+
+    /**
+     * The medication comes in tablet form, such as a pill or caplet.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKMedicationGeneralFormTablet();
+
+    /**
+     * The medication is applied topically in a form that wasn't specified.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKMedicationGeneralFormTopical();
+
+    /**
+     * The system doesn't know the general form of the medication.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKMedicationGeneralFormUnknown();
+
+    /**
+     * The key path you use to create predicates for the medication's archived status.
+     * 
+     * Use to predicate against the ``HKUserAnnotatedMedication/isArchived`` property of a medication.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKUserAnnotatedMedicationPredicateKeyPathIsArchived();
+
+    /**
+     * The key path you use to create predicates for whether or not a medication has a schedule.
+     * 
+     * Use to predicate against the ``HKUserAnnotatedMedication/hasSchedule`` property of a medication.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKUserAnnotatedMedicationPredicateKeyPathHasSchedule();
 }

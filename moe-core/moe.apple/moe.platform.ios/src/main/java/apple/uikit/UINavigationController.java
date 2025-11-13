@@ -283,6 +283,9 @@ public class UINavigationController extends UIViewController {
     public native UINavigationController initWithRootViewController(@NotNull UIViewController rootViewController);
 
     /**
+     * The interactive pop gesture recognizes on the leading screen edge and initiates an interactive pop.
+     * This property should only be used to set up failure requirements with it.
+     * 
      * API-Since: 7.0
      */
     @Nullable
@@ -528,4 +531,16 @@ public class UINavigationController extends UIViewController {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The interactive content pop gesture recognizes on the entire content area of the navigation controller
+     * in cases that are not covered by the interactive pop gesture recognizer and initiates an interactive pop.
+     * This property should only be used to set up failure requirements with it.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("interactiveContentPopGestureRecognizer")
+    @Nullable
+    public native UIGestureRecognizer interactiveContentPopGestureRecognizer();
 }

@@ -27,8 +27,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVAssetDownloadContentConfiguration
- * 
  * Represents the configuration consisting of variant and the variant's media options.
  * 
  * API-Since: 15.0
@@ -133,8 +131,6 @@ public class AVAssetDownloadContentConfiguration extends NSObject implements NSC
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
-     * [@property] mediaSelections
-     * 
      * An array of media selections obtained from the AVAsset.
      * 
      * If a media selection is not provided, automatic media selection associated with the asset will be used.
@@ -160,8 +156,6 @@ public class AVAssetDownloadContentConfiguration extends NSObject implements NSC
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property] mediaSelections
-     * 
      * An array of media selections obtained from the AVAsset.
      * 
      * If a media selection is not provided, automatic media selection associated with the asset will be used.
@@ -173,8 +167,6 @@ public class AVAssetDownloadContentConfiguration extends NSObject implements NSC
     public native void setMediaSelections(@NotNull NSArray<? extends AVMediaSelection> value);
 
     /**
-     * [@property] variantQualifiers
-     * 
      * An array of variant qualifiers.
      * 
      * The qualifiers are expected to be added in the preferential order and will be evaluated in that order until the
@@ -202,8 +194,6 @@ public class AVAssetDownloadContentConfiguration extends NSObject implements NSC
     public static native Class superclass_static();
 
     /**
-     * [@property] variantQualifiers
-     * 
      * An array of variant qualifiers.
      * 
      * The qualifiers are expected to be added in the preferential order and will be evaluated in that order until the

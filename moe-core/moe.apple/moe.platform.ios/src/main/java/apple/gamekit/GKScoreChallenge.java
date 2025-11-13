@@ -45,7 +45,9 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 6.0
+ * Deprecated-Since: 26.0
  */
+@Deprecated
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -134,6 +136,7 @@ public class GKScoreChallenge extends GKChallenge {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @Deprecated
     @Generated
     @Selector("loadReceivedChallengesWithCompletionHandler:")
     public static native void loadReceivedChallengesWithCompletionHandler(

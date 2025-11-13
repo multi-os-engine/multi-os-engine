@@ -31,8 +31,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * [@protocol] AVVideoCompositing
- * 
  * Defines properties and methods for custom video compositors
  * 
  * For each AVFoundation object of class AVPlayerItem, AVAssetExportSession, AVAssetImageGenerator, or
@@ -60,15 +58,13 @@ import org.jetbrains.annotations.Nullable;
 @ObjCProtocolName("AVVideoCompositing")
 public interface AVVideoCompositing {
     /**
-     * cancelAllPendingVideoCompositionRequests
-     * 
      * Directs a custom video compositor object to cancel or finish all pending video composition requests
      * 
      * When receiving this message, a custom video compositor must block until it has either cancelled all pending frame
      * requests,
      * and called the finishCancelledRequest callback for each of them, or, if cancellation is not possible, finished
      * processing of all the frames
-     * and called the finishWithComposedVideoFrame: callback for each of them.
+     * and called the finishWithComposedVideoFrame: or finishWithComposedTaggedBufferGroup: callback for each of them.
      * 
      * API-Since: 7.0
      */
@@ -80,8 +76,6 @@ public interface AVVideoCompositing {
     }
 
     /**
-     * renderContextChanged:
-     * 
      * Called to notify the custom compositor that a composition will switch to a different render context
      * 
      * Instances of classes implementing the AVVideoComposting protocol can implement this method to be notified when
@@ -89,26 +83,28 @@ public interface AVVideoCompositing {
      * instances
      * being immutable, such a change will occur every time there is a change in the video composition parameters.
      * 
-     * API-Since: 7.0
+     * - Parameter newRenderContext: The render context that will be handling the video composition from this point
      * 
-     * @param newRenderContext
-     *                         The render context that will be handling the video composition from this point
+     * API-Since: 7.0
      */
     @Generated
     @Selector("renderContextChanged:")
     void renderContextChanged(@NotNull AVVideoCompositionRenderContext newRenderContext);
 
     /**
-     * Indicates the pixel buffer attributes required by the video compositor for new buffers that it creates
-     * for processing. The property is required to provide kCVPixelBufferPixelFormatTypeKey along with attributes for
-     * which the compositor needs specific values to work properly. Omitted attributes will be supplied by the
-     * composition engine to allow for the best performance. If the attribute kCVPixelBufferPixelFormatTypeKey is
-     * missing an exception will be raised.
-     * The getter for requiredPixelBufferAttributesForRenderContext is typically invoked prior to the creation of
-     * a new render context; the combination of the attributes in the returned value and the additional attributes
-     * supplied by the composition engine will be used in the creation of subsequent render context's pixelBuffers.
-     * This property is queried once before any composition request is sent to the compositor. Changing
-     * required buffer attributes afterwards is not supported.
+     * Indicates the pixel buffer attributes required by the video compositor for new buffers that it creates for
+     * processing.
+     * 
+     * The property is required to provide kCVPixelBufferPixelFormatTypeKey along with attributes for which the
+     * compositor needs specific values to work properly. Omitted attributes will be supplied by the composition engine
+     * to allow for the best performance. If the attribute kCVPixelBufferPixelFormatTypeKey is missing an exception will
+     * be raised. The getter for requiredPixelBufferAttributesForRenderContext is typically invoked prior to the
+     * creation of a new render context; the combination of the attributes in the returned value and the additional
+     * attributes supplied by the composition engine will be used in the creation of subsequent render context's
+     * pixelBuffers.
+     * 
+     * This property is queried once before any composition request is sent to the compositor. Changing required buffer
+     * attributes afterwards is not supported.
      * 
      * API-Since: 7.0
      */
@@ -119,16 +115,16 @@ public interface AVVideoCompositing {
 
     /**
      * Indicates the kinds of source frame pixel buffer attributes a video compositor can accept as input.
-     * The property is required to provide kCVPixelBufferPixelFormatTypeKey along with the attributes
-     * for which the compositor needs specific values to work properly. If the attribute
-     * kCVPixelBufferPixelFormatTypeKey
-     * is missing an exception will be raised. If the custom compositor is meant to be used with an
-     * AVVideoCompositionCoreAnimationTool
-     * created using the videoCompositionCoreAnimationToolWithAdditionalLayer constructor, kCVPixelFormatType_32BGRA
-     * should be indicated as one of the supported pixel format types.
-     * Missing attributes will be set by the composition engine to values allowing the best performance.
-     * This property is queried once before any composition request is sent to the compositor. Changing
-     * source buffer attributes afterwards is not supported.
+     * 
+     * The property is required to provide kCVPixelBufferPixelFormatTypeKey along with the attributes for which the
+     * compositor needs specific values to work properly. If the attribute kCVPixelBufferPixelFormatTypeKey is missing
+     * an exception will be raised. If the custom compositor is meant to be used with an
+     * AVVideoCompositionCoreAnimationTool created using the videoCompositionCoreAnimationToolWithAdditionalLayer
+     * constructor, kCVPixelFormatType_32BGRA should be indicated as one of the supported pixel format types.
+     * 
+     * Missing attributes will be set by the composition engine to values allowing the best performance. This property
+     * is queried once before any composition request is sent to the compositor. Changing source buffer attributes
+     * afterwards is not supported.
      * 
      * API-Since: 7.0
      */
@@ -138,8 +134,6 @@ public interface AVVideoCompositing {
     NSDictionary<String, ?> sourcePixelBufferAttributes();
 
     /**
-     * startVideoCompositionRequest:
-     * 
      * Directs a custom video compositor object to create a new pixel buffer composed asynchronously from a collection
      * of sources.
      * 
@@ -158,19 +152,16 @@ public interface AVVideoCompositing {
      * cropping needed,
      * then the appropriate source pixel buffer may be returned (after CFRetain has been called on it).
      * 
-     * API-Since: 7.0
+     * - Parameter asyncVideoCompositionRequest: An instance of AVAsynchronousVideoCompositionRequest that provides
+     * context for the requested composition.
      * 
-     * @param asyncVideoCompositionRequest
-     *                                     An instance of AVAsynchronousVideoCompositionRequest that provides context
-     *                                     for the requested composition.
+     * API-Since: 7.0
      */
     @Generated
     @Selector("startVideoCompositionRequest:")
     void startVideoCompositionRequest(@NotNull AVAsynchronousVideoCompositionRequest asyncVideoCompositionRequest);
 
     /**
-     * [@property] supportsWideColorSourceFrames
-     * 
      * Indicates that clients can handle frames that contains wide color properties.
      * 
      * Controls whether the client will receive frames that contain wide color information. Care should be taken to
@@ -186,8 +177,6 @@ public interface AVVideoCompositing {
     }
 
     /**
-     * anticipateRenderingUsingHint:
-     * 
      * Informs a custom video compositor about upcoming rendering requests.
      * 
      * In the method the compositor can load composition resources such as overlay images which will be needed in the
@@ -207,10 +196,9 @@ public interface AVVideoCompositing {
      * The method is synchronous. The implementation should return quickly because otherwise the playback would stall
      * and cause frame drops.
      * 
-     * API-Since: 13.0
+     * - Parameter renderHint: Information about the upcoming composition requests.
      * 
-     * @param renderHint
-     *                   Information about the upcoming composition requests.
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -220,8 +208,6 @@ public interface AVVideoCompositing {
     }
 
     /**
-     * prerollForRenderingUsingHint:
-     * 
      * Tell a custom video compositor to perform any work in prerolling phase.
      * 
      * The framework may perform prerolling to load media data to prime the render pipelines for smoother playback. This
@@ -234,10 +220,9 @@ public interface AVVideoCompositing {
      * 
      * The method is synchronous. The prerolling won't finish until the method returns.
      * 
-     * API-Since: 13.0
+     * - Parameter renderHint: Information about the upcoming composition requests.
      * 
-     * @param renderHint
-     *                   Information about the upcoming composition requests.
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -247,8 +232,6 @@ public interface AVVideoCompositing {
     }
 
     /**
-     * [@property] supportsHDRSourceFrames
-     * 
      * Indicates that the client's video compositor can handle frames that contain high dynamic range (HDR) properties.
      * 
      * Controls whether the client will receive frames that contain HDR information.
@@ -272,6 +255,16 @@ public interface AVVideoCompositing {
     @IsOptional
     @Selector("canConformColorOfSourceFrames")
     default boolean canConformColorOfSourceFrames() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("supportsSourceTaggedBuffers")
+    default boolean supportsSourceTaggedBuffers() {
         throw new java.lang.UnsupportedOperationException();
     }
 }

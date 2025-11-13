@@ -47,6 +47,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * View controller to manage turn-based matches, invite friends and perform automatching. Present modally from the top
+ * view controller.
+ * 
  * API-Since: 5.0
  */
 @Generated

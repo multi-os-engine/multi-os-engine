@@ -27,8 +27,6 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * AVMetricPlayerItemRateChangeEvent
- * 
  * Represents a metric event when playback rate change occurred.
  * 
  * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
@@ -137,8 +135,6 @@ public class AVMetricPlayerItemRateChangeEvent extends AVMetricEvent {
     public static native AVMetricPlayerItemRateChangeEvent new_objc();
 
     /**
-     * [@property] previousRate
-     * 
      * Returns the playback rate before the rate change event.
      * 
      * API-Since: 18.0
@@ -148,8 +144,6 @@ public class AVMetricPlayerItemRateChangeEvent extends AVMetricEvent {
     public native double previousRate();
 
     /**
-     * [@property] rate
-     * 
      * Returns the playback rate after the rate change event.
      * 
      * API-Since: 18.0
@@ -190,8 +184,6 @@ public class AVMetricPlayerItemRateChangeEvent extends AVMetricEvent {
     public static native boolean useStoredAccessor();
 
     /**
-     * [@property] variant
-     * 
      * Returns the variant being played at the time of rate change. If no value is present, returns nil.
      * 
      * API-Since: 18.0

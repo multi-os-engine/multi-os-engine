@@ -27,8 +27,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import apple.foundation.protocol.NSCopying;
+import apple.metal.protocol.MTL4Compiler;
+import apple.metalfx.protocol.MTL4FXSpatialScaler;
 
 /**
+ * A set of properties that configure a spatial scaling effect, and a factory method that creates the effect.
+ * 
  * API-Since: 16.0
  */
 @Generated
@@ -85,7 +89,10 @@ public class MTLFXSpatialScalerDescriptor extends NSObject implements NSCopying 
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * The default for colorProcessingMode is MTLFXSpatialScalerColorProcessingMode_Perceptual
+     * The color space of the input color texture for the spatial scaler you create with this descriptor.
+     * 
+     * This property's default value is
+     * ``MTLFXSpatialScalerColorProcessingMode/MTLFXSpatialScalerColorProcessingModePerceptual``.
      * 
      * API-Since: 16.0
      */
@@ -95,8 +102,7 @@ public class MTLFXSpatialScalerDescriptor extends NSObject implements NSCopying 
     public native long colorProcessingMode();
 
     /**
-     * These properties must be set to the respective Metal pixel formats for each texture that will be used with the
-     * scaler.
+     * The pixel format of the input color texture for the spatial scaler you create with this descriptor.
      * 
      * API-Since: 16.0
      */
@@ -123,6 +129,8 @@ public class MTLFXSpatialScalerDescriptor extends NSObject implements NSCopying 
     public native MTLFXSpatialScalerDescriptor init();
 
     /**
+     * The height of the input color texture for the spatial scaler you create with this descriptor.
+     * 
      * API-Since: 16.0
      */
     @Generated
@@ -131,6 +139,8 @@ public class MTLFXSpatialScalerDescriptor extends NSObject implements NSCopying 
     public native long inputHeight();
 
     /**
+     * The width of the input color texture for the spatial scaler you create with this descriptor.
+     * 
      * API-Since: 16.0
      */
     @Generated
@@ -166,8 +176,12 @@ public class MTLFXSpatialScalerDescriptor extends NSObject implements NSCopying 
     public static native MTLFXSpatialScalerDescriptor new_objc();
 
     /**
-     * The following method is used to instantiate the effect encoder for a given
-     * Metal device.
+     * Creates a spatial scaler instance for a Metal device.
+     * 
+     * - Parameters:
+     * - device: The Metal device that creates the spatial scaler.
+     * - Returns:
+     * A new spatial scaler instance upon success, or `nil` otherwise.
      * 
      * API-Since: 16.0
      */
@@ -179,6 +193,8 @@ public class MTLFXSpatialScalerDescriptor extends NSObject implements NSCopying 
             @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     /**
+     * The height of the output color texture for the spatial scaler you create with this descriptor.
+     * 
      * API-Since: 16.0
      */
     @Generated
@@ -187,6 +203,8 @@ public class MTLFXSpatialScalerDescriptor extends NSObject implements NSCopying 
     public native long outputHeight();
 
     /**
+     * The pixel format of the output texture for the spatial scaler you create with this descriptor.
+     * 
      * API-Since: 16.0
      */
     @Generated
@@ -195,6 +213,8 @@ public class MTLFXSpatialScalerDescriptor extends NSObject implements NSCopying 
     public native long outputTextureFormat();
 
     /**
+     * The width of the output color texture for the spatial scaler you create with this descriptor.
+     * 
      * API-Since: 16.0
      */
     @Generated
@@ -211,7 +231,10 @@ public class MTLFXSpatialScalerDescriptor extends NSObject implements NSCopying 
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * The default for colorProcessingMode is MTLFXSpatialScalerColorProcessingMode_Perceptual
+     * The color space of the input color texture for the spatial scaler you create with this descriptor.
+     * 
+     * This property's default value is
+     * ``MTLFXSpatialScalerColorProcessingMode/MTLFXSpatialScalerColorProcessingModePerceptual``.
      * 
      * API-Since: 16.0
      */
@@ -220,8 +243,7 @@ public class MTLFXSpatialScalerDescriptor extends NSObject implements NSCopying 
     public native void setColorProcessingMode(@NInt long value);
 
     /**
-     * These properties must be set to the respective Metal pixel formats for each texture that will be used with the
-     * scaler.
+     * The pixel format of the input color texture for the spatial scaler you create with this descriptor.
      * 
      * API-Since: 16.0
      */
@@ -230,6 +252,8 @@ public class MTLFXSpatialScalerDescriptor extends NSObject implements NSCopying 
     public native void setColorTextureFormat(@NUInt long value);
 
     /**
+     * The height of the input color texture for the spatial scaler you create with this descriptor.
+     * 
      * API-Since: 16.0
      */
     @Generated
@@ -237,6 +261,8 @@ public class MTLFXSpatialScalerDescriptor extends NSObject implements NSCopying 
     public native void setInputHeight(@NUInt long value);
 
     /**
+     * The width of the input color texture for the spatial scaler you create with this descriptor.
+     * 
      * API-Since: 16.0
      */
     @Generated
@@ -244,6 +270,8 @@ public class MTLFXSpatialScalerDescriptor extends NSObject implements NSCopying 
     public native void setInputWidth(@NUInt long value);
 
     /**
+     * The height of the output color texture for the spatial scaler you create with this descriptor.
+     * 
      * API-Since: 16.0
      */
     @Generated
@@ -251,6 +279,8 @@ public class MTLFXSpatialScalerDescriptor extends NSObject implements NSCopying 
     public native void setOutputHeight(@NUInt long value);
 
     /**
+     * The pixel format of the output texture for the spatial scaler you create with this descriptor.
+     * 
      * API-Since: 16.0
      */
     @Generated
@@ -258,6 +288,8 @@ public class MTLFXSpatialScalerDescriptor extends NSObject implements NSCopying 
     public native void setOutputTextureFormat(@NUInt long value);
 
     /**
+     * The width of the output color texture for the spatial scaler you create with this descriptor.
+     * 
      * API-Since: 16.0
      */
     @Generated
@@ -273,7 +305,13 @@ public class MTLFXSpatialScalerDescriptor extends NSObject implements NSCopying 
     public static native Class superclass_static();
 
     /**
-     * Class method for determining support
+     * Returns a Boolean value that indicates whether the spatial scaler works with a GPU.
+     * 
+     * - Parameters:
+     * - device: An ``MTLDevice`` instance that represents a GPU.
+     * 
+     * - Returns: <doc://com.apple.documentation/documentation/swift/true> if the device supports spatial scaling,
+     * <doc://com.apple.documentation/documentation/swift/false> otherwise.
      * 
      * API-Since: 16.0
      */
@@ -297,4 +335,38 @@ public class MTLFXSpatialScalerDescriptor extends NSObject implements NSCopying 
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Creates a spatial scaler instance for a Metal device.
+     * 
+     * - Parameters:
+     * - device: The Metal device that creates the spatial scaler.
+     * - compiler: A compiler instance this method can use to build pipeline state objects.
+     * - Returns:
+     * A new spatial scaler instance upon success, or `nil` otherwise.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("newSpatialScalerWithDevice:compiler:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    public native MTL4FXSpatialScaler newSpatialScalerWithDeviceCompiler(
+            @Mapped(ObjCObjectMapper.class) @NotNull MTLDevice device,
+            @Mapped(ObjCObjectMapper.class) @NotNull MTL4Compiler compiler);
+
+    /**
+     * Queries whether a Metal device supports spatial scaling compatible with Metal 4.
+     * 
+     * - Parameters:
+     * - device: The GPU device for which this methods tests support.
+     * 
+     * - Returns: <doc://com.apple.documentation/documentation/swift/true> if the device supports spatial scaling with
+     * Metal 4, <doc://com.apple.documentation/documentation/swift/false> otherwise.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("supportsMetal4FX:")
+    public static native boolean supportsMetal4FX(@Mapped(ObjCObjectMapper.class) @NotNull MTLDevice device);
 }

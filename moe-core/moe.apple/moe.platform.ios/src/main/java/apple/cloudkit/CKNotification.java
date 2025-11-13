@@ -265,9 +265,9 @@ public class CKNotification extends NSObject {
      * Whether or not the notification fully represents what the server wanted to send.
      * 
      * Push notifications have a limited size. In some cases, CloudKit servers may not be able to send you a full
-     * `CKNotification`'s worth of info in one push.
+     * ``CKNotification``'s worth of info in one push.
      * In those cases, `isPruned` returns `true`.
-     * The order in which properties are dropped from a push notification is defined in each `CKNotification` subclass
+     * The order in which properties are dropped from a push notification is defined in each ``CKNotification`` subclass
      * below.
      * 
      * API-Since: 8.0
@@ -285,7 +285,7 @@ public class CKNotification extends NSObject {
     public native CKNotificationID notificationID();
 
     /**
-     * When you instantiate a `CKNotification` from a remote notification dictionary, you will get back a concrete
+     * When you instantiate a ``CKNotification`` from a remote notification dictionary, you will get back a concrete
      * subclass defined below. Use `notificationType` to avoid `as?` or `-isKindOfClass:` checks.
      * 
      * API-Since: 8.0

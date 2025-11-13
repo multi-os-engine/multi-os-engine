@@ -53,6 +53,8 @@ OVERRIDES: Dict[str, FrameworkOverride] = {
     'Security': FrameworkOverride('Security', include_headers=['CipherSuite.h', 'SecureTransport.h']),
     'SystemConfiguration': FrameworkOverride('SystemConfiguration',
                                              include_headers=['CaptiveNetwork.h', 'DHCPClientPreferences.h']),
+    'UIUtilities': FrameworkOverride('UIUtilities',
+                                             include_headers=['UICoordinateSpace.h', 'UIDefines.h', 'UIGeometry.h']),
 }
 
 
@@ -125,9 +127,9 @@ def generate_source(headers: List[str]) -> str:
 def main():
     with open('platform.natjgen') as f:
         base_sdk: str = json.load(f)['base-sdk']
-    framework_path = os.path.join(base_sdk, 'System/Library/Frameworks')
 
-    latest_headers = scan_headers(framework_path)
+    latest_headers = scan_headers(os.path.join(base_sdk, 'System/Library/Frameworks'))
+    latest_headers += scan_headers(os.path.join(base_sdk, 'System/Library/SubFrameworks'))
     current_headers = load_existing_headers()
 
     print('Existing:         ', current_headers)

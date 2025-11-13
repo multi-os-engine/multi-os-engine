@@ -755,4 +755,28 @@ public class CIRAWFilter extends CIFilter {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 19.0
+     */
+    @Generated
+    @Selector("isHighlightRecoveryEnabled")
+    public native boolean isHighlightRecoveryEnabled();
+
+    /**
+     * A boolean value to control if highlight recovery is enabled or not.
+     * The default value is true.
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @Selector("isHighlightRecoverySupported")
+    public native boolean isHighlightRecoverySupported();
+
+    /**
+     * API-Since: 19.0
+     */
+    @Generated
+    @Selector("setHighlightRecoveryEnabled:")
+    public native void setHighlightRecoveryEnabled(boolean value);
 }

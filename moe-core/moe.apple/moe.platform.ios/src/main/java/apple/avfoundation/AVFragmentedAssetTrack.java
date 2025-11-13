@@ -25,6 +25,15 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * A subclass of AVAssetTrack for handling tracks of fragmented assets. An AVFragmentedAssetTrack is capable of changing
+ * the values of certain of its properties, if its parent asset is associated with an instance of
+ * AVFragmentedAssetMinder when one or more fragments are appended to the underlying media resource.
+ * 
+ * While its parent asset is associated with an AVFragmentedAssetMinder, AVFragmentedAssetTrack posts
+ * AVAssetTrackTimeRangeDidChangeNotification and AVAssetTrackSegmentsDidChangeNotification whenever new fragments are
+ * detected, as appropriate.
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 12.0
  */
 @Generated

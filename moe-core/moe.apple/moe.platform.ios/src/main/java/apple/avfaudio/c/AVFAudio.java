@@ -640,7 +640,7 @@ public final class AVFAudio {
      * Only valid with AVAudioSessionCategoryPlayAndRecord. Appropriate for Voice over IP
      * (VoIP) applications. Reduces the number of allowable audio routes to be only those
      * that are appropriate for VoIP applications and may engage appropriate system-supplied
-     * signal processing. Has the side effect of setting AVAudioSessionCategoryOptionAllowBluetooth.
+     * signal processing. Has the side effect of setting AVAudioSessionCategoryOptionAllowBluetoothHFP.
      * Using this mode without the VoiceProcessing IO unit or AVAudioEngine with voice processing enabled will result in
      * the following:
      * - Chat-specific signal processing such as echo cancellation or automatic gain correction will not be loaded
@@ -705,7 +705,7 @@ public final class AVFAudio {
      * Only valid with kAudioSessionCategory_PlayAndRecord. Reduces the number of allowable audio
      * routes to be only those that are appropriate for video chat applications. May engage appropriate
      * system-supplied signal processing. Has the side effect of setting
-     * AVAudioSessionCategoryOptionAllowBluetooth and AVAudioSessionCategoryOptionDefaultToSpeaker.
+     * AVAudioSessionCategoryOptionAllowBluetoothHFP and AVAudioSessionCategoryOptionDefaultToSpeaker.
      * Using this mode without the VoiceProcessing IO unit or AVAudioEngine with voice processing enabled will result in
      * the following:
      * - Chat-specific signal processing such as echo cancellation or automatic gain correction will not be loaded
@@ -873,7 +873,6 @@ public final class AVFAudio {
      * 
      * API-Since: 6.0
      */
-    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -887,7 +886,6 @@ public final class AVFAudio {
      * 
      * API-Since: 6.0
      */
-    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -901,7 +899,6 @@ public final class AVFAudio {
      * 
      * API-Since: 7.0
      */
-    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -915,7 +912,6 @@ public final class AVFAudio {
      * 
      * API-Since: 6.0
      */
-    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -932,7 +928,6 @@ public final class AVFAudio {
      * 
      * API-Since: 8.0
      */
-    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -952,7 +947,6 @@ public final class AVFAudio {
      * 
      * API-Since: 15.0
      */
-    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -964,7 +958,6 @@ public final class AVFAudio {
      * 
      * API-Since: 15.0
      */
-    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -976,7 +969,6 @@ public final class AVFAudio {
      * 
      * API-Since: 6.0
      */
-    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -987,7 +979,6 @@ public final class AVFAudio {
      * 
      * API-Since: 6.0
      */
-    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -998,7 +989,6 @@ public final class AVFAudio {
      * 
      * API-Since: 14.5
      */
-    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1021,7 +1011,6 @@ public final class AVFAudio {
      * Deprecated-Since: 14.5
      * Deprecated-Message: No longer supported - see AVAudioSessionInterruptionReasonKey
      */
-    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1034,7 +1023,6 @@ public final class AVFAudio {
      * 
      * API-Since: 6.0
      */
-    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1045,7 +1033,6 @@ public final class AVFAudio {
      * 
      * API-Since: 6.0
      */
-    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1057,7 +1044,6 @@ public final class AVFAudio {
      * 
      * API-Since: 8.0
      */
-    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1483,7 +1469,6 @@ public final class AVFAudio {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    @NotNull
     public static native String AVAudioSessionRenderingModeChangeNotification();
 
     /**
@@ -1494,7 +1479,6 @@ public final class AVFAudio {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    @NotNull
     public static native String AVAudioSessionRenderingCapabilitiesChangeNotification();
 
     /**
@@ -1506,7 +1490,6 @@ public final class AVFAudio {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    @NotNull
     public static native String AVAudioSessionRenderingModeNewRenderingModeKey();
 
     /**
@@ -1526,7 +1509,7 @@ public final class AVFAudio {
      * Notification sent to registered listeners when the application's input is muted
      * or unmuted.
      * 
-     * Check the notification's userInfo dictionary for the mute state AVAudioApplicationInputMuteStateKey
+     * Check the notification's userInfo dictionary for the mute state `AVAudioApplicationMuteStateKey`
      * which will have a boolean value 0 for unmuted or value 1 for muted.
      * [@note] this notification will only be dispatched for state changes when there is an active record session (i.e.
      * record or playAndRecord category).
@@ -1570,7 +1553,6 @@ public final class AVFAudio {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    @NotNull
     public static native String AVAudioSessionMicrophoneInjectionCapabilitiesChangeNotification();
 
     /**
@@ -1583,6 +1565,102 @@ public final class AVFAudio {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    @NotNull
     public static native String AVAudioSessionMicrophoneInjectionIsAvailableKey();
+
+    /**
+     * value is an AVAudioDynamicRangeControlConfiguration constant - see below.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVEncoderDynamicRangeControlConfigurationKey();
+
+    /**
+     * value is an AVAudioContentSource constant - see below.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVEncoderContentSourceKey();
+
+    /**
+     * value is an integer larger than 2. Recommended value is 75
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVEncoderASPFrequencyKey();
+
+    /**
+     * Appropriate for applications playing short-form video content.
+     * 
+     * Only valid with ``AVAudioSessionCategoryPlayback``.
+     * Not applicable with ``AVAudioSessionRouteSharingPolicy/AVAudioSessionRouteSharingPolicyLongFormAudio``,
+     * or ``AVAudioSessionRouteSharingPolicy/AVAudioSessionRouteSharingPolicyLongFormVideo``.
+     * 
+     * When this mode is set:
+     * - system will make informed decisions to automatically unmute the output of the media if the user shows intention
+     * of unmuting.
+     * - When auto-unmuted, ``AVAudioSessionUserIntentToUnmuteOutputNotification`` and
+     * ``AVAudioSessionOutputMuteStateChangeNotification`` will be sent.
+     * - if the session is output muted, system may prevent interrupting other active audio apps.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioSessionModeShortFormVideo();
+
+    /**
+     * Notification sent to registered listeners when session's output mute state changes.
+     * 
+     * The userInfo dictionary will contain the updated output mute value as accessed by ``AVAudioSessionMuteStateKey``
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioSessionOutputMuteStateChangeNotification();
+
+    /**
+     * Keys for ``AVAudioSessionOutputMuteStateChangeNotification``
+     * Value is `NSNumber` type with boolean value 0 for unmuted or value 1 for muted (samples zeroed out)
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioSessionMuteStateKey();
+
+    /**
+     * Notification sent to registered listeners when the application's output is muted and user hints to unmute.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioSessionUserIntentToUnmuteOutputNotification();
+
+    /**
+     * Notification sent to registered listeners when there are changes in ``availableInputs``.
+     * 
+     * There is no payload (userInfo dictionary) associated with the ``AVAudioSessionAvailableInputsChangeNotification``
+     * notification.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioSessionAvailableInputsChangeNotification();
 }

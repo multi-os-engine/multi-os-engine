@@ -499,6 +499,9 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Selector("imageForSearchBarIcon:state:")
     public native UIImage imageForSearchBarIconState(@NInt long icon, @NUInt long state);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("init")
     public native UISearchBar init();
@@ -1232,4 +1235,14 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @IsOptional
     @Selector("setConversationContext:")
     public native void setConversationContext(@Nullable UIConversationContext value);
+
+    @Generated
+    @IsOptional
+    @Selector("allowsNumberPadPopover")
+    public native boolean allowsNumberPadPopover();
+
+    @Generated
+    @IsOptional
+    @Selector("setAllowsNumberPadPopover:")
+    public native void setAllowsNumberPadPopover(boolean value);
 }

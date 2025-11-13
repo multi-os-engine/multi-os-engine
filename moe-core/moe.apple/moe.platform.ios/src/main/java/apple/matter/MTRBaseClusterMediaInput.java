@@ -137,7 +137,7 @@ public class MTRBaseClusterMediaInput extends MTRGenericBaseCluster {
     /**
      * Command HideInputStatus
      * 
-     * Upon receipt, this SHALL hide the input list from the screen.
+     * Upon receipt, this command SHALL hide the input list from the screen.
      * 
      * API-Since: 16.4
      */
@@ -734,8 +734,7 @@ public class MTRBaseClusterMediaInput extends MTRGenericBaseCluster {
     /**
      * Command RenameInput
      * 
-     * Upon receipt, this SHALL rename the input at a specific index in the Input List. Updates to the input name SHALL
-     * appear in the TV settings menus.
+     * Upon receipt, this command SHALL rename the input at a specific index in the Input List.
      * 
      * API-Since: 16.4
      */
@@ -780,7 +779,8 @@ public class MTRBaseClusterMediaInput extends MTRGenericBaseCluster {
     /**
      * Command SelectInput
      * 
-     * Upon receipt, this SHALL change the input on the media device to the input at a specific index in the Input List.
+     * Upon receipt, this command SHALL change the media input on the device to the input at a specific index in the
+     * Input List.
      * 
      * API-Since: 16.4
      */
@@ -854,7 +854,7 @@ public class MTRBaseClusterMediaInput extends MTRGenericBaseCluster {
     /**
      * Command ShowInputStatus
      * 
-     * Upon receipt, this SHALL display the active status of the input list on screen.
+     * Upon receipt, this command SHALL display the active status of the input list on screen.
      * 
      * API-Since: 16.4
      */

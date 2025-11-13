@@ -944,4 +944,164 @@ public class NSFileManager extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Asynchronously fetches the latest remote version of a given item from the server.
+     * 
+     * Use this method if uploading fails due to a version conflict and sync is paused.
+     * In this case, fetching the latest remote version allows you to inspect the newer item from the server, resolve
+     * the conflict, and resume uploading.
+     * 
+     * The version provided by this call depends on several factors:
+     * * If there is no newer version of the file on the server, the caller receives the current version of the file.
+     * * If the server has a newer version and sync isn't paused, this call replaces the local item and provides the
+     * version of the new item.
+     * * If the server has a newer version but sync is paused, the returned version points to a side location. In this
+     * case, call ``NSFileVersion/replaceItem(at:options:)`` on the provided version object to replace the local item
+     * with the newer item from the server.
+     * 
+     * If the device isn't connected to the network, the call may fail with ``NSFileReadUnknownError-enum.case``, with
+     * the underlying error of
+     * <doc://com.apple.documentation/documentation/FileProvider/NSFileProviderError/serverUnreachable>.
+     * 
+     * - Parameters:
+     * - url: The URL of the item for which to check the version.
+     * - completionHandler: A closure or block that the framework calls when the fetch action completes. It receives
+     * parameters of types ``NSFileVersion`` and ``NSError``. The error is `nil` if fetching the remote version
+     * succeeded; otherwise it indicates the error that caused the call to fail. In Swift, you can omit the completion
+     * handler, catching any error in a `do`-`catch` block and receiving the version as the return value.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("fetchLatestRemoteVersionOfItemAtURL:completionHandler:")
+    public native void fetchLatestRemoteVersionOfItemAtURLCompletionHandler(@NotNull NSURL url,
+            @ObjCBlock(name = "call_fetchLatestRemoteVersionOfItemAtURLCompletionHandler") @NotNull Block_fetchLatestRemoteVersionOfItemAtURLCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_fetchLatestRemoteVersionOfItemAtURLCompletionHandler {
+        @Generated
+        void call_fetchLatestRemoteVersionOfItemAtURLCompletionHandler(@Nullable NSFileVersion latestRemoteVersion,
+                @Nullable NSError error);
+    }
+
+    /**
+     * Asynchronously pauses sync of an item at the given URL.
+     * 
+     * Call this when opening an item to prevent sync from altering the contents of the URL.
+     * Once paused, the file provider will not upload local changes nor download remote changes.
+     * 
+     * While paused, call ``uploadLocalVersionOfUbiquitousItem(at:withConflictResolutionPolicy:completionHandler:)``
+     * when the document is in a stable state.
+     * This action keeps the server version as up-to-date as possible.
+     * 
+     * If the item is already paused, a second call to this method reports success.
+     * If the file provider is already applying changes to the item, the pause fails with an
+     * ``NSFileWriteUnknownError-enum.case``, with an underlying error that has domain ``NSPOSIXErrorDomain`` and code
+     * ``POSIXError/EBUSY``.
+     * If the pause fails, wait for the state to stabilize before retrying.
+     * Pausing also fails with ``CocoaError/featureUnsupported`` if `url` refers to a regular (non-package) directory.
+     * 
+     * Pausing sync is independent of the calling app's lifecycle; sync doesn't automatically resume if the app closes
+     * or crashes and relaunches later.
+     * To resume syncing, explicitly call ``resumeSyncForUbiquitousItem(at:with:completionHandler:)``.
+     * Always be sure to resume syncing before you close the item.
+     * 
+     * - Parameters:
+     * - url: The URL of the item for which to pause sync.
+     * - completionHandler: A closure or block that the framework calls when the pause action completes. It receives a
+     * single ``NSError`` parameter to indicate an error that prevented pausing; this value is `nil` if the pause
+     * succeeded. In Swift, you can omit the completion handler and catch the thrown error instead.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("pauseSyncForUbiquitousItemAtURL:completionHandler:")
+    public native void pauseSyncForUbiquitousItemAtURLCompletionHandler(@NotNull NSURL url,
+            @ObjCBlock(name = "call_pauseSyncForUbiquitousItemAtURLCompletionHandler") @NotNull Block_pauseSyncForUbiquitousItemAtURLCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_pauseSyncForUbiquitousItemAtURLCompletionHandler {
+        @Generated
+        void call_pauseSyncForUbiquitousItemAtURLCompletionHandler(@Nullable NSError error);
+    }
+
+    /**
+     * Asynchronously resumes the sync on a paused item using the given resume behavior.
+     * 
+     * Always call this method when your app closes an item to allow the file provider to sync local changes back to the
+     * server.
+     * 
+     * In most situations, the ``NSFileManagerResumeSyncBehavior/preserveLocalChanges`` behavior is the best choice to
+     * avoid any risk of data loss.
+     * 
+     * The resume call fails with ``CocoaError/featureUnsupported`` if `url` isn't currently paused.
+     * If the device isn't connected to the network, the call may fail with ``NSFileWriteUnknownError-enum.case``, with
+     * the underlying error of
+     * <doc://com.apple.documentation/documentation/FileProvider/NSFileProviderError/serverUnreachable>.
+     * 
+     * - Parameters:
+     * - url: The URL of the item for which to resume sync.
+     * - behavior: A ``NSFileManagerResumeSyncBehavior`` value that tells the file manager how to handle conflicts
+     * between local and remote versions of files.
+     * - completionHandler: A closure or block that the framework calls when the resume action completes. It receives a
+     * single ``NSError`` parameter to indicate an error that prevented the resume action; the value is `nil` if the
+     * resume succeeded. In Swift, you can omit the completion handler and catch the thrown error instead.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("resumeSyncForUbiquitousItemAtURL:withBehavior:completionHandler:")
+    public native void resumeSyncForUbiquitousItemAtURLWithBehaviorCompletionHandler(@NotNull NSURL url,
+            @NInt long behavior,
+            @ObjCBlock(name = "call_resumeSyncForUbiquitousItemAtURLWithBehaviorCompletionHandler") @NotNull Block_resumeSyncForUbiquitousItemAtURLWithBehaviorCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_resumeSyncForUbiquitousItemAtURLWithBehaviorCompletionHandler {
+        @Generated
+        void call_resumeSyncForUbiquitousItemAtURLWithBehaviorCompletionHandler(@Nullable NSError error);
+    }
+
+    /**
+     * Asynchronously uploads the local version of the item using the provided conflict resolution policy.
+     * 
+     * Once your app pauses a sync for an item, call this method every time your document is in a stable state.
+     * This action keeps the server version as up-to-date as possible.
+     * 
+     * If the server has a newer version than the one to which the app made changes, uploading fails with
+     * ``NSFileWriteUnknownError-enum.case``, with an underlying error of
+     * <doc://com.apple.documentation/documentation/FileProvider/NSFileProviderError/localVersionConflictingWithServer>.
+     * In this case, call ``FileManager/fetchLatestRemoteVersionOfItem(at:completionHandler:)``, rebase local changes on
+     * top of that version, and retry the upload.
+     * 
+     * If the device isn't connected to the network, the call may fail with ``NSFileWriteUnknownError-enum.case``, with
+     * the underlying error of
+     * <doc://com.apple.documentation/documentation/FileProvider/NSFileProviderError/serverUnreachable>.
+     * 
+     * - Parameters:
+     * - url: The URL of the item for which to check the version.
+     * - conflictResolutionPolicy: The policy the file manager applies if the local and server versions conflict.
+     * - completionHandler: A closure or block that the framework calls when the upload completes. It receives
+     * parameters of types ``NSFileVersion`` and ``NSError``. The error is `nil` if fetching the remote version
+     * succeeded; otherwise it indicates the error that caused the call to fail. In Swift, you can omit the completion
+     * handler, catching any error in a `do`-`catch` block and receiving the version as the return value.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("uploadLocalVersionOfUbiquitousItemAtURL:withConflictResolutionPolicy:completionHandler:")
+    public native void uploadLocalVersionOfUbiquitousItemAtURLWithConflictResolutionPolicyCompletionHandler(
+            @NotNull NSURL url, @NInt long conflictResolutionPolicy,
+            @ObjCBlock(name = "call_uploadLocalVersionOfUbiquitousItemAtURLWithConflictResolutionPolicyCompletionHandler") @NotNull Block_uploadLocalVersionOfUbiquitousItemAtURLWithConflictResolutionPolicyCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_uploadLocalVersionOfUbiquitousItemAtURLWithConflictResolutionPolicyCompletionHandler {
+        @Generated
+        void call_uploadLocalVersionOfUbiquitousItemAtURLWithConflictResolutionPolicyCompletionHandler(
+                @Nullable NSFileVersion uploadedVersion, @Nullable NSError error);
+    }
 }

@@ -142,6 +142,8 @@ import org.moe.natj.general.ptr.ConstDoublePtr;
 import apple.opaque.locale_t;
 import apple.struct.kevent;
 import apple.struct.kevent64_s;
+import apple.opaque.xpc_listener_t;
+import apple.opaque.xpc_peer_requirement_t;
 
 @Generated
 @Runtime(CRuntime.class)
@@ -11809,7 +11811,7 @@ public final class Globals {
     @Generated public static final double ENOTRECOVERABLE = 104.0;
     @Generated public static final double EOWNERDEAD = 105.0;
     @Generated public static final double EQFULL = 106.0;
-    @Generated public static final double ELAST = 106.0;
+    @Generated public static final double ELAST = 107.0;
     @Generated public static final double __DARWIN_CLK_TCK = 100.0;
     @Generated public static final double CHAR_BIT = 8.0;
     @Generated public static final double MB_LEN_MAX = 6.0;
@@ -12165,7 +12167,6 @@ public final class Globals {
     @Generated public static final double EXIT_FAILURE = 1.0;
     @Generated public static final double EXIT_SUCCESS = 0.0;
     @Generated public static final double RAND_MAX = 2.147483647E9;
-    @Generated public static final double __HAS_FIXED_CHK_PROTOTYPES = 1.0;
     @Generated public static final double TIME_UTC = 1.0;
     @Generated public static final double __bool_true_false_are_defined = 1.0;
     @Generated public static final double DYNAMIC_TARGETS_ENABLED = 0.0;
@@ -12268,11 +12269,7 @@ public final class Globals {
     @Generated public static final double MPO_IMMOVABLE_RECEIVE = 128.0;
     @Generated public static final double MPO_FILTER_MSG = 256.0;
     @Generated public static final double MPO_TG_BLOCK_TRACKING = 512.0;
-    @Generated public static final double MPO_SERVICE_PORT = 1024.0;
-    @Generated public static final double MPO_CONNECTION_PORT = 2048.0;
-    @Generated public static final double MPO_REPLY_PORT = 4096.0;
     @Generated public static final double MPO_ENFORCE_REPLY_PORT_SEMANTICS = 8192.0;
-    @Generated public static final double MPO_PROVISIONAL_REPLY_PORT = 16384.0;
     @Generated public static final double GUARD_TYPE_MACH_PORT = 1.0;
     @Generated public static final double MPG_STRICT = 1.0;
     @Generated public static final double MPG_IMMOVABLE_RECEIVE = 2.0;
@@ -13210,7 +13207,7 @@ public final class Globals {
     @Generated public static final double SHUT_RD = 0.0;
     @Generated public static final double SHUT_WR = 1.0;
     @Generated public static final double SHUT_RDWR = 2.0;
-    @Generated public static final double _DNS_SD_H = 2.600120012E9;
+    @Generated public static final double _DNS_SD_H = 2.881040018E9;
     @Generated public static final double DNS_SD_ORIGINAL_ENCODING_VERSION_NUMBER_MAX = 1.661E7;
     @Generated public static final double _DNS_SD_LIBDISPATCH = 1.0;
     @Generated public static final double kDNSServiceMaxServiceName = 64.0;
@@ -13773,7 +13770,6 @@ public final class Globals {
     @Generated public static final double __MAC_14_0 = 140000.0;
     @Generated public static final double __MAC_14_1 = 140100.0;
     @Generated public static final double __MAC_14_2 = 140200.0;
-    @Generated public static final double __IPHONE_14_4 = 140400.0;
     @Generated public static final double __IPHONE_15_5 = 150500.0;
     @Generated public static final double __IPHONE_15_6 = 150600.0;
     @Generated public static final double __IPHONE_16_3 = 160300.0;
@@ -14177,14 +14173,14 @@ public final class Globals {
      * 
      *                If NULL, an anonymous listener connection will be created. You can embed the
      *                ability to create new peer connections in an endpoint, which can be inserted
-     *                into a message and sent to another process .
+     *                into a message and sent to another process.
      * 
      * @param targetq
      *                The GCD queue to which the event handler block will be submitted. This
      *                parameter may be NULL, in which case the connection's target queue will be
      *                libdispatch's default target queue, defined as DISPATCH_TARGET_QUEUE_DEFAULT.
-     *                The target queue may be changed later with a call to
-     *                xpc_connection_set_target_queue().
+     *                The target queue may be changed prior to the connection being activated with
+     *                a call to xpc_connection_set_target_queue().
      * 
      * @return
      *         A new connection object. The caller is responsible for disposing of the
@@ -14225,14 +14221,11 @@ public final class Globals {
      * [@function] xpc_connection_set_target_queue
      * Sets the target queue of the given connection.
      * 
-     * Setting the target queue is asynchronous and non-preemptive and therefore
-     * this method will not interrupt the execution of an already-running event
-     * handler block. Setting the target queue may be likened to issuing a barrier
-     * to the connection which does the actual work of changing the target queue.
+     * Once a connection is activated, this method may no longer be called and the
+     * target queue may no longer be updated.
      * 
-     * The XPC runtime guarantees this non-preemptiveness even for concurrent target
-     * queues. If the target queue is a concurrent queue, then XPC still guarantees
-     * that there will never be more than one invocation of the connection's event
+     * Even if the target queue is a concurrent queue, XPC still guarantees that
+     * there will never be more than one invocation of the connection's event
      * handler block executing concurrently. If you wish to process events
      * concurrently, you can dispatch_async(3) to a concurrent queue from within
      * the event handler.
@@ -14291,7 +14284,7 @@ public final class Globals {
      * A connection may receive different events depending upon whether it is a
      * listener or not. Any connection may receive an error in its event handler.
      * But while normal connections may receive messages in addition to errors,
-     * listener connections will receive connections and and not messages.
+     * listener connections will receive connections and not messages.
      * 
      * Connections received by listeners are equivalent to those returned by
      * xpc_connection_create() with a non-NULL name argument and a NULL targetq
@@ -14299,6 +14292,17 @@ public final class Globals {
      * You must set an event handler and activate the connection. If you do not wish
      * to accept the connection, you may simply call xpc_connection_cancel() on it
      * and return. The runtime will dispose of it for you.
+     * 
+     * IMPORTANT: For peer connections received through a listener connection's
+     * event handler, you MUST either accept the connection by setting an event
+     * handler with xpc_connection_set_event_handler() and calling
+     * xpc_connection_resume(), or reject the connection by calling
+     * xpc_connection_cancel(). Failure to take one of these actions will result
+     * in the connection remaining in an undefined state, potentially causing
+     * resource leaks or preventing proper transaction cleanup. This requirement
+     * applies to all listener connections, including those created with
+     * xpc_connection_create_mach_service() and those managed automatically by
+     * xpc_main().
      * 
      * If there is an error in the connection, this handler will be invoked with the
      * error dictionary as its argument. This dictionary will be one of the well-
@@ -14601,10 +14605,11 @@ public final class Globals {
      * Cancellation is asynchronous and non-preemptive and therefore this method
      * will not interrupt the execution of an already-running event handler block.
      * If the event handler is executing at the time of this call, it will finish,
-     * and then the connection will be canceled, causing a final invocation of the
-     * event handler to be scheduled with the XPC_ERROR_CONNECTION_INVALID error.
-     * After that invocation, there will be no further invocations of the event
-     * handler.
+     * and then the connection will be canceled.
+     * 
+     * Canceling the connection will cause a final invocation of the event handler
+     * to be scheduled with the XPC_ERROR_CONNECTION_INVALID error. After that
+     * invocation, there will be no further invocations of the event handler.
      * 
      * The XPC runtime guarantees this non-preemptiveness even for concurrent target
      * queues.
@@ -14620,7 +14625,7 @@ public final class Globals {
 
     /**
      * [@function] xpc_connection_get_name
-     * Returns the name of the service with which the connections was created.
+     * Returns the name of the service with which the connection was created.
      * 
      * @param connection
      *                   The connection object which is to be examined.
@@ -14671,7 +14676,7 @@ public final class Globals {
 
     /**
      * [@function] xpc_connection_set_context
-     * Sets context on an connection.
+     * Sets context on a connection.
      * 
      * If you must manage the memory of the context object, you must set a finalizer
      * to dispose of it. If this method is called on a connection which already has
@@ -14748,7 +14753,7 @@ public final class Globals {
 
     /**
      * [@function] xpc_connection_set_peer_entitlement_exists_requirement
-     * Requires that the connection peer has the specified entitlement
+     * Requires that the connection peer has the specified entitlement.
      * 
      * This function will return an error promptly if the entitlement requirement is invalid.
      * 
@@ -14766,12 +14771,12 @@ public final class Globals {
      * API-Since: 17.4
      * 
      * @param connection
-     *                    The connection object which is to be modified
+     *                    The connection object which is to be modified.
      * 
      * @param entitlement
-     *                    The entitlement the peer must have
+     *                    The entitlement the peer must have.
      *                    It is safe to deallocate the entitlement string after calling
-     *                    `xpc_connection_set_peer_entitlement_exists_requirement`
+     *                    `xpc_connection_set_peer_entitlement_exists_requirement`.
      * 
      * @return
      *         0 on success, non-zero on error
@@ -14784,7 +14789,7 @@ public final class Globals {
 
     /**
      * [@function] xpc_connection_set_peer_entitlement_matches_value_requirement
-     * Requires that the connection peer has the specified entitlement with the matching value
+     * Requires that the connection peer has the specified entitlement with the matching value.
      * 
      * This function will return an error promptly if the entitlement requirement is invalid.
      * 
@@ -14802,15 +14807,15 @@ public final class Globals {
      * API-Since: 17.4
      * 
      * @param connection
-     *                    The connection object which is to be modified
+     *                    The connection object which is to be modified.
      * 
      * @param entitlement
-     *                    The entitlement the peer must have
+     *                    The entitlement the peer must have.
      *                    It is safe to deallocate the entitlement string after calling
-     *                    `xpc_connection_set_peer_entitlement_matches_value_requirement`
+     *                    `xpc_connection_set_peer_entitlement_matches_value_requirement`.
      * 
      * @param value
-     *                    The value that the entitlement must match
+     *                    The value that the entitlement must match.
      *                    It is safe to deallocate the value object after calling
      *                    `xpc_connection_set_peer_entitlement_matches_value_requirement`.
      *                    Valid xpc types for this object are `XPC_TYPE_BOOL`, `XPC_TYPE_STRING` and `XPC_TYPE_INT64`.
@@ -14828,12 +14833,12 @@ public final class Globals {
     /**
      * [@function] xpc_connection_set_peer_team_identity_requirement
      * Requires that the connection peer has the specified identity and is signed with the same team identifier
-     * as the current process
+     * as the current process.
      * 
      * This function will return an error promptly if the identity requirement is invalid.
      * 
      * The peer process must be signed as either a Testflight app or an App store app,
-     * or be signed by an apple issued development certificate, an enterprise distributed
+     * or be signed by an Apple-issued development certificate, an enterprise distributed
      * certificate (embedded only), or a Developer ID certificate (macOS only)
      * 
      * It is a programming error to call multiple of the `xpc_connection_set_peer_*_requirement` family of functions on
@@ -14850,12 +14855,12 @@ public final class Globals {
      * API-Since: 17.4
      * 
      * @param connection
-     *                           The connection object which is to be modified
+     *                           The connection object which is to be modified.
      * 
      * @param signing_identifier
-     *                           The optional signing identifier the peer must have
+     *                           The optional signing identifier the peer must have.
      *                           It is safe to deallocate the signing identifier string after calling
-     *                           `xpc_connection_set_peer_identity_requirement`
+     *                           `xpc_connection_set_peer_identity_requirement`.
      * 
      * @return
      *         0 on success, non-zero on error
@@ -14867,7 +14872,7 @@ public final class Globals {
 
     /**
      * [@function] xpc_connection_set_peer_platform_identity_requirement
-     * Requires that the connection peer has the specified identity and is signed by Apple
+     * Requires that the connection peer has the specified identity and is signed by Apple.
      * 
      * This function will return an error promptly if the identity requirement is invalid.
      * 
@@ -14888,13 +14893,13 @@ public final class Globals {
      * API-Since: 17.4
      * 
      * @param connection
-     *                           The connection object which is to be modified
+     *                           The connection object which is to be modified.
      * 
      * @param signing_identifier
      *                           The optional signing identifier the peer must have. If not specified, this function
-     *                           ensures that the peer is signed by Apple
+     *                           ensures that the peer is signed by Apple.
      *                           It is safe to deallocate the signing identifier string after calling
-     *                           `xpc_connection_set_peer_identity_requirement`
+     *                           `xpc_connection_set_peer_identity_requirement`.
      * 
      * @return
      *         0 on success, non-zero on error
@@ -14906,7 +14911,7 @@ public final class Globals {
 
     /**
      * [@function] xpc_connection_set_peer_lightweight_code_requirement
-     * Requires that the connection peer has the specified lightweight code requirement
+     * Requires that the connection peer has the specified lightweight code requirement.
      * 
      * This function will return an error promptly if the lightweight code requirement is invalid.
      * 
@@ -14940,12 +14945,12 @@ public final class Globals {
      * API-Since: 17.4
      * 
      * @param connection
-     *                   The connection object which is to be modified
+     *                   The connection object which is to be modified.
      * 
      * @param lwcr
-     *                   The lightweight code requirement the peer must have
+     *                   The lightweight code requirement the peer must have.
      *                   It is safe to deallocate the lightweight code requirement object after calling
-     *                   `xpc_connection_set_peer_lightweight_code_requirement`
+     *                   `xpc_connection_set_peer_lightweight_code_requirement`.
      * 
      * @return
      *         0 on success, non-zero on error
@@ -14960,10 +14965,10 @@ public final class Globals {
      * Returns a description of why the connection was invalidated.
      * 
      * @param connection
-     *                   The connection object to inspect
+     *                   The connection object to inspect.
      * 
      * @return
-     *         Null if the connection has not been invalidated, otherwise a description for why the connection was
+     *         NULL if the connection has not been invalidated, otherwise a description for why the connection was
      *         invalidated.
      * 
      *         API-Since: 15.0
@@ -15109,8 +15114,8 @@ public final class Globals {
      * Activates a session.
      * 
      * xpc_session_activate must not be called on a session that has been already
-     * activated. Releasing the last reference on an inactive session that was
-     * created with an xpc_session_create*() will trigger an API misuse crash.
+     * activated. Releasing the last reference on an inactive session or an
+     * active session that has not been cancelled will trigger an API misuse crash.
      * 
      * If activation fails, the session is automatically cancelled.
      * 
@@ -15138,8 +15143,9 @@ public final class Globals {
      * messages that are awaiting replies, they will have their reply handlers
      * invoked with an appropriate {@link xpc_rich_error_t}.
      * 
-     * Session must have been activated to be canceled. Cancellation is asynchronous
-     * and non-preemptive.
+     * Session must have been activated to be cancelled and must be cancelled
+     * before the last reference can be released. Cancellation is asynchronous and
+     * non-preemptive.
      * 
      * API-Since: 16.0
      * 
@@ -15404,7 +15410,7 @@ public final class Globals {
      * Calculates a hash value for the given object.
      * 
      * Note that the computed hash values for any particular type and value of an
-     * object can change from across releases and platforms and should not be
+     * object can change across releases and platforms and should not be
      * assumed to be constant across all time and space or stored persistently.
      * 
      * API-Since: 5.0
@@ -15607,7 +15613,8 @@ public final class Globals {
      * @param interval
      *                 The date interval which is to be boxed. Negative values indicate the number
      *                 of nanoseconds before the epoch. Positive values indicate the number of
-     *                 nanoseconds after the epoch.
+     *                 nanoseconds after the epoch. The interval is with respect to the Unix epoch.
+     *                 XPC dates are in Unix time and are thus unaware of local time or leap seconds.
      * 
      * @return
      *         A new date object.
@@ -15644,7 +15651,8 @@ public final class Globals {
      * 
      * @return
      *         The underlying date interval or 0 if the given object was not an XPC date
-     *         object.
+     *         object. The interval is with respect to the Unix epoch. XPC dates are in
+     *         Unix time and are thus unaware of local time or leap seconds.
      * 
      *         API-Since: 5.0
      */
@@ -15743,7 +15751,7 @@ public final class Globals {
     /**
      * [@function] xpc_data_get_bytes
      * 
-     * Copies the bytes stored in an data objects into the specified buffer.
+     * Copies the bytes stored in a data object into the specified buffer.
      * 
      * @param xdata
      *               The data object which is to be examined.
@@ -16295,9 +16303,11 @@ public final class Globals {
      *               undefined.
      * 
      * @param value
-     *               The date value to insert, represented as an <code>int64_t</code>. After
-     *               calling this method, the XPC object corresponding to the primitive value
-     *               inserted may be safely retrieved with {@link xpc_array_get_value()}.
+     *               The date value to insert, represented as an <code>int64_t</code>. The
+     *               interval is with respect to the Unix epoch. XPC dates are in Unix time and
+     *               are thus unaware of local time or leap seconds. After calling this method,
+     *               the XPC object corresponding to the primitive value inserted may be safely
+     *               retrieved with {@link xpc_array_get_value()}.
      * 
      *               API-Since: 5.0
      */
@@ -16517,8 +16527,10 @@ public final class Globals {
      *               index is outside that range, the behavior is undefined.
      * 
      * @return
-     *         The underlying date interval at the specified index. 0 if the value at the
-     *         specified index is not a date value.
+     *         The underlying date interval at the specified index. The interval is with
+     *         respect to the Unix epoch. XPC dates are in Unix time and are thus unaware
+     *         of local time or leap seconds. 0 if the value at the specified index is not
+     *         a date value.
      * 
      *         API-Since: 5.0
      */
@@ -16540,7 +16552,7 @@ public final class Globals {
      *               index is outside that range, the behavior is undefined.
      * 
      * @param length
-     *               Upon return output, will contain the length of the data corresponding to the
+     *               Upon return, will contain the length of the data corresponding to the
      *               specified key.
      * 
      * @return
@@ -16678,7 +16690,7 @@ public final class Globals {
      * 
      * @return
      *         The object at the specified index within the array or NULL if the given
-     *         object was not an XPC array or if the the value at the specified index was
+     *         object was not an XPC array or if the value at the specified index was
      *         not a dictionary.
      */
     @Generated
@@ -16705,7 +16717,7 @@ public final class Globals {
      * 
      * @return
      *         The object at the specified index within the array or NULL if the given
-     *         object was not an XPC array or if the the value at the specified index was
+     *         object was not an XPC array or if the value at the specified index was
      *         not an array.
      */
     @Generated
@@ -16734,7 +16746,7 @@ public final class Globals {
      *               the actual count of values, only that many key/value pairs will be inserted
      *               into the dictionary.
      * 
-     *               If the count is more than the the actual count of key/value pairs, the
+     *               If the count is more than the actual count of key/value pairs, the
      *               behavior is undefined. If one array is NULL and the other is not, the
      *               behavior is undefined. If both arrays are NULL and the count is non-0, the
      *               behavior is undefined.
@@ -17005,18 +17017,20 @@ public final class Globals {
     /**
      * [@function] xpc_dictionary_set_date
      * 
-     * Inserts a date (primitive) value into a dictionary.
+     * Inserts a date value into a dictionary.
      * 
      * @param xdict
      *              The dictionary which is to be manipulated.
      * 
      * @param key
-     *              The key for which the primitive value shall be set.
+     *              The key for which the value shall be set.
      * 
      * @param value
-     *              The date value to insert. After calling this method, the XPC object
-     *              corresponding to the primitive value inserted may be safely retrieved with
-     *              {@link xpc_dictionary_get_value()}.
+     *              The date value to insert, represented as an <code>int64_t</code>. The
+     *              interval is with respect to the Unix epoch. XPC dates are in Unix time and
+     *              are thus unaware of local time or leap seconds. After calling this method,
+     *              the XPC object corresponding to the primitive value inserted may be safely
+     *              retrieved with {@link xpc_dictionary_get_value()}.
      * 
      *              API-Since: 5.0
      */
@@ -17178,7 +17192,7 @@ public final class Globals {
     /**
      * [@function] xpc_dictionary_get_int64
      * 
-     * Gets an <code>int64</code> primitive value from a dictionary directly.
+     * Gets an <code>int64_t</code> primitive value from a dictionary directly.
      * 
      * @param xdict
      *              The dictionary object which is to be examined.
@@ -17201,7 +17215,7 @@ public final class Globals {
     /**
      * [@function] xpc_dictionary_get_uint64
      * 
-     * Gets a <code>uint64</code> primitive value from a dictionary directly.
+     * Gets a <code>uint64_t</code> primitive value from a dictionary directly.
      * 
      * @param xdict
      *              The dictionary object which is to be examined.
@@ -17256,9 +17270,10 @@ public final class Globals {
      *              The key whose value is to be obtained.
      * 
      * @return
-     *         The underlying date interval for the specified key. 0 if the value for the
-     *         specified key is not a date value or if there is no value for the specified
-     *         key.
+     *         The underlying date interval for the specified key. The interval is with
+     *         respect to the Unix epoch. XPC dates are in Unix time and are thus unaware
+     *         of local time or leap seconds. 0 if the value for the specified key is not a
+     *         date value or if there is no value for the specified key.
      * 
      *         API-Since: 5.0
      */
@@ -19166,7 +19181,6 @@ public final class Globals {
     @Generated public static final double __VISIONOS_2_2 = 20200.0;
     @Generated public static final double USE_CLANG_LIMITS = 0.0;
     @Generated public static final double USE_CLANG_STDARG = 0.0;
-    @Generated public static final double MPO_EXCEPTION_PORT = 32768.0;
     @Generated public static final double F_ADDSIGS_MAIN_BINARY = 113.0;
     @Generated public static final double CPUFAMILY_ARM_DONAN = 1.86759006E9;
     @Generated public static final double CPUFAMILY_ARM_BRAVA = 3.99882554E8;
@@ -19900,4 +19914,389 @@ public final class Globals {
     @Generated public static final double NOTE_TRACK = 1.0;
     @Generated public static final double NOTE_TRACKERR = 2.0;
     @Generated public static final double NOTE_CHILD = 4.0;
+
+    /**
+     * [@function] xpc_peer_requirement_create_entitlement_exists
+     * Create a requirement that the peer has the specified entitlement
+     * 
+     * This function will return NULL promptly if the entitlement requirement is
+     * invalid.
+     * 
+     * API-Since: 26.0
+     * 
+     * @param entitlement
+     *                    The entitlement the peer must have. It is safe to deallocate the entitlement
+     *                    string after calling this function.
+     * 
+     * @param error_out
+     *                    An out-parameter that, if set and in the event of an error, will point to an
+     *                    {@link xpc_rich_error_t} describing the details of any errors that occurred.
+     * 
+     * @return
+     *         On success this returns a new peer requirement object. On failure this will
+     *         return NULL and if set, error_out will be set to an error describing the
+     *         failure.
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native xpc_peer_requirement_t xpc_peer_requirement_create_entitlement_exists(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String entitlement,
+            @Nullable Ptr<xpc_rich_error_t> error_out);
+
+    /**
+     * [@function] xpc_peer_requirement_create_entitlement_matches_value
+     * Create a requirement that the peer has the entitlement with matching value
+     * 
+     * This function will return NULL promptly if the entitlement requirement is
+     * invalid.
+     * 
+     * API-Since: 26.0
+     * 
+     * @param entitlement
+     *                    The entitlement the peer must have. It is safe to deallocate the entitlement
+     *                    string after calling this function.
+     * 
+     * @param value
+     *                    The value that the entitlement must match. It is safe to deallocate the value
+     *                    object after calling this function. Valid xpc types for this object are
+     *                    `XPC_TYPE_BOOL`, `XPC_TYPE_STRING` and `XPC_TYPE_INT64`.
+     * 
+     * @param error_out
+     *                    An out-parameter that, if set and in the event of an error, will point to an
+     *                    {@link xpc_rich_error_t} describing the details of any errors that occurred.
+     * 
+     * @return
+     *         On success this returns a new peer requirement object. On failure this will
+     *         return NULL and if set, error_out will be set to an error describing the
+     *         failure.
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native xpc_peer_requirement_t xpc_peer_requirement_create_entitlement_matches_value(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @NotNull String entitlement,
+            @NotNull VoidPtr value, @Nullable Ptr<xpc_rich_error_t> error_out);
+
+    /**
+     * [@function] xpc_peer_requirement_create_team_identity
+     * Create a requirement that the peer has the specified identity and is signed
+     * with the same team identifier as the current process
+     * 
+     * This function will return NULL promptly if the identity requirement is
+     * invalid.
+     * 
+     * The peer process must be signed as either a Testflight app or an App store
+     * app, or be signed by an apple issued development certificate, an enterprise
+     * distributed certificate (embedded only), or a Developer ID certificate (macOS
+     * only)
+     * 
+     * API-Since: 26.0
+     * 
+     * @param signing_identifier
+     *                           The optional signing identifier the peer must have. It is safe to deallocate
+     *                           the signing identifier string after calling this function.
+     * 
+     * @param error_out
+     *                           An out-parameter that, if set and in the event of an error, will point to an
+     *                           {@link xpc_rich_error_t} describing the details of any errors that occurred.
+     * 
+     * @return
+     *         On success this returns a new peer requirement object. On failure this will
+     *         return NULL and if set, error_out will be set to an error describing the
+     *         failure.
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native xpc_peer_requirement_t xpc_peer_requirement_create_team_identity(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Nullable String signing_identifier,
+            @Nullable Ptr<xpc_rich_error_t> error_out);
+
+    /**
+     * [@function] xpc_peer_requirement_create_platform_identity
+     * Create a requirement that the peer has the specified identity and is from
+     * platform binary.
+     * 
+     * This function will return NULL promptly if the identity requirement is
+     * invalid.
+     * 
+     * API-Since: 26.0
+     * 
+     * @param signing_identifier
+     *                           The optional signing identifier the peer must have. If not specified, this
+     *                           function ensures that the peer process' executable is a platform binary. It
+     *                           is safe to deallocate the signing identifier string after calling this
+     *                           function.
+     * 
+     * @param error_out
+     *                           An out-parameter that, if set and in the event of an error, will point to an
+     *                           {@link xpc_rich_error_t} describing the details of any errors that occurred.
+     * 
+     * @return
+     *         On success this returns a new peer requirement object. On failure this will
+     *         return NULL and if set, error_out will be set to an error describing the
+     *         failure.
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native xpc_peer_requirement_t xpc_peer_requirement_create_platform_identity(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Nullable String signing_identifier,
+            @Nullable Ptr<xpc_rich_error_t> error_out);
+
+    /**
+     * [@function] xpc_peer_requirement_create_lwcr
+     * Create a requirement that the peer has the specified lightweight code requirement
+     * 
+     * This function will return NULL promptly if the lightweight code requirement
+     * is invalid.
+     * 
+     * The lightweight code requirement must be an `xpc_dictionary_t` equivalent of
+     * an LWCR constraint (see
+     * https://developer.apple.com/documentation/security/defining_launch_environment_and_library_constraints
+     * for details on the contents of the dictionary)
+     * 
+     * The lightweight code requirement in the example below uses the $or operator
+     * to require that an executable’s either signed with the Team ID 8XCUU22SN2, or
+     * is an operating system executable:
+     * ```c
+     * xpc_object_t or_val = xpc_dictionary_create_empty();
+     * xpc_dictionary_set_string(or_val, "team-identifier", "8XCUU22SN2");
+     * xpc_dictionary_set_int64(or_val, "validation-category", 1);
+     * 
+     * xpc_object_t lwcr = xpc_dictionary_create_empty();
+     * xpc_dictionary_set_value(lwcr, "$or", or_val);
+     * 
+     * xpc_peer_requirement_t req = xpc_peer_requirement_create_lwcr(lwcr, NULL);
+     * ```
+     * 
+     * API-Since: 26.0
+     * 
+     * @param lwcr
+     *                  The lightweight code requirement the peer must have. It is safe to deallocate
+     *                  the lightweight code requirement object after calling this function.
+     * 
+     * @param error_out
+     *                  An out-parameter that, if set and in the event of an error, will point to an
+     *                  {@link xpc_rich_error_t} describing the details of any errors that occurred.
+     * 
+     * @return
+     *         On success this returns a new peer requirement object. On failure this will
+     *         return NULL and if set, error_out will be set to an error describing the
+     *         failure.
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native xpc_peer_requirement_t xpc_peer_requirement_create_lwcr(@NotNull VoidPtr lwcr,
+            @Nullable Ptr<xpc_rich_error_t> error_out);
+
+    /**
+     * [@function] xpc_peer_requirement_match_received_message
+     * Check the specified requirement against a received message from the peer.
+     * 
+     * @param peer_requirement
+     *                         The requirement the peer must have
+     * 
+     * @param message
+     *                         The received dictionary to be checked
+     * 
+     * @param error_out
+     *                         An out-parameter that, if set and in the event of an error, will point to an
+     *                         {@link xpc_rich_error_t} describing the details of any errors that occurred.
+     * 
+     * @return
+     *         On match this returns true. On mismatch or failure this will return false and
+     *         if set, error_out will be set to an error describing the failure.
+     * 
+     *         API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    public static native boolean xpc_peer_requirement_match_received_message(
+            @NotNull xpc_peer_requirement_t peer_requirement, @NotNull VoidPtr message,
+            @Nullable Ptr<xpc_rich_error_t> error_out);
+
+    /**
+     * [@function] xpc_connection_set_peer_requirement
+     * Requires that the connection peer has the specified requirement.
+     * 
+     * It is a programming error to call multiple of the `xpc_connection_set_peer_*_requirement` family of functions on
+     * the same
+     * connection. If more complex combinations of requirements are required, use lightweight code requirement.
+     * 
+     * All messages received on this connection will be checked to ensure that they come from a peer who satisfies the
+     * requirement. For a listener connection, requests that do not satisfy the requirement are dropped. When a reply
+     * is expected on the connection and the peer does not satisfy the requirement
+     * `XPC_ERROR_PEER_CODE_SIGNING_REQUIREMENT`
+     * will be delivered instead of the reply.
+     * 
+     * API-Since: 26.0
+     * 
+     * @param connection
+     *                         The connection object which is to be modified.
+     * 
+     * @param peer_requirement
+     *                         The requirement the peer must have.
+     *                         It is safe to deallocate the peer requirement after calling
+     *                         `xpc_connection_set_peer_requirement`.
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_connection_set_peer_requirement(@NotNull xpc_connection_t connection,
+            @NotNull xpc_peer_requirement_t peer_requirement);
+
+    /**
+     * [@function] xpc_session_set_peer_requirement
+     * Requires that the session peer satisfies a requirement.
+     * 
+     * It is a programming error to call `xpc_session_set_peer_*requirement` more
+     * than once per session.
+     * 
+     * All messages received on this session will be checked to ensure they come
+     * from a peer who satisfies the requirement. When a reply is expected on the
+     * session and the peer does not satisfy the requirement, the session will be
+     * canceled with cancellation handler called with a rich error describing the
+     * peer code signing error. For `xpc_session_send_message_with_reply_sync` NULL
+     * will be returned instead of reply, with `error_out` (if set) pointing to the
+     * rich error describing the peer code signing error.
+     * 
+     * API-Since: 26.0
+     * 
+     * @param session
+     *                    The session object which is to be modified. Must be inactive.
+     * 
+     * @param requirement
+     *                    The requirement to be satisfied by the peer. It will be retained by XPC.
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_session_set_peer_requirement(@NotNull xpc_session_t session,
+            @NotNull xpc_peer_requirement_t requirement);
+
+    /**
+     * [@function] xpc_listener_set_peer_requirement
+     * Requires that the listener peer satisfies a requirement.
+     * 
+     * It is a programming error to call `xpc_listener_set_peer_*requirement` more
+     * than once per listener.
+     * 
+     * All messages received on this listener will be checked to ensure they come
+     * from a peer who satisfies the code signing requirement. Requests that do not
+     * satisfy the requirement are dropped.
+     * 
+     * Peer sessions created from the listener do not inherit the requirement.
+     * 
+     * API-Since: 26.0
+     * 
+     * @param listener
+     *                    The listener object which is to be modified. Must be inactive.
+     * 
+     * @param requirement
+     *                    The requirement to be satisfied by the peer. It will be retained by XPC.
+     */
+    @Generated
+    @CFunction
+    public static native void xpc_listener_set_peer_requirement(@NotNull xpc_listener_t listener,
+            @NotNull xpc_peer_requirement_t requirement);
+
+    @Generated
+    @CFunction
+    public static native int mach_vm_reclaim_update_kernel_accounting_trap(int target_tport, LongPtr bytes_reclaimed);
+
+    @Generated public static final double __MAC_15_6 = 150600.0;
+    @Generated public static final double __MAC_16_0 = 160000.0;
+    @Generated public static final double __MAC_26_0 = 260000.0;
+    @Generated public static final double __MAC_26_1 = 260100.0;
+    @Generated public static final double __IPHONE_18_6 = 180600.0;
+    @Generated public static final double __IPHONE_19_0 = 190000.0;
+    @Generated public static final double __IPHONE_26_0 = 260000.0;
+    @Generated public static final double __IPHONE_26_1 = 260100.0;
+    @Generated public static final double __WATCHOS_11_6 = 110600.0;
+    @Generated public static final double __WATCHOS_12_0 = 120000.0;
+    @Generated public static final double __WATCHOS_26_0 = 260000.0;
+    @Generated public static final double __WATCHOS_26_1 = 260100.0;
+    @Generated public static final double __TVOS_18_6 = 180600.0;
+    @Generated public static final double __TVOS_19_0 = 190000.0;
+    @Generated public static final double __TVOS_26_0 = 260000.0;
+    @Generated public static final double __TVOS_26_1 = 260100.0;
+    @Generated public static final double __BRIDGEOS_9_6 = 90600.0;
+    @Generated public static final double __BRIDGEOS_10_0 = 100000.0;
+    @Generated public static final double __BRIDGEOS_10_1 = 100100.0;
+    @Generated public static final double __DRIVERKIT_24_6 = 240600.0;
+    @Generated public static final double __DRIVERKIT_25_0 = 250000.0;
+    @Generated public static final double __DRIVERKIT_25_1 = 250100.0;
+    @Generated public static final double __VISIONOS_2_6 = 20600.0;
+    @Generated public static final double __VISIONOS_3_0 = 30000.0;
+    @Generated public static final double __VISIONOS_26_0 = 260000.0;
+    @Generated public static final double __VISIONOS_26_1 = 260100.0;
+    @Generated public static final double ENOTCAPABLE = 107.0;
+    @Generated public static final double SIGEV_KEVENT = 4.0;
+    @Generated public static final double RENAME_RESOLVE_BENEATH = 32.0;
+    @Generated public static final double IOPOL_TYPE_VFS_ENTITLED_RESERVE_ACCESS = 14.0;
+    @Generated public static final double IOPOL_MATERIALIZE_DATALESS_FILES_ORIG = 4.0;
+    @Generated public static final double IOPOL_MATERIALIZE_DATALESS_FILES_BASIC_MASK = 3.0;
+    @Generated public static final double IOPOL_VFS_ENTITLED_RESERVE_ACCESS_OFF = 0.0;
+    @Generated public static final double IOPOL_VFS_ENTITLED_RESERVE_ACCESS_ON = 1.0;
+    @Generated public static final double _MALLOC_TYPE_MALLOC_BACKDEPLOY_PUBLIC = 1.0;
+    @Generated public static final double MPG_FLAGS_NONE = 0.0;
+    @Generated public static final double MPG_FLAGS_STRICT_REPLY_INVALID_VOUCHER = 4.0;
+    @Generated public static final double MPG_FLAGS_STRICT_REPLY_MISMATCHED_PERSONA = 16.0;
+    @Generated public static final double MPG_FLAGS_MOD_REFS_PINNED_DEALLOC = 1.0;
+    @Generated public static final double MPG_FLAGS_MOD_REFS_PINNED_DESTROY = 2.0;
+    @Generated public static final double MPG_FLAGS_MOD_REFS_PINNED_COPYIN = 3.0;
+    @Generated public static final double MPG_FLAGS_INVALID_RIGHT_RECV = 1.0;
+    @Generated public static final double MPG_FLAGS_INVALID_RIGHT_DELTA = 2.0;
+    @Generated public static final double MPG_FLAGS_INVALID_RIGHT_DESTRUCT = 3.0;
+    @Generated public static final double MPG_FLAGS_INVALID_RIGHT_COPYIN = 4.0;
+    @Generated public static final double MPG_FLAGS_INVALID_RIGHT_DEALLOC = 5.0;
+    @Generated public static final double MPG_FLAGS_INVALID_RIGHT_DEALLOC_KERNEL = 6.0;
+    @Generated public static final double MPG_FLAGS_INVALID_RIGHT_TRANSLATE_PORT = 7.0;
+    @Generated public static final double MPG_FLAGS_INVALID_RIGHT_TRANSLATE_PSET = 8.0;
+    @Generated public static final double MPG_FLAGS_INVALID_VALUE_PEEK = 1.0;
+    @Generated public static final double MPG_FLAGS_INVALID_VALUE_DELTA = 2.0;
+    @Generated public static final double MPG_FLAGS_INVALID_VALUE_DESTRUCT = 3.0;
+    @Generated public static final double MPG_FLAGS_KERN_FAILURE_TASK = 1.0;
+    @Generated public static final double MPG_FLAGS_KERN_FAILURE_NOTIFY_TYPE = 2.0;
+    @Generated public static final double MPG_FLAGS_KERN_FAILURE_NOTIFY_RECV = 3.0;
+    @Generated public static final double MPG_FLAGS_KERN_FAILURE_MULTI_NOTI = 4.0;
+    @Generated public static final double MPG_FLAGS_SEND_INVALID_RIGHT_PORT = 1.0;
+    @Generated public static final double MPG_FLAGS_SEND_INVALID_RIGHT_OOL_PORT = 2.0;
+    @Generated public static final double MPG_FLAGS_SEND_INVALID_RIGHT_GUARDED = 3.0;
+    @Generated public static final double MPG_FLAGS_INVALID_OPTIONS_OOL_DISP = 1.0;
+    @Generated public static final double MPG_FLAGS_INVALID_OPTIONS_OOL_ARRAYS = 2.0;
+    @Generated public static final double MPG_FLAGS_INVALID_OPTIONS_OOL_RIGHT = 3.0;
+    @Generated public static final double O_UNIQUE = 8192.0;
+    @Generated public static final double AT_RESOLVE_BENEATH = 8192.0;
+    @Generated public static final double AT_NODELETEBUSY = 16384.0;
+    @Generated public static final double AT_UNIQUE = 32768.0;
+    @Generated public static final double F_NOCACHE_EXT = 112.0;
+    @Generated public static final double CPUFAMILY_ARM_HIDRA = 4.92472296E8;
+    @Generated public static final double CPUFAMILY_ARM_TILOS = 3.0910251E7;
+    @Generated public static final double VM_FLAGS_MTE = 8192.0;
+    @Generated public static final double kGUARD_EXC_MTE_SOFT_MODE = 1048576.0;
+    @Generated public static final double VM_MEMORY_LIBCHANNEL = 36.0;
+    @Generated public static final double VM_MEMORY_DFR = 85.0;
+    @Generated public static final double VM_MEMORY_COMPOSITOR_SERVICES = 107.0;
+    @Generated public static final double VM_MEMORY_APPLICATION_SPECIFIC_2 = 241.0;
+    @Generated public static final double VM_MEMORY_APPLICATION_SPECIFIC_3 = 242.0;
+    @Generated public static final double VM_MEMORY_APPLICATION_SPECIFIC_4 = 243.0;
+    @Generated public static final double VM_MEMORY_APPLICATION_SPECIFIC_5 = 244.0;
+    @Generated public static final double VM_MEMORY_APPLICATION_SPECIFIC_6 = 245.0;
+    @Generated public static final double VM_MEMORY_APPLICATION_SPECIFIC_7 = 246.0;
+    @Generated public static final double VM_MEMORY_APPLICATION_SPECIFIC_8 = 247.0;
+    @Generated public static final double VM_MEMORY_APPLICATION_SPECIFIC_9 = 248.0;
+    @Generated public static final double VM_MEMORY_APPLICATION_SPECIFIC_10 = 249.0;
+    @Generated public static final double VM_MEMORY_APPLICATION_SPECIFIC_11 = 250.0;
+    @Generated public static final double VM_MEMORY_APPLICATION_SPECIFIC_12 = 251.0;
+    @Generated public static final double VM_MEMORY_APPLICATION_SPECIFIC_13 = 252.0;
+    @Generated public static final double VM_MEMORY_APPLICATION_SPECIFIC_14 = 253.0;
+    @Generated public static final double VM_MEMORY_APPLICATION_SPECIFIC_15 = 254.0;
+    @Generated public static final double VM_OFFSET_LIST_MAX = 1024.0;
+    @Generated public static final double EXC_ARM_MTE_TAGCHECK_FAIL = 262.0;
+    @Generated public static final double EXC_ARM_MTE_CANONICAL_FAIL = 263.0;
+    @Generated public static final double TASK_IPC_SPACE_POLICY_INFO = 33.0;
+    @Generated public static final double VM_REGION_FLAG_JIT_ENABLED = 1.0;
+    @Generated public static final double VM_REGION_FLAG_TPRO_ENABLED = 2.0;
 }

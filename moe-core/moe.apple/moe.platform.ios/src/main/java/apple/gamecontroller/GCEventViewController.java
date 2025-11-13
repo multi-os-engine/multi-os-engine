@@ -191,7 +191,6 @@ public class GCEventViewController extends UIViewController {
      * 
      * Note that unlike UIView.userInteractionEnabled this only controls the flow of game controller events.
      * 
-     * @see GCController
      * @see UIView.userInteractionEnabled
      * 
      *      API-Since: 9.0
@@ -231,7 +230,6 @@ public class GCEventViewController extends UIViewController {
      * 
      * Note that unlike UIView.userInteractionEnabled this only controls the flow of game controller events.
      * 
-     * @see GCController
      * @see UIView.userInteractionEnabled
      * 
      *      API-Since: 9.0

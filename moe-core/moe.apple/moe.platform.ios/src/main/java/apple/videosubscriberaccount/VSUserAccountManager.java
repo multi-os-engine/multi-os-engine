@@ -197,4 +197,91 @@ public class VSUserAccountManager extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Deletes the auto sign in token.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("deleteAutoSignInTokenWithCompletionHandler:")
+    public native void deleteAutoSignInTokenWithCompletionHandler(
+            @ObjCBlock(name = "call_deleteAutoSignInTokenWithCompletionHandler") @NotNull Block_deleteAutoSignInTokenWithCompletionHandler completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_deleteAutoSignInTokenWithCompletionHandler {
+        @Generated
+        void call_deleteAutoSignInTokenWithCompletionHandler(@Nullable NSError error);
+    }
+
+    /**
+     * Query the auto sign in token and authorization state.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("queryAutoSignInTokenWithCompletionHandler:")
+    public native void queryAutoSignInTokenWithCompletionHandler(
+            @ObjCBlock(name = "call_queryAutoSignInTokenWithCompletionHandler") @NotNull Block_queryAutoSignInTokenWithCompletionHandler completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_queryAutoSignInTokenWithCompletionHandler {
+        @Generated
+        void call_queryAutoSignInTokenWithCompletionHandler(@Nullable VSAutoSignInToken token, @Nullable NSError error);
+    }
+
+    /**
+     * Request user authorization to store and use an auto sign in token. An UI prompt will be shown to the user to
+     * confirm this action.
+     * Make sure to only call this method after your app is signed in:
+     * - If the app is already authenticated, check the authorization status by calling
+     * `queryAutoSignInTokenWithCompletionHandler:` and only request
+     * authorization if the authorization value is `VSAutoSignInAuthorizationNotDetermined`.
+     * - If the user is signing in for the first time, or after going through the manual sign in flow again, you should
+     * always request authorization.
+     * 
+     * @return A `VSAutoSignInTokenUpdateContext` that you pass to
+     *         `updateAutoSignInToken:updateContext:completionHandler:`.
+     * 
+     *         API-Since: 26.0
+     */
+    @Generated
+    @Selector("requestAutoSignInAuthorizationWithCompletionHandler:")
+    public native void requestAutoSignInAuthorizationWithCompletionHandler(
+            @ObjCBlock(name = "call_requestAutoSignInAuthorizationWithCompletionHandler") @NotNull Block_requestAutoSignInAuthorizationWithCompletionHandler completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestAutoSignInAuthorizationWithCompletionHandler {
+        @Generated
+        void call_requestAutoSignInAuthorizationWithCompletionHandler(
+                @Nullable VSAutoSignInTokenUpdateContext updateContext, @Nullable NSError error);
+    }
+
+    /**
+     * Sets the auto sign in token.
+     * You're in full control of your token, it doesn't have any implied expiration dates. Use
+     * `-[VSUserAccountManager deleteAutoSignInTokenWithCompletionHandler:]` if you need to remove an old token.
+     * 
+     * Before calling this method you have to obtain an update context object using
+     * `-[VSUserAccountManager requestAutoSignInAuthorizationWithCompletionHandler:]`. Updating the token will fail if
+     * the user hasn't
+     * granted authorization.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("updateAutoSignInToken:updateContext:completionHandler:")
+    public native void updateAutoSignInTokenUpdateContextCompletionHandler(@NotNull String autoSignInToken,
+            @NotNull VSAutoSignInTokenUpdateContext context,
+            @ObjCBlock(name = "call_updateAutoSignInTokenUpdateContextCompletionHandler") @NotNull Block_updateAutoSignInTokenUpdateContextCompletionHandler completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_updateAutoSignInTokenUpdateContextCompletionHandler {
+        @Generated
+        void call_updateAutoSignInTokenUpdateContextCompletionHandler(@Nullable NSError error);
+    }
 }

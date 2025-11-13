@@ -29,6 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import apple.opaque.dispatch_queue_t;
+import apple.avfoundation.AVCapturePhotoSettings;
 
 /**
  * The ARSession class configures and runs different Augmented Reality techniques on a device.
@@ -395,11 +396,11 @@ public class ARSession extends NSObject {
     public native void updateWithCollaborationData(@NotNull ARCollaborationData collaborationData);
 
     /**
-     * Requests a single, high resolution frame be captured at that moment in time.
+     * Requests a single, high resolution frame to be captured.
      * 
-     * Some video formats do not support a significantly higher resolution than the streaming camera resolution. Use
-     * the @c isRecommendedForHighResolutionFrameCapturing method on the video format to check if the format is
-     * recommended.
+     * Some video formats do not support a significantly higher still image resolution than the streaming camera
+     * resolution. Use the @c
+     * isRecommendedForHighResolutionFrameCapturing method on the video format to check if the format is recommended.
      * 
      * @see -[ARVideoFormat isRecommendedForHighResolutionFrameCapturing]
      * @param completion Block being called when the call completes.
@@ -422,4 +423,34 @@ public class ARSession extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Requests a single, high resolution frame to be captured.
+     * 
+     * Some video formats do not support a significantly higher still image resolution than the streaming camera
+     * resolution. Use the @c
+     * isRecommendedForHighResolutionFrameCapturing method on the video format to check if the format is recommended.
+     * For passing customized photo settings
+     * to this method, obtain a @c defaultPhotoSettings object from the video format and modify it.
+     * 
+     * @see -[ARVideoFormat isRecommendedForHighResolutionFrameCapturing]
+     * @see -[ARVideoFormat defaultPhotoSettings]
+     * @param photoSettings Custom AVCapturePhotoSettings to be used.
+     * @param completion    Block being called when the call completes.
+     * 
+     *                      API-Since: 26.0
+     */
+    @Generated
+    @Selector("captureHighResolutionFrameUsingPhotoSettings:completion:")
+    public native void captureHighResolutionFrameUsingPhotoSettingsCompletion(
+            @Nullable AVCapturePhotoSettings photoSettings,
+            @ObjCBlock(name = "call_captureHighResolutionFrameUsingPhotoSettingsCompletion") @NotNull Block_captureHighResolutionFrameUsingPhotoSettingsCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_captureHighResolutionFrameUsingPhotoSettingsCompletion {
+        @Generated
+        void call_captureHighResolutionFrameUsingPhotoSettingsCompletion(@Nullable ARFrame frame,
+                @Nullable NSError error);
+    }
 }

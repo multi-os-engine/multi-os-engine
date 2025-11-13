@@ -309,9 +309,11 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * When true this layer is allowed to antialias its edges, as requested
      * by the value of the edgeAntialiasingMask property.
      * 
-     * The default value is read from the boolean UIViewEdgeAntialiasing
-     * property in the main bundle's Info.plist. If no value is found in
-     * the Info.plist the default value is NO.
+     * The default value is read from the CALayerAllowsEdgeAntialiasing
+     * property in the main bundle's Info.plist. On iOS, if that property
+     * is not found, the UIViewEdgeAntialiasing property will be used
+     * instead. If no value is found in the Info.plist the default value is
+     * YES on macOS and NO on iOS.
      * 
      * API-Since: 2.0
      */
@@ -325,11 +327,12 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * parent. This gives the correct results when the layer contains
      * multiple opaque components, but may reduce performance.
      * 
-     * The default value of the property is read from the boolean
-     * UIViewGroupOpacity property in the main bundle's Info.plist. If no
-     * value is found in the Info.plist the default value is YES for
-     * applications linked against the iOS 7 SDK or later and NO for
-     * applications linked against an earlier SDK.
+     * The default value is read from the CALayerAllowsGroupOpacity
+     * property in the main bundle's Info.plist. On iOS, if that property
+     * is not found, the UIViewGroupOpacity property will be used instead.
+     * If no value is found in the Info.plist the default value is YES on
+     * macOS and iOS applications linked against the iOS 7 SDK or later,
+     * and NO for iOS applications linked against an earlier SDK.
      * 
      * API-Since: 2.0
      */
@@ -1231,9 +1234,11 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * When true this layer is allowed to antialias its edges, as requested
      * by the value of the edgeAntialiasingMask property.
      * 
-     * The default value is read from the boolean UIViewEdgeAntialiasing
-     * property in the main bundle's Info.plist. If no value is found in
-     * the Info.plist the default value is NO.
+     * The default value is read from the CALayerAllowsEdgeAntialiasing
+     * property in the main bundle's Info.plist. On iOS, if that property
+     * is not found, the UIViewEdgeAntialiasing property will be used
+     * instead. If no value is found in the Info.plist the default value is
+     * YES on macOS and NO on iOS.
      * 
      * API-Since: 2.0
      */
@@ -1247,11 +1252,12 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * parent. This gives the correct results when the layer contains
      * multiple opaque components, but may reduce performance.
      * 
-     * The default value of the property is read from the boolean
-     * UIViewGroupOpacity property in the main bundle's Info.plist. If no
-     * value is found in the Info.plist the default value is YES for
-     * applications linked against the iOS 7 SDK or later and NO for
-     * applications linked against an earlier SDK.
+     * The default value is read from the CALayerAllowsGroupOpacity
+     * property in the main bundle's Info.plist. On iOS, if that property
+     * is not found, the UIViewGroupOpacity property will be used instead.
+     * If no value is found in the Info.plist the default value is YES on
+     * macOS and iOS applications linked against the iOS 7 SDK or later,
+     * and NO for iOS applications linked against an earlier SDK.
      * 
      * API-Since: 2.0
      */
@@ -2105,15 +2111,27 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
 
     /**
      * If YES, contents of the layer can be displayed up to its NSScreen's
-     * maximumExtendedDynamicRangeColorComponentValue or UIScreen's
-     * currentEDRHeadroom. If NO, contents are clipped or tonemapped to 1.0 (SDR).
-     * `contents` with a CGColorSpaceRef conforming to ITU-R 2100
-     * (CGColorSpaceUsesITUR_2100TF) will be tonemapped. Setting this value to
-     * YES may have a significant impact on power consumption and therefore
-     * should only be set when displaying EDR contents. The default value is NO.
+     * * maximumExtendedDynamicRangeColorComponentValue or UIScreen's
+     * * currentEDRHeadroom. If NO, contents are clipped or tonemapped to 1.0 (SDR).
+     * * `contents` with a CGColorSpaceRef conforming to ITU-R 2100
+     * * (CGColorSpaceUsesITUR_2100TF) will be tonemapped. This only effects the
+     * * tonemapping of the receiving layer.
+     * 
+     * * Setting this value to YES may have a significant impact on power consumption
+     * * and therefore should only be set when displaying EDR contents.
+     * * It is recommended to migrate to 'preferredDynamicRange', which requires that
+     * * the layer contain a CGColor or `contents' with headroom tagging greater
+     * * than 1.0 in order to activate EDR. If 'preferredDynamicRange' is set to a
+     * * value other than 'CADynamicRangeStandard', contents will not be tone mapped
+     * * to SDR, even if 'wantsExtendedDynamicRangeContent' is set to NO.
+     * *
+     * * The default value is NO.
      * 
      * API-Since: 17.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use preferredDynamicRange instead
      */
+    @Deprecated
     @Generated
     @Selector("setWantsExtendedDynamicRangeContent:")
     public native void setWantsExtendedDynamicRangeContent(boolean value);
@@ -2125,15 +2143,27 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
 
     /**
      * If YES, contents of the layer can be displayed up to its NSScreen's
-     * maximumExtendedDynamicRangeColorComponentValue or UIScreen's
-     * currentEDRHeadroom. If NO, contents are clipped or tonemapped to 1.0 (SDR).
-     * `contents` with a CGColorSpaceRef conforming to ITU-R 2100
-     * (CGColorSpaceUsesITUR_2100TF) will be tonemapped. Setting this value to
-     * YES may have a significant impact on power consumption and therefore
-     * should only be set when displaying EDR contents. The default value is NO.
+     * * maximumExtendedDynamicRangeColorComponentValue or UIScreen's
+     * * currentEDRHeadroom. If NO, contents are clipped or tonemapped to 1.0 (SDR).
+     * * `contents` with a CGColorSpaceRef conforming to ITU-R 2100
+     * * (CGColorSpaceUsesITUR_2100TF) will be tonemapped. This only effects the
+     * * tonemapping of the receiving layer.
+     * 
+     * * Setting this value to YES may have a significant impact on power consumption
+     * * and therefore should only be set when displaying EDR contents.
+     * * It is recommended to migrate to 'preferredDynamicRange', which requires that
+     * * the layer contain a CGColor or `contents' with headroom tagging greater
+     * * than 1.0 in order to activate EDR. If 'preferredDynamicRange' is set to a
+     * * value other than 'CADynamicRangeStandard', contents will not be tone mapped
+     * * to SDR, even if 'wantsExtendedDynamicRangeContent' is set to NO.
+     * *
+     * * The default value is NO.
      * 
      * API-Since: 17.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use preferredDynamicRange instead
      */
+    @Deprecated
     @Generated
     @Selector("wantsExtendedDynamicRangeContent")
     public native boolean wantsExtendedDynamicRangeContent();
@@ -2158,4 +2188,71 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
     @Selector("toneMapMode")
     @NotNull
     public native String toneMapMode();
+
+    /**
+     * The amount of EDR headroom used by `contents' of the layer. Setting this
+     * property can help reduce the power impact when using a limited amount of
+     * dynamic range. If the `contents' is a CGImageRef with content headroom, or
+     * an IOSurfaceRef with kIOSurfaceContentHeadroom, this property does not need
+     * to be set. CAMetalLayers can use this value to define how much headroom is
+     * needed by their MTLDrawables. Defaults to 0, which means untagged. Values
+     * greater than 0, and less than 1.0 are undefined.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("contentsHeadroom")
+    @NFloat
+    public native double contentsHeadroom();
+
+    /**
+     * Returns a layer that renders the root layer of the client with the given
+     * identifier as an extra implicit sublayer.
+     * 
+     * API-Since: 2.0
+     */
+    @Generated
+    @Selector("layerWithRemoteClientId:")
+    @NotNull
+    public static native CALayer layerWithRemoteClientId(int client_id);
+
+    /**
+     * Controls the dynamic range used to render CGColors and `contents' of the
+     * layer that have headroom tagging greater thah 1.0. This only effects the
+     * tonemapping of the receiving layer (not ancestors or descendants). Defaults
+     * to CADynamicRangeStandard.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("preferredDynamicRange")
+    @NotNull
+    public native String preferredDynamicRange();
+
+    /**
+     * The amount of EDR headroom used by `contents' of the layer. Setting this
+     * property can help reduce the power impact when using a limited amount of
+     * dynamic range. If the `contents' is a CGImageRef with content headroom, or
+     * an IOSurfaceRef with kIOSurfaceContentHeadroom, this property does not need
+     * to be set. CAMetalLayers can use this value to define how much headroom is
+     * needed by their MTLDrawables. Defaults to 0, which means untagged. Values
+     * greater than 0, and less than 1.0 are undefined.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setContentsHeadroom:")
+    public native void setContentsHeadroom(@NFloat double value);
+
+    /**
+     * Controls the dynamic range used to render CGColors and `contents' of the
+     * layer that have headroom tagging greater thah 1.0. This only effects the
+     * tonemapping of the receiving layer (not ancestors or descendants). Defaults
+     * to CADynamicRangeStandard.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setPreferredDynamicRange:")
+    public native void setPreferredDynamicRange(@NotNull String value);
 }

@@ -17,7 +17,6 @@ limitations under the License.
 package apple.photos;
 
 import apple.NSObject;
-import apple.corelocation.CLLocation;
 import apple.foundation.NSArray;
 import apple.foundation.NSDate;
 import apple.foundation.NSDictionary;
@@ -44,6 +43,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uniformtypeidentifiers.UTType;
+import apple.corelocation.CLLocation;
 
 /**
  * API-Since: 8.0
@@ -264,6 +265,8 @@ public class PHAsset extends PHObject {
     public native void cancelContentEditingInputRequest(@NUInt long requestID);
 
     /**
+     * The date and time of this asset's creation (can be updated by the user)
+     * 
      * API-Since: 8.0
      */
     @Nullable
@@ -324,6 +327,8 @@ public class PHAsset extends PHObject {
     public native long mediaType();
 
     /**
+     * The date and time of the last modification to this asset or one of its properties
+     * 
      * API-Since: 8.0
      */
     @Nullable
@@ -415,4 +420,24 @@ public class PHAsset extends PHObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The date and time this asset was added to the photo library (from the device that was used to add this asset)
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("addedDate")
+    @NotNull
+    public native NSDate addedDate();
+
+    /**
+     * The type of image or video data that is presented for the asset
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("contentType")
+    @NotNull
+    public native UTType contentType();
 }

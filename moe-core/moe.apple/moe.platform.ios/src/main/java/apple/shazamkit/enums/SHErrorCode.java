@@ -4,7 +4,8 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * Error codes returned when generating and matching signatures
+ * An error type that you create, or the system creates, to indicate problems with a catalog, match attempt, or
+ * signature, or when saving to a user's Shazam library.
  */
 @Generated
 public final class SHErrorCode {
@@ -13,71 +14,55 @@ public final class SHErrorCode {
     }
 
     /**
-     * The @c AVAudioFormat is not supported
+     * The error code to indicate an unsupported audio format.
      * 
-     * ShazamKit only accepts certain audio formats
-     * 
-     * @see -[SHSignatureGenerator appendBuffer:atTime:error] for valid formats
+     * For the list of the supported audio formats, see ``SHSignatureGenerator/append(_:at:)``.
      */
     @Generated @NInt public static final long InvalidAudioFormat = 0x0000000000000064L;
     /**
-     * The audio provided was not contiguous
-     * 
-     * Shazam requires audio to be contiguous in order
-     * to match.
+     * The error code to indicate the use of noncontiguous audio to request a match.
      */
     @Generated @NInt public static final long AudioDiscontinuity = 0x0000000000000065L;
     /**
-     * Failed to create a signature from the provided audio
+     * The error code to indicate that the system is unable to generate a signature from the audio.
      * 
-     * Validate the audio you are supplying, it may be silence.
+     * The most common cause of this error is silent audio input.
      */
     @Generated @NInt public static final long SignatureInvalid = 0x00000000000000C8L;
     /**
-     * The signature duration is outside the valid range
+     * The error code to indicate that the length of the generated signature is too long or too short to make a match in
+     * the catalog.
      * 
-     * The signature is valid but is too long/short for
-     * the service attempting to match it
+     * This error occurs when the length of the generated signature is less than
+     * ``SHCatalog/minimumQuerySignatureDuration`` or greater than ``SHCatalog/maximumQuerySignatureDuration`` for the
+     * session ``SHSession/catalog``.
      */
     @Generated @NInt public static final long SignatureDurationInvalid = 0x00000000000000C9L;
     /**
-     * The request to match the signature failed
-     * 
-     * The attempt failed and was not matched, trying again may result in success
-     * [@note] This code does not indicate a 'No Match'
+     * The error code to indicate when a Shazam Music catalog server issue prevents finding a match.
      */
     @Generated @NInt public static final long MatchAttemptFailed = 0x00000000000000CAL;
     /**
-     * Failed to load the Custom Catalog
-     * 
-     * Validate the structure of the Catalog file
+     * The error code to indicate when the custom catalog fails to load due to an invalid format.
      */
     @Generated @NInt public static final long CustomCatalogInvalid = 0x000000000000012CL;
     /**
-     * The Custom Catalog URL was invalid
-     * 
-     * The URL must be a filePath URL that contains a valid Catalog
+     * The error code to indicate that the format for the custom catalog URL is invalid.
      */
     @Generated @NInt public static final long CustomCatalogInvalidURL = 0x000000000000012DL;
     /**
-     * Failed to sync some content to the user's library
-     * 
-     * Failed to sync the user's library, trying again may result in success
-     * Underlying error may contain more details about the failure
+     * The error code that indicates when the system fails to add media items to or remove items from the user's Shazam
+     * library.
      */
     @Generated @NInt public static final long MediaLibrarySyncFailed = 0x0000000000000190L;
     /**
-     * Internal Error
-     * 
-     * ShazamKit encountered an internal error
+     * The error code to indicate a generic framework error.
      * 
      * API-Since: 16.0
      */
     @Generated @NInt public static final long InternalError = 0x00000000000001F4L;
     /**
-     * Failed to fetch @c SHMediaItem
-     * 
-     * There was an error fetching the @c SHMediaItem or the provided @c shazamID is invalid.
+     * The error code to indicate when the system fails to fetch one or more media items.
      * 
      * API-Since: 17.0
      */

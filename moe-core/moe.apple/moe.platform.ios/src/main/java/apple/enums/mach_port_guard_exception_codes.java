@@ -84,9 +84,12 @@ public final class mach_port_guard_exception_codes {
     @Generated public static final int RCV_GUARDED_DESC = 0x00100000;
     @Generated public static final int MSG_FILTERED = 0x00000080;
     @Generated public static final int MOD_REFS_NON_FATAL = 0x00200000;
+    /**
+     * unused
+     */
     @Generated public static final int IMMOVABLE_NON_FATAL = 0x00400000;
     @Generated public static final int INVALID_OPTIONS = 0x00000003;
-    @Generated public static final int REQUIRE_REPLY_PORT_SEMANTICS = 0x00800000;
+    @Generated public static final int REQUIRE_REPLY_PORT_SEMANTICS = 0x0000000A;
     @Generated public static final int THREAD_SET_STATE = 0x00000005;
     @Generated public static final int EXCEPTION_BEHAVIOR_ENFORCE = 0x00000006;
     /**
@@ -98,4 +101,18 @@ public final class mach_port_guard_exception_codes {
      */
     @Generated public static final int SERVICE_PORT_VIOLATION_NON_FATAL = 0x00100001;
     @Generated public static final int PROVISIONAL_REPLY_PORT = 0x00100002;
+    /**
+     * never sent
+     */
+    @Generated public static final int NONE = 0x00000000;
+    @Generated public static final int KOBJECT_REPLY_PORT_SEMANTICS = 0x00000009;
+    @Generated public static final int INVALID_NOTIFICATION_REQ = 0x00000041;
+    @Generated public static final int INVALID_MPO_ENTITLEMENT = 0x00000042;
+    @Generated public static final int DESCRIPTOR_VIOLATION = 0x00000043;
+    /**
+     * unused
+     */
+    @Generated public static final int OOL_PORT_ARRAY_CREATION = 0x00100003;
+    @Generated public static final int MOVE_PROVISIONAL_REPLY_PORT = 0x00100004;
+    @Generated public static final int REPLY_PORT_SINGLE_SO_RIGHT = 0x00100005;
 }

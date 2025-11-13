@@ -30,8 +30,6 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * AVMetricHLSMediaSegmentRequestEvent
- * 
  * Represents a metric event associated with a HLS media segment resource request.
  * 
  * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
@@ -71,8 +69,6 @@ public class AVMetricHLSMediaSegmentRequestEvent extends AVMetricEvent {
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
-     * [@property] byteRange
-     * 
      * Returns the byte range for the media segment. If not available, the range start and end will be 0.
      * 
      * API-Since: 18.0
@@ -117,8 +113,6 @@ public class AVMetricHLSMediaSegmentRequestEvent extends AVMetricEvent {
     public static native long hash_static();
 
     /**
-     * [@property] indexFileURL
-     * 
      * Returns the URL of the index file in which this segment was declared. If not available, returns nil.
      * 
      * API-Since: 18.0
@@ -150,8 +144,6 @@ public class AVMetricHLSMediaSegmentRequestEvent extends AVMetricEvent {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * [@property] isMapSegment
-     * 
      * Returns true if the media segment request is for a map segment.
      * 
      * API-Since: 18.0
@@ -170,8 +162,6 @@ public class AVMetricHLSMediaSegmentRequestEvent extends AVMetricEvent {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
-     * [@property] mediaResourceRequestEvent
-     * 
      * Returns the media resource request event which was used to satisfy the media segment.
      * 
      * API-Since: 18.0
@@ -182,8 +172,6 @@ public class AVMetricHLSMediaSegmentRequestEvent extends AVMetricEvent {
     public native AVMetricMediaResourceRequestEvent mediaResourceRequestEvent();
 
     /**
-     * [@property] mediaType
-     * 
      * Returns the media type. If the value cannot be determined, returns AVMediaTypeMuxed.
      * 
      * API-Since: 18.0
@@ -225,8 +213,6 @@ public class AVMetricHLSMediaSegmentRequestEvent extends AVMetricEvent {
     }
 
     /**
-     * [@property] url
-     * 
      * Returns the URL of the media segment. If no value is available, returns nil.
      * 
      * API-Since: 18.0
@@ -245,4 +231,13 @@ public class AVMetricHLSMediaSegmentRequestEvent extends AVMetricEvent {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Returns the duration of segment in seconds.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("segmentDuration")
+    public native double segmentDuration();
 }

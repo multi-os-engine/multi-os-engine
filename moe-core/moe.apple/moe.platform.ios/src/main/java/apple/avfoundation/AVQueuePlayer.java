@@ -42,6 +42,16 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * AVQueuePlayer is a subclass of AVPlayer that offers an interface for multiple-item playback.
+ * 
+ * AVQueuePlayer extends AVPlayer with methods for managing a queue of items to be played in sequence.
+ * It plays these items as gaplessly as possible in the current runtime environment, depending on
+ * the timely availability of media data for the enqueued items.
+ * 
+ * For best performance clients should typically enqueue only as many AVPlayerItems as are necessary
+ * to ensure smooth playback. Note that once an item is enqueued it becomes eligible to be loaded and
+ * made ready for playback, with whatever I/O and processing overhead that entails.
+ * 
  * API-Since: 4.1
  */
 @Generated
@@ -146,16 +156,13 @@ public class AVQueuePlayer extends AVPlayer {
     public static native AVQueuePlayer playerWithURL(@NotNull NSURL URL);
 
     /**
-     * queuePlayerWithItems:
-     * 
      * Creates an instance of AVQueuePlayer and enqueues the AVPlayerItems from the specified array.
      * 
-     * @param items
-     *              An NSArray of AVPlayerItems with which to populate the player's queue initially.
-     * @return
-     *         An instance of AVQueuePlayer.
+     * - Parameter items: An NSArray of AVPlayerItems with which to populate the player's queue initially.
      * 
-     *         API-Since: 4.1
+     * - Returns: An instance of AVQueuePlayer.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("queuePlayerWithItems:")
@@ -183,8 +190,6 @@ public class AVQueuePlayer extends AVPlayer {
     public static native long version_static();
 
     /**
-     * advanceToNextItem
-     * 
      * Ends playback of the current item and initiates playback of the next item in the player's queue.
      * 
      * Removes the current item from the play queue.
@@ -196,22 +201,18 @@ public class AVQueuePlayer extends AVPlayer {
     public native void advanceToNextItem();
 
     /**
-     * canInsertItem:afterItem:
-     * 
      * Tests whether an AVPlayerItem can be inserted into the player's queue.
      * 
      * Note that adding the same AVPlayerItem to an AVQueuePlayer at more than one position in the queue is not
      * supported.
      * 
-     * API-Since: 4.1
+     * - Parameter item: The AVPlayerItem to be tested.
+     * - Parameter afterItem: The item that the item to be tested is to follow in the queue. Pass nil to test whether
+     * the item can be appended to the queue.
      * 
-     * @param item
-     *                  The AVPlayerItem to be tested.
-     * @param afterItem
-     *                  The item that the item to be tested is to follow in the queue. Pass nil to test whether the item
-     *                  can be appended to the queue.
-     * @return
-     *         An indication of whether the item can be inserted into the queue after the specified item.
+     * - Returns: An indication of whether the item can be inserted into the queue after the specified item.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("canInsertItem:afterItem:")
@@ -222,20 +223,16 @@ public class AVQueuePlayer extends AVPlayer {
     public native AVQueuePlayer init();
 
     /**
-     * initWithItems:
-     * 
      * Initializes an instance of AVQueuePlayer by enqueueing the AVPlayerItems from the specified array.
      * 
      * This method throws an exception if items contains duplicated values or values associated with another AVPlayer.
      * 
-     * API-Since: 4.1
+     * - Parameter items: An NSArray of AVPlayerItems with which to populate the player's queue initially.
      * 
-     * @param items
-     *              An NSArray of AVPlayerItems with which to populate the player's queue initially.
-     * @return
-     *         An instance of AVQueuePlayer.
+     * - Returns: An instance of AVQueuePlayer.
+     * 
+     * API-Since: 4.1
      */
-    @NotNull
     @Generated
     @Selector("initWithItems:")
     public native AVQueuePlayer initWithItems(@NotNull NSArray<? extends AVPlayerItem> items);
@@ -249,32 +246,26 @@ public class AVQueuePlayer extends AVPlayer {
     public native AVQueuePlayer initWithURL(@NotNull NSURL URL);
 
     /**
-     * insertItem:afterItem:
-     * 
      * Places an AVPlayerItem after the specified item in the queue.
      * 
      * This method throws an exception if item already exists in the queue.
      * 
-     * API-Since: 4.1
+     * - Parameter item: The item to be inserted.
+     * - Parameter afterItem: The item that the newly inserted item should follow in the queue. Pass nil to append the
+     * item to the queue.
      * 
-     * @param item
-     *                  The item to be inserted.
-     * @param afterItem
-     *                  The item that the newly inserted item should follow in the queue. Pass nil to append the item to
-     *                  the queue.
+     * API-Since: 4.1
      */
     @Generated
     @Selector("insertItem:afterItem:")
     public native void insertItemAfterItem(@NotNull AVPlayerItem item, @Nullable AVPlayerItem afterItem);
 
     /**
-     * items
-     * 
      * Provides an array of the currently enqueued items.
      * 
-     * @return An NSArray containing the enqueued AVPlayerItems.
+     * - Returns: An NSArray containing the enqueued AVPlayerItems.
      * 
-     *         API-Since: 4.1
+     * API-Since: 4.1
      */
     @NotNull
     @Generated
@@ -282,8 +273,6 @@ public class AVQueuePlayer extends AVPlayer {
     public native NSArray<? extends AVPlayerItem> items();
 
     /**
-     * removeAllItems
-     * 
      * Removes all items from the queue.
      * 
      * Stops playback by the target.
@@ -295,16 +284,13 @@ public class AVQueuePlayer extends AVPlayer {
     public native void removeAllItems();
 
     /**
-     * removeItem:
-     * 
      * Removes an AVPlayerItem from the queue.
      * 
      * If the item to be removed is currently playing, has the same effect as -advanceToNextItem.
      * 
-     * API-Since: 4.1
+     * - Parameter item: The item to be removed.
      * 
-     * @param item
-     *             The item to be removed.
+     * API-Since: 4.1
      */
     @Generated
     @Selector("removeItem:")
@@ -324,4 +310,12 @@ public class AVQueuePlayer extends AVPlayer {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("isObservationEnabled")
+    public static native boolean isObservationEnabled();
+
+    @Generated
+    @Selector("setObservationEnabled:")
+    public static native void setObservationEnabled(boolean value);
 }

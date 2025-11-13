@@ -218,6 +218,8 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
     public native GKLeaderboardSet initWithCoder(@NotNull NSCoder coder);
 
     /**
+     * Asynchronously load the image. Error will be nil on success.
+     * 
      * API-Since: 7.0
      */
     @Generated

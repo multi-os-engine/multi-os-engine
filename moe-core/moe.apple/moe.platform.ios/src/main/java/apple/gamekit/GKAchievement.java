@@ -178,7 +178,9 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
      * completed. Pass nil to avoid completing any challenges.
      * 
      * API-Since: 7.0
+     * Deprecated-Since: 26.0
      */
+    @Deprecated
     @Generated
     @Selector("reportAchievements:withEligibleChallenges:withCompletionHandler:")
     public static native void reportAchievementsWithEligibleChallengesWithCompletionHandler(
@@ -225,6 +227,12 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
     public static native long version_static();
 
     /**
+     * Return a challenge compose view controller with pre-selected GKPlayers and a preformatted, player-editable
+     * message. Once this view controller is displayed, and the player sends or cancels sending the challenge, the
+     * completion handler will be called. This block contains the view controller, the reason why the handler was
+     * called, as well as which (if any) GKPlayers the challenge was sent to. Present modally from the top view
+     * controller. The completion handler should dismiss the view controller.
+     * 
      * API-Since: 8.0
      * Deprecated-Since: 17.0
      */
@@ -400,7 +408,9 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
      * challenge for the achievement.
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 26.0
      */
+    @Deprecated
     @Generated
     @Selector("selectChallengeablePlayers:withCompletionHandler:")
     public native void selectChallengeablePlayersWithCompletionHandler(@NotNull NSArray<? extends GKPlayer> players,
@@ -520,7 +530,9 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
 
     /**
      * API-Since: 17.0
+     * Deprecated-Since: 26.0
      */
+    @Deprecated
     @Generated
     @Selector("challengeComposeControllerWithMessage:players:completion:")
     @NotNull

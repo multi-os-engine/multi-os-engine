@@ -3906,4 +3906,48 @@ public final class GameController {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCInputRightBumper();
+
+    /**
+     * The category for game controller products that support 6DoF tracking on visionOS.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCProductCategorySpatialController();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCInputThumbstick();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCInputThumbstickButton();
+
+    /**
+     * Grip Buttons
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCInputGripButton();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCInputTrigger();
 }

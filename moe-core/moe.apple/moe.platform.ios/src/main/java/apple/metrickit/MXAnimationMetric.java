@@ -189,4 +189,28 @@ public class MXAnimationMetric extends MXMetric {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] hitchTimeRatio
+     * 
+     * Ratio of time the application spent hitching during tracked animations.
+     * 
+     * Hitches are user perceptible frame delays that can occur during animations and scrolling.
+     * 
+     * This metric incorporates adjustments that optimize for user perception, and typically will be the most accurate
+     * representation of what hitches users experience during app usage.
+     * 
+     * This metric is normalized against total animation duration.
+     * 
+     * Many animations are tracked by default. You can track additional animations using the -[NSProcessInfo
+     * beginActivityWithOptions:reason:] method with the NSActivityAnimationTrackingEnabled option.
+     * 
+     * Dimensionless.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("hitchTimeRatio")
+    @NotNull
+    public native NSMeasurement<NSUnit> hitchTimeRatio();
 }

@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.mapkit.c;
 
-import apple.corelocation.struct.CLLocationCoordinate2D;
 import apple.mapkit.struct.MKCoordinateRegion;
 import apple.mapkit.struct.MKCoordinateSpan;
 import apple.mapkit.struct.MKMapPoint;
@@ -36,6 +35,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.objc.map.ObjCStringMapper;
 import org.jetbrains.annotations.NotNull;
+import apple.corelocation.struct.CLLocationCoordinate2D;
 
 @Generated
 @Library("MapKit")
@@ -1119,4 +1119,13 @@ public final class MapKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryVolleyball();
+
+    /**
+     * API-Since: 14.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String MKLaunchOptionsDirectionsModeCycling();
 }

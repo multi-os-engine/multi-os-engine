@@ -9,6 +9,8 @@ import org.moe.natj.general.ann.NUInt;
  * Automatic Head-Tracking flags.
  * [@constant] PHASEAutomaticHeadTrackingFlagOrientation
  * On capable devices, listener orientation will be automatically rotated based on user's head-orientation.
+ * [@constant] PHASEAutomaticHeadTrackingFlagPosition
+ * On capable devices, listener position will be automatically set based on user's position.
  * 
  * API-Since: 18.0
  */
@@ -21,5 +23,9 @@ public final class PHASEAutomaticHeadTrackingFlags {
     /**
      * API-Since: 18.0
      */
-    @Generated @NUInt public static final long PHASEAutomaticHeadTrackingFlagOrientation = 0x0000000000000001L;
+    @Generated @NUInt public static final long Orientation = 0x0000000000000001L;
+    /**
+     * API-Since: 18.0
+     */
+    @Generated @NUInt public static final long Position = 0x0000000000000002L;
 }

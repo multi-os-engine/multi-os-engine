@@ -27,6 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import apple.foundation.protocol.NSCopying;
+import apple.metal.protocol.MTL4Compiler;
+import apple.metalfx.protocol.MTL4FXTemporalScaler;
 
 /**
  * API-Since: 16.0
@@ -85,8 +87,7 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * These properties must be set to the respective Metal pixel formats for each texture that will be used with the
-     * scaler.
+     * The pixel format of the input color texture for the temporal scaler you create with this descriptor.
      * 
      * API-Since: 16.0
      */
@@ -100,6 +101,8 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public static native String debugDescription_static();
 
     /**
+     * The pixel format of the input depth texture for the temporal scaler you create with this descriptor.
+     * 
      * API-Since: 16.0
      */
     @Generated
@@ -121,6 +124,8 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public native MTLFXTemporalScalerDescriptor init();
 
     /**
+     * The largest scale factor the temporal scaler you create with this descriptor can use to generate output textures.
+     * 
      * API-Since: 16.0
      */
     @Generated
@@ -128,6 +133,9 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public native float inputContentMaxScale();
 
     /**
+     * The smallest scale factor the temporal scaler you create with this descriptor can use to generate output
+     * textures.
+     * 
      * API-Since: 16.0
      */
     @Generated
@@ -135,6 +143,8 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public native float inputContentMinScale();
 
     /**
+     * The height of the input color texture for the temporal scaler you create with this descriptor.
+     * 
      * API-Since: 16.0
      */
     @Generated
@@ -143,6 +153,8 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public native long inputHeight();
 
     /**
+     * The width of the input color texture for the temporal scaler you create with this descriptor.
+     * 
      * API-Since: 16.0
      */
     @Generated
@@ -164,9 +176,16 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * Auto exposure property, setting this to YES to indicate for MetalFX
-     * to determine exposure per frame, which will ignore exposureTexture
-     * property on the scaler object.
+     * A Boolean value that indicates whether MetalFX calculates the exposure for each frame.
+     * 
+     * Set this property to <doc://com.apple.documentation/documentation/swift/true> to create a scaler that
+     * automatically
+     * calculates the exposure level for each image it scales.
+     * 
+     * * Note: Temporal scaler instances that use auto exposure ignore their ``MTLFXTemporalScalerBase/exposureTexture``
+     * property.
+     * 
+     * This property's default value is <doc://com.apple.documentation/documentation/swift/false>.
      * 
      * API-Since: 16.0
      */
@@ -175,11 +194,16 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public native boolean isAutoExposureEnabled();
 
     /**
-     * Dynamic Resolution properties
-     * Set inputContentPropertiesEnabled to YES to indicate using dynamic resolution
-     * Scale value represents output resolution / input content resolution for either
-     * width or height dimension. It's assumed that aspect ratio of input/output is
-     * always the same.
+     * A Boolean value that indicates whether the temporal scaler you create with this descriptor uses dynamic
+     * resolution.
+     * 
+     * When you set this property to <doc://com.apple.documentation/documentation/swift/true> to enable dynamic
+     * resolution,
+     * scale properties ``inputContentMinScale`` and ``inputContentMaxScale`` represent the input and output resolution
+     * both the width and height.
+     * 
+     * * Note: The scaler assumes that aspect ratio of the input and output textures doesn't change.
+     * 
      * 
      * API-Since: 16.0
      */
@@ -197,6 +221,8 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
+     * The pixel format of the input motion texture for the temporal scaler you create with this descriptor.
+     * 
      * API-Since: 16.0
      */
     @Generated
@@ -210,8 +236,12 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public static native MTLFXTemporalScalerDescriptor new_objc();
 
     /**
-     * The following method is used to instantiate the effect encoder for a given
-     * Metal device.
+     * Creates a temporal scaler instance for a Metal device.
+     * 
+     * - Parameters:
+     * - device: The Metal device that creates the temporal scaler.
+     * - Returns:
+     * A new temporal scaler instance upon success, or `nil` otherwise.
      * 
      * API-Since: 16.0
      */
@@ -223,6 +253,8 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
             @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     /**
+     * The height of the output color texture for the temporal scaler you create with this descriptor.
+     * 
      * API-Since: 16.0
      */
     @Generated
@@ -231,6 +263,8 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public native long outputHeight();
 
     /**
+     * The pixel format of the output texture for the temporal scaler you create with this descriptor.
+     * 
      * API-Since: 16.0
      */
     @Generated
@@ -239,6 +273,8 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public native long outputTextureFormat();
 
     /**
+     * The width of the output color texture for the temporal scaler you create with this descriptor.
+     * 
      * API-Since: 16.0
      */
     @Generated
@@ -255,9 +291,16 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Auto exposure property, setting this to YES to indicate for MetalFX
-     * to determine exposure per frame, which will ignore exposureTexture
-     * property on the scaler object.
+     * A Boolean value that indicates whether MetalFX calculates the exposure for each frame.
+     * 
+     * Set this property to <doc://com.apple.documentation/documentation/swift/true> to create a scaler that
+     * automatically
+     * calculates the exposure level for each image it scales.
+     * 
+     * * Note: Temporal scaler instances that use auto exposure ignore their ``MTLFXTemporalScalerBase/exposureTexture``
+     * property.
+     * 
+     * This property's default value is <doc://com.apple.documentation/documentation/swift/false>.
      * 
      * API-Since: 16.0
      */
@@ -266,8 +309,7 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public native void setAutoExposureEnabled(boolean value);
 
     /**
-     * These properties must be set to the respective Metal pixel formats for each texture that will be used with the
-     * scaler.
+     * The pixel format of the input color texture for the temporal scaler you create with this descriptor.
      * 
      * API-Since: 16.0
      */
@@ -276,6 +318,8 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public native void setColorTextureFormat(@NUInt long value);
 
     /**
+     * The pixel format of the input depth texture for the temporal scaler you create with this descriptor.
+     * 
      * API-Since: 16.0
      */
     @Generated
@@ -283,6 +327,8 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public native void setDepthTextureFormat(@NUInt long value);
 
     /**
+     * The largest scale factor the temporal scaler you create with this descriptor can use to generate output textures.
+     * 
      * API-Since: 16.0
      */
     @Generated
@@ -290,6 +336,9 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public native void setInputContentMaxScale(float value);
 
     /**
+     * The smallest scale factor the temporal scaler you create with this descriptor can use to generate output
+     * textures.
+     * 
      * API-Since: 16.0
      */
     @Generated
@@ -297,11 +346,16 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public native void setInputContentMinScale(float value);
 
     /**
-     * Dynamic Resolution properties
-     * Set inputContentPropertiesEnabled to YES to indicate using dynamic resolution
-     * Scale value represents output resolution / input content resolution for either
-     * width or height dimension. It's assumed that aspect ratio of input/output is
-     * always the same.
+     * A Boolean value that indicates whether the temporal scaler you create with this descriptor uses dynamic
+     * resolution.
+     * 
+     * When you set this property to <doc://com.apple.documentation/documentation/swift/true> to enable dynamic
+     * resolution,
+     * scale properties ``inputContentMinScale`` and ``inputContentMaxScale`` represent the input and output resolution
+     * both the width and height.
+     * 
+     * * Note: The scaler assumes that aspect ratio of the input and output textures doesn't change.
+     * 
      * 
      * API-Since: 16.0
      */
@@ -310,6 +364,8 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public native void setInputContentPropertiesEnabled(boolean value);
 
     /**
+     * The height of the input color texture for the temporal scaler you create with this descriptor.
+     * 
      * API-Since: 16.0
      */
     @Generated
@@ -317,6 +373,8 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public native void setInputHeight(@NUInt long value);
 
     /**
+     * The width of the input color texture for the temporal scaler you create with this descriptor.
+     * 
      * API-Since: 16.0
      */
     @Generated
@@ -324,6 +382,8 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public native void setInputWidth(@NUInt long value);
 
     /**
+     * The pixel format of the input motion texture for the temporal scaler you create with this descriptor.
+     * 
      * API-Since: 16.0
      */
     @Generated
@@ -331,6 +391,8 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public native void setMotionTextureFormat(@NUInt long value);
 
     /**
+     * The height of the output color texture for the temporal scaler you create with this descriptor.
+     * 
      * API-Since: 16.0
      */
     @Generated
@@ -338,6 +400,8 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public native void setOutputHeight(@NUInt long value);
 
     /**
+     * The pixel format of the output texture for the temporal scaler you create with this descriptor.
+     * 
      * API-Since: 16.0
      */
     @Generated
@@ -345,6 +409,8 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public native void setOutputTextureFormat(@NUInt long value);
 
     /**
+     * The width of the output color texture for the temporal scaler you create with this descriptor.
+     * 
      * API-Since: 16.0
      */
     @Generated
@@ -360,7 +426,13 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public static native Class superclass_static();
 
     /**
-     * Class method for determining support
+     * Returns a Boolean value that indicates whether the temporal scaler works with a GPU.
+     * 
+     * - Parameters:
+     * - device: A device instance that represents a GPU.
+     * 
+     * - Returns: <doc://com.apple.documentation/documentation/swift/true> if the device supports temporal scaling,
+     * <doc://com.apple.documentation/documentation/swift/false> otherwise.
      * 
      * API-Since: 16.0
      */
@@ -381,6 +453,13 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
+     * Returns the largest temporal scaling factor the device supports as a floating-point value.
+     * 
+     * - Parameters:
+     * - device: The Metal device for which this method performs this check.
+     * 
+     * - Returns: the maximum input content scale the GPU device supports.
+     * 
      * API-Since: 17.0
      */
     @Generated
@@ -389,7 +468,12 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
             @Mapped(ObjCObjectMapper.class) @NotNull MTLDevice device);
 
     /**
-     * Class methods for querying supported min/max input content scale.
+     * Returns the smallest temporal scaling factor the device supports as a floating-point value.
+     * 
+     * - Parameters:
+     * - device: The Metal device for which this method performs this check.
+     * 
+     * - Returns: the minimum input content scale the GPU device supports.
      * 
      * API-Since: 17.0
      */
@@ -404,6 +488,8 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public static native boolean useStoredAccessor();
 
     /**
+     * A Boolean value that indicates whether a temporal scaler you create with the descriptor applies a reactive mask.
+     * 
      * API-Since: 17.4
      */
     @Generated
@@ -411,6 +497,8 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public native boolean isReactiveMaskTextureEnabled();
 
     /**
+     * The pixel format of the reactive mask input texture for a temporal scaler you create with the descriptor.
+     * 
      * API-Since: 17.4
      */
     @Generated
@@ -419,11 +507,35 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public native long reactiveMaskTextureFormat();
 
     /**
-     * requiresSynchronousInitialization property, setting this to YES ensures
-     * that the effect is fully created before first use, setting it to NO
-     * allows the implementation to create an optimized version asynchronously, this
-     * can cause the performance to be submoptimal while the optimized version is created.
-     * Defaults to NO.
+     * A Boolean value that indicates whether MetalFX compiles a temporal scaling effect’s underlying upscaler as it
+     * creates the instance.
+     * 
+     * This property gives you the option to decide when it’s better for your app to give MetalFX the time it needs to
+     * compile the underlying upscaler of the temporal scaling effect. The two choices are:
+     * 
+     * * As you create the effect
+     * * After you create the effect, likely when your app needs to upscale the initial textures
+     * 
+     * You can create a temporal scaler that can upscale textures at its best speed
+     * immediately after you create it by setting this property to
+     * <doc://com.apple.documentation/documentation/swift/true>
+     * and then calling an initialization method like ``newTemporalScalerWithDevice:``. However, it may take MetalFX
+     * more
+     * time for that method to return while it creates the denoiser scaler and compiles its underlying pipelines.
+     * 
+     * By default, the property is equal to <doc://com.apple.documentation/documentation/swift/false>, which tells
+     * MetalFX
+     * to quickly create and return the temporal scaling-effect instance, and then compile a faster upscaler in the
+     * background.
+     * However, this means the effect can take more time to upscale textures while the framework compiles the underlying
+     * upscaler.
+     * When the framework finishes compiling, the effect runs just as fast as if you set the property to
+     * <doc://com.apple.documentation/documentation/swift/true>.
+     * 
+     * * Note: The image quality of the effect’s output texture is consistent, whether it’s using the slower interim
+     * upscaler
+     * or the final, faster upscaler.
+     * 
      * 
      * API-Since: 16.0
      */
@@ -432,6 +544,8 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public native boolean requiresSynchronousInitialization();
 
     /**
+     * A Boolean value that indicates whether a temporal scaler you create with the descriptor applies a reactive mask.
+     * 
      * API-Since: 17.4
      */
     @Generated
@@ -439,6 +553,8 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public native void setReactiveMaskTextureEnabled(boolean value);
 
     /**
+     * The pixel format of the reactive mask input texture for a temporal scaler you create with the descriptor.
+     * 
      * API-Since: 17.4
      */
     @Generated
@@ -446,15 +562,73 @@ public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying
     public native void setReactiveMaskTextureFormat(@NUInt long value);
 
     /**
-     * requiresSynchronousInitialization property, setting this to YES ensures
-     * that the effect is fully created before first use, setting it to NO
-     * allows the implementation to create an optimized version asynchronously, this
-     * can cause the performance to be submoptimal while the optimized version is created.
-     * Defaults to NO.
+     * A Boolean value that indicates whether MetalFX compiles a temporal scaling effect’s underlying upscaler as it
+     * creates the instance.
+     * 
+     * This property gives you the option to decide when it’s better for your app to give MetalFX the time it needs to
+     * compile the underlying upscaler of the temporal scaling effect. The two choices are:
+     * 
+     * * As you create the effect
+     * * After you create the effect, likely when your app needs to upscale the initial textures
+     * 
+     * You can create a temporal scaler that can upscale textures at its best speed
+     * immediately after you create it by setting this property to
+     * <doc://com.apple.documentation/documentation/swift/true>
+     * and then calling an initialization method like ``newTemporalScalerWithDevice:``. However, it may take MetalFX
+     * more
+     * time for that method to return while it creates the denoiser scaler and compiles its underlying pipelines.
+     * 
+     * By default, the property is equal to <doc://com.apple.documentation/documentation/swift/false>, which tells
+     * MetalFX
+     * to quickly create and return the temporal scaling-effect instance, and then compile a faster upscaler in the
+     * background.
+     * However, this means the effect can take more time to upscale textures while the framework compiles the underlying
+     * upscaler.
+     * When the framework finishes compiling, the effect runs just as fast as if you set the property to
+     * <doc://com.apple.documentation/documentation/swift/true>.
+     * 
+     * * Note: The image quality of the effect’s output texture is consistent, whether it’s using the slower interim
+     * upscaler
+     * or the final, faster upscaler.
+     * 
      * 
      * API-Since: 16.0
      */
     @Generated
     @Selector("setRequiresSynchronousInitialization:")
     public native void setRequiresSynchronousInitialization(boolean value);
+
+    /**
+     * Creates a temporal scaler instance for a Metal device.
+     * 
+     * - Parameters:
+     * - device: The Metal device that creates the temporal scaler.
+     * - compiler: A compiler instance this method can use to build pipeline state objects.
+     * - Returns:
+     * A new temporal scaler instance upon success, or `nil` otherwise.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("newTemporalScalerWithDevice:compiler:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    public native MTL4FXTemporalScaler newTemporalScalerWithDeviceCompiler(
+            @Mapped(ObjCObjectMapper.class) @NotNull MTLDevice device,
+            @Mapped(ObjCObjectMapper.class) @NotNull MTL4Compiler compiler);
+
+    /**
+     * Queries whether a Metal device supports temporal scaling compatible with Metal 4.
+     * 
+     * - Parameters:
+     * - device: The GPU device for which this methods tests support.
+     * 
+     * - Returns: <doc://com.apple.documentation/documentation/swift/true> if the device supports temporal scaling with
+     * Metal 4, <doc://com.apple.documentation/documentation/swift/false> otherwise.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("supportsMetal4FX:")
+    public static native boolean supportsMetal4FX(@Mapped(ObjCObjectMapper.class) @NotNull MTLDevice device);
 }

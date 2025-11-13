@@ -239,4 +239,14 @@ public class HKStateOfMindType extends HKSampleType {
     @Selector("workoutType")
     @NotNull
     public static native HKWorkoutType workoutType();
+
+    @Generated
+    @Selector("medicationDoseEventType")
+    @NotNull
+    public static native HKMedicationDoseEventType medicationDoseEventType();
+
+    @Generated
+    @Selector("userAnnotatedMedicationType")
+    @NotNull
+    public static native HKUserAnnotatedMedicationType userAnnotatedMedicationType();
 }

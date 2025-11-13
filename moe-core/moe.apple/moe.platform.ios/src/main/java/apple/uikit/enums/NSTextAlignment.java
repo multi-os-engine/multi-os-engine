@@ -51,7 +51,15 @@ public final class NSTextAlignment {
      */
     @Generated @NInt public static final long Justified = 0x0000000000000003L;
     /**
-     * Indicates the default alignment for script
+     * Resolved to either ``left`` or ``right`` based on the natural alignment resolution type active in the associated
+     * component.
+     * 
+     * There are two types of natural alignment resolution behavior. The natural alignment is resolved based on either
+     * the UI language or the base writing direction.
+     * The behavior is selected by the ``resolvesNaturalAlignmentWithBaseWritingDirection`` property for
+     * ``NSTextLayoutManager``.
+     * ``NSStringDrawingOptions.resolvesNaturalAlignmentWithBaseWritingDirection`` specifies the base writing direction
+     * based resolution for ``NSStringDrawing``.
      * 
      * API-Since: 6.0
      */

@@ -28,15 +28,62 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * [@interface] AVCaptureEventInteraction
+ * An object that registers handlers to respond to capture events from system hardware buttons.
  * 
- * A UIInteraction used to register actions triggered by system capture events.
+ * The system Camera app allows people to perform capture functions by pressing hardware buttons on their iOS device.
+ * UIKit apps can add similar functionality by using this type to register handlers that respond to interactions from
+ * device hardware.
  * 
- * Events may or may not be sent to applications based on the current system state. Backgrounded applications will not
- * receive events, additionally events will only be sent to applications that are actively using the camera.
- * AVCaptureEventInteraction should be attached to views in the responder chain.
+ * > Note:
+ * > In SwiftUI, respond to capture events from hardware buttons using
+ * <doc://com.apple.documentation/documentation/swiftui/view/oncameracaptureevent(isenabled:action:)> and
+ * <doc://com.apple.documentation/documentation/swiftui/view/oncameracaptureevent(isenabled:primaryaction:secondaryaction:)>
+ * instead.
  * 
- * This API is for media capture use cases only.
+ * The following example shows how to add a handler that captures a photo when a user presses a hardware button on their
+ * device.
+ * 
+ * ```swift
+ * class CameraViewController: UIViewController {
+ * 
+ * /// An object that manages the camera functionality.
+ * private let camera = CameraModel()
+ * 
+ * /// A capture event interaction to handle hardware button presses.
+ * private var eventInteraction: AVCaptureEventInteraction?
+ * 
+ * override func viewDidLoad() {
+ * super.viewDidLoad()
+ * // Configure the app to take a photo on hardware button press.
+ * configureHardwareInteraction()
+ * }
+ * 
+ * private func configureHardwareInteraction() {
+ * // Create a new capture event interaction with a handler that captures a photo.
+ * let interaction = AVCaptureEventInteraction { [weak self] event in
+ * // Capture a photo on "press up" of a hardware button.
+ * if event.phase == .ended {
+ * self?.camera.capturePhoto()
+ * }
+ * }
+ * // Add the interaction to the view controller's view.
+ * view.addInteraction(interaction)
+ * eventInteraction = interaction
+ * }
+ * }
+ * ```
+ * 
+ * 
+ * The event handler queries the capture event to determine its phase, and when the interaction ends, captures a photo.
+ * 
+ * > Important:
+ * > You can only use this API for capture use cases. The system sends capture events only to apps that actively use the
+ * camera. Backgrounded capture apps, and apps not performing capture, don't receive events.
+ * >
+ * > Adopting this API overrides default hardware button behavior, so apps must always respond appropriately to any
+ * events received. Failing to handle events results in a nonfunctional button that provides a poor user experience. If
+ * your app is temporarily unable to handle events, disable the interaction by setting its ``isEnabled`` property to
+ * `false`, which restores the system button behavior.
  * 
  * API-Since: 17.2
  */
@@ -115,15 +162,12 @@ public class AVCaptureEventInteraction extends NSObject implements UIInteraction
     public native AVCaptureEventInteraction init();
 
     /**
-     * initWithEventHandler:
-     * [@returns] An AVCaptureEventInteraction.
+     * Creates a capture event interaction with a handler that responds to presses of hardware buttons.
      * 
-     * Initializer for an AVCaptureEventInteraction.
+     * - Parameter handler: An event handler the system calls when a person performs a primary or secondary capture
+     * event.
      * 
      * API-Since: 17.2
-     * 
-     * @param handler
-     *                An event handler called when either the primary or secondary events are triggered.
      */
     @Generated
     @Selector("initWithEventHandler:")
@@ -138,17 +182,12 @@ public class AVCaptureEventInteraction extends NSObject implements UIInteraction
     }
 
     /**
-     * initWithPrimaryEventHandler:secondaryEventHandler:
-     * [@returns] An AVCaptureEventInteraction.
+     * Creates a capture event interaction with handlers that respond independently to presses of hardware buttons.
      * 
-     * Initializer for an AVCaptureEventInteraction.
+     * - Parameter primaryHandler: An event handler the system calls when a person performs a primary capture event.
+     * - Parameter secondaryHandler: An event handler the system calls when a person performs a secondary capture event.
      * 
      * API-Since: 17.2
-     * 
-     * @param primaryHandler
-     *                         An event handler called when a primary capture event is triggered.
-     * @param secondaryHandler
-     *                         An event handler called when a secondary capture event is triggered.
      */
     @Generated
     @Selector("initWithPrimaryEventHandler:secondaryEventHandler:")
@@ -184,12 +223,10 @@ public class AVCaptureEventInteraction extends NSObject implements UIInteraction
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * [@property] enabled
+     * A Boolean value that indicates whether this capture event interaction is in an enabled state.
      * 
-     * A boolean value indicating whether this capture event interaction is active or not.
-     * 
-     * Set this value to NO when your application cannot or will not respond to the action callbacks to avoid
-     * non-interactive buttons or UI elements.
+     * Set this value to `false` when your app can’t or won’t respond to the action callbacks to avoid non-interactive
+     * buttons or UI elements.
      * 
      * API-Since: 17.2
      */
@@ -220,12 +257,10 @@ public class AVCaptureEventInteraction extends NSObject implements UIInteraction
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property] enabled
+     * A Boolean value that indicates whether this capture event interaction is in an enabled state.
      * 
-     * A boolean value indicating whether this capture event interaction is active or not.
-     * 
-     * Set this value to NO when your application cannot or will not respond to the action callbacks to avoid
-     * non-interactive buttons or UI elements.
+     * Set this value to `false` when your app can’t or won’t respond to the action callbacks to avoid non-interactive
+     * buttons or UI elements.
      * 
      * API-Since: 17.2
      */
@@ -259,4 +294,34 @@ public class AVCaptureEventInteraction extends NSObject implements UIInteraction
     @Generated
     @Selector("willMoveToView:")
     public native void willMoveToView(@Nullable UIView view);
+
+    /**
+     * A Boolean value that indicates whether the default sound is in a disabled state.
+     * 
+     * If `true`, you must handle sound playback for capture events manually using the ``AVCaptureEvent/playSound:``
+     * method.
+     * 
+     * > Important: To use AirPods Camera Control, it must be available in your country or region. AirPods Camera
+     * Control is not currently available in the European Union.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("defaultCaptureSoundDisabled")
+    public static native boolean defaultCaptureSoundDisabled();
+
+    /**
+     * A Boolean value that indicates whether the default sound is in a disabled state.
+     * 
+     * If `true`, you must handle sound playback for capture events manually using the ``AVCaptureEvent/playSound:``
+     * method.
+     * 
+     * > Important: To use AirPods Camera Control, it must be available in your country or region. AirPods Camera
+     * Control is not currently available in the European Union.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setDefaultCaptureSoundDisabled:")
+    public static native void setDefaultCaptureSoundDisabled(boolean value);
 }

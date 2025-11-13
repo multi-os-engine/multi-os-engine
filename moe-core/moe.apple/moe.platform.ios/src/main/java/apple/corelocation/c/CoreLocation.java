@@ -16,18 +16,18 @@ limitations under the License.
 
 package apple.corelocation.c;
 
-import apple.corelocation.struct.CLLocationCoordinate2D;
 import org.moe.natj.c.CRuntime;
-import org.moe.natj.c.ann.CFunction;
 import org.moe.natj.c.ann.CVariable;
 import org.moe.natj.general.NatJ;
-import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
 import org.jetbrains.annotations.NotNull;
+import apple.corelocation.struct.CLLocationCoordinate2D;
+import org.moe.natj.c.ann.CFunction;
+import org.moe.natj.general.ann.ByValue;
 
 @Generated
 @Library("CoreLocation")
@@ -40,6 +40,63 @@ public final class CoreLocation {
     @Generated
     private CoreLocation() {
     }
+
+    /**
+     * kCLErrorDomain
+     * 
+     * Discussion:
+     * Error returned as the domain to NSError from CoreLocation.
+     * 
+     * The file CLError.h defines constants for the errors in kCLErrorDomain.
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCLErrorDomain();
+
+    /**
+     * kCLErrorUserInfoAlternateRegionKey
+     * 
+     * Discussion:
+     * When an error with code kCLErrorRegionMonitoringResponseDelayed is received, this key may be populated
+     * in the userInfo dictionary. The value is a CLRegion that the location service can more effectively monitor.
+     * 
+     * API-Since: 5.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCLErrorUserInfoAlternateRegionKey();
+
+    /**
+     * kCLHeadingFilterNone
+     * 
+     * Discussion:
+     * Use as the headingFilter property for CLLocationManager. This indicates
+     * to the heading service that no minimum movement filter is desired - ie, client will be informed
+     * of any movement.
+     */
+    @Generated
+    @CVariable()
+    public static native double kCLHeadingFilterNone();
+
+    /**
+     * CLLocationPushServiceErrorDomain
+     * 
+     * Discussion:
+     * Error returned as the domain to NSError from -[CLLocationManager startMonitoringLocationPushesWithCompletion:].
+     * 
+     * 
+     * API-Since: 15.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CLLocationPushServiceErrorDomain();
+
+    @Generated public static final double CL_TARGET_SUPPORTS_CONDITIONS = 0.0;
 
     /**
      * CLLocationCoordinate2DIsValid
@@ -114,6 +171,23 @@ public final class CoreLocation {
     public static native double kCLLocationAccuracyThreeKilometers();
 
     /**
+     * kCLLocationAccuracyReduced
+     * 
+     * Discussion:
+     * If you set your CLLocationManager's desiredAccuracy property to
+     * this value, locations delivered to your delegate in response to
+     * startUpdatingLocation or requestLocation will have their
+     * accuracy reduced. The locations you receive will match the
+     * locations your app would have received if the user had decided
+     * not to grant your app authorization for precise location.
+     * 
+     * API-Since: 14.0
+     */
+    @Generated
+    @CVariable()
+    public static native double kCLLocationAccuracyReduced();
+
+    /**
      * CLLocationDistanceMax
      * 
      * Discussion:
@@ -149,72 +223,4 @@ public final class CoreLocation {
     @CVariable()
     @ByValue
     public static native CLLocationCoordinate2D kCLLocationCoordinate2DInvalid();
-
-    /**
-     * kCLErrorDomain
-     * 
-     * Discussion:
-     * Error returned as the domain to NSError from CoreLocation.
-     * 
-     * The file CLError.h defines constants for the errors in kCLErrorDomain.
-     */
-    @NotNull
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String kCLErrorDomain();
-
-    /**
-     * kCLErrorUserInfoAlternateRegionKey
-     * 
-     * Discussion:
-     * When an error with code kCLErrorRegionMonitoringResponseDelayed is received, this key may be populated
-     * in the userInfo dictionary. The value is a CLRegion that the location service can more effectively monitor.
-     * 
-     * API-Since: 5.0
-     */
-    @NotNull
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String kCLErrorUserInfoAlternateRegionKey();
-
-    /**
-     * kCLHeadingFilterNone
-     * 
-     * Discussion:
-     * Use as the headingFilter property for CLLocationManager. This indicates
-     * to the heading service that no minimum movement filter is desired - ie, client will be informed
-     * of any movement.
-     */
-    @Generated
-    @CVariable()
-    public static native double kCLHeadingFilterNone();
-
-    /**
-     * kCLLocationAccuracyReduced
-     * 
-     * Discussion:
-     * If you set your CLLocationManager's desiredAccuracy property to
-     * this value, locations delivered to your delegate in response to
-     * startUpdatingLocation or requestLocation will have their
-     * accuracy reduced. The locations you receive will match the
-     * locations your app would have received if the user had decided
-     * not to grant your app authorization for precise location.
-     * 
-     * API-Since: 14.0
-     */
-    @Generated
-    @CVariable()
-    public static native double kCLLocationAccuracyReduced();
-
-    /**
-     * API-Since: 15.0
-     */
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String CLLocationPushServiceErrorDomain();
-
-    @Generated public static final double CL_TARGET_SUPPORTS_CONDITIONS = 0.0;
 }

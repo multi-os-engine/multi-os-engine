@@ -59,6 +59,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * API-Since: 4.0
  * Deprecated-Since: 13.0
+ * Deprecated-Message: Use MKOverlayRenderer
  */
 @Deprecated
 @Generated

@@ -158,4 +158,46 @@ public interface MTLIndirectRenderCommand {
     @Selector("setVertexBuffer:offset:attributeStride:atIndex:")
     void setVertexBufferOffsetAttributeStrideAtIndex(@Mapped(ObjCObjectMapper.class) @NotNull MTLBuffer buffer,
             @NUInt long offset, @NUInt long stride, @NUInt long index);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setCullMode:")
+    void setCullMode(@NUInt long cullMode);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setDepthBias:slopeScale:clamp:")
+    void setDepthBiasSlopeScaleClamp(float depthBias, float slopeScale, float clamp);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setDepthClipMode:")
+    void setDepthClipMode(@NUInt long depthClipMode);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setDepthStencilState:")
+    void setDepthStencilState(@Mapped(ObjCObjectMapper.class) @Nullable MTLDepthStencilState depthStencilState);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setFrontFacingWinding:")
+    void setFrontFacingWinding(@NUInt long frontFacingWindning);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setTriangleFillMode:")
+    void setTriangleFillMode(@NUInt long fillMode);
 }

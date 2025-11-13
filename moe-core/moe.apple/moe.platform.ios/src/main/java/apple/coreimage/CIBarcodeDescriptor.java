@@ -30,14 +30,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * CIBarcodeDescriptor
+ * An abstract base class that represents a machine-readable code's attributes.
  * 
- * CIBarcodeDescriptor is an abstract base class that defines an abstract representation of a machine readable code's
- * symbol attributes.
- * 
- * [@discsussion]
- * Each subclass is sufficient to recreate the symbol exactly as seen or to be used with a custom parser. Subclasses of
- * CIBarcodeDescriptor are defined for each code type to contain the formal specification of each symbology.
+ * Subclasses encapsulate the formal specification and fields specific to a code type.
+ * Each subclass is sufficient to recreate the unique symbol exactly as seen or used with a custom parser.
  */
 @Generated
 @Library("CoreImage")

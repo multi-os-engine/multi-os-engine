@@ -1398,7 +1398,10 @@ public class MTRClusterColorControl extends MTRGenericCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointBIntensityWithValue:expectedValueInterval:")
     public native void writeAttributeColorPointBIntensityWithValueExpectedValueInterval(
@@ -1406,7 +1409,10 @@ public class MTRClusterColorControl extends MTRGenericCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointBIntensityWithValue:expectedValueInterval:params:")
     public native void writeAttributeColorPointBIntensityWithValueExpectedValueIntervalParams(
@@ -1415,7 +1421,10 @@ public class MTRClusterColorControl extends MTRGenericCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointBXWithValue:expectedValueInterval:")
     public native void writeAttributeColorPointBXWithValueExpectedValueInterval(
@@ -1423,7 +1432,10 @@ public class MTRClusterColorControl extends MTRGenericCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointBXWithValue:expectedValueInterval:params:")
     public native void writeAttributeColorPointBXWithValueExpectedValueIntervalParams(
@@ -1432,7 +1444,10 @@ public class MTRClusterColorControl extends MTRGenericCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointBYWithValue:expectedValueInterval:")
     public native void writeAttributeColorPointBYWithValueExpectedValueInterval(
@@ -1440,7 +1455,10 @@ public class MTRClusterColorControl extends MTRGenericCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointBYWithValue:expectedValueInterval:params:")
     public native void writeAttributeColorPointBYWithValueExpectedValueIntervalParams(
@@ -1449,7 +1467,10 @@ public class MTRClusterColorControl extends MTRGenericCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointGIntensityWithValue:expectedValueInterval:")
     public native void writeAttributeColorPointGIntensityWithValueExpectedValueInterval(
@@ -1457,7 +1478,10 @@ public class MTRClusterColorControl extends MTRGenericCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointGIntensityWithValue:expectedValueInterval:params:")
     public native void writeAttributeColorPointGIntensityWithValueExpectedValueIntervalParams(
@@ -1466,7 +1490,10 @@ public class MTRClusterColorControl extends MTRGenericCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointGXWithValue:expectedValueInterval:")
     public native void writeAttributeColorPointGXWithValueExpectedValueInterval(
@@ -1474,7 +1501,10 @@ public class MTRClusterColorControl extends MTRGenericCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointGXWithValue:expectedValueInterval:params:")
     public native void writeAttributeColorPointGXWithValueExpectedValueIntervalParams(
@@ -1483,7 +1513,10 @@ public class MTRClusterColorControl extends MTRGenericCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointGYWithValue:expectedValueInterval:")
     public native void writeAttributeColorPointGYWithValueExpectedValueInterval(
@@ -1491,7 +1524,10 @@ public class MTRClusterColorControl extends MTRGenericCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointGYWithValue:expectedValueInterval:params:")
     public native void writeAttributeColorPointGYWithValueExpectedValueIntervalParams(
@@ -1500,7 +1536,10 @@ public class MTRClusterColorControl extends MTRGenericCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointRIntensityWithValue:expectedValueInterval:")
     public native void writeAttributeColorPointRIntensityWithValueExpectedValueInterval(
@@ -1508,7 +1547,10 @@ public class MTRClusterColorControl extends MTRGenericCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointRIntensityWithValue:expectedValueInterval:params:")
     public native void writeAttributeColorPointRIntensityWithValueExpectedValueIntervalParams(
@@ -1517,7 +1559,10 @@ public class MTRClusterColorControl extends MTRGenericCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointRXWithValue:expectedValueInterval:")
     public native void writeAttributeColorPointRXWithValueExpectedValueInterval(
@@ -1525,7 +1570,10 @@ public class MTRClusterColorControl extends MTRGenericCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointRXWithValue:expectedValueInterval:params:")
     public native void writeAttributeColorPointRXWithValueExpectedValueIntervalParams(
@@ -1534,7 +1582,10 @@ public class MTRClusterColorControl extends MTRGenericCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointRYWithValue:expectedValueInterval:")
     public native void writeAttributeColorPointRYWithValueExpectedValueInterval(
@@ -1542,7 +1593,10 @@ public class MTRClusterColorControl extends MTRGenericCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointRYWithValue:expectedValueInterval:params:")
     public native void writeAttributeColorPointRYWithValueExpectedValueIntervalParams(
@@ -1585,7 +1639,10 @@ public class MTRClusterColorControl extends MTRGenericCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeWhitePointXWithValue:expectedValueInterval:")
     public native void writeAttributeWhitePointXWithValueExpectedValueInterval(
@@ -1593,7 +1650,10 @@ public class MTRClusterColorControl extends MTRGenericCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeWhitePointXWithValue:expectedValueInterval:params:")
     public native void writeAttributeWhitePointXWithValueExpectedValueIntervalParams(
@@ -1602,7 +1662,10 @@ public class MTRClusterColorControl extends MTRGenericCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeWhitePointYWithValue:expectedValueInterval:")
     public native void writeAttributeWhitePointYWithValueExpectedValueInterval(
@@ -1610,7 +1673,10 @@ public class MTRClusterColorControl extends MTRGenericCluster {
 
     /**
      * API-Since: 16.1
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeWhitePointYWithValue:expectedValueInterval:params:")
     public native void writeAttributeWhitePointYWithValueExpectedValueIntervalParams(

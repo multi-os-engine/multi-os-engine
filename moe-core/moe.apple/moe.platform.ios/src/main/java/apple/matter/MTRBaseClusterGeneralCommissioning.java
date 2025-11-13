@@ -66,7 +66,7 @@ public class MTRBaseClusterGeneralCommissioning extends MTRGenericBaseCluster {
     /**
      * Command ArmFailSafe
      * 
-     * Arm the persistent fail-safe timer with an expiry time of now + ExpiryLengthSeconds using device clock
+     * This command is used to arm or disarm the fail-safe timer.
      * 
      * API-Since: 16.4
      */
@@ -168,8 +168,7 @@ public class MTRBaseClusterGeneralCommissioning extends MTRGenericBaseCluster {
     /**
      * Command CommissioningComplete
      * 
-     * Signals the Server that the Client has successfully completed all steps of Commissioning/Recofiguration needed
-     * during fail-safe period.
+     * This command is used to indicate that the commissioning process is complete.
      * 
      * API-Since: 16.4
      */
@@ -1014,7 +1013,7 @@ public class MTRBaseClusterGeneralCommissioning extends MTRGenericBaseCluster {
     /**
      * Command SetRegulatoryConfig
      * 
-     * Set the regulatory configuration to be used during commissioning
+     * This command is used to set the regulatory configuration for the device.
      * 
      * API-Since: 16.4
      */

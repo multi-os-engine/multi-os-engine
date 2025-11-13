@@ -1757,4 +1757,14 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @IsOptional
     @Selector("setConversationContext:")
     public native void setConversationContext(@Nullable UIConversationContext value);
+
+    @Generated
+    @IsOptional
+    @Selector("allowsNumberPadPopover")
+    public native boolean allowsNumberPadPopover();
+
+    @Generated
+    @IsOptional
+    @Selector("setAllowsNumberPadPopover:")
+    public native void setAllowsNumberPadPopover(boolean value);
 }

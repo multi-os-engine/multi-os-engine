@@ -27,8 +27,6 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * AVMetricContentKeyRequestEvent
- * 
  * Represents a metric event associated with a HLS content key resource request.
  * 
  * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
@@ -89,8 +87,6 @@ public class AVMetricContentKeyRequestEvent extends AVMetricEvent {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property] contentKeySpecifier
-     * 
      * Returns the content key specifier for the request.
      * 
      * API-Since: 18.0
@@ -135,8 +131,6 @@ public class AVMetricContentKeyRequestEvent extends AVMetricEvent {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * [@property] isClientInitiated
-     * 
      * Returns whether the content key resource request was initiated by the client.
      * 
      * API-Since: 18.0
@@ -155,8 +149,6 @@ public class AVMetricContentKeyRequestEvent extends AVMetricEvent {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
-     * [@property] mediaResourceRequestEvent
-     * 
      * Returns the media resource request event which was used to satisfy the content key.
      * 
      * API-Since: 18.0
@@ -167,8 +159,6 @@ public class AVMetricContentKeyRequestEvent extends AVMetricEvent {
     public native AVMetricMediaResourceRequestEvent mediaResourceRequestEvent();
 
     /**
-     * [@property] mediaType
-     * 
      * Returns the media type. If the value cannot be determined, returns AVMediaTypeMuxed.
      * 
      * API-Since: 18.0

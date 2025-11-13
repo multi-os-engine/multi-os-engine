@@ -156,10 +156,7 @@ public class ASAuthorizationWebBrowserPlatformPublicKeyCredential extends NSObje
     public static native ASAuthorizationWebBrowserPlatformPublicKeyCredential new_objc();
 
     /**
-     * The localized name of the credential provider that provided this passkey, either the name of a third party app or
-     * "iCloud Keychain".
-     * 
-     * API-Since: 17.4
+     * The localized name of the credential provider that provided this passkey.
      */
     @Generated
     @Selector("providerName")

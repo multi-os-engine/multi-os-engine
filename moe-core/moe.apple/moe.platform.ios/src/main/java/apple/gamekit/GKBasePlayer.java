@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.protocol.NSCopying;
+import org.moe.natj.general.ann.MappedReturn;
 
 /**
  * API-Since: 10.0
@@ -47,7 +49,7 @@ import org.jetbrains.annotations.Nullable;
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class GKBasePlayer extends NSObject {
+public class GKBasePlayer extends NSObject implements NSCopying {
     static {
         NatJ.register();
     }
@@ -187,4 +189,11 @@ public class GKBasePlayer extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 }

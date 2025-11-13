@@ -1154,4 +1154,89 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
     @Selector("prominence")
     @NInt
     public native long prominence();
+
+    /**
+     * Reinterpret the color by applying a new `contentHeadroom` without changing the color components. Changing the
+     * `contentHeadroom` redefines the color relative to a different peak white, changing its behavior under tone
+     * mapping and the result of calling `standardDynamicRangeColor`. The new color will have a `contentHeadroom` >=
+     * 1.0.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("colorByApplyingContentHeadroom:")
+    @NotNull
+    public native UIColor colorByApplyingContentHeadroom(@NFloat double contentHeadroom);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("colorWithRed:green:blue:alpha:exposure:")
+    @NotNull
+    public static native UIColor colorWithRedGreenBlueAlphaExposure(@NFloat double red, @NFloat double green,
+            @NFloat double blue, @NFloat double alpha, @NFloat double exposure);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("colorWithRed:green:blue:alpha:linearExposure:")
+    @NotNull
+    public static native UIColor colorWithRedGreenBlueAlphaLinearExposure(@NFloat double red, @NFloat double green,
+            @NFloat double blue, @NFloat double alpha, @NFloat double linearExposure);
+
+    /**
+     * Generates an HDR color by applying an exposure to the SDR color defined by the red, green, and blue components.
+     * The `red`, `green`, and `blue` components have a nominal range of [0..1], `exposure` is a value >= 0. To produce
+     * an HDR color, we process the given color in a linear color space, multiplying component values by `2^exposure`.
+     * The produced color will have a `contentHeadroom` equal to the linearized exposure value. Each whole value of
+     * exposure produces a color that is twice as bright.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("initWithRed:green:blue:alpha:exposure:")
+    @NotNull
+    public native UIColor initWithRedGreenBlueAlphaExposure(@NFloat double red, @NFloat double green,
+            @NFloat double blue, @NFloat double alpha, @NFloat double exposure);
+
+    /**
+     * Generates an HDR color by applying an exposure to the SDR color defined by the red, green, and blue components.
+     * The `red`, `green`, and `blue` components have a nominal range of [0..1], `linearExposure` is a value >= 1. To
+     * produce an HDR color, we process the given color in a linear color space, multiplying component values by
+     * `linearExposure `. The produced color will have a `contentHeadroom` equal to `linearExposure`. Each doubling of
+     * `linearExposure` produces a color that is twice as bright.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("initWithRed:green:blue:alpha:linearExposure:")
+    @NotNull
+    public native UIColor initWithRedGreenBlueAlphaLinearExposure(@NFloat double red, @NFloat double green,
+            @NFloat double blue, @NFloat double alpha, @NFloat double linearExposure);
+
+    /**
+     * The linear brightness multiplier that was applied when generating this color. Colors created with an exposure by
+     * UIColor create CGColors that are tagged with a contentHeadroom value. While CGColors created without a
+     * contentHeadroom tag will return 0 from CGColorGetHeadroom, UIColors generated in a similar fashion return a
+     * linearExposure of 1.0.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("linearExposure")
+    @NFloat
+    public native double linearExposure();
+
+    /**
+     * In some cases it is useful to recover the color that was base SDR color that was exposed to generate the given
+     * HDR color. If a color's `linearExposure` is >1, then this will return the base SDR color.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("standardDynamicRangeColor")
+    @NotNull
+    public native UIColor standardDynamicRangeColor();
 }

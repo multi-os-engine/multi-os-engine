@@ -33,7 +33,7 @@ public final class NEVPNIKEv2IntegrityAlgorithm {
      * 
      * API-Since: 8.0
      * Deprecated-Since: 17.0
-     * Deprecated-Message: Use SHA-2 for integrity protection instead
+     * Deprecated-Message: SHA-1 is not supported
      */
     @Deprecated @Generated @NInt public static final long SHA96 = 0x0000000000000001L;
     /**
@@ -41,7 +41,7 @@ public final class NEVPNIKEv2IntegrityAlgorithm {
      * 
      * API-Since: 8.0
      * Deprecated-Since: 17.0
-     * Deprecated-Message: Use SHA-2 for integrity protection instead
+     * Deprecated-Message: SHA-1 is not supported
      */
     @Deprecated @Generated @NInt public static final long SHA160 = 0x0000000000000002L;
     /**

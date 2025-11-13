@@ -98,6 +98,7 @@ public interface MKMapViewDelegate {
      * 
      * API-Since: 4.0
      * Deprecated-Since: 13.0
+     * Deprecated-Message: Use -mapView:didAddOverlayRenderers:
      */
     @Deprecated
     @Generated
@@ -203,6 +204,7 @@ public interface MKMapViewDelegate {
      * 
      * API-Since: 4.0
      * Deprecated-Since: 13.0
+     * Deprecated-Message: Use -mapView:rendererForOverlay:
      */
     @NotNull
     @Deprecated

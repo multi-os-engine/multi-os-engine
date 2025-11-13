@@ -41,6 +41,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 9.3
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -159,6 +162,9 @@ public class MKLocalSearchCompletion extends NSObject {
     @Selector("init")
     public native MKLocalSearchCompletion init();
 
+    /**
+     * API-Since: 9.3
+     */
     @NotNull
     @Generated
     @Selector("subtitle")
@@ -166,12 +172,17 @@ public class MKLocalSearchCompletion extends NSObject {
 
     /**
      * NSValue-wrapped NSRanges
+     * 
+     * API-Since: 9.3
      */
     @NotNull
     @Generated
     @Selector("subtitleHighlightRanges")
     public native NSArray<? extends NSValue> subtitleHighlightRanges();
 
+    /**
+     * API-Since: 9.3
+     */
     @NotNull
     @Generated
     @Selector("title")
@@ -179,6 +190,8 @@ public class MKLocalSearchCompletion extends NSObject {
 
     /**
      * NSValue-wrapped NSRanges
+     * 
+     * API-Since: 9.3
      */
     @NotNull
     @Generated

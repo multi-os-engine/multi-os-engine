@@ -60,16 +60,20 @@ import org.jetbrains.annotations.Nullable;
 @ObjCProtocolName("UIApplicationDelegate")
 public interface UIApplicationDelegate {
     /**
-     * Called on the main thread after the NSUserActivity object is available. Use the data you stored in the
-     * NSUserActivity object to re-create what the user was doing.
-     * You can create/fetch any restorable objects associated with the user activity, and pass them to the
-     * restorationHandler. They will then have the UIResponder restoreUserActivityState: method
-     * invoked with the user activity. Invoking the restorationHandler is optional. It may be copied and invoked later,
-     * and it will bounce to the main thread to complete its work and call
-     * restoreUserActivityState on all objects.
+     * Called on the main thread after the ``NSUserActivity`` object is available. Use the data you stored in the
+     * ``NSUserActivity`` object to re-create what the user
+     * was doing. You can create/fetch any restorable objects associated with the user activity, and pass them to the
+     * `restorationHandler`. They will then have the
+     * `UIResponder` `restoreUserActivityState:` method invoked with the user activity. Invoking the
+     * `restorationHandler` is optional. It may be copied and
+     * invoked later, and it will bounce to the main thread to complete its work and call `restoreUserActivityState` on
+     * all objects.
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use UIScene lifecycle and scene(_:continue:) from UISceneDelegate instead.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("application:continueUserActivity:restorationHandler:")
@@ -119,11 +123,15 @@ public interface UIApplicationDelegate {
     }
 
     /**
-     * If the user activity cannot be fetched after willContinueUserActivityWithType is called, this will be called on
-     * the main thread when implemented.
+     * If the user activity cannot be fetched after `application(_:willContinueUserActivityWithType:)` is called, this
+     * will be called on the main thread when implemented.
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use UIScene lifecycle and scene(_:didFailToContinueUserActivityWithType:error:) from
+     * UISceneDelegate instead.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("application:didFailToContinueUserActivityWithType:error:")
@@ -243,7 +251,10 @@ public interface UIApplicationDelegate {
      * last chance to add additional data to the userActivity.
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use UIScene lifecycle and scene(_:didUpdate) from UISceneDelegate instead.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("application:didUpdateUserActivity:")
@@ -374,10 +385,13 @@ public interface UIApplicationDelegate {
     }
 
     /**
-     * no equiv. notification. return NO if the application can't open for some reason
+     * Return NO if the application can't open the `url` for some reason
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use UIScene lifecycle and scene(_:openURLContexts:) from UISceneDelegate instead.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("application:openURL:options:")
@@ -401,12 +415,16 @@ public interface UIApplicationDelegate {
     }
 
     /**
-     * Called when the user activates your application by selecting a shortcut on the home screen,
-     * except when -application:willFinishLaunchingWithOptions: or -application:didFinishLaunchingWithOptions returns
-     * NO.
+     * Called when the user activates your application by selecting a shortcut on the home screen, except when
+     * `application(_:willFinishLaunchingWithOptions:)`
+     * or `application(_:didFinishLaunchingWithOptions:)` returns `false`.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use UIScene lifecycle and windowScene(_:performActionFor:completionHandler:) from
+     * UIWindowSceneDelegate instead.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("application:performActionForShortcutItem:completionHandler:")
@@ -494,13 +512,17 @@ public interface UIApplicationDelegate {
     /**
      * This will be called on the main thread after the user indicates they want to accept a CloudKit sharing invitation
      * in your application.
-     * You should use the CKShareMetadata object's shareURL and containerIdentifier to schedule a
-     * CKAcceptSharesOperation, then start using
-     * the resulting CKShare and its associated record(s), which will appear in the CKContainer's shared database in a
-     * zone matching that of the record's owner.
+     * You should use the `CKShareMetadata` object's `shareURL` and `containerIdentifier` to schedule a
+     * `CKAcceptSharesOperation`, then start using
+     * the resulting `CKShare` and its associated record(s), which will appear in the `CKContainer`'s shared database in
+     * a zone matching that of the record's owner.
      * 
      * API-Since: 10.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use UIScene lifecycle and windowScene(_:userDidAcceptCloudKitShareWith:) from
+     * UIWindowSceneDelegate instead.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("application:userDidAcceptCloudKitShareWithMetadata:")
@@ -553,14 +575,19 @@ public interface UIApplicationDelegate {
 
     /**
      * Called on the main thread as soon as the user indicates they want to continue an activity in your application.
-     * The NSUserActivity object may not be available instantly,
-     * so use this as an opportunity to show the user that an activity will be continued shortly.
-     * For each application:willContinueUserActivityWithType: invocation, you are guaranteed to get exactly one
-     * invocation of application:continueUserActivity: on success,
-     * or application:didFailToContinueUserActivityWithType:error: if an error was encountered.
+     * The ``NSUserActivity`` object may not be available
+     * instantly, so use this as an opportunity to show the user that an activity will be continued shortly.
+     * 
+     * For each `application(_:willContinueUserActivityWithType:)` invocation, you are guaranteed to get exactly one
+     * invocation of `application(_:continue:restorationHandler:)`
+     * on success, or `application(_:didFailToContinueUserActivityWithType:error:)` if an error was encountered.
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use UIScene lifecycle and scene(_:willContinueUserActivityWithType:) from UISceneDelegate
+     * instead.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("application:willContinueUserActivityWithType:")
@@ -591,6 +618,16 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Tells the delegate that the application has become active
+     * - Note: This method is not called if `UIScene` lifecycle has been adopted.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use UIScene lifecycle and sceneDidBecomeActive(_:) from UISceneDelegate or the
+     * UIApplication.didBecomeActiveNotification instead.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("applicationDidBecomeActive:")
@@ -599,6 +636,9 @@ public interface UIApplicationDelegate {
     }
 
     /**
+     * Tells the delegate that the application is now in the background
+     * - Note: This method is not called if `UIScene` lifecycle has been adopted.
+     * 
      * API-Since: 4.0
      */
     @Generated
@@ -666,8 +706,15 @@ public interface UIApplicationDelegate {
     }
 
     /**
+     * Tells the delegate that the application is about to enter the foreground
+     * - Note: This method is not called if `UIScene` lifecycle has been adopted.
+     * 
      * API-Since: 4.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use UIScene lifecycle and sceneWillEnterForeground(_:) from UISceneDelegate or the
+     * UIApplication.willEnterForegroundNotification instead.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("applicationWillEnterForeground:")
@@ -675,6 +722,16 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Tells the delegate that the application is about to become inactive
+     * - Note: This method is not called if `UIScene` lifecycle has been adopted.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use UIScene lifecycle and sceneWillResignActive(_:) from UISceneDelegate or the
+     * UIApplication.willResignActiveNotification instead.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("applicationWillResignActive:")

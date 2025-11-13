@@ -336,4 +336,13 @@ public class UICommand extends UIMenuElement implements UIMenuLeaf {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("repeatBehavior")
+    @NInt
+    public native long repeatBehavior();
+
+    @Generated
+    @Selector("setRepeatBehavior:")
+    public native void setRepeatBehavior(@NInt long value);
 }

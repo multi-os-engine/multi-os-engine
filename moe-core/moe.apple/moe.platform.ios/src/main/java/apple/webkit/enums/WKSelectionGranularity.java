@@ -31,17 +31,24 @@ import org.moe.natj.general.ann.NInt;
  * the selection is not confined to a single block, the selection granularity may be single block.
  * 
  * API-Since: 8.0
+ * Deprecated-Since: 11.0
+ * Deprecated-Message: This property is ignored; selection granularity is always `character`.
  */
+@Deprecated
 @Generated
 public final class WKSelectionGranularity {
     /**
      * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: This property is ignored; selection granularity is always `character`.
      */
-    @Generated @NInt public static final long Dynamic = 0x0000000000000000L;
+    @Deprecated @Generated @NInt public static final long Dynamic = 0x0000000000000000L;
     /**
      * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: This property is ignored; selection granularity is always `character`.
      */
-    @Generated @NInt public static final long Character = 0x0000000000000001L;
+    @Deprecated @Generated @NInt public static final long Character = 0x0000000000000001L;
 
     @Generated
     private WKSelectionGranularity() {

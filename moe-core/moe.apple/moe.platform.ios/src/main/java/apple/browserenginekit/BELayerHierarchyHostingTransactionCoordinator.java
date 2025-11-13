@@ -29,6 +29,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSData;
+import org.moe.natj.objc.ann.ObjCBlock;
 
 /**
  * API-Since: 17.4
@@ -231,4 +233,37 @@ public class BELayerHierarchyHostingTransactionCoordinator extends NSObject impl
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Decodes a coordinator form a `mach_port_t` send right and its accompanying metadata.
+     * - This method takes ownership of the port right (even if it returns an error).
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("coordinatorWithPort:data:error:")
+    @Nullable
+    public static native BELayerHierarchyHostingTransactionCoordinator coordinatorWithPortDataError(int port,
+            @NotNull NSData data, @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    /**
+     * Encodes the coordinator into a `mach_port_t` send right and its accompanying metadata.
+     * - The block is responsible for disposing of `copiedPort` - failure to manage its lifecycle will leak the port.
+     * Note that some functions (like ``coordinatorWithPort:data:error:``) will assume control of the right for you.
+     * - `copiedPort` will be `MACH_PORT_NULL` if the receiver is already invalidated.
+     * - The port and data should ultimately be consumed together and _only_ once by
+     * ``coordinatorWithPort:data:error:``.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("encodeWithBlock:")
+    public native void encodeWithBlock(@ObjCBlock(name = "call_encodeWithBlock") @NotNull Block_encodeWithBlock block);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_encodeWithBlock {
+        @Generated
+        void call_encodeWithBlock(int copiedPort, @NotNull NSData data);
+    }
 }

@@ -25,10 +25,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSError;
+import org.moe.natj.general.ann.ReferenceInfo;
+import org.moe.natj.general.ptr.Ptr;
 
 /**
- * AVPlayerPlaybackCoordinator
- * 
  * An AVPlaybackCoordinator subclass for controlling an AVPlayer
  * 
  * While the coordinator is connected to other participants, it will intercept rate changes and seeks issued to the
@@ -104,8 +105,6 @@ public class AVPlayerPlaybackCoordinator extends AVPlaybackCoordinator {
     public static native String debugDescription_static();
 
     /**
-     * [@property] delegate
-     * 
      * An object implementing the AVPlaybackCoordinatorDelegate protocol.
      * 
      * API-Since: 15.0
@@ -157,8 +156,6 @@ public class AVPlayerPlaybackCoordinator extends AVPlaybackCoordinator {
     public static native AVPlayerPlaybackCoordinator new_objc();
 
     /**
-     * [@property] player
-     * 
      * The AVPlayer this coordinator is controlling.
      * 
      * API-Since: 15.0
@@ -177,8 +174,6 @@ public class AVPlayerPlaybackCoordinator extends AVPlaybackCoordinator {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property] delegate
-     * 
      * An object implementing the AVPlaybackCoordinatorDelegate protocol.
      * 
      * API-Since: 15.0
@@ -189,8 +184,6 @@ public class AVPlayerPlaybackCoordinator extends AVPlaybackCoordinator {
             @Nullable @Mapped(ObjCObjectMapper.class) AVPlayerPlaybackCoordinatorDelegate value);
 
     /**
-     * [@property] delegate
-     * 
      * An object implementing the AVPlaybackCoordinatorDelegate protocol.
      * 
      * API-Since: 15.0
@@ -224,4 +217,51 @@ public class AVPlayerPlaybackCoordinator extends AVPlaybackCoordinator {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Connects the playback coordinator to the coordination medium
+     * 
+     * This connects the playback coordinator to a coordination medium to enable sending and receiving messages from
+     * other connected playback coordinators.
+     * If the coordination medium is non-NULL, this will connect the playback coordinator to the specified coordination
+     * medium.
+     * If the coordination medium is set to NULL, this will disconnect the playback coordinator from the playback
+     * coordination medium. The player will no longer be coordinated with the other players connected to the
+     * coordination medium.
+     * The playback coordinator can either only coordinate with local players through an AVPlaybackCoordinationMedium or
+     * coordinate with a remote group session through the `coordinateWithSession` API. If the client attempts to connect
+     * to an AVPlaybackCoordinationMedium while already connected to a group session, this method will populate the
+     * outError parameter
+     * If the playback coordinator successfully connects to the coordination medium or disconnects from a coordination
+     * medium, the `outError` parameter will be nil. If the playback coordinator fails to connect to the specified
+     * coordination medium, the `outError` parameter will describe what went wrong.
+     * 
+     * - Parameter coordinationMedium: The coordination medium the playback coordinator connects to. If NULL, the
+     * playback coordinator disconnects from any existing coordination medium.
+     * - Parameter outError: A pointer to an NSError object that will be populated with failure information if
+     * connecting to or disconnecting from the coordination medium fails.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("coordinateUsingCoordinationMedium:error:")
+    public native boolean coordinateUsingCoordinationMediumError(
+            @Nullable AVPlaybackCoordinationMedium coordinationMedium,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> outError);
+
+    /**
+     * The AVPlaybackCoordinationMedium this playback coordinator is connected to.
+     * 
+     * This is the AVPlaybackCoordinationMedium the playback coordinator is connected to.
+     * If not NULL, the playback coordinator is connected to the specified coordination medium. The playback coordinator
+     * is not available to coordinate with a group session.
+     * If NULL, the playback coordinator is not connected to any playback coordination medium. The playback coordinator
+     * is available to coordinate with a group session through the `coordinateWithSession` API.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("playbackCoordinationMedium")
+    @Nullable
+    public native AVPlaybackCoordinationMedium playbackCoordinationMedium();
 }

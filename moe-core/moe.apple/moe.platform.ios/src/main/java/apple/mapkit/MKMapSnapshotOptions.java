@@ -48,6 +48,9 @@ import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -162,6 +165,9 @@ public class MKMapSnapshotOptions extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("camera")
@@ -178,6 +184,9 @@ public class MKMapSnapshotOptions extends NSObject implements NSCopying {
     @Selector("init")
     public native MKMapSnapshotOptions init();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("mapRect")
     @ByValue
@@ -194,6 +203,9 @@ public class MKMapSnapshotOptions extends NSObject implements NSCopying {
     @NUInt
     public native long mapType();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("region")
     @ByValue
@@ -212,10 +224,16 @@ public class MKMapSnapshotOptions extends NSObject implements NSCopying {
     @NFloat
     public native double scale();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setCamera:")
     public native void setCamera(@NotNull MKMapCamera value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setMapRect:")
     public native void setMapRect(@ByValue MKMapRect value);
@@ -230,6 +248,9 @@ public class MKMapSnapshotOptions extends NSObject implements NSCopying {
     @Selector("setMapType:")
     public native void setMapType(@NUInt long value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setRegion:")
     public native void setRegion(@ByValue MKCoordinateRegion value);
@@ -268,6 +289,9 @@ public class MKMapSnapshotOptions extends NSObject implements NSCopying {
     @Selector("setShowsPointsOfInterest:")
     public native void setShowsPointsOfInterest(boolean value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setSize:")
     public native void setSize(@ByValue CGSize value);
@@ -294,6 +318,9 @@ public class MKMapSnapshotOptions extends NSObject implements NSCopying {
     @Selector("showsPointsOfInterest")
     public native boolean showsPointsOfInterest();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("size")
     @ByValue

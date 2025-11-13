@@ -28,12 +28,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVCoordinatedPlaybackSuspension
- * 
  * A representation of a temporary break in participation.
- * [@note] See AVPlaybackCoordinator's beginSuspensionForReason: method for details on use.
  * 
  * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
+ * - NOTE: See AVPlaybackCoordinator's beginSuspensionForReason: method for details on use.
  * 
  * API-Since: 15.0
  */
@@ -70,8 +69,6 @@ public class AVCoordinatedPlaybackSuspension extends NSObject {
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
-     * [@property] beginDate
-     * 
      * The begin time of the suspension.
      * 
      * API-Since: 15.0
@@ -111,8 +108,6 @@ public class AVCoordinatedPlaybackSuspension extends NSObject {
     public static native String description_static();
 
     /**
-     * end
-     * 
      * Ends the suspension.
      * 
      * If this is the last suspension, the coordinator will adjust timing of its playback object to match the group.
@@ -125,8 +120,6 @@ public class AVCoordinatedPlaybackSuspension extends NSObject {
     public native void end();
 
     /**
-     * endProposingNewTime:
-     * 
      * Ends the suspension and proposes a new time that everyone should seek to.
      * 
      * If this is the last suspension, the coordinator will propose the new time to the group without changing the
@@ -177,8 +170,6 @@ public class AVCoordinatedPlaybackSuspension extends NSObject {
     public static native AVCoordinatedPlaybackSuspension new_objc();
 
     /**
-     * [@property] reason
-     * 
      * The reason for the suspension. This will be communicated to other participants while coordination is suspended.
      * 
      * API-Since: 15.0

@@ -238,10 +238,9 @@ public class CKRecordZone extends NSObject implements NSSecureCoding, NSCopying 
      * The share property on a record zone will only be set on zones fetched from the server and only if a
      * corresponding zone-wide share record for the zone exists on the server.
      * 
-     * You can create a zone-wide share for a zone using @code -[CKShare initWithRecordZoneID:] @endcode.
+     * You can create a zone-wide share for a zone using `-[CKShare initWithRecordZoneID:]`.
      * 
-     * Zone-wide sharing is only supported in zones with the @c CKRecordZoneCapabilityZoneWideSharing sharing
-     * capability.
+     * Zone-wide sharing is only supported in zones with the `CKRecordZoneCapabilityZoneWideSharing` sharing capability.
      * You cannot share a zone if it already contains shared records.
      * 
      * API-Since: 15.0
@@ -255,4 +254,37 @@ public class CKRecordZone extends NSObject implements NSSecureCoding, NSCopying 
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The encryption scope determines the granularity at which encryption keys are stored within the zone.
+     * 
+     * Zone encryption scope defaults to `CKRecordZoneEncryptionScopePerRecord` and can only be modified before zone
+     * creation. Attempting to change the encryption
+     * scope of an existing zone is invalid and will result in an error.
+     * 
+     * Zones using `CKRecordZoneEncryptionScopePerZone` can only use zone-wide sharing and are not compatible with older
+     * device OS versions. Refer to `CKRecordZoneEncryptionScope` for more info.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("encryptionScope")
+    @NInt
+    public native long encryptionScope();
+
+    /**
+     * The encryption scope determines the granularity at which encryption keys are stored within the zone.
+     * 
+     * Zone encryption scope defaults to `CKRecordZoneEncryptionScopePerRecord` and can only be modified before zone
+     * creation. Attempting to change the encryption
+     * scope of an existing zone is invalid and will result in an error.
+     * 
+     * Zones using `CKRecordZoneEncryptionScopePerZone` can only use zone-wide sharing and are not compatible with older
+     * device OS versions. Refer to `CKRecordZoneEncryptionScope` for more info.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setEncryptionScope:")
+    public native void setEncryptionScope(@NInt long value);
 }

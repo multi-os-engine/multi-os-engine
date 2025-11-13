@@ -296,4 +296,23 @@ public class MPSGraphCompilationDescriptor extends MPSGraphObject implements NSC
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Across the executable allow reduced precision fast math optimizations.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("reducedPrecisionFastMath")
+    @NUInt
+    public native long reducedPrecisionFastMath();
+
+    /**
+     * Across the executable allow reduced precision fast math optimizations.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setReducedPrecisionFastMath:")
+    public native void setReducedPrecisionFastMath(@NUInt long value);
 }

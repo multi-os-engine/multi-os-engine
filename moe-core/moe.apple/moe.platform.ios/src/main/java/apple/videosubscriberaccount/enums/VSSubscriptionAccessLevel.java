@@ -8,6 +8,7 @@ import org.moe.natj.general.ann.NInt;
  * 
  * API-Since: 11.0
  * Deprecated-Since: 18.0
+ * Deprecated-Message: Use VSUserAccount and VSUserAccountType instead.
  */
 @Deprecated
 @Generated
@@ -19,6 +20,7 @@ public final class VSSubscriptionAccessLevel {
     /**
      * API-Since: 11.0
      * Deprecated-Since: 18.0
+     * Deprecated-Message: Use VSUserAccount and VSUserAccountType instead.
      */
     @Deprecated @Generated @NInt public static final long Unknown = 0x0000000000000000L;
     /**
@@ -26,6 +28,7 @@ public final class VSSubscriptionAccessLevel {
      * 
      * API-Since: 11.0
      * Deprecated-Since: 18.0
+     * Deprecated-Message: Use VSUserAccount and VSUserAccountType instead.
      */
     @Deprecated @Generated @NInt public static final long FreeWithAccount = 0x0000000000000001L;
     /**
@@ -34,6 +37,7 @@ public final class VSSubscriptionAccessLevel {
      * 
      * API-Since: 11.0
      * Deprecated-Since: 18.0
+     * Deprecated-Message: Use VSUserAccount and VSUserAccountType instead.
      */
     @Deprecated @Generated @NInt public static final long Paid = 0x0000000000000002L;
 }

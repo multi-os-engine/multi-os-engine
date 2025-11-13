@@ -7,6 +7,7 @@ import org.moe.natj.general.ann.NInt;
  * [@enum] HKDevicePlacementSide
  * 
  * The detected placement of the device during the bout of walking
+ * 
  * [@constant] HKDevicePlacementSideUnknown Unable to determine the placement of the device
  * [@constant] HKDevicePlacementSideLeft Device predominantly worn on left side
  * [@constant] HKDevicePlacementSideRight Device predominantly worn on right side

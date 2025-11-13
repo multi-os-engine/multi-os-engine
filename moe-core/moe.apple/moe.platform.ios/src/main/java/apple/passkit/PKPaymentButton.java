@@ -507,4 +507,20 @@ public class PKPaymentButton extends UIButton {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("buttonWithType:style:disableCardArt:")
+    public static native PKPaymentButton buttonWithTypeStyleDisableCardArt(@NInt long buttonType,
+            @NInt long buttonStyle, boolean disableCardArt);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("initWithPaymentButtonType:paymentButtonStyle:disableCardArt:")
+    public native PKPaymentButton initWithPaymentButtonTypePaymentButtonStyleDisableCardArt(@NInt long type,
+            @NInt long style, boolean disableCardArt);
 }

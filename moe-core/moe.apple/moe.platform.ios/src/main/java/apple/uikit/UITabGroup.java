@@ -58,7 +58,7 @@ public class UITabGroup extends UITab {
 
     /**
      * Determines if elements in `children` can be reordered from the sidebar. Default is NO.
-     * Changes in the display order are notified via `tabBarController:didCustomizeDisplayOrderForGroup:`
+     * Changes in the display order are notified via `tabBarController:displayOrderDidChangeForGroup:`
      * in `UITabBarControllerDelegate`.
      * 
      * API-Since: 18.0
@@ -205,7 +205,7 @@ public class UITabGroup extends UITab {
      * A navigation controller used to automatically manage the view controller hierarchy of the group.
      * Set a `UINavigationController` to allow the tab group to manage the hierarchy automatically.
      * The navigation stack of the managing navigation controller will be managed by the tab group based on
-     * the selected tab of the group. When multiple navigation controllers are set on nested groups, the rootmost
+     * the selected tab of the group. When multiple navigation controllers are set on nested groups, the root-most
      * controller is used. Default is nil.
      * 
      * By default, the navigation stack is represented by the view controller of each tab of the selected tree, if a
@@ -248,7 +248,7 @@ public class UITabGroup extends UITab {
 
     /**
      * Determines if elements in `children` can be reordered from the sidebar. Default is NO.
-     * Changes in the display order are notified via `tabBarController:didCustomizeDisplayOrderForGroup:`
+     * Changes in the display order are notified via `tabBarController:displayOrderDidChangeForGroup:`
      * in `UITabBarControllerDelegate`.
      * 
      * API-Since: 18.0
@@ -291,7 +291,7 @@ public class UITabGroup extends UITab {
      * A navigation controller used to automatically manage the view controller hierarchy of the group.
      * Set a `UINavigationController` to allow the tab group to manage the hierarchy automatically.
      * The navigation stack of the managing navigation controller will be managed by the tab group based on
-     * the selected tab of the group. When multiple navigation controllers are set on nested groups, the rootmost
+     * the selected tab of the group. When multiple navigation controllers are set on nested groups, the root-most
      * controller is used. Default is nil.
      * 
      * By default, the navigation stack is represented by the view controller of each tab of the selected tree, if a
@@ -375,4 +375,30 @@ public class UITabGroup extends UITab {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Determines if the tab group itself can be selected as a destination in the sidebar.
+     * 
+     * By default, tab groups are not destinations when displayed in the sidebar, and cannot be selected directly
+     * by users. When enabled, the tab group becomes a selectable item in the sidebar, and will no longer perform
+     * automatic selection for a default child if no child is currently selected. The default value is NO.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isSidebarDestination")
+    public native boolean isSidebarDestination();
+
+    /**
+     * Determines if the tab group itself can be selected as a destination in the sidebar.
+     * 
+     * By default, tab groups are not destinations when displayed in the sidebar, and cannot be selected directly
+     * by users. When enabled, the tab group becomes a selectable item in the sidebar, and will no longer perform
+     * automatic selection for a default child if no child is currently selected. The default value is NO.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setIsSidebarDestination:")
+    public native void setIsSidebarDestination(boolean value);
 }

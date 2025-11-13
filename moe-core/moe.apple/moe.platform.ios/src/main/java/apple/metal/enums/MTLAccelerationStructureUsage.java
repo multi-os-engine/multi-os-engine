@@ -39,4 +39,17 @@ public final class MTLAccelerationStructureUsage {
      * API-Since: 15.0
      */
     @Generated @NUInt public static final long ExtendedLimits = 0x0000000000000004L;
+    /**
+     * Prioritize intersection performance over acceleration structure build time
+     * 
+     * API-Since: 26.0
+     */
+    @Generated @NUInt public static final long PreferFastIntersection = 0x0000000000000010L;
+    /**
+     * Minimize the size of the acceleration structure in memory, potentially at
+     * the cost of increased build time or reduced intersection performance.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated @NUInt public static final long MinimizeMemory = 0x0000000000000020L;
 }

@@ -25,9 +25,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * [@interface] AVCaptureEvent
+ * An object that describes a user interaction with a system hardware button.
  * 
- * An object describing a system capture event.
+ * Inspect a capture event’s ``phase`` to determine whether the event begins, ends, or is in a canceled state.
  * 
  * API-Since: 17.2
  */
@@ -129,9 +129,7 @@ public class AVCaptureEvent extends NSObject {
     public static native AVCaptureEvent new_objc();
 
     /**
-     * [@property] phase
-     * 
-     * The current phase of this capture event.
+     * The current phase of a capture event.
      * 
      * API-Since: 17.2
      */
@@ -165,4 +163,40 @@ public class AVCaptureEvent extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Plays the specified capture sound through AirPods.
+     * 
+     * - Parameter sound: The capture sound to play for this event.
+     * - Returns: A Boolean value that indicates whether the system played the sound.
+     * 
+     * This method has no effect if ``shouldPlaySound`` is `false` or if the event object's lifetime exceeds 15 seconds.
+     * 
+     * > Important: To use AirPods Camera Control, it must be available in your country or region. AirPods Camera
+     * Control is not currently available in the European Union.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("playSound:")
+    public native boolean playSound(@NotNull AVCaptureEventSound sound);
+
+    /**
+     * A Boolean value that indicates whether you must play a sound manually.
+     * 
+     * This property is `true` only when both of the following conditions are true:
+     * 1. A person performs an AirPod stem click.
+     * 2. You disable the default capture sound.
+     * 
+     * If this property is `false`, calling ``playSound:`` has no effect. Omitting the sound when expected can
+     * significantly impact the user experience.
+     * 
+     * > Important: To use AirPods Camera Control, it must be available in your country or region. AirPods Camera
+     * Control is not currently available in the European Union.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("shouldPlaySound")
+    public native boolean shouldPlaySound();
 }

@@ -26,6 +26,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * An AVAssetDownloadStorageManager manages the policy for automatic purging of downloaded AVAssets. The policy is
+ * vended as AVAssetDownloadStorageManagementPolicy object.
+ * 
+ * When a storage management policy needs to be set on an asset, sharedDownloadStorageManager singleton needs to be
+ * fetched.
+ * The new policy can then be set by using setStorageManagementPolicy and the location of the downloaded asset.
+ * 
  * API-Since: 11.0
  */
 @Generated
@@ -134,14 +141,11 @@ public class AVAssetDownloadStorageManager extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * setStorageManagementPolicy: forURL
-     * 
      * Sets the policy for asset with disk backing at downloadStorageURL.
      * 
-     * @param downloadStorageURL
-     *                           The location of downloaded asset.
+     * - Parameter downloadStorageURL: The location of downloaded asset.
      * 
-     *                           API-Since: 11.0
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setStorageManagementPolicy:forURL:")
@@ -153,8 +157,6 @@ public class AVAssetDownloadStorageManager extends NSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * sharedDownloadStorageManager
-     * 
      * returns singleton instance.
      * 
      * API-Since: 11.0
@@ -165,15 +167,12 @@ public class AVAssetDownloadStorageManager extends NSObject {
     public static native AVAssetDownloadStorageManager sharedDownloadStorageManager();
 
     /**
-     * storageManagementPolicyForURL:downloadStorageURL
+     * Returns the storage management policy for asset downloaded at downloadStorageURL. This may be nil if a
+     * storageManagementPolicy was never set on the downloaded asset.
      * 
-     * Returns the storage management policy for asset downloaded at downloadStorageURL.
-     * This may be nil if a storageManagementPolicy was never set on the downloaded asset.
+     * - Parameter downloadStorageURL: The location of downloaded asset.
      * 
-     * @param downloadStorageURL
-     *                           The location of downloaded asset.
-     * 
-     *                           API-Since: 11.0
+     * API-Since: 11.0
      */
     @Nullable
     @Generated

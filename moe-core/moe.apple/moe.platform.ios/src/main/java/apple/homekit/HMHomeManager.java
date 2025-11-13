@@ -43,6 +43,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSData;
 
 /**
  * Manages collection of one or more homes.
@@ -320,4 +321,33 @@ public class HMHomeManager extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Finds a vendor HAP accessory based on its Long Term Public Key.
+     * 
+     * @param hapPublicKey The HAP Long Term Public Key of the accessory.
+     *                     This has a length of 32 bytes. Refer to the
+     *                     HomeKit Accessory Protocol Specification for details.
+     * 
+     *                     If no matching accessory exists, or if the current process does not have
+     *                     vendor-level access to the matching accessory, the result will be nil.
+     * 
+     *                     An error will be returned if this method is used before available homes have
+     *                     been retrieved by the HMHomeManager, i.e. before the homeManagerDidUpdateHomes:
+     *                     delegate method has been invoked.
+     * 
+     *                     API-Since: 26.1
+     */
+    @Generated
+    @Selector("findVendorAccessoryWithHAPPublicKey:completionHandler:")
+    public native void findVendorAccessoryWithHAPPublicKeyCompletionHandler(@NotNull NSData hapPublicKey,
+            @ObjCBlock(name = "call_findVendorAccessoryWithHAPPublicKeyCompletionHandler") @NotNull Block_findVendorAccessoryWithHAPPublicKeyCompletionHandler completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_findVendorAccessoryWithHAPPublicKeyCompletionHandler {
+        @Generated
+        void call_findVendorAccessoryWithHAPPublicKeyCompletionHandler(@Nullable HMAccessory arg0,
+                @Nullable NSError arg1);
+    }
 }

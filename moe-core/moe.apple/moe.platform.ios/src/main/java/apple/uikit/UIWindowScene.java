@@ -5,7 +5,6 @@ import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.uikit.protocol.UIActivityItemsConfigurationProviding;
-import apple.uikit.protocol.UICoordinateSpace;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -32,6 +31,7 @@ import apple.uikit.protocol.UITraitChangeObservable;
 import apple.uikit.protocol.UITraitChangeRegistration;
 import apple.uikit.protocol.UITraitEnvironment;
 import apple.uikit.protocol.UITraitOverrides;
+import apple.uikit.protocol.UICoordinateSpace;
 
 /**
  * API-Since: 13.0
@@ -95,7 +95,10 @@ public class UIWindowScene extends UIScene implements UITraitEnvironment, UITrai
 
     /**
      * API-Since: 13.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use effectiveGeometry.coordinateSpace instead.
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("coordinateSpace")
@@ -137,6 +140,12 @@ public class UIWindowScene extends UIScene implements UITraitEnvironment, UITrai
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use effectiveGeometry.interfaceOrientation instead.
+     */
+    @Deprecated
     @Generated
     @Selector("interfaceOrientation")
     @NInt
@@ -186,8 +195,9 @@ public class UIWindowScene extends UIScene implements UITraitEnvironment, UITrai
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * Restrictions which the system should use when resizing the scene. This property will be NULL on platforms which
-     * don't support scene resize, else a mutable object is returned which the client may customize.
+     * Preferences the system should evaluate when resizing the scene. If non `nil`, returns a mutable instance that the
+     * client may customize.
+     * - Note: This property will be `nil` on platforms that don't support scene resizing.
      * 
      * API-Since: 13.0
      */

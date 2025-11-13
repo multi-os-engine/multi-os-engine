@@ -28,8 +28,6 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * AVMetricErrorEvent
- * 
  * Represents a metric event when an error occurred.
  * 
  * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
@@ -98,8 +96,6 @@ public class AVMetricErrorEvent extends AVMetricEvent {
     public static native String description_static();
 
     /**
-     * [@property] didRecover
-     * 
      * Returns whether the error was recoverable.
      * 
      * API-Since: 18.0
@@ -109,8 +105,6 @@ public class AVMetricErrorEvent extends AVMetricEvent {
     public native boolean didRecover();
 
     /**
-     * [@property] error
-     * 
      * Returns the error encountered.
      * 
      * API-Since: 18.0

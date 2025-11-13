@@ -50,11 +50,9 @@ import apple.foundation.NSDictionary;
 import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.metal.protocol.MTLResidencySet;
 
 /**
- * Note: The default value of the `opaque' property for CAMetalLayer
- * instances is true.
- * 
  * API-Since: 8.0
  */
 @Generated
@@ -517,4 +515,29 @@ public class CAMetalLayer extends CALayer {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("layerWithRemoteClientId:")
+    @NotNull
+    public static native CALayer layerWithRemoteClientId(int client_id);
+
+    /**
+     * Metal residency set containing resources for presenting layer's drawables
+     * 
+     * Applications should use this residency set to ensure all Metal resources
+     * needed to render into or present drawables are resident before use. The
+     * residency set will be updated automatically to always track the latest
+     * resources. When the `device` property is changed, the previous residency
+     * set will be invalidated and the application must request a new instance.
+     * Applications must not make any modifications to this residency set. The
+     * residency set will not be available if the device propery is nil, or if
+     * it does not support residency sets.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("residencySet")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native MTLResidencySet residencySet();
 }

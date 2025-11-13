@@ -472,4 +472,48 @@ public class HMAccessory extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Returns the HAP Accessory Instance ID, or nil if the receiver does not represent a HAP accessory.
+     * 
+     * Requires vendor-level access to this accessory.
+     * 
+     * API-Since: 26.1
+     */
+    @Generated
+    @Selector("HAPInstanceID")
+    @Nullable
+    public native NSNumber HAPInstanceID();
+
+    /**
+     * If the receiver represents a bridge, an array of the accessories behind the bridge, otherwise empty.
+     * 
+     * @see uniqueIdentifiersForBridgedAccessories
+     * @see bridged
+     * 
+     *      API-Since: 13.0
+     */
+    @Generated
+    @Selector("bridgedAccessories")
+    @NotNull
+    public native NSArray<? extends HMAccessory> bridgedAccessories();
+
+    /**
+     * The home containing the accessory.
+     * 
+     * API-Since: 10.0
+     */
+    @Generated
+    @Selector("home")
+    @Nullable
+    public native HMHome home();
+
+    /**
+     * Returns YES if the current process is entitled to vendor-level access to this accessory.
+     * 
+     * API-Since: 26.1
+     */
+    @Generated
+    @Selector("isVendorAccessory")
+    public native boolean isVendorAccessory();
 }

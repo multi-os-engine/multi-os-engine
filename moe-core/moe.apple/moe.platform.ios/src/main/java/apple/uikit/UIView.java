@@ -31,7 +31,6 @@ import apple.quartzcore.struct.CATransform3D;
 import apple.uikit.protocol.UIAccessibilityIdentification;
 import apple.uikit.protocol.UIAppearance;
 import apple.uikit.protocol.UIAppearanceContainer;
-import apple.uikit.protocol.UICoordinateSpace;
 import apple.uikit.protocol.UIDynamicItem;
 import apple.uikit.protocol.UIFocusEnvironment;
 import apple.uikit.protocol.UIFocusItem;
@@ -75,6 +74,7 @@ import org.jetbrains.annotations.Nullable;
 import apple.uikit.protocol.UITraitChangeObservable;
 import apple.uikit.protocol.UITraitChangeRegistration;
 import apple.uikit.protocol.UITraitOverrides;
+import apple.uikit.protocol.UICoordinateSpace;
 
 /**
  * API-Since: 2.0
@@ -1129,6 +1129,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("hitTest:withEvent:")
     public native UIView hitTestWithEvent(@ByValue CGPoint point, @Nullable UIEvent event);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("init")
     public native UIView init();
@@ -2815,4 +2818,96 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("focusItemDeferralMode")
     @NInt
     public native long focusItemDeferralMode();
+
+    /**
+     * A configuration that defines the corners of the view.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("cornerConfiguration")
+    @NotNull
+    public native UICornerConfiguration cornerConfiguration();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("directionalEdgeInsetsForLayoutRegion:")
+    @ByValue
+    public native NSDirectionalEdgeInsets directionalEdgeInsetsForLayoutRegion(
+            @NotNull UIViewLayoutRegion layoutRegion);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("edgeInsetsForLayoutRegion:")
+    @ByValue
+    public native UIEdgeInsets edgeInsetsForLayoutRegion(@NotNull UIViewLayoutRegion layoutRegion);
+
+    /**
+     * Returns the effective radius for the given `corner`, calculated using the view's current `cornerConfiguration`.
+     * 
+     * When invoked within ``UIView.layoutSubviews()``, ``UIView.updateProperties()``, or
+     * ``UIViewController.updateProperties()`` automatic invalidation will occur if the effective radius changes.
+     * If more than one `corner` is provided, the returned radius represents the maximum effective radius of those
+     * corners.
+     * 
+     * - Parameter corner: The corner.
+     * - Returns: The effective radius.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("effectiveRadiusForCorner:")
+    @NFloat
+    public native double effectiveRadiusForCorner(@NUInt long corner);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("layoutGuideForLayoutRegion:")
+    @NotNull
+    public native UILayoutGuide layoutGuideForLayoutRegion(@NotNull UIViewLayoutRegion layoutRegion);
+
+    /**
+     * A configuration that defines the corners of the view.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setCornerConfiguration:")
+    public native void setCornerConfiguration(@NotNull UICornerConfiguration value);
+
+    /**
+     * Call to manually request a properties update for the view.
+     * Multiple requests may be coalesced into a single update alongside the next layout pass.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setNeedsUpdateProperties")
+    public native void setNeedsUpdateProperties();
+
+    /**
+     * Override point for subclasses to update properties of this view.
+     * Never call this method directly; use `setNeedsUpdateProperties` to schedule an update.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("updateProperties")
+    public native void updateProperties();
+
+    /**
+     * Forces an immediate properties update for this view (and its view controller, if applicable)
+     * and any subviews, including any view controllers or views in its subtree.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("updatePropertiesIfNeeded")
+    public native void updatePropertiesIfNeeded();
 }

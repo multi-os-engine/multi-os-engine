@@ -47,8 +47,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * View controller that provides the standard user interface for leaderboards, achievements, and challenges. Present
+ * modally from the top view controller.
+ * 
  * API-Since: 6.0
+ * Deprecated-Since: 26.0
  */
+@Deprecated
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)

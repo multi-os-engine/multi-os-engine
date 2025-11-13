@@ -78,4 +78,16 @@ public final class MTLIntersectionFunctionSignature {
      * API-Since: 17.0
      */
     @Generated @NUInt public static final long CurveData = 0x0000000000000080L;
+    /**
+     * The intersection function will be used with intersection function buffers
+     * 
+     * API-Since: 26.0
+     */
+    @Generated @NUInt public static final long IntersectionFunctionBuffer = 0x0000000000000100L;
+    /**
+     * The intersection function uses the intersection function buffer user_data pointer
+     * 
+     * API-Since: 26.0
+     */
+    @Generated @NUInt public static final long UserData = 0x0000000000000200L;
 }

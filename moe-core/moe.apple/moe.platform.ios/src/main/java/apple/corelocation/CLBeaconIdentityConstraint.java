@@ -31,6 +31,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * CLBeaconIdentityConstraint
+ * 
+ * Refer to \ref CLBeaconIdentityCondition for more details.
+ * 
  * API-Since: 13.0
  * Deprecated-Since: 100000.0
  */

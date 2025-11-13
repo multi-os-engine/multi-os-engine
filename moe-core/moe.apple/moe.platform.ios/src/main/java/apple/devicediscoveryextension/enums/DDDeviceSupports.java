@@ -19,4 +19,10 @@ public final class DDDeviceSupports {
      * Device supports Bluetooth Low Energy pairing.
      */
     @Generated @NUInt public static final long TransportBridging = 0x0000000000000004L;
+    /**
+     * Device supports bring up of classic transport profiles when low energy transport for peripheral is connected.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated @NUInt public static final long HID = 0x0000000000000008L;
 }

@@ -41,6 +41,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -155,6 +158,9 @@ public class MKETAResponse extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 7.0
+     */
     @NotNull
     @Generated
     @Selector("destination")
@@ -185,6 +191,9 @@ public class MKETAResponse extends NSObject {
     @Selector("expectedDepartureDate")
     public native NSDate expectedDepartureDate();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("expectedTravelTime")
     public native double expectedTravelTime();
@@ -195,6 +204,8 @@ public class MKETAResponse extends NSObject {
 
     /**
      * Source and destination may be filled with additional details compared to the request object.
+     * 
+     * API-Since: 7.0
      */
     @NotNull
     @Generated

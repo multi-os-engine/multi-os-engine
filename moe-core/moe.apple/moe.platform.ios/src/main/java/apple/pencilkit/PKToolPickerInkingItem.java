@@ -123,25 +123,14 @@ public class PKToolPickerInkingItem extends PKToolPickerItem {
     public native PKToolPickerInkingItem initWithInkType(@NotNull String inkType);
 
     /**
-     * Create a new tool picker item with a `PKInkType`.
-     * 
-     * @param inkType The ink type for the tool.
-     * @param color   The color for the tool.
-     * 
-     *                API-Since: 18.0
+     * API-Since: 18.0
      */
     @Generated
     @Selector("initWithInkType:color:")
     public native PKToolPickerInkingItem initWithInkTypeColor(@NotNull String inkType, @NotNull UIColor color);
 
     /**
-     * Create a new tool picker item with a `PKInkType`.
-     * 
-     * @param inkType The ink type for the tool.
-     * @param color   The color for the tool.
-     * @param width   The width for the tool.
-     * 
-     *                API-Since: 18.0
+     * API-Since: 18.0
      */
     @Generated
     @Selector("initWithInkType:color:width:")
@@ -149,15 +138,7 @@ public class PKToolPickerInkingItem extends PKToolPickerItem {
             @NFloat double width);
 
     /**
-     * Create a new tool picker item with a `PKInkType`.
-     * 
-     * @param inkType    The ink type for the tool.
-     * @param color      The color for the tool.
-     * @param width      The width for the tool.
-     * @param identifier The identifier for the tool item. Passing `nil` resolves to a default value based on the
-     *                   `PKInkType`.
-     * 
-     *                   API-Since: 18.0
+     * API-Since: 18.0
      */
     @Generated
     @Selector("initWithInkType:color:width:identifier:")
@@ -248,4 +229,12 @@ public class PKToolPickerInkingItem extends PKToolPickerItem {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("initWithInkType:color:width:azimuth:identifier:")
+    public native PKToolPickerInkingItem initWithInkTypeColorWidthAzimuthIdentifier(@NotNull String inkType,
+            @NotNull UIColor color, @NFloat double width, @NFloat double azimuth, @Nullable String identifier);
 }

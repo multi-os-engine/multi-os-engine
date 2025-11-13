@@ -169,8 +169,6 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
     public static native long version_static();
 
     /**
-     * videoCompositionLayerInstruction
-     * 
      * Returns a new instance of AVMutableVideoCompositionLayerInstruction with no transform or opacity ramps and a
      * trackID initialized to kCMPersistentTrackID_Invalid.
      * 
@@ -181,15 +179,12 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
     public static native AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstruction();
 
     /**
-     * videoCompositionLayerInstructionWithAssetTrack:
-     * 
      * Returns a new instance of AVMutableVideoCompositionLayerInstruction with no transform or opacity ramps and a
      * trackID set to the specified track's trackID.
      * 
-     * @param track
-     *              A reference to an AVAssetTrack.
+     * - Parameter track: A reference to an AVAssetTrack.
      * 
-     *              API-Since: 4.0
+     * API-Since: 4.0
      */
     @Generated
     @Selector("videoCompositionLayerInstructionWithAssetTrack:")
@@ -205,8 +200,6 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
     public native AVMutableVideoCompositionLayerInstruction initWithCoder(@NotNull NSCoder coder);
 
     /**
-     * setCropRectangle:atTime:
-     * 
      * Sets a value of the crop rectangle at a time within the timeRange of the instruction.
      * 
      * The origin of the crop rectangle is the top-left corner of the buffer clean aperture rectangle. The crop
@@ -223,21 +216,17 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
      * 
      * This method throws an exception if time is not numeric.
      * 
-     * API-Since: 7.0
+     * - Parameter cropRectangle: The crop rectangle to be applied at the specified time. See the discussion below of
+     * how crop rectangles are applied to video frames.
+     * - Parameter time: A time value within the timeRange of the composition instruction.
      * 
-     * @param cropRectangle
-     *                      The crop rectangle to be applied at the specified time. See the discussion below of how crop
-     *                      rectangles are applied to video frames.
-     * @param time
-     *                      A time value within the timeRange of the composition instruction.
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setCropRectangle:atTime:")
     public native void setCropRectangleAtTime(@ByValue CGRect cropRectangle, @ByValue CMTime time);
 
     /**
-     * setCropRectangleRampFromStartCropRectangle:toEndCropRectangle:timeRange:
-     * 
      * Sets an crop rectangle ramp to apply during the specified timerange.
      * 
      * The origin of the crop rectangle is the top-left corner of the buffer clean aperture rectangle. The crop
@@ -257,16 +246,13 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
      * This method throws an exception if the time range overlaps the time range of an existing crop rectangle ramp, or
      * if the time range does not have a numeric start time and duration.
      * 
-     * API-Since: 7.0
+     * - Parameter startCropRectangle: The crop rectangle to be applied at the starting time of the timeRange. See the
+     * discussion below of how crop rectangles are applied to video frames.
+     * - Parameter endCropRectangle: The crop rectangle to be applied at the end time of the timeRange.
+     * - Parameter timeRange: The timeRange over which the value of the opacity will be interpolated between
+     * startCropRectangle and endCropRectangle.
      * 
-     * @param startCropRectangle
-     *                           The crop rectangle to be applied at the starting time of the timeRange. See the
-     *                           discussion below of how crop rectangles are applied to video frames.
-     * @param endCropRectangle
-     *                           The crop rectangle to be applied at the end time of the timeRange.
-     * @param timeRange
-     *                           The timeRange over which the value of the opacity will be interpolated between
-     *                           startCropRectangle and endCropRectangle.
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setCropRectangleRampFromStartCropRectangle:toEndCropRectangle:timeRange:")
@@ -274,8 +260,6 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
             @ByValue CGRect startCropRectangle, @ByValue CGRect endCropRectangle, @ByValue CMTimeRange timeRange);
 
     /**
-     * setOpacity:atTime:
-     * 
      * Sets a value of the opacity at a time within the timeRange of the instruction.
      * 
      * Sets a fixed opacity to apply from the specified time until the next time at which an opacity is set; this is the
@@ -284,20 +268,16 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
      * time, the opacity is held constant at the last value.
      * This method throws an exception if time is not numeric.
      * 
-     * API-Since: 4.0
+     * - Parameter opacity: The opacity to be applied at the specified time. The value must be between 0.0 and 1.0.
+     * - Parameter time: A time value within the timeRange of the composition instruction.
      * 
-     * @param opacity
-     *                The opacity to be applied at the specified time. The value must be between 0.0 and 1.0.
-     * @param time
-     *                A time value within the timeRange of the composition instruction.
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setOpacity:atTime:")
     public native void setOpacityAtTime(float opacity, @ByValue CMTime time);
 
     /**
-     * setOpacityRampFromStartOpacity:toEndOpacity:timeRange:
-     * 
      * Sets an opacity ramp to apply during the specified timerange.
      * 
      * During an opacity ramp, opacity is computed using a linear interpolation.
@@ -305,17 +285,14 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
      * time, the opacity is held constant at the last value
      * This method throws an exception if the time range of a does not have a numeric start time and duration.
      * 
-     * API-Since: 4.0
+     * - Parameter startOpacity: The opacity to be applied at the starting time of the timeRange. The value must be
+     * between 0.0 and 1.0.
+     * - Parameter endOpacity: The opacity to be applied at the end time of the timeRange. The value must be between 0.0
+     * and 1.0.
+     * - Parameter timeRange: The timeRange over which the value of the opacity will be interpolated between
+     * startOpacity and endOpacity.
      * 
-     * @param startOpacity
-     *                     The opacity to be applied at the starting time of the timeRange. The value must be between
-     *                     0.0 and 1.0.
-     * @param endOpacity
-     *                     The opacity to be applied at the end time of the timeRange. The value must be between 0.0 and
-     *                     1.0.
-     * @param timeRange
-     *                     The timeRange over which the value of the opacity will be interpolated between startOpacity
-     *                     and endOpacity.
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setOpacityRampFromStartOpacity:toEndOpacity:timeRange:")
@@ -332,8 +309,6 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
     public native void setTrackID(int value);
 
     /**
-     * setTransform:atTime:
-     * 
      * Sets a value of the transform at a time within the timeRange of the instruction.
      * 
      * For purposes of spatial positioning of video frames, the origin is in the top-left corner, so
@@ -351,21 +326,17 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
      * 
      * This method throws an exception if time is not numeric.
      * 
-     * API-Since: 4.0
+     * - Parameter transform: The transform to be applied at the specified time. See the discussion below of how
+     * transforms are applied to video frames.
+     * - Parameter time: A time value within the timeRange of the composition instruction.
      * 
-     * @param transform
-     *                  The transform to be applied at the specified time. See the discussion below of how transforms
-     *                  are applied to video frames.
-     * @param time
-     *                  A time value within the timeRange of the composition instruction.
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setTransform:atTime:")
     public native void setTransformAtTime(@ByValue CGAffineTransform transform, @ByValue CMTime time);
 
     /**
-     * setTransformRampFromStartTransform:toEndTransform:timeRange:
-     * 
      * Sets a transform ramp to apply during the specified timerange.
      * 
      * For purposes of spatial positioning of video frames, the origin is in the top-left corner, so
@@ -384,16 +355,13 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
      * This method throws an exception if the time range overlaps the time range of an existing transform ramp or if the
      * time range of a does not have a numeric start time and duration.
      * 
-     * API-Since: 4.0
+     * - Parameter startTransform: The transform to be applied at the starting time of the timeRange. See the discussion
+     * below of how transforms are applied to video frames.
+     * - Parameter endTransform: The transform to be applied at the end time of the timeRange.
+     * - Parameter timeRange: The timeRange over which the value of the transform will be interpolated between
+     * startTransform and endTransform.
      * 
-     * @param startTransform
-     *                       The transform to be applied at the starting time of the timeRange. See the discussion below
-     *                       of how transforms are applied to video frames.
-     * @param endTransform
-     *                       The transform to be applied at the end time of the timeRange.
-     * @param timeRange
-     *                       The timeRange over which the value of the transform will be interpolated between
-     *                       startTransform and endTransform.
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setTransformRampFromStartTransform:toEndTransform:timeRange:")

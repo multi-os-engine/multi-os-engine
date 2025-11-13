@@ -685,4 +685,43 @@ public class AVPlayerViewController extends UIViewController {
     @Selector("videoFrameAnalysisTypes")
     @NUInt
     public native long videoFrameAnalysisTypes();
+
+    /**
+     * [@property] mediaCharacteristicsForSupportedCustomMediaSelectionSchemes
+     * 
+     * Returns available AVKit supported media group types.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("mediaCharacteristicsForSupportedCustomMediaSelectionSchemes")
+    @NotNull
+    public static native NSArray<String> mediaCharacteristicsForSupportedCustomMediaSelectionSchemes();
+
+    /**
+     * Describes how High Dynamic Range (HDR) video content renders.
+     * 
+     * Defaults to ``AVDisplayDynamicRangeAutomatic``.
+     * 
+     * - Note: This property will only have effect if the video content supports HDR.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("preferredDisplayDynamicRange")
+    @NInt
+    public native long preferredDisplayDynamicRange();
+
+    /**
+     * Describes how High Dynamic Range (HDR) video content renders.
+     * 
+     * Defaults to ``AVDisplayDynamicRangeAutomatic``.
+     * 
+     * - Note: This property will only have effect if the video content supports HDR.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setPreferredDisplayDynamicRange:")
+    public native void setPreferredDisplayDynamicRange(@NInt long value);
 }

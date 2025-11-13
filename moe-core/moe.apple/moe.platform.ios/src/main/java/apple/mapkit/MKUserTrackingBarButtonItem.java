@@ -347,4 +347,9 @@ public class MKUserTrackingBarButtonItem extends UIBarButtonItem {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("fixedSpaceItem")
+    @NotNull
+    public static native MKUserTrackingBarButtonItem fixedSpaceItem();
 }

@@ -48,7 +48,7 @@ public class AVAudioSession extends NSObject {
     }
 
     /**
-     * The current hardware IO buffer duration in seconds.
+     * The current hardware IO buffer duration in seconds. Is key-value observable.
      * 
      * API-Since: 6.0
      */
@@ -101,6 +101,9 @@ public class AVAudioSession extends NSObject {
      * Note that this property only applies to the session's current category and mode. For
      * example, if the session's current category is AVAudioSessionCategoryPlayback, there will be
      * no available inputs.
+     * 
+     * On iOS, clients can listen to AVAudioSessionAvailableInputsChangeNotification to
+     * be notified when this changes.
      * 
      * API-Since: 7.0
      */
@@ -682,7 +685,8 @@ public class AVAudioSession extends NSObject {
      * deactivation is requested, the session will be deactivated, but the method will return NO and
      * populate the NSError with the code property set to AVAudioSessionErrorCodeIsBusy to indicate the
      * misuse of the API. Prior to iOS 8, the session would have remained active if it had running I/Os
-     * at the time of the deactivation request.
+     * at the time of the deactivation request. Starting in iOS 26.0, deactivating while IO is running will
+     * no longer return AVAudioSessionErrorCodeIsBusy.
      * 
      * API-Since: 3.0
      */
@@ -1157,4 +1161,40 @@ public class AVAudioSession extends NSObject {
     @Selector("setPrefersEchoCancelledInput:error:")
     public native boolean setPrefersEchoCancelledInputError(boolean value,
             @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    /**
+     * A Boolean value that indicates whether audio output is in a muted state.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isOutputMuted")
+    public native boolean isOutputMuted();
+
+    /**
+     * Sets a Boolean value to inform the system to mute the session's output audio. The default value is false
+     * (unmuted).
+     * 
+     * This property is supported with all categories and modes, except for
+     * ``AVAudioSessionCategoryPlayAndRecord`` where it is only supported with ``AVAudioSessionModeDefault``.
+     * Changing the mode to non-default mode with ``AVAudioSessionCategoryPlayAndRecord``
+     * category will cause the session to unmute.
+     * 
+     * Changes in output mute state can be observed via ``AVAudioSessionOutputMuteStateChangeNotification``.
+     * If this value is set to true, ``AVAudioSessionUserIntentToUnmuteOutputNotification``
+     * may be sent when a user hints to unmute by changing the volume.
+     * 
+     * - Note: This will not mute system sounds and haptics.
+     * 
+     * - Parameters:
+     * - `muted`: A Boolean value to set the audio output to the desired muted state.
+     * - `error`: A pointer to an error object. If an error occurs, the framework sets the pointer to an error object
+     * that describes the failure.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setOutputMuted:error:")
+    public native boolean setOutputMutedError(boolean muted,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> outError);
 }

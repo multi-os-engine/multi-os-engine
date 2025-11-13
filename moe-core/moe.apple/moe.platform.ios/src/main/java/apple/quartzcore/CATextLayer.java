@@ -208,7 +208,7 @@ public class CATextLayer extends CALayer {
 
     /**
      * The font to use, currently may be either a CTFontRef (toll-free
-     * bridged from UIFont), a CGFontRef, or a string naming the font.
+     * bridged from NSFont or UIFont), a CGFontRef, or a string naming the font.
      * Defaults to the Helvetica font. Only used when the `string' property
      * is not an NSAttributedString.
      * 
@@ -297,7 +297,7 @@ public class CATextLayer extends CALayer {
 
     /**
      * The font to use, currently may be either a CTFontRef (toll-free
-     * bridged from UIFont), a CGFontRef, or a string naming the font.
+     * bridged from NSFont or UIFont), a CGFontRef, or a string naming the font.
      * Defaults to the Helvetica font. Only used when the `string' property
      * is not an NSAttributedString.
      * 
@@ -392,4 +392,9 @@ public class CATextLayer extends CALayer {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("layerWithRemoteClientId:")
+    @NotNull
+    public static native CALayer layerWithRemoteClientId(int client_id);
 }

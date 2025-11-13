@@ -44,6 +44,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSDate;
 
 /**
  * This class should not be subclassed. If it is, Sendable may no longer apply.
@@ -216,7 +217,7 @@ public class CKShareParticipant extends NSObject implements NSSecureCoding, NSCo
     public native void setPermission(@NInt long value);
 
     /**
-     * The default participant type is @c CKShareParticipantTypePrivateUser.
+     * The default participant type is ``CloudKit/CKShareParticipantType/CKShareParticipantTypePrivateUser``.
      * 
      * API-Since: 10.0
      * Deprecated-Since: 12.0
@@ -233,7 +234,7 @@ public class CKShareParticipant extends NSObject implements NSSecureCoding, NSCo
     }
 
     /**
-     * The default participant type is @c CKShareParticipantTypePrivateUser.
+     * The default participant type is ``CloudKit/CKShareParticipantType/CKShareParticipantTypePrivateUser``.
      * 
      * API-Since: 10.0
      * Deprecated-Since: 12.0
@@ -285,4 +286,45 @@ public class CKShareParticipant extends NSObject implements NSSecureCoding, NSCo
     @Selector("participantID")
     @NotNull
     public native String participantID();
+
+    /**
+     * The date and time when the participant was added to the share.
+     * 
+     * This timestamp is set when the share is successfully saved to the server.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("dateAddedToShare")
+    @Nullable
+    public native NSDate dateAddedToShare();
+
+    /**
+     * Indicates whether the participant was originally a requester who was approved to join the share.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isApprovedRequester")
+    public native boolean isApprovedRequester();
+
+    /**
+     * Generate a unique URL for inviting a participant without knowing their handle
+     * 
+     * When a participant's email address / phone number / userRecordID isn't known up-front, a
+     * ``CKShareParticipant/oneTimeURLParticipant`` can be added
+     * to the share. Once the share is saved, a custom invitation link or one-time URL is available for the added
+     * participant via ``CKShare/oneTimeURLForParticipantID:``.
+     * This custom link can be used by any recipient user to fetch share metadata and accept the share.
+     * 
+     * Note that a one-time URL participant in the ``ParticipantAcceptanceStatus/pending`` state has empty
+     * ``CKUserIdentity/nameComponents``
+     * and a nil ``CKUserIdentity/lookupInfo``.
+     * 
+     * API-Since: 18.0
+     */
+    @Generated
+    @Selector("oneTimeURLParticipant")
+    @NotNull
+    public static native CKShareParticipant oneTimeURLParticipant();
 }

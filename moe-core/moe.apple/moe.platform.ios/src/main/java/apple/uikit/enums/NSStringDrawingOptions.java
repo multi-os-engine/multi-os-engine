@@ -53,4 +53,14 @@ public final class NSStringDrawingOptions {
     @Generated
     private NSStringDrawingOptions() {
     }
+
+    /**
+     * Specifies the behavior for resolving ``NSTextAlignment.natural`` to the visual alignment.
+     * 
+     * When set, the resolved visual alignment is determined by the resolved base writing direction; otherwise, it is
+     * using the user’s preferred language.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated @NInt public static final long OptionsResolvesNaturalAlignmentWithBaseWritingDirection = 0x0000000000000200L;
 }

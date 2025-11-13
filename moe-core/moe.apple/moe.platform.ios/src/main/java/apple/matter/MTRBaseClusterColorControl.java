@@ -8066,7 +8066,10 @@ public class MTRBaseClusterColorControl extends MTRGenericBaseCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointBIntensityWithValue:completion:")
     public native void writeAttributeColorPointBIntensityWithValueCompletion(@Nullable NSNumber value,
@@ -8099,7 +8102,10 @@ public class MTRBaseClusterColorControl extends MTRGenericBaseCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointBIntensityWithValue:params:completion:")
     public native void writeAttributeColorPointBIntensityWithValueParamsCompletion(@Nullable NSNumber value,
@@ -8134,7 +8140,10 @@ public class MTRBaseClusterColorControl extends MTRGenericBaseCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointBXWithValue:completion:")
     public native void writeAttributeColorPointBXWithValueCompletion(@NotNull NSNumber value,
@@ -8167,7 +8176,10 @@ public class MTRBaseClusterColorControl extends MTRGenericBaseCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointBXWithValue:params:completion:")
     public native void writeAttributeColorPointBXWithValueParamsCompletion(@NotNull NSNumber value,
@@ -8202,7 +8214,10 @@ public class MTRBaseClusterColorControl extends MTRGenericBaseCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointBYWithValue:completion:")
     public native void writeAttributeColorPointBYWithValueCompletion(@NotNull NSNumber value,
@@ -8235,7 +8250,10 @@ public class MTRBaseClusterColorControl extends MTRGenericBaseCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointBYWithValue:params:completion:")
     public native void writeAttributeColorPointBYWithValueParamsCompletion(@NotNull NSNumber value,
@@ -8270,7 +8288,10 @@ public class MTRBaseClusterColorControl extends MTRGenericBaseCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointGIntensityWithValue:completion:")
     public native void writeAttributeColorPointGIntensityWithValueCompletion(@Nullable NSNumber value,
@@ -8303,7 +8324,10 @@ public class MTRBaseClusterColorControl extends MTRGenericBaseCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointGIntensityWithValue:params:completion:")
     public native void writeAttributeColorPointGIntensityWithValueParamsCompletion(@Nullable NSNumber value,
@@ -8338,7 +8362,10 @@ public class MTRBaseClusterColorControl extends MTRGenericBaseCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointGXWithValue:completion:")
     public native void writeAttributeColorPointGXWithValueCompletion(@NotNull NSNumber value,
@@ -8371,7 +8398,10 @@ public class MTRBaseClusterColorControl extends MTRGenericBaseCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointGXWithValue:params:completion:")
     public native void writeAttributeColorPointGXWithValueParamsCompletion(@NotNull NSNumber value,
@@ -8406,7 +8436,10 @@ public class MTRBaseClusterColorControl extends MTRGenericBaseCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointGYWithValue:completion:")
     public native void writeAttributeColorPointGYWithValueCompletion(@NotNull NSNumber value,
@@ -8439,7 +8472,10 @@ public class MTRBaseClusterColorControl extends MTRGenericBaseCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointGYWithValue:params:completion:")
     public native void writeAttributeColorPointGYWithValueParamsCompletion(@NotNull NSNumber value,
@@ -8474,7 +8510,10 @@ public class MTRBaseClusterColorControl extends MTRGenericBaseCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointRIntensityWithValue:completion:")
     public native void writeAttributeColorPointRIntensityWithValueCompletion(@Nullable NSNumber value,
@@ -8507,7 +8546,10 @@ public class MTRBaseClusterColorControl extends MTRGenericBaseCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointRIntensityWithValue:params:completion:")
     public native void writeAttributeColorPointRIntensityWithValueParamsCompletion(@Nullable NSNumber value,
@@ -8542,7 +8584,10 @@ public class MTRBaseClusterColorControl extends MTRGenericBaseCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointRXWithValue:completion:")
     public native void writeAttributeColorPointRXWithValueCompletion(@NotNull NSNumber value,
@@ -8575,7 +8620,10 @@ public class MTRBaseClusterColorControl extends MTRGenericBaseCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointRXWithValue:params:completion:")
     public native void writeAttributeColorPointRXWithValueParamsCompletion(@NotNull NSNumber value,
@@ -8610,7 +8658,10 @@ public class MTRBaseClusterColorControl extends MTRGenericBaseCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointRYWithValue:completion:")
     public native void writeAttributeColorPointRYWithValueCompletion(@NotNull NSNumber value,
@@ -8643,7 +8694,10 @@ public class MTRBaseClusterColorControl extends MTRGenericBaseCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeColorPointRYWithValue:params:completion:")
     public native void writeAttributeColorPointRYWithValueParamsCompletion(@NotNull NSNumber value,
@@ -8814,7 +8868,10 @@ public class MTRBaseClusterColorControl extends MTRGenericBaseCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeWhitePointXWithValue:completion:")
     public native void writeAttributeWhitePointXWithValueCompletion(@NotNull NSNumber value,
@@ -8847,7 +8904,10 @@ public class MTRBaseClusterColorControl extends MTRGenericBaseCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeWhitePointXWithValue:params:completion:")
     public native void writeAttributeWhitePointXWithValueParamsCompletion(@NotNull NSNumber value,
@@ -8882,7 +8942,10 @@ public class MTRBaseClusterColorControl extends MTRGenericBaseCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeWhitePointYWithValue:completion:")
     public native void writeAttributeWhitePointYWithValueCompletion(@NotNull NSNumber value,
@@ -8915,7 +8978,10 @@ public class MTRBaseClusterColorControl extends MTRGenericBaseCluster {
 
     /**
      * API-Since: 16.4
+     * Deprecated-Since: 26.1
+     * Deprecated-Message: This attribute is no longer writable in the Matter standard
      */
+    @Deprecated
     @Generated
     @Selector("writeAttributeWhitePointYWithValue:params:completion:")
     public native void writeAttributeWhitePointYWithValueParamsCompletion(@NotNull NSNumber value,

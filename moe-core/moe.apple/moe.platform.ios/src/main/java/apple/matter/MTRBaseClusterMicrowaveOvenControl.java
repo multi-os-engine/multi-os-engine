@@ -56,7 +56,7 @@ public class MTRBaseClusterMicrowaveOvenControl extends MTRGenericBaseCluster {
     /**
      * Command AddMoreTime
      * 
-     * Add More Cooking Time
+     * This command is used to add more time to the CookTime attribute of the server.
      * 
      * API-Since: 18.4
      */
@@ -584,7 +584,7 @@ public class MTRBaseClusterMicrowaveOvenControl extends MTRGenericBaseCluster {
     /**
      * Command SetCookingParameters
      * 
-     * Set Cooking Parameters
+     * This command is used to set the cooking parameters associated with the operation of the device.
      * 
      * API-Since: 18.4
      */

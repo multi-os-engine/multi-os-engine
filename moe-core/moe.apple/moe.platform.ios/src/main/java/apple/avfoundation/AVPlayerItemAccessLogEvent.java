@@ -44,8 +44,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVPlayerItemAccessLogEvent
- * 
  * An AVPlayerItemAccessLogEvent represents a single log entry.
  * 
  * An AVPlayerItemAccessLogEvent provides named properties for accessing the data
@@ -170,8 +168,6 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public static native long version_static();
 
     /**
-     * [@property] URI
-     * 
      * The URI of the playback item. Can be nil.
      * 
      * If nil is returned the URI is unknown. Corresponds to "uri".
@@ -185,8 +181,6 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native String URI();
 
     /**
-     * [@property] averageAudioBitrate
-     * 
      * The average bitrate of audio track. This is not available if audio is muxed with video. Measured in bits per
      * second.
      * 
@@ -200,8 +194,6 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native double averageAudioBitrate();
 
     /**
-     * [@property] averageVideoBitrate
-     * 
      * The average bitrate of video track if it is unmuxed. Average bitrate of combined content if muxed. Measured in
      * bits per second.
      * 
@@ -222,8 +214,6 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
-     * [@property] downloadOverdue
-     * 
      * The total number of times the download of the segments took too long.
      * 
      * Value is negative if unknown. Corresponds to "c-overdue".
@@ -237,8 +227,6 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native long downloadOverdue();
 
     /**
-     * [@property] durationWatched
-     * 
      * The accumulated duration of the media played. Measured in seconds.
      * 
      * Value is negative if unknown. Corresponds to "c-duration-watched".
@@ -251,8 +239,6 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native double durationWatched();
 
     /**
-     * [@property] indicatedAverageBitrate
-     * 
      * Average throughput required to play the stream, as advertised by the server. Measured in bits per second.
      * 
      * Value is negative if unknown. Corresponds to "sc-indicated-avg-bitrate".
@@ -265,8 +251,6 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native double indicatedAverageBitrate();
 
     /**
-     * [@property] indicatedBitrate
-     * 
      * The throughput required to play the stream, as advertised by the server. Measured in bits per second.
      * 
      * Value is negative if unknown. Corresponds to "sc-indicated-bitrate".
@@ -283,8 +267,6 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native AVPlayerItemAccessLogEvent init();
 
     /**
-     * [@property] mediaRequestsWWAN
-     * 
      * Number of network read requests over WWAN.
      * 
      * Value is negative if unknown. Corresponds to "sc-wwan-count".
@@ -298,8 +280,6 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native long mediaRequestsWWAN();
 
     /**
-     * [@property] numberOfBytesTransferred
-     * 
      * The accumulated number of bytes transferred.
      * 
      * Value is negative if unknown. Corresponds to "bytes".
@@ -312,8 +292,6 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native long numberOfBytesTransferred();
 
     /**
-     * [@property] numberOfDroppedVideoFrames
-     * 
      * The total number of dropped video frames.
      * 
      * Value is negative if unknown. Corresponds to "c-frames-dropped".
@@ -327,8 +305,6 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native long numberOfDroppedVideoFrames();
 
     /**
-     * [@property] numberOfMediaRequests
-     * 
      * A count of media read requests.
      * 
      * Value is negative if unknown. A count of media read requests from the server to this client. Corresponds to
@@ -345,8 +321,6 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native long numberOfMediaRequests();
 
     /**
-     * [@property] numberOfSegmentsDownloaded
-     * 
      * A count of media segments downloaded.
      * 
      * Value is negative if unknown. A count of media segments downloaded from the server to this client. Corresponds to
@@ -364,8 +338,6 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native long numberOfSegmentsDownloaded();
 
     /**
-     * [@property] numberOfServerAddressChanges
-     * 
      * A count of changes to the property serverAddress, see above, over the last uninterrupted period of playback.
      * 
      * Value is negative if unknown. Corresponds to "s-ip-changes".
@@ -379,8 +351,6 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native long numberOfServerAddressChanges();
 
     /**
-     * [@property] numberOfStalls
-     * 
      * The total number of playback stalls encountered.
      * 
      * Value is negative if unknown. Corresponds to "c-stalls".
@@ -394,8 +364,6 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native long numberOfStalls();
 
     /**
-     * [@property] observedBitrate
-     * 
      * The empirical throughput across all media downloaded. Measured in bits per second.
      * 
      * Value is negative if unknown. Corresponds to "c-observed-bitrate".
@@ -408,8 +376,6 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native double observedBitrate();
 
     /**
-     * [@property] observedBitrateStandardDeviation
-     * 
      * Standard deviation of observed segment download bit rates.
      * 
      * Value is negative if unknown. Corresponds to "c-observed-bitrate-sd".
@@ -422,8 +388,6 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native double observedBitrateStandardDeviation();
 
     /**
-     * [@property] observedMaxBitrate
-     * 
      * Maximum observed segment download bit rate.
      * 
      * Value is negative if unknown. Corresponds to "c-observed-max-bitrate".
@@ -439,8 +403,6 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native double observedMaxBitrate();
 
     /**
-     * [@property] observedMinBitrate
-     * 
      * Minimum observed segment download bit rate.
      * 
      * Value is negative if unknown. Corresponds to "c-observed-min-bitrate".
@@ -456,8 +418,6 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native double observedMinBitrate();
 
     /**
-     * [@property] playbackSessionID
-     * 
      * A GUID that identifies the playback session. This value is used in HTTP requests. Can be nil.
      * 
      * If nil is returned the GUID is unknown. Corresponds to "cs-guid".
@@ -471,8 +431,6 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native String playbackSessionID();
 
     /**
-     * [@property] playbackStartDate
-     * 
      * The date/time at which playback began for this event. Can be nil.
      * 
      * If nil is returned the date is unknown. Corresponds to "date".
@@ -486,8 +444,6 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native NSDate playbackStartDate();
 
     /**
-     * [@property] playbackStartOffset
-     * 
      * An offset into the playlist where the last uninterrupted period of playback began. Measured in seconds.
      * 
      * Value is negative if unknown. Corresponds to "c-start-time".
@@ -500,8 +456,6 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native double playbackStartOffset();
 
     /**
-     * [@property] playbackType
-     * 
      * Playback type (LIVE, VOD, FILE).
      * 
      * If nil is returned the playback type is unknown. Corresponds to "s-playback-type".
@@ -515,8 +469,6 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native String playbackType();
 
     /**
-     * [@property] segmentsDownloadedDuration
-     * 
      * The accumulated duration of the media downloaded. Measured in seconds.
      * 
      * Value is negative if unknown. Corresponds to "c-duration-downloaded".
@@ -529,8 +481,6 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native double segmentsDownloadedDuration();
 
     /**
-     * [@property] serverAddress
-     * 
      * The IP address of the server that was the source of the last delivered media segment. Can be nil.
      * 
      * If nil is returned the address is unknown. Can be either an IPv4 or IPv6 address. Corresponds to "s-ip".
@@ -544,8 +494,6 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native String serverAddress();
 
     /**
-     * [@property] startupTime
-     * 
      * The accumulated duration until player item is ready to play. Measured in seconds.
      * 
      * Value is negative if unknown. Corresponds to "c-startup-time".
@@ -558,8 +506,6 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native double startupTime();
 
     /**
-     * [@property] switchBitrate
-     * 
      * Bandwidth that caused us to switch (up or down).
      * 
      * Value is negative if unknown. Corresponds to "c-switch-bitrate".
@@ -572,8 +518,6 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native double switchBitrate();
 
     /**
-     * [@property] transferDuration
-     * 
      * The accumulated duration of active network transfer of bytes. Measured in seconds.
      * 
      * Value is negative if unknown. Corresponds to "c-transfer-duration".

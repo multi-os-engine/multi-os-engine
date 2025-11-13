@@ -32,6 +32,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.coremedia.struct.CMTime;
 import apple.corevideo.opaque.CVBufferRef;
 import org.moe.natj.general.ann.ByValue;
+import apple.foundation.NSDictionary;
 
 /**
  * API-Since: 17.0
@@ -375,4 +376,20 @@ public class AVSampleBufferVideoRenderer extends NSObject implements AVQueuedSam
     @Generated
     @Selector("resetUpcomingSampleBufferPresentationTimeExpectations")
     public native void resetUpcomingSampleBufferPresentationTimeExpectations();
+
+    /**
+     * [@property] recommendedPixelBufferAttributes
+     * 
+     * Recommended pixel buffer attributes for optimal performance when using CMSampleBuffers containing CVPixelBuffers.
+     * 
+     * The returned dictionary does not contain all of the attributes needed for creating pixel buffers.
+     * Use ``CVPixelBufferCreateResolvedAttributesDictionary()`` to reconcile these attributes with the pixel buffer
+     * creation attributes.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("recommendedPixelBufferAttributes")
+    @NotNull
+    public native NSDictionary<String, ?> recommendedPixelBufferAttributes();
 }

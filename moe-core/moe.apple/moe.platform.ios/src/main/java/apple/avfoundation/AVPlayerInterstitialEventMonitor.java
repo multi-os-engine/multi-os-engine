@@ -25,8 +25,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVPlayerInterstitialEventMonitor
- * 
  * An AVPlayerInterstitialEventMonitor allows you to observe the scheduling and progress of interstitial events,
  * specified either intrinsically within the content of primary items, such as via use of directives carried by HLS
  * media playlists, or via use of an AVPlayerInterstitialEventController.
@@ -100,8 +98,6 @@ public class AVPlayerInterstitialEventMonitor extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property] currentEvent
-     * 
      * The current interstitial event. Has a value of nil during playback of primary content by the primary player.
      * 
      * API-Since: 15.0
@@ -120,8 +116,6 @@ public class AVPlayerInterstitialEventMonitor extends NSObject {
     public static native String description_static();
 
     /**
-     * [@property] events
-     * 
      * Provides the current schedule of interstitial events, specified either intrinsically within the content of
      * primary items, such as via use of directives carried by HLS media playlists, or via use of an
      * AVPlayerInterstitialEventController.
@@ -172,15 +166,13 @@ public class AVPlayerInterstitialEventMonitor extends NSObject {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * interstitialEventMonitorWithPrimaryPlayer:
-     * 
      * Returns an instance of AVPlayerInterstitialEvent for use in observing and scheduling interstitial playback.
      * 
-     * @param primaryPlayer
-     *                      The AVPlayer that will play the primaryItems of the receiver's interstitial events.
-     * @return An instance of AVPlayerInterstitialEventMonitor.
+     * - Parameter primaryPlayer: The AVPlayer that will play the primaryItems of the receiver's interstitial events.
      * 
-     *         API-Since: 15.0
+     * - Returns: An instance of AVPlayerInterstitialEventMonitor.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("interstitialEventMonitorWithPrimaryPlayer:")
@@ -188,8 +180,6 @@ public class AVPlayerInterstitialEventMonitor extends NSObject {
             @NotNull AVPlayer primaryPlayer);
 
     /**
-     * [@property] interstitialPlayer
-     * 
      * The AVQueuePlayer that will play interstitial items during suspension of playback of primary items.
      * 
      * API-Since: 15.0
@@ -214,8 +204,6 @@ public class AVPlayerInterstitialEventMonitor extends NSObject {
     public static native AVPlayerInterstitialEventMonitor new_objc();
 
     /**
-     * [@property] primaryPlayer
-     * 
      * The AVPlayer that will play the primaryItems of the receiver's interstitial events.
      * 
      * API-Since: 15.0
@@ -250,4 +238,32 @@ public class AVPlayerInterstitialEventMonitor extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The skip control label for the currentEvent.
+     * 
+     * If a localizedStringsBundle has been set on the AVPlayerInterstitialEventController, and a
+     * skipControlLocalizedLabelBundleKey is set on the currentEvent, then this value will be the localized string that
+     * was matched to the event's skipControlLocalizedLabelBundleKey for the corresponding system language in the
+     * supplied Bundle, if any.
+     * If currentEvent is nil, then the value will be nil.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("currentEventSkipControlLabel")
+    @Nullable
+    public native String currentEventSkipControlLabel();
+
+    /**
+     * The skippable event state for the currentEvent.
+     * 
+     * If currentEvent is nil, then the value will be AVPlayerInterstitialEventSkippableEventStateNotSkippable.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("currentEventSkippableState")
+    @NInt
+    public native long currentEventSkippableState();
 }

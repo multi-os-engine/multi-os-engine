@@ -216,4 +216,24 @@ public class PKIdentityDocumentMetadata extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * identityDocumentType: identifies the type of the identity document
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("documentType")
+    @NInt
+    public native long documentType();
+
+    /**
+     * issuingCountryCode: identifies the issuing country of the identity document
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("issuingCountryCode")
+    @NotNull
+    public native String issuingCountryCode();
 }

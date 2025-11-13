@@ -27,8 +27,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVPlaybackCoordinator
- * 
  * The playback coordinator negotiates playback state between a player, such as AVPlayer or a custom playback object
  * represented by an implementation of the AVPlaybackCoordinatorPlaybackControlDelegate protocol, and a group of other
  * connected players.
@@ -78,8 +76,6 @@ public class AVPlaybackCoordinator extends NSObject {
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
-     * beginSuspensionForReason:
-     * 
      * Informs the coordinator that its playback object is detached from the group for some reason and should not
      * receive any playback commands from the coordinator.
      * 
@@ -88,14 +84,14 @@ public class AVPlaybackCoordinator extends NSObject {
      * The coordinator will not respond to playback commands coming from the group and it will also not send any
      * commands to the group.
      * To resume in group playback, end a suspension by calling one of the suspension's end methods.
-     * [@note] See the description of AVPlaybackCoordinator subclasses for suspensions automatically begun on behalf of
+     * 
+     * - Parameter suspensionReason: Indicates the reason for the suspension that is shared with other participants. Can
+     * be a system-defined reason (see AVCoordinatedPlaybackSuspensionReason*) or a custom string.
+     * 
+     * - NOTE: See the description of AVPlaybackCoordinator subclasses for suspensions automatically begun on behalf of
      * their playback objects, if any.
      * 
-     * @param suspensionReason
-     *                         Indicates the reason for the suspension that is shared with other participants. Can be a
-     *                         system-defined reason (see AVCoordinatedPlaybackSuspensionReason*) or a custom string.
-     * 
-     *                         API-Since: 15.0
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -132,8 +128,6 @@ public class AVPlaybackCoordinator extends NSObject {
     public static native String description_static();
 
     /**
-     * expectedItemTimeAtHostTime:
-     * 
      * Returns the item time (for the current item) that the coordinator expects to be playing at a given host clock
      * time.
      * 
@@ -184,12 +178,11 @@ public class AVPlaybackCoordinator extends NSObject {
     public static native AVPlaybackCoordinator new_objc();
 
     /**
-     * [@property] otherParticipants
-     * 
      * The playback states of the other participants in the group.
      * 
      * Use this property to create UI informing the local user about the state of other participants in the group.
-     * [@note] The coordinator posts AVPlaybackCoordinatorOtherParticipantsDidChangeNotification when the contents of
+     * 
+     * - NOTE: The coordinator posts AVPlaybackCoordinatorOtherParticipantsDidChangeNotification when the contents of
      * the array changes.
      * 
      * API-Since: 15.0
@@ -200,8 +193,6 @@ public class AVPlaybackCoordinator extends NSObject {
     public native NSArray<? extends AVCoordinatedPlaybackParticipant> otherParticipants();
 
     /**
-     * participantLimitForWaitingOutSuspensionsWithReason:
-     * 
      * Returns the maximum number of participants that can be in a group before the coordinator stops waiting out this
      * particular suspensions reason. Default value is NSIntegerMax.
      * 
@@ -213,8 +204,6 @@ public class AVPlaybackCoordinator extends NSObject {
     public native long participantLimitForWaitingOutSuspensionsWithReason(@NotNull String reason);
 
     /**
-     * [@property] pauseSnapsToMediaTimeOfOriginator
-     * 
      * Determines if participants should mirror the originator's stop time when pausing.
      * 
      * If YES, all participants will seek to the originator's stop time after they pause. Use this if it is desirable to
@@ -237,8 +226,6 @@ public class AVPlaybackCoordinator extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * setParticipantLimit:forWaitingOutSuspensionsWithReason:
-     * 
      * Sets the amount of participants that can join a group before the coordinator stops waiting for this particular
      * suspension reason.
      * 
@@ -254,8 +241,6 @@ public class AVPlaybackCoordinator extends NSObject {
             @NotNull String reason);
 
     /**
-     * [@property] pauseSnapsToMediaTimeOfOriginator
-     * 
      * Determines if participants should mirror the originator's stop time when pausing.
      * 
      * If YES, all participants will seek to the originator's stop time after they pause. Use this if it is desirable to
@@ -270,8 +255,6 @@ public class AVPlaybackCoordinator extends NSObject {
     public native void setPauseSnapsToMediaTimeOfOriginator(boolean value);
 
     /**
-     * [@property] suspensionReasonsThatTriggerWaiting
-     * 
      * If the coordinator decides to delay playback to wait for others, it will wait out these reasons, but not others.
      * 
      * API-Since: 15.0
@@ -289,8 +272,6 @@ public class AVPlaybackCoordinator extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * [@property] suspensionReasons
-     * 
      * Describes why the coordinator is currently not able to participate in group playback.
      * 
      * If the list of reasons is non-empty, the coordinator will not react to any changes of group playback state.
@@ -303,8 +284,6 @@ public class AVPlaybackCoordinator extends NSObject {
     public native NSArray<String> suspensionReasons();
 
     /**
-     * [@property] suspensionReasonsThatTriggerWaiting
-     * 
      * If the coordinator decides to delay playback to wait for others, it will wait out these reasons, but not others.
      * 
      * API-Since: 15.0

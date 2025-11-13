@@ -53,6 +53,8 @@ import apple.corefoundation.struct.CGPoint;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
+import apple.coremedia.struct.CMVideoDimensions;
 
 /**
  * AVCaptureDevice
@@ -1852,9 +1854,10 @@ public class AVCaptureDevice extends NSObject {
      *                 setExposureModeCustomWithDuration:ISO:completionHandler: is called multiple times, the completion
      *                 handlers will be called in FIFO order. The block receives a timestamp which matches that of the
      *                 first buffer to which all settings have been applied. Note that the timestamp is synchronized to
-     *                 the device clock, and thus must be converted to the master clock prior to comparison with the
-     *                 timestamps of buffers delivered via an AVCaptureVideoDataOutput. The client may pass nil for the
-     *                 handler parameter if knowledge of the operation's completion is not required.
+     *                 the device clock, and thus must be converted to the `AVCaptureSession/synchronizationClock` prior
+     *                 to comparison with the timestamps of buffers delivered via an AVCaptureVideoDataOutput. The
+     *                 client may pass nil for the handler parameter if knowledge of the operation's completion is not
+     *                 required.
      */
     @Generated
     @Selector("setExposureModeCustomWithDuration:ISO:completionHandler:")
@@ -1900,9 +1903,9 @@ public class AVCaptureDevice extends NSObject {
      *                setExposureTargetBias:completionHandler: is called multiple times, the completion handlers will be
      *                called in FIFO order. The block receives a timestamp which matches that of the first buffer to
      *                which the setting has been applied. Note that the timestamp is synchronized to the device clock,
-     *                and thus must be converted to the master clock prior to comparison with the timestamps of buffers
-     *                delivered via an AVCaptureVideoDataOutput. The client may pass nil for the handler parameter if
-     *                knowledge of the operation's completion is not required.
+     *                and thus must be converted to the `AVCaptureSession/synchronizationClock` prior to comparison with
+     *                the timestamps of buffers delivered via an AVCaptureVideoDataOutput. The client may pass nil for
+     *                the handler parameter if knowledge of the operation's completion is not required.
      */
     @Generated
     @Selector("setExposureTargetBias:completionHandler:")
@@ -1970,9 +1973,9 @@ public class AVCaptureDevice extends NSObject {
      *                     called multiple times, the completion handlers will be called in FIFO order. The block
      *                     receives a timestamp which matches that of the first buffer to which all settings have been
      *                     applied. Note that the timestamp is synchronized to the device clock, and thus must be
-     *                     converted to the master clock prior to comparison with the timestamps of buffers delivered
-     *                     via an AVCaptureVideoDataOutput. The client may pass nil for the handler parameter if
-     *                     knowledge of the operation's completion is not required.
+     *                     converted to the `AVCaptureSession/synchronizationClock` prior to comparison with the
+     *                     timestamps of buffers delivered via an AVCaptureVideoDataOutput. The client may pass nil for
+     *                     the handler parameter if knowledge of the operation's completion is not required.
      */
     @Generated
     @Selector("setFocusModeLockedWithLensPosition:completionHandler:")
@@ -2086,11 +2089,11 @@ public class AVCaptureDevice extends NSObject {
      * 
      * Sets white balance to locked mode with explicit deviceWhiteBalanceGains values.
      * 
-     * For each channel in the whiteBalanceGains struct, only values between 1.0 and -maxWhiteBalanceGain are supported.
      * Gain values are normalized to the minimum channel value to avoid brightness changes (e.g. R:2 G:2 B:4 will be
-     * normalized to R:1 G:1 B:2). This method throws an NSRangeException if any of the whiteBalanceGains are set to an
-     * unsupported level. This method throws an NSGenericException if called without first obtaining exclusive access to
-     * the receiver using lockForConfiguration:.
+     * normalized to R:1 G:1 B:2). For each channel in the whiteBalanceGains struct, only values between 1.0 and
+     * maxWhiteBalanceGain after nomalization are supported. This method throws an NSRangeException if any of the
+     * whiteBalanceGains are set to an unsupported level. This method throws an NSGenericException if called without
+     * first obtaining exclusive access to the receiver using lockForConfiguration:.
      * 
      * API-Since: 8.0
      * 
@@ -2106,9 +2109,9 @@ public class AVCaptureDevice extends NSObject {
      *                          multiple times, the completion handlers will be called in FIFO order. The block receives
      *                          a timestamp which matches that of the first buffer to which all settings have been
      *                          applied. Note that the timestamp is synchronized to the device clock, and thus must be
-     *                          converted to the master clock prior to comparison with the timestamps of buffers
-     *                          delivered via an AVCaptureVideoDataOutput. This parameter may be nil if synchronization
-     *                          is not required.
+     *                          converted to the `AVCaptureSession/synchronizationClock` prior to comparison with the
+     *                          timestamps of buffers delivered via an AVCaptureVideoDataOutput. This parameter may be
+     *                          nil if synchronization is not required.
      */
     @Generated
     @Selector("setWhiteBalanceModeLockedWithDeviceWhiteBalanceGains:completionHandler:")
@@ -2534,6 +2537,17 @@ public class AVCaptureDevice extends NSObject {
      * Where supported, the default value is YES. The receiver must be locked for configuration using
      * lockForConfiguration: before clients can set this method, otherwise an NSGenericException is thrown.
      * 
+     * In the case of ProRes RAW, when geometricDistortionCorrectionEnabled is YES, GDC is applied to your outputs in
+     * different ways:
+     * - It is always applied to AVCaptureVideoPreviewLayer.
+     * - It is applied to AVCaptureVideoDataOutput only if deliversPreviewSizedOutputBuffers is set to YES.
+     * - It is never applied to AVCaptureMovieFileOutput.
+     * 
+     * When GDC is enabled, AVCaptureVideoDataOutput buffers contain GDC metadata attachments, and
+     * AVCaptureMovieFileOutput movies contain GDC metadata which an application supporting ProRes RAW can optionally
+     * apply at playback time using the ProRes RAW SDK. To learn more about the ProRes RAW SDK, refer to the Apple
+     * ProRes and ProRes RAW Authorized Products article at https://support.apple.com/en-us/118584.
+     * 
      * API-Since: 13.0
      */
     @Generated
@@ -2548,9 +2562,9 @@ public class AVCaptureDevice extends NSObject {
      * Some AVCaptureDevices benefit from geometric distortion correction (GDC), such as devices with a very wide field
      * of view. GDC lessens the fisheye effect at the outer edge of the frame at the cost of losing a small amount of
      * vertical and horizontal field of view. When GDC is enabled on the AVCaptureDevice (see
-     * geometricDistortionEnabled), the corrected image is upscaled to the original image size when needed. With respect
-     * to the AVCaptureDevice.videoZoomFactor API, the full viewable field of view is always represented with a
-     * videoZoomFactor of 1.0. Thus, when GDC is enabled, the AVCaptureDevice.activeFormat's field of view at
+     * geometricDistortionCorrectionEnabled), the corrected image is upscaled to the original image size when needed.
+     * With respect to the AVCaptureDevice.videoZoomFactor API, the full viewable field of view is always represented
+     * with a videoZoomFactor of 1.0. Thus, when GDC is enabled, the AVCaptureDevice.activeFormat's field of view at
      * videoZoomFactor = 1.0 will be different than when GDC is disabled. The smaller field of view is reported through
      * the activeFormat's geometricDistortionCorrectedVideoFieldOfView property. Beware though that RAW photo captures
      * never have GDC applied, regardless of the value of AVCaptureDevice.geometricDistortionCorrectionEnabled.
@@ -2674,6 +2688,17 @@ public class AVCaptureDevice extends NSObject {
      * 
      * Where supported, the default value is YES. The receiver must be locked for configuration using
      * lockForConfiguration: before clients can set this method, otherwise an NSGenericException is thrown.
+     * 
+     * In the case of ProRes RAW, when geometricDistortionCorrectionEnabled is YES, GDC is applied to your outputs in
+     * different ways:
+     * - It is always applied to AVCaptureVideoPreviewLayer.
+     * - It is applied to AVCaptureVideoDataOutput only if deliversPreviewSizedOutputBuffers is set to YES.
+     * - It is never applied to AVCaptureMovieFileOutput.
+     * 
+     * When GDC is enabled, AVCaptureVideoDataOutput buffers contain GDC metadata attachments, and
+     * AVCaptureMovieFileOutput movies contain GDC metadata which an application supporting ProRes RAW can optionally
+     * apply at playback time using the ProRes RAW SDK. To learn more about the ProRes RAW SDK, refer to the Apple
+     * ProRes and ProRes RAW Authorized Products article at https://support.apple.com/en-us/118584.
      * 
      * API-Since: 13.0
      */
@@ -2825,7 +2850,7 @@ public class AVCaptureDevice extends NSObject {
      * 
      * For virtual devices with multiple constituent devices, this property returns the active restricted switching
      * behavior conditions. This is equal to primaryConstituentDeviceRestrictedSwitchingBehaviorConditions except while
-     * recording using an AVCaptureMovieFileOutput configured with different retricted switching behavior conditions
+     * recording using an AVCaptureMovieFileOutput configured with different restricted switching behavior conditions
      * (see -[AVCaptureMovieFileOutput
      * setPrimaryConstituentDeviceSwitchingBehaviorForRecording:restrictedSwitchingBehaviorConditions]). Devices that do
      * not support constituent device switching return
@@ -3646,20 +3671,23 @@ public class AVCaptureDevice extends NSObject {
     public native double displayVideoZoomFactorMultiplier();
 
     /**
-     * [@property] autoVideoFrameRateEnabled
-     * 
      * Indicates whether the receiver should enable auto video frame rate.
      * 
-     * When enabled the receiver automatically adjusts the active frame rate, depending on light level. Under low light
-     * conditions, frame rate is decreased to properly expose the scene. For formats with a maximum frame rate of 30
-     * fps, the frame rate switches between 30 - 24. For formats with a maximum frame rate of 60 fps, the frame rate
-     * switches between 60 - 30 - 24.
+     * When you enable this property, the device automatically adjusts the active frame rate, depending on light level.
+     * Under low light conditions, it decreases the frame rate to properly expose the scene. For formats with a maximum
+     * frame rate of 30 fps, the device switches the frame rate between 30 - 24. For formats with a maximum frame rate
+     * of 60 fps, the device switches the frame rate between 60 - 30 - 24.
      * 
-     * Setting this property throws an NSInvalidArgumentException if the active format's -isAutoVideoFrameRateSupported
-     * returns NO. Changing the device's active format resets isAutoVideoFrameRateEnabled to its default value of NO.
+     * Setting this property throws an `NSInvalidArgumentException` if the active format's
+     * ``AVCaptureDeviceFormat/autoVideoFrameRateSupported`` returns `false`. When you change the device's active
+     * format, this property resets to its default value of `false`.
      * 
-     * When autoVideoFrameRateEnabled is true, setting activeVideoMinFrameDuration or activeVideoMaxFrameDuration throws
-     * an NSInvalidArgumentException.
+     * If you set this property to `true`, frame rate is under device control, and you may not set
+     * ``activeVideoMinFrameDuration`` or ``activeVideoMaxFrameDuration``. Doing so throws an
+     * `NSInvalidArgumentException`.
+     * 
+     * - Note: Setting this property to `true` throws an `NSInvalidArgumentException` if ``videoFrameDurationLocked`` or
+     * ``followingExternalSyncDevice`` are `true`.
      * 
      * API-Since: 18.0
      */
@@ -3692,20 +3720,23 @@ public class AVCaptureDevice extends NSObject {
     public static native boolean isBackgroundReplacementEnabled();
 
     /**
-     * [@property] autoVideoFrameRateEnabled
-     * 
      * Indicates whether the receiver should enable auto video frame rate.
      * 
-     * When enabled the receiver automatically adjusts the active frame rate, depending on light level. Under low light
-     * conditions, frame rate is decreased to properly expose the scene. For formats with a maximum frame rate of 30
-     * fps, the frame rate switches between 30 - 24. For formats with a maximum frame rate of 60 fps, the frame rate
-     * switches between 60 - 30 - 24.
+     * When you enable this property, the device automatically adjusts the active frame rate, depending on light level.
+     * Under low light conditions, it decreases the frame rate to properly expose the scene. For formats with a maximum
+     * frame rate of 30 fps, the device switches the frame rate between 30 - 24. For formats with a maximum frame rate
+     * of 60 fps, the device switches the frame rate between 60 - 30 - 24.
      * 
-     * Setting this property throws an NSInvalidArgumentException if the active format's -isAutoVideoFrameRateSupported
-     * returns NO. Changing the device's active format resets isAutoVideoFrameRateEnabled to its default value of NO.
+     * Setting this property throws an `NSInvalidArgumentException` if the active format's
+     * ``AVCaptureDeviceFormat/autoVideoFrameRateSupported`` returns `false`. When you change the device's active
+     * format, this property resets to its default value of `false`.
      * 
-     * When autoVideoFrameRateEnabled is true, setting activeVideoMinFrameDuration or activeVideoMaxFrameDuration throws
-     * an NSInvalidArgumentException.
+     * If you set this property to `true`, frame rate is under device control, and you may not set
+     * ``activeVideoMinFrameDuration`` or ``activeVideoMaxFrameDuration``. Doing so throws an
+     * `NSInvalidArgumentException`.
+     * 
+     * - Note: Setting this property to `true` throws an `NSInvalidArgumentException` if ``videoFrameDurationLocked`` or
+     * ``followingExternalSyncDevice`` are `true`.
      * 
      * API-Since: 18.0
      */
@@ -3719,9 +3750,8 @@ public class AVCaptureDevice extends NSObject {
      * Indicates whether or not the current environmental conditions are amenable to a spatial capture that is
      * comfortable to view.
      * 
-     * This property can be monitored in order to determine the presentation of U/I elements to inform the user that
-     * they should reframe their scene for a more pleasing spatial capture ("subject is too close", "scene is too
-     * dark").
+     * This property can be monitored in order to determine the presentation of UI elements to inform the user that they
+     * should reframe their scene for a more pleasing spatial capture ("subject is too close", "scene is too dark").
      * 
      * API-Since: 18.0
      */
@@ -3729,4 +3759,504 @@ public class AVCaptureDevice extends NSObject {
     @Selector("spatialCaptureDiscomfortReasons")
     @NotNull
     public native NSSet<String> spatialCaptureDiscomfortReasons();
+
+    /**
+     * The camera lens smudge detection interval.
+     * 
+     * ``cameraLensSmudgeDetectionInterval`` is set by calling
+     * ``setCameraLensSmudgeDetectionEnabled:detectionInterval:``. By default, this property returns `kCMTimeInvalid`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("cameraLensSmudgeDetectionInterval")
+    @ByValue
+    public native CMTime cameraLensSmudgeDetectionInterval();
+
+    /**
+     * A value specifying the status of camera lens smudge detection.
+     * 
+     * During initial detection execution, ``cameraLensSmudgeDetectionStatus`` returns
+     * ``AVCaptureCameraLensSmudgeDetectionStatusUnknown`` until the detection result settles. Once a detection result
+     * is produced, ``cameraLensSmudgeDetectionStatus`` returns the most recent detection result. This property can be
+     * key-value observed.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("cameraLensSmudgeDetectionStatus")
+    @NInt
+    public native long cameraLensSmudgeDetectionStatus();
+
+    /**
+     * The current scene monitoring statuses related to Cinematic Video capture.
+     * 
+     * Monitor this property via key-value observation to present a UI informing the user that they should reframe their
+     * scene for a better Cinematic Video experience ("scene is too dark").
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("cinematicVideoCaptureSceneMonitoringStatuses")
+    @NotNull
+    public native NSSet<String> cinematicVideoCaptureSceneMonitoringStatuses();
+
+    /**
+     * The default rectangle of interest used for a given exposure point of interest.
+     * 
+     * - Parameter pointOfInterest: The point of interest for which you want the default rectangle of interest.
+     * 
+     * For example, pass `(0.5, 0.5)` to get the exposure rectangle of interest used for the default exposure point of
+     * interest at `(0.5, 0.5)`.
+     * 
+     * This method returns `CGRectNull` if ``exposureRectOfInterestSupported`` returns `false`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("defaultRectForExposurePointOfInterest:")
+    @ByValue
+    public native CGRect defaultRectForExposurePointOfInterest(@ByValue CGPoint pointOfInterest);
+
+    /**
+     * The default rectangle of interest used for a given focus point of interest.
+     * 
+     * - Parameter pointOfInterest: The point of interest for which you want the default rectangle of interest.
+     * 
+     * For example, pass `(0.5, 0.5)` to get the focus rectangle of interest used for the default focus point of
+     * interest at `(0.5, 0.5)`.
+     * 
+     * - Note: The particular default rectangle returned depends on the current focus mode.
+     * 
+     * This method returns `CGRectNull` if ``focusRectOfInterestSupported`` returns `false`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("defaultRectForFocusPointOfInterest:")
+    @ByValue
+    public native CGRect defaultRectForFocusPointOfInterest(@ByValue CGPoint pointOfInterest);
+
+    /**
+     * A key-value observable property indicating the current aspect ratio for a device.
+     * 
+     * This property is initialized to the first ``AVCaptureAspectRatio`` listed in the device's activeFormat's
+     * ``AVCaptureDeviceFormat/supportedDynamicAspectRatios`` property. If the activeFormat's
+     * ``AVCaptureDeviceFormat/supportedDynamicAspectRatios`` is an empty array, this property returns nil.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("dynamicAspectRatio")
+    @Nullable
+    public native String dynamicAspectRatio();
+
+    /**
+     * A key-value observable property describing the output dimensions of the video buffer based on the device's
+     * dynamic aspect ratio.
+     * 
+     * If the device's activeFormat's ``AVCaptureDeviceFormat/supportedDynamicAspectRatios`` is an empty array, this
+     * property returns {0,0}.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("dynamicDimensions")
+    @ByValue
+    public native CMVideoDimensions dynamicDimensions();
+
+    /**
+     * The device's current exposure rectangle of interest, if it has one.
+     * 
+     * The value of this property is a ``CGRect`` determining the device's exposure rectangle of interest. Use this as
+     * an alternative to setting ``exposurePointOfInterest``, as it allows you to specify both a location and size. For
+     * example, a value of `CGRectMake(0, 0, 1, 1)` tells the device to use the entire field of view when determining
+     * the exposure, while `CGRectMake(0, 0, 0.25, 0.25)` indicates the top left sixteenth, and `CGRectMake(0.75, 0.75,
+     * 0.25, 0.25)` indicates the bottom right sixteenth. Setting ``exposureRectOfInterest`` throws an
+     * `NSInvalidArgumentException` if ``exposureRectOfInterestSupported`` returns `false`. Setting
+     * ``exposureRectOfInterest`` throws an `NSInvalidArgumentException` if your provided rectangle's size is smaller
+     * than the ``minExposureRectOfInterestSize``. Setting ``exposureRectOfInterest`` throws an `NSGenericException` if
+     * you call it without first obtaining exclusive access to the device using
+     * ``AVCaptureDevice/lockForConfiguration:``. Setting ``exposureRectOfInterest`` updates the device's
+     * ``exposurePointOfInterest`` to the center of your provided rectangle of interest. If you later set the device's
+     * ``exposurePointOfInterest``, the ``exposureRectOfInterest`` resets to the default sized rectangle of interest for
+     * the new exposure point of interest. If you change your ``AVCaptureDevice/activeFormat``, the point of interest
+     * and rectangle of interest both revert to their default values. You can observe automatic changes to the device's
+     * ``exposureRectOfInterest`` by key-value observing this property.
+     * 
+     * - Note: Setting ``exposureRectOfInterest`` alone does not initiate an exposure operation. After setting
+     * ``exposureRectOfInterest``, set ``exposureMode`` to apply the new rectangle of interest.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("exposureRectOfInterest")
+    @ByValue
+    public native CGRect exposureRectOfInterest();
+
+    /**
+     * The device's current focus rectangle of interest, if it has one.
+     * 
+     * The value of this property is a ``CGRect`` determining the device's focus rectangle of interest. Use this as an
+     * alternative to setting ``focusPointOfInterest``, as it allows you to specify both a location and size. For
+     * example, a value of `CGRectMake(0, 0, 1, 1)` tells the device to use the entire field of view when determining
+     * the focus, while `CGRectMake(0, 0, 0.25, 0.25)` indicates the top left sixteenth, and `CGRectMake(0.75, 0.75,
+     * 0.25, 0.25)` indicates the bottom right sixteenth. Setting ``focusRectOfInterest`` throws an
+     * `NSInvalidArgumentException` if ``focusRectOfInterestSupported`` returns `false`. Setting ``focusRectOfInterest``
+     * throws an `NSInvalidArgumentException` if your provided rectangle's size is smaller than the
+     * ``minFocusRectOfInterestSize``. Setting ``focusRectOfInterest`` throws an `NSGenericException` if you call it
+     * without first obtaining exclusive access to the device using ``AVCaptureDevice/lockForConfiguration:``. Setting
+     * ``focusRectOfInterest`` updates the device's ``focusPointOfInterest`` to the center of your provided rectangle of
+     * interest. If you later set the device's ``focusPointOfInterest``, the ``focusRectOfInterest`` resets to the
+     * default sized rectangle of interest for the new focus point of interest. If you change your
+     * ``AVCaptureDevice/activeFormat``, the point of interest and rectangle of interest both revert to their default
+     * values. You can observe automatic changes to the device's ``focusRectOfInterest`` by key-value observing this
+     * property.
+     * 
+     * - Note: Setting ``focusRectOfInterest`` alone does not initiate a focus operation. After setting
+     * ``focusRectOfInterest``, set ``focusMode`` to apply the new rectangle of interest.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("focusRectOfInterest")
+    @ByValue
+    public native CGRect focusRectOfInterest();
+
+    /**
+     * Whether camera lens smudge detection is enabled.
+     * 
+     * You enable lens smudge detection by calling ``setCameraLensSmudgeDetectionEnabled:detectionInterval:``. By
+     * default, this property is returns `false`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isCameraLensSmudgeDetectionEnabled")
+    public native boolean isCameraLensSmudgeDetectionEnabled();
+
+    /**
+     * Whether the device supports exposure rectangles of interest.
+     * 
+     * You may only set the device's ``exposureRectOfInterest`` property if this property returns `true`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isExposureRectOfInterestSupported")
+    public native boolean isExposureRectOfInterestSupported();
+
+    /**
+     * Whether the receiver supports focus rectangles of interest.
+     * 
+     * You may only set the device's ``focusRectOfInterest`` property if this property returns `true`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isFocusRectOfInterestSupported")
+    public native boolean isFocusRectOfInterestSupported();
+
+    /**
+     * Whether the device is following an external sync device.
+     * 
+     * See ``AVCaptureDeviceInput/followExternalSyncDevice:videoFrameDuration:delegate:`` for more information on
+     * external sync.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isFollowingExternalSyncDevice")
+    public native boolean isFollowingExternalSyncDevice();
+
+    /**
+     * Whether the device's video frame rate (expressed as a duration) is currently locked.
+     * 
+     * Returns `true` when an ``AVCaptureDeviceInput`` associated with the device has its
+     * ``AVCaptureDeviceInput/activeLockedVideoFrameDuration`` property set to something other than `kCMTimeInvalid`.
+     * See ``AVCaptureDeviceInput/activeLockedVideoFrameDuration`` for more information on video frame duration locking.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isVideoFrameDurationLocked")
+    public native boolean isVideoFrameDurationLocked();
+
+    /**
+     * The minimum size you may use when specifying a rectangle of interest.
+     * 
+     * The size returned is in normalized coordinates, and depends on the current ``AVCaptureDevice/activeFormat``. If
+     * ``exposureRectOfInterestSupported`` returns `false`, this property returns { 0, 0 }.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("minExposureRectOfInterestSize")
+    @ByValue
+    public native CGSize minExposureRectOfInterestSize();
+
+    /**
+     * The minimum size you may use when specifying a rectangle of interest.
+     * 
+     * The size returned is in normalized coordinates, and depends on the current ``AVCaptureDevice/activeFormat``. If
+     * ``focusRectOfInterestSupported`` returns `false`, this property returns { 0, 0 }.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("minFocusRectOfInterestSize")
+    @ByValue
+    public native CGSize minFocusRectOfInterestSize();
+
+    /**
+     * The minimum frame duration that can be passed as the `videoFrameDuration` when directing your device input to
+     * follow an external sync device.
+     * 
+     * Use this property as the minimum allowable frame duration to pass to
+     * ``AVCaptureDeviceInput/follow:externalSyncDevice:videoFrameDuration:delegate:`` when you want to follow an
+     * external sync device. This property returns `kCMTimeInvalid` when the device's' current configuration does not
+     * support external sync device following.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("minSupportedExternalSyncFrameDuration")
+    @ByValue
+    public native CMTime minSupportedExternalSyncFrameDuration();
+
+    /**
+     * The maximum frame rate (expressed as a minimum duration) that can be set on an input associated with this device.
+     * 
+     * `kCMTimeInvalid` is returned when the device or its current configuration does not support locked frame rate. Use
+     * ``AVCaptureDeviceInput/activeLockedVideoFrameDuration`` to set the locked frame rate on the input.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("minSupportedLockedVideoFrameDuration")
+    @ByValue
+    public native CMTime minSupportedLockedVideoFrameDuration();
+
+    /**
+     * The nominal 35mm equivalent focal length of the capture device's lens.
+     * 
+     * This value represents a nominal measurement of the device's field of view, expressed as a 35mm equivalent focal
+     * length, measured diagonally. The value is similar to the `FocalLengthIn35mmFormat` EXIF entry (see
+     * <doc://com.apple.documentation/documentation/imageio/kcgimagepropertyexiffocallenin35mmfilm>) for a photo
+     * captured using the device's format where ``AVCaptureDeviceFormat/highestPhotoQualitySupported`` is `true` or when
+     * you've configured the session with the ``AVCaptureSessionPresetPhoto`` preset.
+     * 
+     * This property value is `0` for virtual devices and external cameras.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("nominalFocalLengthIn35mmFilm")
+    public native float nominalFocalLengthIn35mmFilm();
+
+    /**
+     * Specify whether to enable camera lens smudge detection, and the interval time between each run of detections.
+     * 
+     * - Parameter cameraLensSmudgeDetectionEnabled: Specify whether camera lens smudge detection should be enabled.
+     * - Parameter detectionInterval: The detection running interval if detection is enabled.
+     * 
+     * Each run of detection processes frames over a short period, and produces one detection result. Use
+     * `detectionInterval` to specify the interval time between each run of detections. For example, when
+     * ``cameraLensSmudgeDetectionEnabled`` is set to `true` and `detectionInterval` is set to 1 minute, detection runs
+     * once per minute, and updates ``AVCaptureCameraLensSmudgeDetectionStatus``. If `detectionInterval` is set to
+     * ``kCMTimeInvalid``, detection runs only once after the session starts. If `detectionInterval` is set to
+     * ``kCMTimeZero``, detection runs continuously.
+     * 
+     * ``AVCaptureDevice`` throws an `NSInvalidArgumentException` if the
+     * ``AVCaptureDeviceFormat/cameraLensSmudgeDetectionSupported`` property on the current active format returns
+     * `false`. Enabling detection requires a lengthy reconfiguration of the capture render pipeline, so you should
+     * enable detection before calling ``AVCaptureSession/startRunning`` or within
+     * ``AVCaptureSession/beginConfiguration`` and ``AVCaptureSession/commitConfiguration`` while running.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setCameraLensSmudgeDetectionEnabled:detectionInterval:")
+    public native void setCameraLensSmudgeDetectionEnabledDetectionInterval(boolean cameraLensSmudgeDetectionEnabled,
+            @ByValue CMTime detectionInterval);
+
+    /**
+     * Fix focus at a distance.
+     * 
+     * - Parameter point: A normalized point of interest (i.e., [0,1]) in the coordinate space of the device.
+     * - Parameter focusMode: Specify whether to focus strongly or weakly.
+     * 
+     * The distance at which focus is set is determined internally using signals such as depth data.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setCinematicVideoFixedFocusAtPoint:focusMode:")
+    public native void setCinematicVideoFixedFocusAtPointFocusMode(@ByValue CGPoint point, @NInt long focusMode);
+
+    /**
+     * Focus on and start tracking an object if it can be detected at the region specified by the point.
+     * 
+     * - Parameter point: A normalized point of interest (i.e., [0,1]) in the coordinate space of the device.
+     * - Parameter focusMode: Specify whether to focus strongly or weakly.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setCinematicVideoTrackingFocusAtPoint:focusMode:")
+    public native void setCinematicVideoTrackingFocusAtPointFocusMode(@ByValue CGPoint point, @NInt long focusMode);
+
+    /**
+     * Focus on and start tracking a detected object.
+     * 
+     * - Parameter detectedObjectID: The ID of the detected object.
+     * - Parameter focusMode: Specify whether to focus strongly or weakly.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setCinematicVideoTrackingFocusWithDetectedObjectID:focusMode:")
+    public native void setCinematicVideoTrackingFocusWithDetectedObjectIDFocusMode(@NInt long detectedObjectID,
+            @NInt long focusMode);
+
+    /**
+     * Updates the dynamic aspect ratio of the device.
+     * 
+     * - Parameter dynamicAspectRatio: The new ``AVCaptureAspectRatio`` the device should output.
+     * - Parameter handler: A block called by the device when `dynamicAspectRatio` is set to the value specified. If you
+     * call ``setDynamicAspectRatio:completionHandler:`` multiple times, the completion handlers are called in FIFO
+     * order. The block receives a timestamp which matches that of the first buffer to which all settings have been
+     * applied. Note that the timestamp is synchronized to the device clock, and thus must be converted to the
+     * ``AVCaptureSession/synchronizationClock`` prior to comparison with the timestamps of buffers delivered via an
+     * ``AVCaptureVideoDataOutput``. You may pass `nil` for the `handler` parameter if you do not need to know when the
+     * operation completes.
+     * 
+     * This is the only way of setting ``dynamicAspectRatio``. This method throws an `NSInvalidArgumentException` if
+     * `dynamicAspectRatio` is not a supported aspect ratio found in the device's activeFormat's
+     * ``AVCaptureDeviceFormat/supportedDynamicAspectRatios``. This method throws an `NSGenericException` if you call it
+     * without first obtaining exclusive access to the device using ``AVCaptureDevice/lockForConfiguration:``.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setDynamicAspectRatio:completionHandler:")
+    public native void setDynamicAspectRatioCompletionHandler(@NotNull String dynamicAspectRatio,
+            @ObjCBlock(name = "call_setDynamicAspectRatioCompletionHandler") @Nullable Block_setDynamicAspectRatioCompletionHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setDynamicAspectRatioCompletionHandler {
+        @Generated
+        void call_setDynamicAspectRatioCompletionHandler(@ByValue CMTime syncTime, @Nullable NSError error);
+    }
+
+    /**
+     * The device's current exposure rectangle of interest, if it has one.
+     * 
+     * The value of this property is a ``CGRect`` determining the device's exposure rectangle of interest. Use this as
+     * an alternative to setting ``exposurePointOfInterest``, as it allows you to specify both a location and size. For
+     * example, a value of `CGRectMake(0, 0, 1, 1)` tells the device to use the entire field of view when determining
+     * the exposure, while `CGRectMake(0, 0, 0.25, 0.25)` indicates the top left sixteenth, and `CGRectMake(0.75, 0.75,
+     * 0.25, 0.25)` indicates the bottom right sixteenth. Setting ``exposureRectOfInterest`` throws an
+     * `NSInvalidArgumentException` if ``exposureRectOfInterestSupported`` returns `false`. Setting
+     * ``exposureRectOfInterest`` throws an `NSInvalidArgumentException` if your provided rectangle's size is smaller
+     * than the ``minExposureRectOfInterestSize``. Setting ``exposureRectOfInterest`` throws an `NSGenericException` if
+     * you call it without first obtaining exclusive access to the device using
+     * ``AVCaptureDevice/lockForConfiguration:``. Setting ``exposureRectOfInterest`` updates the device's
+     * ``exposurePointOfInterest`` to the center of your provided rectangle of interest. If you later set the device's
+     * ``exposurePointOfInterest``, the ``exposureRectOfInterest`` resets to the default sized rectangle of interest for
+     * the new exposure point of interest. If you change your ``AVCaptureDevice/activeFormat``, the point of interest
+     * and rectangle of interest both revert to their default values. You can observe automatic changes to the device's
+     * ``exposureRectOfInterest`` by key-value observing this property.
+     * 
+     * - Note: Setting ``exposureRectOfInterest`` alone does not initiate an exposure operation. After setting
+     * ``exposureRectOfInterest``, set ``exposureMode`` to apply the new rectangle of interest.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setExposureRectOfInterest:")
+    public native void setExposureRectOfInterest(@ByValue CGRect value);
+
+    /**
+     * The device's current focus rectangle of interest, if it has one.
+     * 
+     * The value of this property is a ``CGRect`` determining the device's focus rectangle of interest. Use this as an
+     * alternative to setting ``focusPointOfInterest``, as it allows you to specify both a location and size. For
+     * example, a value of `CGRectMake(0, 0, 1, 1)` tells the device to use the entire field of view when determining
+     * the focus, while `CGRectMake(0, 0, 0.25, 0.25)` indicates the top left sixteenth, and `CGRectMake(0.75, 0.75,
+     * 0.25, 0.25)` indicates the bottom right sixteenth. Setting ``focusRectOfInterest`` throws an
+     * `NSInvalidArgumentException` if ``focusRectOfInterestSupported`` returns `false`. Setting ``focusRectOfInterest``
+     * throws an `NSInvalidArgumentException` if your provided rectangle's size is smaller than the
+     * ``minFocusRectOfInterestSize``. Setting ``focusRectOfInterest`` throws an `NSGenericException` if you call it
+     * without first obtaining exclusive access to the device using ``AVCaptureDevice/lockForConfiguration:``. Setting
+     * ``focusRectOfInterest`` updates the device's ``focusPointOfInterest`` to the center of your provided rectangle of
+     * interest. If you later set the device's ``focusPointOfInterest``, the ``focusRectOfInterest`` resets to the
+     * default sized rectangle of interest for the new focus point of interest. If you change your
+     * ``AVCaptureDevice/activeFormat``, the point of interest and rectangle of interest both revert to their default
+     * values. You can observe automatic changes to the device's ``focusRectOfInterest`` by key-value observing this
+     * property.
+     * 
+     * - Note: Setting ``focusRectOfInterest`` alone does not initiate a focus operation. After setting
+     * ``focusRectOfInterest``, set ``focusMode`` to apply the new rectangle of interest.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setFocusRectOfInterest:")
+    public native void setFocusRectOfInterest(@ByValue CGRect value);
+
+    /**
+     * Sets white balance to locked mode with explicit temperature and tint values.
+     * 
+     * - Parameter whiteBalanceTemperatureAndTintValues: The white balance temperature and tint values, as computed from
+     * ``temperatureAndTintValuesForDeviceWhiteBalanceGains:`` method, ``AVCaptureWhiteBalanceTemperatureAndTintValues``
+     * presets or manual input.
+     * 
+     * - Parameter handler: A block to be called when white balance values have been set to the values specified and
+     * ``whiteBalanceMode`` is set to ``AVCaptureWhiteBalanceModeLocked``. If
+     * ``setWhiteBalanceModeLockedWithDeviceWhiteBalanceTemperatureAndTintValues:completionHandler:`` is called multiple
+     * times, the completion handlers are called in FIFO order. The block receives a timestamp which matches that of the
+     * first buffer to which all settings have been applied. Note that the timestamp is synchronized to the device
+     * clock, and thus must be converted to the ``AVCaptureSession/synchronizationClock`` prior to comparison with the
+     * timestamps of buffers delivered via an ``AVCaptureVideoDataOutput``. This parameter may be `nil` if
+     * synchronization is not required.
+     * 
+     * This method takes a ``AVCaptureWhiteBalanceTemperatureAndTintValues`` struct and applies the appropriate
+     * ``AVCaptureWhiteBalanceGains``. This method throws an `NSRangeException` if any of the values are set to an
+     * unsupported level. This method throws an `NSGenericException` if called without first obtaining exclusive access
+     * to the device using ``AVCaptureDevice/lockForConfiguration:``.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setWhiteBalanceModeLockedWithDeviceWhiteBalanceTemperatureAndTintValues:completionHandler:")
+    public native void setWhiteBalanceModeLockedWithDeviceWhiteBalanceTemperatureAndTintValuesCompletionHandler(
+            @ByValue AVCaptureWhiteBalanceTemperatureAndTintValues whiteBalanceTemperatureAndTintValues,
+            @ObjCBlock(name = "call_setWhiteBalanceModeLockedWithDeviceWhiteBalanceTemperatureAndTintValuesCompletionHandler") @Nullable Block_setWhiteBalanceModeLockedWithDeviceWhiteBalanceTemperatureAndTintValuesCompletionHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setWhiteBalanceModeLockedWithDeviceWhiteBalanceTemperatureAndTintValuesCompletionHandler {
+        @Generated
+        void call_setWhiteBalanceModeLockedWithDeviceWhiteBalanceTemperatureAndTintValuesCompletionHandler(
+                @ByValue CMTime syncTime);
+    }
+
+    /**
+     * A monitor owned by the device that recommends an optimal framing based on the content in the scene.
+     * 
+     * An ultra wide camera device that supports dynamic aspect ratio configuration may also support "smart framing
+     * monitoring". If this property returns non `nil`, you may use it to listen for framing recommendations by
+     * configuring its ``AVCaptureSmartFramingMonitor/enabledFramings`` and calling
+     * ``AVCaptureSmartFramingMonitor/startMonitoringWithError:``. The smart framing monitor only makes recommendations
+     * when the current ``AVCaptureDevice/activeFormat`` supports smart framing (see
+     * ``AVCaptureDeviceFormat/smartFramingSupported``).
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("smartFramingMonitor")
+    @Nullable
+    public native AVCaptureSmartFramingMonitor smartFramingMonitor();
 }

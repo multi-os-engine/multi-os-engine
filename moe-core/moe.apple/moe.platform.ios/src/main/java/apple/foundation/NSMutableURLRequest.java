@@ -810,4 +810,30 @@ public class NSMutableURLRequest extends NSURLRequest {
     @Generated
     @Selector("setCookiePartitionIdentifier:")
     public native void setCookiePartitionIdentifier(@Nullable String value);
+
+    /**
+     * sets whether a connection created with this request is allowed to use
+     * network interfaces which have been marked as ultra constrained.
+     * 
+     * NO if the receiver should not be allowed to use an interface marked as ultra constrained to
+     * satisfy the request, YES otherwise.
+     * 
+     * API-Since: 26.1
+     */
+    @Generated
+    @Selector("allowsUltraConstrainedNetworkAccess")
+    public native boolean allowsUltraConstrainedNetworkAccess();
+
+    /**
+     * sets whether a connection created with this request is allowed to use
+     * network interfaces which have been marked as ultra constrained.
+     * 
+     * NO if the receiver should not be allowed to use an interface marked as ultra constrained to
+     * satisfy the request, YES otherwise.
+     * 
+     * API-Since: 26.1
+     */
+    @Generated
+    @Selector("setAllowsUltraConstrainedNetworkAccess:")
+    public native void setAllowsUltraConstrainedNetworkAccess(boolean value);
 }

@@ -45,6 +45,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import apple.foundation.NSArray;
 import apple.metal.struct.MTLPackedFloatQuaternion;
+import apple.metal.struct.MTL4BufferRange;
 
 @Generated
 @Library("Metal")
@@ -545,4 +546,36 @@ public final class Metal {
     @MappedReturn(ObjCStringMapper.class)
     @NotNull
     public static native String MTLLogStateErrorDomain();
+
+    /**
+     * Create a buffer range from a buffer's GPU address (given by the gpuAddress property) and length. A length of
+     * (uint64_t)-1 represents the the range from the given address to the end of the buffer.
+     */
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MTL4BufferRange MTL4BufferRangeMake(long bufferAddress, long length);
+
+    /**
+     * An error domain for errors that pertain to creating a tensor.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String MTLTensorDomain();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String MTL4CommandQueueErrorDomain();
+
+    @Generated public static final double MTL_TENSOR_MAX_RANK = 16.0;
 }

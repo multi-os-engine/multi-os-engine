@@ -162,7 +162,7 @@ public class HMCameraControl extends NSObject {
     /**
      * API-Since: 10.0
      * Deprecated-Since: 10.0
-     * Deprecated-Message: HMCameraControl is a base class for other types. Directly creating them is not supported.
+     * Deprecated-Message: HMCameraControl is a base class for other types. Directly creating one is not supported.
      */
     @Deprecated
     @Generated

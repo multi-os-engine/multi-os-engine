@@ -48,4 +48,12 @@ public final class UIWritingToolsResultOptions {
      * API-Since: 18.0
      */
     @Generated @NUInt public static final long Table = 0x0000000000000008L;
+    /**
+     * implies `RichText`, `List`, and `Table`, and Writing Tools may provide text with presentation intent attributes.
+     * Writing Tools will use `NSPresentationIntent` instead of `NSTextList` and `NSTextTable` to represent lists and
+     * tables.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated @NUInt public static final long PresentationIntent = 0x0000000000000010L;
 }

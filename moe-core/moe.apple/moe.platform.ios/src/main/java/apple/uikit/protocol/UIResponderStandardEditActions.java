@@ -323,4 +323,84 @@ public interface UIResponderStandardEditActions {
     default void showWritingTools(@Mapped(ObjCObjectMapper.class) @NotNull Object sender) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("alignCenter:")
+    default void alignCenter(@Mapped(ObjCObjectMapper.class) @Nullable Object sender) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("alignJustified:")
+    default void alignJustified(@Mapped(ObjCObjectMapper.class) @Nullable Object sender) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("alignLeft:")
+    default void alignLeft(@Mapped(ObjCObjectMapper.class) @Nullable Object sender) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("alignRight:")
+    default void alignRight(@Mapped(ObjCObjectMapper.class) @Nullable Object sender) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("newFromPasteboard:")
+    default void newFromPasteboard(@Mapped(ObjCObjectMapper.class) @Nullable Object sender) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("performClose:")
+    default void performClose(@Mapped(ObjCObjectMapper.class) @Nullable Object sender) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("toggleInspector:")
+    default void toggleInspector(@Mapped(ObjCObjectMapper.class) @Nullable Object sender) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 15.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("toggleSidebar:")
+    default void toggleSidebar(@Mapped(ObjCObjectMapper.class) @Nullable Object sender) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

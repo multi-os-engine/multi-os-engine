@@ -48938,7 +48938,7 @@ public final class Accelerate {
      * filter0 is convolution and filter1 is quantization. The filter_type and layer_params arrays should be as follows:
      * filter_type: [BNNSConvolution, BNNSQuantization]
      * layer_params: [pointer to BNNSLayerParametersConvolution, pointer to BNNSLayerParametersQuantization]
-     * input and ouput descriptor data pointers in BNNSLayerParametersQuantization are ignored
+     * input and output descriptor data pointers in BNNSLayerParametersQuantization are ignored
      * Note that if the quantization layer uses batch as an axis with scale and/or bias, the batch size is encoded in
      * the quantization layer parameters. In this case, if the batch size changes, the filter must be destroyed and
      * recreated.
@@ -48948,7 +48948,7 @@ public final class Accelerate {
      * follows:
      * filter_type: [BNNSFullyConnected, BNNSQuantization]
      * layer_params: [pointer to BNNSLayerParametersFullyConnected, pointer to BNNSLayerParametersQuantization]
-     * input and ouput descriptor data pointers in BNNSLayerParametersQuantization are ignored
+     * input and output descriptor data pointers in BNNSLayerParametersQuantization are ignored
      * Note that if the quantization layer uses batch as an axis with scale and/or bias, the batch size is encoded in
      * the quantization layer parameters. In this case, if the batch size changes, the filter must be destroyed and
      * recreated.
@@ -48958,7 +48958,7 @@ public final class Accelerate {
      * as follows:
      * filter_type: [BNNSTransposedConvolution, BNNSQuantization]
      * layer_params: [pointer to BNNSLayerParametersConvolution, pointer to BNNSLayerParametersQuantization]
-     * input and ouput descriptor data pointers in BNNSLayerParametersQuantization are ignored
+     * input and output descriptor data pointers in BNNSLayerParametersQuantization are ignored
      * Note that if the quantization layer uses batch as an axis with scale and/or bias, the batch size is encoded in
      * the quantization layer parameters. In this case, if the batch size changes, the filter must be destroyed and
      * recreated.
@@ -53573,11 +53573,11 @@ public final class Accelerate {
             int indices_data_type, @Nullable ConstVoidPtr indices, @NUInt long idx_stride);
 
     /**
-     * Returns required workspace size for a call to BNNSMatMul() with the given parameters.
+     * Returns required workspace size for a call to BNNSMatMul() with the given paramters.
      * 
      * This routine does not access the data pointers on the array descriptors, so they need not point to actual data.
      * 
-     * [@returns] Required allocation size for workspace parameter to BNNSMatMul, in bytes.
+     * [@returns] Required allocation size for workspace paramter to BNNSMatMul, in bytes.
      * If parameters are invalid, a negative value is returned.
      * 
      * API-Since: 16.0
@@ -54985,8 +54985,8 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcDest,
             VoidPtr tempBuffer, @NUInt long seedX, @NUInt long seedY, char newValue, int connectivity, int flags);
 
-    @Generated public static final double vDSP_Version0 = 1068.0;
-    @Generated public static final double vDSP_Version1 = 100.0;
+    @Generated public static final double vDSP_Version0 = 1123.0;
+    @Generated public static final double vDSP_Version1 = 40.0;
     @Generated public static final double USE_NON_APPLE_STANDARD_DATATYPES = 1.0;
     @Generated public static final double LA_L1_NORM = 1.0;
     @Generated public static final double LA_L2_NORM = 2.0;
@@ -56253,7 +56253,7 @@ public final class Accelerate {
             @NotNull VoidPtr workspace);
 
     /**
-     * API-Since: 11.0
+     * API-Since: 18.5
      */
     @Generated
     @CFunction
@@ -56344,7 +56344,7 @@ public final class Accelerate {
     public static native void _SparseReleaseOpaquePreconditioner_Complex_Double(@NotNull VoidPtr toFree);
 
     /**
-     * API-Since: 11.0
+     * API-Since: 18.5
      */
     @Generated
     @CFunction
@@ -56452,4 +56452,24 @@ public final class Accelerate {
     @CFunction
     public static native int BNNSGraphContextSetStreamingAdvanceCount(@ByValue bnns_graph_context_t context,
             @NUInt long advance_count);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    public static native void _SparseRefactorSymmetric_Complex_Double(@NotNull VoidPtr Matrix,
+            @NotNull VoidPtr Factorization,
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull SparseNumericFactorOptions nfoptions,
+            @NotNull VoidPtr workspace);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    public static native void _SparseRefactorSymmetric_Complex_Float(@NotNull VoidPtr Matrix,
+            @NotNull VoidPtr Factorization,
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull SparseNumericFactorOptions nfoptions,
+            @NotNull VoidPtr workspace);
 }

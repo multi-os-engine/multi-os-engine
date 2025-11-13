@@ -44,6 +44,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * CMAltitudeData
+ * 
+ * Discussion:
+ * Contains a single altimeter measurement.
+ * 
  * API-Since: 8.0
  */
 @Generated

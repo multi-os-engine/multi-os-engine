@@ -166,7 +166,8 @@ public class ARFaceTrackingConfiguration extends ARConfiguration {
      * Enable or disable World Tracking. Disabled by default.
      * 
      * When enabled, ARSession uses the back facing camera to track the device's orientation and position in the world.
-     * The camera transform and the ARFaceAnchor transform will be in the world coordinate space.
+     * The camera transform and
+     * the ARFaceAnchor transform will be in the world coordinate space.
      * 
      * API-Since: 13.0
      */
@@ -207,7 +208,8 @@ public class ARFaceTrackingConfiguration extends ARConfiguration {
      * Enable or disable World Tracking. Disabled by default.
      * 
      * When enabled, ARSession uses the back facing camera to track the device's orientation and position in the world.
-     * The camera transform and the ARFaceAnchor transform will be in the world coordinate space.
+     * The camera transform and
+     * the ARFaceAnchor transform will be in the world coordinate space.
      * 
      * API-Since: 13.0
      */

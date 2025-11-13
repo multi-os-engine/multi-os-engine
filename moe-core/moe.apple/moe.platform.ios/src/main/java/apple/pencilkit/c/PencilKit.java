@@ -88,4 +88,12 @@ public final class PencilKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PKInkTypeCrayon();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PKInkTypeReed();
 }

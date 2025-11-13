@@ -30,7 +30,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A serialized representation of a ``CKSyncEngineState``.
  * 
- * This will be passed to your delegate via ``CKSyncEngineStateUpdateEvent``.
+ * This will be passed to your delegate via ``CKSyncEngine/Event/StateUpdate``.
  * You should use `NSSecureCoding` to persist this locally alongside your other data and use it the next time you
  * initialize your sync engine.
  * 

@@ -42,6 +42,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 6.1
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -156,6 +159,9 @@ public class MKLocalSearch extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 6.1
+     */
     @Generated
     @Selector("cancel")
     public native void cancel();
@@ -167,11 +173,16 @@ public class MKLocalSearch extends NSObject {
     /**
      * The request will be copied during initialization, so any changes made to the request
      * after this method returns do not affect the request used in -startWithCompletionHandler:
+     * 
+     * API-Since: 6.1
      */
     @Generated
     @Selector("initWithRequest:")
     public native MKLocalSearch initWithRequest(@NotNull MKLocalSearchRequest request);
 
+    /**
+     * API-Since: 6.1
+     */
     @Generated
     @Selector("isSearching")
     public native boolean isSearching();
@@ -179,6 +190,8 @@ public class MKLocalSearch extends NSObject {
     /**
      * Any calls to -startWithCompletionHandler: while -[MKLocalSearch isSearching] will fail.
      * completionHandler will be called on the main queue
+     * 
+     * API-Since: 6.1
      */
     @Generated
     @Selector("startWithCompletionHandler:")

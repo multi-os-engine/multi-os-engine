@@ -53,6 +53,17 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * An AVAssetTrack object provides provides the track-level inspection interface for all assets.
+ * 
+ * AVAssetTrack adopts the AVAsynchronousKeyValueLoading protocol. Methods in the protocol should be used to access a
+ * track's properties without blocking the current thread. To cancel load requests for all keys of AVAssetTrack one must
+ * message the parent AVAsset object (for example, [track.asset cancelLoading]).
+ * 
+ * For clients who want to examine a subset of the metadata or other parts of the track, asynchronous methods like
+ * -loadMetadataForFormat:completionHandler: can be used to load this information without blocking. When using these
+ * asynchronous methods, it is not necessary to load the associated property beforehand. Swift clients can also use the
+ * load(:) method to load properties in a type safe manner.
+ * 
  * API-Since: 4.0
  */
 @Generated
@@ -170,7 +181,7 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public static native long version_static();
 
     /**
-     * provides a reference to the AVAsset of which the AVAssetTrack is a part
+     * Provides a reference to the AVAsset of which the AVAssetTrack is a part
      * 
      * API-Since: 4.0
      */
@@ -180,20 +191,19 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native AVAsset asset();
 
     /**
-     * associatedTracksOfType:
-     * 
      * Provides an NSArray of AVAssetTracks, one for each track associated with the receiver with the specified type of
      * track association.
      * 
      * Becomes callable without blocking when the key @"availableTrackAssociationTypes" has been loaded.
      * 
+     * - Parameter trackAssociationType: The type of track association for which associated tracks are requested.
+     * 
+     * - Returns: An NSArray containing AVAssetTracks; may be empty if there is no associated tracks of the specified
+     * type.
+     * 
      * API-Since: 7.0
      * Deprecated-Since: 18.0
      * Deprecated-Message: Use loadAssociatedTracksOfType:completionHandler: instead
-     * 
-     * @param trackAssociationType
-     *                             The type of track association for which associated tracks are requested.
-     * @return An NSArray containing AVAssetTracks; may be empty if there is no associated tracks of the specified type.
      */
     @NotNull
     @Deprecated
@@ -202,9 +212,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native NSArray<? extends AVAssetTrack> associatedTracksOfType(@NotNull String trackAssociationType);
 
     /**
-     * provides an NSArray of NSStrings, each representing a format of metadata that's available for the track (e.g.
-     * QuickTime userdata, etc.)
-     * Metadata formats are defined in AVMetadataItem.h.
+     * Provides an NSArray of NSStrings, each representing a format of metadata that's available for the track (e.g.
+     * QuickTime userdata, etc.) Metadata formats are defined in AVMetadataItem.h.
      * 
      * API-Since: 4.0
      */
@@ -216,8 +225,7 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     /**
      * Provides an NSArray of NSStrings, each representing a type of track association that the receiver has with one or
      * more of the other tracks of the asset (e.g. AVTrackAssociationTypeChapterList, AVTrackAssociationTypeTimecode,
-     * etc.).
-     * Track association types are defined immediately above.
+     * etc.). Track association types are defined immediately above.
      * 
      * API-Since: 7.0
      */
@@ -227,7 +235,7 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native NSArray<String> availableTrackAssociationTypes();
 
     /**
-     * provides access to an array of AVMetadataItems for each common metadata key for which a value is available
+     * Provides access to an array of AVMetadataItems for each common metadata key for which a value is available
      * 
      * API-Since: 4.0
      */
@@ -244,7 +252,7 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
-     * indicates the estimated data rate of the media data referenced by the track, in units of bits per second
+     * Indicates the estimated data rate of the media data referenced by the track, in units of bits per second
      * 
      * API-Since: 4.0
      */
@@ -253,8 +261,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native float estimatedDataRate();
 
     /**
-     * indicates the language tag associated with the track, as an IETF BCP 47 (RFC 4646) language identifier;
-     * may be nil if no language tag is indicated
+     * Indicates the language tag associated with the track, as an IETF BCP 47 (RFC 4646) language identifier; may be
+     * nil if no language tag is indicated
      * 
      * API-Since: 4.0
      */
@@ -264,10 +272,9 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native String extendedLanguageTag();
 
     /**
-     * provides an array of CMFormatDescriptions
-     * each of which indicates the format of media samples referenced by the track;
-     * a track that presents uniform media, e.g. encoded according to the same encoding settings,
-     * will provide an array with a count of 1
+     * Provides an array of CMFormatDescriptions each of which indicates the format of media samples referenced by the
+     * track; a track that presents uniform media, e.g. encoded according to the same encoding settings, will provide an
+     * array with a count of 1.
      * 
      * API-Since: 4.0
      */
@@ -277,17 +284,14 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native NSArray<?> formatDescriptions();
 
     /**
-     * hasMediaCharacteristic:
-     * 
      * Reports whether the track references media with the specified media characteristic.
      * 
-     * @param mediaCharacteristic
-     *                            The media characteristic of interest, e.g. AVMediaCharacteristicVisual,
-     *                            AVMediaCharacteristicAudible, AVMediaCharacteristicLegible, etc.,
-     *                            as defined above.
-     * @return YES if the track references media with the specified characteristic, otherwise NO.
+     * - Parameter mediaCharacteristic: The media characteristic of interest, e.g. AVMediaCharacteristicVisual,
+     * AVMediaCharacteristicAudible, AVMediaCharacteristicLegible, etc., as defined above.
      * 
-     *         API-Since: 4.0
+     * - Returns: YES if the track references media with the specified characteristic, otherwise NO.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("hasMediaCharacteristic:")
@@ -298,8 +302,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native AVAssetTrack init();
 
     /**
-     * indicates whether the track is enabled according to state stored in its container or construct;
-     * note that its presentation state can be changed from this default via AVPlayerItemTrack
+     * Indicates whether the track is enabled according to state stored in its container or construct; note that its
+     * presentation state can be changed from this default via AVPlayerItemTrack
      * 
      * API-Since: 4.0
      */
@@ -318,7 +322,7 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native boolean isPlayable();
 
     /**
-     * indicates whether the track references sample data only within its storage container
+     * Indicates whether the track references sample data only within its storage container
      * 
      * API-Since: 4.0
      */
@@ -327,8 +331,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native boolean isSelfContained();
 
     /**
-     * indicates the language associated with the track, as an ISO 639-2/T language code;
-     * may be nil if no language is indicated
+     * Indicates the language associated with the track, as an ISO 639-2/T language code; may be nil if no language is
+     * indicated
      * 
      * API-Since: 4.0
      */
@@ -343,7 +347,7 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
             @Nullable @ObjCBlock(name = "call_loadValuesAsynchronouslyForKeysCompletionHandler") AVAsynchronousKeyValueLoading.Block_loadValuesAsynchronouslyForKeysCompletionHandler handler);
 
     /**
-     * indicates the media type for this track, e.g. AVMediaTypeVideo, AVMediaTypeAudio, etc., as defined in
+     * Indicates the media type for this track, e.g. AVMediaTypeVideo, AVMediaTypeAudio, etc., as defined in
      * AVMediaFormat.h.
      * 
      * API-Since: 4.0
@@ -367,19 +371,17 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native NSArray<? extends AVMetadataItem> metadata();
 
     /**
-     * metadataForFormat:
-     * 
      * Provides an NSArray of AVMetadataItems, one for each metadata item in the container of the specified format.
      * 
      * Becomes callable without blocking when the key @"availableMetadataFormats" has been loaded
      * 
+     * - Parameter format: The metadata format for which items are requested.
+     * 
+     * - Returns: An NSArray containing AVMetadataItems.
+     * 
      * API-Since: 4.0
      * Deprecated-Since: 18.0
      * Deprecated-Message: Use loadMetadataForFormat:completionHandler: instead
-     * 
-     * @param format
-     *               The metadata format for which items are requested.
-     * @return An NSArray containing AVMetadataItems.
      */
     @NotNull
     @Deprecated
@@ -388,7 +390,7 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native NSArray<? extends AVMetadataItem> metadataForFormat(@NotNull String format);
 
     /**
-     * indicates the minimum duration of the track's frames; the value will be kCMTimeInvalid if the minimum frame
+     * Indicates the minimum duration of the track's frames; the value will be kCMTimeInvalid if the minimum frame
      * duration is not known or cannot be calculated
      * 
      * API-Since: 7.0
@@ -399,7 +401,7 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native CMTime minFrameDuration();
 
     /**
-     * indicates the natural dimensions of the media data referenced by the track as a CGSize
+     * Indicates the natural dimensions of the media data referenced by the track as a CGSize
      * 
      * API-Since: 4.0
      */
@@ -409,7 +411,7 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native CGSize naturalSize();
 
     /**
-     * indicates a timescale in which time values for the track can be operated upon without extraneous numerical
+     * Indicates a timescale in which time values for the track can be operated upon without extraneous numerical
      * conversion
      * 
      * API-Since: 4.0
@@ -419,8 +421,6 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native int naturalTimeScale();
 
     /**
-     * [@property] nominalFrameRate
-     * 
      * For tracks that carry a full frame per media sample, indicates the frame rate of the track in units of frames per
      * second.
      * 
@@ -434,9 +434,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native float nominalFrameRate();
 
     /**
-     * indicates the transform specified in the track's storage container as the preferred transformation of the visual
-     * media data for display purposes;
-     * its value is often but not always CGAffineTransformIdentity
+     * Indicates the transform specified in the track's storage container as the preferred transformation of the visual
+     * media data for display purposes; its value is often but not always CGAffineTransformIdentity
      * 
      * API-Since: 4.0
      */
@@ -446,7 +445,7 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native CGAffineTransform preferredTransform();
 
     /**
-     * indicates the volume specified in the track's storage container as the preferred volume of the audible media data
+     * Indicates the volume specified in the track's storage container as the preferred volume of the audible media data
      * 
      * API-Since: 4.0
      */
@@ -455,8 +454,6 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native float preferredVolume();
 
     /**
-     * [@property] requiresFrameReordering
-     * 
      * Indicates whether samples in the track may have different values for their presentation and decode timestamps.
      * 
      * API-Since: 8.0
@@ -466,18 +463,16 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native boolean requiresFrameReordering();
 
     /**
-     * samplePresentationTimeForTrackTime:
-     * 
      * Maps the specified trackTime through the appropriate time mapping and returns the resulting sample presentation
      * time.
      * 
-     * @param trackTime
-     *                  The trackTime for which a sample presentation time is requested.
-     * @return A CMTime; will be invalid if the trackTime is out of range
+     * - Parameter trackTime: The trackTime for which a sample presentation time is requested.
      * 
-     *         API-Since: 4.0
-     *         Deprecated-Since: 18.0
-     *         Deprecated-Message: Use loadSamplePresentationTimeForTrackTime:completionHandler: instead
+     * - Returns: A CMTime; will be invalid if the trackTime is out of range
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 18.0
+     * Deprecated-Message: Use loadSamplePresentationTimeForTrackTime:completionHandler: instead
      */
     @Deprecated
     @Generated
@@ -486,21 +481,19 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native CMTime samplePresentationTimeForTrackTime(@ByValue CMTime trackTime);
 
     /**
-     * segmentForTrackTime:
-     * 
      * Supplies the AVAssetTrackSegment from the segments array with a target timeRange that either contains the
      * specified track time or is the closest to it among the target timeRanges of the track's segments.
      * 
      * If the trackTime does not map to a sample presentation time (e.g. it's outside the track's timeRange), the
      * segment closest in time to the specified trackTime is returned.
      * 
+     * - Parameter trackTime: The trackTime for which an AVAssetTrackSegment is requested.
+     * 
+     * - Returns: An AVAssetTrackSegment.
+     * 
      * API-Since: 4.0
      * Deprecated-Since: 18.0
      * Deprecated-Message: Use loadSegmentForTrackTime:completionHandler: instead
-     * 
-     * @param trackTime
-     *                  The trackTime for which an AVAssetTrackSegment is requested.
-     * @return An AVAssetTrackSegment.
      */
     @Nullable
     @Deprecated
@@ -510,9 +503,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
 
     /**
      * Provides an array of AVAssetTrackSegments with time mappings from the timeline of the track's media samples to
-     * the timeline of the track.
-     * Empty edits, i.e. timeRanges for which no media data is available to be presented, have a value of
-     * AVAssetTrackSegment.empty equal to YES.
+     * the timeline of the track. Empty edits, i.e. timeRanges for which no media data is available to be presented,
+     * have a value of AVAssetTrackSegment.empty equal to YES.
      * 
      * API-Since: 4.0
      */
@@ -528,8 +520,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * Indicates the timeRange of the track within the overall timeline of the asset;
-     * a track with CMTIME_COMPARE_INLINE(timeRange.start, >, kCMTimeZero) will initially present an empty interval.
+     * Indicates the timeRange of the track within the overall timeline of the asset; a track with
+     * CMTIME_COMPARE_INLINE(timeRange.start, >, kCMTimeZero) will initially present an empty interval.
      * 
      * API-Since: 4.0
      */
@@ -539,7 +531,7 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native CMTimeRange timeRange();
 
     /**
-     * indicates the total number of bytes of sample data required by the track
+     * Indicates the total number of bytes of sample data required by the track
      * 
      * API-Since: 4.0
      */
@@ -548,7 +540,7 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native long totalSampleDataLength();
 
     /**
-     * indicates the persistent unique identifier for this track of the asset
+     * Indicates the persistent unique identifier for this track of the asset
      * 
      * API-Since: 4.0
      */
@@ -567,7 +559,7 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native boolean isDecodable();
 
     /**
-     * indicates whether this audio track has dependencies (e.g. kAudioFormatMPEGD_USAC)
+     * Indicates whether this audio track has dependencies (e.g. kAudioFormatMPEGD_USAC)
      * 
      * API-Since: 13.0
      */
@@ -576,19 +568,14 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native boolean hasAudioSampleDependencies();
 
     /**
-     * loadAssociatedTracksOfType:completionHandler:
-     * 
      * Provides an NSArray of AVAssetTracks, one for each track associated with the receiver with the specified type of
      * track association.
      * 
-     * @param trackAssociationType
-     *                             The type of track association for which associated tracks are requested.
-     * @param completionHandler
-     *                             A block that is invoked when loading is comlete, vending an array of tracks (which
-     *                             may be empty if there is no associated tracks of the specified type) or an error.
-     *                             `
+     * - Parameter trackAssociationType: The type of track association for which associated tracks are requested.
+     * - Parameter completionHandler: A block that is invoked when loading is comlete, vending an array of tracks (which
+     * may be empty if there is no associated tracks of the specified type) or an error. `
      * 
-     *                             API-Since: 15.0
+     * API-Since: 15.0
      */
     @Generated
     @Selector("loadAssociatedTracksOfType:completionHandler:")
@@ -604,17 +591,13 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     }
 
     /**
-     * loadMetadataForFormat:completionHandler:
-     * 
      * Loads an NSArray of AVMetadataItems, one for each metadata item in the container of the specified format.
      * 
-     * @param format
-     *                          The metadata format for which items are requested.
-     * @param completionHandler
-     *                          A block that is invoked when loading is complete, vending the array of metadata items
-     *                          (which may be empty if there is no metadata of the specified format) or an error.
+     * - Parameter format: The metadata format for which items are requested.
+     * - Parameter completionHandler: A block that is invoked when loading is complete, vending the array of metadata
+     * items (which may be empty if there is no metadata of the specified format) or an error.
      * 
-     *                          API-Since: 15.0
+     * API-Since: 15.0
      */
     @Generated
     @Selector("loadMetadataForFormat:completionHandler:")
@@ -630,18 +613,14 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     }
 
     /**
-     * loadSamplePresentationTimeForTrackTime:completionHandler:
-     * 
      * Maps the specified trackTime through the appropriate time mapping and loads the resulting sample presentation
      * time.
      * 
-     * @param trackTime
-     *                          The trackTime for which a sample presentation time is requested.
-     * @param completionHandler
-     *                          A block that is invoked when loading is complete, vending a CMTime (which will be
-     *                          invalid if the trackTime is out of range) or an error.
+     * - Parameter trackTime: The trackTime for which a sample presentation time is requested.
+     * - Parameter completionHandler: A block that is invoked when loading is complete, vending a CMTime (which will be
+     * invalid if the trackTime is out of range) or an error.
      * 
-     *                          API-Since: 15.0
+     * API-Since: 15.0
      */
     @Generated
     @Selector("loadSamplePresentationTimeForTrackTime:completionHandler:")
@@ -656,21 +635,17 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     }
 
     /**
-     * loadSegmentForTrackTime:completionHandler:
-     * 
      * Loads the AVAssetTrackSegment from the segments array with a target timeRange that either contains the specified
      * track time or is the closest to it among the target timeRanges of the track's segments.
      * 
      * If the trackTime does not map to a sample presentation time (e.g. it's outside the track's timeRange), the
      * segment closest in time to the specified trackTime is returned.
      * 
-     * API-Since: 15.0
+     * - Parameter trackTime: The trackTime for which an AVAssetTrackSegment is requested.
+     * - Parameter completionHandler: A block that is invoked when loading is complete, vending an AVAssetTrackSegment
+     * or an error.
      * 
-     * @param trackTime
-     *                          The trackTime for which an AVAssetTrackSegment is requested.
-     * @param completionHandler
-     *                          A block that is invoked when loading is complete, vending an AVAssetTrackSegment or an
-     *                          error.
+     * API-Since: 15.0
      */
     @Generated
     @Selector("loadSegmentForTrackTime:completionHandler:")
@@ -695,15 +670,13 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native boolean canProvideSampleCursors();
 
     /**
-     * makeSampleCursorAtFirstSampleInDecodeOrder:
-     * 
      * Creates an instance of AVSampleCursor and positions it at the receiver's first media sample in decode order.
      * 
      * This method will return nil if there are no samples in the track.
      * 
-     * API-Since: 16.0
+     * - Returns: An instance of AVSampleCursor.
      * 
-     * @return An instance of AVSampleCursor.
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -711,15 +684,13 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native AVSampleCursor makeSampleCursorAtFirstSampleInDecodeOrder();
 
     /**
-     * makeSampleCursorAtLastSampleInDecodeOrder:
-     * 
      * Creates an instance of AVSampleCursor and positions it at the receiver's last media sample in decode order.
      * 
      * This method will return nil if there are no samples in the track.
      * 
-     * API-Since: 16.0
+     * - Returns: An instance of AVSampleCursor.
      * 
-     * @return An instance of AVSampleCursor.
+     * API-Since: 16.0
      */
     @Nullable
     @Generated
@@ -727,8 +698,6 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native AVSampleCursor makeSampleCursorAtLastSampleInDecodeOrder();
 
     /**
-     * makeSampleCursorWithPresentationTimeStamp:
-     * 
      * Creates an instance of AVSampleCursor and positions it at or near the specified presentation timestamp.
      * 
      * If the receiver's asset has a value of YES for providesPreciseDurationAndTiming, the sample cursor will be
@@ -738,11 +707,11 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
      * to locate the precise sample at the desired timestamp, the sample cursor may be approximately positioned.
      * This method will return nil if there are no samples in the track.
      * 
-     * API-Since: 16.0
+     * - Parameter presentationTimeStamp: The desired initial presentation timestamp of the returned AVSampleCursor.
      * 
-     * @param presentationTimeStamp
-     *                              The desired initial presentation timestamp of the returned AVSampleCursor.
-     * @return An instance of AVSampleCursor.
+     * - Returns: An instance of AVSampleCursor.
+     * 
+     * API-Since: 16.0
      */
     @Nullable
     @Generated

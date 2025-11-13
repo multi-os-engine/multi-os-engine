@@ -474,8 +474,9 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
      * 
      * The instance will own the pixel buffer and release it on the deallocation.
      * 
-     * The pixel buffer's pixel format type must be OneComponent16Half. As such, MLMultiArray's data type will be
-     * MLMultiArrayDataTypeFloat16.
+     * The pixel buffer's pixel format type must be either `kCVPixelFormatType_OneComponent16Half` for
+     * `MLMultiArrayDataTypeFloat16` or
+     * `kCVPixelFormatType_OneComponent8` for `MLMultiArrayDataTypeInt8`.
      * 
      * ```objc
      * CVPixelBufferRef pixelBuffer = NULL;

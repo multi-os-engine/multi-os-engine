@@ -30,6 +30,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSURL;
 
 /**
  * This is a lightweight API to allow clients to specify all the
@@ -66,7 +67,7 @@ public class CIRenderDestination extends NSObject {
     public static native CIRenderDestination allocWithZone(VoidPtr zone);
 
     /**
-     * This property will defualt to an appropriate value given
+     * This property will default to an appropriate value given
      * the object that the CIRenderDestination was initialized with.
      * This property can be set to a different value if desired.
      */
@@ -119,7 +120,7 @@ public class CIRenderDestination extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * This property will defualt to an appropriate value given
+     * This property will default to an appropriate value given
      * the object that the CIRenderDestination was initialized with.
      * This property can be set to a different colorSpace if desired.
      * This property can be set to nil to disable color matching
@@ -329,7 +330,7 @@ public class CIRenderDestination extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * This property will defualt to an appropriate value given
+     * This property will default to an appropriate value given
      * the object that the CIRenderDestination was initialized with.
      * This property can be set to a different value if desired.
      */
@@ -364,7 +365,7 @@ public class CIRenderDestination extends NSObject {
     public native void setClamped(boolean value);
 
     /**
-     * This property will defualt to an appropriate value given
+     * This property will default to an appropriate value given
      * the object that the CIRenderDestination was initialized with.
      * This property can be set to a different colorSpace if desired.
      * This property can be set to nil to disable color matching
@@ -427,4 +428,31 @@ public class CIRenderDestination extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Tell the next render using this destination to capture a Metal trace.
+     * 
+     * If this property is set to a file-based URL, then the next render using this
+     * destination will capture a Metal trace, deleting any existing file if present.
+     * This property is nil by default.
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @Selector("captureTraceURL")
+    @Nullable
+    public native NSURL captureTraceURL();
+
+    /**
+     * Tell the next render using this destination to capture a Metal trace.
+     * 
+     * If this property is set to a file-based URL, then the next render using this
+     * destination will capture a Metal trace, deleting any existing file if present.
+     * This property is nil by default.
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @Selector("setCaptureTraceURL:")
+    public native void setCaptureTraceURL(@Nullable NSURL value);
 }

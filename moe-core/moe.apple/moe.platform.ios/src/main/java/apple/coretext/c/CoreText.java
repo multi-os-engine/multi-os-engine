@@ -277,7 +277,6 @@ public final class CoreText {
      * @return This function creates a new copy of the original font descriptor with attributes augmented by those
      *         specified. If there are conflicts between attributes, the new attributes will replace existing ones,
      *         except for kCTFontVariationAttribute and kCTFontFeatureSettingsAttribute which will be merged.
-     * 
      *         Starting with macOS 10.12 and iOS 10.0, setting the value of kCTFontFeatureSettingsAttribute to kCFNull
      *         will clear the feature settings of the original font descriptor. Setting the value of any individual
      *         feature settings pair in the kCTFontFeatureSettingsAttribute value array to kCFNull will clear that
@@ -286,7 +285,9 @@ public final class CoreText {
      *         (id)kCFNull } means clear the kLigatureType feature set in the original font descriptor. An element
      *         like @[ @"liga", (id)kCFNull ] will have the same effect.
      * 
-     *         API-Since: 3.2
+     * @see kCTFontFeatureSettingsAttribute
+     * 
+     *      API-Since: 3.2
      */
     @NotNull
     @Generated
@@ -389,7 +390,10 @@ public final class CoreText {
      * 
      * @return A copy of the original font descriptor modified with the given feature settings.
      * 
-     *         API-Since: 3.2
+     * @see CTFontDescriptorCreateCopyWithAttributes
+     * @see kCTFontFeatureSettingsAttribute
+     * 
+     *      API-Since: 3.2
      */
     @NotNull
     @Generated
@@ -1055,11 +1059,16 @@ public final class CoreText {
      * 
      * Returns a reference to a localized font name.
      * 
+     * Localized names are necessary for presentation to a human but are rarely appropriate for programmatic use.
+     * CoreText provides localizations for common names but will not attempt any sort of automated translation.
+     * 
      * @param font
      *                       The font reference.
      * 
      * @param nameKey
-     *                       The name specifier. See name specifier constants.
+     *                       A name specifier listed in "Font Constants", for example kCTFontStyleNameKey. Name keys
+     *                       present in dictionaries (such as those for axes or features) are handled not by this
+     *                       function but by the functions returning those dictionaries.
      * 
      * @param actualLanguage
      *                       Pointer to a CFStringRef to receive the language identifier of the returned name string.
@@ -1071,7 +1080,10 @@ public final class CoreText {
      *         the user's global language precedence. If the font does not have an entry for the requested name, NULL
      *         will be returned. The matched language will be returned in the caller's buffer.
      * 
-     *         API-Since: 3.2
+     * @see CTFontCopyVariationAxes
+     * @see CTFontCopyFeatures
+     * 
+     *      API-Since: 3.2
      */
     @Nullable
     @Generated
@@ -1557,14 +1569,17 @@ public final class CoreText {
      * Returns an array of variation axis dictionaries.
      * 
      * Each variation axis dictionary contains the five kCTFontVariationAxis* keys above, and
-     * kCTFontVariationAxisNameKey values will be localized when supported by the font.
+     * kCTFontVariationAxisNameKey values will be localized when supported by the font; for programmatic uses
+     * kCTFontVariationAxesAttribute may be used instead.
      * 
      * @param font
      *             The font reference.
      * 
      * @return An array of variation axis dictionaries or null if the font does not support variations.
      * 
-     *         API-Since: 3.2
+     * @see kCTFontVariationAxesAttribute
+     * 
+     *      API-Since: 3.2
      */
     @Nullable
     @Generated
@@ -1599,6 +1614,17 @@ public final class CoreText {
      * [@function] CTFontCopyFeatures
      * 
      * Returns an array of font features
+     * 
+     * The returned value describes the features available for the provided font. Each array value is a feature
+     * dictionary describing a feature type, with related selector dictionaries in an array under the
+     * kCTFontFeatureTypeSelectorsKey.
+     * While CoreText supports AAT and OpenType font features, they are preferentially represented as AAT features owing
+     * to their more formal structure: individual feature types can be either exclusive or non-exclusive, which
+     * indicates whether one or more of its selectors can be simultaneously enabled. Where possible features are
+     * elaborated with their OpenType feature tag and value, which can occur within both type or selector dictionaries
+     * depending on the feature's mapping to an AAT type and selector pair.
+     * Names are localized according to the preferred langauges of the caller and therefore are not appropriate for
+     * programmatically identifying features.
      * 
      * @param font
      *             The font reference.
@@ -4354,10 +4380,12 @@ public final class CoreText {
      * The array of font features.
      * 
      * This key is used to specify or obtain the font features for a font reference. The value associated with this key
-     * is a CFArrayRef of font feature dictionaries. This features list contains the feature information from the 'feat'
-     * table of the font. See the CTFontCopyFeatures() API in CTFont.h.
+     * is a CFArrayRef of font feature dictionaries as documented for CTFontCopyFeatures() in <CoreText/CTFont.h>.
+     * Unlike the result of CTFontCopyFeatures(), this attribute does not contain localized names.
      * 
-     * API-Since: 3.2
+     * @see CTFontCopyFeatures
+     * 
+     *      API-Since: 3.2
      */
     @NotNull
     @Generated
@@ -6520,7 +6548,9 @@ public final class CoreText {
      * [@defined] kCTFontVariationAxesAttribute
      * 
      * An array of variation axis dictionaries or null if the font does not support variations. Each variation axis
-     * dictionary contains the five kCTFontVariationAxis* keys.
+     * dictionary contains the five kCTFontVariationAxis-prefixed keys.
+     * Unlike the result of CTFontCopyVariationAxes(), kCTFontVariationAxisNameKey values for this attribute are not
+     * localized.
      * Before macOS 13.0 and iOS 16.0 this attribute is not accurate and CTFontCopyVariationAxes() should be used
      * instead.
      * 

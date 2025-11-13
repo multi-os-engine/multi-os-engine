@@ -60,6 +60,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import apple.coremedia.opaque.CMTaggedBufferGroupRef;
 import apple.videotoolbox.opaque.VTHDRPerFrameMetadataGenerationSessionRef;
+import apple.videotoolbox.opaque.VTMotionEstimationSessionRef;
+import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.objc.map.ObjCStringMapper;
 
 @Generated
 @Library("VideoToolbox")
@@ -2982,7 +2985,7 @@ public final class VideoToolbox {
      * Tears down a pixel rotation session.
      * 
      * When you are done with an image rotation session you created, call VTPixelRotationSessionInvalidate
-     * to tear it down and then VTPixelRotationSessionRelease to release your object reference.
+     * to tear it down and then CFRelease to release your object reference.
      * When an pixel rotation session's retain count reaches zero, it is automatically invalidated, but
      * since sessions may be retained by multiple parties, it can be hard to predict when this will happen.
      * Calling VTPixelRotationSessionInvalidate ensures a deterministic, orderly teardown.
@@ -3350,36 +3353,38 @@ public final class VideoToolbox {
      * will not be called.
      * 
      * @param session
-     *                                 The decompression session.
+     *                                       The decompression session.
      * @param sampleBuffer
-     *                                 A CMSampleBuffer containing one or more video frames.
+     *                                       A CMSampleBuffer containing one or more video frames.
      * @param decodeFlags
-     *                                 A bitfield of directives to the decompression session and decoder.
-     *                                 The kVTDecodeFrame_EnableAsynchronousDecompression bit indicates whether the
-     *                                 video decoder
-     *                                 may decompress the frame asynchronously.
-     *                                 The kVTDecodeFrame_EnableTemporalProcessing bit indicates whether the decoder may
-     *                                 delay calls to the output callback
-     *                                 so as to enable processing in temporal (display) order.
-     *                                 If both flags are clear, the decompression shall complete and your output
-     *                                 callback function will be called
-     *                                 before VTDecompressionSessionDecodeFrame returns.
-     *                                 If either flag is set, VTDecompressionSessionDecodeFrame may return before the
-     *                                 output callback function is called.
+     *                                       A bitfield of directives to the decompression session and decoder.
+     *                                       The kVTDecodeFrame_EnableAsynchronousDecompression bit indicates whether
+     *                                       the video decoder
+     *                                       may decompress the frame asynchronously.
+     *                                       The kVTDecodeFrame_EnableTemporalProcessing bit indicates whether the
+     *                                       decoder may delay calls to the output callback
+     *                                       so as to enable processing in temporal (display) order.
+     *                                       If both flags are clear, the decompression shall complete and your output
+     *                                       callback function will be called
+     *                                       before VTDecompressionSessionDecodeFrame returns.
+     *                                       If either flag is set, VTDecompressionSessionDecodeFrame may return before
+     *                                       the output callback function is called.
      * @param infoFlagsOut
-     *                                 Points to a VTDecodeInfoFlags to receive information about the decode operation.
-     *                                 The kVTDecodeInfo_Asynchronous bit may be set if the decode is (or was) running
-     *                                 asynchronously.
-     *                                 The kVTDecodeInfo_FrameDropped bit may be set if the frame was dropped
-     *                                 (synchronously).
-     *                                 Pass NULL if you do not want to receive this information.
-     * @param multiImageCapableHandler
-     *                                 The block to be called when decoding the frame is completed. If the
-     *                                 VTDecompressionSessionDecodeFrameWithMultiImageCapableOutputHandler call returns
-     *                                 an error,
-     *                                 the block will not be called.
+     *                                       Points to a VTDecodeInfoFlags to receive information about the decode
+     *                                       operation.
+     *                                       The kVTDecodeInfo_Asynchronous bit may be set if the decode is (or was)
+     *                                       running
+     *                                       asynchronously.
+     *                                       The kVTDecodeInfo_FrameDropped bit may be set if the frame was dropped
+     *                                       (synchronously).
+     *                                       Pass NULL if you do not want to receive this information.
+     * @param multiImageCapableOutputHandler
+     *                                       The block to be called when decoding the frame is completed. If the
+     *                                       VTDecompressionSessionDecodeFrameWithMultiImageCapableOutputHandler call
+     *                                       returns an error,
+     *                                       the block will not be called.
      * 
-     *                                 API-Since: 17.0
+     *                                       API-Since: 17.0
      */
     @Generated
     @CFunction
@@ -3747,4 +3752,690 @@ public final class VideoToolbox {
     @CVariable()
     @NotNull
     public static native CFStringRef kVTHDRPerFrameMetadataGenerationOptionsKey_HDRFormats();
+
+    /**
+     * [@function] VTDecompressionSessionDecodeFrameWithOptions
+     * 
+     * Decompresses a video frame.
+     * 
+     * If an error is returned from this function, there will be no callback. Otherwise
+     * the callback provided during VTDecompressionSessionCreate will be called.
+     * 
+     * @param session
+     *                          The decompression session.
+     * @param sampleBuffer
+     *                          A CMSampleBuffer containing one or more video frames.
+     * @param decodeFlags
+     *                          A bitfield of directives to the decompression session and decoder.
+     *                          The kVTDecodeFrame_EnableAsynchronousDecompression bit indicates whether the video
+     *                          decoder
+     *                          may decompress the frame asynchronously.
+     *                          The kVTDecodeFrame_EnableTemporalProcessing bit indicates whether the decoder may delay
+     *                          calls to the output callback
+     *                          so as to enable processing in temporal (display) order.
+     *                          If both flags are clear, the decompression shall complete and your output callback
+     *                          function will be called
+     *                          before VTDecompressionSessionDecodeFrameWithOptions returns.
+     *                          If either flag is set, VTDecompressionSessionDecodeFrameWithOptions may return before
+     *                          the output callback function is called.
+     * @param frameOptions
+     *                          Contains key/value pairs specifying additional options for decoding this frame.
+     *                          Only keys with `kVTDecodeFrameOptionKey_` prefix should be used in this dictionary.
+     * @param sourceFrameRefCon
+     *                          Your reference value for the frame.
+     *                          Note that if sampleBuffer contains multiple frames, the output callback function will be
+     *                          called
+     *                          multiple times with this sourceFrameRefCon.
+     * @param infoFlagsOut
+     *                          Points to a VTDecodeInfoFlags to receive information about the decode operation.
+     *                          The kVTDecodeInfo_Asynchronous bit may be set if the decode is (or was) running
+     *                          asynchronously.
+     *                          The kVTDecodeInfo_FrameDropped bit may be set if the frame was dropped (synchronously).
+     *                          Pass NULL if you do not want to receive this information.
+     * 
+     *                          API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native int VTDecompressionSessionDecodeFrameWithOptions(@NotNull VTDecompressionSessionRef session,
+            @NotNull CMSampleBufferRef sampleBuffer, int decodeFlags, @Nullable CFDictionaryRef frameOptions,
+            @Nullable VoidPtr sourceFrameRefCon, @Nullable IntPtr infoFlagsOut);
+
+    /**
+     * [@function] VTDecompressionSessionDecodeFrameWithOptionsAndOutputHandler
+     * 
+     * Decompresses a video frame.
+     * 
+     * Cannot be called with a session created with a VTDecompressionOutputCallbackRecord.
+     * If the VTDecompressionSessionDecodeFrameWithOptionsAndOutputHandler call returns an error,
+     * the block will not be called.
+     * 
+     * @param session
+     *                      The decompression session.
+     * @param sampleBuffer
+     *                      A CMSampleBuffer containing one or more video frames.
+     * @param decodeFlags
+     *                      A bitfield of directives to the decompression session and decoder.
+     *                      The kVTDecodeFrame_EnableAsynchronousDecompression bit indicates whether the video decoder
+     *                      may decompress the frame asynchronously.
+     *                      The kVTDecodeFrame_EnableTemporalProcessing bit indicates whether the decoder may delay
+     *                      calls to the output callback
+     *                      so as to enable processing in temporal (display) order.
+     *                      If both flags are clear, the decompression shall complete and your output callback function
+     *                      will be called
+     *                      before VTDecompressionSessionDecodeFrameWithOptionsAndOutputHandler returns.
+     *                      If either flag is set, VTDecompressionSessionDecodeFrameWithOptionsAndOutputHandler may
+     *                      return before the output
+     *                      callback function is called.
+     * @param frameOptions
+     *                      Contains key/value pairs specifying additional options for decoding this frame.
+     *                      Only keys with `kVTDecodeFrameOptionKey_` prefix should be used in this dictionary.
+     * @param infoFlagsOut
+     *                      Points to a VTDecodeInfoFlags to receive information about the decode operation.
+     *                      The kVTDecodeInfo_Asynchronous bit may be set if the decode is (or was) running
+     *                      asynchronously.
+     *                      The kVTDecodeInfo_FrameDropped bit may be set if the frame was dropped (synchronously).
+     *                      Pass NULL if you do not want to receive this information.
+     * @param outputHandler
+     *                      The block to be called when decoding the frame is completed. If the
+     *                      VTDecompressionSessionDecodeFrameWithOptionsAndOutputHandler
+     *                      call returns an error, the block will not be called.
+     * 
+     *                      API-Since: 18.0
+     */
+    @Generated
+    @CFunction
+    public static native int VTDecompressionSessionDecodeFrameWithOptionsAndOutputHandler(
+            @NotNull VTDecompressionSessionRef session, @NotNull CMSampleBufferRef sampleBuffer, int decodeFlags,
+            @Nullable CFDictionaryRef frameOptions, @Nullable IntPtr infoFlagsOut,
+            @ObjCBlock(name = "call_VTDecompressionSessionDecodeFrameWithOptionsAndOutputHandler") @NotNull Block_VTDecompressionSessionDecodeFrameWithOptionsAndOutputHandler outputHandler);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_VTDecompressionSessionDecodeFrameWithOptionsAndOutputHandler {
+        @Generated
+        void call_VTDecompressionSessionDecodeFrameWithOptionsAndOutputHandler(int status, int infoFlags,
+                @Nullable CVBufferRef imageBuffer, @ByValue CMTime presentationTimeStamp,
+                @ByValue CMTime presentationDuration);
+    }
+
+    /**
+     * Get the CoreFoundation type identifier for motion-estimation session type.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long VTMotionEstimationSessionGetTypeID();
+
+    /**
+     * Creates a session you use to generate a pixel buffer of motion vectors from two pixel buffers.
+     * 
+     * The function creates a session for computing motion vectors between two pixel buffers.
+     * 
+     * - Parameters:
+     * - allocator: An allocator for the session. Pass NULL to use the default allocator.
+     * - motionVectorProcessorSelectionOptions: Available creation options are:
+     * - term ``kVTMotionEstimationSessionCreationOption_MotionVectorSize``: Size of the search block.
+     * - term ``kVTMotionEstimationSessionCreationOption_UseMultiPassSearch``: Use multiple passes to detect true
+     * motion.
+     * - term ``kVTMotionEstimationSessionCreationOption_Label``: Label used for logging and resource tracking.
+     * - width: The width of frames in pixels.
+     * - height: The height of frames in pixels.
+     * - motionEstimationSessionOut: Points to a variable to receive the new motion-estimation session.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    public static native int VTMotionEstimationSessionCreate(@Nullable CFAllocatorRef allocator,
+            @Nullable CFDictionaryRef motionVectorProcessorSelectionOptions, int width, int height,
+            @NotNull Ptr<VTMotionEstimationSessionRef> motionEstimationSessionOut);
+
+    /**
+     * Copies the attributes for source pixel buffers expected by motion-estimation session.
+     * 
+     * This function provides a `CFDictionary` of attributes that you must release. Use this function to query
+     * ``VTMotionEstimationSession`` for the native source attributes. If you provide an input ``CVPixelBuffer`` that is
+     * not compatible with the attributes that this function returns, ``VTMotionEstimationSession`` automatically
+     * converts the input pixel buffer into a compatible pixel buffer for processing.
+     * 
+     * - Parameters:
+     * - session: The motion-estimation session.
+     * - attributesOut: Points to a variable to receive the attributes dictionary.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    public static native int VTMotionEstimationSessionCopySourcePixelBufferAttributes(
+            @NotNull VTMotionEstimationSessionRef motionEstimationSession, @NotNull Ptr<CFDictionaryRef> attributesOut);
+
+    /**
+     * Tears down a motion-estimation session.
+     * 
+     * When you are done with a motion-estimation session you created, call this function to tear
+     * it down and then `CFRelease` to release the session object reference. When a motion-estimation session's retain
+     * count
+     * reaches zero, the system automatically invalidates it, but because multiple parties may retain sessions, it can
+     * be
+     * hard to predict when this happens. Calling this function ensures a deterministic, orderly teardown.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    public static native void VTMotionEstimationSessionInvalidate(@NotNull VTMotionEstimationSessionRef session);
+
+    /**
+     * Creates a new pixel buffer that contains motion vectors between the input pixel buffers.
+     * 
+     * The motion-estimation session compares the reference frame to the current frame, and generates motion vectors in
+     * the form of a `CVPixelBuffer`.
+     * 
+     * - Parameters:
+     * - session: The motion-estimation session.
+     * - referenceImage: The reference image.
+     * - currentImage: The current image.
+     * - motionEstimationFrameFlags: A bit field with per-frame options. See
+     * ``kVTMotionEstimationFrameFlags_CurrentBufferWillBeNextReferenceBuffer``.
+     * - additionalFrameOptions: A way to pass additional information that doesn't fit in `motionEstimationFrameFlags`;
+     * currently the system expects it to be `NULL`.
+     * - outputHandler: The block invoked by the syetem when the processing request is completed. If the
+     * `VTMotionEstimationSessionCreateMotionEstimation` call returns an error, the system does not invoke the block.
+     * 
+     * - Returns: If the call was successful, returns `noErr`; otherwise, returns an error code, such as
+     * `kVTMotionEstimationNotSupportedErr`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    public static native int VTMotionEstimationSessionEstimateMotionVectors(
+            @NotNull VTMotionEstimationSessionRef session, @NotNull CVBufferRef referenceImage,
+            @NotNull CVBufferRef currentImage, int motionEstimationFrameFlags,
+            @Nullable CFDictionaryRef additionalFrameOptions,
+            @ObjCBlock(name = "call_VTMotionEstimationSessionEstimateMotionVectors") @NotNull Block_VTMotionEstimationSessionEstimateMotionVectors outputHandler);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_VTMotionEstimationSessionEstimateMotionVectors {
+        @Generated
+        void call_VTMotionEstimationSessionEstimateMotionVectors(int status, int infoFlags,
+                @Nullable CFDictionaryRef additionalInfo, @Nullable CVBufferRef motionVectors);
+    }
+
+    /**
+     * Directs the motion-estimation session to emit all pending frames and waits for completion.
+     * 
+     * Directs the motion-estimation session to emit all pending frames, then waits for all outstanding requests to
+     * complete, then returns.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    public static native int VTMotionEstimationSessionCompleteFrames(@NotNull VTMotionEstimationSessionRef session);
+
+    /**
+     * CFNumber, Optional
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTDecodeFrameOptionKey_ContentAnalyzerRotation();
+
+    /**
+     * CGRect, Optional
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTDecodeFrameOptionKey_ContentAnalyzerCropRectangle();
+
+    /**
+     * Read/write, CFNumber<UInt32>, Optional
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyKey_VariableBitRate();
+
+    /**
+     * Read/write, CFNumber<UInt32>, Optional
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyKey_VBVMaxBitRate();
+
+    /**
+     * Read/write, CFNumber<Float>, Optional
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyKey_VBVBufferDuration();
+
+    /**
+     * Read/write, CFNumber<Float>, Optional
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyKey_VBVInitialDelayPercentage();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTHDRMetadataInsertionMode_RequestSDRRangePreservation();
+
+    /**
+     * Read-only, CFNumber<uint64_t>
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyKey_RecommendedParallelizedSubdivisionMinimumFrameCount();
+
+    /**
+     * Read-only, CMTime as CFDictionary
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyKey_RecommendedParallelizedSubdivisionMinimumDuration();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTHeroEye_Left();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTHeroEye_Right();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTProjectionKind_Rectilinear();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTProjectionKind_Equirectangular();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTProjectionKind_HalfEquirectangular();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTProjectionKind_ParametricImmersive();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTViewPackingKind_SideBySide();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTViewPackingKind_OverUnder();
+
+    /**
+     * CFArray of CFDictionaries
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyKey_CameraCalibrationDataLensCollection();
+
+    /**
+     * CFString one of
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyCameraCalibrationKey_LensAlgorithmKind();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCameraCalibrationLensAlgorithmKind_ParametricLens();
+
+    /**
+     * CFString one of
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyCameraCalibrationKey_LensDomain();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCameraCalibrationLensDomain_Color();
+
+    /**
+     * CFNumber(int32)
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyCameraCalibrationKey_LensIdentifier();
+
+    /**
+     * CFString one of
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyCameraCalibrationKey_LensRole();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCameraCalibrationLensRole_Mono();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCameraCalibrationLensRole_Left();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCameraCalibrationLensRole_Right();
+
+    /**
+     * CFArray[CFNumber(float)]
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyCameraCalibrationKey_LensDistortions();
+
+    /**
+     * CFNumber(float)
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyCameraCalibrationKey_RadialAngleLimit();
+
+    /**
+     * CFArray[CFNumber(float)]
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyCameraCalibrationKey_LensFrameAdjustmentsPolynomialX();
+
+    /**
+     * CFArray[CFNumber(float)]
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyCameraCalibrationKey_LensFrameAdjustmentsPolynomialY();
+
+    /**
+     * CFData(matrix_float3x3)
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyCameraCalibrationKey_IntrinsicMatrix();
+
+    /**
+     * CFNumber(float)
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyCameraCalibrationKey_IntrinsicMatrixProjectionOffset();
+
+    /**
+     * CGSize dictionary
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyCameraCalibrationKey_IntrinsicMatrixReferenceDimensions();
+
+    /**
+     * CFString one of
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyCameraCalibrationKey_ExtrinsicOriginSource();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCameraCalibrationExtrinsicOriginSource_StereoCameraSystemBaseline();
+
+    /**
+     * CFArray[CFNumber(float)], , ix, iy & iz order
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyCameraCalibrationKey_ExtrinsicOrientationQuaternion();
+
+    /**
+     * Read-only, CFDictionary
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyKey_SupportedPresetDictionaries();
+
+    /**
+     * [@constant] kVTCompressionPreset_HighQuality
+     * 
+     * A preset to achieve a high compression quality.
+     * 
+     * An encoder configured using this preset is expected to achieve a higher quality with a slower encoding than an
+     * encoder configured with the preset kVTCompressionPreset_Balanced or kVTCompressionPreset_HighSpeed.
+     * The presets kVTCompressionPreset_Balanced and kVTCompressionPreset_HighSpeed may be preferred for a faster
+     * encoding.
+     * 
+     * See also kVTCompressionPreset_Balanced, kVTCompressionPreset_HighSpeed, kVTCompressionPreset_VideoConferencing.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPreset_HighQuality();
+
+    /**
+     * [@constant] kVTCompressionPreset_Balanced
+     * 
+     * A preset to provide a balanced compression quality and encoding speed.
+     * 
+     * An encoder configured using this preset is expected to achieve a higher quality than an encoder configured with
+     * the preset kVTCompressionPreset_HighSpeed.
+     * The preset kVTCompressionPreset_HighSpeed may be preferred for a faster encoding.
+     * The preset kVTCompressionPreset_HighQuality may be preferred for a higher compression quality.
+     * 
+     * See also kVTCompressionPreset_HighQuality, kVTCompressionPreset_HighSpeed,
+     * kVTCompressionPreset_VideoConferencing.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPreset_Balanced();
+
+    /**
+     * [@constant] kVTCompressionPreset_HighSpeed
+     * 
+     * A preset to provide a high-speed encoding.
+     * 
+     * An encoder configured using this preset is expected to achieve a faster encoding at a lower compression quality
+     * than an encoder configured with the preset kVTCompressionPreset_HighQuality or kVTCompressionPreset_Balanced.
+     * The presets kVTCompressionPreset_HighQuality and kVTCompressionPreset_Balanced may be preferred for a higher
+     * compression quality.
+     * 
+     * See also kVTCompressionPreset_HighQuality, kVTCompressionPreset_Balanced, kVTCompressionPreset_VideoConferencing.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPreset_HighSpeed();
+
+    /**
+     * [@constant] kVTCompressionPreset_VideoConferencing
+     * 
+     * A preset to achieve low-latency encoding for real-time communication applications.
+     * 
+     * This preset requires setting kVTVideoEncoderSpecification_EnableLowLatencyRateControl to kCFBooleanTrue for
+     * encoding in the low-latency mode.
+     * 
+     * See also kVTCompressionPreset_HighQuality, kVTCompressionPreset_Balanced, kVTCompressionPreset_HighSpeed.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPreset_VideoConferencing();
+
+    /**
+     * Read/write, CFNumber
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTMotionEstimationSessionCreationOption_MotionVectorSize();
+
+    /**
+     * Read/write, CFBoolean
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTMotionEstimationSessionCreationOption_UseMultiPassSearch();
+
+    /**
+     * Read/write, CFString
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTMotionEstimationSessionCreationOption_Label();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String VTFrameProcessorErrorDomain();
 }

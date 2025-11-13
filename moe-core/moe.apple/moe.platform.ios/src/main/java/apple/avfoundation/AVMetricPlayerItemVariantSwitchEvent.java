@@ -28,8 +28,6 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * AVMetricPlayerItemVariantSwitchEvent
- * 
  * Represents a metric event when variant switch was completed.
  * 
  * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
@@ -98,8 +96,6 @@ public class AVMetricPlayerItemVariantSwitchEvent extends AVMetricEvent {
     public static native String description_static();
 
     /**
-     * [@property] didSucceed
-     * 
      * Returns if the switch did succeed.
      * 
      * API-Since: 18.0
@@ -109,8 +105,6 @@ public class AVMetricPlayerItemVariantSwitchEvent extends AVMetricEvent {
     public native boolean didSucceed();
 
     /**
-     * [@property] fromVariant
-     * 
      * Returns the variant before the switch. If no value is available, returns nil
      * 
      * API-Since: 18.0
@@ -156,8 +150,6 @@ public class AVMetricPlayerItemVariantSwitchEvent extends AVMetricEvent {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
-     * [@property] loadedTimeRanges
-     * 
      * This property provides a collection of time ranges for which the player has the media data readily available. The
      * ranges provided might be discontinuous.
      * 
@@ -202,8 +194,6 @@ public class AVMetricPlayerItemVariantSwitchEvent extends AVMetricEvent {
     }
 
     /**
-     * [@property] toVariant
-     * 
      * Returns the variant after the switch.
      * 
      * API-Since: 18.0
@@ -222,4 +212,40 @@ public class AVMetricPlayerItemVariantSwitchEvent extends AVMetricEvent {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Represents the currently selected video rendition's identifiers.
+     * 
+     * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("audioRendition")
+    @NotNull
+    public native AVMetricMediaRendition audioRendition();
+
+    /**
+     * Represents the currently selected audio rendition's identifiers.
+     * 
+     * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("subtitleRendition")
+    @NotNull
+    public native AVMetricMediaRendition subtitleRendition();
+
+    /**
+     * Represents the currently selected video rendition's identifiers.
+     * 
+     * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("videoRendition")
+    @NotNull
+    public native AVMetricMediaRendition videoRendition();
 }

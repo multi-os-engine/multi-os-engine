@@ -101,7 +101,10 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
      * If you supply more images, only the first @c CPMaximumNumberOfGridImages will be used.
      * 
      * API-Since: 14.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("gridImages")
@@ -134,14 +137,17 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
      * 
      * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
      * 
-     * [@note] The expected image size is given by +[CPListImageRowItem maximumImageSize]. Images provided
-     * will be resized to this size if necessary.
+     * [@note] The expected image size is given by +[CPListImageRowItem maximumImageSize]. Images provided will be
+     * resized to this size if necessary.
      * 
      * To properly size your images, your app should size them to the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
      * 
      * API-Since: 14.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use initWithText:elements:allowsMultipleLines:
      */
+    @Deprecated
     @Generated
     @Selector("initWithText:images:")
     public native CPListImageRowItem initWithTextImages(@NotNull String text,
@@ -203,7 +209,10 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
      * See -[CPInterfaceController carTraitCollection].
      * 
      * API-Since: 14.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use +[CPListImageRowItemElement maximumImageSize] on an appropriate element
      */
+    @Deprecated
     @Generated
     @Selector("maximumImageSize")
     @ByValue
@@ -297,7 +306,10 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
      *      the @c imageTitles property of the image row item.
      * 
      *      API-Since: 14.0
+     *      Deprecated-Since: 26.0
+     *      Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @Selector("updateImages:")
     public native void updateImages(@NotNull NSArray<? extends UIImage> gridImages);
@@ -327,15 +339,16 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
     public static native boolean useStoredAccessor();
 
     /**
-     * Update the titles displayed each image in this image row item. If this image row
-     * item is already displayed in a list template, then it will be automatically
-     * reloaded.
+     * The titles displayed for each image in this image row item.
      * 
      * @see To update/reload the title of the image row item, assign to
      *      the @c text property of the image row item.
      * 
      *      API-Since: 17.4
+     *      Deprecated-Since: 26.0
+     *      Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @Selector("imageTitles")
     @NotNull
@@ -356,30 +369,135 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
      * 
      * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
      * 
-     * [@note] The expected image size is given by +[CPListImageRowItem maximumImageSize]. Images provided
-     * will be resized to this size if necessary.
+     * [@note] The expected image size is given by +[CPListImageRowItem maximumImageSize]. Images provided will be
+     * resized to this size if necessary.
      * 
      * To properly size your images, your app should size them to the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
      * 
      * API-Since: 17.4
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use initWithText:elements:allowsMultipleLines:
      */
+    @Deprecated
     @Generated
     @Selector("initWithText:images:imageTitles:")
     public native CPListImageRowItem initWithTextImagesImageTitles(@NotNull String text,
             @NotNull NSArray<? extends UIImage> images, @NotNull NSArray<String> imageTitles);
 
     /**
-     * Update the titles displayed each image in this image row item. If this image row
-     * item is already displayed in a list template, then it will be automatically
-     * reloaded.
+     * A Boolean value indicating whether the elements should be visible in more than a single line.
      * 
-     * @see To update/reload the title of the image row item, assign to
-     *      the @c text property of the image row item.
+     * Set the value of this property to @c YES to allow elements to be visible on multiple lines. Set the value of this
+     * property to @c NO to only show a single line of elements.
      * 
-     *      API-Since: 17.4
+     * API-Since: 26.0
      */
     @Generated
-    @Selector("setImageTitles:")
-    public native void setImageTitles(@NotNull NSArray<String> value);
+    @Selector("allowsMultipleLines")
+    public native boolean allowsMultipleLines();
+
+    /**
+     * The array of elements used to draw visible elements.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("elements")
+    @NotNull
+    public native NSArray<? extends CPListImageRowItemElement> elements();
+
+    /**
+     * Initialize a list image row item with a text string, an array of @c CPListImageRowItemCardElement and a boolean
+     * to allow multiple lines in this row.
+     * 
+     * If a nil @c text property is provided the cell will resize accordingly to hide the title.
+     * 
+     * @param text                The text visible at the top of the cell.
+     * @param elements            The list of @c CPListImageRowItemCardElement elements visible below the text.
+     * @param allowsMultipleLines Determines if the elements could be visible on more than a single line.
+     * 
+     *                            API-Since: 26.0
+     */
+    @Generated
+    @Selector("initWithText:cardElements:allowsMultipleLines:")
+    public native CPListImageRowItem initWithTextCardElementsAllowsMultipleLines(@Nullable String text,
+            @NotNull NSArray<? extends CPListImageRowItemCardElement> elements, boolean allowsMultipleLines);
+
+    /**
+     * Initialize a list image row item with a text string, an array of @c CPListImageRowItemCondensedElement and a
+     * boolean to allow multiple lines in this row.
+     * 
+     * If a nil @c text property is provided the cell will resize accordingly to hide the title.
+     * 
+     * @param text                The text visible at the top of the cell.
+     * @param elements            The list of @c CPListImageRowItemCondensedElement elements visible below the text.
+     * @param allowsMultipleLines Determines if the elements could be visible on more than a single line.
+     * 
+     *                            API-Since: 26.0
+     */
+    @Generated
+    @Selector("initWithText:condensedElements:allowsMultipleLines:")
+    public native CPListImageRowItem initWithTextCondensedElementsAllowsMultipleLines(@Nullable String text,
+            @NotNull NSArray<? extends CPListImageRowItemCondensedElement> elements, boolean allowsMultipleLines);
+
+    /**
+     * Initialize a list image row item with a text string, an array of @c CPListImageRowItemRowElement and a boolean to
+     * allow multiple lines in this row.
+     * 
+     * If a nil @c text property is provided the cell will resize accordingly to hide the title.
+     * 
+     * @param text                The text visible at the top of the cell.
+     * @param elements            The list of @c CPListImageRowItemRowElement elements visible below the text.
+     * @param allowsMultipleLines Determines if the elements could be visible on more than a single line.
+     * 
+     *                            API-Since: 26.0
+     */
+    @Generated
+    @Selector("initWithText:elements:allowsMultipleLines:")
+    public native CPListImageRowItem initWithTextElementsAllowsMultipleLines(@Nullable String text,
+            @NotNull NSArray<? extends CPListImageRowItemRowElement> elements, boolean allowsMultipleLines);
+
+    /**
+     * Initialize a list image row item with a text string, an array of @c CPListImageRowItemGridElement and a boolean
+     * to allow multiple lines in this row.
+     * 
+     * If a nil @c text property is provided the cell will resize accordingly to hide the title.
+     * 
+     * @param text                The text visible at the top of the cell.
+     * @param elements            The list of @c CPListImageRowItemGridElement elements visible below the text.
+     * @param allowsMultipleLines Determines if the elements could be visible on more than a single line.
+     * 
+     *                            API-Since: 26.0
+     */
+    @Generated
+    @Selector("initWithText:gridElements:allowsMultipleLines:")
+    public native CPListImageRowItem initWithTextGridElementsAllowsMultipleLines(@Nullable String text,
+            @NotNull NSArray<? extends CPListImageRowItemGridElement> elements, boolean allowsMultipleLines);
+
+    /**
+     * Initialize a list image row item with a text string, an array of @c CPListImageRowItemImageGridElement and a
+     * boolean to allow multiple lines in this row.
+     * 
+     * If a nil @c text property is provided the cell will resize accordingly to hide the title.
+     * 
+     * @param text                The text visible at the top of the cell.
+     * @param elements            The list of @c CPListImageRowItemImageGridElement elements visible below the text.
+     * @param allowsMultipleLines Determines if the elements could be visible on more than a single line.
+     * 
+     *                            API-Since: 26.0
+     */
+    @Generated
+    @Selector("initWithText:imageGridElements:allowsMultipleLines:")
+    public native CPListImageRowItem initWithTextImageGridElementsAllowsMultipleLines(@Nullable String text,
+            @NotNull NSArray<? extends CPListImageRowItemImageGridElement> elements, boolean allowsMultipleLines);
+
+    /**
+     * The array of elements used to draw visible elements.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setElements:")
+    public native void setElements(@NotNull NSArray<? extends CPListImageRowItemElement> value);
 }

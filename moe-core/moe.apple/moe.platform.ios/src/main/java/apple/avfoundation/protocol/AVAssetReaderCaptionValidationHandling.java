@@ -32,8 +32,8 @@ public interface AVAssetReaderCaptionValidationHandling {
      * Called when one or more syntax elements were ignored in the process of creating the caption object.
      * 
      * While the reported string content is human readable, it is highly technical and probably meaningful only to
-     * clients who are familiar with the source caption format. It is primarily designed for logging purpose and would
-     * not be suitable for UI purpose.
+     * clients who are familiar with the source caption format. It is primarily designed for logging purposes and would
+     * not be suitable for UI purposes.
      * 
      * API-Since: 18.0
      * 

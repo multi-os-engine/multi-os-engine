@@ -42,6 +42,14 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * CMSensorRecorder
+ * 
+ * Discussion:
+ * CMSensorRecorder allows applications to record sensor data for periods
+ * during which the application is not active. This data is then made
+ * available for later access (up to 3 days) when the application
+ * is run at a later time.
+ * 
  * API-Since: 9.0
  */
 @Generated

@@ -27,8 +27,6 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * AVMetricPlayerItemInitialLikelyToKeepUpEvent
- * 
  * Represents a metric event when playback was first likely to play through without stalling.
  * 
  * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
@@ -89,8 +87,6 @@ public class AVMetricPlayerItemInitialLikelyToKeepUpEvent extends AVMetricPlayer
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property] contentKeyRequestEvents
-     * 
      * Returns the content key request required to reach likely to keep up.
      * 
      * API-Since: 18.0
@@ -144,8 +140,6 @@ public class AVMetricPlayerItemInitialLikelyToKeepUpEvent extends AVMetricPlayer
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
-     * [@property] mediaSegmentRequestEvents
-     * 
      * Returns the media segment request events required to reach likely to keep up.
      * 
      * API-Since: 18.0
@@ -161,8 +155,6 @@ public class AVMetricPlayerItemInitialLikelyToKeepUpEvent extends AVMetricPlayer
     public static native AVMetricPlayerItemInitialLikelyToKeepUpEvent new_objc();
 
     /**
-     * [@property] playlistRequestEvents
-     * 
      * Returns the playlist request events required to reach likely to keep up.
      * 
      * API-Since: 18.0

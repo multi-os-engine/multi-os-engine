@@ -340,7 +340,7 @@ public class AVAssetReaderOutput extends NSObject {
      * particularly when multiple asset reader outputs are attached.
      * 
      * This property throws an exception if a value is set after reading has started (the asset reader has progressed
-     * beyond AVAssetReaderStatusUnknown).
+     * beyond AVAssetReaderStatusUnknown) or after an AVAssetReaderOutput.Provider is attached.
      * 
      * API-Since: 8.0
      */
@@ -362,7 +362,7 @@ public class AVAssetReaderOutput extends NSObject {
      * particularly when multiple asset reader outputs are attached.
      * 
      * This property throws an exception if a value is set after reading has started (the asset reader has progressed
-     * beyond AVAssetReaderStatusUnknown).
+     * beyond AVAssetReaderStatusUnknown) or after an AVAssetReaderOutput.Provider is attached.
      * 
      * API-Since: 8.0
      */

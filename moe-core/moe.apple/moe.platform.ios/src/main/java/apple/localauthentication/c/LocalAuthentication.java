@@ -87,4 +87,5 @@ public final class LocalAuthentication {
     @Generated public static final double kLAAccessControlOperationUseKeySign = 3.0;
     @Generated public static final double kLAAccessControlOperationUseKeyDecrypt = 4.0;
     @Generated public static final double kLAAccessControlOperationUseKeyKeyExchange = 5.0;
+    @Generated public static final double kLACompanionTypeNone = 0.0;
 }

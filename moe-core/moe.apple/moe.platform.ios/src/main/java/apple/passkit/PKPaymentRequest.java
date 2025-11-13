@@ -870,4 +870,27 @@ public class PKPaymentRequest extends NSObject {
     @Generated
     @Selector("setMerchantCategoryCode:")
     public native void setMerchantCategoryCode(short value);
+
+    /**
+     * An indentifier which should be used by partners that support "inline provisioning" (the
+     * addition of a Wallet pass without leaving a third-party app). The identifier can be used to
+     * identify the partner whose app experience has lead to the successful provisioning.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("attributionIdentifier")
+    @Nullable
+    public native String attributionIdentifier();
+
+    /**
+     * An indentifier which should be used by partners that support "inline provisioning" (the
+     * addition of a Wallet pass without leaving a third-party app). The identifier can be used to
+     * identify the partner whose app experience has lead to the successful provisioning.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setAttributionIdentifier:")
+    public native void setAttributionIdentifier(@Nullable String value);
 }

@@ -602,4 +602,17 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
     @Selector("cookiePartitionIdentifier")
     @Nullable
     public native String cookiePartitionIdentifier();
+
+    /**
+     * returns whether a connection created with this request is allowed to use
+     * network interfaces which have been marked as ultra constrained.
+     * 
+     * @return YES if the receiver is allowed to use an interface marked as ultra constrained to
+     *         satisfy the request, NO otherwise.
+     * 
+     *         API-Since: 26.1
+     */
+    @Generated
+    @Selector("allowsUltraConstrainedNetworkAccess")
+    public native boolean allowsUltraConstrainedNetworkAccess();
 }

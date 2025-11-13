@@ -493,4 +493,80 @@ public class DDDevice extends NSObject {
     @Generated
     @Selector("setSSID:")
     public native void setSSID(@Nullable String value);
+
+    /**
+     * Device's Wi-Fi Aware model name.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setWifiAwareModelName:")
+    public native void setWifiAwareModelName(@Nullable String value);
+
+    /**
+     * Device's Wi-Fi Aware's service name.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setWifiAwareServiceName:")
+    public native void setWifiAwareServiceName(@Nullable String value);
+
+    /**
+     * Device's Wi-Fi Aware's service. Default is `DDDeviceWiFiAwareServiceRoleSubscriber`
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setWifiAwareServiceRole:")
+    public native void setWifiAwareServiceRole(@NInt long value);
+
+    /**
+     * Device's Wi-Fi Aware vendor name.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setWifiAwareVendorName:")
+    public native void setWifiAwareVendorName(@Nullable String value);
+
+    /**
+     * Device's Wi-Fi Aware model name.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("wifiAwareModelName")
+    @Nullable
+    public native String wifiAwareModelName();
+
+    /**
+     * Device's Wi-Fi Aware's service name.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("wifiAwareServiceName")
+    @Nullable
+    public native String wifiAwareServiceName();
+
+    /**
+     * Device's Wi-Fi Aware's service. Default is `DDDeviceWiFiAwareServiceRoleSubscriber`
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("wifiAwareServiceRole")
+    @NInt
+    public native long wifiAwareServiceRole();
+
+    /**
+     * Device's Wi-Fi Aware vendor name.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("wifiAwareVendorName")
+    @Nullable
+    public native String wifiAwareVendorName();
 }

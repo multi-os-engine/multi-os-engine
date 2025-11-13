@@ -1494,7 +1494,7 @@ public class MTRBaseClusterWiFiNetworkDiagnostics extends MTRGenericBaseCluster 
     /**
      * Command ResetCounts
      * 
-     * Reception of this command SHALL reset the Breacon and Packet related count attributes to 0
+     * This command is used to reset the count attributes.
      * 
      * API-Since: 16.4
      */

@@ -30,6 +30,8 @@ import org.jetbrains.annotations.NotNull;
  * [@protocol] AVPlayerItemOutputPullDelegate
  * 
  * Defines common delegate methods for objects participating in AVPlayerItemOutput pull sample output acquisition.
+ * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
  */
 @Generated
 @Library("AVFoundation")

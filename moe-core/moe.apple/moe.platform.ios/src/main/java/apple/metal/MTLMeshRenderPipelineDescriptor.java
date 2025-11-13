@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.metal.struct.MTLSize;
+import org.moe.natj.general.ann.ByValue;
 
 /**
  * MTLMeshRenderPipelineDescriptor
@@ -900,4 +902,62 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
     @Selector("shaderValidation")
     @NInt
     public native long shaderValidation();
+
+    /**
+     * [@property] requiredThreadsPerMeshThreadgroup
+     * 
+     * Sets the required mesh threads-per-threadgroup during mesh draws. The `threadsPerMeshThreadgroup` argument of any
+     * draw must match to this value if it is set.
+     * Optional, unless the pipeline is going to use CooperativeTensors in which case this must be set.
+     * Setting this to a size of 0 in every dimension disables this property
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("requiredThreadsPerMeshThreadgroup")
+    @ByValue
+    public native MTLSize requiredThreadsPerMeshThreadgroup();
+
+    /**
+     * [@property] requiredThreadsPerObjectThreadgroup
+     * 
+     * Sets the required object threads-per-threadgroup during mesh draws. The `threadsPerObjectThreadgroup` argument of
+     * any draw must match to this value if it is set.
+     * Optional, unless the pipeline is going to use CooperativeTensors in which case this must be set.
+     * Setting this to a size of 0 in every dimension disables this property
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("requiredThreadsPerObjectThreadgroup")
+    @ByValue
+    public native MTLSize requiredThreadsPerObjectThreadgroup();
+
+    /**
+     * [@property] requiredThreadsPerMeshThreadgroup
+     * 
+     * Sets the required mesh threads-per-threadgroup during mesh draws. The `threadsPerMeshThreadgroup` argument of any
+     * draw must match to this value if it is set.
+     * Optional, unless the pipeline is going to use CooperativeTensors in which case this must be set.
+     * Setting this to a size of 0 in every dimension disables this property
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setRequiredThreadsPerMeshThreadgroup:")
+    public native void setRequiredThreadsPerMeshThreadgroup(@ByValue MTLSize value);
+
+    /**
+     * [@property] requiredThreadsPerObjectThreadgroup
+     * 
+     * Sets the required object threads-per-threadgroup during mesh draws. The `threadsPerObjectThreadgroup` argument of
+     * any draw must match to this value if it is set.
+     * Optional, unless the pipeline is going to use CooperativeTensors in which case this must be set.
+     * Setting this to a size of 0 in every dimension disables this property
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setRequiredThreadsPerObjectThreadgroup:")
+    public native void setRequiredThreadsPerObjectThreadgroup(@ByValue MTLSize value);
 }

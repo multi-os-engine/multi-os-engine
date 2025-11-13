@@ -694,9 +694,10 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     public native UIMenu menu();
 
     /**
-     * Set the primaryAction on this item, updating the title & image of the item if appropriate (primaryAction is
-     * non-nil, and this is not a system item). When primaryAction is non-nil, the target & action properties are
-     * ignored. If primaryAction is set to nil, the title & image properties are left unchanged.
+     * Set the primaryAction on this item, updating the title & image of the item if appropriate (primaryAction's title
+     * is non-nil for the title update, primaryAction's image is non-nil for the image update, and if this is not a
+     * system item). When primaryAction is non-nil, the target & action properties are ignored. If primaryAction is set
+     * to nil, the title & image properties are left unchanged.
      * 
      * API-Since: 14.0
      */
@@ -716,9 +717,10 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     public native void setMenu(@Nullable UIMenu value);
 
     /**
-     * Set the primaryAction on this item, updating the title & image of the item if appropriate (primaryAction is
-     * non-nil, and this is not a system item). When primaryAction is non-nil, the target & action properties are
-     * ignored. If primaryAction is set to nil, the title & image properties are left unchanged.
+     * Set the primaryAction on this item, updating the title & image of the item if appropriate (primaryAction's title
+     * is non-nil for the title update, primaryAction's image is non-nil for the image update, and if this is not a
+     * system item). When primaryAction is non-nil, the target & action properties are ignored. If primaryAction is set
+     * to nil, the title & image properties are left unchanged.
      * 
      * API-Since: 14.0
      */
@@ -1029,4 +1031,143 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Sets a badge on the bar button item. Currently only supported in navigation bars.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("badge")
+    @Nullable
+    public native UIBarButtonItemBadge badge();
+
+    /**
+     * Creates a new fixed space item of zero width.
+     * 
+     * A fixed space of 0 width separates the shared background used
+     * in navigation bars and toolbars to visually group items.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("fixedSpaceItem")
+    @NotNull
+    public static native UIBarButtonItem fixedSpaceItem();
+
+    /**
+     * A boolean value indicating whether the background this item may share with other items in the bar
+     * should be hidden.
+     * 
+     * Set this property to `YES` to prevent the standard shared background (typically using the Glass effect)
+     * from being drawn behind this bar button item.
+     * 
+     * This item will not be visually grouped with any other items,
+     * without the standard shared background.
+     * This property is ignored if the item is in a `UIBarButtonItemGroup` with more than one item.
+     * The default value is `NO`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("hidesSharedBackground")
+    public native boolean hidesSharedBackground();
+
+    /**
+     * An identifier used to match bar button items across transitions in a navigation bar or toolbar.
+     * 
+     * When the set of bar button items in a navigation bar or toolbar changes (for example, when pushing
+     * or popping view controllers), UIKit automatically animates the transition between the different sets
+     * of items. By default, UIKit uses heuristics based on item position and content to determine which items
+     * should be matched for these transitions.
+     * 
+     * Set this property with the same value on two different bar button items in different navigation item
+     * configurations to indicate that they should be treated as the same item during transitions. This allows
+     * for more natural animations when the visuals or function of an item changes across contexts.
+     * 
+     * The default value is `nil`, which means UIKit will use its default heuristics for transitions.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("identifier")
+    @Nullable
+    public native String identifier();
+
+    /**
+     * Sets a badge on the bar button item. Currently only supported in navigation bars.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setBadge:")
+    public native void setBadge(@Nullable UIBarButtonItemBadge value);
+
+    /**
+     * A boolean value indicating whether the background this item may share with other items in the bar
+     * should be hidden.
+     * 
+     * Set this property to `YES` to prevent the standard shared background (typically using the Glass effect)
+     * from being drawn behind this bar button item.
+     * 
+     * This item will not be visually grouped with any other items,
+     * without the standard shared background.
+     * This property is ignored if the item is in a `UIBarButtonItemGroup` with more than one item.
+     * The default value is `NO`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setHidesSharedBackground:")
+    public native void setHidesSharedBackground(boolean value);
+
+    /**
+     * An identifier used to match bar button items across transitions in a navigation bar or toolbar.
+     * 
+     * When the set of bar button items in a navigation bar or toolbar changes (for example, when pushing
+     * or popping view controllers), UIKit automatically animates the transition between the different sets
+     * of items. By default, UIKit uses heuristics based on item position and content to determine which items
+     * should be matched for these transitions.
+     * 
+     * Set this property with the same value on two different bar button items in different navigation item
+     * configurations to indicate that they should be treated as the same item during transitions. This allows
+     * for more natural animations when the visuals or function of an item changes across contexts.
+     * 
+     * The default value is `nil`, which means UIKit will use its default heuristics for transitions.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setIdentifier:")
+    public native void setIdentifier(@Nullable String value);
+
+    /**
+     * A boolean value indicating whether this bar button item can share a background with other items
+     * in a navigation bar or a toolbar.
+     * 
+     * When `NO`, This item will not be visually grouped with any other items.
+     * 
+     * This property is ignored if the item is in a `UIBarButtonItemGroup` with more than one item.
+     * The default value is `YES`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setSharesBackground:")
+    public native void setSharesBackground(boolean value);
+
+    /**
+     * A boolean value indicating whether this bar button item can share a background with other items
+     * in a navigation bar or a toolbar.
+     * 
+     * When `NO`, This item will not be visually grouped with any other items.
+     * 
+     * This property is ignored if the item is in a `UIBarButtonItemGroup` with more than one item.
+     * The default value is `YES`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("sharesBackground")
+    public native boolean sharesBackground();
 }

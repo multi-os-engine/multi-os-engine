@@ -27,12 +27,6 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * AVAssetReaderOutputCaptionAdaptor
- * 
- * An adaptor class for reading instances of AVCaptionGroup from a track containing timed text (i.e. subtitles or closed
- * captions).
- * 
- * 
  * API-Since: 18.0
  */
 @Generated

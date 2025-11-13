@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * 
  * In order to function properly and efficiently, `CKSyncEngine` tracks some state internally.
  * When the sync engine state changes, it will give you the latest serialized version in a
- * `CKSyncEngineStateUpdateEvent`.
+ * ``CKSyncEngine/Event/StateUpdate``.
  * This event will happen occasionally when the sync engine modifies the state internally during normal sync operation.
  * This event will also happen when you change the state yourself.
  * 

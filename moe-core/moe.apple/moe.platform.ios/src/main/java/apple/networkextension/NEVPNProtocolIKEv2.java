@@ -567,4 +567,32 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     @Generated
     @Selector("setPpkConfiguration:")
     public native void setPpkConfiguration(@Nullable NEVPNIKEv2PPKConfiguration value);
+
+    /**
+     * [@property] allowPostQuantumKeyExchangeFallback
+     * 
+     * Allow servers that do not support post-quantum key exchanges to skip them. This property has no effect if no
+     * post-quantum key exchange methods
+     * are configured for the IKE SA or Child SA (see
+     * NEVPNIKEv2SecurityAssociationParameters.postQuantumKeyExchangeMethods). Default is NO.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("allowPostQuantumKeyExchangeFallback")
+    public native boolean allowPostQuantumKeyExchangeFallback();
+
+    /**
+     * [@property] allowPostQuantumKeyExchangeFallback
+     * 
+     * Allow servers that do not support post-quantum key exchanges to skip them. This property has no effect if no
+     * post-quantum key exchange methods
+     * are configured for the IKE SA or Child SA (see
+     * NEVPNIKEv2SecurityAssociationParameters.postQuantumKeyExchangeMethods). Default is NO.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setAllowPostQuantumKeyExchangeFallback:")
+    public native void setAllowPostQuantumKeyExchangeFallback(boolean value);
 }

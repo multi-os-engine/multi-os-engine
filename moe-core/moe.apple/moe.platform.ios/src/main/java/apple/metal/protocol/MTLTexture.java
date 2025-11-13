@@ -37,6 +37,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.metal.struct.MTLResourceID;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.metal.MTLTextureViewDescriptor;
 
 /**
  * [@protocol] MTLTexture
@@ -514,4 +515,30 @@ public interface MTLTexture extends MTLResource {
     @Selector("gpuResourceID")
     @ByValue
     MTLResourceID gpuResourceID();
+
+    /**
+     * newTextureViewWithDescriptor:
+     * 
+     * Create a new texture which shares the same storage as the source texture, but with different (but compatible)
+     * properties specified by the descriptor
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("newTextureViewWithDescriptor:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    MTLTexture newTextureViewWithDescriptor(@NotNull MTLTextureViewDescriptor descriptor);
+
+    /**
+     * [@property] sparseTextureTier
+     * 
+     * Query support tier for sparse textures.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("sparseTextureTier")
+    @NInt
+    long sparseTextureTier();
 }

@@ -633,4 +633,15 @@ public final class WebKit {
     @MappedReturn(ObjCStringMapper.class)
     @NotNull
     public static native String WKWebExtensionMessagePortErrorDomain();
+
+    /**
+     * [@constant] WKWebsiteDataTypeScreenTime Screen Time information
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String WKWebsiteDataTypeScreenTime();
 }

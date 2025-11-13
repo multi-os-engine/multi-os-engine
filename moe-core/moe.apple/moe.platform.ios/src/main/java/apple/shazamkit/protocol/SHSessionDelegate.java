@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * All communication about matches is performed through this delegate.
+ * Methods that the session calls with the result of a match request.
  * 
  * API-Since: 15.0
  */
@@ -25,12 +25,13 @@ import org.jetbrains.annotations.Nullable;
 @ObjCProtocolName("SHSessionDelegate")
 public interface SHSessionDelegate {
     /**
-     * A match was found in the @c SHCatalog for the provided @c SHSignature
+     * Tells the delegate that the query signature matches an item in the catalog.
      * 
-     * @param session The @c SHSession that made the match
-     * @param match   The @c SHMatch of the matching audio
+     * - Parameters:
+     * - session: The session object that performs the match.
+     * - match: The matching items from the catalog.
      * 
-     *                API-Since: 15.0
+     * API-Since: 15.0
      */
     @Generated
     @IsOptional
@@ -40,14 +41,17 @@ public interface SHSessionDelegate {
     }
 
     /**
-     * The @c SHSignature did not match anything
+     * Tells the delegate that the query signature doesn't match an item in the catalog, or that there's an error.
      * 
-     * @param session   The @c SHSession that attempted to match the @c SHSignature
-     * @param signature The @c SHSignature that did not match
-     * @param error     An optional error. If simply no match was found this will be set to nil. It will be populated if
-     *                  there was an issue performing the match
+     * You can retry the match if the error indicates an issue in communicating with the catalog server, such as
+     * ``SHError/Code/matchAttemptFailed``.
      * 
-     *                  API-Since: 15.0
+     * - Parameters:
+     * - session: The session object that performs the match.
+     * - signature: The query signature to use for the match.
+     * - error: The error that occurs; otherwise, `nil`, which indicates that there's no match.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @IsOptional

@@ -14,8 +14,6 @@ import apple.foundation.NSValue;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * [@protocol] AVPlayerPlaybackCoordinatorDelegate
- * 
  * Delegate protocol for AVPlayerPlaybackCoordinator.
  * 
  * API-Since: 15.0
@@ -26,8 +24,6 @@ import org.jetbrains.annotations.NotNull;
 @ObjCProtocolName("AVPlayerPlaybackCoordinatorDelegate")
 public interface AVPlayerPlaybackCoordinatorDelegate {
     /**
-     * playbackCoordinator:identifierForPlayerItem:
-     * 
      * Called by the coordinator to identify AVPlayerItems played by the coordinator's AVPlayer.
      * 
      * Implementing this method allows the coordinator to establish identity of two items created from different URLs,
@@ -46,8 +42,6 @@ public interface AVPlayerPlaybackCoordinatorDelegate {
     }
 
     /**
-     * playbackCoordinator:interstitialTimeRangesForPlayerItem:
-     * 
      * Called by the coordinator to obtain time ranges in the AVPlayerItem that do not correspond to the primary
      * content.
      * 

@@ -7262,4 +7262,174 @@ public final class ImageIO {
     @CVariable()
     @NotNull
     public static native CFStringRef kIIOMonoscopicImageLocation_Center();
+
+    /**
+     * For EXR files:
+     * The value (CFNumberRef) specifies the EXR compression method. See AppleEXR.h for possible values.
+     * Default value if not specified is 'axr_compression_piz'
+     * 
+     * API-Since: 16.1
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImagePropertyOpenEXRCompression();
+
+    /**
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImageProviderPreferredTileWidth();
+
+    /**
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImageProviderPreferredTileHeight();
+
+    /**
+     * HDR statistics
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGComputeHDRStats();
+
+    /**
+     * For KTX files:
+     * The key 'kCGImagePropertyEncoder' can be used with CGImageDestinationAddImage...() to specify the encoder to be
+     * used.
+     * 
+     * API-Since: 10.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImagePropertyEncoder();
+
+    /**
+     * API-Since: 10.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImagePropertyASTCEncoder();
+
+    /**
+     * API-Since: 10.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImagePropertyPVREncoder();
+
+    /**
+     * API-Since: 12.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImagePropertyBCEncoder();
+
+    /**
+     * For BC / KTX(BC) / DDS files:
+     * Specifies the specific pixel format to be encoded.
+     * The value of this key must be an integer CFNumberRef, containing a OpenGL format enum.
+     * 
+     * API-Since: 12.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImagePropertyBCFormat();
+
+    /**
+     * For ASTC / KTX(ASTC) files:
+     * Specifies ASTC block size.
+     * The value of this key must be either kCGImagePropertyASTCBlockSize4x4 or kCGImagePropertyASTCBlockSize8x8.
+     * 
+     * API-Since: 10.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImagePropertyASTCBlockSize();
+
+    /**
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImagePropertyASTCBlockSize4x4();
+
+    /**
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImagePropertyASTCBlockSize8x8();
+
+    /**
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImageDestinationEncodeIsBaseImage();
+
+    /**
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImageDestinationEncodeBaseColorSpace();
+
+    /**
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImageDestinationEncodeBasePixelFormatRequest();
+
+    /**
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImageDestinationEncodeGenerateGainMapWithBaseImage();
+
+    /**
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImageDestinationEncodeGainMapPixelFormatRequest();
+
+    /**
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImageDestinationEncodeGainMapSubsampleFactor();
+
+    /**
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImageDestinationEncodeAlternateColorSpace();
 }

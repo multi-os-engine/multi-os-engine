@@ -141,7 +141,8 @@ public class MTLLogStateDescriptor extends NSObject implements NSCopying {
 
     /**
      * level indicates the minimum level of the logs that will be printed.
-     * [@description] All the logs with level less than given level will be skipped on the GPU Side.
+     * 
+     * All the logs with level less than given level will be skipped on the GPU Side.
      * 
      * API-Since: 18.0
      */
@@ -175,7 +176,8 @@ public class MTLLogStateDescriptor extends NSObject implements NSCopying {
 
     /**
      * level indicates the minimum level of the logs that will be printed.
-     * [@description] All the logs with level less than given level will be skipped on the GPU Side.
+     * 
+     * All the logs with level less than given level will be skipped on the GPU Side.
      * 
      * API-Since: 18.0
      */

@@ -310,5 +310,5 @@ public class PKPass extends PKObject {
     @Generated
     @Selector("relevantDates")
     @NotNull
-    public native NSArray<?> relevantDates();
+    public native NSArray<? extends PKPassRelevantDate> relevantDates();
 }

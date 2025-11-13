@@ -25,8 +25,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVContentKey
- * 
  * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
  * 
  * API-Since: 14.5
@@ -85,8 +83,6 @@ public class AVContentKey extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property] contentKeySpecifier
-     * 
      * Specifies the content key.
      * 
      * API-Since: 14.5
@@ -167,8 +163,6 @@ public class AVContentKey extends NSObject {
     public static native boolean useStoredAccessor();
 
     /**
-     * [@property] externalContentProtectionStatus
-     * 
      * The external protection status for the AVContentKey based on all attached displays.
      * 
      * This property is not key-value observable, instead the
@@ -182,8 +176,6 @@ public class AVContentKey extends NSObject {
     public native long externalContentProtectionStatus();
 
     /**
-     * revoke
-     * 
      * Revokes the decryption context of the content key, and removes it from its associated AVContentKeySession.
      * 
      * Once revoked, the AVContentKey is no longer eligible to be used with any media.

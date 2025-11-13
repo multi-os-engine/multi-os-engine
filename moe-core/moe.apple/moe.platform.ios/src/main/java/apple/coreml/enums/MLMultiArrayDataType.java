@@ -38,4 +38,8 @@ public final class MLMultiArrayDataType {
      * API-Since: 16.0
      */
     @Generated @NInt public static final long Float16 = 0x0000000000010010L;
+    /**
+     * API-Since: 26.0
+     */
+    @Generated @NInt public static final long Int8 = 0x0000000000020008L;
 }

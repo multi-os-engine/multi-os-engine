@@ -13,6 +13,10 @@ import org.moe.natj.general.ann.NInt;
  * [@constant] NFCReaderErrorInvalidParameterLength Length of input parameter is invalid, i.e. size of data container.
  * [@constant] NFCReaderErrorParameterOutOfBound Parameter value is outside of the acceptable boundary / range.
  * [@constant] NFCReaderErrorRadioDisabled NFC Radio is disabled.
+ * [@constant] NFCReaderErrorIneligible The current system setting or hardware configuation isn’t eligible to use the
+ * requested reader service.
+ * [@constant] NFCReaderErrorAccessNotAccepted The person using the app hasn’t yet accepted or declined your app’s
+ * request to use the selected service.
  * [@constant] NFCReaderTransceiveErrorTagConnectionLost Connection to the tag is lost.
  * [@constant] NFCReaderTransceiveErrorRetryExceeded Maximum data transmission retry has reached.
  * [@constant] NFCReaderTransceiveErrorTagResponseError Tag response is invalid or tag does not provide a response.
@@ -126,4 +130,12 @@ public final class NFCReaderError {
      * API-Since: 14.0
      */
     @Generated @NInt public static final long ReaderTransceiveErrorPacketTooLong = 0x0000000000000069L;
+    /**
+     * API-Since: 26.0
+     */
+    @Generated @NInt public static final long ReaderErrorIneligible = 0x0000000000000007L;
+    /**
+     * API-Since: 26.0
+     */
+    @Generated @NInt public static final long ReaderErrorAccessNotAccepted = 0x0000000000000008L;
 }

@@ -37,6 +37,10 @@ import org.jetbrains.annotations.Nullable;
  * ports to NO. When the last active connection or port is disabled, the source camera stops streaming to save power and
  * bandwidth. Other inputs streaming data through the session are unaffected.
  * 
+ * Prior to iOS 26, AVCaptureMultiCamSession requires all input devices to have an activeFormat where multiCamSupported
+ * returns YES. In applications linked on or after iOS 26, this requirement is not enforced when only a single input
+ * device is used.
+ * 
  * API-Since: 13.0
  */
 @Generated

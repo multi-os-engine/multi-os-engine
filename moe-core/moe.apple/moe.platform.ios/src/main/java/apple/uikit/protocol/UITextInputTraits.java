@@ -462,4 +462,30 @@ public interface UITextInputTraits {
     default void setConversationContext(@Nullable UIConversationContext value) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    /**
+     * Set this property to NO to disallow the display of the number pad popover for the text input view. Default value
+     * is YES.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("allowsNumberPadPopover")
+    default boolean allowsNumberPadPopover() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Set this property to NO to disallow the display of the number pad popover for the text input view. Default value
+     * is YES.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("setAllowsNumberPadPopover:")
+    default void setAllowsNumberPadPopover(boolean value) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

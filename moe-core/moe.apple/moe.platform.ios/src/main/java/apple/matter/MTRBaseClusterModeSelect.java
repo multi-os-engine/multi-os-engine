@@ -81,8 +81,8 @@ public class MTRBaseClusterModeSelect extends MTRGenericBaseCluster {
     /**
      * Command ChangeToMode
      * 
-     * On receipt of this command, if the NewMode field matches the Mode field in an entry of the SupportedModes list,
-     * the server SHALL set the CurrentMode attribute to the NewMode value, otherwise, the server SHALL respond with an
+     * On receipt of this command, if the NewMode field indicates a valid mode transition within the supported list, the
+     * server SHALL set the CurrentMode attribute to the NewMode value, otherwise, the server SHALL respond with an
      * INVALID_COMMAND status response.
      * 
      * API-Since: 16.4

@@ -155,6 +155,8 @@ public final class ShazamKit {
     public static native String SHMediaItemISRC();
 
     /**
+     * The error domain for specific errors for ShazamKit.
+     * 
      * API-Since: 15.0
      */
     @Generated
@@ -185,7 +187,7 @@ public final class ShazamKit {
     public static native String SHMediaItemFrequencySkew();
 
     /**
-     * The time ranges in the represented media that are described by this @c SHMediaItem
+     * The key to access the time ranges property of a media item.
      * 
      * API-Since: 16.0
      */
@@ -196,7 +198,7 @@ public final class ShazamKit {
     public static native String SHMediaItemTimeRanges();
 
     /**
-     * The frequency skew ranges that are described by this @c SHMediaItem
+     * The key to access the frequency skew ranges property of a media item.
      * 
      * API-Since: 16.0
      */

@@ -42,6 +42,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -159,17 +162,25 @@ public class MKDirections extends NSObject {
     /**
      * Any calls to -calculateDirectionsWithCompletionHandler: or calculateETAWithCompletionHandler
      * while -[MKDirections isCalculating] will fail. completionHandler will be called on the main queue
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("calculateDirectionsWithCompletionHandler:")
     public native void calculateDirectionsWithCompletionHandler(
             @NotNull @ObjCBlock(name = "call_calculateDirectionsWithCompletionHandler") Block_calculateDirectionsWithCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("calculateETAWithCompletionHandler:")
     public native void calculateETAWithCompletionHandler(
             @NotNull @ObjCBlock(name = "call_calculateETAWithCompletionHandler") Block_calculateETAWithCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("cancel")
     public native void cancel();
@@ -181,11 +192,16 @@ public class MKDirections extends NSObject {
     /**
      * The request will be copied during initialization, so any changes made to the request
      * after this method returns do not affect the request used in -calculateDirectionsWithCompletionHandler:
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("initWithRequest:")
     public native MKDirections initWithRequest(@NotNull MKDirectionsRequest request);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("isCalculating")
     public native boolean isCalculating();

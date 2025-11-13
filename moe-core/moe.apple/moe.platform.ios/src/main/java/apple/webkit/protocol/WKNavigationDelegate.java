@@ -352,7 +352,7 @@ public interface WKNavigationDelegate {
      * continue to happen for this
      * navigation starting with `decidePolicyForNavigationAction`
      * 
-     * API-Since: 18.4
+     * API-Since: 26.0
      * 
      * @param webView             The web view invoking the delegate method.
      * @param backForwardListItem The back/forward list item that will be navigated to

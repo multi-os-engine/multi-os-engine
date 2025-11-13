@@ -307,4 +307,24 @@ public class NSTextContentStorage extends NSTextContentManager implements NSText
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * When YES, NSTextContentStorage assumes the paragraph with NSTextList includes the text list marker string.
+     * Utilizes NSTextList.includesTextListMarkers as the default value.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("includesTextListMarkers")
+    public native boolean includesTextListMarkers();
+
+    /**
+     * When YES, NSTextContentStorage assumes the paragraph with NSTextList includes the text list marker string.
+     * Utilizes NSTextList.includesTextListMarkers as the default value.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setIncludesTextListMarkers:")
+    public native void setIncludesTextListMarkers(boolean value);
 }

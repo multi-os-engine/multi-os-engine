@@ -38,6 +38,7 @@ import apple.metal.struct.MTLResourceID;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.moe.natj.general.ann.NInt;
+import apple.metal.MTLComputePipelineReflection;
 
 /**
  * [@protocol] MTLComputePipelineState
@@ -53,7 +54,7 @@ import org.moe.natj.general.ann.NInt;
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLComputePipelineState")
-public interface MTLComputePipelineState {
+public interface MTLComputePipelineState extends MTLAllocation {
     /**
      * [@property] device
      * 
@@ -212,4 +213,82 @@ public interface MTLComputePipelineState {
     @Selector("shaderValidation")
     @NInt
     long shaderValidation();
+
+    /**
+     * Gets the function handle for a function this pipeline links at the binary level.
+     * 
+     * - Parameters:
+     * - function: A binary function object representing the function binary to find.
+     * 
+     * - Returns: A function handle corresponding to the function if the binary function mathces a function in this
+     * pipeline state, otherwise `nil`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("functionHandleWithBinaryFunction:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    MTLFunctionHandle functionHandleWithBinaryFunction(
+            @Mapped(ObjCObjectMapper.class) @NotNull MTL4BinaryFunction function);
+
+    /**
+     * Gets the function handle for a function this pipeline links at the Metal IR level by name.
+     * 
+     * - Parameters:
+     * - name: A string representing the name of the function.
+     * 
+     * - Returns: A function handle corresponding to the function if the name matches a function in this pipeline state,
+     * otherwise `nil`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("functionHandleWithName:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    MTLFunctionHandle functionHandleWithName(@NotNull String name);
+
+    /**
+     * Allocates a new compute pipeline state by adding binary functions to this pipeline state.
+     * 
+     * - Parameters:
+     * - additionalBinaryFunctions: A non-`nil` array containing binary functions to add to this pipeline.
+     * - error: An optional parameter into which Metal stores information in case of an error.
+     * 
+     * - Returns: A new compute pipeline state upon success, otherwise `nil`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("newComputePipelineStateWithBinaryFunctions:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    MTLComputePipelineState newComputePipelineStateWithBinaryFunctionsError(
+            @NotNull NSArray<?> additionalBinaryFunctions,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    /**
+     * Provides access to this compute pipeline's reflection.
+     * 
+     * Reflection is `nil` if you create the pipeline state object directly from the ``MTLDevice`` protocol.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("reflection")
+    @Nullable
+    MTLComputePipelineReflection reflection();
+
+    /**
+     * [@property] requiredThreadsPerThreadgroup
+     * 
+     * The required size of every compute threadgroup.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("requiredThreadsPerThreadgroup")
+    @ByValue
+    MTLSize requiredThreadsPerThreadgroup();
 }

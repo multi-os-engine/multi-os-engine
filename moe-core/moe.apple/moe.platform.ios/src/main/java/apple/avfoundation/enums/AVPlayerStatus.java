@@ -20,23 +20,23 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum] AVPlayerStatus
- * 
  * These constants are returned by the AVPlayer status property to indicate whether it can successfully play items.
- * 
- * [@constant] AVPlayerStatusUnknown
- * Indicates that the status of the player is not yet known because it has not tried to load new media resources for
- * playback.
- * [@constant] AVPlayerStatusReadyToPlay
- * Indicates that the player is ready to play AVPlayerItem instances.
- * [@constant] AVPlayerStatusFailed
- * Indicates that the player can no longer play AVPlayerItem instances because of an error. The error is described by
- * the value of the player's error property.
  */
 @Generated
 public final class AVPlayerStatus {
+    /**
+     * Indicates that the status of the player is not yet known because it has not tried to load new media resources for
+     * playback.
+     */
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
+    /**
+     * Indicates that the player is ready to play AVPlayerItem instances.
+     */
     @Generated @NInt public static final long ReadyToPlay = 0x0000000000000001L;
+    /**
+     * Indicates that the player can no longer play AVPlayerItem instances because of an error. The error is described
+     * by the value of the player's error property.
+     */
     @Generated @NInt public static final long Failed = 0x0000000000000002L;
 
     @Generated

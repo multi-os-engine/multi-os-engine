@@ -137,7 +137,9 @@ public class UINavigationBarAppearance extends UIBarAppearance {
      * The appearance for done-style bar button items
      * 
      * API-Since: 13.0
+     * Deprecated-Since: 26.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("doneButtonAppearance")
@@ -242,7 +244,9 @@ public class UINavigationBarAppearance extends UIBarAppearance {
      * The appearance for done-style bar button items
      * 
      * API-Since: 13.0
+     * Deprecated-Since: 26.0
      */
+    @Deprecated
     @Generated
     @Selector("setDoneButtonAppearance:")
     public native void setDoneButtonAppearance(@NotNull UIBarButtonItemAppearance value);
@@ -321,4 +325,69 @@ public class UINavigationBarAppearance extends UIBarAppearance {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The default text attributes to apply to the subtitle when it’s rendered under
+     * the large title.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("largeSubtitleTextAttributes")
+    @NotNull
+    public native NSDictionary<String, ?> largeSubtitleTextAttributes();
+
+    /**
+     * The appearance attributes for Prominent buttons.
+     * 
+     * Use this property to configure the appearance of bar button items that use `UIBarButtonItemStyleProminent`.
+     * If the navigation bar doesn't have any buttons using this style, this property has no effect.
+     * 
+     * API-Since: 13.0
+     */
+    @Generated
+    @Selector("prominentButtonAppearance")
+    @NotNull
+    public native UIBarButtonItemAppearance prominentButtonAppearance();
+
+    /**
+     * The default text attributes to apply to the subtitle when it’s rendered under
+     * the large title.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setLargeSubtitleTextAttributes:")
+    public native void setLargeSubtitleTextAttributes(@NotNull NSDictionary<String, ?> value);
+
+    /**
+     * The appearance attributes for Prominent buttons.
+     * 
+     * Use this property to configure the appearance of bar button items that use `UIBarButtonItemStyleProminent`.
+     * If the navigation bar doesn't have any buttons using this style, this property has no effect.
+     * 
+     * API-Since: 13.0
+     */
+    @Generated
+    @Selector("setProminentButtonAppearance:")
+    public native void setProminentButtonAppearance(@NotNull UIBarButtonItemAppearance value);
+
+    /**
+     * The default text attributes to apply to the subtitle rendered in the navigation bar.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setSubtitleTextAttributes:")
+    public native void setSubtitleTextAttributes(@NotNull NSDictionary<String, ?> value);
+
+    /**
+     * The default text attributes to apply to the subtitle rendered in the navigation bar.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("subtitleTextAttributes")
+    @NotNull
+    public native NSDictionary<String, ?> subtitleTextAttributes();
 }

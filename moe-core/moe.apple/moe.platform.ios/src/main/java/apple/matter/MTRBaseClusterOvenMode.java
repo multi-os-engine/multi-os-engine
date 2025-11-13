@@ -79,10 +79,9 @@ public class MTRBaseClusterOvenMode extends MTRGenericBaseCluster {
             @Mapped(ObjCObjectMapper.class) @Nullable Object anArgument);
 
     /**
-     * * Command ChangeToMode
-     * *
-     * * This command is used to change device modes.
-     * On receipt of this command the device SHALL respond with a ChangeToModeResponse command.
+     * Command ChangeToMode
+     * 
+     * This command is used to change device modes.
      * 
      * API-Since: 18.4
      */

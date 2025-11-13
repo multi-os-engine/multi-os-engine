@@ -35,13 +35,35 @@ import apple.corefoundation.struct.CGRect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * Your app does not define classes that adopt this protocol; Core Image provides an object of this type
+ * when rendering a custom image processor you create with a ``CIImageProcessorKernel`` subclass.
+ * 
+ * When a `CIImage` containing your `CIImageProcessorKernel` class is rendered, your
+ * ``CIImageProcessorKernel/processWithInputs:arguments:output:error:`` class method will be called as
+ * needed for that render. The method may be called more than once if Core Image needs to tile to
+ * limit memory usage.
+ * 
+ * When your image processor class method is called, use the provided `CIImageProcessorOutput` object to return
+ * processed pixel data to Core Image. For example, if you process the image using a Metal shader, bind the
+ * `metalTexture`
+ * property as an attachment in a render pass or as an output texture in a compute pass. Or, if you process the image
+ * using a CPU-based routine, write processed pixel data to memory using the `baseAddress` pointer.
+ * 
+ * You should use the output's `region` property to determine which portion of the output image needs to be processed.
+ * Your code should fill the entirety of the `region`. This includes setting to zero any pixels in the `region` that
+ * are outside the extent passed extent `applyWithExtent:inputs:arguments:error:`.
+ * 
+ * > Important: You must provide rendered output using only one of the following properties of the output:
+ * `baseAddress`, `surface`, `pixelBuffer`, `metalTexture`.
+ */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CIImageProcessorOutput")
 public interface CIImageProcessorOutput {
     /**
-     * The base address of the output buffer that the processor block can write output pixels to.
+     * The base address of CPU memory that your Core Image Processor Kernel can write pixels to.
      */
     @NotNull
     @Generated
@@ -49,7 +71,7 @@ public interface CIImageProcessorOutput {
     VoidPtr baseAddress();
 
     /**
-     * The bytes per row of the output buffer that the processor block can write to.
+     * The bytes per row of the CPU memory that your Core Image Processor Kernel can write pixels to.
      */
     @Generated
     @Selector("bytesPerRow")
@@ -57,14 +79,14 @@ public interface CIImageProcessorOutput {
     long bytesPerRow();
 
     /**
-     * The pixel format of the output buffer that the processor block can write to.
+     * The pixel format of the CPU memory that your Core Image Processor Kernel can write pixels to.
      */
     @Generated
     @Selector("format")
     int format();
 
     /**
-     * Returns a MTLCommandBuffer that can be used for encoding commands (if rendering using Metal).
+     * Returns a Metal command buffer object that can be used for encoding commands.
      */
     @Nullable
     @Generated
@@ -73,7 +95,7 @@ public interface CIImageProcessorOutput {
     MTLCommandBuffer metalCommandBuffer();
 
     /**
-     * A MTLTexture object that can be bound as output (if processing using Metal).
+     * A Metal texture object that can be bound for output using Metal.
      */
     @Nullable
     @Generated
@@ -82,7 +104,7 @@ public interface CIImageProcessorOutput {
     MTLTexture metalTexture();
 
     /**
-     * A output CVPixelBuffer that the processor block can write to.
+     * An output pixelBuffer object that your Core Image Processor Kernel can write to.
      */
     @Nullable
     @Generated
@@ -90,7 +112,9 @@ public interface CIImageProcessorOutput {
     CVBufferRef pixelBuffer();
 
     /**
-     * The rectangular region of the output image that the processor block must provide.
+     * The rectangular region of the output image that your Core Image Processor Kernel must provide.
+     * > Note: This may be different (larger or smaller) than the `extent` that was passed to
+     * ``/CIImageProcessorKernel/applyWithExtent:inputs:arguments:error:``.
      */
     @Generated
     @Selector("region")
@@ -98,7 +122,7 @@ public interface CIImageProcessorOutput {
     CGRect region();
 
     /**
-     * An output IOSurface that the processor block can write to.
+     * An output surface object that your Core Image Processor Kernel can write to.
      */
     @NotNull
     @Generated
@@ -107,6 +131,7 @@ public interface CIImageProcessorOutput {
 
     /**
      * A 64-bit digest that uniquely describes the contents of the output of a processor.
+     * 
      * This digest will change if the graph up to and including the output of the processor changes in any way.
      * 
      * API-Since: 16.0

@@ -462,4 +462,36 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Flush all pending updates (including traits, properties, and layout) whenever the animation context changes.
+     * This includes flushing updates:
+     * - Before entering an animation scope, for invalidations that happened previously without animation.
+     * - Before entering a nested animation scope, for invalidations that happened in the outer animation scope.
+     * - Before exiting any animation scope, for invalidations that happened in that animation scope.
+     * - Before disabling animations, for invalidations that happened in the animation scope with animations enabled.
+     * - Before re-enabling animations, for invalidations that happened in the scope with animations disabled.
+     * This behavior implicitly applies to any nested animation scopes, even if they don't explicitly specify this.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("flushUpdates")
+    public native boolean flushUpdates();
+
+    /**
+     * Flush all pending updates (including traits, properties, and layout) whenever the animation context changes.
+     * This includes flushing updates:
+     * - Before entering an animation scope, for invalidations that happened previously without animation.
+     * - Before entering a nested animation scope, for invalidations that happened in the outer animation scope.
+     * - Before exiting any animation scope, for invalidations that happened in that animation scope.
+     * - Before disabling animations, for invalidations that happened in the animation scope with animations enabled.
+     * - Before re-enabling animations, for invalidations that happened in the scope with animations disabled.
+     * This behavior implicitly applies to any nested animation scopes, even if they don't explicitly specify this.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setFlushUpdates:")
+    public native void setFlushUpdates(boolean value);
 }

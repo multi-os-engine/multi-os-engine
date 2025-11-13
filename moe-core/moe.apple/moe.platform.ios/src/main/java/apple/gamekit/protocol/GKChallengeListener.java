@@ -29,7 +29,9 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 7.0
+ * Deprecated-Since: 26.0
  */
+@Deprecated
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)

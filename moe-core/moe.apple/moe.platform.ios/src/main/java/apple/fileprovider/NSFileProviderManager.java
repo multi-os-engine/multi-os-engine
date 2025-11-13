@@ -537,7 +537,7 @@ public class NSFileProviderManager extends NSObject {
      * The location may differ from the logical parentURL/filename.
      * If an item on disk cannot be assigned the requested name (e.g. because the local
      * file system has different case collision rules from the provider), one of the items can be assigned
-     * a different local name. In that case, the "com.apple.fileprovider.before-bounce#P" extended
+     * a different local name. In that case, the "com.apple.fileprovider.before-bounce#PX" extended
      * attribute will contain the filename before collision resolution.
      * This attribute is only set if the item has been assigned a different local name following
      * a collision. Such local names are not synced up to the provider; the purpose of the attribute is

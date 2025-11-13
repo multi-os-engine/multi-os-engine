@@ -30,10 +30,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.avfoundation.protocol.AVContentKeyRecipient;
 
 /**
- * AVContentKeyRequest
- * 
  * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
  * 
  * API-Since: 10.3
@@ -71,16 +70,14 @@ public class AVContentKeyRequest extends NSObject {
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
-     * [@property] canProvidePersistableContentKey
-     * 
      * When the value of this property is YES, you can use the method
      * -persistableContentKeyFromKeyVendorResponse:options:error: to create a persistable content key from the content
      * key response.
-     * [@dicsussion] The value of this property will be YES only when the receiver is provided to your
-     * AVContentKeySession delegate via the method -contentKeySession:didProvidePersistableContentKeyRequest:. If you
-     * have an AVContentKeyRequest for which the value of canProvidePersistableContentKey is NO, but you wish to obtain
-     * a persistable content key, send the AVContentKeyRequest the message
-     * -respondByRequestingPersistableContentKeyRequest.
+     * 
+     * The value of this property will be YES only when the receiver is provided to your AVContentKeySession delegate
+     * via the method -contentKeySession:didProvidePersistableContentKeyRequest:. If you have an AVContentKeyRequest for
+     * which the value of canProvidePersistableContentKey is NO, but you wish to obtain a persistable content key, send
+     * the AVContentKeyRequest the message -respondByRequestingPersistableContentKeyRequest.
      * 
      * API-Since: 10.3
      */
@@ -118,8 +115,6 @@ public class AVContentKeyRequest extends NSObject {
     public static native String description_static();
 
     /**
-     * [@property] error
-     * 
      * If the receiver's status is AVContentKeyRequestStatusFailed, this describes the error that caused the failure.
      * 
      * The value of this property is an NSError that describes what caused the content key request to fail. If the
@@ -138,8 +133,6 @@ public class AVContentKeyRequest extends NSObject {
     public static native long hash_static();
 
     /**
-     * [@property] identifier
-     * 
      * Container- and protocol-specific identifier for the content key.
      * 
      * In order to use a key with an HTTP Live Streaming AVURLAsset, the identifier must be an NSURL that matches a key
@@ -192,26 +185,20 @@ public class AVContentKeyRequest extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
-     * makeStreamingContentKeyRequestDataForApp:contentIdentifier:options:completionHandler:
-     * 
      * Obtains a content key request data for a specific combination of application and content.
      * 
      * If option AVContentKeyRequestProtocolVersionsKey is not specified the default protocol version of 1 is assumed.
      * 
-     * API-Since: 10.3
+     * - Parameter appIdentifier: An opaque identifier for the application. The value of this identifier depends on the
+     * particular system used to provide the content key.
+     * - Parameter contentIdentifier: An optional opaque identifier for the content. The value of this identifier
+     * depends on the particular system used to provide the content key.
+     * - Parameter options: Additional information necessary to obtain the key, or nil if none. See
+     * AVContentKeyRequest*Key below.
+     * - Parameter handler: Once the streaming content key request is prepared, this block will be called with the
+     * request data or an error describing the failure.
      * 
-     * @param appIdentifier
-     *                          An opaque identifier for the application. The value of this identifier depends on the
-     *                          particular system used to provide the content key.
-     * @param contentIdentifier
-     *                          An optional opaque identifier for the content. The value of this identifier depends on
-     *                          the particular system used to provide the content key.
-     * @param options
-     *                          Additional information necessary to obtain the key, or nil if none. See
-     *                          AVContentKeyRequest*Key below.
-     * @param handler
-     *                          Once the streaming content key request is prepared, this block will be called with the
-     *                          request data or an error describing the failure.
+     * API-Since: 10.3
      */
     @Generated
     @Selector("makeStreamingContentKeyRequestDataForApp:contentIdentifier:options:completionHandler:")
@@ -234,8 +221,6 @@ public class AVContentKeyRequest extends NSObject {
     public static native AVContentKeyRequest new_objc();
 
     /**
-     * processContentKeyResponse:
-     * 
      * Informs the receiver to process the specified content key response.
      * 
      * After you receive an AVContentKeyRequest via -contentKeySession:didProvideContentKeyRequest: and after you invoke
@@ -245,32 +230,26 @@ public class AVContentKeyRequest extends NSObject {
      * protected content available for processing. If obtaining the content key response fails, use
      * -processContentKeyResponseError:.
      * 
-     * API-Since: 10.3
+     * - Parameter keyResponse: An instance of AVContentKeyResponse carrying a response to a content key request.
      * 
-     * @param keyResponse
-     *                    An instance of AVContentKeyResponse carrying a response to a content key request.
+     * API-Since: 10.3
      */
     @Generated
     @Selector("processContentKeyResponse:")
     public native void processContentKeyResponse(@NotNull AVContentKeyResponse keyResponse);
 
     /**
-     * processContentKeyResponseError:
-     * 
      * Informs the receiver that obtaining a content key response has failed, resulting in failure handling.
      * 
-     * @param error
-     *              An instance of NSError that describes the specific failure that occurred.
+     * - Parameter error: An instance of NSError that describes the specific failure that occurred.
      * 
-     *              API-Since: 10.3
+     * API-Since: 10.3
      */
     @Generated
     @Selector("processContentKeyResponseError:")
     public native void processContentKeyResponseError(@NotNull NSError error);
 
     /**
-     * [@property] renewsExpiringResponseData
-     * 
      * Indicates whether the receiver represents a request to renew previously provided response data that is expiring
      * or has expired.
      * 
@@ -289,8 +268,6 @@ public class AVContentKeyRequest extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * respondByRequestingPersistableContentKeyRequest
-     * 
      * Informs the receiver to process a persistable content key request.
      * 
      * When you receive an AVContentKeyRequest via -contentKeySession:didProvideContentKeyRequest: and you want the
@@ -315,8 +292,6 @@ public class AVContentKeyRequest extends NSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property] status
-     * 
      * This describes the state of the AVContentKeyRequest, value is one of AVContentKeyRequestStatus.
      * 
      * API-Since: 10.3
@@ -336,8 +311,6 @@ public class AVContentKeyRequest extends NSObject {
     public static native long version_static();
 
     /**
-     * [@property] options
-     * 
      * Additional information specified while initiaing key loading using
      * -processContentKeyRequestWithIdentifier:initializationData:options:.
      * 
@@ -349,8 +322,6 @@ public class AVContentKeyRequest extends NSObject {
     public native NSDictionary<String, ?> options();
 
     /**
-     * respondByRequestingPersistableContentKeyRequestAndReturnError:
-     * 
      * Informs the receiver to process a persistable content key request.
      * 
      * When you receive an AVContentKeyRequest via -contentKeySession:didProvideContentKeyRequest: and you want the
@@ -362,12 +333,12 @@ public class AVContentKeyRequest extends NSObject {
      * you are attempting to create and use a persistable key but your AVContentKeySession delegate does not respond to
      * contentKeySession:didProvidePersistableContentKeyRequest:.
      * 
-     * API-Since: 11.2
+     * - Parameter outError: The error returned if a persistable content key request cannot be requested.
      * 
-     * @param outError
-     *                 The error returned if a persistable content key request cannot be requested.
-     * @return YES if sucessful. If NO, this request should be responded to via processContentKeyResponse: or
-     *         processContentKeyResponseError:.
+     * - Returns: YES if sucessful. If NO, this request should be responded to via processContentKeyResponse: or
+     * processContentKeyResponseError:.
+     * 
+     * API-Since: 11.2
      */
     @Generated
     @Selector("respondByRequestingPersistableContentKeyRequestAndReturnError:")
@@ -375,8 +346,6 @@ public class AVContentKeyRequest extends NSObject {
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * [@property] contentKey
-     * 
      * Represents an AVContentKey that results from an invocation of -processContentKeyResponse:.
      * 
      * Before the receiver achieves the status AVContentKeyRequestReceivedResponse, the value of this property will be
@@ -393,8 +362,6 @@ public class AVContentKeyRequest extends NSObject {
     public native AVContentKey contentKey();
 
     /**
-     * [@property] contentKeySpecifier
-     * 
      * Specifies the requested content key.
      * 
      * API-Since: 14.5
@@ -408,4 +375,28 @@ public class AVContentKeyRequest extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The AVContentKeyRecipient which initiated this request, if any.
+     * 
+     * The originatingRecipient is an AVFoundation object responsible for initiating an AVContentKeyRequest.
+     * For example, an AVURLAsset used for playback can trigger an AVContentKeyRequest.
+     * 
+     * If an application triggers key loading directly, for example with
+     * -[AVContentKeySession processContentKeyRequestWithIdentifier:initializationData:options:],
+     * the value of originatingRecipient will be nil.
+     * 
+     * The originatingRecipient of key requests from HLS interstitials will always be the corresponding
+     * interstitial AVURLAsset. To receive key requests for DRM-protected interstitial content, applications
+     * must ensure their AVContentKeySession is attached to these interstitial AVURLAssets.
+     * 
+     * These interstitial AVURLAssets may be retrieved from the primary AVURLAsset via AVPlayerInterstitialEventMonitor.
+     * 
+     * API-Since: 18.4
+     */
+    @Generated
+    @Selector("originatingRecipient")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    public native AVContentKeyRecipient originatingRecipient();
 }

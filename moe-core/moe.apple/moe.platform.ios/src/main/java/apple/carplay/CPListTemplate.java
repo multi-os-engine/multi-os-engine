@@ -30,6 +30,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.corefoundation.struct.CGSize;
+import org.moe.natj.general.ann.ByValue;
 
 /**
  * API-Since: 12.0
@@ -491,4 +493,61 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
     @Generated
     @Selector("showsSpinnerWhileEmpty")
     public native boolean showsSpinnerWhileEmpty();
+
+    /**
+     * Assigning to this property will dynamically update the List Template and show the new header.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("headerGridButtons")
+    @Nullable
+    public native NSArray<? extends CPGridButton> headerGridButtons();
+
+    /**
+     * Initialize a list template with one or more grid buttons to displayed in a list header.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("initWithTitle:sections:assistantCellConfiguration:headerGridButtons:")
+    public native CPListTemplate initWithTitleSectionsAssistantCellConfigurationHeaderGridButtons(
+            @Nullable String title, @NotNull NSArray<? extends CPListSection> sections,
+            @Nullable CPAssistantCellConfiguration assistantCellConfiguration,
+            @Nullable NSArray<? extends CPGridButton> headerGridButtons);
+
+    /**
+     * The expected image size for your @c CPGridButton.
+     * 
+     * To properly size your list images, your app should size them to the display scale of the car screen.
+     * See -[CPInterfaceController carTraitCollection].
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("maximumGridButtonImageSize")
+    @ByValue
+    public static native CGSize maximumGridButtonImageSize();
+
+    /**
+     * The maximum number of grid buttons that may appear in a @c CPListTemplate.
+     * 
+     * [@note] Your list template will display the first @c maximumHeaderGridButtonCount buttons.
+     * Any sections beyond that limit will be trimmed.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("maximumHeaderGridButtonCount")
+    @NUInt
+    public static native long maximumHeaderGridButtonCount();
+
+    /**
+     * Assigning to this property will dynamically update the List Template and show the new header.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setHeaderGridButtons:")
+    public native void setHeaderGridButtons(@Nullable NSArray<? extends CPGridButton> value);
 }

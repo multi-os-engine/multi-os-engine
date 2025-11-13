@@ -24,6 +24,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSError;
 
 @Generated
 @Library("CoreTelephony")
@@ -176,4 +177,35 @@ public class CTCellularPlanProvisioning extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("addPlanWithRequest:properties:completionHandler:")
+    public native void addPlanWithRequestPropertiesCompletionHandler(@NotNull CTCellularPlanProvisioningRequest request,
+            @Nullable CTCellularPlanProperties properties,
+            @ObjCBlock(name = "call_addPlanWithRequestPropertiesCompletionHandler") @NotNull Block_addPlanWithRequestPropertiesCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_addPlanWithRequestPropertiesCompletionHandler {
+        @Generated
+        void call_addPlanWithRequestPropertiesCompletionHandler(@NUInt long result);
+    }
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("updateCellularPlanProperties:completionHandler:")
+    public native void updateCellularPlanPropertiesCompletionHandler(@NotNull CTCellularPlanProperties properties,
+            @ObjCBlock(name = "call_updateCellularPlanPropertiesCompletionHandler") @NotNull Block_updateCellularPlanPropertiesCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_updateCellularPlanPropertiesCompletionHandler {
+        @Generated
+        void call_updateCellularPlanPropertiesCompletionHandler(@Nullable NSError error);
+    }
 }

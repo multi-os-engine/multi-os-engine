@@ -231,6 +231,10 @@ public class GKPlayer extends GKBasePlayer {
     public native boolean isFriend();
 
     /**
+     * Asynchronously load the player's photo. Error will be nil on success.
+     * Possible reasons for error:
+     * 1. Communications failure
+     * 
      * API-Since: 5.0
      */
     @Generated

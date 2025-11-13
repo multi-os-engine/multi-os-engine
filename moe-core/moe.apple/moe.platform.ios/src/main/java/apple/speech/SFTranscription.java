@@ -46,7 +46,28 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * A hypothesized text form of a speech recording
+ * A textual representation of the specified speech in its entirety, as recognized by the speech recognizer.
+ * 
+ * Use `SFTranscription` to obtain all the recognized utterances from your audio content. An _utterance_ is a vocalized
+ * word or group of words that represent a single meaning to the speech recognizer (``SFSpeechRecognizer``).
+ * 
+ * Use the ``formattedString`` property to retrieve the entire transcription of utterances, or use the ``segments``
+ * property to retrieve an individual utterance (``SFTranscriptionSegment``).
+ * 
+ * You don't create an `SFTranscription` directly. Instead, you retrieve it from an ``SFSpeechRecognitionResult``
+ * instance. The speech recognizer sends a speech recognition result to your app in one of two ways, depending on how
+ * your app started a speech recognition task.
+ * 
+ * You can start a speech recognition task by using the speech recognizer's
+ * ``SFSpeechRecognizer/recognitionTask(with:resultHandler:)`` method. When the task is complete, the speech recognizer
+ * sends an ``SFSpeechRecognitionResult`` instance to your `resultHandler` closure. Alternatively, you can use the
+ * speech recognizer's ``SFSpeechRecognizer/recognitionTask(with:delegate:)`` method to start a speech recognition task.
+ * When the task is complete, the speech recognizer uses your ``SFSpeechRecognitionTaskDelegate`` to send an
+ * ``SFSpeechRecognitionResult`` by using the delegate's
+ * ``SFSpeechRecognitionTaskDelegate/speechRecognitionTask(_:didFinishRecognition:)`` method.
+ * 
+ * An `SFTranscription` represents only a potential version of the speech. It might not be an accurate representation of
+ * the utterances.
  * 
  * API-Since: 10.0
  */
@@ -180,7 +201,7 @@ public class SFTranscription extends NSObject implements NSCopying, NSSecureCodi
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
-     * Contains the entire recognition, formatted into a single user-displayable string
+     * The entire transcription of utterances, formatted into a single, user-displayable string.
      * 
      * API-Since: 10.0
      */
@@ -198,6 +219,12 @@ public class SFTranscription extends NSObject implements NSCopying, NSSecureCodi
     public native SFTranscription initWithCoder(@NotNull NSCoder coder);
 
     /**
+     * An array of transcription segments that represent the parts of the transcription, as identified by the speech
+     * recognizer.
+     * 
+     * The order of the segments in the array matches the order in which the corresponding utterances occur in the
+     * spoken content.
+     * 
      * API-Since: 10.0
      */
     @NotNull
@@ -212,7 +239,7 @@ public class SFTranscription extends NSObject implements NSCopying, NSSecureCodi
     }
 
     /**
-     * Measures average pause between words (in seconds)
+     * The average pause duration between words, measured in seconds.
      * 
      * API-Since: 13.0
      * Deprecated-Since: 14.5
@@ -224,7 +251,7 @@ public class SFTranscription extends NSObject implements NSCopying, NSSecureCodi
     public native double averagePauseDuration();
 
     /**
-     * Measures the number of words spoken per minute
+     * The number of words spoken per minute.
      * 
      * API-Since: 13.0
      * Deprecated-Since: 14.5

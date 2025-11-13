@@ -1,19 +1,3 @@
-/*
-Copyright 2014-2016 Intel Corporation
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
-
 package apple.corelocation;
 
 import apple.NSObject;
@@ -26,6 +10,8 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSSecureCoding;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -46,8 +32,6 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 /**
  * CLLocation
@@ -80,100 +64,10 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
     @Selector("alloc")
     public static native CLLocation alloc();
 
-    @Owned
     @Generated
+    @Owned
     @Selector("allocWithZone:")
     public static native CLLocation allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(
-            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
-            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @NotNull
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @NotNull
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @NotNull
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
-
-    @Generated
-    @Owned
-    @Selector("new")
-    public static native CLLocation new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion_static(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 
     /**
      * altitude
@@ -186,6 +80,31 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
     @Generated
     @Selector("altitude")
     public native double altitude();
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @Mapped(ObjCObjectMapper.class) @NotNull Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) @NotNull Object aTarget, @NotNull SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) @Nullable Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    @NotNull
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    @NotNull
+    public static native Class classForKeyedUnarchiver();
 
     /**
      * coordinate
@@ -200,11 +119,11 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
     @ByValue
     public native CLLocationCoordinate2D coordinate();
 
-    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
@@ -223,6 +142,26 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
     public native double course();
 
     /**
+     * courseAccuracy
+     * 
+     * Discussion:
+     * Returns the course accuracy of the location in degrees. Returns negative if course is invalid.
+     * 
+     * API-Since: 13.4
+     */
+    @Generated
+    @Selector("courseAccuracy")
+    public native double courseAccuracy();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    /**
      * distanceFromLocation:
      * 
      * Discussion:
@@ -233,6 +172,19 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
     @Generated
     @Selector("distanceFromLocation:")
     public native double distanceFromLocation(@NotNull CLLocation location);
+
+    /**
+     * ellipsoidalAltitude
+     * 
+     * Discussion:
+     * Returns the ellipsoidal altitude of the location under the WGS 84 reference frame.
+     * Can be positive or negative.
+     * 
+     * API-Since: 15.0
+     */
+    @Generated
+    @Selector("ellipsoidalAltitude")
+    public native double ellipsoidalAltitude();
 
     @Generated
     @Selector("encodeWithCoder:")
@@ -248,12 +200,17 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
      * 
      * API-Since: 8.0
      */
-    @Nullable
     @Generated
     @Selector("floor")
+    @Nullable
     public native CLFloor floor();
 
     /**
+     * getDistanceFrom:
+     * 
+     * Discussion:
+     * Deprecated. Use -distanceFromLocation: instead.
+     * 
      * API-Since: 2.0
      * Deprecated-Since: 3.2
      */
@@ -261,6 +218,11 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
     @Deprecated
     @Selector("getDistanceFrom:")
     public native double getDistanceFrom(@NotNull CLLocation location);
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
 
     /**
      * horizontalAccuracy
@@ -281,6 +243,35 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
     @Generated
     @Selector("initWithCoder:")
     public native CLLocation initWithCoder(@NotNull NSCoder coder);
+
+    /**
+     * initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:course:courseAccuracy:speed:speedAccuracy:timestamp:
+     * 
+     * Discussion:
+     * Initialize with the specified parameters.
+     * 
+     * API-Since: 13.4
+     */
+    @Generated
+    @Selector("initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:course:courseAccuracy:speed:speedAccuracy:timestamp:")
+    public native CLLocation initWithCoordinateAltitudeHorizontalAccuracyVerticalAccuracyCourseCourseAccuracySpeedSpeedAccuracyTimestamp(
+            @ByValue CLLocationCoordinate2D coordinate, double altitude, double hAccuracy, double vAccuracy,
+            double course, double courseAccuracy, double speed, double speedAccuracy, @NotNull NSDate timestamp);
+
+    /**
+     * initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:course:courseAccuracy:speed:speedAccuracy:timestamp:sourceInfo
+     * 
+     * Discussion:
+     * Initialize with the specified parameters.
+     * 
+     * API-Since: 15.0
+     */
+    @Generated
+    @Selector("initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:course:courseAccuracy:speed:speedAccuracy:timestamp:sourceInfo:")
+    public native CLLocation initWithCoordinateAltitudeHorizontalAccuracyVerticalAccuracyCourseCourseAccuracySpeedSpeedAccuracyTimestampSourceInfo(
+            @ByValue CLLocationCoordinate2D coordinate, double altitude, double hAccuracy, double vAccuracy,
+            double course, double courseAccuracy, double speed, double speedAccuracy, @NotNull NSDate timestamp,
+            @NotNull CLLocationSourceInformation sourceInfo);
 
     /**
      * initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:course:speed:timestamp:
@@ -322,6 +313,58 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
     @Selector("initWithLatitude:longitude:")
     public native CLLocation initWithLatitudeLongitude(double latitude, double longitude);
 
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    @NotNull
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
+
+    @Generated
+    @Owned
+    @Selector("new")
+    public static native CLLocation new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion_static(@NInt long aVersion);
+
+    /**
+     * sourceInformation
+     * 
+     * Discussion:
+     * Contains information about the source of this location.
+     * 
+     * API-Since: 15.0
+     */
+    @Generated
+    @Selector("sourceInformation")
+    @Nullable
+    public native CLLocationSourceInformation sourceInformation();
+
     /**
      * speed
      * 
@@ -333,6 +376,26 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
     @Generated
     @Selector("speed")
     public native double speed();
+
+    /**
+     * speedAccuracy
+     * 
+     * Discussion:
+     * Returns the speed accuracy of the location in m/s. Returns -1 if invalid.
+     * 
+     * API-Since: 10.0
+     */
+    @Generated
+    @Selector("speedAccuracy")
+    public native double speedAccuracy();
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -348,10 +411,20 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
      * 
      * API-Since: 2.0
      */
-    @NotNull
     @Generated
     @Selector("timestamp")
+    @NotNull
     public native NSDate timestamp();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
 
     /**
      * verticalAccuracy
@@ -364,88 +437,4 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
     @Generated
     @Selector("verticalAccuracy")
     public native double verticalAccuracy();
-
-    /**
-     * courseAccuracy
-     * 
-     * Discussion:
-     * Returns the course accuracy of the location in degrees. Returns negative if course is invalid.
-     * 
-     * API-Since: 13.4
-     */
-    @Generated
-    @Selector("courseAccuracy")
-    public native double courseAccuracy();
-
-    /**
-     * initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:course:courseAccuracy:speed:speedAccuracy:timestamp:
-     * 
-     * Discussion:
-     * Initialize with the specified parameters.
-     * 
-     * API-Since: 13.4
-     */
-    @Generated
-    @Selector("initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:course:courseAccuracy:speed:speedAccuracy:timestamp:")
-    public native CLLocation initWithCoordinateAltitudeHorizontalAccuracyVerticalAccuracyCourseCourseAccuracySpeedSpeedAccuracyTimestamp(
-            @ByValue CLLocationCoordinate2D coordinate, double altitude, double hAccuracy, double vAccuracy,
-            double course, double courseAccuracy, double speed, double speedAccuracy, @NotNull NSDate timestamp);
-
-    /**
-     * speedAccuracy
-     * 
-     * Discussion:
-     * Returns the speed accuracy of the location in m/s. Returns -1 if invalid.
-     * 
-     * API-Since: 10.0
-     */
-    @Generated
-    @Selector("speedAccuracy")
-    public native double speedAccuracy();
-
-    /**
-     * ellipsoidalAltitude
-     * 
-     * Discussion:
-     * Returns the ellipsoidal altitude of the location under the WGS 84 reference frame.
-     * Can be positive or negative.
-     * 
-     * API-Since: 15.0
-     */
-    @Generated
-    @Selector("ellipsoidalAltitude")
-    public native double ellipsoidalAltitude();
-
-    /**
-     * initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:course:courseAccuracy:speed:speedAccuracy:timestamp:sourceInfo
-     * 
-     * Discussion:
-     * Initialize with the specified parameters.
-     * 
-     * API-Since: 15.0
-     */
-    @Generated
-    @Selector("initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:course:courseAccuracy:speed:speedAccuracy:timestamp:sourceInfo:")
-    public native CLLocation initWithCoordinateAltitudeHorizontalAccuracyVerticalAccuracyCourseCourseAccuracySpeedSpeedAccuracyTimestampSourceInfo(
-            @ByValue CLLocationCoordinate2D coordinate, double altitude, double hAccuracy, double vAccuracy,
-            double course, double courseAccuracy, double speed, double speedAccuracy, @NotNull NSDate timestamp,
-            @NotNull CLLocationSourceInformation sourceInfo);
-
-    /**
-     * sourceInformation
-     * 
-     * Discussion:
-     * Contains information about the source of this location.
-     * 
-     * API-Since: 15.0
-     */
-    @Nullable
-    @Generated
-    @Selector("sourceInformation")
-    public native CLLocationSourceInformation sourceInformation();
-
-    @Generated
-    @Deprecated
-    @Selector("useStoredAccessor")
-    public static native boolean useStoredAccessor();
 }

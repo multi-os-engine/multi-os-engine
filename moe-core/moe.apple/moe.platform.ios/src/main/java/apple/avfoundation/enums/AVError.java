@@ -225,4 +225,16 @@ public final class AVError {
      * API-Since: 18.0
      */
     @Generated @NInt public static final long ToneMappingFailed = 0xFFFFFFFFFFFFD193L;
+    /**
+     * API-Since: 26.0
+     */
+    @Generated @NInt public static final long NoSmartFramingsEnabled = 0xFFFFFFFFFFFFD18EL;
+    /**
+     * API-Since: 26.0
+     */
+    @Generated @NInt public static final long AutoWhiteBalanceNotLocked = 0xFFFFFFFFFFFFD18DL;
+    /**
+     * API-Since: 26.0
+     */
+    @Generated @NInt public static final long FollowExternalSyncDeviceTimedOut = 0xFFFFFFFFFFFFD18CL;
 }

@@ -14,7 +14,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+#import <Metal/MTL4BufferRange.h>
 #import <Metal/MTLAccelerationStructureTypes.h>
+#import <Metal/MTLGPUAddress.h>
 #import <Metal/MTLIndirectCommandBuffer.h>
 #import <Metal/MTLRenderPass.h>
 #import <Metal/MTLTexture.h>
@@ -58,6 +60,10 @@ EXPORT MTLTextureSwizzleChannels __natj_inline_MTLTextureSwizzleChannelsMake(MTL
 
 EXPORT MTLClearColor __natj_inline_MTLClearColorMake(double red, double green, double blue, double alpha) {
 	return MTLClearColorMake(red, green, blue, alpha);
+}
+
+EXPORT MTL4BufferRange __natj_inline_MTL4BufferRangeMake(MTLGPUAddress bufferAddress, uint64_t length) {
+	return MTL4BufferRangeMake(bufferAddress, length);
 }
 
 EXPORT MTLPackedFloat3 __natj_inline_MTLPackedFloat3Make(float x, float y, float z) {

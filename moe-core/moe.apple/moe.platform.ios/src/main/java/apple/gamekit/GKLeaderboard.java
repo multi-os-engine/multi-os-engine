@@ -45,6 +45,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSDictionary;
 
 /**
  * GKLeaderboard represents a single instance of a leaderboard for the current game.
@@ -283,6 +284,8 @@ public class GKLeaderboard extends NSObject {
     public native boolean isLoading();
 
     /**
+     * Asynchronously load the image. Error will be nil on success.
+     * 
      * API-Since: 7.0
      */
     @Generated
@@ -663,4 +666,57 @@ public class GKLeaderboard extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The identifier of the game activity associated with this leaderboard, as configured by the developer in App Store
+     * Connect.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("activityIdentifier")
+    @NotNull
+    public native String activityIdentifier();
+
+    /**
+     * The properties when associating this leaderboard with a game activity, as configured by the developer in App
+     * Store Connect.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("activityProperties")
+    @NotNull
+    public native NSDictionary<String, String> activityProperties();
+
+    /**
+     * A Boolean value that indicates whether the current leaderboard isn't visible in Game Center views.
+     * 
+     * You can still submit scores to a hidden leaderboard.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isHidden")
+    public native boolean isHidden();
+
+    /**
+     * The description of this Leaderboard as configured by the developer in App Store Connect.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("leaderboardDescription")
+    @NotNull
+    public native String leaderboardDescription();
+
+    /**
+     * The release state of the leaderboard in App Store Connect.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("releaseState")
+    @NUInt
+    public native long releaseState();
 }

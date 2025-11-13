@@ -8,13 +8,18 @@ import org.moe.natj.general.ann.NInt;
  * 
  * Represents the test used to determine a Cycling Functional Threshold Power value.
  * 
- * [@constant] HKCyclingFunctionalThresholdPowerTestTypeMaxExercise60Minute The user was exerted to their physical limit
- * for a sustained period of 60 minutes.
- * [@constant] HKCyclingFunctionalThresholdPowerTestTypeMaxExercise20Minute The user was exerted to their physical limit
- * for a sustained period of 20 minutes.
- * [@constant] HKCyclingFunctionalThresholdPowerTestTypeRampTest Test with gradual intensity increase until exhaustion.
- * [@constant] HKCyclingFunctionalThresholdPowerTestTypePredictionExercise An equation was used based on data from the
- * user’s cycling workouts to calculate a predicted Cycling Functional Threshold Power.
+ * [@constant] HKCyclingFunctionalThresholdPowerTestTypeMaxExercise60Minute The user was exerted to their physical
+ * limit for a sustained period of 60
+ * minutes.
+ * [@constant] HKCyclingFunctionalThresholdPowerTestTypeMaxExercise20Minute The user was exerted to their physical
+ * limit for a sustained period of 20
+ * minutes.
+ * [@constant] HKCyclingFunctionalThresholdPowerTestTypeRampTest Test with gradual intensity increase
+ * until exhaustion.
+ * [@constant] HKCyclingFunctionalThresholdPowerTestTypePredictionExercise An equation was used based on data from
+ * the user’s cycling workouts to calculate
+ * a predicted Cycling Functional Threshold
+ * Power.
  * 
  * API-Since: 17.0
  */

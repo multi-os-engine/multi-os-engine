@@ -8,12 +8,14 @@ import org.moe.natj.general.ann.NInt;
  * 
  * Represents the test used to create a VO2 Max Sample.
  * 
- * [@constant] HKVO2MaxTestTypeMaxExercise The user was exerted to their physical limit to evaluate and measure actual
- * VO2Max.
- * [@constant] HKVO2MaxTestTypePredictionSubMaxExercise A specific test protocol was used to calculate and correlate a
- * predicted VO2Max.
- * [@constant] HKVO2MaxTestTypePredictionNonExercise A non-exercise equation was used based on user metrics to calculate
+ * [@constant] HKVO2MaxTestTypeMaxExercise The user was exerted to their physical limit to evaluate and
+ * measure actual VO2Max.
+ * [@constant] HKVO2MaxTestTypePredictionSubMaxExercise A specific test protocol was used to calculate and correlate
  * a predicted VO2Max.
+ * [@constant] HKVO2MaxTestTypePredictionNonExercise A non-exercise equation was used based on user metrics to
+ * calculate a predicted VO2Max.
+ * [@constant] HKVO2MaxTestTypePredictionStepTest The step test protocol was used to calculate and correlate a
+ * predicted VO2Max.
  * 
  * API-Since: 11.0
  */
@@ -35,4 +37,8 @@ public final class HKVO2MaxTestType {
      * API-Since: 11.0
      */
     @Generated @NInt public static final long PredictionNonExercise = 0x0000000000000003L;
+    /**
+     * API-Since: 26.0
+     */
+    @Generated @NInt public static final long PredictionStepTest = 0x0000000000000004L;
 }

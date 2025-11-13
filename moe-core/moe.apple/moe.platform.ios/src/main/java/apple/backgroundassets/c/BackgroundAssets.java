@@ -63,4 +63,28 @@ public final class BackgroundAssets {
     @MappedReturn(ObjCStringMapper.class)
     @NotNull
     public static native String BAErrorDomain();
+
+    /**
+     * The error domain for managed asset packs.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String BAManagedErrorDomain();
+
+    /**
+     * The `-[NSError userInfo]` key for an asset pack’s identifier.
+     * 
+     * This key is relevant when the error code is ``BAManagedErrorCode/BAManagedErrorCodeAssetPackNotFound``.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String BAAssetPackIdentifierErrorKey();
 }

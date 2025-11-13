@@ -28,6 +28,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A representation of an endpoint implemented by an MTRDeviceController.
  * 
+ * MTRServerEndpoint's API can be accessed from any thread.
+ * 
  * API-Since: 17.6
  */
 @Generated

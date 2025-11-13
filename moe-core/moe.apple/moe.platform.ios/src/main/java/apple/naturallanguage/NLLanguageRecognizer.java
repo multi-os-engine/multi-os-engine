@@ -27,11 +27,20 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * NLLanguageRecognizer is a class used to automatically identify the language of text. An instance of this class is
- * created and passed one or more pieces of text, and clients can then obtain either a single most likely language or a
- * set of language candidates with probabilities. It is also possible to constrain the identification by specifying
- * either a list of hints about known prior probabilities for languages, or a list of constraint languages into which
- * the predictions are constrained to fall, or both.
+ * NLLanguageRecognizer is a class used to automatically identify the language of text.
+ * 
+ * An instance of this class is created and passed one or more pieces of text, and clients can
+ * then obtain either a single most likely language or a set of language candidates with probabilities.
+ * 
+ * It is also possible to constrain the identification by specifying either a list of hints
+ * about known prior probabilities for languages, or a list of constraint languages
+ * into which the predictions are constrained to fall, or both.
+ * 
+ * [@note] Accuracy may vary depending on the length and clarity of the input. In particular,
+ * language identification is less reliable for short input strings (e.g., fewer than 30 characters),
+ * where insufficient context may lead to ambiguous or incorrect results.
+ * For best results, provide full sentences or longer phrases. If short text is unavoidable,
+ * consider constraining possible languages (see above), using additional heuristics.
  */
 @Generated
 @Library("NaturalLanguage")

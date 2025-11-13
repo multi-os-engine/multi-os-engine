@@ -83,7 +83,7 @@ public class UIMenuSystem extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * The context command system.
+     * The context menu system. This is identical to `UIContextMenuSystem.sharedSystem`.
      * 
      * API-Since: 13.0
      */
@@ -132,7 +132,7 @@ public class UIMenuSystem extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
-     * The main command system.
+     * The main menu system. This is identical to `UIMainMenuSystem.sharedSystem`.
      * 
      * API-Since: 13.0
      */

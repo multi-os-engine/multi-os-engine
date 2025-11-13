@@ -47,9 +47,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVVideoCompositionRenderContext
+ * The AVVideoCompositionRenderContext class defines the context within which custom compositors render new output
+ * pixels buffers.
  * 
- * The context in which custom compositors render pixel buffers.
+ * An instance of AVVideoCompositionRenderContext provides size and scaling information and offers a service for
+ * efficiently providing pixel buffers from a managed pool of buffers.
  * 
  * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
  * 
@@ -170,7 +172,7 @@ public class AVVideoCompositionRenderContext extends NSObject {
     public static native long version_static();
 
     /**
-     * indicates the thickness of the edge processing region on the left, top, right and bottom edges, in pixels.
+     * Indicates the thickness of the edge processing region on the left, top, right and bottom edges, in pixels.
      * 
      * API-Since: 7.0
      */
@@ -180,7 +182,7 @@ public class AVVideoCompositionRenderContext extends NSObject {
     public native AVEdgeWidths edgeWidths();
 
     /**
-     * hints the custom compositor that it may use higher quality, potentially slower algorithms.
+     * Hints the custom compositor that it may use higher quality, potentially slower algorithms.
      * Generally true for non real time use cases.
      * 
      * API-Since: 7.0
@@ -204,7 +206,7 @@ public class AVVideoCompositionRenderContext extends NSObject {
     public native CVBufferRef newPixelBuffer();
 
     /**
-     * indicates the pixel aspect ratio for rendered frames.
+     * Indicates the pixel aspect ratio for rendered frames.
      * 
      * API-Since: 7.0
      */
@@ -214,7 +216,7 @@ public class AVVideoCompositionRenderContext extends NSObject {
     public native AVPixelAspectRatio pixelAspectRatio();
 
     /**
-     * indicates a scaling ratio that should be applied when rendering frames.
+     * Indicates a scaling ratio that should be applied when rendering frames.
      * 
      * API-Since: 7.0
      */
@@ -233,7 +235,7 @@ public class AVVideoCompositionRenderContext extends NSObject {
     public native CGAffineTransform renderTransform();
 
     /**
-     * indicates the width and height for rendering frames.
+     * Indicates the width and height for rendering frames.
      * 
      * API-Since: 7.0
      */

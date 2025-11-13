@@ -18,6 +18,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import apple.corefoundation.struct.CGPoint;
 import org.jetbrains.annotations.NotNull;
+import org.moe.natj.general.ann.NFloat;
 
 /**
  * API-Since: 12.0
@@ -307,6 +308,163 @@ public interface CPMapTemplateDelegate {
     @IsOptional
     @Selector("mapTemplateShouldProvideNavigationMetadata:")
     default boolean mapTemplateShouldProvideNavigationMetadata(@NotNull CPMapTemplate mapTemplate) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Tells the delegate that a person stopped zooming the map.
+     * 
+     * - Parameters:
+     * - mapTemplate: The ``CPMapTemplate`` the gesture applies to.
+     * - velocity: The velocity of the zoom gesture in scale factor per second.
+     * 
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("mapTemplate:didEndZoomGestureWithVelocity:")
+    default void mapTemplateDidEndZoomGestureWithVelocity(@NotNull CPMapTemplate mapTemplate, @NFloat double velocity) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Tells the delegate that a person is rotating the map.
+     * 
+     * - Parameters:
+     * - mapTemplate: The ``CPMapTemplate`` the gesture applies to.
+     * - center: A ``CGPoint`` that indicates the center between two fingers performing the rotation gesture.
+     * - rotation: A ``CGFloat`` that indicates the rotation of the gesture in radians.
+     * - velocity: The velocity of the rotation gesture in radians per second.
+     * 
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("mapTemplate:didRotateWithCenter:rotation:velocity:")
+    default void mapTemplateDidRotateWithCenterRotationVelocity(@NotNull CPMapTemplate mapTemplate,
+            @ByValue CGPoint center, @NFloat double rotation, @NFloat double velocity) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Tells the delegate that a person is zooming on the map.
+     * 
+     * - Parameters:
+     * - mapTemplate: The ``CPMapTemplate`` the gesture applies to.
+     * - center: A ``CGPoint`` that indicates the center point of the zoom.
+     * - scale: A ``CGFloat`` that indicates the scale factor relative to the zoom gesture in screen coordinates.
+     * - velocity: The velocity of the zoom gesture in scale factor per second.
+     * 
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("mapTemplate:didUpdateZoomGestureWithCenter:scale:velocity:")
+    default void mapTemplateDidUpdateZoomGestureWithCenterScaleVelocity(@NotNull CPMapTemplate mapTemplate,
+            @ByValue CGPoint center, @NFloat double scale, @NFloat double velocity) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Tells the delegate that a person stopped pitching the map.
+     * 
+     * - Parameters:
+     * - mapTemplate: The ``CPMapTemplate`` the gesture applies to.
+     * - center: A ``CGPoint`` that indicates the center between two fingers performing the pitch gesture.
+     * 
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("mapTemplate:pitchEndedWithCenter:")
+    default void mapTemplatePitchEndedWithCenter(@NotNull CPMapTemplate mapTemplate, @ByValue CGPoint center) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Called when a pitch gesture changes. May not be called when connected to some CarPlay systems
+     * Tells the delegate that a person is pitching the map.
+     * 
+     * - Parameters:
+     * - mapTemplate: The ``CPMapTemplate`` the gesture applies to.
+     * - center: A ``CGPoint`` that indicates the center between two fingers performing the pitch gesture.
+     * 
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("mapTemplate:pitchWithCenter:")
+    default void mapTemplatePitchWithCenter(@NotNull CPMapTemplate mapTemplate, @ByValue CGPoint center) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Tells the delegate that a person stopped rotating the map.
+     * 
+     * - Parameters:
+     * - mapTemplate: The ``CPMapTemplate`` the gesture applies to.
+     * - velocity: The velocity of the rotation gesture in radians per second.
+     * 
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("mapTemplate:rotationDidEndWithVelocity:")
+    default void mapTemplateRotationDidEndWithVelocity(@NotNull CPMapTemplate mapTemplate, @NFloat double velocity) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Tells the delegate that the pitch gesture started.
+     * 
+     * - Parameters:
+     * - mapTemplate: The ``CPMapTemplate`` the gesture applies to.
+     * 
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("mapTemplateDidBeginPitchGesture:")
+    default void mapTemplateDidBeginPitchGesture(@NotNull CPMapTemplate mapTemplate) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Tells the delegate that the rotation gesture started.
+     * 
+     * - Parameters:
+     * - mapTemplate: The ``CPMapTemplate`` the gesture applies to.
+     * 
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("mapTemplateDidBeginRotationGesture:")
+    default void mapTemplateDidBeginRotationGesture(@NotNull CPMapTemplate mapTemplate) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Tells the delegate that the zoom gesture started.
+     * 
+     * - Parameters:
+     * - mapTemplate: The ``CPMapTemplate`` the gesture applies to.
+     * 
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("mapTemplateDidBeginZoomGesture:")
+    default void mapTemplateDidBeginZoomGesture(@NotNull CPMapTemplate mapTemplate) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

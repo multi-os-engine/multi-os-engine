@@ -130,18 +130,6 @@ public interface UNNotificationContentExtension {
     /**
      * Handles a notification action selected by the user.
      * 
-     * > Concurrency Note: You can call this method from synchronous code using a completion handler,
-     * > as shown on this page, or you can call it as an asynchronous method that has the
-     * > following declaration:
-     * >
-     * > ```swift
-     * > optional func didReceive(_ response: UNNotificationResponse) async ->
-     * UNNotificationContentExtensionResponseOption
-     * > ```
-     * >
-     * > For information about concurrency and asynchronous code in Swift, see
-     * <doc://com.apple.documentation/documentation/swift/calling-objective-c-apis-asynchronously>.
-     * 
      * Implement this method when you want your view controller to handle actions
      * selected by the user. Use your implementation to perform the associated task
      * and then execute the `completion` block. If you implement this method, you

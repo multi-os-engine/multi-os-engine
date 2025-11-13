@@ -27,8 +27,6 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * AVMetricPlayerItemSeekDidCompleteEvent
- * 
  * Represents a metric event when playback seek completed.
  * 
  * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
@@ -97,8 +95,6 @@ public class AVMetricPlayerItemSeekDidCompleteEvent extends AVMetricPlayerItemRa
     public static native String description_static();
 
     /**
-     * [@property] didSeekInBuffer
-     * 
      * Returns whether the seek was performed within the available buffer.
      * 
      * API-Since: 18.0

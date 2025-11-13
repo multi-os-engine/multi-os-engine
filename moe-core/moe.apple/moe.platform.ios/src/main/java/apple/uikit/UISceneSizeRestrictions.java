@@ -27,6 +27,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * Sizing preferences for the scene. Clients do not create `UISceneSizeRestrictions` directly. An instance is returned
+ * from `UIWindowScene.sizeRestrictions`
+ * if the platform supports scene resizing.
+ * - Note: The system imposes limits on each preference that may result in it not being honored.
+ * 
  * API-Since: 13.0
  */
 @Generated
@@ -122,6 +127,8 @@ public class UISceneSizeRestrictions extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
+     * The preferred maximum size of the scene
+     * 
      * API-Since: 13.0
      */
     @Generated
@@ -130,6 +137,8 @@ public class UISceneSizeRestrictions extends NSObject {
     public native CGSize maximumSize();
 
     /**
+     * The preferred minimum size of the scene
+     * 
      * API-Since: 13.0
      */
     @Generated
@@ -151,6 +160,8 @@ public class UISceneSizeRestrictions extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
+     * The preferred maximum size of the scene
+     * 
      * API-Since: 13.0
      */
     @Generated
@@ -158,6 +169,8 @@ public class UISceneSizeRestrictions extends NSObject {
     public native void setMaximumSize(@ByValue CGSize value);
 
     /**
+     * The preferred minimum size of the scene
+     * 
      * API-Since: 13.0
      */
     @Generated
@@ -177,10 +190,18 @@ public class UISceneSizeRestrictions extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Whether the scene supports full screen or not
+     * - Note: Currently only honored on Mac Catalyst
+     */
     @Generated
     @Selector("allowsFullScreen")
     public native boolean allowsFullScreen();
 
+    /**
+     * Whether the scene supports full screen or not
+     * - Note: Currently only honored on Mac Catalyst
+     */
     @Generated
     @Selector("setAllowsFullScreen:")
     public native void setAllowsFullScreen(boolean value);

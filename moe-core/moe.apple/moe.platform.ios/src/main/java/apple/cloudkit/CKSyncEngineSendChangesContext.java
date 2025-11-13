@@ -28,7 +28,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * The context of an attempt to send changes to the server.
  * 
  * The sync engine might attempt to send changes to the server for many reasons.
- * For example, if you call `sendChanges`, it'll try to send changes immediately.
+ * For example, if you call ``CKSyncEngine/sendChanges(_:)``, it'll try to send changes immediately.
  * Or if you add pending changes to the state, it'll schedule a sync and send changes when the scheduler task runs.
  * This object represents one of those attempts to send changes.
  * 

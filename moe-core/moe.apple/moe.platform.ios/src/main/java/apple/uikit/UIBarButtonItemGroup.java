@@ -345,4 +345,17 @@ public class UIBarButtonItemGroup extends NSObject implements NSCoding {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Returns a new group that contains a single zero-width fixed space item inside it.
+     * 
+     * If you specify a group with a single zero-width fixed space,
+     * the navigation bar to visually separate the following groups.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("groupWithFixedSpace")
+    @NotNull
+    public static native UIBarButtonItemGroup groupWithFixedSpace();
 }

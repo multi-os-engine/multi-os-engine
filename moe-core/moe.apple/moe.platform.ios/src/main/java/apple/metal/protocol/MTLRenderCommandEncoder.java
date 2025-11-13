@@ -41,6 +41,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.moe.natj.general.ptr.ConstPtr;
+import apple.metal.MTLLogicalToPhysicalColorAttachmentMap;
 
 /**
  * [@protocol] MTLRenderCommandEncoder
@@ -1802,4 +1803,44 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     @Selector("setVertexBytes:length:attributeStride:atIndex:")
     void setVertexBytesLengthAttributeStrideAtIndex(@NotNull ConstVoidPtr bytes, @NUInt long length, @NUInt long stride,
             @NUInt long index);
+
+    /**
+     * Sets the mapping from logical shader color output to physical render pass color attachments.
+     * 
+     * Use this method to define how the physical color attachments you specify via
+     * ``MTLRenderPassDescriptor/colorAttachments``
+     * map to the logical color output the fragment shader writes to.
+     * 
+     * To use this feature, make sure to set ``MTLRenderPassDescriptor/supportColorAttachmentMapping`` to
+     * <doc://com.apple.documentation/documentation/swift/true>.
+     * 
+     * - Parameter mapping: Mapping from logical shader outputs to physical outputs.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setColorAttachmentMap:")
+    void setColorAttachmentMap(@Nullable MTLLogicalToPhysicalColorAttachmentMap mapping);
+
+    /**
+     * Configures the minimum and maximum bounds for depth bounds testing.
+     * 
+     * The render command encoder disables depth bounds testing by default.
+     * The render command encoder also disables depth bounds testing when all of the following properties equal a
+     * specific value:
+     * - The `minBound` property is equal to `0.0f`.
+     * - The `maxBound` property is equal to `1.0f`.
+     * Both `minBound` and `maxBound` need to be within `[0.0f, 1.0f]`, and `minBound` needs to be less than or equal to
+     * `maxBound`.
+     * - Parameters:
+     * - minBound: A minimum bound for depth testing, which discards fragments with a stored depth that is less than
+     * `minBound`.
+     * - maxBound: A maximum bound for depth testing, which discards fragments with a stored depth that is greater than
+     * `maxBound`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setDepthTestMinBound:maxBound:")
+    void setDepthTestMinBoundMaxBound(float minBound, float maxBound);
 }

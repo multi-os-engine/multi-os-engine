@@ -30,4 +30,22 @@ public final class AutomaticAssessmentConfiguration {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AEAssessmentErrorDomain();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AENotInstalledParticipantsKey();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AERestrictedSystemParticipantsKey();
 }

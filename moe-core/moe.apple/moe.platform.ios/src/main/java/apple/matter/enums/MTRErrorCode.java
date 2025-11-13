@@ -13,6 +13,8 @@ import org.moe.natj.general.ann.NInt;
  * 
  * Errors reported by the server side of a Matter interaction via the normal
  * Matter error-reporting mechanisms use MTRInteractionErrorDomain instead.
+ * 
+ * API-Since: 16.1
  */
 @Generated
 public final class MTRErrorCode {
@@ -28,6 +30,8 @@ public final class MTRErrorCode {
      * integer representing the underlying Matter error code. These integer
      * values should not be assumed to be stable across releases, but may be
      * useful in logging and debugging.
+     * 
+     * API-Since: 16.1
      */
     @Generated @NInt public static final long GeneralError = 0x0000000000000001L;
     /**
@@ -38,6 +42,8 @@ public final class MTRErrorCode {
      * integer representing the underlying Matter error code. These integer
      * values should not be assumed to be stable across releases, but may be
      * useful in logging and debugging.
+     * 
+     * API-Since: 16.1
      */
     @Generated @NInt public static final long InvalidStringLength = 0x0000000000000002L;
     /**
@@ -48,6 +54,8 @@ public final class MTRErrorCode {
      * integer representing the underlying Matter error code. These integer
      * values should not be assumed to be stable across releases, but may be
      * useful in logging and debugging.
+     * 
+     * API-Since: 16.1
      */
     @Generated @NInt public static final long InvalidIntegerValue = 0x0000000000000003L;
     /**
@@ -58,6 +66,8 @@ public final class MTRErrorCode {
      * integer representing the underlying Matter error code. These integer
      * values should not be assumed to be stable across releases, but may be
      * useful in logging and debugging.
+     * 
+     * API-Since: 16.1
      */
     @Generated @NInt public static final long InvalidArgument = 0x0000000000000004L;
     /**
@@ -68,6 +78,8 @@ public final class MTRErrorCode {
      * integer representing the underlying Matter error code. These integer
      * values should not be assumed to be stable across releases, but may be
      * useful in logging and debugging.
+     * 
+     * API-Since: 16.1
      */
     @Generated @NInt public static final long InvalidMessageLength = 0x0000000000000005L;
     /**
@@ -78,6 +90,8 @@ public final class MTRErrorCode {
      * integer representing the underlying Matter error code. These integer
      * values should not be assumed to be stable across releases, but may be
      * useful in logging and debugging.
+     * 
+     * API-Since: 16.1
      */
     @Generated @NInt public static final long InvalidState = 0x0000000000000006L;
     /**
@@ -88,6 +102,8 @@ public final class MTRErrorCode {
      * integer representing the underlying Matter error code. These integer
      * values should not be assumed to be stable across releases, but may be
      * useful in logging and debugging.
+     * 
+     * API-Since: 16.1
      */
     @Generated @NInt public static final long WrongAddressType = 0x0000000000000007L;
     /**
@@ -98,6 +114,8 @@ public final class MTRErrorCode {
      * integer representing the underlying Matter error code. These integer
      * values should not be assumed to be stable across releases, but may be
      * useful in logging and debugging.
+     * 
+     * API-Since: 16.1
      */
     @Generated @NInt public static final long IntegrityCheckFailed = 0x0000000000000008L;
     /**
@@ -108,6 +126,8 @@ public final class MTRErrorCode {
      * integer representing the underlying Matter error code. These integer
      * values should not be assumed to be stable across releases, but may be
      * useful in logging and debugging.
+     * 
+     * API-Since: 16.1
      */
     @Generated @NInt public static final long Timeout = 0x0000000000000009L;
     /**
@@ -118,11 +138,15 @@ public final class MTRErrorCode {
      * integer representing the underlying Matter error code. These integer
      * values should not be assumed to be stable across releases, but may be
      * useful in logging and debugging.
+     * 
+     * API-Since: 16.1
      */
     @Generated @NInt public static final long BufferTooSmall = 0x000000000000000AL;
     /**
      * MTRErrorCodeFabricExists is returned when trying to commission a device
      * into a fabric when it's already part of that fabric.
+     * 
+     * API-Since: 16.1
      */
     @Generated @NInt public static final long FabricExists = 0x000000000000000BL;
     /**

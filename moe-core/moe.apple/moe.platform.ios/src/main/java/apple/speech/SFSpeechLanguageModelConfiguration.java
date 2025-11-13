@@ -26,15 +26,27 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSCoder;
+import apple.foundation.NSNumber;
+import apple.foundation.protocol.NSSecureCoding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 
 /**
+ * An object describing the location of a custom language model and specialized vocabulary.
+ * 
+ * Pass this object to ``SFSpeechLanguageModel/prepareCustomLanguageModelForUrl:configuration:completion:`` to indicate
+ * where that method should create the custom language model file, and to
+ * ``SFSpeechRecognitionRequest/customizedLanguageModel`` or
+ * ``DictationTranscriber/ContentHint/customizedLanguage(modelConfiguration:)`` to indicate where the system should find
+ * that model to use.
+ * 
  * API-Since: 17.0
  */
 @Generated
 @Library("Speech")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class SFSpeechLanguageModelConfiguration extends NSObject implements NSCopying {
+public class SFSpeechLanguageModelConfiguration extends NSObject implements NSCopying, NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -108,6 +120,8 @@ public class SFSpeechLanguageModelConfiguration extends NSObject implements NSCo
     public native SFSpeechLanguageModelConfiguration init();
 
     /**
+     * Creates a configuration with the location of a language model file.
+     * 
      * API-Since: 17.0
      */
     @Generated
@@ -115,6 +129,8 @@ public class SFSpeechLanguageModelConfiguration extends NSObject implements NSCo
     public native SFSpeechLanguageModelConfiguration initWithLanguageModel(@NotNull NSURL languageModel);
 
     /**
+     * Creates a configuration with the locations of language model and vocabulary files.
+     * 
      * API-Since: 17.0
      */
     @Generated
@@ -145,6 +161,8 @@ public class SFSpeechLanguageModelConfiguration extends NSObject implements NSCo
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
+     * The location of a compiled language model file.
+     * 
      * API-Since: 17.0
      */
     @Generated
@@ -184,10 +202,50 @@ public class SFSpeechLanguageModelConfiguration extends NSObject implements NSCo
     public static native long version_static();
 
     /**
+     * The location of a compiled vocabulary file.
+     * 
      * API-Since: 17.0
      */
     @Generated
     @Selector("vocabulary")
     @Nullable
     public native NSURL vocabulary();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(@NotNull NSCoder coder);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SFSpeechLanguageModelConfiguration initWithCoder(@NotNull NSCoder coder);
+
+    /**
+     * Creates a configuration with the locations of language model and vocabulary files, and custom weight.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("initWithLanguageModel:vocabulary:weight:")
+    public native SFSpeechLanguageModelConfiguration initWithLanguageModelVocabularyWeight(@NotNull NSURL languageModel,
+            @Nullable NSURL vocabulary, @Nullable NSNumber weight);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * The relative weight of the language model customization. Value must be between 0.0 and 1.0 inclusive.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("weight")
+    @Nullable
+    public native NSNumber weight();
 }

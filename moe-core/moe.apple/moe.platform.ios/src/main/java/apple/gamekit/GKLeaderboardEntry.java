@@ -74,6 +74,12 @@ public class GKLeaderboardEntry extends NSObject {
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
+     * Return a challenge compose view controller with pre-selected GKPlayers and a preformatted, player-editable
+     * message. Once this view controller is displayed, and the player sends or cancels sending the challenge, the
+     * completion handler will be called. This block contains the view controller, the reason why the handler was
+     * called, as well as which (if any) GKPlayers the challenge was sent to. Present modally from the top view
+     * controller. The completion handler should dismiss the view controller.
+     * 
      * API-Since: 14.0
      * Deprecated-Since: 17.0
      */
@@ -219,7 +225,9 @@ public class GKLeaderboardEntry extends NSObject {
 
     /**
      * API-Since: 17.0
+     * Deprecated-Since: 26.0
      */
+    @Deprecated
     @Generated
     @Selector("challengeComposeControllerWithMessage:players:completion:")
     @NotNull

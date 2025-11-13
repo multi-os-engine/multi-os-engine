@@ -42,6 +42,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.metal.struct.MTLSize;
+import org.moe.natj.general.ann.ByValue;
 
 /**
  * API-Since: 9.0
@@ -559,4 +561,33 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
     @Selector("shaderValidation")
     @NInt
     public native long shaderValidation();
+
+    /**
+     * [@property] requiredThreadsPerThreadgroup
+     * 
+     * Sets the required threads-per-threadgroup during dispatches. The `threadsPerThreadgroup` argument of any dispatch
+     * must match this value if it is set.
+     * Optional, unless the pipeline is going to use CooperativeTensors in which case this must be set.
+     * Setting this to a size of 0 in every dimension disables this property
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("requiredThreadsPerThreadgroup")
+    @ByValue
+    public native MTLSize requiredThreadsPerThreadgroup();
+
+    /**
+     * [@property] requiredThreadsPerThreadgroup
+     * 
+     * Sets the required threads-per-threadgroup during dispatches. The `threadsPerThreadgroup` argument of any dispatch
+     * must match this value if it is set.
+     * Optional, unless the pipeline is going to use CooperativeTensors in which case this must be set.
+     * Setting this to a size of 0 in every dimension disables this property
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setRequiredThreadsPerThreadgroup:")
+    public native void setRequiredThreadsPerThreadgroup(@ByValue MTLSize value);
 }

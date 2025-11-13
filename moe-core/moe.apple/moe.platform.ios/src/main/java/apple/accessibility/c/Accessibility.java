@@ -243,4 +243,41 @@ public final class Accessibility {
     @MappedReturn(ObjCStringMapper.class)
     @NotNull
     public static native String AXFeatureOverrideSessionErrorDomain();
+
+    /**
+     * Prefers that user interface items that rely on a prolonged, continuous swipe action provide an alternative
+     * requiring less physical dexterity or effort.
+     * 
+     * API-Since: 26.1
+     */
+    @Generated
+    @CFunction
+    public static native boolean AXPrefersActionSliderAlternative();
+
+    /**
+     * Returns whether the system preference for show borders is enabled
+     * 
+     * API-Since: 26.1
+     */
+    @Generated
+    @CFunction
+    public static native boolean AXShowBordersEnabled();
+
+    /**
+     * API-Since: 26.1
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AXPrefersActionSliderAlternativeDidChangeNotification();
+
+    /**
+     * API-Since: 26.1
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AXShowBordersEnabledStatusDidChangeNotification();
 }

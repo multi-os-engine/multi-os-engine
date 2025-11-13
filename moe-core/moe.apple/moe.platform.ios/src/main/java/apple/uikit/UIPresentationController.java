@@ -517,4 +517,25 @@ public class UIPresentationController extends NSObject implements UIAppearanceCo
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Set the background effect for this presentation. Set to nil to use default background. Default is nil. Custom
+     * presentations are responsible for implementing the background effect if set.
+     * 
+     * API-Since: 26.1
+     */
+    @Generated
+    @Selector("backgroundEffect")
+    @Nullable
+    public native UIVisualEffect backgroundEffect();
+
+    /**
+     * Set the background effect for this presentation. Set to nil to use default background. Default is nil. Custom
+     * presentations are responsible for implementing the background effect if set.
+     * 
+     * API-Since: 26.1
+     */
+    @Generated
+    @Selector("setBackgroundEffect:")
+    public native void setBackgroundEffect(@Nullable UIVisualEffect value);
 }

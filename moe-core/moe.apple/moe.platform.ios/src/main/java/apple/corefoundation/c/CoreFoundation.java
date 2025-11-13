@@ -11897,4 +11897,117 @@ public final class CoreFoundation {
     @CFunction
     public static native CFStringRef CFBundleCopyLocalizedStringForLocalizations(CFBundleRef bundle, CFStringRef key,
             CFStringRef value, CFStringRef tableName, CFArrayRef localizations);
+
+    /**
+     * [@function] CFAttributedStringGetStatisticalWritingDirections
+     * 
+     * If baseDirection is not NSWritingDirectionNatural, result comes from
+     * CFAttributedStringGetBidiLevelsAndResolvedDirections; otherwise, it fills bidiLevels by applying a statistical
+     * approach (a paragraph is RTL if 40% or more of its words are RTL) to the characters in range. Returns true if the
+     * result is not uni-level LTR (in other words, needing further Bidi processing). baseDirection is
+     * NSWritingDirection (NSWritingDirectionNatural, NSWritingDirectionLeftToRight, and NSWritingDirectionRightToLeft).
+     * Understands NSWritingDirectionAttributeName values.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    public static native boolean CFAttributedStringGetStatisticalWritingDirections(
+            CFAttributedStringRef attributedString, @ByValue CFRange range, byte baseDirection, BytePtr bidiLevels,
+            BytePtr baseDirections);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFBanglaCalendar();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFGujaratiCalendar();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFKannadaCalendar();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFMalayalamCalendar();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFMarathiCalendar();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFOdiaCalendar();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFTamilCalendar();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFTeluguCalendar();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFVikramCalendar();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFDangiCalendar();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFVietnameseCalendar();
+
+    /**
+     * there is a local version of this item and it is the most up-to-date version known to this device.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFURLUbiquitousItemSupportedSyncControlsKey();
+
+    /**
+     * returns the read-only value of the NSFileManagerSupportedSyncControls options.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFURLUbiquitousItemIsSyncPausedKey();
 }

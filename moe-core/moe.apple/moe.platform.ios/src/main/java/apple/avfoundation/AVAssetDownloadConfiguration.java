@@ -26,8 +26,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVAssetDownloadConfiguration
- * 
  * Configuration parameters for the download task.
  * 
  * Download configuration consists of primary and auxiliary content configurations. Primary content configuration
@@ -73,8 +71,6 @@ public class AVAssetDownloadConfiguration extends NSObject {
     public static native AVAssetDownloadConfiguration allocWithZone(VoidPtr zone);
 
     /**
-     * [@property] assetArtworkData
-     * 
      * NSData representing artwork data for this asset. Optional. May be displayed, for example, by the usage pane of
      * the Settings app. Must work with +[UIImage imageWithData:].
      * 
@@ -90,8 +86,6 @@ public class AVAssetDownloadConfiguration extends NSObject {
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
-     * [@property] auxiliaryContentConfigurations
-     * 
      * The auxiliary content for the download. Optional.
      * 
      * By default, auxiliaryContentConfigurations will have one or more default auxiliary content configurations. These
@@ -135,19 +129,15 @@ public class AVAssetDownloadConfiguration extends NSObject {
     public static native String description_static();
 
     /**
-     * downloadConfigurationWithAsset:title:
-     * 
      * Creates and initializes a download configuration object.
      * 
      * This method will throw an exception if AVURLAsset has been invalidated.
      * 
-     * @param asset
-     *              The asset to create the download configuration for.
-     * @param title
-     *              A human readable title for this asset, expected to be as suitable as possible for the user's
-     *              preferred languages. Will show up in the usage pane of the settings app.
+     * - Parameter asset: The asset to create the download configuration for.
+     * - Parameter title: A human readable title for this asset, expected to be as suitable as possible for the user's
+     * preferred languages. Will show up in the usage pane of the settings app.
      * 
-     *              API-Since: 15.0
+     * API-Since: 15.0
      */
     @Generated
     @Selector("downloadConfigurationWithAsset:title:")
@@ -191,8 +181,6 @@ public class AVAssetDownloadConfiguration extends NSObject {
     public static native AVAssetDownloadConfiguration new_objc();
 
     /**
-     * [@property] optimizesAuxiliaryContentConfigurations
-     * 
      * Optimizes auxiliary content selection depending on the primary to minimize total number of video renditions
      * downloaded. True by default.
      * 
@@ -207,8 +195,6 @@ public class AVAssetDownloadConfiguration extends NSObject {
     public native boolean optimizesAuxiliaryContentConfigurations();
 
     /**
-     * [@property] primaryContentConfiguration
-     * 
      * The primary content for the download.
      * 
      * API-Since: 15.0
@@ -227,8 +213,6 @@ public class AVAssetDownloadConfiguration extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property] assetArtworkData
-     * 
      * NSData representing artwork data for this asset. Optional. May be displayed, for example, by the usage pane of
      * the Settings app. Must work with +[UIImage imageWithData:].
      * 
@@ -239,8 +223,6 @@ public class AVAssetDownloadConfiguration extends NSObject {
     public native void setArtworkData(@Nullable NSData value);
 
     /**
-     * [@property] auxiliaryContentConfigurations
-     * 
      * The auxiliary content for the download. Optional.
      * 
      * By default, auxiliaryContentConfigurations will have one or more default auxiliary content configurations. These
@@ -255,8 +237,6 @@ public class AVAssetDownloadConfiguration extends NSObject {
             @NotNull NSArray<? extends AVAssetDownloadContentConfiguration> value);
 
     /**
-     * [@property] optimizesAuxiliaryContentConfigurations
-     * 
      * Optimizes auxiliary content selection depending on the primary to minimize total number of video renditions
      * downloaded. True by default.
      * 
@@ -289,8 +269,6 @@ public class AVAssetDownloadConfiguration extends NSObject {
     public static native boolean useStoredAccessor();
 
     /**
-     * setInterstitialMediaSelectionCriteria:forMediaCharacteristic:
-     * 
      * Sets media selection on interstitials for this asset
      * 
      * Typically, interstitial assets have not been discovered when the main download is initiated.
@@ -298,12 +276,10 @@ public class AVAssetDownloadConfiguration extends NSObject {
      * Each AVPlayerMediaSelectionCriteria in the array of criteria specfies a set of criteria for a variant to
      * download.
      * 
-     * @param criteria
-     *                            The array of selection criteria to set
-     * @param mediaCharacteristic
-     *                            The AVMediaCharacteristic to which the criteria will be applied
+     * - Parameter criteria: The array of selection criteria to set
+     * - Parameter mediaCharacteristic: The AVMediaCharacteristic to which the criteria will be applied
      * 
-     *                            API-Since: 18.4
+     * API-Since: 18.4
      */
     @Generated
     @Selector("setInterstitialMediaSelectionCriteria:forMediaCharacteristic:")

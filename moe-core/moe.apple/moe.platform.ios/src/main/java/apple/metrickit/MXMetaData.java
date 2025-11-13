@@ -257,7 +257,7 @@ public class MXMetaData extends NSObject implements NSSecureCoding {
      * 
      * @return An NSDictionary object containing the dictionary representation
      * 
-     *         API-Since: 14.0
+     *         API-Since: 13.0
      */
     @NotNull
     @Generated
@@ -314,4 +314,16 @@ public class MXMetaData extends NSObject implements NSSecureCoding {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] bundleIdentifier
+     * 
+     * String representation of the bundle ID of the process.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("bundleIdentifier")
+    @NotNull
+    public native String bundleIdentifier();
 }

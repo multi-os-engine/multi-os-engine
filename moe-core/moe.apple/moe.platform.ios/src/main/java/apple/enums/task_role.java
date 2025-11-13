@@ -18,4 +18,5 @@ public final class task_role {
     @Generated public static final int NONUI_APPLICATION = 0x00000006;
     @Generated public static final int DEFAULT_APPLICATION = 0x00000007;
     @Generated public static final int DARWINBG_APPLICATION = 0x00000008;
+    @Generated public static final int USER_INIT_APPLICATION = 0x00000009;
 }

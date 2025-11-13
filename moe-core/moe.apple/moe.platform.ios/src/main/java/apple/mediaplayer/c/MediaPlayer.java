@@ -1344,4 +1344,26 @@ public final class MediaPlayer {
     @MappedReturn(ObjCStringMapper.class)
     @NotNull
     public static native String MPNowPlayingInfoPropertyExcludeFromSuggestions();
+
+    /**
+     * MPMediaItemAnimatedArtwork
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String MPNowPlayingInfoProperty1x1AnimatedArtwork();
+
+    /**
+     * MPMediaItemAnimatedArtwork
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String MPNowPlayingInfoProperty3x4AnimatedArtwork();
 }

@@ -101,16 +101,11 @@ public class MTRXPCDeviceControllerParameters extends MTRDeviceControllerAbstrac
     public native MTRXPCDeviceControllerParameters init();
 
     /**
-     * A controller created from this way will connect to a remote instance of an MTRDeviceController loaded in an XPC
-     * Service
-     * 
-     * @param xpcConnectionBlock The XPC Connection block that will return an NSXPCConnection to the intended listener.
-     * 
-     * @param uniqueIdentifier   The unique id to assign to the controller.
-     * 
-     * 
-     *                           API-Since: 18.2
+     * API-Since: 18.2
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Please use initWithXPCConnectionBlock:uniqueIdentifier:
      */
+    @Deprecated
     @Generated
     @Selector("initWithXPConnectionBlock:uniqueIdentifier:")
     public native MTRXPCDeviceControllerParameters initWithXPConnectionBlockUniqueIdentifier(
@@ -201,5 +196,30 @@ public class MTRXPCDeviceControllerParameters extends MTRDeviceControllerAbstrac
         @Generated
         @NotNull
         NSXPCConnection call_xpcConnectionBlock_ret();
+    }
+
+    /**
+     * A controller created from this way will connect to a remote instance of an MTRDeviceController loaded in an XPC
+     * Service
+     * 
+     * @param xpcConnectionBlock The XPC Connection block that will return an NSXPCConnection to the intended listener.
+     * 
+     * @param uniqueIdentifier   The unique id to assign to the controller.
+     * 
+     * 
+     *                           API-Since: 26.0
+     */
+    @Generated
+    @Selector("initWithXPCConnectionBlock:uniqueIdentifier:")
+    public native MTRXPCDeviceControllerParameters initWithXPCConnectionBlockUniqueIdentifier(
+            @ObjCBlock(name = "call_initWithXPCConnectionBlockUniqueIdentifier") @NotNull Block_initWithXPCConnectionBlockUniqueIdentifier xpcConnectionBlock,
+            @NotNull NSUUID uniqueIdentifier);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithXPCConnectionBlockUniqueIdentifier {
+        @Generated
+        @NotNull
+        NSXPCConnection call_initWithXPCConnectionBlockUniqueIdentifier();
     }
 }

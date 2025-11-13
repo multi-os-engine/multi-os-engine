@@ -24,9 +24,9 @@ import org.moe.natj.general.ann.Generated;
 @Generated
 public final class CGImageByteOrderInfo {
     /**
-     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
      */
-    @Generated public static final int OrderMask = 0x00007000;
+    @Deprecated @Generated public static final int OrderMask = 0x00007000;
     /**
      * API-Since: 2.0
      */
@@ -52,4 +52,12 @@ public final class CGImageByteOrderInfo {
      * API-Since: 2.0
      */
     @Generated public static final int OrderDefault = 0x00000000;
+    /**
+     * API-Since: 2.0
+     */
+    @Generated public static final int Order16Host = 0x00001000;
+    /**
+     * API-Since: 2.0
+     */
+    @Generated public static final int Order32Host = 0x00002000;
 }

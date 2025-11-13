@@ -31,6 +31,15 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * CMDyskineticSymptomResult
+ * 
+ * A CMDyskineticSymptomResult object describes the presence and prevalence of dyskinetic symptoms (specifically,
+ * choreiform movements) during a one minute result period when subjects wear the Apple Watch on their most affected
+ * arm.
+ * percentUnlikely + percentLikely = 1.0
+ * Please note dyskinetic symptom measurements are designed for subjects with known presence of chorea in the arm and
+ * should not be displayed to users who do not report episodes of dyskinetic symptoms.
+ * 
  * API-Since: 12.0
  */
 @Generated

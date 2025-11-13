@@ -51,6 +51,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.pencilkit.PKResponderState;
 
 /**
  * API-Since: 2.0
@@ -698,4 +699,70 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
     @IsOptional
     @Selector("showWritingTools:")
     public native void showWritingTools(@Mapped(ObjCObjectMapper.class) @NotNull Object sender);
+
+    @Generated
+    @IsOptional
+    @Selector("alignCenter:")
+    public native void alignCenter(@Mapped(ObjCObjectMapper.class) @Nullable Object sender);
+
+    @Generated
+    @IsOptional
+    @Selector("alignJustified:")
+    public native void alignJustified(@Mapped(ObjCObjectMapper.class) @Nullable Object sender);
+
+    @Generated
+    @IsOptional
+    @Selector("alignLeft:")
+    public native void alignLeft(@Mapped(ObjCObjectMapper.class) @Nullable Object sender);
+
+    @Generated
+    @IsOptional
+    @Selector("alignRight:")
+    public native void alignRight(@Mapped(ObjCObjectMapper.class) @Nullable Object sender);
+
+    @Generated
+    @IsOptional
+    @Selector("newFromPasteboard:")
+    public native void newFromPasteboard(@Mapped(ObjCObjectMapper.class) @Nullable Object sender);
+
+    /**
+     * The PencilKit state associated with the responder object.
+     * 
+     * The state controls PencilKit behavior related to this responder.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("pencilKitResponderState")
+    @NotNull
+    public native PKResponderState pencilKitResponderState();
+
+    @Generated
+    @IsOptional
+    @Selector("performClose:")
+    public native void performClose(@Mapped(ObjCObjectMapper.class) @Nullable Object sender);
+
+    /**
+     * Asks the responder for an element provider to fulfill the given focus-based deferred element.
+     * Check the `identifier` of the deferred element to identify which deferred element this is.
+     * By default, this returns nil. Return a non-nil `provider` to make this responder responsible for providing
+     * elements for this fulfillment of the deferred element.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("providerForDeferredMenuElement:")
+    @Nullable
+    public native UIDeferredMenuElementProvider providerForDeferredMenuElement(
+            @NotNull UIDeferredMenuElement deferredElement);
+
+    @Generated
+    @IsOptional
+    @Selector("toggleInspector:")
+    public native void toggleInspector(@Mapped(ObjCObjectMapper.class) @Nullable Object sender);
+
+    @Generated
+    @IsOptional
+    @Selector("toggleSidebar:")
+    public native void toggleSidebar(@Mapped(ObjCObjectMapper.class) @Nullable Object sender);
 }

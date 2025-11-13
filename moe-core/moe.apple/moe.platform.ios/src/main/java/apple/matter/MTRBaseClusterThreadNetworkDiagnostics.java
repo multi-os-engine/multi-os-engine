@@ -5130,7 +5130,7 @@ public class MTRBaseClusterThreadNetworkDiagnostics extends MTRGenericBaseCluste
     /**
      * Command ResetCounts
      * 
-     * Reception of this command SHALL reset the OverrunCount attributes to 0
+     * Reception of this command SHALL reset the following attributes to 0:
      * 
      * API-Since: 16.4
      */

@@ -30,7 +30,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * The sync engine finished sending a batch of record zone changes to the server.
  * 
  * If a record save succeeded, you should encode the system fields of this record to use the next time you save. See
- * `encodeSystemFields` on `CKRecord`.
+ * `encodeSystemFields` on ``CKRecord``.
  * 
  * If a record deletion succeeded, you should remove any local system fields for that record.
  * 

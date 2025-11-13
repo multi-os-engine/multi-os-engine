@@ -107,7 +107,7 @@ public interface BADownloaderExtension {
      * 
      * API-Since: 16.1
      * 
-     * @param contentRequest The content request event that occured that caused this method to be invoked.
+     * @param contentRequest The content request event that occurred that caused this method to be invoked.
      * @param manifestURL    A file URL to the local manifest that was pre-downloaded and specified in your App's
      *                       Info.plist under the `BAManifestURL`.
      *                       The file is read-only and will be deleted after this method returns. If you wish to keep
@@ -128,7 +128,7 @@ public interface BADownloaderExtension {
     /**
      * This method may be called shortly before the extension is terminated.
      * 
-     * This method is invoked if all extension callbacks have returned or if the extension has run over it's alotted
+     * This method is invoked if all extension callbacks have returned or if the extension has run over its allotted
      * runtime.
      * This callback provides a last chance to tidy up state before process termination.
      * [@warning] This method is advisory only, there will be instances where the extension is terminated before this

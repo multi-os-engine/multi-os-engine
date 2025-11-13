@@ -46,8 +46,18 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * A recognized utterance, corresponding to a segment of recorded audio with speech and containing one or more
- * transcriptions hypotheses
+ * An object that contains the partial or final results of a speech recognition request.
+ * 
+ * Use an `SFSpeechRecognitionResult` object to retrieve the results of a speech recognition request. You don't create
+ * these objects directly. Instead, the Speech framework creates them and passes them to the handler block or delegate
+ * object you specified when starting your speech recognition task.
+ * 
+ * A speech recognition result object contains one or more ``transcriptions`` of the current utterance. Each
+ * transcription has a confidence rating indicating how likely it is to be correct. You can also get the transcription
+ * with the highest rating directly from the ``bestTranscription`` property.
+ * 
+ * If you requested partial results from the speech recognizer, the transcriptions may represent only part of the total
+ * audio content. Use the ``isFinal`` property to determine if the request contains partial or final results.
  * 
  * API-Since: 10.0
  */
@@ -170,6 +180,8 @@ public class SFSpeechRecognitionResult extends NSObject implements NSCopying, NS
     public static native long version_static();
 
     /**
+     * The transcription with the highest confidence level.
+     * 
      * API-Since: 10.0
      */
     @NotNull
@@ -197,7 +209,9 @@ public class SFSpeechRecognitionResult extends NSObject implements NSCopying, NS
     public native SFSpeechRecognitionResult initWithCoder(@NotNull NSCoder coder);
 
     /**
-     * True if the hypotheses will not change; speech processing is complete.
+     * A Boolean value that indicates whether speech recognition is complete and whether the transcriptions are final.
+     * 
+     * When a speech recognition request is final, its transcriptions don't change.
      * 
      * API-Since: 10.0
      */
@@ -212,7 +226,11 @@ public class SFSpeechRecognitionResult extends NSObject implements NSCopying, NS
     }
 
     /**
-     * Hypotheses for possible transcriptions, sorted in descending order of confidence (more likely first)
+     * An array of potential transcriptions, sorted in descending order of confidence.
+     * 
+     * All transcriptions correspond to the same utterance, which can be a partial or final result of the overall
+     * request. The first transcription in the array has the highest confidence rating, followed by transcriptions with
+     * decreasing confidence ratings.
      * 
      * API-Since: 10.0
      */
@@ -222,6 +240,8 @@ public class SFSpeechRecognitionResult extends NSObject implements NSCopying, NS
     public native NSArray<? extends SFTranscription> transcriptions();
 
     /**
+     * An object that contains the metadata results for a speech recognition request.
+     * 
      * API-Since: 14.0
      */
     @Nullable

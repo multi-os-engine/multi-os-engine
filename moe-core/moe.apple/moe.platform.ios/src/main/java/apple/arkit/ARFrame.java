@@ -357,7 +357,8 @@ public class ARFrame extends NSObject implements NSCopying {
      * of view of the camera.
      * 
      * A 2D point in the captured image’s coordinate space and the field of view of the frame's camera is used to create
-     * a ray in the 3D cooridnate space originating at the point.
+     * a ray in the 3D
+     * cooridnate space originating at the point.
      * 
      * @param point     A point in the image-space coordinate system of the captured image.
      *                  Values should range from (0,0) - upper left corner to (1,1) - lower right corner.

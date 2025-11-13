@@ -11,6 +11,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * CMHeadphoneMotionManagerDelegate
+ * 
+ * Discussion:
+ * Delegate for CMHeadphoneMotionManager.
+ * 
  * API-Since: 14.0
  */
 @Generated

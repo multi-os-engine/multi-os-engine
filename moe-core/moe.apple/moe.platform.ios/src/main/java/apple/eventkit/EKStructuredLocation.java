@@ -17,7 +17,6 @@ limitations under the License.
 package apple.eventkit;
 
 import apple.NSObject;
-import apple.corelocation.CLLocation;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -43,6 +42,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.corelocation.CLLocation;
 
 @Generated
 @Library("EventKit")

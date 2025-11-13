@@ -28,6 +28,18 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
+ * `CLMonitoringRecord` represents a condition and its associated information
+ * as monitored by a `CLMonitor`
+ * 
+ * Discussion:
+ * `CLMonitoringRecord` contains a condition and last event that affected it.
+ * 
+ * When handling a new `CLMonitoringEvent`, the `CLMonitoringRecord`
+ * available for the indicated identifier from the `CLMonitor` will contain
+ * the prior event. The `CLMonitoringRecord` will be updated with the new
+ * event once the handling is complete.
+ * 
+ * 
  * API-Since: 17.0
  */
 @Generated

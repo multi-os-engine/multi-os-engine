@@ -17,7 +17,6 @@ limitations under the License.
 package apple.mapkit;
 
 import apple.NSObject;
-import apple.corelocation.struct.CLLocationCoordinate2D;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -48,7 +47,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.corelocation.struct.CLLocationCoordinate2D;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -81,6 +84,9 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("camera")
     public static native MKMapCamera camera();
@@ -93,6 +99,9 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
     public static native MKMapCamera cameraLookingAtCenterCoordinateFromDistancePitchHeading(
             @ByValue CLLocationCoordinate2D centerCoordinate, double distance, @NFloat double pitch, double heading);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("cameraLookingAtCenterCoordinate:fromEyeCoordinate:eyeAltitude:")
     public static native MKMapCamera cameraLookingAtCenterCoordinateFromEyeCoordinateEyeAltitude(
@@ -195,6 +204,9 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("altitude")
     public native double altitude();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("centerCoordinate")
     @ByValue
@@ -211,6 +223,9 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("heading")
     public native double heading();
@@ -225,6 +240,8 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * In degrees where 0 is looking straight down. Pitch may be clamped to an appropriate value.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("pitch")
@@ -241,16 +258,24 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("setAltitude:")
     public native void setAltitude(double value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setCenterCoordinate:")
     public native void setCenterCoordinate(@ByValue CLLocationCoordinate2D value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setHeading:")
     public native void setHeading(double value);
 
     /**
      * In degrees where 0 is looking straight down. Pitch may be clamped to an appropriate value.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setPitch:")

@@ -603,4 +603,99 @@ public class AVAudioConverter extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] audioSyncPacketFrequency
+     * 
+     * Number of packets between consecutive sync packets.
+     * 
+     * A sync packet is an independently-decodable packet that completely refreshes the decoder without
+     * needing to decode other packets. When compressing to a format which supports it (such as APAC),
+     * the audio sync packet frequency indicates the distance in packets between two sync packets, with
+     * non-sync packets between. This is useful to set when saving compressed packets to a file and
+     * efficient random access is desired. Note: Separating sync packets by at least one second of
+     * encoded audio (e.g. 75 packets) is recommended.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("audioSyncPacketFrequency")
+    @NInt
+    public native long audioSyncPacketFrequency();
+
+    /**
+     * [@property] contentSource
+     * 
+     * Index to select a pre-defined content source type that describes the content type and
+     * how it was generated. Note: This is only supported when compressing audio to formats
+     * which support it.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("contentSource")
+    @NInt
+    public native long contentSource();
+
+    /**
+     * [@property] dynamicRangeControlConfiguration
+     * 
+     * Encoder Dynamic Range Control (DRC) configuration.
+     * 
+     * When supported by the encoder, this property controls which configuration is applied when a
+     * bitstream is generated. Note: This is only supported when compressing audio to formats
+     * which support it.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("dynamicRangeControlConfiguration")
+    @NInt
+    public native long dynamicRangeControlConfiguration();
+
+    /**
+     * [@property] audioSyncPacketFrequency
+     * 
+     * Number of packets between consecutive sync packets.
+     * 
+     * A sync packet is an independently-decodable packet that completely refreshes the decoder without
+     * needing to decode other packets. When compressing to a format which supports it (such as APAC),
+     * the audio sync packet frequency indicates the distance in packets between two sync packets, with
+     * non-sync packets between. This is useful to set when saving compressed packets to a file and
+     * efficient random access is desired. Note: Separating sync packets by at least one second of
+     * encoded audio (e.g. 75 packets) is recommended.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setAudioSyncPacketFrequency:")
+    public native void setAudioSyncPacketFrequency(@NInt long value);
+
+    /**
+     * [@property] contentSource
+     * 
+     * Index to select a pre-defined content source type that describes the content type and
+     * how it was generated. Note: This is only supported when compressing audio to formats
+     * which support it.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setContentSource:")
+    public native void setContentSource(@NInt long value);
+
+    /**
+     * [@property] dynamicRangeControlConfiguration
+     * 
+     * Encoder Dynamic Range Control (DRC) configuration.
+     * 
+     * When supported by the encoder, this property controls which configuration is applied when a
+     * bitstream is generated. Note: This is only supported when compressing audio to formats
+     * which support it.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setDynamicRangeControlConfiguration:")
+    public native void setDynamicRangeControlConfiguration(@NInt long value);
 }

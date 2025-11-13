@@ -34,6 +34,8 @@ import org.jetbrains.annotations.NotNull;
  * [@protocol] AVPlayerItemLegibleOutputPushDelegate
  * 
  * Extends AVPlayerItemOutputPushDelegate to provide additional methods specific to attributed string output.
+ * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
  */
 @Generated
 @Library("AVFoundation")

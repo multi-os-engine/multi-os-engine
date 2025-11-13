@@ -93,4 +93,10 @@ public final class PHAssetMediaSubtype {
      * API-Since: 16.0
      */
     @Generated @NUInt public static final long SpatialMedia = 0x0000000000000400L;
+    /**
+     * Video subtypes
+     * 
+     * API-Since: 13.0
+     */
+    @Generated @NUInt public static final long VideoScreenRecording = 0x0000000000080000L;
 }

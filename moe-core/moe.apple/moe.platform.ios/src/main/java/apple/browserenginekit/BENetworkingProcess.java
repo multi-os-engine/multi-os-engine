@@ -30,6 +30,7 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.browserenginekit.protocol.BEExtensionProcess;
 
 /**
  * An object that represents a running network extension process.
@@ -46,7 +47,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("BrowserEngineKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class BENetworkingProcess extends NSObject {
+public class BENetworkingProcess extends NSObject implements BEExtensionProcess {
     static {
         NatJ.register();
     }

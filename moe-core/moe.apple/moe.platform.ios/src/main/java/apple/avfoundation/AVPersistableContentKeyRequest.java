@@ -30,8 +30,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVPersistableContentKeyRequest
- * 
  * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
  * 
  * API-Since: 10.3
@@ -134,8 +132,6 @@ public class AVPersistableContentKeyRequest extends AVContentKeyRequest {
     public static native AVPersistableContentKeyRequest new_objc();
 
     /**
-     * persistableContentKeyFromKeyVendorResponse:options:error:
-     * 
      * Obtains a persistable content key from a context.
      * 
      * The data returned from this method may be used to immediately satisfy an AVPersistableContentKeyRequest, as well
@@ -147,18 +143,16 @@ public class AVPersistableContentKeyRequest extends AVContentKeyRequest {
      * AVPersistableContentKeyRequest via -contentKeySession:didProvidePersistableContentKeyRequest:. You can set the
      * persistent key from storage on the AVPersistableContentKeyRequest using processContentKeyResponse:.
      * 
-     * API-Since: 10.3
+     * - Parameter keyVendorResponse: The response returned from the key vendor as a result of a request generated from
+     * makeStreamingContentKeyRequestDataForApp:contentIdentifier:options:completionHandler:.
+     * - Parameter options: Additional information necessary to obtain the persistable content key, or nil if none.
+     * - Parameter outError: If obtaining the persistable content key fails, will be set to an instance of NSError
+     * describing the failure.
      * 
-     * @param keyVendorResponse
-     *                          The response returned from the key vendor as a result of a request generated from
-     *                          makeStreamingContentKeyRequestDataForApp:contentIdentifier:options:completionHandler:.
-     * @param options
-     *                          Additional information necessary to obtain the persistable content key, or nil if none.
-     * @param outError
-     *                          If obtaining the persistable content key fails, will be set to an instance of NSError
-     *                          describing the failure.
-     * @return The persistable content key data that may be stored offline to answer future loading requests of the same
-     *         content key.
+     * - Returns: The persistable content key data that may be stored offline to answer future loading requests of the
+     * same content key.
+     * 
+     * API-Since: 10.3
      */
     @Nullable
     @Generated

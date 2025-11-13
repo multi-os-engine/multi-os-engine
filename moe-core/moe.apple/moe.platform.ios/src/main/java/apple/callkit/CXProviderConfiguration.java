@@ -334,4 +334,18 @@ public class CXProviderConfiguration extends NSObject implements NSCopying {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setSupportsAudioTranslation:")
+    public native void setSupportsAudioTranslation(boolean value);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("supportsAudioTranslation")
+    public native boolean supportsAudioTranslation();
 }

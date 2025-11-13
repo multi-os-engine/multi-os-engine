@@ -18,9 +18,7 @@ package apple.mapkit;
 
 import apple.NSObject;
 import apple.contacts.CNPostalAddress;
-import apple.corelocation.CLLocation;
 import apple.corelocation.CLPlacemark;
-import apple.corelocation.struct.CLLocationCoordinate2D;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDictionary;
@@ -49,7 +47,16 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.corelocation.CLLocation;
+import apple.corelocation.struct.CLLocationCoordinate2D;
 
+/**
+ * API-Since: 3.0
+ * Deprecated-Since: 26.0
+ * Deprecated-Message: Use MKMapItem's location, address and addressRepresentations properties instead. Use
+ * MKAddressRepresentations for formatted address strings for MapKit provided MKMapItems
+ */
+@Deprecated
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -182,7 +189,13 @@ public class MKPlacemark extends CLPlacemark implements MKAnnotation {
      * To create an MKPlacemark from a CLPlacemark, call [MKPlacemark initWithPlacemark:] passing the CLPlacemark
      * instance that is returned by CLGeocoder.
      * See CLGeocoder.h and CLPlacemark.h in CoreLocation for more information.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use MKMapItem's location, address and addressRepresentations properties instead. Use
+     * MKAddressRepresentations for formatted address strings for MapKit provided MKMapItems
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("countryCode")
@@ -206,7 +219,13 @@ public class MKPlacemark extends CLPlacemark implements MKAnnotation {
     /**
      * An address dictionary is a dictionary in the same form as returned by
      * ABRecordCopyValue(person, kABPersonAddressProperty).
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use MKMapItem's location, address and addressRepresentations properties instead. Use
+     * MKAddressRepresentations for formatted address strings for MapKit provided MKMapItems
      */
+    @Deprecated
     @Generated
     @Selector("initWithCoordinate:addressDictionary:")
     public native MKPlacemark initWithCoordinateAddressDictionary(@ByValue CLLocationCoordinate2D coordinate,
@@ -220,6 +239,7 @@ public class MKPlacemark extends CLPlacemark implements MKAnnotation {
     public native MKPlacemark initWithCoordinatePostalAddress(@ByValue CLLocationCoordinate2D coordinate,
             @NotNull CNPostalAddress postalAddress);
 
+    @Deprecated
     @Generated
     @Selector("initWithPlacemark:")
     public native MKPlacemark initWithPlacemark(@NotNull CLPlacemark placemark);

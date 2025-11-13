@@ -43,6 +43,7 @@ import org.jetbrains.annotations.Nullable;
 import apple.avfoundation.protocol.AVCaptureSessionControlsDelegate;
 import apple.opaque.dispatch_queue_t;
 import org.moe.natj.general.ann.MappedReturn;
+import apple.avfoundation.protocol.AVCaptureSessionDeferredStartDelegate;
 
 /**
  * AVCaptureSession
@@ -1042,4 +1043,206 @@ public class AVCaptureSession extends NSObject {
     @Generated
     @Selector("supportsControls")
     public native boolean supportsControls();
+
+    /**
+     * A `BOOL` value that indicates whether deferred start runs automatically.
+     * 
+     * Deferred Start is a feature that allows you to control, on a per-output basis, whether output objects start when
+     * or after the session is started. The session defers starting an output when its
+     * ``AVCaptureOutput/deferredStartEnabled`` property is set to `true`, and starts it after the session is started.
+     * 
+     * When this value is `true`, ``AVCaptureSession`` automatically runs deferred start. If only
+     * ``AVCaptureVideoPreviewLayer`` objects have ``AVCaptureVideoPreviewLayer/deferredStartEnabled`` set to `false`,
+     * the session runs deferred start a short time after displaying the first frame. If there are ``AVCaptureOutput``
+     * objects that have ``AVCaptureOutput/deferredStartEnabled`` set to `false`, then the session waits until each
+     * output that provides streaming data to your app sends its first frame.
+     * 
+     * If you set this value to `false`, call ``runDeferredStartWhenNeeded`` to indicate when to run deferred start.
+     * 
+     * By default, for apps that are linked on or after iOS 26, this value is `true`.
+     * 
+     * - Note: If ``manualDeferredStartSupported`` is `false`, setting this property value to `false` results in the
+     * session throwing an `NSInvalidArgumentException`.
+     * 
+     * - Note: Set this value before committing the configuration.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("automaticallyRunsDeferredStart")
+    public native boolean automaticallyRunsDeferredStart();
+
+    /**
+     * Indicates whether the receiver should configure the application's audio session for bluetooth high quality
+     * recording.
+     * 
+     * The value of this property is a `BOOL` indicating whether the receiver should configure the application's audio
+     * session for bluetooth high quality recording (AirPods as a high quality microphone). When this property is set to
+     * `true`, the ``AVCaptureSession`` will opt in for high quality bluetooth recording, allowing users of your app to
+     * select AirPods as the active mic source for capture. This property has no effect when
+     * ``usesApplicationAudioSession`` is set to `false`. The default value is `false`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("configuresApplicationAudioSessionForBluetoothHighQualityRecording")
+    public native boolean configuresApplicationAudioSessionForBluetoothHighQualityRecording();
+
+    /**
+     * A delegate object that observes events about deferred start.
+     * 
+     * Call the ``setDeferredStartDelegate:deferredStartDelegateCallbackQueue:`` method to set the deferred start
+     * delegate for a session.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("deferredStartDelegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    public native AVCaptureSessionDeferredStartDelegate deferredStartDelegate();
+
+    /**
+     * The dispatch queue on which the session calls deferred start delegate methods.
+     * 
+     * Call the ``setDeferredStartDelegate:deferredStartDelegateCallbackQueue:`` method to specify the dispatch queue on
+     * which to call the deferred start delegate methods.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("deferredStartDelegateCallbackQueue")
+    @Nullable
+    public native dispatch_queue_t deferredStartDelegateCallbackQueue();
+
+    /**
+     * A `BOOL` value that indicates whether the session supports manually running deferred start.
+     * 
+     * Deferred Start is a feature that allows you to control, on a per-output basis, whether output objects start when
+     * or after the session is started. The session defers starting an output when its ``deferredStartEnabled`` property
+     * is set to `true`, and starts it after the session is started.
+     * 
+     * You can only set the ``automaticallyRunsDeferredStart`` property value to `false` if the session supports manual
+     * deferred start.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isManualDeferredStartSupported")
+    public native boolean isManualDeferredStartSupported();
+
+    /**
+     * Tells the session to run deferred start when appropriate.
+     * 
+     * For best perceived startup performance, call this after displaying the first frame, so that deferred start
+     * processing doesn't interfere with other initialization operations. For example, if using a
+     * <doc://com.apple.documentation/documentation/quartzcore/cametallayer> to draw camera frames, add a
+     * `presentHandler` (using <doc://com.apple.documentation/metal/mtldrawable/addpresentedhandler>) to the first
+     * drawable and call ``runDeferredStartWhenNeeded`` from there.
+     * 
+     * If one or more outputs need to start to perform a capture operation, and ``runDeferredStartWhenNeeded`` has not
+     * run yet, the session runs the deferred start on your app's behalf. Only call this method once for each
+     * configuration commit - after the first call, subsequent calls to ``runDeferredStartWhenNeeded`` have no effect.
+     * The deferred start runs asynchronously, so this method returns immediately.
+     * 
+     * - Note: You can only call this when ``automaticallyRunsDeferredStart`` is `false`. Otherwise, the session throws
+     * an `NSInvalidArgumentException`.
+     * 
+     * - Important: To avoid blocking your app's UI, don't call this method from the application's main actor or queue.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("runDeferredStartWhenNeeded")
+    public native void runDeferredStartWhenNeeded();
+
+    /**
+     * A `BOOL` value that indicates whether deferred start runs automatically.
+     * 
+     * Deferred Start is a feature that allows you to control, on a per-output basis, whether output objects start when
+     * or after the session is started. The session defers starting an output when its
+     * ``AVCaptureOutput/deferredStartEnabled`` property is set to `true`, and starts it after the session is started.
+     * 
+     * When this value is `true`, ``AVCaptureSession`` automatically runs deferred start. If only
+     * ``AVCaptureVideoPreviewLayer`` objects have ``AVCaptureVideoPreviewLayer/deferredStartEnabled`` set to `false`,
+     * the session runs deferred start a short time after displaying the first frame. If there are ``AVCaptureOutput``
+     * objects that have ``AVCaptureOutput/deferredStartEnabled`` set to `false`, then the session waits until each
+     * output that provides streaming data to your app sends its first frame.
+     * 
+     * If you set this value to `false`, call ``runDeferredStartWhenNeeded`` to indicate when to run deferred start.
+     * 
+     * By default, for apps that are linked on or after iOS 26, this value is `true`.
+     * 
+     * - Note: If ``manualDeferredStartSupported`` is `false`, setting this property value to `false` results in the
+     * session throwing an `NSInvalidArgumentException`.
+     * 
+     * - Note: Set this value before committing the configuration.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setAutomaticallyRunsDeferredStart:")
+    public native void setAutomaticallyRunsDeferredStart(boolean value);
+
+    /**
+     * Indicates whether the receiver should configure the application's audio session for bluetooth high quality
+     * recording.
+     * 
+     * The value of this property is a `BOOL` indicating whether the receiver should configure the application's audio
+     * session for bluetooth high quality recording (AirPods as a high quality microphone). When this property is set to
+     * `true`, the ``AVCaptureSession`` will opt in for high quality bluetooth recording, allowing users of your app to
+     * select AirPods as the active mic source for capture. This property has no effect when
+     * ``usesApplicationAudioSession`` is set to `false`. The default value is `false`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setConfiguresApplicationAudioSessionForBluetoothHighQualityRecording:")
+    public native void setConfiguresApplicationAudioSessionForBluetoothHighQualityRecording(boolean value);
+
+    /**
+     * Sets a delegate object for the session to call when performing deferred start.
+     * 
+     * This delegate receives a call to the ``AVCaptureSessionDeferredStartDelegate/sessionWillRunDeferredStart:``
+     * method when deferred start is about to run. It is non-blocking, so by the time this method is called, the
+     * deferred start may already be underway. If you want your app to perform initialization (potentially) concurrently
+     * with deferred start (e.g. user-facing camera features that are not needed to display the first preview frame, but
+     * are available to the user as soon as possible) it may be done in the delegate's
+     * ``AVCaptureSessionDeferredStartDelegate/sessionWillRunDeferredStart:`` method. To wait until deferred start is
+     * finished to perform some remaining initialization work, use the
+     * ``AVCaptureSessionDeferredStartDelegate/sessionDidRunDeferredStart:`` method instead.
+     * 
+     * The delegate receives a call to the ``AVCaptureSessionDeferredStartDelegate/sessionDidRunDeferredStart:`` method
+     * when the deferred start finishes running. This allows you to run less-critical application initialization code.
+     * For example, if you've deferred an ``AVCapturePhotoOutput`` by setting its
+     * ``AVCaptureOutput/deferredStartEnabled`` property to `true`, and you'd like to do some app-specific
+     * initialization related to still capture, here might be a good place to put it.
+     * 
+     * If the delegate is non-nil, the session still calls the
+     * ``AVCaptureSessionDeferredStartDelegate/sessionWillRunDeferredStart:`` and
+     * ``AVCaptureSessionDeferredStartDelegate/sessionDidRunDeferredStart:`` methods regardless of the value of the
+     * session's ``automaticallyRunsDeferredStart`` property.
+     * 
+     * To minimize the capture session's startup latency, defer all unnecessary work until after the session starts.
+     * This delegate provides callbacks for you to schedule deferred work without impacting session startup performance.
+     * 
+     * To perform initialization prior to deferred start but after the user interface displays, set
+     * ``automaticallyRunsDeferredStart`` to `false`, and then run the custom initialization prior to calling
+     * ``runDeferredStartWhenNeeded``.
+     * 
+     * If ``deferredStartDelegate`` is not `NULL`, the session throws an exception if
+     * ``deferredStartDelegateCallbackQueue`` is `nil`.
+     * 
+     * - Parameter deferredStartDelegate: An object conforming to the ``AVCaptureSessionDeferredStartDelegate`` protocol
+     * that receives events about deferred start.
+     * - Parameter deferredStartDelegateCallbackQueue: A dispatch queue on which deferredStart delegate methods are
+     * called.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setDeferredStartDelegate:deferredStartDelegateCallbackQueue:")
+    public native void setDeferredStartDelegateDeferredStartDelegateCallbackQueue(
+            @Mapped(ObjCObjectMapper.class) @Nullable AVCaptureSessionDeferredStartDelegate deferredStartDelegate,
+            @Nullable dispatch_queue_t deferredStartDelegateCallbackQueue);
 }

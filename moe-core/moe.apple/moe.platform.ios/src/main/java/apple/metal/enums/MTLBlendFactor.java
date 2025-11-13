@@ -90,19 +90,29 @@ public final class MTLBlendFactor {
     }
 
     /**
-     * API-Since: 10.11
+     * API-Since: 11.0
      */
     @Generated @NUInt public static final long Source1Color = 0x000000000000000FL;
     /**
-     * API-Since: 10.11
+     * API-Since: 11.0
      */
     @Generated @NUInt public static final long OneMinusSource1Color = 0x0000000000000010L;
     /**
-     * API-Since: 10.11
+     * API-Since: 11.0
      */
     @Generated @NUInt public static final long Source1Alpha = 0x0000000000000011L;
     /**
-     * API-Since: 10.11
+     * API-Since: 11.0
      */
     @Generated @NUInt public static final long OneMinusSource1Alpha = 0x0000000000000012L;
+    /**
+     * Defers assigning the blend factor.
+     * 
+     * Until you specialize this value in the pipeline state, it:
+     * * behaves as `MTLBlendFactorOne` for `sourceRGBBlendFactor` and `sourceAlphaBlendFactor`
+     * * behaves as `MTLBlendFactorZero` for `destinationRGBBlendFactor` and `destinationAlphaBlendFactor`
+     * 
+     * API-Since: 26.0
+     */
+    @Generated @NUInt public static final long Unspecialized = 0x0000000000000013L;
 }

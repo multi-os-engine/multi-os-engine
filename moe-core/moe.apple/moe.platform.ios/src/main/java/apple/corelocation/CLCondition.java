@@ -30,6 +30,14 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
+ * Discussion:
+ * Abstract base class from which all other conditions are derived from.
+ * 
+ * Note:
+ * Do not derive from this class xor its subclasses. Passing instances
+ * custom conditions will result in unintended behavior.
+ * 
+ * 
  * API-Since: 17.0
  */
 @Generated

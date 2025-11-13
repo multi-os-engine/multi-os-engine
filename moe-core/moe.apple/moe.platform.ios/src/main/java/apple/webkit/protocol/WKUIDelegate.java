@@ -484,10 +484,10 @@ public interface WKUIDelegate {
      * 
      *                          If you do not implement this method on macOS, the web view will behave as if the user
      *                          selected the Cancel button.
-     *                          If you do not implement this method on iOS, the web view will match the file upload
-     *                          behavior of Safari. If you desire
-     *                          the web view to act as if the user selected the Cancel button on iOS, immediately call
-     *                          the completion handler with nil.
+     *                          If you do not implement this method on iOS or visionOS, the web view will match the file
+     *                          upload behavior of Safari. If you desire
+     *                          the web view to act as if the user selected the Cancel button on iOS or visionOS,
+     *                          immediately call the completion handler with nil.
      * 
      *                          API-Since: 18.4
      */

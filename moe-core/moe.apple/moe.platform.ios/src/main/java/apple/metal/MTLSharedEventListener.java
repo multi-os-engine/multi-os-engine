@@ -172,4 +172,15 @@ public class MTLSharedEventListener extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * A shared instance constructed with a standard serial dispatch queue.
+     * This instance can be used for short-running notifications without QoS requirements.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("sharedListener")
+    @NotNull
+    public static native MTLSharedEventListener sharedListener();
 }

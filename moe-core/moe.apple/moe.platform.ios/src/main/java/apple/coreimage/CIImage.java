@@ -231,10 +231,24 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     public static native CIImage imageWithDataOptions(@NotNull NSData data, @Nullable NSDictionary<String, ?> options);
 
     /**
-     * Create a new CIImage populated when rendered with data provided by 'p'.
-     * The provider object 'p' is retained until the image is deallocated.
-     * The 'options' dictionary supports kCIImageProviderTileSize as well as
-     * other options defined in CIImage.h
+     * Create an image object based on pixels from an image provider object.
+     * 
+     * Core Image retains the provider object until the image is deallocated.
+     * The image provider object will not be called until the image is rendered.
+     * 
+     * - Parameters:
+     * - provider: An object that implements the `CIImageProvider` protocol.
+     * - width: The width of the image.
+     * - height: The height of the image.
+     * - format: The ``CIFormat`` of the provided pixels.
+     * - colorSpace: The color space that the image is defined in.
+     * If `nil`, then the pixels will not be is not color matched to the Core Image working color space.
+     * - options: A dictionary that contains various ``CIImageOption`` keys that affect the resulting ``CIImage``.
+     * The option ``kCIImageProviderTileSize`` controls if and how the provider object is called in tiles.
+     * The option ``kCIImageProviderUserInfo`` allows additional state to be passed to the provider object.
+     * - Returns:
+     * An autoreleased ``CIImage`` object based on the data provider.
+     * 
      * 
      * API-Since: 9.0
      */
@@ -242,8 +256,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("imageWithImageProvider:size::format:colorSpace:options:")
     public static native CIImage imageWithImageProviderSize_FormatColorSpaceOptions(
-            @NotNull @Mapped(ObjCObjectMapper.class) Object p, @NUInt long width, @NUInt long height, int f,
-            @Nullable CGColorSpaceRef cs, @Nullable NSDictionary<String, ?> options);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object provider, @NUInt long width, @NUInt long height, int format,
+            @Nullable CGColorSpaceRef colorSpace, @Nullable NSDictionary<String, ?> options);
 
     /**
      * Creates a new image referencing the contents of the Metal texture object.
@@ -396,7 +410,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
-     * Return a rect the defines the bounds of non-(0,0,0,0) pixels
+     * Returns a rectangle the defines the bounds of non-(0,0,0,0) pixels in the image.
+     * > Note: the ``extent`` of `CIImage`` may be infinite or have a non-zero origin.
      */
     @Generated
     @Selector("extent")
@@ -418,7 +433,12 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
             @Nullable NSDictionary<String, ?> params);
 
     /**
-     * Return a new image by applying a gaussian blur to the receiver.
+     * Create an image by applying a gaussian blur to the receiver.
+     * - Parameters:
+     * - sigma: The sigma of the gaussian blur to apply to the receiver.
+     * If the sigma is very small (less than `0.16`) then the receiver is returned.
+     * - Returns:
+     * An autoreleased ``CIImage`` instance or the received image.
      * 
      * API-Since: 10.0
      */
@@ -531,7 +551,16 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     public native CIImage imageBySettingAlphaOneInExtent(@ByValue CGRect extent);
 
     /**
-     * Return a new image by changing the recevier's properties.
+     * Return a new image by changing the receiver's metadata properties.
+     * 
+     * When you create an image, Core Image sets an image’s properties to a metadata
+     * dictionary as described here: ``properties``.
+     * Use this method to override an image’s metadata properties with new values.
+     * 
+     * - Parameters:
+     * - properties: A dictionary of metadata properties akin to the `CGImageSourceCopyPropertiesAtIndex()` function.
+     * - Returns:
+     * An autoreleased ``CIImage`` instance with a copy of the new properties.
      * 
      * API-Since: 10.0
      */
@@ -651,13 +680,32 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     public native CIImage initWithImageOptions(@NotNull UIImage image, @Nullable NSDictionary<String, ?> options);
 
     /**
+     * Initializes an image object based on pixels from an image provider object.
+     * 
+     * Core Image retains the provider object until the image is deallocated.
+     * The image provider object will not be called until the image is rendered.
+     * 
+     * - Parameters:
+     * - provider: An object that implements the `CIImageProvider` protocol.
+     * - width: The width of the image.
+     * - height: The height of the image.
+     * - format: The ``CIFormat`` of the provided pixels.
+     * - colorSpace: The color space that the image is defined in.
+     * If `nil`, then the pixels will not be is not color matched to the Core Image working color space.
+     * - options: A dictionary that contains various ``CIImageOption`` keys that affect the resulting ``CIImage``.
+     * The option ``kCIImageProviderTileSize`` controls if and how the provider object is called in tiles.
+     * The option ``kCIImageProviderUserInfo`` allows additional state to be passed to the provider object.
+     * - Returns:
+     * An initialized ``CIImage`` object based on the data provider.
+     * 
+     * 
      * API-Since: 9.0
      */
     @Generated
     @Selector("initWithImageProvider:size::format:colorSpace:options:")
     public native CIImage initWithImageProviderSize_FormatColorSpaceOptions(
-            @NotNull @Mapped(ObjCObjectMapper.class) Object p, @NUInt long width, @NUInt long height, int f,
-            @Nullable CGColorSpaceRef cs, @Nullable NSDictionary<String, ?> options);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object provider, @NUInt long width, @NUInt long height, int format,
+            @Nullable CGColorSpaceRef colorSpace, @Nullable NSDictionary<String, ?> options);
 
     /**
      * initWithMTLTexture will return nil if textureType is not MTLTextureType2D.
@@ -694,9 +742,16 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     public native CVBufferRef pixelBuffer();
 
     /**
-     * Returns the metadata properties of an image. If the image is the
-     * output of one or more CIFilters, then the metadata of the root inputImage
-     * will be returned. See also kCIImageProperties.
+     * Returns the metadata properties dictionary of the image.
+     * 
+     * If the ``CIImage`` was created from `NSURL` or `NSData` then this dictionary is determined by calling
+     * `CGImageSourceCopyPropertiesAtIndex()`.
+     * 
+     * If the ``CIImage`` was created with the ``kCIImageProperties`` option, then that dictionary is returned.
+     * 
+     * If the ``CIImage`` was created by applying ``CIFilter-class`` or ``CIKernel`` then the
+     * properties of the root inputImage will be returned.
+     * 
      * 
      * API-Since: 5.0
      */
@@ -769,7 +824,9 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     public native CIImage imageByApplyingFilter(@NotNull String filterName);
 
     /**
-     * Returns a new image by changing the receiver's sample mode to bilinear interpolation.
+     * Create an image by changing the receiver's sample mode to bilinear interpolation.
+     * - Returns:
+     * An autoreleased ``CIImage`` instance with a bilinear sampling.
      * 
      * API-Since: 11.0
      */
@@ -779,7 +836,9 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     public native CIImage imageBySamplingLinear();
 
     /**
-     * Returns a new image by changing the receiver's sample mode to nearest neighbor.
+     * Create an image by changing the receiver's sample mode to nearest neighbor.
+     * - Returns:
+     * An autoreleased ``CIImage`` instance with a nearest sampling.
      * 
      * API-Since: 11.0
      */
@@ -894,8 +953,11 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
             boolean highQualityDownsample);
 
     /**
-     * Returns a new image that inserts a intermediate that is cacheable
-     * according to the CIContext's kCIContextCacheIntermediates option.
+     * Create an image that inserts a intermediate that is cacheable
+     * 
+     * This intermediate will be not be cached if ``kCIContextCacheIntermediates`` is false.
+     * - Returns:
+     * An autoreleased ``CIImage``.
      * 
      * API-Since: 12.0
      */
@@ -905,8 +967,16 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     public native CIImage imageByInsertingIntermediate();
 
     /**
-     * Returns a new image that inserts a intermediate that is cacheable
-     * independent of the CIContext's kCIContextCacheIntermediates option.
+     * Create an image that inserts a intermediate that is cacheable.
+     * 
+     * - Parameters:
+     * - cache: Controls if Core Image caches the returned image.
+     * * `YES` : This intermediate will be cacheable even if
+     * ``kCIContextCacheIntermediates`` is false.
+     * * `NO` : the intermediate will be not be cached if
+     * ``kCIContextCacheIntermediates`` is false.
+     * - Returns:
+     * An autoreleased ``CIImage``.
      * 
      * API-Since: 12.0
      */
@@ -1116,26 +1186,26 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
      * 
      * If the image headroom is known, then a value greater than or equal to 1.0 will be returned.
      * A value of 1.0 will be returned if the image is SDR.
-     * A value greater than 1.0 will be returned if the image is EDR.
+     * A value greater than 1.0 will be returned if the image is HDR.
      * 
      * The image headroom may known when a CIImage is first initialized.
      * If the a CIImage is initialized using:
-     * [CIImage imageWithContentsOfURL:..] or [CIImage imageWithData:..]
-     * headroom may be determined by associated metadata or deduced from pixel format or colorSpace information.
+     * * `NSURL` or `NSData` : the headroom may be determined by associated metadata
+     * or deduced from pixel format or colorSpace information.
+     * * `CGImage` : headroom may be determined by `CGImageGetHeadroomInfo()`
+     * or deduced from pixel format or colorSpace information.
+     * * `IOSurface` : then the headroom will be determined by `kIOSurfaceContentHeadroom`.
+     * or deduced from pixel format or colorSpace information.
+     * * `CVPixelBuffer` : then the headroom will be determined by `kCVImageBufferContentLightLevelInfoKey`.
+     * or deduced from pixel format or colorSpace information.
+     * * `BitmapData` : headroom may be deduced from pixel format or colorSpace information.
      * 
-     * [CIImage imageWithCGImage:..]
-     * headroom may be determined by CGImageGetHeadroomInfo() or deduced from pixel format or colorSpace information.
+     * If the image is the result of applying a ``CIFilter-class`` or ``CIKernel``, this method will return `0.0`.
      * 
-     * [CIImage imageWithIOSurface:..] or [CIImage imageWithCVPixelBuffer:..]
-     * headroom may be determined by kIOSurfaceContentHeadroom or deduced from pixel format or colorSpace information.
+     * There are exceptions to this. Applying a `CIWarpKernel`` or certain ``CIFilter-class``
+     * (e.g. `CIGaussianBlur`, `CILanczosScaleTransform`, `CIAreaAverage` and some others)
+     * to an image will result in a ``CIImage`` instance with the same `contentHeadroom` property value.
      * 
-     * [CIImage imageWithBitmapData:..]
-     * headroom may be deduced from pixel format or colorSpace information.
-     * 
-     * If the image is the result of applying a CIFilter or CIKernel, this method will return 0.0.
-     * There are exceptions to this. Applying CIWarpKernels or certain CIFilters (e.g. CIGaussianBlur,
-     * CILanczosScaleTransform, CIAreaAverage and some others) to an image will result in a CIImage with
-     * the same 'headroom' property value.
      * 
      * API-Since: 18.0
      */
@@ -1144,10 +1214,16 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     public native float contentHeadroom();
 
     /**
-     * Returns a new image that applies a gain map image to the received image.
-     * The gain map image should be obtained by creating a image using either the
-     * kCIImageAuxiliaryHDRGainMap option set to @YES. If the gain map image doesn't
-     * have the needed metadata, the received image will be returned as-is.
+     * Create an image that applies a gain map Core Image image to the received Core Image image.
+     * 
+     * The gain map image can be obtained by creating a ``CIImage`` instance from `NSURL`/`NSData`
+     * and setting the ``kCIImageAuxiliaryHDRGainMap`` option set to `@YES`.
+     * 
+     * If the gain map ``CIImage`` instance doesn't have the needed ``properties`` metadata,
+     * the received image will be returned as-is.
+     * 
+     * - Returns:
+     * An autoreleased ``CIImage`` instance or the received image.
      * 
      * API-Since: 18.0
      */
@@ -1157,10 +1233,16 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     public native CIImage imageByApplyingGainMap(@NotNull CIImage gainmap);
 
     /**
-     * Returns a new image that applies a gain map image to the received image
-     * and to specify how much headroom the resulting image should have.
+     * Create an image that applies a gain map Core Image image with a specified headroom to the received Core Image
+     * image.
+     * 
+     * - Parameters:
+     * - gainmap: The gain map ``CIImage`` instance to apply to the receiver.
+     * - headroom: a float value that specify how much headroom the resulting image should have.
      * The headroom value will be limited to between 1.0 (i.e. SDR) and
      * the full headroom allowed by the gain map.
+     * - Returns:
+     * An autoreleased ``CIImage`` instance or the received image.
      * 
      * API-Since: 18.0
      */
@@ -1170,16 +1252,21 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     public native CIImage imageByApplyingGainMapHeadroom(@NotNull CIImage gainmap, float headroom);
 
     /**
-     * Returns YES if the image is known to have alpha==1 over the entire image extent
+     * Returns YES if the image is known to have and alpha value of `1.0` over the entire image extent.
      */
     @Generated
     @Selector("isOpaque")
     public native boolean isOpaque();
 
     /**
-     * Returns a MTLTexture if the CIImage was created with [CIImage imageWithMTLTexture] and no options.
-     * Otherwise this property will be nil and calling [CIContext render:toMTLTexture:] is recommended.
-     * Modifying the contents of this texture will cause the CIImage to render with undefined results.
+     * Returns a Metal Texture if the Core Image image was created with a texture.
+     * 
+     * This will return non-nil if the image was created with ``/CIImage/imageWithMTLTexture:options:`` and no options.
+     * Otherwise this property will be `nil` you should instead call
+     * ``/CIContext/render:toMTLTexture:commandBuffer:bounds:colorSpace:``.
+     * > Warning: Modifying the contents of this texture will cause the ``CIImage`` instance to render with incorrect
+     * results.
+     * 
      * 
      * API-Since: 18.0
      */
@@ -1188,4 +1275,78 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     @Nullable
     public native MTLTexture metalTexture();
+
+    /**
+     * Returns the content average light level of the image.
+     * 
+     * If the image average light level is unknown, then the value 0.0 will be returned.
+     * 
+     * If the image headroom is known, then a value greater than or equal to 0.0 will be returned.
+     * 
+     * The image average light level may known when a CIImage is first initialized.
+     * If the a CIImage is initialized with a:
+     * * `CGImage` : then the headroom will be determined by `CGImageGetContentAverageLightLevel()`.
+     * * `CVPixelBuffer` : then the headroom will be determined by `kCVImageBufferContentLightLevelInfoKey`.
+     * 
+     * If the image is the result of applying a ``CIFilter-class`` or ``CIKernel``, this property will return `0.0`.
+     * 
+     * There are exceptions to this. Applying a ``CIWarpKernel`` or certain ``CIFilter-class``
+     * (e.g. `CIGaussianBlur`, `CILanczosScaleTransform`, `CIAreaAverage` and some others)
+     * to an image will result in a ``CIImage`` instance with the same `contentAverageLightLevel` property value.
+     * 
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @Selector("contentAverageLightLevel")
+    public native float contentAverageLightLevel();
+
+    /**
+     * Create an image that inserts a intermediate that is cached in tiles
+     * 
+     * This intermediate will be cacheable even if ``kCIContextCacheIntermediates`` is false.
+     * - Returns:
+     * An autoreleased ``CIImage``.
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @Selector("imageByInsertingTiledIntermediate")
+    @NotNull
+    public native CIImage imageByInsertingTiledIntermediate();
+
+    /**
+     * Create an image by changing the receiver's contentAverageLightLevel property.
+     * 
+     * Changing this value will alter the behavior of the `CIToneMapHeadroom` and `CISystemToneMap` filters.
+     * * If the value is set to 0.0 or less then the returned image's ``contentAverageLightLevel`` is unknown.
+     * 
+     * - Returns:
+     * An autoreleased ``CIImage``.
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @Selector("imageBySettingContentAverageLightLevel:")
+    @NotNull
+    public native CIImage imageBySettingContentAverageLightLevel(float average);
+
+    /**
+     * Create an image by changing the receiver's contentHeadroom property.
+     * 
+     * Changing this value will alter the behavior of the `CIToneMapHeadroom` and `CISystemToneMap` filters.
+     * * If the value is set to 0.0 then the returned image's headroom is unknown.
+     * * If the value is set to 1.0 then the returned image is SDR.
+     * * If the value is set to greater 1.0 then the returned image is HDR.
+     * * Otherwise the returned image's headroom is unknown.
+     * 
+     * - Returns:
+     * An autoreleased ``CIImage``.
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @Selector("imageBySettingContentHeadroom:")
+    @NotNull
+    public native CIImage imageBySettingContentHeadroom(float headroom);
 }

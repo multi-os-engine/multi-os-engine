@@ -27,6 +27,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.general.ann.NFloat;
 
 /**
  * API-Since: 14.0
@@ -249,4 +250,41 @@ public class UIColorPickerViewController extends UIViewController {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The maximum exposure to apply to a color when returned by the color picker.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("maximumLinearExposure")
+    @NFloat
+    public native double maximumLinearExposure();
+
+    /**
+     * The maximum exposure to apply to a color when returned by the color picker.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setMaximumLinearExposure:")
+    public native void setMaximumLinearExposure(@NFloat double value);
+
+    /**
+     * If set to `NO` the eyedropper functionality is not supported for this color picker.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setSupportsEyedropper:")
+    public native void setSupportsEyedropper(boolean value);
+
+    /**
+     * If set to `NO` the eyedropper functionality is not supported for this color picker.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("supportsEyedropper")
+    public native boolean supportsEyedropper();
 }

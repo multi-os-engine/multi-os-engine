@@ -237,11 +237,11 @@ public class ARConfiguration extends NSObject implements NSCopying {
      * The type of semantic understanding to provide with each frame.
      * 
      * Use the `supportsFrameSemantics` class method to check if the configuration type you intend to run supports the
-     * set of frame semantics. For example, when running a session with
-     * a configuration of type ARWorldTrackingConfiguration one would need to use `+[ ARWorldTrackingConfiguration
-     * supportsFrameSemantics:]` to perform said check.
-     * An exception is thrown if the option
-     * is not supported. Defaults to ARFrameSemanticNone.
+     * set of frame semantics.
+     * For example, when running a session with a configuration of type ARWorldTrackingConfiguration one would need to
+     * use `+[ ARWorldTrackingConfiguration
+     * supportsFrameSemantics:]` to perform said check. An exception is thrown if the option is not supported. Defaults
+     * to ARFrameSemanticNone.
      * 
      * @see ARFrameSemantics
      * @see +[ARConfiguration supportsFrameSemantics:]
@@ -257,11 +257,11 @@ public class ARConfiguration extends NSObject implements NSCopying {
      * The type of semantic understanding to provide with each frame.
      * 
      * Use the `supportsFrameSemantics` class method to check if the configuration type you intend to run supports the
-     * set of frame semantics. For example, when running a session with
-     * a configuration of type ARWorldTrackingConfiguration one would need to use `+[ ARWorldTrackingConfiguration
-     * supportsFrameSemantics:]` to perform said check.
-     * An exception is thrown if the option
-     * is not supported. Defaults to ARFrameSemanticNone.
+     * set of frame semantics.
+     * For example, when running a session with a configuration of type ARWorldTrackingConfiguration one would need to
+     * use `+[ ARWorldTrackingConfiguration
+     * supportsFrameSemantics:]` to perform said check. An exception is thrown if the option is not supported. Defaults
+     * to ARFrameSemanticNone.
      * 
      * @see ARFrameSemantics
      * @see +[ARConfiguration supportsFrameSemantics:]
@@ -297,8 +297,9 @@ public class ARConfiguration extends NSObject implements NSCopying {
      * Determines whether the type of frame semantics is supported by the device and ARConfiguration class.
      * 
      * Semantic frame understanding is not supported on all devices. Use the `supportsFrameSemantics` class method to
-     * check if the configuration type you intend to run supports the
-     * set of frame semantics. For example, when running a session with a configuration of type
+     * check if the configuration
+     * type you intend to run supports the set of frame semantics. For example, when running a session with a
+     * configuration of type
      * ARWorldTrackingConfiguration one would need to use
      * `+[ ARWorldTrackingConfiguration supportsFrameSemantics:]` to perform said check.
      * 
@@ -348,10 +349,12 @@ public class ARConfiguration extends NSObject implements NSCopying {
 
     /**
      * Returns a recommended video format that supports capturing high resolution frames with a significantly higher
-     * resolution than the streaming camera resolution.
+     * resolution than the streaming camera
+     * resolution.
      * 
      * Using this format may consume more power. Other video formats may support capturing high resolution frames as
-     * well, albeit at a lower quality or resolution.
+     * well, albeit at a lower
+     * quality or resolution.
      * 
      * @see [ARSession captureHighResolutionFrameWithCompletion:]
      * 

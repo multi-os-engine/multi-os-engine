@@ -18,6 +18,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.UISceneWindowingControlStyle;
+import apple.uikit.UIWindowSceneGeometry;
 
 /**
  * API-Since: 13.0
@@ -49,9 +51,17 @@ public interface UIWindowSceneDelegate extends UISceneDelegate {
     }
 
     /**
-     * Called when the coordinate space, interface orientation, or trait collection of a UIWindowScene changes
-     * Always called when a UIWindowScene moves between screens
+     * Called when the coordinate space, interface orientation, or trait collection of a `UIWindowScene` changes.
+     * 
+     * Always called when a UIWindowScene moves between screens.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use windowScene(_: didUpdateEffectiveGeometry:) to be notified of the scene's geometry
+     * changes, or use traits whose values are inherited from the scene via the traitCollection of views and view
+     * controllers instead.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("windowScene:didUpdateCoordinateSpace:interfaceOrientation:traitCollection:")
@@ -97,6 +107,35 @@ public interface UIWindowSceneDelegate extends UISceneDelegate {
     @Selector("windowScene:userDidAcceptCloudKitShareWithMetadata:")
     default void windowSceneUserDidAcceptCloudKitShareWithMetadata(@NotNull UIWindowScene windowScene,
             @NotNull CKShareMetadata cloudKitShareMetadata) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Called by the system to determine the windowing control style for the provided scene.
+     * `automaticStyle` will be used if this method is not implemented.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("preferredWindowingControlStyleForScene:")
+    @NotNull
+    default UISceneWindowingControlStyle preferredWindowingControlStyleForScene(@NotNull UIWindowScene windowScene) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Called when the window scene's effective geometry has changed.
+     * 
+     * Always called when a `UIWindowScene` moves between screens.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("windowScene:didUpdateEffectiveGeometry:")
+    default void windowSceneDidUpdateEffectiveGeometry(@NotNull UIWindowScene windowScene,
+            @NotNull UIWindowSceneGeometry previousEffectiveGeometry) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

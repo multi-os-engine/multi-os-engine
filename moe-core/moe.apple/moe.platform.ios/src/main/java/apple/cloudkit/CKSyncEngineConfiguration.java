@@ -72,13 +72,13 @@ public class CKSyncEngineConfiguration extends NSObject {
      * It will also automatically re-schedule sync tasks for retryable errors such as network failures or server
      * throttles.
      * 
-     * If `automaticallySync` is off, then the sync engine will not perform any operations unless you tell it to do so
-     * via `fetchChanges` or `sendChanges`.
+     * If ``CKSyncEngineConfiguration/automaticallySync`` is off, then the sync engine will not perform any operations
+     * unless you tell it to do so via ``CKSyncEngine/fetchChanges(_:)`` or ``CKSyncEngine/sendChanges(_:)``.
      * 
      * Most applications likely want to enable automatic syncing during normal use.
      * However, you might want to disable it if you have specific requirements for when you want to sync.
      * For example, if you want to sync only once per day, you can turn off automatic sync and manually call
-     * `fetchChanges` and `sendChanges` once per day.
+     * ``CKSyncEngine/fetchChanges(_:)`` and ``CKSyncEngine/sendChanges(_:)`` once per day.
      * 
      * You might also disable automatic sync when writing automated tests for your integration with `CKSyncEngine`.
      * This way, you can have fine grained control over exactly when the sync engine fetches or sends changes.
@@ -118,7 +118,7 @@ public class CKSyncEngineConfiguration extends NSObject {
      * You can have multiple instances of `CKSyncEngine` in the same process, each targeting a different database.
      * For example, you might have one for your private database and one for your shared database.
      * 
-     * It's also technically possible to have multiple instances of `CKSyncEngine` for the same `CKDatabase`.
+     * It's also technically possible to have multiple instances of `CKSyncEngine` for the same ``CKDatabase``.
      * This isn't recommended for production code, but it can be helpful for testing your `CKSyncEngine` integration.
      * For example, you might make multiple `CKSyncEngine` instances to simulate multiple devices syncing back and
      * forth.
@@ -213,13 +213,13 @@ public class CKSyncEngineConfiguration extends NSObject {
      * It will also automatically re-schedule sync tasks for retryable errors such as network failures or server
      * throttles.
      * 
-     * If `automaticallySync` is off, then the sync engine will not perform any operations unless you tell it to do so
-     * via `fetchChanges` or `sendChanges`.
+     * If ``CKSyncEngineConfiguration/automaticallySync`` is off, then the sync engine will not perform any operations
+     * unless you tell it to do so via ``CKSyncEngine/fetchChanges(_:)`` or ``CKSyncEngine/sendChanges(_:)``.
      * 
      * Most applications likely want to enable automatic syncing during normal use.
      * However, you might want to disable it if you have specific requirements for when you want to sync.
      * For example, if you want to sync only once per day, you can turn off automatic sync and manually call
-     * `fetchChanges` and `sendChanges` once per day.
+     * ``CKSyncEngine/fetchChanges(_:)`` and ``CKSyncEngine/sendChanges(_:)`` once per day.
      * 
      * You might also disable automatic sync when writing automated tests for your integration with `CKSyncEngine`.
      * This way, you can have fine grained control over exactly when the sync engine fetches or sends changes.
@@ -238,7 +238,7 @@ public class CKSyncEngineConfiguration extends NSObject {
      * You can have multiple instances of `CKSyncEngine` in the same process, each targeting a different database.
      * For example, you might have one for your private database and one for your shared database.
      * 
-     * It's also technically possible to have multiple instances of `CKSyncEngine` for the same `CKDatabase`.
+     * It's also technically possible to have multiple instances of `CKSyncEngine` for the same ``CKDatabase``.
      * This isn't recommended for production code, but it can be helpful for testing your `CKSyncEngine` integration.
      * For example, you might make multiple `CKSyncEngine` instances to simulate multiple devices syncing back and
      * forth.
@@ -276,7 +276,7 @@ public class CKSyncEngineConfiguration extends NSObject {
     }
 
     /**
-     * The state serialization you last received in a `CKSyncEngineStateUpdateEvent`.
+     * The state serialization you last received in a ``CKSyncEngine/Event/StateUpdate``.
      * 
      * If this is the first time ever initializing your `CKSyncEngine`, you can provide `nil`.
      * 
@@ -290,7 +290,7 @@ public class CKSyncEngineConfiguration extends NSObject {
      * An optional override for the sync engine's default database subscription ID.
      * Use this for backward compatibility with a previous CloudKit sync implementation.
      * 
-     * By default, `CKSyncEngine` will create its own `CKDatabaseSubscription` with its own subscription ID.
+     * By default, `CKSyncEngine` will create its own ``CKDatabaseSubscription`` with its own subscription ID.
      * If you're migrating to `CKSyncEngine` from a custom CloudKit sync implementation, you can specify your previous
      * subscription ID here.
      * This allows your `CKSyncEngine` integration to be backward compatible with previous versions of your app.
@@ -309,7 +309,7 @@ public class CKSyncEngineConfiguration extends NSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * The state serialization you last received in a `CKSyncEngineStateUpdateEvent`.
+     * The state serialization you last received in a ``CKSyncEngine/Event/StateUpdate``.
      * 
      * If this is the first time ever initializing your `CKSyncEngine`, you can provide `nil`.
      * 
@@ -324,7 +324,7 @@ public class CKSyncEngineConfiguration extends NSObject {
      * An optional override for the sync engine's default database subscription ID.
      * Use this for backward compatibility with a previous CloudKit sync implementation.
      * 
-     * By default, `CKSyncEngine` will create its own `CKDatabaseSubscription` with its own subscription ID.
+     * By default, `CKSyncEngine` will create its own ``CKDatabaseSubscription`` with its own subscription ID.
      * If you're migrating to `CKSyncEngine` from a custom CloudKit sync implementation, you can specify your previous
      * subscription ID here.
      * This allows your `CKSyncEngine` integration to be backward compatible with previous versions of your app.

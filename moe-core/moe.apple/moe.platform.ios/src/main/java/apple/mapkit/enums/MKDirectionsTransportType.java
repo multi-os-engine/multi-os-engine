@@ -46,4 +46,9 @@ public final class MKDirectionsTransportType {
     @Generated
     private MKDirectionsTransportType() {
     }
+
+    /**
+     * API-Since: 14.0
+     */
+    @Generated @NUInt public static final long Cycling = 0x0000000000000008L;
 }

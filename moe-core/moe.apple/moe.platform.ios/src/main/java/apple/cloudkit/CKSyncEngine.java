@@ -40,11 +40,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * The sync engine will perform work in the background on your behalf, and it needs to be initialized
  * so that it can properly listen for push notifications and handle scheduled sync tasks.
  * 
- * When initializing your sync engine, you need to provide an object conforming to the ``CKSyncEngineDelegate``
- * protocol.
+ * When initializing your sync engine, you need to provide an object conforming to the `CKSyncEngineDelegate` protocol.
  * This protocol is the main method of communication between the sync engine and your app.
  * You also need to provide your last known version of the ``CKSyncEngine/State/Serialization``.
- * See ``CKSyncEngine/State`` and ``Event/StateUpdate`` for more details on the sync engine state.
+ * See ``CKSyncEngine/State`` and ``CKSyncEngine/Event/StateUpdate`` for more details on the sync engine state.
  * 
  * Note that before using `CKSyncEngine` in your app, you need to add the CloudKit and remote notification capabilities.
  * 
@@ -55,30 +54,30 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * 
  * When you add pending changes to the state, the sync engine will schedule a task to sync.
  * When the sync task runs, the sync engine will start sending changes to the server.
- * The sync engine will automatically send database changes from ``State/pendingDatabaseChanges``, but you need to
- * provide the record zone changes yourself.
- * In order to send record zone changes, you need to return them from
- * ``CKSyncEngineDelegate/nextRecordZoneChangeBatch(_:syncEngine:)``.
+ * The sync engine will automatically send database changes from ``CKSyncEngine/State/pendingDatabaseChanges``, but you
+ * need to provide the record zone changes yourself.
+ * In order to send record zone changes, you need to return them from `-[CKSyncEngineDelegate
+ * syncEngine:nextRecordZoneChangeBatchForContext:]`.
  * 
  * When the sync engine finishes sending a batch of changes to the server,
- * your `CKSyncEngineDelegate` will receive ``Event/sentDatabaseChanges(_:)`` and ``Event/sentRecordZoneChanges(_:)``
- * events.
+ * your `CKSyncEngineDelegate` will receive ``CKSyncEngine/Event/sentDatabaseChanges(_:)`` and
+ * ``CKSyncEngine/Event/sentRecordZoneChanges(_:)`` events.
  * These events will notify you of the success or failure of the changes you tried to send.
  * 
  * At a high level, sending changes to the server happens with the following order of operations:
  * 
  * 1. You add pending changes to ``CKSyncEngine/state``.
- * 2. You receive ``Event/willSendChanges(_:)`` in ``CKSyncEngineDelegate/handleEvent(_:syncEngine:)``
+ * 2. You receive ``CKSyncEngine/Event/willSendChanges(_:)`` in `-[CKSyncEngineDelegate syncEngine:handleEvent:]`
  * 3. If there are pending database changes, the sync engine sends the next batch.
- * 4. If any database changes were sent, your delegate receives``Event/sentDatabaseChanges(_:)``.
+ * 4. If any database changes were sent, your delegate receives``CKSyncEngine/Event/sentDatabaseChanges(_:)``.
  * 5. Repeat from step 3 until all pending database changes are sent, then move on to record zone changes in step 6.
- * 6. The sync engine asks for the next batch of record zone changes by calling
- * ``CKSyncEngineDelegate/nextRecordZoneChangeBatchToSend(_:syncEngine:)``.
+ * 6. The sync engine asks for the next batch of record zone changes by calling `-[CKSyncEngineDelegate
+ * syncEngine:nextRecordZoneChangeBatchForContext:]`.
  * 7. The sync engine sends the next record zone change batch to the server.
- * 8. If any record zone changes were sent, your delegate receives ``Event/sentRecordZoneChanges(_:)``.
+ * 8. If any record zone changes were sent, your delegate receives ``CKSyncEngine/Event/sentRecordZoneChanges(_:)``.
  * 9. If you added any pending database changes during steps 6-8, the sync engine repeats from step 3. Otherwise, it
  * repeats from step 6.
- * 10. When all pending changes are sent, your delegate receives ``Event/didSendChanges(_:)``.
+ * 10. When all pending changes are sent, your delegate receives ``CKSyncEngine/Event/didSendChanges(_:)``.
  * 
  * # Fetching Changes from the Server
  * 
@@ -86,15 +85,17 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * necessary.
  * Generally, you'll receive events in this order:
  * 
- * 1. Your delegate receives ``Event/willFetchChanges(_:)``.
- * 2. If there are new database changes to fetch, you receive batches of them in ``Event/fetchedDatabaseChanges(_:)``
- * events.
- * 3. If there are new record zone changes to fetch, you will receive ``Event/willFetchRecordZoneChanges(_:)`` for each
- * zone that has new changes.
+ * 1. Your delegate receives ``CKSyncEngine/Event/willFetchChanges(_:)``.
+ * 2. If there are new database changes to fetch, you receive batches of them in
+ * ``CKSyncEngine/Event/fetchedDatabaseChanges(_:)`` events.
+ * 3. If there are new record zone changes to fetch, you will receive
+ * ``CKSyncEngine/Event/willFetchRecordZoneChanges(_:)`` for each zone that has new changes.
  * 4. The sync engine fetches record zone changes and gives you batches of them in
- * ``Event/fetchedRecordZoneChanges(_:)`` events.
- * 5. Your delegate receives ``Event/didFetchRecordZoneChanges(_:)`` for each zone that had changes to fetch.
- * 6. Your delegate receives ``Event/didFetchChanges(_:)``, indicating that sync engine has finished fetching changes.
+ * ``CKSyncEngine/Event/fetchedRecordZoneChanges(_:)`` events.
+ * 5. Your delegate receives ``CKSyncEngine/Event/didFetchRecordZoneChanges(_:)`` for each zone that had changes to
+ * fetch.
+ * 6. Your delegate receives ``CKSyncEngine/Event/didFetchChanges(_:)``, indicating that sync engine has finished
+ * fetching changes.
  * 
  * # Sync Scheduling
  * 
@@ -129,23 +130,23 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * The sync engine will retry the operations for these transient errors automatically when it makes sense to do so.
  * Specifically, the sync engine will handle the following errors on your behalf:
  * 
- * * ``CKErrorCode/notAuthenticated``
- * * ``CKErrorCode/accountTemporarilyUnavailable``
- * * ``CKErrorCode/networkFailure``
- * * ``CKErrorCode/networkUnavailable``
- * * ``CKErrorCode/requestRateLimited``
- * * ``CKErrorCode/serviceUnavailable``
- * * ``CKErrorCode/zoneBusy``
+ * * ``CKError/notAuthenticated``
+ * * ``CKError/accountTemporarilyUnavailable``
+ * * ``CKError/networkFailure``
+ * * ``CKError/networkUnavailable``
+ * * ``CKError/requestRateLimited``
+ * * ``CKError/serviceUnavailable``
+ * * ``CKError/zoneBusy``
  * 
  * When the sync engine encounters one of these errors, it will wait for the system to be in a good state and try again.
  * For example, if the server sends back a `.requestRateLimited` error, the sync engine will respect this throttle and
  * try again after the retry-after time.
  * 
  * `CKSyncEngine` will _not_ handle errors that require application-specific logic.
- * For example, if you try to save a record and get a ``CKErrorCode/serverRecordChanged``, you need to handle that error
+ * For example, if you try to save a record and get a ``CKError/serverRecordChanged``, you need to handle that error
  * yourself.
- * There are plenty of errors that the sync engine cannot handle on your behalf, see ``CKErrorCode`` for a list of all
- * the possible errors.
+ * There are plenty of errors that the sync engine cannot handle on your behalf, see ``CKError`` for a list of all the
+ * possible errors.
  * 
  * # Accounts
  * 
@@ -156,7 +157,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Once an account is available, the sync engine will start syncing automatically.
  * 
  * It will also listen for when the user signs in or out of their account.
- * When it notices an account change, it will send an ``Event/accountChange(_:)`` to your delegate.
+ * When it notices an account change, it will send an ``CKSyncEngine/Event/accountChange(_:)`` to your delegate.
  * It's your responsibility to react appropriately to this change and update your local persistence.
  * 
  * API-Since: 17.0
@@ -261,7 +262,7 @@ public class CKSyncEngine extends NSObject {
      * For example, you might use this in your tests to simulate specific sync scenarios.
      * 
      * Fetching changes from the server might result in some events being posted to your delegate via `handleEvent`.
-     * For example, you might receive a `CKSyncEngineWillFetchChangesEvent` or `CKSyncEngineWillFetchChangesEvent`.
+     * For example, you might receive a `CKSyncEngineWillFetchChangesEvent` or `CKSyncEngineDidFetchChangesEvent`.
      * This will not complete until all the relevant events have been handled by your delegate.
      * 
      * API-Since: 17.0

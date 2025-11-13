@@ -151,7 +151,7 @@ public class CPGridButton extends NSObject implements NSSecureCoding {
     @Generated
     public interface Block_initWithTitleVariantsImageHandler {
         @Generated
-        void call_initWithTitleVariantsImageHandler(@NotNull CPGridButton barButton);
+        void call_initWithTitleVariantsImageHandler(@NotNull CPGridButton gridButton);
     }
 
     @Generated
@@ -252,4 +252,45 @@ public class CPGridButton extends NSObject implements NSSecureCoding {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Initialize a button with a title, image, and message configuration.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("initWithTitleVariants:image:messageConfiguration:handler:")
+    public native CPGridButton initWithTitleVariantsImageMessageConfigurationHandler(
+            @NotNull NSArray<String> titleVariants, @NotNull UIImage image,
+            @Nullable CPMessageGridItemConfiguration messageConfiguration,
+            @ObjCBlock(name = "call_initWithTitleVariantsImageMessageConfigurationHandler") @Nullable Block_initWithTitleVariantsImageMessageConfigurationHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithTitleVariantsImageMessageConfigurationHandler {
+        @Generated
+        void call_initWithTitleVariantsImageMessageConfigurationHandler(@NotNull CPGridButton gridButton);
+    }
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("messageConfiguration")
+    @Nullable
+    public native CPMessageGridItemConfiguration messageConfiguration();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("updateImage:")
+    public native void updateImage(@NotNull UIImage image);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("updateTitleVariants:")
+    public native void updateTitleVariants(@NotNull NSArray<String> titleVariants);
 }

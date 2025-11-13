@@ -170,7 +170,10 @@ public class NEHotspotHelperResponse extends NSObject {
      * Deliver the NEHotspotHelperResponse to the HotspotHelper infrastructure.
      * 
      * API-Since: 9.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use handleCommand in NEHotspotEvaluationProvider or NEHotspotAuthenticationProvider API
      */
+    @Deprecated
     @Generated
     @Selector("deliver")
     public native void deliver();

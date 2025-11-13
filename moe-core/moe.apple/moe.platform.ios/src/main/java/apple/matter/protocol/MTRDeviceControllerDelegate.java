@@ -52,6 +52,8 @@ public interface MTRDeviceControllerDelegate {
      * If nodeID is not nil, then it represents the node id the node was assigned, as encoded in its operational
      * certificate.
      * 
+     * This selector will not be used if controller:commissioningComplete:nodeID:metrics: is supported.
+     * 
      * API-Since: 17.0
      */
     @Generated
@@ -111,6 +113,8 @@ public interface MTRDeviceControllerDelegate {
      * certificate.
      * 
      * The metrics object contains information corresponding to the commissioning session.
+     * 
+     * If supported, this selector will be used in preference to controller:commissioningComplete:nodeID:.
      * 
      * API-Since: 17.6
      */

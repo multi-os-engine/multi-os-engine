@@ -197,4 +197,22 @@ public class ASMigrationDisplayItem extends ASPickerDisplayItem {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * The Wi-Fi Aware paired device identififer of the accessory to migrate.
+     * 
+     * API-Since: 26.1
+     */
+    @Generated
+    @Selector("setWifiAwarePairedDeviceID:")
+    public native void setWifiAwarePairedDeviceID(long value);
+
+    /**
+     * The Wi-Fi Aware paired device identififer of the accessory to migrate.
+     * 
+     * API-Since: 26.1
+     */
+    @Generated
+    @Selector("wifiAwarePairedDeviceID")
+    public native long wifiAwarePairedDeviceID();
 }

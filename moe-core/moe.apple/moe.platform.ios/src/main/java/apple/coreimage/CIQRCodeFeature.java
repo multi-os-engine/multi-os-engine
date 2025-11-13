@@ -48,6 +48,20 @@ import apple.corefoundation.struct.CGRect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * Information about a Quick Response code detected in a still or video image.
+ * 
+ * > Note: In macOS 10.13, iOS 11, and tvOS 11 or later, the Vision framework replaces these classes
+ * for identifying and analyzing image features.
+ * See <doc://com.apple.documentation/documentation/vision/vndetectbarcodesrequest>)
+ * 
+ * A QR code is a two-dimensional barcode using the ISO/IEC 18004:2006 standard. The properties of
+ * a CIQRCodeFeature object identify the corners of the barcode in the image perspective and provide
+ * the decoded message.
+ * 
+ * To detect QR codes in an image or video, choose ``CIDetectorTypeQRCode`` type when initializing a
+ * ``CIDetector`` object.
+ */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -162,16 +176,30 @@ public class CIQRCodeFeature extends CIFeature implements NSSecureCoding, NSCopy
     @NInt
     public static native long version_static();
 
+    /**
+     * The image coordinate of the lower-left corner of the detected QR code.
+     */
     @Generated
     @Selector("bottomLeft")
     @ByValue
     public native CGPoint bottomLeft();
 
+    /**
+     * The image coordinate of the lower-right corner of the detected QR code.
+     */
     @Generated
     @Selector("bottomRight")
     @ByValue
     public native CGPoint bottomRight();
 
+    /**
+     * A rectangle that indicates the position and extent of the QR code feature in image coordinates.
+     * 
+     * This property identifies the rectangular region of the image containing the detected QR code,
+     * not necessarily the shape of the QR code. A detected feature is square in space, but may
+     * appear as a four-sided polygon in the image. Use the properties listed in `CIQRCodeFeature` to find the
+     * corners of the QR code as it appears in perspective.
+     */
     @Generated
     @Selector("bounds")
     @ByValue
@@ -181,16 +209,25 @@ public class CIQRCodeFeature extends CIFeature implements NSSecureCoding, NSCopy
     @Selector("init")
     public native CIQRCodeFeature init();
 
+    /**
+     * The string decoded from the detected barcode.
+     */
     @Nullable
     @Generated
     @Selector("messageString")
     public native String messageString();
 
+    /**
+     * The image coordinate of the upper-left corner of the detected QR code.
+     */
     @Generated
     @Selector("topLeft")
     @ByValue
     public native CGPoint topLeft();
 
+    /**
+     * The image coordinate of the upper-right corner of the detected QR code.
+     */
     @Generated
     @Selector("topRight")
     @ByValue
@@ -222,6 +259,12 @@ public class CIQRCodeFeature extends CIFeature implements NSSecureCoding, NSCopy
     }
 
     /**
+     * An abstract representation of a QR Code symbol.
+     * 
+     * The property is a ``CIQRCodeDescriptor`` instance that contains the payload, symbol version,
+     * mask pattern, and error correction level, so the QR Code can be reproduced.
+     * 
+     * 
      * API-Since: 11.0
      */
     @Nullable

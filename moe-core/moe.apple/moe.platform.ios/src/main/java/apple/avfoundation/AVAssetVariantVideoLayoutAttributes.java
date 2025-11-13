@@ -25,8 +25,6 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * AVAssetVariantVideoLayoutAttributes
- * 
  * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
  * 
  * API-Since: 17.0
@@ -141,11 +139,9 @@ public class AVAssetVariantVideoLayoutAttributes extends NSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property] stereoViewComponents
-     * 
-     * Describes the stereo components. If not declared, the value will be `kCMStereoViewComponent_None`.
-     * In case of monoscopic content, the value will be `kCMStereoViewComponent_None` and incase of stereoscopic
-     * content, the value will be `(kCMStereoViewComponent_LeftEye | kCMStereoViewComponent_RightEye)`.
+     * Describes the stereo components. If not declared, the value will be `kCMStereoViewComponent_None`. In case of
+     * monoscopic content, the value will be `kCMStereoViewComponent_None` and incase of stereoscopic content, the value
+     * will be `(kCMStereoViewComponent_LeftEye | kCMStereoViewComponent_RightEye)`.
      * 
      * API-Since: 17.0
      */
@@ -166,4 +162,13 @@ public class AVAssetVariantVideoLayoutAttributes extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Describes the video projection.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("projectionType")
+    public native long projectionType();
 }

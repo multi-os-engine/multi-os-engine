@@ -1429,8 +1429,8 @@ public class MTRBaseClusterBridgedDeviceBasicInformation extends MTRGenericBaseC
     /**
      * Command KeepActive
      * 
-     * The server SHALL attempt to keep the devices specified active for StayActiveDuration milliseconds when they are
-     * next active.
+     * Upon receipt, the server SHALL attempt to keep the bridged device active for the duration specified by the
+     * command, when the device is next active.
      * 
      * API-Since: 18.4
      */

@@ -30,15 +30,6 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * AVAssetWriterInputTaggedPixelBufferGroupAdaptor
- * 
- * Defines an interface for appending tagged buffer groups packaged as CMTaggedBufferGroupRef objects to a single
- * AVAssetWriterInput object.
- * 
- * Instances of AVAssetWriterInputTaggedPixelBufferGroupAdaptor provide a CVPixelBufferPool that can be used to allocate
- * the pixel buffers of tagged buffer groups for writing to the output file. Using the provided pixel buffer pool for
- * buffer allocation is typically more efficient than appending pixel buffers allocated using a separate pool.
- * 
  * API-Since: 17.0
  */
 @Generated
@@ -70,8 +61,6 @@ public class AVAssetWriterInputTaggedPixelBufferGroupAdaptor extends NSObject {
     public static native AVAssetWriterInputTaggedPixelBufferGroupAdaptor allocWithZone(VoidPtr zone);
 
     /**
-     * appendTaggedPixelBufferGroup:withPresentationTime:
-     * 
      * Appends a tagged buffer group to the receiver.
      * 
      * The receiver will retain the CMTaggedBufferGroup until it is done with it, and then release it. Do not modify a
@@ -92,6 +81,7 @@ public class AVAssetWriterInputTaggedPixelBufferGroupAdaptor extends NSObject {
      * 
      * Below is a sample code sketch focusing on data flow that illustrates how you might append a
      * taggedPixelBufferGroup instance.
+     * ```objc
      * // Set up an AVAssetWriterInput and AVAssetWriterInputTaggedPixelBufferGroupAdaptor instance
      * AVAssetWriterInput *assetWriterInput = [[AVAssetWriterInput alloc] initWithMediaType:AVMediaTypeVideo
      * outputSettings:@{
@@ -100,13 +90,15 @@ public class AVAssetWriterInputTaggedPixelBufferGroupAdaptor extends NSObject {
      * 
      * AVAssetWriterInputTaggedPixelBufferGroupAdaptor *assetWriterInputAdaptor =
      * [[AVAssetWriterInputTaggedPixelBufferGroupAdaptor alloc] initWithAssetWriterInput:assetWriterInput ..];
-     * 
+     * ```
      * Later, when the writer input is ready for more media data, create and append a tagged buffer group containing one
      * or more pixel buffers and the exact tag values associated with kCMTagCategory_VideoLayerID being specified via
      * kVTCompressionPropertyKey_MVHEVCVideoLayerIDs.
+     * ```objc
      * // Set up tag collection buffers
      * CMTag tags[] = CMTagMakeWithSInt64Value(kCMTagCategory_VideoLayerID, ..);
-     * CMTagCollectionCreate(.., tags, FigCountOf(tags), &tagCollection);
+     * CMItemCount tagCount = sizeof(tags) / sizeof(tags[0]);
+     * CMTagCollectionCreate(.., tags, tagCount, &tagCollection);
      * CFArrayAppendValue(tagCollectionArray, tagCollection);
      * 
      * // Set up pixel buffers
@@ -116,24 +108,21 @@ public class AVAssetWriterInputTaggedPixelBufferGroupAdaptor extends NSObject {
      * // Append a CMTaggedBufferGroupRef instance to asset writer input
      * CMTaggedBufferGroupCreate(.., tagCollectionArray, pixelBufferArray, &taggedBufferGroup);
      * [assetWriterInputAdaptor appendTaggedPixelBufferGroup:taggedBufferGroup ..];
+     * ```
+     * - Parameter taggedPixelBufferGroup: The CMTaggedBufferGroup to be appended. All of the buffers in
+     * taggedPixelBufferGroup should be CVPixelBuffers, and they should correspond to tag collections that contain
+     * kCMTagCategory_VideoLayerID values matching the list set using kVTCompressionPropertyKey_MVHEVCVideoLayerIDs. The
+     * pixel buffers should be IOSurface-backed.
+     * - Parameter presentationTime: The presentation time for the tagged buffer group to be appended. This time will be
+     * considered relative to the time passed to -[AVAssetWriter startSessionAtSourceTime:] to determine the timing of
+     * the frame in the output file.
+     * 
+     * - Returns: A BOOL value indicating success of appending the tagged buffer group. If a result of NO is returned,
+     * clients can check the value of AVAssetWriter.status to determine whether the writing operation completed, failed,
+     * or was cancelled. If the status is AVAssetWriterStatusFailed, AVAssetWriter.error will contain an instance of
+     * NSError that describes the failure.
      * 
      * API-Since: 17.0
-     * 
-     * @param taggedPixelBufferGroup
-     *                               The CMTaggedBufferGroup to be appended. All of the buffers in
-     *                               taggedPixelBufferGroup should be CVPixelBuffers, and they should correspond to tag
-     *                               collections that contain kCMTagCategory_VideoLayerID values matching the list set
-     *                               using kVTCompressionPropertyKey_MVHEVCVideoLayerIDs. The pixel buffers should be
-     *                               IOSurface-backed.
-     * @param presentationTime
-     *                               The presentation time for the tagged buffer group to be appended. This time will be
-     *                               considered relative to the time passed to -[AVAssetWriter
-     *                               startSessionAtSourceTime:] to determine the timing of the frame in the output file.
-     * @return
-     *         A BOOL value indicating success of appending the tagged buffer group. If a result of NO is returned,
-     *         clients can check the value of AVAssetWriter.status to determine whether the writing operation completed,
-     *         failed, or was cancelled. If the status is AVAssetWriterStatusFailed, AVAssetWriter.error will contain an
-     *         instance of NSError that describes the failure.
      */
     @Generated
     @Selector("appendTaggedPixelBufferGroup:withPresentationTime:")
@@ -141,8 +130,6 @@ public class AVAssetWriterInputTaggedPixelBufferGroupAdaptor extends NSObject {
             @NotNull CMTaggedBufferGroupRef taggedPixelBufferGroup, @ByValue CMTime presentationTime);
 
     /**
-     * [@property] assetWriterInput
-     * 
      * The asset writer input to which the receiver should append tagged buffer groups.
      * 
      * API-Since: 17.0
@@ -153,8 +140,6 @@ public class AVAssetWriterInputTaggedPixelBufferGroupAdaptor extends NSObject {
     public native AVAssetWriterInput assetWriterInput();
 
     /**
-     * assetWriterInputTaggedPixelBufferGroupAdaptorWithAssetWriterInput:sourcePixelBufferAttributes:
-     * 
      * Creates a new tagged buffer adaptor to receive tagged buffer groups for writing to the output file.
      * 
      * In order to take advantage of the improved efficiency of appending buffers created from the adaptor's pixel
@@ -174,17 +159,15 @@ public class AVAssetWriterInputTaggedPixelBufferGroupAdaptor extends NSObject {
      * group adaptor or if the input has already started writing (the asset writer has progressed beyond
      * AVAssetWriterStatusUnknown).
      * 
-     * API-Since: 17.0
+     * - Parameter input: An instance of AVAssetWriterInput to which the receiver should append tagged buffer groups.
+     * Currently, only asset writer inputs that accept media data of type AVMediaTypeVideo can be used to initialize a
+     * tagged buffer adaptor.
+     * - Parameter sourcePixelBufferAttributes: Specifies the attributes of pixel buffers of tagged buffer groups that
+     * will be vended by the input's CVPixelBufferPool.
      * 
-     * @param input
-     *                                    An instance of AVAssetWriterInput to which the receiver should append tagged
-     *                                    buffer groups. Currently, only asset writer inputs that accept media data of
-     *                                    type AVMediaTypeVideo can be used to initialize a tagged buffer adaptor.
-     * @param sourcePixelBufferAttributes
-     *                                    Specifies the attributes of pixel buffers of tagged buffer groups that will be
-     *                                    vended by the input's CVPixelBufferPool.
-     * @return
-     *         An instance of AVAssetWriterInputTaggedPixelBufferGroupAdaptor.
+     * - Returns: An instance of AVAssetWriterInputTaggedPixelBufferGroupAdaptor.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("assetWriterInputTaggedPixelBufferGroupAdaptorWithAssetWriterInput:sourcePixelBufferAttributes:")
@@ -234,8 +217,6 @@ public class AVAssetWriterInputTaggedPixelBufferGroupAdaptor extends NSObject {
     public native AVAssetWriterInputTaggedPixelBufferGroupAdaptor init();
 
     /**
-     * initWithAssetWriterInput:sourcePixelBufferAttributes:
-     * 
      * Creates a new tagged buffer group adaptor to receive tagged buffer groups for writing to the output file.
      * 
      * In order to take advantage of the improved efficiency of appending buffers created from the adaptor's pixel
@@ -256,18 +237,15 @@ public class AVAssetWriterInputTaggedPixelBufferGroupAdaptor extends NSObject {
      * an error to initialize an instance of AVAssetWriterInputTaggedPixelBufferGroupAdaptor with an asset writer input
      * whose asset writer has progressed beyond AVAssetWriterStatusUnknown.
      * 
-     * API-Since: 17.0
+     * - Parameter input: An instance of AVAssetWriterInput to which the receiver should append tagged buffer groups. In
+     * addition to the pixel buffer adaptor, asset writer inputs with media data of type AVMediaTypeVideo can be used to
+     * initialize a tagged buffer group adaptor.
+     * - Parameter sourcePixelBufferAttributes: Specifies the attributes of pixel buffers of tagged buffer groups that
+     * will be vended by the input's CVPixelBufferPool.
      * 
-     * @param input
-     *                                    An instance of AVAssetWriterInput to which the receiver should append tagged
-     *                                    buffer groups. In addition to the pixel buffer adaptor, asset writer inputs
-     *                                    with media data of type AVMediaTypeVideo can be used to initialize a tagged
-     *                                    buffer group adaptor.
-     * @param sourcePixelBufferAttributes
-     *                                    Specifies the attributes of pixel buffers of tagged buffer groups that will be
-     *                                    vended by the input's CVPixelBufferPool.
-     * @return
-     *         An instance of AVAssetWriterInputTaggedPixelBufferGroupAdaptor.
+     * - Returns: An instance of AVAssetWriterInputTaggedPixelBufferGroupAdaptor.
+     * 
+     * API-Since: 17.0
      */
     @Generated
     @Selector("initWithAssetWriterInput:sourcePixelBufferAttributes:")
@@ -302,8 +280,6 @@ public class AVAssetWriterInputTaggedPixelBufferGroupAdaptor extends NSObject {
     public static native AVAssetWriterInputTaggedPixelBufferGroupAdaptor new_objc();
 
     /**
-     * [@property] pixelBufferPool
-     * 
      * A pixel buffer pool that will vend and efficiently recycle CVPixelBuffer objects of tagged buffer groups that can
      * be appended to the receiver.
      * 
@@ -337,8 +313,6 @@ public class AVAssetWriterInputTaggedPixelBufferGroupAdaptor extends NSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property] sourcePixelBufferAttributes
-     * 
      * The pixel buffer attributes of pixel buffers that will be vended by the receiver's CVPixelBufferPool.
      * 
      * The value of this property is a dictionary containing pixel buffer attributes keys defined in

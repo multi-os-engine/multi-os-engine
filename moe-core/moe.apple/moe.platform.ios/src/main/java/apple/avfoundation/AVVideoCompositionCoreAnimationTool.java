@@ -42,6 +42,20 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * A tool for using Core Animation in a video composition.
+ * 
+ * Instances of AVVideoCompositionCoreAnimationTool are for use with offline rendering (AVAssetExportSession and
+ * AVAssetReader), not with AVPlayer.
+ * To synchronize real-time playback with other CoreAnimation layers, use AVSynchronizedLayer.
+ * 
+ * Any animations will be interpreted on the video's timeline, not real-time, so
+ * (a) set animation beginTimes to small positive value such as AVCoreAnimationBeginTimeAtZero rather than 0,
+ * because CoreAnimation will replace a value of 0 with CACurrentMediaTime();
+ * (b) set removedOnCompletion to NO on animations so they are not automatically removed;
+ * (c) do not use layers associated with UIViews.
+ * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 4.0
  */
 @Generated
@@ -159,8 +173,6 @@ public class AVVideoCompositionCoreAnimationTool extends NSObject {
     public static native long version_static();
 
     /**
-     * videoCompositionCoreAnimationToolWithAdditionalLayer:asTrackID:
-     * 
      * Add a Core Animation layer to the video composition
      * 
      * Include a Core Animation layer as an individual track input in video composition.
@@ -183,8 +195,6 @@ public class AVVideoCompositionCoreAnimationTool extends NSObject {
             @NotNull CALayer layer, int trackID);
 
     /**
-     * videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:inLayer:
-     * 
      * Compose the composited video frames with the Core Animation layer
      * 
      * Place composited video frames in videoLayer and render animationLayer
@@ -204,8 +214,6 @@ public class AVVideoCompositionCoreAnimationTool extends NSObject {
             @NotNull CALayer videoLayer, @NotNull CALayer animationLayer);
 
     /**
-     * videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayers:inLayer:
-     * 
      * Compose the composited video frames with the Core Animation layer
      * 
      * Duplicate the composited video frames in each videoLayer and render animationLayer

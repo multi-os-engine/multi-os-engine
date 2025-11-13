@@ -350,4 +350,24 @@ public interface UISplitViewControllerDelegate {
     default void splitViewControllerInteractivePresentationGestureWillBegin(@NotNull UISplitViewController svc) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("splitViewController:didHideColumn:")
+    default void splitViewControllerDidHideColumn(@NotNull UISplitViewController svc, @NInt long column) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("splitViewController:didShowColumn:")
+    default void splitViewControllerDidShowColumn(@NotNull UISplitViewController svc, @NInt long column) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

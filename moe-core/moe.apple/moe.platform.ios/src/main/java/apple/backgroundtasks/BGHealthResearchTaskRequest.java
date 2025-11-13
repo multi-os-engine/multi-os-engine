@@ -26,8 +26,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A request to launch your app in the background to execute a health research task for studies a user has opted into
- * and
- * that can take minutes to complete.
+ * and that can take minutes to complete.
  * 
  * API-Since: 17.0
  */
@@ -135,6 +134,9 @@ public class BGHealthResearchTaskRequest extends BGProcessingTaskRequest {
     /**
      * A String indicating file protection availability required for processing.
      * 
+     * Update this property to indicate what type of data needs to be accessible when the task is run. The default value
+     * is `NSFileProtectionCompleteUntilFirstUserAuthentication`
+     * 
      * API-Since: 17.0
      */
     @Generated
@@ -153,6 +155,9 @@ public class BGHealthResearchTaskRequest extends BGProcessingTaskRequest {
     /**
      * A String indicating file protection availability required for processing.
      * 
+     * Update this property to indicate what type of data needs to be accessible when the task is run. The default value
+     * is `NSFileProtectionCompleteUntilFirstUserAuthentication`
+     * 
      * API-Since: 17.0
      */
     @Generated
@@ -161,6 +166,9 @@ public class BGHealthResearchTaskRequest extends BGProcessingTaskRequest {
 
     /**
      * A String indicating file protection availability required for processing.
+     * 
+     * Update this property to indicate what type of data needs to be accessible when the task is run. The default value
+     * is `NSFileProtectionCompleteUntilFirstUserAuthentication`
      * 
      * API-Since: 17.0
      */

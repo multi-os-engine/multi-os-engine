@@ -26,8 +26,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVDelegatingPlaybackCoordinatorBufferingCommand
- * 
  * A playback command requesting buffering in anticipation of playback.
  * 
  * Receiving this command should be reflected to the user as playback in a buffering state.
@@ -68,8 +66,6 @@ public class AVDelegatingPlaybackCoordinatorBufferingCommand extends
     public static native AVDelegatingPlaybackCoordinatorBufferingCommand allocWithZone(VoidPtr zone);
 
     /**
-     * [@property] anticipatedPlaybackRate
-     * 
      * The rate to prepare playback for.
      * 
      * The command should only be considered complete once the player is ready to receive an
@@ -107,8 +103,6 @@ public class AVDelegatingPlaybackCoordinatorBufferingCommand extends
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property] completionDueDate
-     * 
      * Communicates when the coordinator expects the command's completion handler at the latest.
      * 
      * A receiver of a buffering command should fire the completion handler by this date at the latest. This is useful

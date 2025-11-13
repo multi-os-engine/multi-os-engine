@@ -12,8 +12,6 @@ import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * [@protocol] AVContentKeyRecipient
- * 
  * Classes of objects that may require decryption keys for media data in order to enable processing, such as parsing or
  * playback, conform to this protocol.
  * 
@@ -25,8 +23,6 @@ import org.jetbrains.annotations.NotNull;
 @ObjCProtocolName("AVContentKeyRecipient")
 public interface AVContentKeyRecipient {
     /**
-     * [@property] mayRequireContentKeysForMediaDataProcessing
-     * 
      * Indicates whether the receiver may require decryption keys for media data in order to enable processing.
      * 
      * When the value of mayRequireContentKeysForMediaDataProcessing is YES, adding the receiver to an
@@ -40,8 +36,6 @@ public interface AVContentKeyRecipient {
     boolean mayRequireContentKeysForMediaDataProcessing();
 
     /**
-     * contentKeySession:didProvideContentKey:
-     * 
      * Informs the receiver that an AVContentKey has been obtained as the result of an invocation of
      * -[AVContentKeyRequest processContentKeyResponse:].
      * 

@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.corefoundation.struct.CGSize;
+import org.moe.natj.general.ann.ByValue;
 
 /**
  * API-Since: 12.0
@@ -249,4 +251,17 @@ public class CPGridTemplate extends CPTemplate implements CPBarButtonProviding {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The expected image size for your @c CPGridButton.
+     * 
+     * To properly size your list images, your app should size them to the display scale of the car screen.
+     * See -[CPInterfaceController carTraitCollection].
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("maximumGridButtonImageSize")
+    @ByValue
+    public static native CGSize maximumGridButtonImageSize();
 }

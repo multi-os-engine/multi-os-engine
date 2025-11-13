@@ -51,7 +51,10 @@ import org.jetbrains.annotations.Nullable;
  * with the same process pool end up sharing web content processes.
  * 
  * API-Since: 8.0
+ * Deprecated-Since: 15.0
+ * Deprecated-Message: Creating and using multiple instances of WKProcessPool no longer has any effect.
  */
+@Deprecated
 @Generated
 @Library("WebKit")
 @Runtime(ObjCRuntime.class)

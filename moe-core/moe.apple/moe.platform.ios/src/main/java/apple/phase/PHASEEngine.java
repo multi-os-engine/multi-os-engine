@@ -27,6 +27,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.avfaudio.AVAudioTime;
 
 /**
  * [@interface] PHASEEngine
@@ -469,4 +470,18 @@ public class PHASEEngine extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] lastRenderTime
+     * 
+     * Obtain the time for which the engine most recently rendered.
+     * 
+     * Will return nil if the engine is not running
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("lastRenderTime")
+    @Nullable
+    public native AVAudioTime lastRenderTime();
 }

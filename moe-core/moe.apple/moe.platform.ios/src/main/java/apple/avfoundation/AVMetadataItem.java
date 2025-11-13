@@ -242,8 +242,14 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
      *                           An array of AVMetadataItems to be filtered and sorted.
      * @param preferredLanguages
      *                           An array of language identifiers in order of preference, each of which is an IETF BCP
-     *                           47 (RFC 4646) language identifier. Use +[NSLocale preferredLanguages] to obtain the
-     *                           user's list of preferred languages.
+     *                           47 (RFC 4646) language identifier. If your goal is to provide the best match for the
+     *                           end user's preferred languages without consideration of your app's available
+     *                           localizations, pass [NSLocale preferredLanguages] as the value of preferredLanguages.
+     *                           However, if you want to filter the available choices in order to obtain the best match
+     *                           among the localizations that are available for your app, pass [NSBundle
+     *                           preferredLocalizationsFromArray:[[NSBundle mainBundle] localizations]
+     *                           forPreferences:[NSLocale preferredLanguages]] instead. The latter choice is normally
+     *                           more appropriate for strings intended for display as part of the app's UI.
      * @return An instance of NSArray containing metadata items of the specified NSArray that match a preferred
      *         language, sorted according to the order of preference of the language each matches.
      * 

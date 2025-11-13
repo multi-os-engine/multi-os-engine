@@ -226,10 +226,6 @@ public final class MTRDeviceTypeIDType {
     /**
      * API-Since: 18.2
      */
-    @Generated public static final int HeatingCoolingUnitID = 0x00000300;
-    /**
-     * API-Since: 18.2
-     */
     @Generated public static final int ThermostatID = 0x00000301;
     /**
      * API-Since: 18.2

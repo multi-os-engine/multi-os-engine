@@ -27,6 +27,12 @@ import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * A protocol that you adopt in your objects to track the availability of a speech recognizer.
+ * 
+ * A speech recognizer's availability can change due to the device's Internet connection or other factors. Use this
+ * protocol's optional method to track those changes and provide an appropriate response. For example, when speech
+ * recognition becomes unavailable, you might disable related features in your app.
+ * 
  * API-Since: 10.0
  */
 @Generated
@@ -35,7 +41,11 @@ import org.jetbrains.annotations.NotNull;
 @ObjCProtocolName("SFSpeechRecognizerDelegate")
 public interface SFSpeechRecognizerDelegate {
     /**
-     * Called when the availability of the given recognizer changes
+     * Tells the delegate that the availability of its associated speech recognizer changed.
+     * 
+     * - Parameters:
+     * - speechRecognizer: The ``SFSpeechRecognizer`` object whose availability changed.
+     * - available: A Boolean value that indicates the new availability of the speech recognizer.
      * 
      * API-Since: 10.0
      */

@@ -194,4 +194,18 @@ public class AEAssessmentParticipantConfiguration extends NSObject implements NS
     @Generated
     @Selector("setConfigurationInfo:")
     public native void setConfigurationInfo(@NotNull NSDictionary<String, ?> value);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isRequired")
+    public native boolean isRequired();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setRequired:")
+    public native void setRequired(boolean value);
 }

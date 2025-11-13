@@ -94,6 +94,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import apple.corefoundation.opaque.CFErrorRef;
 import apple.coregraphics.struct.CGColorBufferFormat;
+import apple.coregraphics.opaque.CGRenderingBufferProviderRef;
+import apple.coregraphics.struct.CGBitmapParameters;
+import apple.coregraphics.struct.CGContentInfo;
+import apple.coregraphics.struct.CGContentToneMappingInfo;
 
 @Generated
 @Library("CoreGraphics")
@@ -1034,7 +1038,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGColorSpaceSupportsOutput(@NotNull CGColorSpaceRef space);
+    public static native boolean CGColorSpaceSupportsOutput(@Nullable CGColorSpaceRef space);
 
     /**
      * Return the CFTypeID for CGPatternRefs.
@@ -1558,7 +1562,8 @@ public final class CoreGraphics {
      * by `count'; the number of color components is the product of `count' and
      * the number of color components of `space'. If no color is provided for 0 or 1,
      * the gradient will use the color provided at the locations closest to 0 and 1
-     * for those values.
+     * for those values. The gradient's content headroom will be based on the `space'
+     * and determined by the system.
      * 
      * API-Since: 2.0
      */
@@ -1584,7 +1589,9 @@ public final class CoreGraphics {
      * 1; the array of locations should should contain the same number of items
      * as `colors'. If no color is provided for 0 or 1, the gradient will use
      * the color provided at the locations closest to 0 and 1 for those
-     * values.
+     * values. If the `space' supports headroom (is either HDR or extended range RGB)
+     * and `colors' contain RGB CGColors with content headroom, the gradient will
+     * have the content headroom equal to the maximum of the content headoom of 'colors'.
      * 
      * API-Since: 2.0
      */
@@ -3137,7 +3144,8 @@ public final class CoreGraphics {
      * shading; the input value 1 corresponds to the color at the ending point
      * of the shading. If `extendStart' is true, then the shading will extend
      * beyond the starting point of the axis. If `extendEnd' is true, then the
-     * shading will extend beyond the ending point of the axis.
+     * shading will extend beyond the ending point of the axis. The shading's
+     * content headroom will be based on the `space' and determined by the system.
      * 
      * API-Since: 2.0
      */
@@ -3161,7 +3169,8 @@ public final class CoreGraphics {
      * value 1 corresponds to the color of the ending circle. If `extendStart'
      * is true, then the shading will extend beyond the starting circle. If
      * `extendEnd' is true, then the shading will extend beyond the ending
-     * circle.
+     * circle. The shading's content headroom will be based on the `space'
+     * and determined by the system.
      * 
      * API-Since: 2.0
      */
@@ -4222,7 +4231,7 @@ public final class CoreGraphics {
     public static native void CGContextRelease(@Nullable CGContextRef c);
 
     /**
-     * Flush all drawing to the destination.
+     * Flush all drawings to the destination.
      * 
      * API-Since: 2.0
      */
@@ -4231,7 +4240,7 @@ public final class CoreGraphics {
     public static native void CGContextFlush(@Nullable CGContextRef c);
 
     /**
-     * Synchronized drawing.
+     * Synchronize drawing.
      * 
      * API-Since: 2.0
      */
@@ -5411,7 +5420,7 @@ public final class CoreGraphics {
     public static native CFStringRef kCGColorSpaceSRGB();
 
     /**
-     * The "Generic" gray color space with γ = 2.2.
+     * The "Generic" gray color space with γ = 1.8.
      * 
      * API-Since: 9.0
      */
@@ -6316,7 +6325,7 @@ public final class CoreGraphics {
      */
     @Generated
     @CFunction
-    public static native boolean CGColorSpaceUsesExtendedRange(@NotNull CGColorSpaceRef space);
+    public static native boolean CGColorSpaceUsesExtendedRange(@Nullable CGColorSpaceRef space);
 
     /**
      * Create a color in the "Generic" gray color space.
@@ -6563,7 +6572,7 @@ public final class CoreGraphics {
     @Nullable
     @Generated
     @CFunction
-    public static native CGColorSpaceRef CGColorSpaceCreateLinearized(@NotNull CGColorSpaceRef space);
+    public static native CGColorSpaceRef CGColorSpaceCreateLinearized(@Nullable CGColorSpaceRef space);
 
     /**
      * Create a copy of the color space which uses extended range [-Inf, +Inf] if the color space is
@@ -6574,7 +6583,7 @@ public final class CoreGraphics {
     @Nullable
     @Generated
     @CFunction
-    public static native CGColorSpaceRef CGColorSpaceCreateExtended(@NotNull CGColorSpaceRef space);
+    public static native CGColorSpaceRef CGColorSpaceCreateExtended(@Nullable CGColorSpaceRef space);
 
     /**
      * Create a linearized copy of the color space which uses extended range [-Inf, +Inf]
@@ -6585,7 +6594,7 @@ public final class CoreGraphics {
     @Nullable
     @Generated
     @CFunction
-    public static native CGColorSpaceRef CGColorSpaceCreateExtendedLinearized(@NotNull CGColorSpaceRef space);
+    public static native CGColorSpaceRef CGColorSpaceCreateExtendedLinearized(@Nullable CGColorSpaceRef space);
 
     /**
      * API-Since: 14.0
@@ -6735,7 +6744,7 @@ public final class CoreGraphics {
     @NotNull
     @Generated
     @CFunction
-    public static native CGColorSpaceRef CGColorSpaceCreateCopyWithStandardRange(@NotNull CGColorSpaceRef s);
+    public static native CGColorSpaceRef CGColorSpaceCreateCopyWithStandardRange(@Nullable CGColorSpaceRef space);
 
     /**
      * Returns a new weakly-simple path without self-intersections and with a normalized orientation. Filling the
@@ -6869,8 +6878,14 @@ public final class CoreGraphics {
     @CVariable()
     public static native CFStringRef kCGColorSpaceITUR_709_HLG();
 
-    @Generated public static final int kCGBitmapByteOrder16Host = 0x00001000;
-    @Generated public static final int kCGBitmapByteOrder32Host = 0x00002000;
+    /**
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated @Generated public static final int kCGBitmapByteOrder16Host = 0x00001000;
+    /**
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated @Generated public static final int kCGBitmapByteOrder32Host = 0x00002000;
     @Generated public static final double CG_HDR_BT_2100 = 1.0;
 
     /**
@@ -6911,12 +6926,8 @@ public final class CoreGraphics {
      * clipped to [0.0, 1.0] range, and other bit depths will be treated as
      * representing [0.0, 1.0] range, same as in the 'CGImageCreate' API.
      * The headroom parameter must be either equal 0.0f or be greater or equal 1.0f.
-     * When the headroom parameter is 0.0f and the color space is extended,
-     * the image content headroom will be calculated from the image data.
-     * When needed, the exisitng 'CGImageCreate' API will create an image with
-     * content headroom equal 0.0f.
-     * When the headroom parameter is 0.0f in case of PQ or HLG color spaces,
-     * the image content headroom value will be estimated based on the color space.
+     * The headroom value of 0.0f means "headroom unknown".
+     * The image with unknown content headroom will be excluded from tone mapping.
      * When justified, kCGDefaultHDRImageContentHeadroom which is a typical content
      * headroom for PQ and HLG images could be used to specify the content headroom.
      * 
@@ -6932,11 +6943,12 @@ public final class CoreGraphics {
 
     /**
      * Create a copy of `image' adding or replacing the image's content headroom.
-     * Returns NULL if `image' is an image mask, or if original is not using
-     * extended color space, PQ or HLG.
+     * Returns NULL if `image' is not using PQ, HLG or extended color space.
      * The headroom parameter must be either equal 0.0f or be greater or equal 1.0f.
-     * When the headroom parameter is 0.0f and the color space is extended,
-     * the image content headroom will be calculated from the image data.
+     * The headroom value of 0.0f means "headroom unknown".
+     * The image with unknown content headroom will be excluded from tone mapping.
+     * When justified, kCGDefaultHDRImageContentHeadroom which is a typical content
+     * headroom for PQ and HLG images could be used to specify the content headroom.
      * 
      * API-Since: 18.0
      */
@@ -6946,7 +6958,7 @@ public final class CoreGraphics {
     public static native CGImageRef CGImageCreateCopyWithContentHeadroom(float headroom, @Nullable CGImageRef image);
 
     /**
-     * Return image content headroom
+     * Return image content headroom if it is contained in the image metadata, and return 0.0f if unknown.
      * 
      * API-Since: 18.0
      */
@@ -6975,8 +6987,10 @@ public final class CoreGraphics {
 
     /**
      * Set target EDR headroom on a context to be used when rendering HDR content to the context.
-     * Context 'c' has to be a bitmap context using either extended or HDR color space and
-     * 'headroom' has to be a value greater than 1.0f. Return true on success and false on failure
+     * The value of the 'headroom' will be adjusted as follows: (headroom < 0.0f) ? 0.0f : (headroom > 0.0f && headroom
+     * < 1.0f) ? 1.0f : headroom.
+     * Please note that the headroom value of 0.0f means "headroom unknown" which prevents tone mapping.
+     * Context 'c' needs to be a valid context. Return true on success and false on failure
      * 
      * API-Since: 18.0
      */
@@ -7154,4 +7168,409 @@ public final class CoreGraphics {
     @CVariable()
     @NotNull
     public static native CFStringRef kCGUseLegacyHDREcosystem();
+
+    /**
+     * Create a color with a specified content headroom. Color space is required to be either HDR or extended range RGB.
+     * The content value of 0.0f means 'unknown headroom'. If the color space is HDR, passing a headroom of 0.0f
+     * is a request to use a default headroom implied by the color space.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native CGColorRef CGColorCreateWithContentHeadroom(float headroom, @Nullable CGColorSpaceRef space,
+            @NFloat double red, @NFloat double green, @NFloat double blue, @NFloat double alpha);
+
+    /**
+     * Return content headroom of the color. Returned value is 0.0f if the content headroom of the color is unknown
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    public static native float CGColorGetContentHeadroom(@Nullable CGColorRef color);
+
+    /**
+     * Creates a gradient with a specified content headroom. The value of the `headroom'
+     * will be adjusted as follows:
+     * (headroom < 0.0f) ? 0.0f : (headroom > 0.0f && headroom < 1.0f) ? 1.0f : headroom.
+     * The `space' must support HDR (is either HDR or extended range RGB). Creating a gradient
+     * with the content headroom of 0.0 means that the headroom is unspecified, and this will
+     * prevent tone mapping of the gradient content to the destination. Meaning of other
+     * parameters is the same as in CGGradientCreateWithColorComponents.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native CGGradientRef CGGradientCreateWithContentHeadroom(float headroom,
+            @Nullable CGColorSpaceRef space, @Nullable ConstNFloatPtr components, @Nullable ConstNFloatPtr locations,
+            @NUInt long count);
+
+    /**
+     * Return gradient's content headroom, and return 0.0f if unknown or unspecified.
+     * Gradient's content headroom is a maximum headroom of HDR colors used by the gradient.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    public static native float CGGradientGetContentHeadroom(@Nullable CGGradientRef gradient);
+
+    /**
+     * API-Since: 12.0
+     */
+    @Generated
+    @Inline
+    @CFunction
+    public static native int CGBitmapInfoMake(int alpha, int component, int byteOrder, int pixelFormat);
+
+    /**
+     * Calculate the image content headroom, and return 0.0f if unknown. Please note that because of image immutability,
+     * the image metadata cannot be updated.
+     * Use CGImageCreateCopyWithContentHeadroom if applicable.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    public static native float CGImageCalculateContentHeadroom(@Nullable CGImageRef image);
+
+    /**
+     * Return the image content average light level value normalized by the reference white if the content average light
+     * level is contained in the image metadata, and return 0.0f if unknown.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    public static native float CGImageGetContentAverageLightLevel(@Nullable CGImageRef image);
+
+    /**
+     * Calculate the image content average light level value normalized by the reference white, and return 0.0f if
+     * unknown. Please note that because of image immutability, the image metadata cannot be updated.
+     * Use CGImageCreateCopyWithContentAverageLightLevel if applicable.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    public static native float CGImageCalculateContentAverageLightLevel(@Nullable CGImageRef image);
+
+    /**
+     * Create a copy of `image' adding or replacing the image's content average light level.
+     * Returns NULL if `image' is not using color space of RGB model.
+     * The `avll' parameter must be greater or equal 0.0f.
+     * The value of 0.0f means "content average light level unknown".
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native CGImageRef CGImageCreateCopyWithContentAverageLightLevel(@Nullable CGImageRef image,
+            float avll);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native CGImageRef CGImageCreateCopyWithCalculatedHDRStats(@Nullable CGImageRef image);
+
+    /**
+     * Creates axial shading with a specified content headroom. The value of the `headroom'
+     * will be adjusted as follows:
+     * (headroom < 0.0f) ? 0.0f : (headroom > 0.0f && headroom < 1.0f) ? 1.0f : headroom.
+     * The `space' must support HDR (is either HDR or extended range RGB). Creating an axial
+     * shading wih the content headroom of 0.0 means that the headroom is unspecified, and this
+     * will prevent tone mapping of the axial shading content to the destination. Meaning of
+     * other parameters is the same as in CGShadingCreateAxial.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native CGShadingRef CGShadingCreateAxialWithContentHeadroom(float headroom,
+            @Nullable CGColorSpaceRef space, @ByValue CGPoint start, @ByValue CGPoint end,
+            @Nullable CGFunctionRef function, boolean extendStart, boolean extendEnd);
+
+    /**
+     * Creates radial shading with a specified content headroom. The value of the `headroom'
+     * will be adjusted as follows:
+     * (headroom < 0.0f) ? 0.0f : (headroom > 0.0f && headroom < 1.0f) ? 1.0f : headroom.
+     * The `space' must support HDR (is either HDR or extended range RGB). Creating an radial
+     * shading wih the content headroom of 0.0 means that the headroom is unspecified, and this
+     * will prevent tone mapping of the radial shading content to the destination. Meaning of
+     * other parameters is the same as in CGShadingCreateRadial.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native CGShadingRef CGShadingCreateRadialWithContentHeadroom(float headroom,
+            @Nullable CGColorSpaceRef space, @ByValue CGPoint start, @NFloat double startRadius, @ByValue CGPoint end,
+            @NFloat double endRadius, @Nullable CGFunctionRef function, boolean extendStart, boolean extendEnd);
+
+    /**
+     * Return shading's content headroom, and return 0.0f if unknown or unspecified.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    public static native float CGShadingGetContentHeadroom(@Nullable CGShadingRef shading);
+
+    /**
+     * Return a dictionary with default options for tone mapping using EXR Gamma method
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native CFDictionaryRef CGEXRToneMappingGammaGetDefaultOptions();
+
+    /**
+     * Return the CGContentToneMappingInfo for rendering HDR content in `context'. The
+     * content tone mapping info is a gstate parameter which defines the method and method's
+     * options performed when rendering HDR CGColors and CGImages.
+     * Note that CGContextDrawImageApplyingToneMapping (described above) will override the
+     * context's content tone mapping info.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    @ByValue
+    public static native CGContentToneMappingInfo CGContextGetContentToneMappingInfo(@NotNull CGContextRef c);
+
+    /**
+     * Set the content tone mapping info of `context' to `info'.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    public static native void CGContextSetContentToneMappingInfo(@NotNull CGContextRef c,
+            @ByValue CGContentToneMappingInfo info);
+
+    /**
+     * Synchronize destination attributes with the context.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    public static native void CGContextSynchronizeAttributes(@NotNull CGContextRef c);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native CGRenderingBufferProviderRef CGRenderingBufferProviderCreate(@Nullable VoidPtr info,
+            @NUInt long size,
+            @ObjCBlock(name = "call_CGRenderingBufferProviderCreate_2") @NotNull Block_CGRenderingBufferProviderCreate_2 lockPointer,
+            @ObjCBlock(name = "call_CGRenderingBufferProviderCreate_3") @Nullable Block_CGRenderingBufferProviderCreate_3 unlockPointer,
+            @ObjCBlock(name = "call_CGRenderingBufferProviderCreate_4") @Nullable Block_CGRenderingBufferProviderCreate_4 releaseInfo);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_CGRenderingBufferProviderCreate_2 {
+        @Generated
+        @Nullable
+        VoidPtr call_CGRenderingBufferProviderCreate_2(@Nullable VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_CGRenderingBufferProviderCreate_3 {
+        @Generated
+        void call_CGRenderingBufferProviderCreate_3(@Nullable VoidPtr arg0, @NotNull VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_CGRenderingBufferProviderCreate_4 {
+        @Generated
+        void call_CGRenderingBufferProviderCreate_4(@Nullable VoidPtr arg0);
+    }
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native CGRenderingBufferProviderRef CGRenderingBufferProviderCreateWithCFData(
+            @NotNull CFMutableDataRef data);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long CGRenderingBufferProviderGetSize(@NotNull CGRenderingBufferProviderRef provider);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native VoidPtr CGRenderingBufferLockBytePtr(@NotNull CGRenderingBufferProviderRef provider);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    public static native void CGRenderingBufferUnlockBytePtr(@NotNull CGRenderingBufferProviderRef provider);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long CGRenderingBufferProviderGetTypeID();
+
+    /**
+     * CGBitmapContextCreateAdaptive creates a bitmap context which is designed to choose
+     * optimal bit depth, color space and EDR target headroom based on the drawn content.
+     * Client has an option to override the calculated settings in 'onResolve' callback,
+     * however the image creation from the context will fail if the selected options
+     * are not legal options for creating a CG bitmap content.
+     * The 'onResolve' callback takes a pointer to CGBitmapParameters so the client can modify CGBitmapParameters.
+     * The client returns true from 'onResolve' if CGBitmapParameters object is accepted as is, or false if it's
+     * modified.
+     * If 'onResolve' is NULL, system will determine CGBitmapParameters based on the content drawn to the context.
+     * If 'onAllocate' is NULL, system will allocate memory based on chosen CGBitmapParameters.
+     * If 'onFree' is NULL, the allocated memory will be released using C 'free' when the context is released.
+     * The 'onError' callback gives the client an option to receive a CFErrorRef describing a reason of failure,
+     * should the creation of the bitmap failed.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native CGContextRef CGBitmapContextCreateAdaptive(@NUInt long width, @NUInt long height,
+            @Nullable CFDictionaryRef auxiliaryInfo,
+            @ObjCBlock(name = "call_CGBitmapContextCreateAdaptive_3") @Nullable Block_CGBitmapContextCreateAdaptive_3 onResolve,
+            @ObjCBlock(name = "call_CGBitmapContextCreateAdaptive_4") @Nullable Block_CGBitmapContextCreateAdaptive_4 onAllocate,
+            @ObjCBlock(name = "call_CGBitmapContextCreateAdaptive_5") @Nullable Block_CGBitmapContextCreateAdaptive_5 onFree,
+            @ObjCBlock(name = "call_CGBitmapContextCreateAdaptive_6") @Nullable Block_CGBitmapContextCreateAdaptive_6 onError);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_CGBitmapContextCreateAdaptive_3 {
+        @Generated
+        boolean call_CGBitmapContextCreateAdaptive_3(
+                @UncertainArgument("Options: reference, array Fallback: reference") @NotNull CGContentInfo arg0,
+                @UncertainArgument("Options: reference, array Fallback: reference") @NotNull CGBitmapParameters arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_CGBitmapContextCreateAdaptive_4 {
+        @Generated
+        @Nullable
+        CGRenderingBufferProviderRef call_CGBitmapContextCreateAdaptive_4(
+                @UncertainArgument("Options: reference, array Fallback: reference") @NotNull CGContentInfo arg0,
+                @UncertainArgument("Options: reference, array Fallback: reference") @NotNull CGBitmapParameters arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_CGBitmapContextCreateAdaptive_5 {
+        @Generated
+        void call_CGBitmapContextCreateAdaptive_5(@NotNull CGRenderingBufferProviderRef arg0,
+                @UncertainArgument("Options: reference, array Fallback: reference") @NotNull CGContentInfo arg1,
+                @UncertainArgument("Options: reference, array Fallback: reference") @NotNull CGBitmapParameters arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_CGBitmapContextCreateAdaptive_6 {
+        @Generated
+        void call_CGBitmapContextCreateAdaptive_6(@NotNull CFErrorRef arg0,
+                @UncertainArgument("Options: reference, array Fallback: reference") @NotNull CGContentInfo arg1,
+                @UncertainArgument("Options: reference, array Fallback: reference") @NotNull CGBitmapParameters arg2);
+    }
+
+    /**
+     * Option keys and values for Preferred Dynamic Range.
+     * Applicable to kCGToneMappingDefault, kCGToneMappingImageSpecificLumaScaling and kCGToneMappingReferenceWhiteBased
+     * methods.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGPreferredDynamicRange();
+
+    /**
+     * Legal values for kCGPreferredDynamicRange are the following strings.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGDynamicRangeHigh();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGDynamicRangeConstrained();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGDynamicRangeStandard();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGContentAverageLightLevel();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGContentAverageLightLevelNits();
+
+    /**
+     * kCGAdaptiveMaximumBitDepth passed in auxiliaryInfo provides a hint about maximum bit depth of the
+     * adaptive context which should be considered by the system. The value should be a CFNumberRef of
+     * kCFNumberIntType created from CGComponent enum type.
+     * Currently kCGAdaptiveMaximumBitDepth is the only valid key to be used in auxiliaryInfo.
+     * 
+     * API-Since: 11.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGAdaptiveMaximumBitDepth();
 }

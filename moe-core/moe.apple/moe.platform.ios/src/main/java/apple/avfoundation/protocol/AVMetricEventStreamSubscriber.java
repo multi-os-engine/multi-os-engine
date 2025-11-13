@@ -12,8 +12,6 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * [@protocol] AVMetricEventStreamSubscriber
- * 
  * This protocol needs to be implemented by the subscriber delegate to receive subscribed metric events.
  * 
  * API-Since: 18.0
@@ -24,14 +22,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("AVMetricEventStreamSubscriber")
 public interface AVMetricEventStreamSubscriber {
     /**
-     * publisher:didReceiveEvent:
-     * 
      * Delegate callback to receive metric events.
      * 
-     * @param event     The metric event.
-     * @param publisher The publisher which generated the current event.
+     * - Parameter event: The metric event.
+     * - Parameter publisher: The publisher which generated the current event.
      * 
-     *                  API-Since: 18.0
+     * API-Since: 18.0
      */
     @Generated
     @Selector("publisher:didReceiveEvent:")

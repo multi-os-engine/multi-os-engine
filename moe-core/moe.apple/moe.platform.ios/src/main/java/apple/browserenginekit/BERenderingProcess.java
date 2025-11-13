@@ -31,6 +31,7 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.browserenginekit.protocol.BEExtensionProcess;
 
 /**
  * An object that represents a running GPU extension process.
@@ -47,7 +48,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("BrowserEngineKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class BERenderingProcess extends NSObject {
+public class BERenderingProcess extends NSObject implements BEExtensionProcess {
     static {
         NatJ.register();
     }

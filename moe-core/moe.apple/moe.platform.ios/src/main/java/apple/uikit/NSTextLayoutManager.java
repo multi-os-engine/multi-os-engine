@@ -717,4 +717,30 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Specifies the behavior for resolving ``NSTextAlignment.natural`` to the visual alignment.
+     * 
+     * When set to ``true``, the resolved visual alignment is determined by the resolved base writing direction;
+     * otherwise, it is using the user’s preferred language.
+     * The default value is ``true``.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("resolvesNaturalAlignmentWithBaseWritingDirection")
+    public native boolean resolvesNaturalAlignmentWithBaseWritingDirection();
+
+    /**
+     * Specifies the behavior for resolving ``NSTextAlignment.natural`` to the visual alignment.
+     * 
+     * When set to ``true``, the resolved visual alignment is determined by the resolved base writing direction;
+     * otherwise, it is using the user’s preferred language.
+     * The default value is ``true``.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setResolvesNaturalAlignmentWithBaseWritingDirection:")
+    public native void setResolvesNaturalAlignmentWithBaseWritingDirection(boolean value);
 }

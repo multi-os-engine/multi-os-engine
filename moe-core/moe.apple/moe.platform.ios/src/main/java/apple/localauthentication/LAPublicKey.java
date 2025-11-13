@@ -124,7 +124,7 @@ public class LAPublicKey extends NSObject {
      * @param data      The data to encrypt.
      * @param algorithm A @c SecKeyAlgorithm suitable for encrypting with this key –e.g: @c
      *                  kSecKeyAlgorithmECIESEncryptionStandardVariableIVX963SHA256AESGCM .
-     * @param handler   Completion handler with the ciphertext or an error on failure.
+     * @param handler   Completion handler with the cipher text or an error on failure.
      * 
      *                  API-Since: 16.0
      */
@@ -218,7 +218,7 @@ public class LAPublicKey extends NSObject {
      * @param signature  The signature of the given data.
      * @param algorithm  One of @c SecKeyAlgorithm suitable for verifying signatures with this key –e.g: @c
      *                   kSecKeyAlgorithmECDSASignatureMessageX962SHA256
-     * @param handler    Completion hadnler with the signature of given data or an error on failure.
+     * @param handler    Completion handler with the signature of given data or an error on failure.
      * 
      *                   API-Since: 16.0
      */

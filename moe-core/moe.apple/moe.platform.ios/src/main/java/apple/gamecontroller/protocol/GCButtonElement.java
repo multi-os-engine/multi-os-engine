@@ -48,4 +48,18 @@ public interface GCButtonElement extends GCPhysicalInputElement {
     @Selector("touchedInput")
     @MappedReturn(ObjCObjectMapper.class)
     GCTouchedStateInput touchedInput();
+
+    /**
+     * Get the input containing the measured force applied to the button.
+     * 
+     * Some buttons feature load cells (also known as button force transducers)
+     * capable of measuring applied mechanical force.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("forceInput")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    GCLinearInput forceInput();
 }

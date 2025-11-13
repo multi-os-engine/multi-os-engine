@@ -48,9 +48,93 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * In order to use a CIImageProcessorInput & CIImageProcessorOutput you must
- * subclass from a CIImageProcessorKernel and override the methods you need to
- * produce the desired output.
+ * The abstract class you extend to create custom image processors that can integrate with Core Image workflows.
+ * 
+ * Unlike the ``CIKernel`` class and its other subclasses that allow you to create new image-processing effects
+ * with the Core Image Kernel Language, the `CIImageProcessorKernel` class provides direct access to the underlying
+ * bitmap image data for a step in the Core Image processing pipeline. As such, you can create subclasses of this
+ * class to integrate other image-processing technologies—such as Metal compute shaders, Metal Performance Shaders,
+ * Accelerate vImage operations, or your own CPU-based image-processing routines—with a Core Image filter chain.
+ * 
+ * Your custom image processing operation is invoked by your subclassed image processor kernel's
+ * ``processWithInputs:arguments:output:error:`` method. The method can accept zero, one or more `input` objects.
+ * Processors that generate imagery (such as a noise or pattern generator) need no inputs, while kernels that
+ * composite source images together require multiple inputs. The `arguments` dictionary allows the caller to pass in
+ * additional parameter values (such as the radius of a blur) and the `output` contains the destination for your
+ * image processing code to write to.
+ * 
+ * The following code shows how you can subclass `CIImageProcessorKernel` to apply the Metal Performance Shader
+ * <doc://com.apple.documentation/documentation/metalperformanceshaders/mpsimagethresholdbinary> kernel to a
+ * ``CIImage``:
+ * 
+ * ```swift
+ * class ThresholdImageProcessorKernel: CIImageProcessorKernel {
+ * override class func process(with inputs: [CIImageProcessorInput]?, arguments: [String : Any]?, output:
+ * CIImageProcessorOutput) throws {
+ * guard
+ * let commandBuffer = output.metalCommandBuffer,
+ * let input = inputs?.first,
+ * let sourceTexture = input.metalTexture,
+ * let destinationTexture = output.metalTexture,
+ * let thresholdValue = arguments?["thresholdValue"] as? Float else {
+ * return
+ * }
+ * 
+ * let threshold = MPSImageThresholdBinary(
+ * device: commandBuffer.device,
+ * thresholdValue: thresholdValue,
+ * maximumValue: 1.0,
+ * linearGrayColorTransform: nil)
+ * 
+ * threshold.encode(
+ * commandBuffer: commandBuffer,
+ * sourceTexture: sourceTexture,
+ * destinationTexture: destinationTexture)
+ * }
+ * }
+ * ```
+ * 
+ * To apply to kernel to an image, the calling side invokes the image processor's `apply(withExtent:inputs:arguments:)`
+ * method. The following code generates a new ``CIImage`` object named `result` which contains a thresholded version of
+ * the source image, `inputImage`.
+ * 
+ * ```swift
+ * let result = try? ThresholdImageProcessorKernel.apply(
+ * withExtent: inputImage.extent,
+ * inputs: [inputImage],
+ * arguments: ["thresholdValue": 0.25])
+ * ```
+ * 
+ * > Important: Core Image will concatenate kernels in a render into as fewer programs as possible, avoiding the
+ * creation
+ * of intermediate buffers. However, it is unable to do this with image processor kernels. To get the best performance,
+ * you should use `CIImageProcessorKernel` objects only when your algorithms can't be expressed as a ``CIKernel``.
+ * 
+ * ## Subclassing Notes
+ * 
+ * The `CIImageProcessorKernel` class is abstract; to create a custom image processor, you define a subclass of this
+ * class.
+ * 
+ * You do not directly create instances of a custom `CIImageProcessorKernel` subclass. Image processors must not carry
+ * or
+ * use state specific to any single invocation of the processor, so all methods (and accessors for readonly properties)
+ * of an image processor kernel class are class methods.
+ * 
+ * Your subclass should override at least the ``processWithInputs:arguments:output:error:`` method to perform its
+ * image processing.
+ * 
+ * If your image processor needs to work with a larger or smaller region of interest in the input image than each
+ * corresponding region of the output image (for example, a blur filter, which samples several input pixels for
+ * each output pixel), you should also override the ``roiForInput:arguments:outputRect:`` method.
+ * 
+ * You can also override the formatForInputAtIndex: method and outputFormat property getter to customize the input
+ * and output pixel formats for your processor (for example, as part of a multi-step workflow where you extract a
+ * single channel from an RGBA image, apply an effect to that channel only, then recombine the channels).
+ * 
+ * ## Using a Custom Image Processor
+ * 
+ * To apply your custom image processor class to create a ``CIImage`` object, call the
+ * ``applyWithExtent:inputs:arguments:error:`` class method. (Do not override this method.)
  */
 @Generated
 @Library("CoreImage")
@@ -81,23 +165,33 @@ public class CIImageProcessorKernel extends NSObject {
     public static native CIImageProcessorKernel allocWithZone(VoidPtr zone);
 
     /**
-     * Call this method on your CIImageProcessorKernel subclass to create a new CIImage of the specified extent.
+     * Call this method on your Core Image Processor Kernel subclass to create a new image of the specified extent.
+     * 
      * The inputs and arguments will be retained so that your subclass can be called when the image is drawn.
-     * Arguments is a dictionary containing immutable objects of type NSData, NSString, NSNumber,
-     * CIVector or CIColor.
      * 
-     * This method will return [CIImage emptyImage] if extent is empty.
+     * This method will return `nil` and an error if:
+     * * calling ``outputFormat`` on your subclass returns an unsupported format.
+     * * calling ``formatForInputAtIndex:`` on your subclass returns an unsupported format.
+     * * your subclass does not implement ``processWithInputs:arguments:output:error:``
      * 
-     * This method will return nil and an error if:
-     * * calling outputFormat on your subclass returns an unsupported format
-     * * calling formatForInputAtIndex: on your subclass returns an unsupported format
-     * * your subclass does not implement processWithInputs:arguments:output:error:
+     * - Parameters:
+     * - extent: The bounding `CGRect` of pixels that the `CIImageProcessorKernel` can produce.
+     * This method will return ``/CIImage/emptyImage`` if extent is empty.
+     * - inputs: An array of ``CIImage`` objects to use as input.
+     * - arguments: This dictionary contains any additional parameters that the processor needs to
+     * produce its output. The argument objects can be of any type but in order for
+     * CoreImage to cache intermediates, they must be of the following immutable types:
+     * `NSArray`, `NSDictionary`, `NSNumber`, `NSValue`, `NSData`, `NSString`, `NSNull`,
+     * ``CIVector``, ``CIColor``, `CGImage`, `CGColorSpace`, or `MLModel`.
+     * - error: Pointer to the `NSError` object into which processing errors will be written.
+     * - Returns:
+     * An autoreleased ``CIImage``
      */
     @Nullable
     @Generated
     @Selector("applyWithExtent:inputs:arguments:error:")
     public static native CIImage applyWithExtentInputsArgumentsError(@ByValue CGRect extent,
-            @Nullable NSArray<? extends CIImage> inputs, @Nullable NSDictionary<String, ?> args,
+            @Nullable NSArray<? extends CIImage> inputs, @Nullable NSDictionary<String, ?> arguments,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
@@ -134,20 +228,22 @@ public class CIImageProcessorKernel extends NSObject {
     public static native String description_static();
 
     /**
-     * Override this class method if you want your any of the inputs to be in a specific supported CIPixelFormat.
-     * The format must be one of kCIFormatBGRA8, kCIFormatRGBAh, kCIFormatRGBAf or kCIFormatR8.
-     * On iOS 12 and macOS 10.14, the formats kCIFormatRh and kCIFormatRf are also supported.
-     * If the requested inputFormat is 0, then the input will be a supported format that best
-     * matches the rendering context's workingFormat.
+     * Override this class method if you want your any of the inputs to be in a specific pixel format.
      * 
-     * If a processor wants data in a colorspace other than the context workingspace,
-     * then call imageByColorMatchingWorkingSpaceToColorSpace on the processor input.
+     * The format must be one of `kCIFormatBGRA8`, `kCIFormatRGBAh`, `kCIFormatRGBAf` or `kCIFormatR8`.
+     * On iOS 12 and macOS 10.14, the formats `kCIFormatRh` and `kCIFormatRf` are also supported.
+     * 
+     * If the requested inputFormat is `0`, then the input will be a supported format that best
+     * matches the rendering context's ``/CIContext/workingFormat``.
+     * 
+     * If a processor wants data in a colorspace other than the context's working color space,
+     * then call ``/CIImage/imageByColorMatchingWorkingSpaceToColorSpace:`` on the processor input.
      * If a processor wants it input as alpha-unpremultiplied RGBA data, then call
-     * imageByUnpremultiplyingAlpha on the processor input.
+     * ``/CIImage/imageByUnpremultiplyingAlpha`` on the processor input.
      */
     @Generated
     @Selector("formatForInputAtIndex:")
-    public static native int formatForInputAtIndex(int input);
+    public static native int formatForInputAtIndex(int inputIndex);
 
     @Generated
     @Selector("hash")
@@ -181,25 +277,46 @@ public class CIImageProcessorKernel extends NSObject {
     @Selector("new")
     public static native CIImageProcessorKernel new_objc();
 
+    /**
+     * Override this class property if you want your processor's output to be in a specific pixel format.
+     * 
+     * The format must be one of `kCIFormatBGRA8`, `kCIFormatRGBAh`, `kCIFormatRGBAf` or `kCIFormatR8`.
+     * On iOS 12 and macOS 10.14, the formats `kCIFormatRh` and `kCIFormatRf` are also supported.
+     * 
+     * If the outputFormat is `0`, then the output will be a supported format that best
+     * matches the rendering context's ``/CIContext/workingFormat``.
+     * 
+     * If a processor returns data in a color space other than the context working color space,
+     * then call ``/CIImage/imageByColorMatchingColorSpaceToWorkingSpace:`` on the processor output.
+     * If a processor returns data as alpha-unpremultiplied RGBA data, then call,
+     * ``/CIImage/imageByPremultiplyingAlpha`` on the processor output.
+     */
     @Generated
     @Selector("outputFormat")
     public static native int outputFormat();
 
     /**
-     * Override this class method to implement your processor's subclass of CIImageProcessorKernel.
-     * The class method will be called to produce the requested region of the output image
-     * given the required regions of the input images and other arguments.
+     * Override this class method to implement your Core Image Processor Kernel subclass.
      * 
-     * The class method is passed two objects:
-     * 'inputs’ An array of id<CIImageProcessorInput> that the block consumes to produces output.
-     * The input.region may be larger than the rect returned by 'roiForInputAtIndex'.
-     * 'output' The id<CIImageProcessorOutput> that the block must provide results to.
-     * ‘arguments’ The arguments dictionary passed to applyWithExtent:inputs:arguments:error:
-     * The contents of these objects are not valid outside the scope of this method.
+     * When a `CIImage` containing your `CIImageProcessorKernel` class is rendered, your class' implementation of
+     * this method will be called as needed for that render. The method may be called more than once if Core Image
+     * needs to tile to limit memory usage.
      * 
-     * Note that since this is a class method you cannot use or capture any state by accident.
-     * All the parameters that affect the output results must be passed in ‘inputs’ and ‘arguments'.
-     * This supports 0, 1, 2 or more input images.
+     * When your implementation of this class method is called, use the provided `inputs` and `arguments` objects
+     * to return processed pixel data to Core Image via `output`.
+     * 
+     * > Important: this is a class method so that you cannot use or capture any state by accident.
+     * All the parameters that affect the output results must be passed to
+     * ``applyWithExtent:inputs:arguments:error:``.
+     * 
+     * - Parameters:
+     * - inputs: An array of `id<CIImageProcessorInput>` that the class consumes to produce its output.
+     * The `input.region` may be larger than the rect returned by ``roiForInput:arguments:outputRect:``.
+     * - arguments: the arguments dictionary that was passed to ``applyWithExtent:inputs:arguments:error:``.
+     * - output: The `id<CIImageProcessorOutput>` that the `CIImageProcessorKernel` must provide results to.
+     * - error: Pointer to the `NSError` object into which processing errors will be written.
+     * - Returns:
+     * Returns YES if processing succeeded, and NO if processing failed.
      */
     @Generated
     @Selector("processWithInputs:arguments:output:error:")
@@ -217,20 +334,30 @@ public class CIImageProcessorKernel extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Override this class method to implement your processor’s ROI callback, the default implementation would return
-     * outputRect.
+     * Override this class method to implement your processor’s ROI callback.
+     * 
      * This will be called one or more times per render to determine what portion
      * of the input images are needed to render a given 'outputRect' of the output.
-     * This will not be called if there are 0 input images.
+     * This will not be called if processor has no input images.
      * 
-     * Note that since this is a class method you cannot use or capture any state by accident.
-     * All the parameters that affect the output results must be passed in ‘inputs’ and ‘arguments’.
+     * The default implementation would return outputRect.
+     * 
+     * > Important: this is a class method so that you cannot use or capture any state by accident.
+     * All the parameters that affect the output results must be passed to
+     * ``applyWithExtent:inputs:arguments:error:``.
+     * 
+     * - Parameters:
+     * - inputIndex: the index that tells you which processor input for which to return the ROI rectangle.
+     * - arguments: the arguments dictionary that was passed to ``applyWithExtent:inputs:arguments:error:``.
+     * - outputRect: the output `CGRect` that processor will be asked to output.
+     * - Returns:
+     * The `CGRect` of the `inputIndex`th input that is required for the above `outputRect`
      */
     @Generated
     @Selector("roiForInput:arguments:outputRect:")
     @ByValue
-    public static native CGRect roiForInputArgumentsOutputRect(int input, @Nullable NSDictionary<String, ?> arguments,
-            @ByValue CGRect outputRect);
+    public static native CGRect roiForInputArgumentsOutputRect(int inputIndex,
+            @Nullable NSDictionary<String, ?> arguments, @ByValue CGRect outputRect);
 
     @Generated
     @Selector("setVersion:")
@@ -240,6 +367,13 @@ public class CIImageProcessorKernel extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Override this class property to return false if you want your processor to be given
+     * input objects that have not been synchronized for CPU access.
+     * 
+     * Generally, if your subclass uses the GPU your should override this method to return false.
+     * If not overridden, true is returned.
+     */
     @Generated
     @Selector("synchronizeInputs")
     public static native boolean synchronizeInputs();
@@ -254,6 +388,12 @@ public class CIImageProcessorKernel extends NSObject {
     public native CIImageProcessorKernel init();
 
     /**
+     * Override this class property if your processor's output stores 1.0 into the
+     * alpha channel of all pixels within the output extent.
+     * 
+     * If not overridden, false is returned.
+     * 
+     * 
      * API-Since: 11.0
      */
     @Generated
@@ -261,15 +401,30 @@ public class CIImageProcessorKernel extends NSObject {
     public static native boolean outputIsOpaque();
 
     /**
-     * Returns an array of CIVectors that specify tile regions for 'input' that are needed to satisfy 'outputRect'.
-     * Each region tile in the array is a created by calling [CIVector vectorWithCGRect:roi]
-     * The tiles may overlap but should fully cover the area of 'input' that is needed.
-     * If a processor has multiple inputs, then each input should return the same number of region tiles.
+     * Override this class method to implement your processor’s tiled ROI callback.
+     * 
+     * This will be called one or more times per render to determine what tiles
+     * of the input images are needed to render a given `outputRect` of the output.
      * 
      * If the processor implements this method, then when rendered;
-     * - as CoreImage prepares for a render, this method will be called for each input to return the roiArray.
-     * - as CoreImage performs the render, the method 'processWithInputs:arguments:output:' will be called once for for
-     * each tile.
+     * * as CoreImage prepares for a render, this method will be called for each input to return an ROI tile array.
+     * * as CoreImage performs the render, the method ``processWithInputs:arguments:output:error:`` will be called once
+     * for each tile.
+     * 
+     * > Important: this is a class method so that you cannot use or capture any state by accident.
+     * All the parameters that affect the output results must be passed to
+     * ``applyWithExtent:inputs:arguments:error:``.
+     * 
+     * - Parameters:
+     * - inputIndex: the index that tells you which processor input for which to return the array of ROI rectangles
+     * - arguments: the arguments dictionary that was passed to ``applyWithExtent:inputs:arguments:error:``.
+     * - outputRect: the output `CGRect` that processor will be asked to output.
+     * - Returns:
+     * An array of ``CIVector`` that specify tile regions of the `inputIndex`'th input that is required for the above
+     * `outputRect`
+     * Each region tile in the array is a created by calling ``/CIVector/vectorWithCGRect:/``
+     * The tiles may overlap but should fully cover the area of 'input' that is needed.
+     * If a processor has multiple inputs, then each input should return the same number of region tiles.
      * 
      * 
      * API-Since: 17.0
@@ -277,11 +432,104 @@ public class CIImageProcessorKernel extends NSObject {
     @Generated
     @Selector("roiTileArrayForInput:arguments:outputRect:")
     @NotNull
-    public static native NSArray<? extends CIVector> roiTileArrayForInputArgumentsOutputRect(int input,
+    public static native NSArray<? extends CIVector> roiTileArrayForInputArgumentsOutputRect(int inputIndex,
             @Nullable NSDictionary<String, ?> arguments, @ByValue CGRect outputRect);
 
     @Generated
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Call this method on your multiple-output Core Image Processor Kernel subclass
+     * to create an array of new image objects given the specified array of extents.
+     * 
+     * The inputs and arguments will be retained so that your subclass can be called when the image is drawn.
+     * 
+     * This method will return `nil` and an error if:
+     * * calling ``outputFormatAtIndex:arguments:`` on your subclass returns an unsupported format.
+     * * calling ``formatForInputAtIndex:`` on your subclass returns an unsupported format.
+     * * your subclass does not implement ``processWithInputs:arguments:output:error:``
+     * 
+     * - Parameters:
+     * - extents: The array of bounding rectangles that the `CIImageProcessorKernel` can produce.
+     * Each rectangle in the array is an object created using ``/CIVector/vectorWithCGRect:``
+     * This method will return `CIImage.emptyImage` if a rectangle in the array is empty.
+     * - inputs: An array of ``CIImage`` objects to use as input.
+     * - arguments: This dictionary contains any additional parameters that the processor needs to
+     * produce its output. The argument objects can be of any type but in order for
+     * CoreImage to cache intermediates, they must be of the following immutable types:
+     * `NSArray`, `NSDictionary`, `NSNumber`, `NSValue`, `NSData`, `NSString`, `NSNull`,
+     * ``CIVector``, ``CIColor``, `CGImage`, `CGColorSpace`, or `MLModel`.
+     * - error: Pointer to the `NSError` object into which processing errors will be written.
+     * - Returns:
+     * An autoreleased ``CIImage``
+     * 
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @Selector("applyWithExtents:inputs:arguments:error:")
+    @Nullable
+    public static native NSArray<? extends CIImage> applyWithExtentsInputsArgumentsError(
+            @NotNull NSArray<? extends CIVector> extents, @Nullable NSArray<? extends CIImage> inputs,
+            @Nullable NSDictionary<String, ?> arguments,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    /**
+     * Override this class method if your processor has more than one output and
+     * you want your processor's output to be in a specific supported `CIPixelFormat`.
+     * 
+     * The format must be one of `kCIFormatBGRA8`, `kCIFormatRGBAh`, `kCIFormatRGBAf` or `kCIFormatR8`.
+     * On iOS 12 and macOS 10.14, the formats `kCIFormatRh` and `kCIFormatRf` are also supported.
+     * 
+     * If the outputFormat is `0`, then the output will be a supported format that best
+     * matches the rendering context's ``/CIContext/workingFormat``.
+     * 
+     * - Parameters:
+     * - outputIndex: the index that tells you which processor output for which to return the desired `CIPixelFormat`
+     * - arguments: the arguments dictionary that was passed to ``applyWithExtent:inputs:arguments:error:``.
+     * - Returns:
+     * Return the desired `CIPixelFormat`
+     * 
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @Selector("outputFormatAtIndex:arguments:")
+    public static native int outputFormatAtIndexArguments(int outputIndex, @Nullable NSDictionary<String, ?> arguments);
+
+    /**
+     * Override this class method of your Core Image Processor Kernel subclass if it needs to produce multiple outputs.
+     * 
+     * This supports 0, 1, 2 or more input images and 2 or more output images.
+     * 
+     * When a `CIImage` containing your `CIImageProcessorKernel` class is rendered, your class' implementation of
+     * this method will be called as needed for that render. The method may be called more than once if Core Image
+     * needs to tile to limit memory usage.
+     * 
+     * When your implementation of this class method is called, use the provided `inputs` and `arguments` objects
+     * to return processed pixel data to Core Image via multiple `outputs`.
+     * 
+     * > Important: this is a class method so that you cannot use or capture any state by accident.
+     * All the parameters that affect the output results must be passed to
+     * ``applyWithExtent:inputs:arguments:error:``.
+     * 
+     * - Parameters:
+     * - inputs: An array of `id<CIImageProcessorInput>` that the class consumes to produce its output.
+     * The `input.region` may be larger than the rect returned by ``roiForInput:arguments:outputRect:``.
+     * - arguments: the arguments dictionary that was passed to ``applyWithExtent:inputs:arguments:error:``.
+     * - outputs: An array `id<CIImageProcessorOutput>` that the `CIImageProcessorKernel` must provide results to.
+     * - error: Pointer to the `NSError` object into which processing errors will be written.
+     * - Returns:
+     * Returns YES if processing succeeded, and NO if processing failed.
+     * 
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @Selector("processWithInputs:arguments:outputs:error:")
+    public static native boolean processWithInputsArgumentsOutputsError(@Nullable NSArray<?> inputs,
+            @Nullable NSDictionary<String, ?> arguments, @NotNull NSArray<?> outputs,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
 }

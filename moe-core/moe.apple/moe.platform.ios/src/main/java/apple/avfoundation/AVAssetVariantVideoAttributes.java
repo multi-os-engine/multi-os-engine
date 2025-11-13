@@ -28,8 +28,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVAssetVariantVideoAttributes
- * 
  * Video attributes for an asset variant.
  * 
  * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
@@ -90,8 +88,6 @@ public class AVAssetVariantVideoAttributes extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property] codecTypes
-     * 
      * Provides an array of video sample codec types present in the variant's renditions if any are declared. Each value
      * in the array is a NSNumber representation of CMVideoCodecType.
      * 
@@ -147,8 +143,6 @@ public class AVAssetVariantVideoAttributes extends NSObject {
     public static native AVAssetVariantVideoAttributes new_objc();
 
     /**
-     * [@property] nominalFrameRate
-     * 
      * If it is not declared, the value will be negative.
      * 
      * API-Since: 15.0
@@ -158,8 +152,6 @@ public class AVAssetVariantVideoAttributes extends NSObject {
     public native double nominalFrameRate();
 
     /**
-     * [@property] presentationSize
-     * 
      * If it is not declared, it will be CGSizeZero.
      * 
      * API-Since: 15.0
@@ -191,8 +183,6 @@ public class AVAssetVariantVideoAttributes extends NSObject {
     public static native long version_static();
 
     /**
-     * [@property] videoRange
-     * 
      * Provides the video range of the variant. If it is not declared, it will be AVVideoRangeSDR.
      * 
      * API-Since: 15.0
@@ -208,8 +198,6 @@ public class AVAssetVariantVideoAttributes extends NSObject {
     public static native boolean useStoredAccessor();
 
     /**
-     * [@property] videoLayoutAttributes
-     * 
      * Describes the video layout attributes.
      * 
      * videoLayoutAttributes' count may be greater than one if this variant contains a collection of differing video

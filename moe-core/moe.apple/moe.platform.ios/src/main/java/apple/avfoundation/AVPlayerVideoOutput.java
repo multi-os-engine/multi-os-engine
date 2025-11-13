@@ -39,6 +39,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * AVPlayerVideoOutput can be attached to an AVPlayer using AVPlayer's method addVideoOutput:
  * Note: An AVPlayerVideoOutput can only be attached to a single player at a time, attempting to attach to multiple
  * player will result in an exception being thrown.
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
  * 
  * API-Since: 17.2
  */

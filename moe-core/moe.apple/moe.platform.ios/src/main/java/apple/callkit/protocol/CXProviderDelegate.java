@@ -35,6 +35,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.NotNull;
+import apple.callkit.CXSetTranslatingCallAction;
 
 /**
  * API-Since: 10.0
@@ -193,4 +194,15 @@ public interface CXProviderDelegate {
     @Generated
     @Selector("providerDidReset:")
     void providerDidReset(@NotNull CXProvider provider);
+
+    /**
+     * API-Since: 10.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("provider:performSetTranslatingCallAction:")
+    default void providerPerformSetTranslatingCallAction(@NotNull CXProvider provider,
+            @NotNull CXSetTranslatingCallAction action) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

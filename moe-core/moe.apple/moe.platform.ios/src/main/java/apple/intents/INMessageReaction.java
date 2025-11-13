@@ -30,8 +30,6 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * An object that describes a reaction to a message.
- * 
  * API-Since: 18.0
  */
 @Generated
@@ -103,8 +101,6 @@ public class INMessageReaction extends NSObject implements NSCopying, NSSecureCo
     public static native String description_static();
 
     /**
-     * The emoji used to react.
-     * 
      * API-Since: 18.0
      */
     @Generated
@@ -130,13 +126,6 @@ public class INMessageReaction extends NSObject implements NSCopying, NSSecureCo
     public native INMessageReaction initWithCoder(@NotNull NSCoder coder);
 
     /**
-     * Creates an INMessageReaction
-     * 
-     * - Parameters:
-     * - reactionType: The type of message reaction.
-     * - reactionDescription: Text that describes the reaction.
-     * - emoji: The single emoji character used for an emoji reaction.
-     * 
      * API-Since: 18.0
      */
     @Generated
@@ -180,8 +169,6 @@ public class INMessageReaction extends NSObject implements NSCopying, NSSecureCo
     public native String reactionDescription();
 
     /**
-     * The type of reaction.
-     * 
      * API-Since: 18.0
      */
     @Generated

@@ -95,23 +95,25 @@ public class BGTask extends NSObject {
     /**
      * A handler called shortly before the task’s background time expires.
      * 
-     * The time allocated by the system for expiration handlers doesn’t vary with
-     * the number of background tasks. All expiration handlers must complete before
-     * the allocated time.
+     * There is a limit to how long your app has to perform its background work, and your work may need to be
+     * interrupted
+     * if system conditions change. Assign a handler to this property to cancel any ongoing tasks, perform any needed
+     * cleanup, and then call setTaskCompletedWithSuccess: to signal completion to the system and allow your app to be
+     * suspended. This property is cleared after it is called by the system or when
+     * ``BGTask/setTaskCompletedWithSuccess:``
+     * is called. This is to mitigate the impact of a retain cycle created by referencing the BGTask instance inside
+     * this
+     * block.
      * 
-     * Not setting an expiration handler results in the system marking your task as
-     * complete and unsuccessful instead of sending a warning.
-     * 
-     * The manager sets the value `expirationHandler` to `nil` after the handler
-     * completes.
+     * The handler may be called before the background process uses the full amount of its allocated time.
      * 
      * - Parameters:
-     * - expirationHandler: The expiration handler takes no arguments and has no
-     * return value. Use the handler to cancel any ongoing work and to do any
-     * required cleanup in as short a time as possible.
+     * - expirationHandler: The expiration handler takes no arguments and has no return value. Use the handler to
+     * cancel any ongoing work and to do any required cleanup in as short a time as possible.
      * 
-     * The handler may be called before the background process uses the full amount of its
-     * allocated time.
+     * - Note: The manager sets the value `expirationHandler` to `nil` after the handler completes.
+     * - Warning: Not setting an expiration handler results in the system marking your task as complete and unsuccessful
+     * instead of sending a warning.
      * 
      * API-Since: 13.0
      */
@@ -188,23 +190,25 @@ public class BGTask extends NSObject {
     /**
      * A handler called shortly before the task’s background time expires.
      * 
-     * The time allocated by the system for expiration handlers doesn’t vary with
-     * the number of background tasks. All expiration handlers must complete before
-     * the allocated time.
+     * There is a limit to how long your app has to perform its background work, and your work may need to be
+     * interrupted
+     * if system conditions change. Assign a handler to this property to cancel any ongoing tasks, perform any needed
+     * cleanup, and then call setTaskCompletedWithSuccess: to signal completion to the system and allow your app to be
+     * suspended. This property is cleared after it is called by the system or when
+     * ``BGTask/setTaskCompletedWithSuccess:``
+     * is called. This is to mitigate the impact of a retain cycle created by referencing the BGTask instance inside
+     * this
+     * block.
      * 
-     * Not setting an expiration handler results in the system marking your task as
-     * complete and unsuccessful instead of sending a warning.
-     * 
-     * The manager sets the value `expirationHandler` to `nil` after the handler
-     * completes.
+     * The handler may be called before the background process uses the full amount of its allocated time.
      * 
      * - Parameters:
-     * - expirationHandler: The expiration handler takes no arguments and has no
-     * return value. Use the handler to cancel any ongoing work and to do any
-     * required cleanup in as short a time as possible.
+     * - expirationHandler: The expiration handler takes no arguments and has no return value. Use the handler to
+     * cancel any ongoing work and to do any required cleanup in as short a time as possible.
      * 
-     * The handler may be called before the background process uses the full amount of its
-     * allocated time.
+     * - Note: The manager sets the value `expirationHandler` to `nil` after the handler completes.
+     * - Warning: Not setting an expiration handler results in the system marking your task as complete and unsuccessful
+     * instead of sending a warning.
      * 
      * API-Since: 13.0
      */
@@ -221,18 +225,24 @@ public class BGTask extends NSObject {
     }
 
     /**
-     * Informs the background task scheduler that the task is complete.
+     * Inform the background task scheduler that the task is complete.
      * 
-     * Not calling ``BGTask/setTaskCompletedWithSuccess:`` before the time for the
-     * task expires may result in the system killing your app.
-     * 
-     * You can reschedule an unsuccessful required task.
-     * 
-     * - Important: If you don’t set an expiration handler, the system will mark
-     * your task as complete and unsuccessful instead of sending a warning.
+     * Call this method as soon as the background work associated with this task is complete. The system provides your
+     * app
+     * with a limited amount of time to finish the task. If you do not call setTaskCompletedWithSuccess: on the task,
+     * the
+     * system continues to run in the background until all the available time is consumed, wasting battery power. The
+     * system suspends the app as soon as all background tasks are complete.
      * 
      * - Parameters:
-     * - success: A `Boolean` indicating if the task completed successfully or not.
+     * - success: A `Boolean` indicating if the task completed successfully or not. If the task was unsuccessful, you
+     * may request the system to try again later by submitting a new task request to the scheduler before calling this
+     * method.
+     * 
+     * - Important: If you don’t set an expiration handler, the system will mark your task as complete and unsuccessful
+     * instead of sending a warning.
+     * - Warning: Not calling ``BGTask/setTaskCompletedWithSuccess:`` before the time for the task expires may result in
+     * the system killing your app.
      * 
      * API-Since: 13.0
      */

@@ -3758,7 +3758,10 @@ public final class Foundation {
      * preference is changed
      * 
      * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Notification is never posted
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -4318,18 +4321,36 @@ public final class Foundation {
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStreamNetworkServiceTypeCallSignaling();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: This notification does not protect against data races
+     */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSWillBecomeMultiThreadedNotification();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Programs no longer transition to single-threaded mode from threaded environments
+     */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSDidBecomeSingleThreadedNotification();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: This notification does not protect against data races
+     */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -4554,7 +4575,10 @@ public final class Foundation {
      * the set of stored credentials changes.
      * 
      * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: Notification is never posted
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -4722,7 +4746,10 @@ public final class Foundation {
      * next time one is available if configured to do so.
      * 
      * API-Since: 9.3
+     * Deprecated-Since: 9.3
+     * Deprecated-Message: Notification is never posted
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -4735,7 +4762,10 @@ public final class Foundation {
      * been replaced with those from the new account, regardless of the relative timestamps.
      * 
      * API-Since: 9.3
+     * Deprecated-Since: 9.3
+     * Deprecated-Message: Notification is never posted
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -4748,7 +4778,10 @@ public final class Foundation {
      * primary iCloud account.
      * 
      * API-Since: 9.3
+     * Deprecated-Since: 9.3
+     * Deprecated-Message: Notification is never posted
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -7178,4 +7211,136 @@ public final class Foundation {
     @MappedReturn(ObjCStringMapper.class)
     @NotNull
     public static native String NSHTTPCookieSetByJavaScript();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSCalendarIdentifierBangla();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSCalendarIdentifierGujarati();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSCalendarIdentifierKannada();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSCalendarIdentifierMalayalam();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSCalendarIdentifierMarathi();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSCalendarIdentifierOdia();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSCalendarIdentifierTamil();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSCalendarIdentifierTelugu();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSCalendarIdentifierVikram();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSCalendarIdentifierDangi();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSCalendarIdentifierVietnamese();
+
+    /**
+     * an NSString representing the delimiter used when declaring the current list item
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSListItemDelimiterAttributeName();
+
+    /**
+     * returns the read-only value of the NSFileManagerSupportedSyncControls options as a NSNumber.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSURLUbiquitousItemSupportedSyncControlsKey();
+
+    /**
+     * returns a boolean.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSURLUbiquitousItemIsSyncPausedKey();
 }

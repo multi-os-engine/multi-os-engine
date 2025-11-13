@@ -174,4 +174,32 @@ public class UISearchTab extends UITab {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Determines if the search tab should automatically activate the embedded search field when the tab becomes
+     * visible.
+     * 
+     * When this property is set to `YES`, the search field will be activated when the tab is selected. Moreover, when
+     * search is cancelled,
+     * the previously selected tab in the tab bar will be restored and selected. The default value is `NO`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("automaticallyActivatesSearch")
+    public native boolean automaticallyActivatesSearch();
+
+    /**
+     * Determines if the search tab should automatically activate the embedded search field when the tab becomes
+     * visible.
+     * 
+     * When this property is set to `YES`, the search field will be activated when the tab is selected. Moreover, when
+     * search is cancelled,
+     * the previously selected tab in the tab bar will be restored and selected. The default value is `NO`.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setAutomaticallyActivatesSearch:")
+    public native void setAutomaticallyActivatesSearch(boolean value);
 }

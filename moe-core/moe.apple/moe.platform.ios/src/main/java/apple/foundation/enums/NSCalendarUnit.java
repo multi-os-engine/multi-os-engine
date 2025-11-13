@@ -148,4 +148,12 @@ public final class NSCalendarUnit {
      * API-Since: 18.0
      */
     @Generated @NUInt public static final long CalendarUnitDayOfYear = 0x0000000000010000L;
+    /**
+     * API-Since: 26.0
+     */
+    @Generated @NUInt public static final long CalendarUnitIsLeapMonth = 0x0000000040000000L;
+    /**
+     * API-Since: 26.0
+     */
+    @Generated @NUInt public static final long CalendarUnitIsRepeatedDay = 0x0000000080000000L;
 }

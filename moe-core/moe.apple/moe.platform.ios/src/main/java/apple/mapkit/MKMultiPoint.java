@@ -50,6 +50,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -167,6 +170,8 @@ public class MKMultiPoint extends MKShape implements MKGeoJSONObject {
     /**
      * Unproject and copy points into the provided array of coordinates that
      * must be large enough to hold range.length coordinates.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("getCoordinates:range:")
@@ -178,11 +183,17 @@ public class MKMultiPoint extends MKShape implements MKGeoJSONObject {
     @Selector("init")
     public native MKMultiPoint init();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("pointCount")
     @NUInt
     public native long pointCount();
 
+    /**
+     * API-Since: 4.0
+     */
     @NotNull
     @Generated
     @Selector("points")

@@ -173,4 +173,27 @@ public interface UIMenuLeaf {
     @Generated
     @Selector("setSelectedImage:")
     void setSelectedImage(@Nullable UIImage value);
+
+    /**
+     * The leaf's preferred repeat behavior.
+     * Menu leaves can repeatedly perform their primary actions on prolonged interactions,
+     * such as by holding down their keyboard shortcut.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("repeatBehavior")
+    @NInt
+    long repeatBehavior();
+
+    /**
+     * The leaf's preferred repeat behavior.
+     * Menu leaves can repeatedly perform their primary actions on prolonged interactions,
+     * such as by holding down their keyboard shortcut.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setRepeatBehavior:")
+    void setRepeatBehavior(@NInt long value);
 }

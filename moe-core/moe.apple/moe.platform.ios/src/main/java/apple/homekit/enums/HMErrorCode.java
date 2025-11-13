@@ -457,4 +457,8 @@ public final class HMErrorCode {
      * API-Since: 18.4
      */
     @Generated @NInt public static final long HomeUpgradeRequired = 0x0000000000000069L;
+    /**
+     * API-Since: 26.1
+     */
+    @Generated @NInt public static final long QuotaExceeded = 0x000000000000006AL;
 }

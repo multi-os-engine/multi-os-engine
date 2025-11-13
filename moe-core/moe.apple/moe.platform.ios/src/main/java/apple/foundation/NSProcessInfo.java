@@ -389,4 +389,11 @@ public class NSProcessInfo extends NSObject {
     @Generated
     @Selector("isDeviceCertifiedFor:")
     public native boolean isDeviceCertifiedFor(@NInt long performanceTier);
+
+    /**
+     * API-Since: 26.1
+     */
+    @Generated
+    @Selector("isiOSAppOnVision")
+    public native boolean isiOSAppOnVision();
 }

@@ -18,7 +18,6 @@ package apple.photos;
 
 import apple.NSObject;
 import apple.avfoundation.AVAsset;
-import apple.corelocation.CLLocation;
 import apple.foundation.NSArray;
 import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
@@ -44,6 +43,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uniformtypeidentifiers.UTType;
+import apple.corelocation.CLLocation;
 
 /**
  * API-Since: 8.0
@@ -267,7 +268,10 @@ public class PHContentEditingInput extends NSObject {
 
     /**
      * API-Since: 8.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use contentType instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("uniformTypeIdentifier")
@@ -290,4 +294,14 @@ public class PHContentEditingInput extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The type of data provided as the asset's content editing input image or video.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("contentType")
+    @Nullable
+    public native UTType contentType();
 }

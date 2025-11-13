@@ -336,4 +336,20 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("stateOfMindType")
     @NotNull
     public static native HKStateOfMindType stateOfMindType();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("medicationDoseEventType")
+    @NotNull
+    public static native HKMedicationDoseEventType medicationDoseEventType();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("userAnnotatedMedicationType")
+    @NotNull
+    public static native HKUserAnnotatedMedicationType userAnnotatedMedicationType();
 }

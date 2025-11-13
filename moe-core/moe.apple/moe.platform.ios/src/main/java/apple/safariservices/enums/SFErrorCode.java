@@ -40,4 +40,13 @@ public final class SFErrorCode {
     @Generated
     private SFErrorCode() {
     }
+
+    /**
+     * API-Since: 10.0
+     */
+    @Generated @NInt public static final long InternalError = 0x0000000000000004L;
+    /**
+     * API-Since: 10.0
+     */
+    @Generated @NInt public static final long MissingEntitlement = 0x0000000000000005L;
 }

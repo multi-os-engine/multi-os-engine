@@ -27,8 +27,6 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * AVMetricPlayerItemSeekEvent
- * 
  * Represents a metric event when playback seeked.
  * 
  * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.

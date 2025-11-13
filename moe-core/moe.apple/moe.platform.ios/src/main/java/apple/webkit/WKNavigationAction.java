@@ -240,4 +240,13 @@ public class WKNavigationAction extends NSObject {
     @Selector("modifierFlags")
     @NInt
     public native long modifierFlags();
+
+    /**
+     * Whether or not the navigation is a redirect from a content rule list.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isContentRuleListRedirect")
+    public native boolean isContentRuleListRedirect();
 }

@@ -36,6 +36,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * 
  * An instance of AVPlayerItemRenderedLegibleOutput is initialized using the -init method.
  * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 18.0
  */
 @Generated

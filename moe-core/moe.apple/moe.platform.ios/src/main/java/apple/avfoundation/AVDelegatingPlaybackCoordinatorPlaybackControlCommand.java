@@ -25,8 +25,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVDelegatingPlaybackCoordinatorPlaybackControlCommand
- * 
  * Abstract superclass for playback commands
  * 
  * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
@@ -95,8 +93,6 @@ public class AVDelegatingPlaybackCoordinatorPlaybackControlCommand extends NSObj
     public static native String description_static();
 
     /**
-     * [@property] expectedCurrentItemIdentifier
-     * 
      * Indicates the item this command was issued for.
      * 
      * Commands are always meant for the current item. A command handler should verify that the identifier of its
@@ -148,8 +144,6 @@ public class AVDelegatingPlaybackCoordinatorPlaybackControlCommand extends NSObj
     public static native AVDelegatingPlaybackCoordinatorPlaybackControlCommand new_objc();
 
     /**
-     * [@property] originator
-     * 
      * The participant causing this command to be issued.
      * 
      * Only commands issued on behalf of another participant will contain an originator.

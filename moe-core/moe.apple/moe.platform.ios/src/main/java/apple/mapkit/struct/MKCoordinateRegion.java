@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.mapkit.struct;
 
-import apple.corelocation.struct.CLLocationCoordinate2D;
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;
@@ -24,6 +23,7 @@ import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
+import apple.corelocation.struct.CLLocationCoordinate2D;
 
 @Generated
 @Structure()

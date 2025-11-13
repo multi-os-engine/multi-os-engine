@@ -228,7 +228,7 @@ public class AVAssetWriter extends NSObject {
      * 
      * *Passthrough is indicated when the input's output settings are nil.
      * 
-     * API-Since: 4.1
+     * API-Since: 8.0
      * 
      * @param input
      *              The AVAssetWriterInput object to be added.

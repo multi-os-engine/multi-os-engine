@@ -33,7 +33,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * 
  * AVCaptureReactionEffectState may be obtained by calling -[AVCaptureDevice reactionEffectsInProgress]. When
  * -[AVCaptureDevice canPerformReactionEffects] returns YES, new entries are added either by calling -[AVCaptureDevice
- * performReactionEffect:], or by gesture detection in the capture stream when
+ * performEffectForReaction:], or by gesture detection in the capture stream when
  * AVCaptureDevice.reactionEffectGesturesEnabled. The effect rendering is done before frames are given to the capture
  * client, and these status objects let you know when these effects are performed.
  * 

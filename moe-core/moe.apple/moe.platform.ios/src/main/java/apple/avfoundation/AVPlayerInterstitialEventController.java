@@ -25,15 +25,13 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSBundle;
 
 /**
- * AVPlayerInterstitialEventController
- * 
  * An AVPlayerInterstitialEventController allows you to specify a schedule of interstitial events for items played by a
- * primary player.
- * By creating an instance of AVPlayerInterstitialEventController and setting a schedule of interstitial events, you
- * pre-empt directives the are intrinsic to the items played by the primary player, if any exist, causing them to be
- * ignored.
+ * primary player. By creating an instance of AVPlayerInterstitialEventController and setting a schedule of interstitial
+ * events, you pre-empt directives the are intrinsic to the items played by the primary player, if any exist, causing
+ * them to be ignored.
  * 
  * The schedule of interstitial events is specified as an array of AVPlayerInterstitialEvents. For each
  * AVPlayerInterstitialEvent, when the primary player's current item is the primary item of the interstitial event and
@@ -83,8 +81,6 @@ public class AVPlayerInterstitialEventController extends AVPlayerInterstitialEve
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
-     * cancelCurrentEventWithResumptionOffset:
-     * 
      * Causes the playback of any and all interstitial content currently in progress to be abandoned and the playback of
      * primary content to be resumed.
      * 
@@ -93,13 +89,13 @@ public class AVPlayerInterstitialEventController extends AVPlayerInterstitialEve
      * overrides the events' resumptionOffset.
      * Has no effect while currentEvent is nil.
      * 
-     * API-Since: 15.0
+     * - Parameter resumptionOffset: Specifies the offset in time at which playback of the primary player's current item
+     * should resume after interstitial playback has finished. To specify that the effective resumption time offset
+     * should match with the wallclock time elapsed during interstitial playback, pass a value of kCMTimeIndefinite. To
+     * specify that the effective resumption time offset should match with the projected playback time, pass a value of
+     * kCMTimeInvalid.
      * 
-     * @param resumptionOffset
-     *                         Specifies the offset in time at which playback of the primary player's current item
-     *                         should resume after interstitial playback has finished. To specify that the effective
-     *                         resumption time offset should accord with the wallclock time elapsed during interstitial
-     *                         playback, pass a value of kCMTimeIndefinite.
+     * API-Since: 15.0
      */
     @Generated
     @Selector("cancelCurrentEventWithResumptionOffset:")
@@ -135,8 +131,6 @@ public class AVPlayerInterstitialEventController extends AVPlayerInterstitialEve
     public static native String description_static();
 
     /**
-     * [@property] events
-     * 
      * Specifies the current schedule of interstitial events.
      * 
      * Setting this property to a non-nil value cancels and overrides all previously scheduled future interstitial
@@ -180,8 +174,6 @@ public class AVPlayerInterstitialEventController extends AVPlayerInterstitialEve
     public native AVPlayerInterstitialEventController init();
 
     /**
-     * initWithPrimaryPlayer:
-     * 
      * This method throws an exception if the primary player is an interstitial player.
      * 
      * API-Since: 15.0
@@ -204,17 +196,15 @@ public class AVPlayerInterstitialEventController extends AVPlayerInterstitialEve
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * interstitialEventControllerWithPrimaryPlayer
-     * 
      * Returns an instance of AVPlayerInterstitialEvent for use in observing and scheduling interstitial playback.
      * 
      * This method throws an exception if the primary player is an interstitial player.
      * 
-     * API-Since: 15.0
+     * - Parameter primaryPlayer: The AVPlayer that will play the primaryItems of the receiver's interstitial events.
      * 
-     * @param primaryPlayer
-     *                      The AVPlayer that will play the primaryItems of the receiver's interstitial events.
-     * @return An instance of AVPlayerInterstitialEventController.
+     * - Returns: An instance of AVPlayerInterstitialEventController.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("interstitialEventControllerWithPrimaryPlayer:")
@@ -249,8 +239,6 @@ public class AVPlayerInterstitialEventController extends AVPlayerInterstitialEve
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property] events
-     * 
      * Specifies the current schedule of interstitial events.
      * 
      * Setting this property to a non-nil value cancels and overrides all previously scheduled future interstitial
@@ -301,4 +289,71 @@ public class AVPlayerInterstitialEventController extends AVPlayerInterstitialEve
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * The bundle that contains the localized strings to be used by the AVPlayerInterstitialEventController.
+     * 
+     * If the value of the property is nil, any UI elements triggered by the AVPlayerInterstitialEventController, such
+     * as the skip button, may contain a generic label based on the implementation of the UI that's in use. To ensure
+     * the best available user experience in various playback configurations, including external playback, set a value
+     * for this property that provides localized translations of skip control labels.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("localizedStringsBundle")
+    @Nullable
+    public native NSBundle localizedStringsBundle();
+
+    /**
+     * The name of the table in the bundle that contains the localized strings to be used by the
+     * AVPlayerInterstitialEventController.
+     * 
+     * If the value of the property is nil, it will default to "Localizable"
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("localizedStringsTableName")
+    @Nullable
+    public native String localizedStringsTableName();
+
+    /**
+     * The bundle that contains the localized strings to be used by the AVPlayerInterstitialEventController.
+     * 
+     * If the value of the property is nil, any UI elements triggered by the AVPlayerInterstitialEventController, such
+     * as the skip button, may contain a generic label based on the implementation of the UI that's in use. To ensure
+     * the best available user experience in various playback configurations, including external playback, set a value
+     * for this property that provides localized translations of skip control labels.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setLocalizedStringsBundle:")
+    public native void setLocalizedStringsBundle(@Nullable NSBundle value);
+
+    /**
+     * The name of the table in the bundle that contains the localized strings to be used by the
+     * AVPlayerInterstitialEventController.
+     * 
+     * If the value of the property is nil, it will default to "Localizable"
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setLocalizedStringsTableName:")
+    public native void setLocalizedStringsTableName(@Nullable String value);
+
+    /**
+     * Causes the playback of the currently playing interstital event to be abandoned.
+     * 
+     * Note that coinciding events will NOT be skipped.
+     * This results in AVPlayerInterstitialEventMonitorCurrentEventSkippedNotification being posted.
+     * Has no effect while the currentEvent is nil.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("skipCurrentEvent")
+    public native void skipCurrentEvent();
 }

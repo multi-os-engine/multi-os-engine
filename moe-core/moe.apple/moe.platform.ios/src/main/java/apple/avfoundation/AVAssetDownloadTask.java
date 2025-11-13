@@ -45,8 +45,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVAssetDownloadTask
- * 
  * A NSURLSessionTask that accepts remote AVURLAssets to download locally.
  * 
  * Should be created with -[AVAssetDownloadURLSession
@@ -172,8 +170,6 @@ public class AVAssetDownloadTask extends NSURLSessionTask {
     public static native long version_static();
 
     /**
-     * [@property] URLAsset
-     * 
      * The asset supplied to the download task upon initialization.
      * 
      * API-Since: 9.0
@@ -184,8 +180,6 @@ public class AVAssetDownloadTask extends NSURLSessionTask {
     public native AVURLAsset URLAsset();
 
     /**
-     * [@property] destinationURL
-     * 
      * The file URL supplied to the download task upon initialization.
      * 
      * This URL may have been appended with the appropriate extension for the asset.
@@ -205,8 +199,6 @@ public class AVAssetDownloadTask extends NSURLSessionTask {
     public native AVAssetDownloadTask init();
 
     /**
-     * [@property] loadedTimeRanges
-     * 
      * This property provides a collection of time ranges for which the download task has media data already downloaded
      * and playable. The ranges provided might be discontinuous.
      * 
@@ -223,8 +215,6 @@ public class AVAssetDownloadTask extends NSURLSessionTask {
     public native NSArray<? extends NSValue> loadedTimeRanges();
 
     /**
-     * [@property] options
-     * 
      * The options supplied to the download task upon initialization.
      * 
      * API-Since: 9.0

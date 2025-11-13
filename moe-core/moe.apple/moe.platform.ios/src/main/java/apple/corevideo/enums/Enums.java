@@ -492,4 +492,21 @@ public final class Enums {
      * Format is compressed-packed with no padding bits between pixels.
      */
     @Generated public static final int kCVPixelFormatType_Lossless_420YpCbCr10PackedBiPlanarFullRange = 0x26786630;
+    /**
+     * Lossless-compressed form of kCVPixelFormatType_30RGBLE_8A_BiPlanar. No CVPlanarPixelBufferInfo struct.
+     */
+    @Generated public static final int kCVPixelFormatType_Lossless_30RGBLE_8A_BiPlanar = 0x26623338;
+    /**
+     * Lossless-compressed form of kCVPixelFormatType_30RGBLEPackedWideGamut. No CVPlanarPixelBufferInfo struct.
+     */
+    @Generated public static final int kCVPixelFormatType_Lossless_30RGBLEPackedWideGamut = 0x26773372;
+    /**
+     * Bayer 12-bit Little-Endian, packed 12-bits per component in 96-bits; Bayer pattern (sensel ordering) and other
+     * raw conversion information is described via buffer attachments
+     */
+    @Generated public static final int kCVPixelFormatType_96VersatileBayerPacked12 = 0x62747032;
+    /**
+     * little-endian RGB XX-10-10-10 2 MSB zero in first plane (wide-gamut), alpha 8 bits in second plane (full-range)
+     */
+    @Generated public static final int kCVPixelFormatType_30RGBLE_8A_BiPlanar = 0x62336138;
 }

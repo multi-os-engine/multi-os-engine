@@ -27,6 +27,10 @@ import org.jetbrains.annotations.Nullable;
 /**
  * A request to launch your app in the background to execute a short refresh task.
  * 
+ * Schedule a refresh task request to ask that the system launch your app briefly so that you can download data and
+ * keep your app's contents up-to-date. The system will fulfill this request intelligently based on system conditions
+ * and app usage.
+ * 
  * API-Since: 13.0
  */
 @Generated

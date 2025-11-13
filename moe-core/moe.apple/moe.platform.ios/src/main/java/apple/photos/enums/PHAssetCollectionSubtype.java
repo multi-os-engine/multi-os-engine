@@ -199,4 +199,10 @@ public final class PHAssetCollectionSubtype {
      * API-Since: 18.0
      */
     @Generated @NInt public static final long SmartAlbumSpatial = 0x00000000000000DBL;
+    /**
+     * PHAssetCollectionTypeSmartAlbum subtypes
+     * 
+     * API-Since: 14.0
+     */
+    @Generated @NInt public static final long SmartAlbumScreenRecordings = 0x00000000000000DCL;
 }

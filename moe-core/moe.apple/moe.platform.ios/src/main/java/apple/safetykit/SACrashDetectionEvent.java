@@ -1,7 +1,6 @@
 package apple.safetykit;
 
 import apple.NSObject;
-import apple.corelocation.CLLocation;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -30,6 +29,7 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corelocation.CLLocation;
 
 /**
  * This object describes a Crash Detection event and response to it.

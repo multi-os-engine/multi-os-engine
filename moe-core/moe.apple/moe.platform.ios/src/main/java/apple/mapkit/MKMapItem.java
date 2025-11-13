@@ -55,6 +55,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.corelocation.CLLocation;
 
 @Generated
 @Library("MapKit")
@@ -184,6 +185,12 @@ public class MKMapItem extends NSObject implements NSSecureCoding, NSItemProvide
     @Selector("init")
     public native MKMapItem init();
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use init(location:address:)
+     */
+    @Deprecated
     @Generated
     @Selector("initWithPlacemark:")
     public native MKMapItem initWithPlacemark(@NotNull MKPlacemark placemark);
@@ -208,7 +215,12 @@ public class MKMapItem extends NSObject implements NSSecureCoding, NSItemProvide
 
     /**
      * If this MKMapItem represents your current location (isCurrentLocation == YES), then placemark will be nil.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 26.0
+     * Deprecated-Message: Use location, address and addressRepresentations instead
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("placemark")
@@ -405,4 +417,35 @@ public class MKMapItem extends NSObject implements NSSecureCoding, NSItemProvide
     @Selector("identifier")
     @Nullable
     public native MKMapItemIdentifier identifier();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("address")
+    @Nullable
+    public native MKAddress address();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("addressRepresentations")
+    @Nullable
+    public native MKAddressRepresentations addressRepresentations();
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("initWithLocation:address:")
+    public native MKMapItem initWithLocationAddress(@NotNull CLLocation location, @Nullable MKAddress address);
+
+    /**
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("location")
+    @NotNull
+    public native CLLocation location();
 }

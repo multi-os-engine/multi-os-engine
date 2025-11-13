@@ -325,7 +325,7 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
      * Method for initiating a photo capture request with progress monitoring through the supplied delegate.
      * 
      * This method initiates a photo capture. The receiver copies your provided settings to prevent unintentional
-     * mutation. It is illegal to re-use settings. The receiver throws a NSInvalidArgumentException if your
+     * mutation. It is illegal to re-use settings. The receiver throws an NSInvalidArgumentException if your
      * settings.uniqueID matches that of any previously used settings. This method is used to initiate all flavors of
      * photo capture: single photo, RAW capture with or without a processed image (such as a JPEG), bracketed capture,
      * and Live Photo.
@@ -362,11 +362,11 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
      * - portraitEffectsMatteDeliveryEnabled will automatically be disabled in AVCapturePhotoSettings
      * - enabledSemanticSegmentationMatteTypes will automatically be cleared in AVCapturePhotoSettings
      * Processed Format rules:
-     * - If format is non-nil, a kCVPixelBufferPixelFormatTypeKey or AVVideoCodecKey must be present, and both may not
-     * be present.
+     * - If format is non-nil, a kCVPixelBufferPixelFormatTypeKey or AVVideoCodecKey must be present. You cannot specify
+     * both.
      * - If format has a kCVPixelBufferPixelFormatTypeKey, its value must be present in the receiver's
      * -availablePhotoPixelFormatTypes array.
-     * - If format has a AVVideoCodecKey, its value must be present in the receiver's -availablePhotoCodecTypes array.
+     * - If format has an AVVideoCodecKey, its value must be present in the receiver's -availablePhotoCodecTypes array.
      * - If format is non-nil, your delegate must respond to
      * -captureOutput:didFinishProcessingPhotoSampleBuffer:previewPhotoSampleBuffer:resolvedSettings:bracketSettings:error:.
      * - If processedFileType is specified, it must be present in -availablePhotoFileTypes and must support the format's
@@ -396,7 +396,8 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
      * - The maxPhotoDimensions setting for 24MP (5712, 4284), when supported, is only serviced as 24MP via deferred
      * photo delivery.
      * Color space rules:
-     * - Photo capture is not supported when AVCaptureDevice has selected AVCaptureColorSpace_AppleLog as color space.
+     * - Photo capture is not supported when AVCaptureDevice has selected AVCaptureColorSpace_AppleLog or
+     * AVCaptureColorSpace_AppleLog2 as color space.
      * 
      * API-Since: 10.0
      * 
@@ -859,10 +860,10 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
      * 
      * An array of AVFileType values that are currently supported by the receiver.
      * 
-     * If you wish to capture a photo that is formatted for a particular file container, such as HEIF, you must ensure
-     * that the fileType you desire is present in the receiver's availablePhotoFileTypes array. If you've not yet added
-     * your receiver to an AVCaptureSession with a video source, no file types are available. This property is key-value
-     * observable.
+     * If you wish to capture a photo that is formatted for a particular file container, such as HEIF or DICOM, you must
+     * ensure that the fileType you desire is present in the receiver's availablePhotoFileTypes array. If you've not yet
+     * added your receiver to an AVCaptureSession with a video source, no file types are available. This property is
+     * key-value observable.
      * 
      * API-Since: 11.0
      */
@@ -1981,4 +1982,50 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
     @NotNull
     public native NSArray<String> supportedRawPhotoCodecTypesForRawPhotoPixelFormatTypeFileType(int pixelFormatType,
             @NotNull String fileType);
+
+    /**
+     * [@property] cameraSensorOrientationCompensationEnabled
+     * 
+     * A BOOL value indicating that still image buffers will be rotated to match the sensor orientation of earlier
+     * generation hardware.
+     * 
+     * Default is YES when cameraSensorOrientationCompensationSupported is YES. Set to NO if your app does not require
+     * sensor orientation compensation.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isCameraSensorOrientationCompensationEnabled")
+    public native boolean isCameraSensorOrientationCompensationEnabled();
+
+    /**
+     * [@property] cameraSensorOrientationCompensationSupported
+     * 
+     * A read-only BOOL value indicating whether still image buffers may be rotated to match the sensor orientation of
+     * earlier generation hardware.
+     * 
+     * Value is YES for camera configurations which support compensation for the sensor orientation, which is applied to
+     * HEIC, JPEG, and uncompressed processed photos only; compensation is never applied to Bayer RAW or Apple ProRaw
+     * captures.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("isCameraSensorOrientationCompensationSupported")
+    public native boolean isCameraSensorOrientationCompensationSupported();
+
+    /**
+     * [@property] cameraSensorOrientationCompensationEnabled
+     * 
+     * A BOOL value indicating that still image buffers will be rotated to match the sensor orientation of earlier
+     * generation hardware.
+     * 
+     * Default is YES when cameraSensorOrientationCompensationSupported is YES. Set to NO if your app does not require
+     * sensor orientation compensation.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setCameraSensorOrientationCompensationEnabled:")
+    public native void setCameraSensorOrientationCompensationEnabled(boolean value);
 }

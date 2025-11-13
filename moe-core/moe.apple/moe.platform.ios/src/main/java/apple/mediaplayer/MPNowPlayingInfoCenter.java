@@ -225,4 +225,17 @@ public class MPNowPlayingInfoCenter extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Keys related to animated artwork that are supported by the current platform.
+     * 
+     * If you specify an instance of animated artwork (an `MPMediaItemAnimatedArtwork`) to
+     * `nowPlayingInfo` using any key not in this collection it will be ignored.
+     * 
+     * API-Since: 19.0
+     */
+    @Generated
+    @Selector("supportedAnimatedArtworkKeys")
+    @NotNull
+    public static native NSArray<String> supportedAnimatedArtworkKeys();
 }

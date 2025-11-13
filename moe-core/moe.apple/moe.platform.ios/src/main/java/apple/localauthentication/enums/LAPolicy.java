@@ -96,8 +96,11 @@ public final class LAPolicy {
      * it behaves as LAPolicyDeviceOwnerAuthenticationWithBiometrics. Similarly, if biometry is
      * unavailable it behaves as LAPolicyDeviceOwnerAuthenticationWithCompanion.
      * 
-     * When both mechanisms are available, user is asked to use biometry and companion authentication
-     * will run in parallel. Users should follow instructions on the companion device to authenticate.
+     * Depending on the companion type and biometry and companion availability,
+     * either a user is asked to authenticate with biometry and on a companion device in parallel
+     * or the companion authentication takes precedence
+     * and a user is asked to authenticate exclusively on the companion device if available.
+     * Users should follow instructions on the companion device to authenticate.
      * 
      * API-Since: 18.0
      */

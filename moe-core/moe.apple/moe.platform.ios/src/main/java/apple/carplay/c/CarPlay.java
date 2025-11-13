@@ -12,6 +12,8 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
 import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
+import org.moe.natj.c.ann.CFunction;
+import org.moe.natj.general.ann.NInt;
 
 @Generated
 @Library("CarPlay")
@@ -117,4 +119,44 @@ public final class CarPlay {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CPTemplateApplicationInstrumentClusterSceneSessionRoleApplication();
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @CFunction
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSStringFromCPManeuverType(@NUInt long maneuverType);
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @CFunction
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSStringFromCPJunctionType(@NUInt long junctionType);
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @CFunction
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSStringFromCPTrafficSide(@NUInt long trafficSide);
+
+    /**
+     * API-Since: 17.4
+     */
+    @Generated
+    @CFunction
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSStringFromCPLaneStatus(@NInt long laneStatus);
+
+    /**
+     * Maximum size of an image for the detailed text leading image.
+     */
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native CGSize CPMaximumMessageItemLeadingDetailTextImageSize();
 }

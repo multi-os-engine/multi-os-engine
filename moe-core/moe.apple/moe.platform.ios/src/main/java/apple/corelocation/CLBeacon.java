@@ -49,6 +49,12 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * CLBeacon
+ * 
+ * Discussion:
+ * A single beacon within a CLBeaconRegion.
+ * 
+ * 
  * API-Since: 7.0
  */
 @Generated
@@ -277,6 +283,12 @@ public class CLBeacon extends NSObject implements NSCopying, NSSecureCoding {
     }
 
     /**
+     * UUID
+     * 
+     * Discussion:
+     * UUID associated with the beacon.
+     * 
+     * 
      * API-Since: 13.0
      */
     @NotNull
@@ -285,6 +297,12 @@ public class CLBeacon extends NSObject implements NSCopying, NSSecureCoding {
     public native NSUUID UUID();
 
     /**
+     * timestamp
+     * 
+     * Discussion:
+     * The time when this beacon was observed.
+     * 
+     * 
      * API-Since: 13.0
      */
     @NotNull

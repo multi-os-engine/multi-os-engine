@@ -56,7 +56,8 @@ public class MTRBaseClusterGroups extends MTRGenericBaseCluster {
     /**
      * Command AddGroupIfIdentifying
      * 
-     * Command description for AddGroupIfIdentifying
+     * The AddGroupIfIdentifying command allows a client to add group membership in a particular group for the server
+     * endpoint, on condition that the endpoint is identifying itself.
      * 
      * API-Since: 16.4
      */
@@ -95,7 +96,7 @@ public class MTRBaseClusterGroups extends MTRGenericBaseCluster {
     /**
      * Command AddGroup
      * 
-     * Command description for AddGroup
+     * The AddGroup command allows a client to add group membership in a particular group for the server endpoint.
      * 
      * API-Since: 16.4
      */
@@ -177,7 +178,8 @@ public class MTRBaseClusterGroups extends MTRGenericBaseCluster {
     /**
      * Command GetGroupMembership
      * 
-     * Command description for GetGroupMembership
+     * The GetGroupMembership command allows a client to inquire about the group membership of the server endpoint, in a
+     * number of ways.
      * 
      * API-Since: 16.4
      */
@@ -742,7 +744,8 @@ public class MTRBaseClusterGroups extends MTRGenericBaseCluster {
     /**
      * Command RemoveAllGroups
      * 
-     * Command description for RemoveAllGroups
+     * The RemoveAllGroups command allows a client to direct the server to remove all group associations for the server
+     * endpoint.
      * 
      * API-Since: 16.4
      */
@@ -780,7 +783,8 @@ public class MTRBaseClusterGroups extends MTRGenericBaseCluster {
     /**
      * Command RemoveGroup
      * 
-     * Command description for RemoveGroup
+     * The RemoveGroup command allows a client to request that the server removes the membership for the server
+     * endpoint, if any, in a particular group.
      * 
      * API-Since: 16.4
      */
@@ -1163,7 +1167,8 @@ public class MTRBaseClusterGroups extends MTRGenericBaseCluster {
     /**
      * Command ViewGroup
      * 
-     * Command description for ViewGroup
+     * The ViewGroup command allows a client to request that the server responds with a ViewGroupResponse command
+     * containing the name string for a particular group.
      * 
      * API-Since: 16.4
      */

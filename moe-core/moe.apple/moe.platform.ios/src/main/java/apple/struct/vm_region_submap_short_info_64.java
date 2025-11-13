@@ -200,4 +200,12 @@ public final class vm_region_submap_short_info_64 extends StructObject {
     @Generated
     @StructureField(order = 12, isGetter = false)
     public native void setUser_wired_count(char value);
+
+    @Generated
+    @StructureField(order = 13, isGetter = true)
+    public native char flags();
+
+    @Generated
+    @StructureField(order = 13, isGetter = false)
+    public native void setFlags(char value);
 }

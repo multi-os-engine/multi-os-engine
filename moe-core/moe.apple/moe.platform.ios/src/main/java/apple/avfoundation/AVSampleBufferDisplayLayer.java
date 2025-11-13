@@ -547,4 +547,9 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
     @Generated
     @Selector("isReadyForDisplay")
     public native boolean isReadyForDisplay();
+
+    @Generated
+    @Selector("layerWithRemoteClientId:")
+    @NotNull
+    public static native CALayer layerWithRemoteClientId(int client_id);
 }

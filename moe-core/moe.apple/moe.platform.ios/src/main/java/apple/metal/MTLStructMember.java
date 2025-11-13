@@ -229,4 +229,17 @@ public class MTLStructMember extends NSObject {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Provides a description of the underlying tensor type when this struct member holds a tensor.
+     * 
+     * - Returns: A description of the tensor type that this struct member holds, or `nil` if this struct member doesn't
+     * hold a tensor.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("tensorReferenceType")
+    @Nullable
+    public native MTLTensorReferenceType tensorReferenceType();
 }

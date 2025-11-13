@@ -231,4 +231,52 @@ public class CKAllowedSharingOptions extends NSObject implements NSSecureCoding,
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * Default value is `NO`. If set, the system sharing UI will allow the user to configure whether access requests are
+     * enabled on the share.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("allowsAccessRequests")
+    public native boolean allowsAccessRequests();
+
+    /**
+     * Default value is `NO`. If set, the system sharing UI will allow the user to choose whether added participants can
+     * invite others to the share.
+     * Shares with ``CloudKit/CKShareParticipantRole/CKShareParticipantRoleAdministrator`` participants will be returned
+     * as read-only to devices running OS versions prior to this role being introduced.
+     * Administrator participants on these read-only shares will be returned as
+     * ``CloudKit/CKShareParticipantRole/CKShareParticipantRolePrivateUser``.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("allowsParticipantsToInviteOthers")
+    public native boolean allowsParticipantsToInviteOthers();
+
+    /**
+     * Default value is `NO`. If set, the system sharing UI will allow the user to configure whether access requests are
+     * enabled on the share.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setAllowsAccessRequests:")
+    public native void setAllowsAccessRequests(boolean value);
+
+    /**
+     * Default value is `NO`. If set, the system sharing UI will allow the user to choose whether added participants can
+     * invite others to the share.
+     * Shares with ``CloudKit/CKShareParticipantRole/CKShareParticipantRoleAdministrator`` participants will be returned
+     * as read-only to devices running OS versions prior to this role being introduced.
+     * Administrator participants on these read-only shares will be returned as
+     * ``CloudKit/CKShareParticipantRole/CKShareParticipantRolePrivateUser``.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("setAllowsParticipantsToInviteOthers:")
+    public native void setAllowsParticipantsToInviteOthers(boolean value);
 }

@@ -63,6 +63,7 @@ import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.metal.MTL4RenderPassDescriptor;
 
 /**
  * MTKView
@@ -1170,4 +1171,20 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] currentMTL4RenderPassDescriptor
+     * 
+     * A render pass descriptor generated from the currentDrawable's texture and the view's depth, stencil, and sample
+     * buffers and clear values.
+     * 
+     * This is a convience property. The view does not use this descriptor and there is no requirement for an app to use
+     * this descriptor.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("currentMTL4RenderPassDescriptor")
+    @Nullable
+    public native MTL4RenderPassDescriptor currentMTL4RenderPassDescriptor();
 }

@@ -20,23 +20,36 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
+ * The app's authorization to perform speech recognition.
+ * 
  * API-Since: 10.0
  */
 @Generated
 public final class SFSpeechRecognizerAuthorizationStatus {
     /**
+     * The app's authorization status has not yet been determined.
+     * 
+     * When your app's status is not determined, calling the ``SFSpeechRecognizer/requestAuthorization(_:)`` method
+     * prompts the user to grant or deny authorization.
+     * 
      * API-Since: 10.0
      */
     @Generated @NInt public static final long NotDetermined = 0x0000000000000000L;
     /**
+     * The user denied your app's request to perform speech recognition.
+     * 
      * API-Since: 10.0
      */
     @Generated @NInt public static final long Denied = 0x0000000000000001L;
     /**
+     * The device prevents your app from performing speech recognition.
+     * 
      * API-Since: 10.0
      */
     @Generated @NInt public static final long Restricted = 0x0000000000000002L;
     /**
+     * The user granted your app's request to perform speech recognition.
+     * 
      * API-Since: 10.0
      */
     @Generated @NInt public static final long Authorized = 0x0000000000000003L;

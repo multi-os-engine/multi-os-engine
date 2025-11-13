@@ -31,6 +31,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
+import apple.metal.MTLTensorExtents;
 
 /**
  * [@protocol] MTLBlitCommandEncoder
@@ -317,8 +318,7 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
     /**
      * optimizeIndirectCommandBuffer:withRange:
      * 
-     * Optimizes a subset of the texture data to ensure the best possible performance when accessing content on the CPU
-     * at the expense of GPU-access performance.
+     * Encodes a command that can improve the performance of a range of commands within an indirect command buffer.
      * 
      * API-Since: 12.0
      */
@@ -401,4 +401,30 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
     void sampleCountersInBufferAtSampleIndexWithBarrier(
             @NotNull @Mapped(ObjCObjectMapper.class) MTLCounterSampleBuffer sampleBuffer, @NUInt long sampleIndex,
             boolean barrier);
+
+    /**
+     * Encodes a command to copy data from a slice of one tensor into a slice of another tensor.
+     * 
+     * This command applies reshapes if `sourceTensor` and `destinationTensor` are not aliasable.
+     * - Parameters:
+     * - sourceTensor: A tensor instance that this command copies data from.
+     * - sourceOrigin: An array of offsets, in elements, to the first element of the slice of `sourceTensor` that this
+     * command copies data from.
+     * - sourceDimensions: An array of sizes, in elements, of the slice `sourceTensor` that this command copies data
+     * from.
+     * - destinationTensor: A tensor instance that this command copies data to.
+     * - destinationOrigin: An array of offsets, in elements, to the first element of the slice of `destinationTensor`
+     * that this command copies data to.
+     * - destinationDimensions: An array of sizes, in elements, of the slice of `destinationTensor` that this command
+     * copies data to.
+     * 
+     * API-Since: 26.0
+     */
+    @Generated
+    @Selector("copyFromTensor:sourceOrigin:sourceDimensions:toTensor:destinationOrigin:destinationDimensions:")
+    void copyFromTensorSourceOriginSourceDimensionsToTensorDestinationOriginDestinationDimensions(
+            @Mapped(ObjCObjectMapper.class) @NotNull MTLTensor sourceTensor, @NotNull MTLTensorExtents sourceOrigin,
+            @NotNull MTLTensorExtents sourceDimensions,
+            @Mapped(ObjCObjectMapper.class) @NotNull MTLTensor destinationTensor,
+            @NotNull MTLTensorExtents destinationOrigin, @NotNull MTLTensorExtents destinationDimensions);
 }

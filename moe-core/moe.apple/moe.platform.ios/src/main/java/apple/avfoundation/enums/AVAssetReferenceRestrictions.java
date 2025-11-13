@@ -20,25 +20,8 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * [@enum] AVAssetReferenceRestrictions
- * 
  * These constants can be passed in to AVURLAssetReferenceRestrictionsKey to control the resolution of references to
  * external media data.
- * 
- * [@constant] AVAssetReferenceRestrictionForbidNone
- * Indicates that all types of references should be followed.
- * [@constant] AVAssetReferenceRestrictionForbidRemoteReferenceToLocal
- * Indicates that references from a remote asset (e.g. referenced via http URL) to local media data (e.g. stored in a
- * local file) should not be followed.
- * [@constant] AVAssetReferenceRestrictionForbidLocalReferenceToRemote
- * Indicates that references from a local asset to remote media data should not be followed.
- * [@constant] AVAssetReferenceRestrictionForbidCrossSiteReference
- * Indicates that references from a remote asset to remote media data stored at a different site should not be followed.
- * [@constant] AVAssetReferenceRestrictionForbidLocalReferenceToLocal
- * Indicates that references from a local asset to local media data stored outside the asset's container file should not
- * be followed.
- * [@constant] AVAssetReferenceRestrictionForbidAll
- * Indicates that only references to media data stored within the asset's container file should be allowed.
  */
 @Generated
 public final class AVAssetReferenceRestrictions {
@@ -46,11 +29,35 @@ public final class AVAssetReferenceRestrictions {
     private AVAssetReferenceRestrictions() {
     }
 
+    /**
+     * Indicates that all types of references should be followed.
+     */
     @Generated @NUInt public static final long ForbidNone = 0x0000000000000000L;
+    /**
+     * Indicates that references from a remote asset (e.g. referenced via http URL) to local media data (e.g. stored in
+     * a local file) should not be followed.
+     */
     @Generated @NUInt public static final long ForbidRemoteReferenceToLocal = 0x0000000000000001L;
+    /**
+     * Indicates that references from a local asset to remote media data should not be followed.
+     */
     @Generated @NUInt public static final long ForbidLocalReferenceToRemote = 0x0000000000000002L;
+    /**
+     * Indicates that references from a remote asset to remote media data stored at a different site should not be
+     * followed.
+     */
     @Generated @NUInt public static final long ForbidCrossSiteReference = 0x0000000000000004L;
+    /**
+     * Indicates that references from a local asset to local media data stored outside the asset's container file should
+     * not be followed.
+     */
     @Generated @NUInt public static final long ForbidLocalReferenceToLocal = 0x0000000000000008L;
+    /**
+     * Indicates that only references to media data stored within the asset's container file should be allowed.
+     */
     @Generated @NUInt public static final long ForbidAll = 0x000000000000FFFFL;
+    /**
+     * Indicates that only references to media data stored within the asset's container file should be allowed.
+     */
     @Generated @NUInt public static final long DefaultPolicy = 0x0000000000000002L;
 }

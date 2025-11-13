@@ -35,6 +35,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import apple.uikit.UIInputSuggestion;
+import apple.foundation.NSValue;
 
 @Generated
 @Library("UIKit")
@@ -43,7 +44,11 @@ import apple.uikit.UIInputSuggestion;
 public interface UITextFieldDelegate {
     /**
      * return NO to not change text
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("textField:shouldChangeCharactersInRange:replacementString:")
@@ -146,7 +151,9 @@ public interface UITextFieldDelegate {
      * @return Return a UIMenu describing the desired menu hierarchy. Return @c nil to present the default system menu.
      * 
      *         API-Since: 16.0
+     *         Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @IsOptional
@@ -204,6 +211,49 @@ public interface UITextFieldDelegate {
     @Selector("textField:insertInputSuggestion:")
     default void textFieldInsertInputSuggestion(@NotNull UITextField textField,
             @NotNull UIInputSuggestion inputSuggestion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Asks the delegate for the menu to be shown for the specified `ranges`.
+     * 
+     * @param textField        The text field requesting the menu.
+     * @param ranges           The text ranges for which the menu is presented for.
+     * @param suggestedActions The actions and commands that the system suggests.
+     * 
+     * @return Return a UIMenu describing the desired menu hierarchy. Return @c nil to present the default system menu.
+     * 
+     *         API-Since: 26.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("textField:editMenuForCharactersInRanges:suggestedActions:")
+    @Nullable
+    default UIMenu textFieldEditMenuForCharactersInRangesSuggestedActions(@NotNull UITextField textField,
+            @NotNull NSArray<? extends NSValue> ranges, @NotNull NSArray<? extends UIMenuElement> suggestedActions) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Asks the delegate if the text at the specified `ranges` should be replaced with `string`.
+     * 
+     * If this method returns YES then the text field will, at its own discretion, choose any one of the specified
+     * `ranges` of text and replace it with the specified `replacementString` before deleting the text at the other
+     * ranges.
+     * 
+     * @param textField         The text field asking the delegate
+     * @param ranges            The ranges of the text that should be deleted before replacing
+     * @param replacementString The replacement string
+     * 
+     * @return Returns YES if the text at the `ranges` should be replaced.
+     * 
+     *         API-Since: 26.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("textField:shouldChangeCharactersInRanges:replacementString:")
+    default boolean textFieldShouldChangeCharactersInRangesReplacementString(@NotNull UITextField textField,
+            @NotNull NSArray<? extends NSValue> ranges, @NotNull String string) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

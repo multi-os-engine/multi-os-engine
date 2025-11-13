@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.protocol.NSCopying;
+import org.moe.natj.general.ann.MappedReturn;
 
 /**
  * NS_SWIFT_SENDABLE on macos(13.3), macCatalyst(16.4), ios(16.4), tvos(16.4), watchos(9.4)
@@ -36,7 +38,7 @@ import org.jetbrains.annotations.Nullable;
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class CKOperationGroup extends NSObject implements NSSecureCoding {
+public class CKOperationGroup extends NSObject implements NSSecureCoding, NSCopying {
     static {
         NatJ.register();
     }
@@ -365,4 +367,11 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
     @Deprecated
     @Selector("useStoredAccessor")
     public static native boolean useStoredAccessor();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 }
