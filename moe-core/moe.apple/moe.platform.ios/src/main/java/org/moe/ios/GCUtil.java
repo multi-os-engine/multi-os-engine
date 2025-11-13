@@ -1,4 +1,4 @@
-package org.moe;
+package org.moe.ios;
 
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Owned;

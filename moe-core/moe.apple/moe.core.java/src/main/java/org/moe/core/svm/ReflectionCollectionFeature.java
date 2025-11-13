@@ -1,4 +1,4 @@
-package org.moe.svm;
+package org.moe.core.svm;
 
 import SQLite.Authorizer;
 import SQLite.Backup;

@@ -63,7 +63,7 @@ public class MoeExtension extends AbstractMoeExtension {
     public final ProGuardOptions proguard;
 
     @Nullable
-    private String mainClassName = "org.moe.IOSLauncher";
+    private String mainClassName = "org.moe.ios.IOSLauncher";
 
     public MoeExtension(@NotNull MoePlugin plugin, @NotNull Instantiator instantiator) {
         super(plugin, instantiator);

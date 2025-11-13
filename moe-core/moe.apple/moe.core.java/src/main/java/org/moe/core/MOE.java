@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.moe;
+package org.moe.core;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -33,7 +33,7 @@ public class MOE {
      * the application.
      *
      * The values in this class are initialized during the GraalVM Native Image build time, by using the option
-     * `--initialize-at-build-time=org.moe.MOE$Build`.
+     * `--initialize-at-build-time=org.moe.core.MOE$Build`.
      *
      * So these values will effectively be const values, thus allow the Native Image compiler to optimise the code
      * that uses these values and remove unnecessary runtime checks. For example, for code like:

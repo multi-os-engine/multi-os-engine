@@ -119,7 +119,7 @@ int moevm(const int jargc, char* const* jargv) {
 //    // Use framework icudt54l.dat and if that is not present then
 //    // use the one from the resources directory
 //    NSBundle* fwBundle =
-//        [NSBundle bundleWithIdentifier:@"org.moe.MOE"];
+//        [NSBundle bundleWithIdentifier:@"org.moe.core.MOE"];
 //
 //#ifndef USE_APLE_CF
 //    if (fwBundle) {
@@ -256,7 +256,7 @@ int moevm(const int jargc, char* const* jargv) {
 //  return 0;
 }
 
-JNIEXPORT jstring JNICALL Java_org_moe_MOE_getUserMainClassName(JNIEnv* env,
+JNIEXPORT jstring JNICALL Java_org_moe_core_MOE_getUserMainClassName(JNIEnv* env,
                                                                 jclass clazz) {
     @autoreleasepool {
         NSBundle* mainBundle = [NSBundle mainBundle];
@@ -278,7 +278,7 @@ JNIEXPORT jstring JNICALL Java_org_moe_MOE_getUserMainClassName(JNIEnv* env,
  */
 extern "C" void handleStartup(JNIEnv* env, const char* name);
 
-JNIEXPORT void JNICALL Java_org_moe_MOE_handleStartup(JNIEnv* env, jclass clazz) {
+JNIEXPORT void JNICALL Java_org_moe_core_MOE_handleStartup(JNIEnv* env, jclass clazz) {
     @autoreleasepool {
         // Build up class preregister list
         NSBundle* mainBundle = [NSBundle mainBundle];

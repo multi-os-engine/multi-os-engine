@@ -1,7 +1,8 @@
-package org.moe;
+package org.moe.ios;
 
 import apple.foundation.NSLocale;
 import apple.foundation.NSTimeZone;
+import org.moe.core.MOE;
 import org.moe.natj.objc.ObjCRuntime;
 
 import java.util.Locale;
