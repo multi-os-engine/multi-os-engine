@@ -78,7 +78,7 @@ import java.util.Set;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-public class XcodeBuild extends AbstractBaseTask {
+public abstract class XcodeBuild extends AbstractBaseTask {
 
     private static final Logger LOG = Logging.getLogger(XcodeBuild.class);
 

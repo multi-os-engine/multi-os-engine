@@ -54,7 +54,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class GenerateUIObjCInterfaces extends AbstractBaseTask {
+public abstract class GenerateUIObjCInterfaces extends AbstractBaseTask {
 
     private static final String CONVENTION_INPUT_FILES = "inputFiles";
     private static final String CONVENTION_OUTPUT_SOURCE = "outputSource";

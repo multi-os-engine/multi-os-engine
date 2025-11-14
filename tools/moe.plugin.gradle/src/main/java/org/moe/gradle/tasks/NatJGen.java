@@ -34,7 +34,7 @@ import java.util.List;
 
 import static org.moe.gradle.AbstractMoePlugin.MOE;
 
-public class NatJGen extends AbstractBaseTask {
+public abstract class NatJGen extends AbstractBaseTask {
 
     private static final String CONVENTION_CONFIGURATION = "config";
     private static final String CONVENTION_NATJGEN_JAR = "natjgen-jar";

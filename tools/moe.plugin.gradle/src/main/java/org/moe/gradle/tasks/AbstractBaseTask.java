@@ -16,27 +16,34 @@ limitations under the License.
 
 package org.moe.gradle.tasks;
 
-import org.gradle.api.*;
-import org.gradle.api.logging.Logger;
-import org.gradle.api.logging.Logging;
+import org.gradle.api.Action;
+import org.gradle.api.DefaultTask;
+import org.gradle.api.GradleException;
 import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.TaskAction;
+import org.gradle.process.BaseExecSpec;
+import org.gradle.process.ExecOperations;
 import org.gradle.process.ExecResult;
 import org.gradle.process.ExecSpec;
 import org.gradle.process.JavaExecSpec;
 import org.moe.common.utils.FileUtilsKt;
-import org.moe.gradle.*;
+import org.moe.gradle.AbstractMoeExtension;
+import org.moe.gradle.MoeExtension;
+import org.moe.gradle.MoePlugin;
+import org.moe.gradle.MoeSDK;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
-import org.moe.gradle.groovy.closures.RuleClosure;
-import org.moe.gradle.groovy.closures.ValueClosure;
 import org.moe.gradle.remote.Server;
 import org.moe.gradle.utils.FileUtils;
+import org.moe.gradle.utils.JUnitTestCollector;
+import org.moe.gradle.utils.JUnitTestCollectorWriter;
 import org.moe.gradle.utils.Require;
+import org.moe.gradle.utils.StreamToLogForwarder;
 
+import javax.inject.Inject;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -45,7 +52,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Date;
-import java.util.function.Function;
 import java.util.function.Supplier;
 
 public abstract class AbstractBaseTask extends DefaultTask {
@@ -56,7 +62,8 @@ public abstract class AbstractBaseTask extends DefaultTask {
 
     private Object logFile;
 
-    private final Logger logger = Logging.getLogger(getClass());
+    @Inject
+    protected abstract ExecOperations getExecOperations();
 
     @OutputFile
     @NotNull
@@ -137,31 +144,15 @@ public abstract class AbstractBaseTask extends DefaultTask {
         Require.nonNull(name);
         Require.nonNull(supplier);
 
-        getConvention().add(name, new ValueClosure<Object>(this) {
-            @Override
-            @Nullable
-            public Object doCall() {
-                return supplier.get();
-            }
-        });
+        getExtensions().getExtraProperties().set(name, supplier);
     }
 
-    @SuppressWarnings("unchecked")
     @NotNull
     @org.jetbrains.annotations.NotNull
     public <T> T getOrConvention(@Nullable T value, @NotNull String name) {
         Require.nonNull(name);
 
-        if (value == null) {
-            final @Nullable T result = (T) getConvention().findByName(name);
-            if (result instanceof ValueClosure) {
-                final ValueClosure<T> closure = (ValueClosure<T>) result;
-                final @Nullable T result2 = closure.call();
-                return Require.nonNull(result2, "Required a non-null value for property '" + name + "'");
-            }
-            return Require.nonNull(result, "Required a non-null value for property '" + name + "'");
-        }
-        return value;
+        return Require.nonNull(nullableGetOrConvention(value, name), "Required a non-null value for property '" + name + "'");
     }
 
     @SuppressWarnings("unchecked")
@@ -171,12 +162,16 @@ public abstract class AbstractBaseTask extends DefaultTask {
         Require.nonNull(name);
 
         if (value == null) {
-            final @Nullable T result = (T) getConvention().findByName(name);
-            if (result != null && result instanceof ValueClosure) {
-                final ValueClosure<T> closure = (ValueClosure<T>) result;
-                return closure.call();
+            if (getExtensions().getExtraProperties().has(name)) {
+                Object result = getExtensions().getExtraProperties().get(name);
+
+                if (result instanceof Supplier) {
+                    return ((Supplier<T>) result).get();
+                }
+
+                return (T) result;
             }
-            return result;
+            return null;
         }
         return value;
     }
@@ -193,7 +188,7 @@ public abstract class AbstractBaseTask extends DefaultTask {
 
         FileUtilsKt.touch(getLogFile());
 
-        final ExecResult result = getProject().exec(execSpec -> {
+        final ExecResult result = getExecOperations().exec(execSpec -> {
             // Pre-configure
             execSpec.setIgnoreExitValue(true);
             // Set logging
@@ -210,12 +205,12 @@ public abstract class AbstractBaseTask extends DefaultTask {
             spec.execute(execSpec);
         });
         if (result.getExitValue() != 0 && shouldLogOnExecFail() && getLogFile() != null) {
-            logger.error("\n" +
+            getLogger().error("\n" +
                     "###########\n" +
                     "# ERROR LOG\n" +
                     "###########\n\n");
-            logger.error(FileUtils.read(getLogFile()));
-            logger.error("\n");
+            getLogger().error(FileUtils.read(getLogFile()));
+            getLogger().error("\n");
         }
         if (result.getExitValue() != 0) {
             throw new GradleException("Task failed, you can find the log file here: " + getLogFile().getAbsolutePath());
@@ -227,7 +222,7 @@ public abstract class AbstractBaseTask extends DefaultTask {
 
         FileUtilsKt.touch(getLogFile());
 
-        final ExecResult result = getProject().javaexec(execSpec -> {
+        final ExecResult result = getExecOperations().javaexec(execSpec -> {
             execSpec.jvmArgs(getExtension().javaProcess.getJvmArgs());
 
             spec.execute(execSpec);
@@ -247,33 +242,27 @@ public abstract class AbstractBaseTask extends DefaultTask {
             }
         });
         if (result.getExitValue() != 0 && shouldLogOnExecFail() && getLogFile() != null) {
-            logger.error("\n" +
+            getLogger().error("\n" +
                     "###########\n" +
                     "# ERROR LOG\n" +
                     "###########\n\n");
-            logger.error(FileUtils.read(getLogFile()));
-            logger.error("\n");
+            getLogger().error(FileUtils.read(getLogFile()));
+            getLogger().error("\n");
         }
         if (result.getExitValue() != 0) {
             throw new GradleException("Task failed, you can find the log file here: " + getLogFile().getAbsolutePath());
         }
     }
 
-    @NotNull
-    protected static Rule addTaskRule(@NotNull Project project,
-                                      @NotNull String pattern,
-                                      @NotNull Function<@NotNull String, @Nullable Task> taskBuilder) {
-        Require.nonNull(project);
-        Require.nonNull(pattern);
-        Require.nonNull(taskBuilder);
-
-        return project.getTasks().addRule(pattern, new RuleClosure(project) {
-            @Override
-            public @Nullable Task doCall(@NotNull String taskName) {
-                Require.nonNull(taskName);
-                return taskBuilder.apply(taskName);
-            }
-        });
+    protected void execConfigOutput(@NotNull BaseExecSpec exec, @Nullable JUnitTestCollector testCollector) {
+        if (testCollector != null) {
+            final JUnitTestCollectorWriter writer = new JUnitTestCollectorWriter(testCollector);
+            exec.setStandardOutput(writer);
+            exec.setErrorOutput(writer);
+        } else {
+            exec.setStandardOutput(new StreamToLogForwarder(getLogger(), false));
+            exec.setErrorOutput(new StreamToLogForwarder(getLogger(), true));
+        }
     }
 
     protected final File resolvePathInProjectDir(Object... subPaths) {

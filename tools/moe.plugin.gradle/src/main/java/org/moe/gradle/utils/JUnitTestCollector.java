@@ -17,14 +17,21 @@ limitations under the License.
 package org.moe.gradle.utils;
 
 import org.apache.commons.lang3.StringEscapeUtils;
+import org.gradle.api.GradleException;
+import org.gradle.api.logging.Logger;
+import org.gradle.api.logging.Logging;
 import org.moe.gradle.anns.IgnoreUnused;
+import org.moe.gradle.anns.NotNull;
 
+import java.io.File;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Date;
 import java.util.HashMap;
 
 public class JUnitTestCollector {
+
+    private static final Logger LOG = Logging.getLogger(JUnitTestCollector.class);
 
     /**
      * JUnit test message IDs.
@@ -449,6 +456,53 @@ public class JUnitTestCollector {
                 "</html>\n");
 
         return report.toString();
+    }
+
+    public void writeJUnitReport(@NotNull String udid, @NotNull File out) {
+        Require.nonNull(udid);
+        Require.nonNull(out);
+
+        final File out_xml = prepareOutputSubdir(out, "xml");
+        final File out_html = prepareOutputSubdir(out, "html");
+        final File out_txt = prepareOutputSubdir(out, "txt");
+
+        // Try to write xml
+        try {
+            final File file = new File(out_xml, udid + ".xml");
+            FileUtils.write(file, getXMLReport());
+        } catch (GradleException ex) {
+            LOG.error(ex.getMessage(), ex.getCause());
+        }
+
+        // Try to write html
+        try {
+            final File file = new File(out_html, udid + ".html");
+            FileUtils.write(file, getHTMLReport(udid));
+        } catch (GradleException ex) {
+            LOG.error(ex.getMessage(), ex.getCause());
+        }
+
+        // Try to write txt
+        try {
+            final File file = new File(out_txt, udid + ".txt");
+            FileUtils.write(file, getCompleteInput());
+        } catch (GradleException ex) {
+            LOG.error(ex.getMessage(), ex.getCause());
+        }
+    }
+
+    private File prepareOutputSubdir(@NotNull File parent, String name) {
+        final File out = new File(parent, name);
+        if (!out.mkdir()) {
+            LOG.info("mkdir failed for " + out);
+        }
+        if (!out.exists()) {
+            throw new GradleException("Directory doesn't exist at " + out);
+        }
+        if (!out.isDirectory()) {
+            throw new GradleException("Expected directory at " + out);
+        }
+        return out;
     }
 
     /**

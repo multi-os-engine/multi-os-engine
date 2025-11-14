@@ -78,8 +78,8 @@ public class MoeSDKPlugin extends AbstractMoePlugin {
             });
         });
 
-        addRule(NatJGen.class, "Generate binding",
-                emptyList(), MoeSDKPlugin.this);
+        registerTask(NatJGen.class, "Generate binding",
+                emptyList());
     }
 
     @Override

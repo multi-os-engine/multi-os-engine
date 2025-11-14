@@ -20,7 +20,7 @@ import java.nio.file.Paths
 /**
  * Task that collects all resources from classpath and generates Native-Image resource config
  */
-open class ResourceCollect : AbstractBaseTask() {
+abstract class ResourceCollect : AbstractBaseTask() {
 
     private var inputFiles: Set<Any>? = null
 

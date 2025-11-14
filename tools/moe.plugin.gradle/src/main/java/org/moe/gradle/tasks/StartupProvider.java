@@ -43,7 +43,7 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.jar.JarFile;
 
-public class StartupProvider extends AbstractBaseTask {
+public abstract class StartupProvider extends AbstractBaseTask {
 
     private static final String CONVENTION_INPUT_FILES = "inputFiles";
     private static final String CONVENTION_PREREGISTER_FILE = "preregisterFile";

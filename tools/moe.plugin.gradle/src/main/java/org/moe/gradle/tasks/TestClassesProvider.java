@@ -50,7 +50,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class TestClassesProvider extends AbstractBaseTask {
+public abstract class TestClassesProvider extends AbstractBaseTask {
 
     private static final String CONVENTION_INPUT_FILES = "inputFiles";
     private static final String CONVENTION_CLASS_LIST_FILE = "classListFile";

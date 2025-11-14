@@ -39,7 +39,10 @@ import org.moe.gradle.tasks.AbstractBaseTask;
 import org.moe.gradle.tasks.ClassValidate;
 import org.moe.gradle.tasks.GenerateUIObjCInterfaces;
 import org.moe.gradle.tasks.IpaBuild;
-import org.moe.gradle.tasks.Launchers;
+import org.moe.gradle.tasks.LaunchDevice;
+import org.moe.gradle.tasks.LaunchSimulator;
+import org.moe.gradle.tasks.ListDevices;
+import org.moe.gradle.tasks.ListSimulators;
 import org.moe.gradle.tasks.NatJGen;
 import org.moe.gradle.tasks.NativeImage;
 import org.moe.gradle.tasks.R8;
@@ -68,10 +71,7 @@ import java.util.stream.Collectors;
 import static java.util.Arrays.asList;
 import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
-import static org.moe.gradle.AbstractMoePlugin.TaskParams.ARCH;
-import static org.moe.gradle.AbstractMoePlugin.TaskParams.MODE;
-import static org.moe.gradle.AbstractMoePlugin.TaskParams.PLATFORM;
-import static org.moe.gradle.AbstractMoePlugin.TaskParams.SOURCE_SET;
+import static org.moe.gradle.AbstractMoePlugin.TaskParams.*;
 
 /**
  * MOE's 'moe-gradle' plugin.
@@ -179,35 +179,35 @@ public class MoePlugin extends AbstractMoePlugin {
         installCommonDependencies();
 
         // Install rules
-        addRule(R8.class, "Creates a R8'd jar.",
-                asList(SOURCE_SET, MODE), MoePlugin.this);
-        addRule(ClassValidate.class, "Validate classes.",
-                asList(SOURCE_SET, MODE), MoePlugin.this);
-        addRule(ReflectionCollect.class, "Collect reflection config.",
-                asList(SOURCE_SET, MODE), MoePlugin.this);
-        ResourcePackager.addRule(this);
-        addRule(ResourceCollect.class, "Collect resource config.",
-                asList(SOURCE_SET, MODE), MoePlugin.this);
-        addRule(NativeImage.class, "AOT compile using GraalVM native-image.",
-                asList(SOURCE_SET, MODE, ARCH, PLATFORM), MoePlugin.this);
-        addRule(TestClassesProvider.class, "Creates the classlist.txt file.",
-                asList(SOURCE_SET, MODE), MoePlugin.this);
-        addRule(StartupProvider.class, "Creates the preregister.txt file.",
-                asList(SOURCE_SET, MODE), MoePlugin.this);
-        addRule(XcodeProvider.class, "Collects the required dependencies.",
-                asList(SOURCE_SET, MODE, ARCH, PLATFORM), MoePlugin.this);
-        addRule(XcodeInternal.class, "Creates all files for Xcode.",
-                emptyList(), MoePlugin.this);
-        addRule(XcodeBuild.class, "Creates .app files.",
-                asList(SOURCE_SET, MODE, PLATFORM), MoePlugin.this);
-        addRule(IpaBuild.class, "Creates .ipa files.",
-                emptyList(), MoePlugin.this);
-        addRule(GenerateUIObjCInterfaces.class, "Creates a source file for Interface Builder",
-                singletonList(MODE), MoePlugin.this);
-        addRule(NatJGen.class, "Generate binding",
-                emptyList(), MoePlugin.this);
-        addRule(UpdateXcodeSettings.class, "Updates Xcode project settings",
-                emptyList(), MoePlugin.this);
+        registerTask(R8.class, "Creates a R8'd jar.",
+                asList(SOURCE_SET, MODE));
+        registerTask(ClassValidate.class, "Validate classes.",
+                asList(SOURCE_SET, MODE));
+        registerTask(ReflectionCollect.class, "Collect reflection config.",
+                asList(SOURCE_SET, MODE));
+        ResourcePackager.registerTask(this);
+        registerTask(ResourceCollect.class, "Collect resource config.",
+                asList(SOURCE_SET, MODE));
+        registerTask(NativeImage.class, "AOT compile using GraalVM native-image.",
+                asList(SOURCE_SET, MODE, ARCH, PLATFORM));
+        registerTask(TestClassesProvider.class, "Creates the classlist.txt file.",
+                asList(SOURCE_SET, MODE));
+        registerTask(StartupProvider.class, "Creates the preregister.txt file.",
+                asList(SOURCE_SET, MODE));
+        registerTask(XcodeProvider.class, "Collects the required dependencies.",
+                asList(SOURCE_SET, MODE, ARCH, PLATFORM));
+        registerTask(XcodeInternal.class, "Creates all files for Xcode.",
+                emptyList());
+        registerTask(XcodeBuild.class, "Creates .app files.",
+                asList(SOURCE_SET, MODE, PLATFORM));
+        registerTask(IpaBuild.class, "Creates .ipa files.",
+                emptyList());
+        registerTask(GenerateUIObjCInterfaces.class, "Creates a source file for Interface Builder",
+                singletonList(MODE));
+        registerTask(NatJGen.class, "Generate binding",
+                emptyList());
+        registerTask(UpdateXcodeSettings.class, "Updates Xcode project settings",
+                emptyList());
 
         project.getTasks().create("moeSDKProperties", task -> {
             task.setGroup(MOE);
@@ -244,30 +244,10 @@ public class MoePlugin extends AbstractMoePlugin {
             });
         });
 
-        Launchers.addTasks(this);
-    }
-
-    @SuppressWarnings("unchecked")
-    public static String getTaskName(@NotNull Class<?> taskClass, @NotNull Object... params) {
-        Require.nonNull(taskClass);
-        Require.nonNull(params);
-
-        final String TASK_CLASS_NAME = taskClass.getSimpleName();
-        final String ELEMENTS_DESC = Arrays.stream(params).map(TaskParams::getNameForValue).collect(Collectors.joining());
-
-        return MOE + ELEMENTS_DESC + TASK_CLASS_NAME;
-    }
-
-    @SuppressWarnings("unchecked")
-    public <T extends AbstractBaseTask> T getTaskBy(@NotNull Class<T> taskClass, @NotNull Object... params) {
-        return (T) getProject().getTasks().getByName(getTaskName(taskClass, params));
-    }
-
-    @SuppressWarnings("unchecked")
-    public <T extends Task> T getTaskByName(@NotNull String name) {
-        Require.nonNull(name);
-
-        return (T) getProject().getTasks().getByName(name);
+        registerTask(ListDevices.class, "Lists all connected devices.", emptyList());
+        registerTask(ListSimulators.class, "Lists all simulators.", emptyList());
+        registerTask(LaunchDevice.class, "Build and run the MOE application or tests on a device.", singletonList(SOURCE_SET));
+        registerTask(LaunchSimulator.class, "Build and run the MOE application or tests on a device.", singletonList(SOURCE_SET));
     }
 
     public void requireMacHostOrRemoteServerConfig(@NotNull Task task) {

@@ -24,7 +24,7 @@ import org.moe.tools.classvalidator.ClassValidator
 import java.io.File
 import java.nio.file.Paths
 
-open class ClassValidate : AbstractBaseTask() {
+abstract class ClassValidate : AbstractBaseTask() {
 
     private var inputFiles: Set<Any>? = null
 

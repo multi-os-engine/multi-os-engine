@@ -58,7 +58,7 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-public class R8 extends AbstractBaseTask {
+public abstract class R8 extends AbstractBaseTask {
 
     private static final Logger LOG = Logging.getLogger(R8.class);
 

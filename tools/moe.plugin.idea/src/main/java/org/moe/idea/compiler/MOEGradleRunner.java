@@ -30,6 +30,7 @@ import org.moe.common.exec.GradleExec;
 import org.moe.common.utils.NativeUtil;
 import org.moe.idea.MOEGlobalSettings;
 import org.moe.idea.runconfig.configuration.MOERunConfiguration;
+import org.moe.idea.utils.MOEVersionVerifier;
 import org.moe.idea.utils.ModuleUtils;
 import org.moe.idea.utils.logger.LoggerFactory;
 
@@ -77,11 +78,18 @@ public class MOEGradleRunner {
         GradleExec exec = new GradleExec(workingDir, null);
         args.add(exec.getExecPath());
 
-        // Pass moe task
-        if (runConfig.runJUnitTests()) {
-            args.add("moeTest");
+        if (MOEVersionVerifier.isVersionGreaterOrEqual(module, MOEVersionVerifier.VERSION_LAUNCH_TASK_REWRITE)) {
+            String launchTarget = runConfig.runOnSimulator() ? "Simulator" : "Device";
+            String sourceSet = runConfig.runJUnitTests() ? "Test" : "Main";
+
+            args.add("moe" + sourceSet + "Launch" + launchTarget);
         } else {
-            args.add("moeLaunch");
+            // Pass moe task
+            if (runConfig.runJUnitTests()) {
+                args.add("moeTest");
+            } else {
+                args.add("moeLaunch");
+            }
         }
 
         MOEGlobalSettings globalSettings = MOEGlobalSettings.getInstance();

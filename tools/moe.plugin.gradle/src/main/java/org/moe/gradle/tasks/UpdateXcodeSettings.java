@@ -29,7 +29,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class UpdateXcodeSettings extends AbstractBaseTask {
+public abstract class UpdateXcodeSettings extends AbstractBaseTask {
 
     @Input
     public boolean isUseLLVM() {

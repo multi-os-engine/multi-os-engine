@@ -28,7 +28,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
-public class XcodeInternal extends AbstractBaseTask {
+public abstract class XcodeInternal extends AbstractBaseTask {
 
     @Override
     protected void run() {

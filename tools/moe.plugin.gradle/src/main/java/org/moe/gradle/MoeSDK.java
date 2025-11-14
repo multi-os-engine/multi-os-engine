@@ -23,6 +23,7 @@ import org.gradle.api.artifacts.Configuration;
 import org.gradle.api.artifacts.ExternalDependency;
 import org.gradle.api.artifacts.ResolvedArtifact;
 import org.gradle.api.artifacts.UnknownConfigurationException;
+import org.gradle.api.artifacts.component.ModuleComponentIdentifier;
 import org.gradle.api.artifacts.repositories.ArtifactRepository;
 import org.gradle.api.logging.Logger;
 import org.gradle.api.logging.Logging;
@@ -318,7 +319,13 @@ public class MoeSDK {
         LOG.info("Downloading dependency " + desc);
 
         final Set<File> files = createSDKArtifact(project, version, (config, dep) -> {
-            return config.files(dep);
+            return config.getIncoming().artifactView(view -> {
+                view.componentFilter(id -> {
+                    return id instanceof ModuleComponentIdentifier &&
+                            ((ModuleComponentIdentifier) id).getGroup().equals(dep.getGroup()) &&
+                            ((ModuleComponentIdentifier) id).getModule().equals(dep.getName());
+                });
+            }).getFiles().getFiles();
         });
 
         // Return the SDK

@@ -22,7 +22,9 @@ import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.module.ModuleUtil;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import org.apache.maven.artifact.versioning.ComparableVersion;
 import org.moe.idea.model.GradleModuleModel;
+import org.moe.idea.utils.MOEVersionVerifier;
 import org.moe.idea.utils.logger.LoggerFactory;
 
 import java.util.ArrayList;
@@ -79,7 +81,13 @@ public class MOESdkPlugin {
                 return true;
             }
 
-            String taskName = isMOEApp ? "moeLaunch" : "moeSDKProperties";
+            String taskName;
+            if (MOEVersionVerifier.isVersionGreaterOrEqual(gradleModuleModel, MOEVersionVerifier.VERSION_LAUNCH_TASK_REWRITE)) {
+                taskName = isMOEApp ? "moeMainLaunchDevice" : "moeSDKProperties";
+            } else {
+                taskName = isMOEApp ? "moeLaunch" : "moeSDKProperties";
+            }
+
             return gradleModuleModel.getTaskNames().contains(taskName);
         }
 

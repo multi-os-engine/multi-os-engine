@@ -26,7 +26,7 @@ import org.gradle.api.artifacts.repositories.IvyArtifactRepository;
 import org.gradle.api.logging.Logger;
 import org.gradle.api.plugins.JavaLibraryPlugin;
 import org.gradle.api.plugins.JavaPlugin;
-import org.gradle.api.plugins.JavaPluginConvention;
+import org.gradle.api.plugins.JavaPluginExtension;
 import org.gradle.api.tasks.SourceSet;
 import org.gradle.api.tasks.compile.CompileOptions;
 import org.gradle.api.tasks.compile.JavaCompile;
@@ -34,17 +34,18 @@ import org.gradle.internal.reflect.Instantiator;
 import org.gradle.tooling.provider.model.ToolingModelBuilderRegistry;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
-import org.moe.gradle.anns.Nullable;
-import org.moe.gradle.groovy.closures.RuleClosure;
 import org.moe.gradle.model.builder.GradlePluginModelBuilder;
 import org.moe.gradle.tasks.AbstractBaseTask;
-import org.moe.gradle.utils.*;
+import org.moe.gradle.utils.Arch;
+import org.moe.gradle.utils.FileUtils;
+import org.moe.gradle.utils.Mode;
+import org.moe.gradle.utils.Require;
 
 import javax.inject.Inject;
 import java.net.MalformedURLException;
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 /**
@@ -60,11 +61,11 @@ public abstract class AbstractMoePlugin implements Plugin<Project> {
     /**
      * Required major version of Gradle.
      */
-    private static final int GRADLE_MIN_VERSION_MAJOR = 4;
+    private static final int GRADLE_MIN_VERSION_MAJOR = 6;
     /**
      * Required minor version of Gradle.
      */
-    private static final int GRADLE_MIN_VERSION_MINOR = 10;
+    private static final int GRADLE_MIN_VERSION_MINOR = 1;
 
     /**
      * Optional revision version of Gradle.
@@ -129,7 +130,7 @@ public abstract class AbstractMoePlugin implements Plugin<Project> {
         sdk = MoeSDK.setup(this);
 
         // Get Java convention
-        javaConvention = (JavaPluginConvention) project.getConvention().getPlugins().get("java");
+        javaConvention = project.getExtensions().getByType(JavaPluginExtension.class);
         Require.nonNull(javaConvention, "The 'java' Gradle plugin must be applied before the '" + MOE + "' plugin");
     }
 
@@ -233,31 +234,31 @@ public abstract class AbstractMoePlugin implements Plugin<Project> {
     }
 
     @NotNull
-    protected JavaPluginConvention javaConvention;
+    protected JavaPluginExtension javaConvention;
 
     @NotNull
-    public JavaPluginConvention getJavaConvention() {
+    public JavaPluginExtension getJavaConvention() {
         return Require.nonNull(javaConvention, "The plugin's 'javaConvention' property was null");
     }
 
     @NotNull
     public abstract AbstractMoeExtension getExtension();
 
-    protected enum TaskParams {
+    public enum TaskParams {
         SOURCE_SET, MODE, ARCH, ARCH_FAMILY, PLATFORM;
 
-        public Object getValue(AbstractMoePlugin plugin, String value) {
+        public Object[] getPossibleValues(AbstractMoePlugin plugin) {
             switch (this) {
-                case SOURCE_SET:
-                    return TaskUtils.getSourceSet(plugin, value);
-                case MODE:
-                    return Mode.getForName(value);
-                case ARCH:
-                    return Arch.getForName(value);
-                case ARCH_FAMILY:
-                    return Arch.validateArchFamily(value);
-                case PLATFORM:
-                    return MoePlatform.getForPlatformName(value);
+            case SOURCE_SET:
+                return plugin.getJavaConvention().getSourceSets().toArray();
+            case MODE:
+                return new Mode[] {Mode.DEBUG, Mode.RELEASE};
+            case ARCH:
+                return new Arch[] {Arch.ARM64, Arch.X86_64};
+            case ARCH_FAMILY:
+                return new String[] {Arch.FAMILY_ARM64, Arch.FAMILY_X86_64};
+            case PLATFORM:
+                return MoePlatform.ALL_PLATFORMS;
             }
             throw new IllegalStateException();
         }
@@ -300,47 +301,83 @@ public abstract class AbstractMoePlugin implements Plugin<Project> {
         }
     }
 
-    protected  <T extends AbstractBaseTask> void addRule(Class<T> taskClass, String description, List<TaskParams> params, AbstractMoePlugin plugin) {
-        // Prepare constants
-        final String TASK_NAME = taskClass.getSimpleName();
-        final String ELEMENTS_DESC = params.stream().map(p -> "<" + p.getName() + ">").collect(Collectors.joining());
-        final String PATTERN = MOE + ELEMENTS_DESC + TASK_NAME;
-
-        // Add rule
-        getProject().getTasks().addRule("Pattern: " + PATTERN + ": " + description, new RuleClosure(getProject()) {
-            @Override
-            public @Nullable Task doCall(@NotNull String taskName) {
-                Require.nonNull(taskName);
-
-                // Check for prefix, suffix and get elements in-between
-                List<String> elements = StringUtils.getElemsInRule(taskName, MOE, TASK_NAME);
-
-                // Prefix or suffix failed
-                if (elements == null) {
-                    return null;
-                }
-
-                // Check number of elements
-                TaskUtils.assertSize(elements, params.size(), ELEMENTS_DESC);
-
-                // Check element values & configure task on success
-                final AtomicInteger pIndex = new AtomicInteger();
-                final Object[] objects = params.stream().map(p -> p.getValue(plugin, elements.get(pIndex.getAndIncrement()))).collect(Collectors.toList()).toArray();
-
-                // Create task
-                final T task = getProject().getTasks().create(taskName, taskClass);
-
-                // Set group
+    public <T extends AbstractBaseTask> void registerTask(Class<T> taskClass, String description, List<TaskParams> params) {
+        generateParameterCombinations(params, objects -> {
+            String name = getTaskName(taskClass, objects);
+            getProject().getTasks().register(name, taskClass, task -> {
+                task.setDescription(description);
                 task.setGroup(MOE);
 
                 // Call setup method
                 ((GroovyObject) task).invokeMethod("setupMoeTask", objects);
 
                 checkRemoteServer(task);
-
-                return task;
-            }
+            });
         });
+    }
+
+
+    public void generateParameterCombinations(List<TaskParams> params, Consumer<Object[]> combinationHandler) {
+        if (params.isEmpty()) {
+            combinationHandler.accept(new Object[0]);
+            return;
+        }
+
+        generateRecursive(params, 0, new Object[params.size()], combinationHandler);
+    }
+
+    private void generateRecursive(List<TaskParams> params, int currentIndex, Object[] currentCombination, Consumer<Object[]> combinationHandler) {
+        if (currentIndex == params.size()) {
+            if (verifyParameterCombination(currentCombination))
+                combinationHandler.accept(currentCombination.clone());
+            return;
+        }
+
+        TaskParams currentParam = params.get(currentIndex);
+        Object[] possibleValues = currentParam.getPossibleValues(this);
+
+        for (Object value : possibleValues) {
+            currentCombination[currentIndex] = value;
+            generateRecursive(params, currentIndex + 1, currentCombination, combinationHandler);
+        }
+    }
+
+    private boolean verifyParameterCombination(Object[] possibleValues) {
+        Arch encounteredArch = null;
+        MoePlatform encounteredPlatform = null;
+
+        for (Object possibleValue : possibleValues) {
+            if (possibleValue instanceof Arch)
+                encounteredArch = (Arch)possibleValue;
+            if (possibleValue instanceof MoePlatform)
+                encounteredPlatform = (MoePlatform)possibleValue;
+        }
+
+        if (encounteredArch != null && encounteredPlatform != null && !encounteredPlatform.archs.contains(encounteredArch))
+            return false;
+        return true;
+    }
+
+    public static String getTaskName(@NotNull Class<?> taskClass, @NotNull Object... params) {
+        Require.nonNull(taskClass);
+        Require.nonNull(params);
+
+        final String TASK_CLASS_NAME = taskClass.getSimpleName();
+        final String ELEMENTS_DESC = Arrays.stream(params).map(TaskParams::getNameForValue).collect(Collectors.joining());
+
+        return MOE + ELEMENTS_DESC + TASK_CLASS_NAME;
+    }
+
+    @SuppressWarnings("unchecked")
+    public <T extends AbstractBaseTask> T getTaskBy(@NotNull Class<T> taskClass, @NotNull Object... params) {
+        return (T) getProject().getTasks().getByName(getTaskName(taskClass, params));
+    }
+
+    @SuppressWarnings("unchecked")
+    public <T extends Task> T getTaskByName(@NotNull String name) {
+        Require.nonNull(name);
+
+        return (T) getProject().getTasks().getByName(name);
     }
 
     protected void installCommonDependencies() {

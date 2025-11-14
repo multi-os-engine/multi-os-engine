@@ -41,7 +41,7 @@ import java.nio.file.Paths;
 import java.util.Date;
 import java.util.function.Supplier;
 
-public class XcodeProvider extends AbstractBaseTask {
+public abstract class XcodeProvider extends AbstractBaseTask {
 
     @Nullable
     private Supplier<Path> outDir;

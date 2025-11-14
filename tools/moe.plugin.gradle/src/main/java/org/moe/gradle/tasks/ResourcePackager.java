@@ -23,6 +23,7 @@ import org.gradle.api.file.CopySpec;
 import org.gradle.api.tasks.SourceSet;
 import org.gradle.api.tasks.bundling.Jar;
 import org.gradle.util.GradleVersion;
+import org.moe.gradle.AbstractMoePlugin.TaskParams;
 import org.moe.gradle.MoeExtension;
 import org.moe.gradle.MoePlugin;
 import org.moe.gradle.MoeSDK;
@@ -39,6 +40,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
+import static java.util.Arrays.asList;
+
 public class ResourcePackager {
 
     private ResourcePackager() {
@@ -46,108 +49,78 @@ public class ResourcePackager {
     }
 
     @NotNull
-    public static Rule addRule(@NotNull MoePlugin plugin) {
+    public static void registerTask(@NotNull MoePlugin plugin) {
         Require.nonNull(plugin);
 
-        final Project project = plugin.getProject();
+        plugin.generateParameterCombinations(asList(TaskParams.SOURCE_SET, TaskParams.MODE), objects -> {
+            SourceSet sourceSet = (SourceSet) objects[0];
+            Mode mode = (Mode) objects[1];
 
-        // Prepare constants
-        final String TASK_NAME = ResourcePackager.class.getSimpleName();
-        final String ELEMENTS_DESC = "<SourceSet><Mode>";
-        final String PATTERN = MoePlugin.MOE + ELEMENTS_DESC + TASK_NAME;
+            final Project project = plugin.getProject();
+            final MoeExtension ext = plugin.getExtension();
+            final MoeSDK sdk = plugin.getSDK();
 
-        // Add rule
-        return AbstractBaseTask.addTaskRule(project, "Pattern: " + PATTERN + ": Creates a application resource jar.", taskName -> {
+            // Construct default output path
+            final Path out = Paths.get(MoePlugin.MOE, sourceSet.getName(), "resources", mode.name);
 
-            // Check for prefix, suffix and get elements in-between
-            final List<String> elements = StringUtils.getElemsInRule(taskName, MoePlugin.MOE, TASK_NAME);
+            // Create task
+            final String taskName = MoePlugin.getTaskName(ResourcePackager.class, sourceSet, mode);
+            project.getTasks().register(taskName, Jar.class, resourcePackagerTask -> {
+                resourcePackagerTask.setGroup(MoePlugin.MOE);
+                resourcePackagerTask.setDescription("Generates application file (sourceset: " + sourceSet.getName() + ", mode: " + mode.name + ").");
 
-            // Prefix or suffix failed
-            if (elements == null) {
-                return null;
-            }
+                // Add dependencies
+                final R8 r8Task = plugin.getTaskBy(R8.class, sourceSet, mode);
+                resourcePackagerTask.dependsOn(r8Task);
 
-            // Check number of elements
-            TaskUtils.assertSize(elements, 2, ELEMENTS_DESC);
+                Action<Project> configureTask = _project -> {
+                    // Update settings
+                    if (GradleVersion.current().compareTo(GradleVersion.version("5.1")) >= 0) {
+                        resourcePackagerTask.getDestinationDirectory().set(project.file(project.getBuildDir().toPath().resolve(out).toFile()));
+                        resourcePackagerTask.getArchiveFileName().set("application.jar");
+                    } else {
+                        // we must be on an old version of gradle, try the older methods
+                        GradleCompatUtils.legacyCall(resourcePackagerTask, "setDestinationDir", project.file(project.getBuildDir().toPath().resolve(out).toFile()));
+                        GradleCompatUtils.legacyCall(resourcePackagerTask, "setArchiveName", "application.jar");
+                    }
+                    resourcePackagerTask.from(project.zipTree(r8Task.getOutJar()));
+                    resourcePackagerTask.exclude("**/*.class");
 
-            // Check element values & configure task on success
-            final SourceSet sourceSet = TaskUtils.getSourceSet(plugin, elements.get(0));
-            final Mode mode = Mode.getForName(elements.get(1));
-            return create(plugin, sourceSet, mode);
-        });
-    }
+                    // When using full trim, ProGuard will copy the the resources from the common jar
+                    switch (ext.proguard.getLevelRaw()) {
+                    case ProGuardOptions.LEVEL_APP:
+                        resourcePackagerTask.from(_project.zipTree(sdk.getCoreJar()));
+                        if (ext.getPlatformJar() != null) {
+                            resourcePackagerTask.from(_project.zipTree(ext.getPlatformJar()));
+                        }
+                        break;
+                    case ProGuardOptions.LEVEL_PLATFORM:
+                        resourcePackagerTask.from(_project.zipTree(sdk.getCoreJar()));
+                        break;
+                    case ProGuardOptions.LEVEL_ALL:
+                        break;
+                    default:
+                        throw new IllegalStateException();
+                    }
 
-    @NotNull
-    private static Jar create(@NotNull MoePlugin plugin, @NotNull SourceSet sourceSet, final @NotNull Mode mode) {
-        Require.nonNull(plugin);
-        Require.nonNull(sourceSet);
+                    ext.packaging.getExcludes().forEach(resourcePackagerTask::exclude);
 
-        final Project project = plugin.getProject();
-        final MoeExtension ext = plugin.getExtension();
-        final MoeSDK sdk = plugin.getSDK();
+                    // Add support for copying resources from the source directory
+                    addResourceFromSources(ext, resourcePackagerTask, sourceSet);
+                    if (SourceSet.TEST_SOURCE_SET_NAME.equals(sourceSet.getName())) {
+                        SourceSet main = plugin.getJavaConvention().getSourceSets().getByName(SourceSet.MAIN_SOURCE_SET_NAME);
+                        addResourceFromSources(ext, resourcePackagerTask, main);
+                    }
+                };
 
-        // Construct default output path
-        final Path out = Paths.get(MoePlugin.MOE, sourceSet.getName(), "resources", mode.name);
-
-        // Create task
-        final String taskName = MoePlugin.getTaskName(ResourcePackager.class, sourceSet, mode);
-        final Jar resourcePackagerTask = project.getTasks().create(taskName, Jar.class);
-        resourcePackagerTask.setGroup(MoePlugin.MOE);
-        resourcePackagerTask.setDescription("Generates application file (sourceset: " + sourceSet.getName() + ", mode: " + mode.name + ").");
-
-        // Add dependencies
-        final R8 r8Task = plugin.getTaskBy(R8.class, sourceSet, mode);
-        resourcePackagerTask.dependsOn(r8Task);
-
-        Action<Project> configureTask = _project -> {
-            // Update settings
-            if (GradleVersion.current().compareTo(GradleVersion.version("5.1")) >= 0) {
-                resourcePackagerTask.getDestinationDirectory().set(project.file(project.getBuildDir().toPath().resolve(out).toFile()));
-                resourcePackagerTask.getArchiveFileName().set("application.jar");
-            }
-            else {
-                // we must be on an old version of gradle, try the older methods
-                GradleCompatUtils.legacyCall(resourcePackagerTask, "setDestinationDir", project.file(project.getBuildDir().toPath().resolve(out).toFile()));
-                GradleCompatUtils.legacyCall(resourcePackagerTask, "setArchiveName", "application.jar");
-            }
-            resourcePackagerTask.from(project.zipTree(r8Task.getOutJar()));
-            resourcePackagerTask.exclude("**/*.class");
-
-            // When using full trim, ProGuard will copy the the resources from the common jar
-            switch (ext.proguard.getLevelRaw()) {
-            case ProGuardOptions.LEVEL_APP:
-                resourcePackagerTask.from(_project.zipTree(sdk.getCoreJar()));
-                if (ext.getPlatformJar() != null) {
-                    resourcePackagerTask.from(_project.zipTree(ext.getPlatformJar()));
+                // Make sure the project is configured after project is evaluated
+                if (project.getState().getExecuted()) {
+                    configureTask.execute(project);
+                } else {
+                    project.afterEvaluate(configureTask);
                 }
-                break;
-            case ProGuardOptions.LEVEL_PLATFORM:
-                resourcePackagerTask.from(_project.zipTree(sdk.getCoreJar()));
-                break;
-            case ProGuardOptions.LEVEL_ALL:
-                break;
-            default:
-                throw new IllegalStateException();
-            }
-
-            ext.packaging.getExcludes().forEach(resourcePackagerTask::exclude);
-
-            // Add support for copying resources from the source directory
-            addResourceFromSources(ext, resourcePackagerTask, sourceSet);
-            if (SourceSet.TEST_SOURCE_SET_NAME.equals(sourceSet.getName())) {
-                SourceSet main = plugin.getJavaConvention().getSourceSets().getByName(SourceSet.MAIN_SOURCE_SET_NAME);
-                addResourceFromSources(ext, resourcePackagerTask, main);
-            }
-        };
-
-        // Make sure the project is configured after project is evaluated
-        if (project.getState().getExecuted()) {
-            configureTask.execute(project);
-        } else {
-            project.afterEvaluate(configureTask);
-        }
-
-        return resourcePackagerTask;
+            });
+        });
     }
 
     private static void addResourceFromSources(@NotNull MoeExtension ext, @NotNull Jar jar,

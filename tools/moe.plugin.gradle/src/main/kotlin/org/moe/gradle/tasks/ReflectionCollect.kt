@@ -24,7 +24,7 @@ import org.moe.tools.substrate.GraalVM
 import java.io.File
 import java.nio.file.Paths
 
-open class ReflectionCollect : AbstractBaseTask() {
+abstract class ReflectionCollect : AbstractBaseTask() {
 
     private var inputFiles: Set<Any>? = null
 

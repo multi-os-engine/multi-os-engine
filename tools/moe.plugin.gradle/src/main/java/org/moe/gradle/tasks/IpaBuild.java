@@ -52,7 +52,7 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class IpaBuild extends AbstractBaseTask {
+public abstract class IpaBuild extends AbstractBaseTask {
 
     private static final Logger LOG = Logging.getLogger(IpaBuild.class);
 
