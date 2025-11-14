@@ -1,16 +1,10 @@
 package org.moe.gradle.tasks
 
 import org.gradle.api.GradleException
-import org.gradle.api.Task
 import org.gradle.api.file.ConfigurableFileCollection
 import org.gradle.api.file.FileCollection
 import org.gradle.api.plugins.JavaPlugin
-import org.gradle.api.tasks.Classpath
-import org.gradle.api.tasks.InputFiles
-import org.gradle.api.tasks.Internal
-import org.gradle.api.tasks.Optional
-import org.gradle.api.tasks.OutputDirectory
-import org.gradle.api.tasks.SourceSet
+import org.gradle.api.tasks.*
 import org.gradle.api.tasks.bundling.Jar
 import org.gradle.api.tasks.compile.JavaCompile
 import org.moe.gradle.MoePlugin
@@ -67,11 +61,8 @@ abstract class ClassValidate : AbstractBaseTask() {
 
     val outputJars: ConfigurableFileCollection
         @Internal
-        get() {
-            if (!getOutputDir().isDirectory)
-                throw GradleException("${getOutputDir().absolutePath} must be a directory")
-            return project.files(getOutputDir().listFiles())
-        }
+        get() = project.files(project.fileTree(getOutputDir()))
+
 
     override fun run() {
         // Clean output dir

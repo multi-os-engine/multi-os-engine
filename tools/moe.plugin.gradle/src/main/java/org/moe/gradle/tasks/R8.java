@@ -510,12 +510,7 @@ public abstract class R8 extends AbstractBaseTask {
             }
             return null; // This is an optional convention.
         });
-        addConvention(CONVENTION_IN_JARS, () -> {
-            final HashSet<Object> jars = new LinkedHashSet<>();
-            jars.addAll(classValidateTask.getOutputJars().getFiles());
-
-            return jars;
-        });
+        addConvention(CONVENTION_IN_JARS, classValidateTask::getOutputJars);
         addConvention(CONVENTION_EXCLUDE_FILES, ext.proguard::getExcludeFiles);
         addConvention(CONVENTION_LIBRARY_JARS, () -> {
             final HashSet<Object> jars = new LinkedHashSet<>(
