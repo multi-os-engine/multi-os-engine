@@ -260,9 +260,7 @@ public class MXCrashDiagnostic extends MXDiagnostic {
      * 
      * The MXCrashDiagnosticObjectiveCExceptionReason object associated with this crash.
      * 
-     * @see <MetricKit/MXCrashDiagnosticObjectiveCExceptionReason.h>
-     * 
-     *      API-Since: 17.0
+     * API-Since: 17.0
      */
     @Generated
     @Selector("exceptionReason")
