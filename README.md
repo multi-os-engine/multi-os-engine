@@ -57,13 +57,13 @@ Install brew from [brew.sh](http://brew.sh), then you can install MOE's dependen
 brew install autogen autoconf automake libtool pkg-config wget isl cloog cmake gpg ant maven mpfr libmpc repo premake texinfo
 ```
 
-### Building MinGW & LLVM
+### Building LLVM
 
-Building the complete SDK and related tools requires LLVM and MinGW. To build these execute the following:
+Building the complete SDK and related tools requires LLVM. To build these execute the following:
 
 ```sh
 cd <repo>/moe
-./gradlew :prebuilts:mingw :prebuilts:llvm
+./gradlew :prebuilts:llvm
 ```
 
 This step only needs to be done once (or until MinGW or LLVM components/requirements are changed).
