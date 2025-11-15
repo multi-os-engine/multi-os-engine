@@ -1,0 +1,37 @@
+From 2895693f20bff3c4e762d3ba917fb34b4f45ec45 Mon Sep 17 00:00:00 2001
+From: Noisyfox <timemanager.rick@gmail.com>
+Date: Sat, 17 Apr 2021 04:03:40 +1000
+Subject: [PATCH] Fix `Undefined symbol __clear_cache` on Apple Clang
+
+---
+ .../src/codeSynchronization.c                        | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+diff --git a/substratevm/src/com.oracle.svm.native.libchelper/src/codeSynchronization.c b/substratevm/src/com.oracle.svm.native.libchelper/src/codeSynchronization.c
+index 1d6aab7b1a7..bfdfa94d07e 100644
+--- a/substratevm/src/com.oracle.svm.native.libchelper/src/codeSynchronization.c
++++ b/substratevm/src/com.oracle.svm.native.libchelper/src/codeSynchronization.c
+@@ -24,8 +24,20 @@
+  * questions.
+  */
+ 
++
++#if defined (__clang__) && defined (__APPLE__)
++#include <stddef.h>
++extern void sys_icache_invalidate (void *start, size_t len);
++#endif
++
+ void codeSynchronization_clearCache(long unsigned codeStart, long unsigned codeSize){
++#if defined (__clang__) && defined (__APPLE__)
++  sys_icache_invalidate ((void *) codeStart, codeSize);
++#elif defined (__GNUC__)
+     long unsigned  codeEnd = codeStart + codeSize;
+     __builtin___clear_cache((char *) codeStart, (char *) codeEnd);
++#else
++#error "Missing builtin to flush instruction cache"
++#endif
+ }
+ 
+-- 
+2.50.1 (Apple Git-155)
+

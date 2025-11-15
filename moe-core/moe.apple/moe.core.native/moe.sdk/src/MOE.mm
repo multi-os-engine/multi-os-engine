@@ -311,7 +311,7 @@ JNIEXPORT void JNICALL Java_org_moe_core_MOE_handleStartup(JNIEnv* env, jclass c
 
 // JVM8+ require this so System.loadLibrary() works with static linked lib
 JNIEXPORT jint JNICALL JNI_OnLoad_moe(JavaVM* vm, void* p) {
-  return JNI_VERSION_1_1;
+  return JNI_VERSION_1_8;
 }
 
 };

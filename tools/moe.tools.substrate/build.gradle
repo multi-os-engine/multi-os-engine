@@ -33,7 +33,7 @@ compileKotlin {
 }
 
 // Base configuration
-def graalvmVersion = "21.0.2"
+def graalvmVersion = "25.0.1"
 def baseDownloadUrl = "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-${graalvmVersion}"
 
 // Helper functions
@@ -61,14 +61,14 @@ tasks.register("downloadGraalVMx86", Download) {
 tasks.register("verifyGraalVMArm64", Verify) {
     dependsOn downloadGraalVMArm64
     src file("build/capCacheGeneration/arm64/downloads/graalvm.tar.gz")
-    checksum '515e3a93acc7e1938daba83eda4272e5495fd302d7cdd99ec7ebf408ed505ab7'
+    checksum '066339f24a8ab5c161548491a9400f7344e7761a1e46f8979e76c7ef11d5bc76'
     algorithm 'SHA-256'
 }
 
 tasks.register("verifyGraalVMx86", Verify) {
     dependsOn downloadGraalVMx86
     src file("build/capCacheGeneration/x86_64/downloads/graalvm.tar.gz")
-    checksum '7a8aa93fa45d1721908477abf4732a32637d420ffcb66ada9fb6456440b0d9e1'
+    checksum 'a3d895b4cd1c783badbd277ec70409806bd4102fca0d2a60dbaeb0bab41aec30'
     algorithm 'SHA-256'
 }
 
@@ -170,6 +170,7 @@ tasks.register("generateQueryCodeArm64", Exec) {
     executable = "${graalvmHome}/Contents/Home/bin/native-image"
 
     args = [
+            "-H:+UnlockExperimentalVMOptions",
             "-H:QueryCodeDir=${file("build/capCacheGeneration/arm64/querySrc/")}",
             "-H:+ExitAfterQueryCodeGeneration",
             "-cp", file("build/tmp/"),
@@ -184,6 +185,7 @@ tasks.register("generateQueryCodex86_64", Exec) {
     executable = "${graalvmHome}/Contents/Home/bin/native-image"
 
     args = [
+            "-H:+UnlockExperimentalVMOptions",
             "-H:QueryCodeDir=${file("build/capCacheGeneration/x86_64/querySrc/")}",
             "-H:+ExitAfterQueryCodeGeneration",
             "-cp", file("build/tmp/"),

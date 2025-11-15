@@ -1744,6 +1744,6 @@ void natj_printJavaStackTrace(JNIEnv *env) {
 #if STATIC_BUILD
 // JVM8+ require this so System.loadLibrary() works with static linked lib
 extern "C" jint JNI_OnLoad_natj(JavaVM* vm, void* p) {
-  return JNI_VERSION_1_1;
+  return JNI_VERSION_1_8;
 }
 #endif

@@ -1147,6 +1147,8 @@ JNIEXPORT void JNICALL JNI_OnUnload(JavaVM* vm, void* reserved);
 #define JNI_VERSION_1_2 0x00010002
 #define JNI_VERSION_1_4 0x00010004
 #define JNI_VERSION_1_6 0x00010006
+#define JNI_VERSION_1_7 0x00010007
+#define JNI_VERSION_1_8 0x00010008
 
 #define JNI_OK          (0)         /* no error */
 #define JNI_ERR         (-1)        /* generic error */

@@ -151,7 +151,8 @@ class SubstrateExecutor(
                 "RISCV64LibCHelperDirectives.cap",
                 "JNIHeaderDirectivesJDK19OrLater.cap",
                 "JNIHeaderDirectivesJDK20OrLater.cap",
-                "JNIHeaderDirectivesJDK21OrLater.cap"
+                "JNIHeaderDirectivesJDK21OrLater.cap",
+                "LocaleDirectives.cap"
         )
 
         private fun Triplet.toSVMPlatform(): String = when (this) {

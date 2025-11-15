@@ -110,25 +110,6 @@ class GraalVM(
         }
     }
 
-    /**
-     * Get all the runtime library paths of this GraalVM.
-     */
-    val runtimeLibraries: Set<Path>
-        get() = if (version.feature <= 8) {
-            val libDirs = setOf(
-                home.resolve("lib"),
-                home.resolve(Paths.get("jre", "lib")),
-            )
-
-            libDirs.flatMap { it.findByExt("jar") }.toSet()
-        } else {
-            val jmodDirs = setOf(
-                home.resolve("jmods"),
-            )
-
-            jmodDirs.flatMap { it.findByExt("jmod") }.toSet()
-        }.toSortedSet()
-
     data class JDKVersion(
         override val feature: Int,
         override val interim: Int,
@@ -219,7 +200,7 @@ class GraalVM(
 
         private const val MAC_ATTR_COM_APPLE_QUARANTINE = "com.apple.quarantine"
 
-        const val SUPPORTED_JAVA_MAJOR = 21
+        const val SUPPORTED_JAVA_MAJOR = 25
 
         private fun List<String>.parseComponent(index: Int): Int = getOrNull(index)?.toInt() ?: 0
 
@@ -227,6 +208,6 @@ class GraalVM(
         private val MIN_GRAALVM_VERSION = JDKVersion(SUPPORTED_JAVA_MAJOR, 0, 0, 0)
 
         /** Latest GraalVM version that has been tested with */
-        private val MAX_GRAALVM_VERSION = JDKVersion(SUPPORTED_JAVA_MAJOR, 0, 2, 0)
+        private val MAX_GRAALVM_VERSION = JDKVersion(SUPPORTED_JAVA_MAJOR, 0, 1, 0)
     }
 }
