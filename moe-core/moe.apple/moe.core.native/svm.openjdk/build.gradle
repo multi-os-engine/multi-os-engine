@@ -13,7 +13,7 @@ task('fetch_boot_jdk', type: Script) {
             "fetch-jdk",
             "--to", bootJDK.absolutePath,
             "--alias", "jdk25",
-            "labsjdk-ce-latest", "ce-25.0.1+8-jvmci-25.1-b08"
+            "labsjdk-ce-latest", "ce-25.0.1+8-jvmci-b01"
 }
 
 task('jdk_gensrc', type: Script) {
@@ -37,7 +37,7 @@ task('jdk_gensrc', type: Script) {
     exec "sh", "-c", "patch -p1 < ${file("add_ios_build_support.patch").absolutePath}"
 
 
-    def JVMCI_VERSION = "jvmci-25.1-b08"
+    def JVMCI_VERSION = "jvmci-25.0.1-b01"
     // For whatever reason setting "--with-boot-jdk" does not work
     env "JAVA_HOME", file(bootJDK.absolutePath + "/jdk25/Contents/Home").absolutePath
     env 'MX_PYTHON', 'python3'

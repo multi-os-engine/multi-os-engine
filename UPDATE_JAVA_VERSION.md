@@ -2,8 +2,8 @@ This guide describes the steps required to update the underlying native-image ve
 
 ### Upgrading labsjdk
 1. Every major java release has multiple minor releases. Find out the specific latest one for the most recent graalvm build (like `25.0.1+8`)
-2. Go into the labsjdk project (under `../svm/labs-openjdk`) and find the tag specific to the found java version (like `jvmci-25.1-b08`).
-3. Create a new branch like `moe-svm-25.1-b08` for this specific tag.
+2. Go into the labsjdk project (under `../svm/labs-openjdk`) and find the tag specific to the found java version (like `25.0.1+8-jvmci-b01`).
+3. Create a new branch like `moe-svm-25.0.1+8-jvmci-b01` for this specific tag.
 4. Apply the following patches:
    - `moe-core/moe.apple/moe.core.native/svm.openjdk/add_ios_build_support.patch`
 5. Change the [manifest](https://github.com/multi-os-engine/manifest) to match this new branch.
