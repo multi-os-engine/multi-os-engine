@@ -49,6 +49,7 @@ class SubstrateExecutor(
 
                 // Common args
                 "-Djdk.internal.lambda.eagerlyInitialize=false",
+                "-Djdk.internal.foreign.CABI=${config.target.toCABI()}",
                 "-H:-DeadlockWatchdogExitOnTimeout",
                 "-H:DeadlockWatchdogInterval=0",
                 "-H:+ExitAfterRelocatableImageWrite",
@@ -178,6 +179,15 @@ class SubstrateExecutor(
             Triplet.IPHONESIMULATOR_ARM64 -> "IOS_AARCH64"
 
             Triplet.IPHONESIMULATOR_AMD64 -> "IOS_AMD64"
+
+            else -> throw IllegalArgumentException("Target not supported: $this")
+        }
+
+        private fun Triplet.toCABI(): String = when (this) {
+            Triplet.IPHONEOS_ARM64,
+            Triplet.IPHONESIMULATOR_ARM64 -> "MAC_OS_AARCH_64"
+
+            Triplet.IPHONESIMULATOR_AMD64 -> "SYS_V"
 
             else -> throw IllegalArgumentException("Target not supported: $this")
         }
