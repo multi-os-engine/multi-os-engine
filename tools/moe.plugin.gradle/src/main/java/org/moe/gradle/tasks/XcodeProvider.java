@@ -128,6 +128,16 @@ public abstract class XcodeProvider extends AbstractBaseTask {
             } catch (IOException e) {
                 throw new GradleException("Failed to create symlink to " + llvmObjLink);
             }
+
+            final Path jdwpMetadataLink = getJDWPMetadataLink();
+            try {
+                Files.deleteIfExists(jdwpMetadataLink);
+                if (nativeImageTaskDep.isEnableJDWP()) {
+                    Files.createSymbolicLink(jdwpMetadataLink, nativeImageTaskDep.getJDWPMetadataFile().toPath());
+                }
+            } catch (IOException e) {
+                throw new GradleException("Failed to create symlink to " + jdwpMetadataLink);
+            }
         }
     }
 
@@ -167,6 +177,13 @@ public abstract class XcodeProvider extends AbstractBaseTask {
     public Path getLlvmObjLink() {
         final String outPath = outDir.get().toString();
         return Paths.get(getProject().getBuildDir().toString(), outPath, "llvm_" + arch.name + ".o");
+    }
+
+    @NotNull
+    @Internal
+    public Path getJDWPMetadataLink() {
+        final String outPath = outDir.get().toString();
+        return Paths.get(getProject().getBuildDir().toString(), outPath, "jdwp_" + arch.name+ ".metadata");
     }
 
     protected final void setupMoeTask(@NotNull SourceSet sourceSet, @NotNull Mode mode, @NotNull Arch arch,

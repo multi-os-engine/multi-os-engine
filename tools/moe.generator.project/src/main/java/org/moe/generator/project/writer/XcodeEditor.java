@@ -300,6 +300,7 @@ public class XcodeEditor extends AbstractXcodeEditor {
         setBuildSetting(target, "MOE_PROJECT_BUILD_DIR", MOE_PROJECT_BUILD_DIR_VALUE);
 
         setBuildSetting(target, "MOE_SDK_PATH", "${MOE_PROJECT_BUILD_DIR}/moe/sdk");
+        setBuildSetting(target, "MOE_FRAMEWORK_PATH", "${MOE_SDK_PATH}/sdk/${PLATFORM_NAME}");
         setBuildSetting(target, "MOE_LIB_PATH", "${MOE_SDK_PATH}/sdk/${PLATFORM_NAME}");
 
         StringBuilder sb = new StringBuilder();

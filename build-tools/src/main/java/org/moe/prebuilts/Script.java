@@ -115,13 +115,13 @@ public class Script extends BaseTask {
         runnables.add(() -> System.out.println("> " + msg));
     }
 
-    public void copy(File from, File to) {
-        runnables.add(() -> {
-            getProject().copy(copySpec -> {
-                copySpec.from(from);
-                copySpec.into(to);
-            });
-        });
+    public void rsync(File from, File to) {
+        exec("rsync",
+                "-a",
+                "--delete",
+                from.getAbsolutePath() + "/",
+                to.getAbsolutePath() + "/"
+        );
     }
 
     public void exec(String exec, String... args) {

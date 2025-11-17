@@ -32,4 +32,5 @@ include ':moe.apple',
         ':moe.apple:moe.core.native:external.javasqlite',
         ':moe.apple:moe.core.native:svm.graal',
         ':moe.apple:moe.core.native:svm.openjdk',
+        ':moe.apple:moe.core.native:svm.jdwp',
         ':moe.apple:moe.core.native:moe.sdk'

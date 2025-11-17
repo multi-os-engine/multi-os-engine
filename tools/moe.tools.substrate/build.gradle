@@ -173,6 +173,7 @@ tasks.register("generateQueryCodeArm64", Exec) {
             "-H:+UnlockExperimentalVMOptions",
             "-H:QueryCodeDir=${file("build/capCacheGeneration/arm64/querySrc/")}",
             "-H:+ExitAfterQueryCodeGeneration",
+            "-H:+JDWP",
             "-cp", file("build/tmp/"),
             "Dummy"
     ]
@@ -188,6 +189,7 @@ tasks.register("generateQueryCodex86_64", Exec) {
             "-H:+UnlockExperimentalVMOptions",
             "-H:QueryCodeDir=${file("build/capCacheGeneration/x86_64/querySrc/")}",
             "-H:+ExitAfterQueryCodeGeneration",
+            "-H:+JDWP",
             "-cp", file("build/tmp/"),
             "Dummy"
     ]

@@ -107,6 +107,18 @@ abstract class NativeImage : AbstractBaseTask() {
         this.llvmObjFile = llvmObjFile
     }
 
+    private var jdwpMetadataFile: Any? = null
+
+    @OutputFile
+    @NotNull
+    fun getJDWPMetadataFile(): File {
+        return project.file(getOrConvention(jdwpMetadataFile, CONVENTION_JDWP_METADATA_FILE))
+    }
+
+    fun setJDWPMetadataFile(jdwpMetadataFile: Any?) {
+        this.jdwpMetadataFile = jdwpMetadataFile
+    }
+
     private var jniConfigFiles: Set<Any>? = null
 
     @InputFiles
@@ -175,6 +187,9 @@ abstract class NativeImage : AbstractBaseTask() {
     @Input
     fun isUseLLVM(): Boolean = moeExtension.nativeImage.isUseLLVM
 
+    @Input
+    fun isEnableJDWP(): Boolean = mode == Mode.DEBUG
+
     override fun run() {
         val svmConf = Config(
                 mainClassName = getMainClassName(),
@@ -187,6 +202,7 @@ abstract class NativeImage : AbstractBaseTask() {
                         os = platform.platformName,
                 ),
                 debug = mode == Mode.DEBUG,
+                enableJDWP = isEnableJDWP(),
                 jniConfigFiles = getJniConfigFiles().toSet(),
                 reflectionConfigFiles = getReflectionConfigFiles().toSet(),
                 proxyConfigFiles = getProxyConfigFiles().toSet(),
@@ -208,6 +224,12 @@ abstract class NativeImage : AbstractBaseTask() {
             Files.move(result.llvmObj!!, getLlvmObjFile().toPath(), StandardCopyOption.REPLACE_EXISTING)
         } else {
             getLlvmObjFile().delete()
+        }
+
+        if (svmConf.enableJDWP) {
+            Files.move(result.jdwpMetadata!!, getJDWPMetadataFile().toPath(), StandardCopyOption.REPLACE_EXISTING)
+        } else {
+            getJDWPMetadataFile().delete()
         }
     }
 
@@ -297,6 +319,7 @@ abstract class NativeImage : AbstractBaseTask() {
         addConvention(CONVENTION_LOG_FILE) { resolvePathInBuildDir(out, "NativeImage.log") }
         addConvention(CONVENTION_MAIN_OBJ_FILE) { resolvePathInBuildDir(out, "main.o") }
         addConvention(CONVENTION_LLVM_OBJ_FILE) { resolvePathInBuildDir(out, "llvm.o") }
+        addConvention(CONVENTION_JDWP_METADATA_FILE) { resolvePathInBuildDir(out, "jdwp.metadata") }
         addConvention(CONVENTION_JNI_CONFIG_FILES) {
             listOfNotNull(
                 moeSDK.jniConfigBaseFile,
@@ -344,6 +367,7 @@ abstract class NativeImage : AbstractBaseTask() {
         private const val CONVENTION_SVM_TMP_DIR = "svmTmpDir"
         private const val CONVENTION_MAIN_OBJ_FILE = "mainObjFile"
         private const val CONVENTION_LLVM_OBJ_FILE = "LLVMObjFile"
+        private const val CONVENTION_JDWP_METADATA_FILE = "JDWPMetadataFile"
         private const val CONVENTION_JNI_CONFIG_FILES = "jniConfigFiles"
         private const val CONVENTION_REFLECTION_CONFIG_FILES = "reflectionConfigFiles"
         private const val CONVENTION_PROXY_CONFIG_FILES = "proxyConfigFiles"

@@ -14,6 +14,51 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+import org.moe.prebuilts.Script;
+
+tasks.register('fetch_boot_jdk', Script) {
+    outputs.dir(bootJdkDir)
+
+    progress 'Fetching boot JDK'
+    rawWorkDir external.svm.mx
+
+    exec "./mx",
+            "-y", "--no-warning",
+            "fetch-jdk",
+            "--to", file(bootJdkDir).absolutePath,
+            "--alias", bootJdkDirAlias,
+            "labsjdk-ce-latest", "ce-25.0.1+8-jvmci-b01"
+}
+
+tasks.register('build_graal_dist', Script) {
+    dependsOn(bootJdkTask)
+    inputs.dir(bootJdkDir)
+    inputs.dir(external.svm.graal)
+    outputs.dir(graalDist)
+
+    workDir 'graalBuild'
+
+    progress 'Copying graal'
+    rsync file(external.svm.graal), workDir
+
+    progress 'Build graal dist'
+    workDir 'graalBuild/vm/'
+    exec "${external.svm.mx}/mx", "--java-home", file(bootJdkDirHome).absolutePath, "--env", "ce", "build"
+
+    progress 'Copy build distribution'
+    exec "bash", "-c", "rsync -a --delete \$(${external.svm.mx}/mx --java-home ${file(bootJdkDirHome).absolutePath} --env ce graalvm-home)/ ${file(graalDist).absolutePath}/";
+}
+
+ext {
+    bootJdkDir = file("build/bootJDK")
+    bootJdkDirAlias = "jdk25"
+    bootJdkDirHome = file("$bootJdkDir/$bootJdkDirAlias/Contents/Home")
+    bootJdkTask = tasks.named("fetch_boot_jdk")
+
+    graalDist = file("build/graalDist")
+    graalDistTask = tasks.named("build_graal_dist")
+}
+
 subprojects {
     ext {
         buildfilter = [:]

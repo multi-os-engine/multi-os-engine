@@ -87,11 +87,17 @@ ext {
         external.moe_core.out.iphoneos_libmoe_headers = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Debug-ios-iphoneos/include")
         external.moe_core.out.iphonesimulator_libmoe = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Debug-ios-iphonesimulator/libmoe.a")
         external.moe_core.out.iphonesimulator_libmoe_headers = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Debug-ios-iphonesimulator/include")
+
+        external.moe_core.out.iphoneos_svmjdwp = file("${external.moe_core.root}/moe.apple/moe.core.native/svm.jdwp/build/xcode/Debug-ios-iphoneos/svmjdwp.framework")
+        external.moe_core.out.iphonesimulator_svmjdwp = file("${external.moe_core.root}/moe.apple/moe.core.native/svm.jdwp/build/xcode/Debug-ios-iphonesimulator/svmjdwp.framework")
     } else {
         external.moe_core.out.iphoneos_libmoe = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Release-ios-iphoneos/libmoe.a")
         external.moe_core.out.iphoneos_libmoe_headers = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Release-ios-iphoneos/include")
         external.moe_core.out.iphonesimulator_libmoe = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Release-ios-iphonesimulator/libmoe.a")
         external.moe_core.out.iphonesimulator_libmoe_headers = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Release-ios-iphonesimulator/include")
+
+        external.moe_core.out.iphoneos_svmjdwp = file("${external.moe_core.root}/moe.apple/moe.core.native/svm.jdwp/build/xcode/Release-ios-iphoneos/svmjdwp.framework")
+        external.moe_core.out.iphonesimulator_svmjdwp = file("${external.moe_core.root}/moe.apple/moe.core.native/svm.jdwp/build/xcode/Release-ios-iphonesimulator/svmjdwp.framework")
     }
 }
 

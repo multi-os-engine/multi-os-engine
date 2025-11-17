@@ -172,7 +172,7 @@ public abstract class LaunchSimulator extends AbstractBaseTask {
                         exec.args("simctl", "launch", "--console-pty", udid, bundleIdentifier);
 
                         if (launchOptions.getDebug() != null) {
-                            exec.args("-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=" + launchOptions.getDebug().getLocal());
+                            exec.args("-XX:JDWPOptions=transport=dt_socket,server=y,suspend=y,address=" + launchOptions.getDebug().getLocal());
                         }
 
                         exec.args(launchOptions.getVMArgs());

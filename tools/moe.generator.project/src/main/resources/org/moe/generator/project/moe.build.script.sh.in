@@ -58,17 +58,51 @@ if [ "${MOE_BUILD_SOURCE_SET}" == "test" ]; then
     cp "${MOE_PROJECT_BUILD_DIR}/moe/${MOE_BUILD_SOURCE_SET}/test-provider/${MOE_BUILD_MODE}/classlist.txt" "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/"
 fi
 
-## Copy and sign MOE framework
-#rsync -av --filter "- CVS/" --filter "- .svn/" --filter "- .git/" --filter "- .hg/" --filter "- Headers" --filter "- PrivateHeaders" --filter "- Modules" \
-#    "${MOE_FRAMEWORK_PATH}/MOE.framework" "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/"
-#if [ "${ARCHS}" == "arm64" ] || [ "${ARCHS}" == "x86_64" ]; then
-#    if [ "${PLATFORM_NAME}" == "iphonesimulator" ]; then
-#        lipo -thin x86_64 -output "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MOE.framework/MOE" "${MOE_FRAMEWORK_PATH}/MOE.framework/MOE"
-#    else
-#        lipo -thin arm64 -output "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MOE.framework/MOE" "${MOE_FRAMEWORK_PATH}/MOE.framework/MOE"
-#    fi
-#fi
-#if [ -n "${EXPANDED_CODE_SIGN_IDENTITY}" -a "${CODE_SIGNING_REQUIRED}" != "NO" -a "${CODE_SIGNING_ALLOWED}" != "NO" ]; then
-#    /usr/bin/codesign --force --sign $EXPANDED_CODE_SIGN_IDENTITY $OTHER_CODE_SIGN_FLAGS \
-#        --preserve-metadata=identifier,entitlements "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MOE.framework"
-#fi
+copy_and_sign_framework() {
+    local framework_path="$1"
+    local framework_name="$2"
+
+    if [ -z "$framework_path" ] || [ -z "$framework_name" ]; then
+        echo "Error: Usage: copy_and_sign_framework <framework_path> <framework_name>"
+        return 1
+    fi
+
+    # Copy framework excluding version control and unnecessary directories
+    rsync -av \
+        --filter "- CVS/" \
+        --filter "- .svn/" \
+        --filter "- .git/" \
+        --filter "- .hg/" \
+        --filter "- Headers" \
+        --filter "- PrivateHeaders" \
+        --filter "- Modules" \
+        "${framework_path}/${framework_name}.framework" \
+        "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/"
+
+    # Thin the framework binary for specific architecture if needed
+    if [ "${ARCHS}" == "arm64" ] || [ "${ARCHS}" == "x86_64" ]; then
+        if [ "${PLATFORM_NAME}" == "iphonesimulator" ]; then
+            lipo -thin "${ARCHS}" \
+                -output "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/${framework_name}.framework/${framework_name}" \
+                "${framework_path}/${framework_name}.framework/${framework_name}"
+        fi
+    fi
+
+    # Code sign the framework if required
+    if [ -n "${EXPANDED_CODE_SIGN_IDENTITY}" ] && \
+       [ "${CODE_SIGNING_REQUIRED}" != "NO" ] && \
+       [ "${CODE_SIGNING_ALLOWED}" != "NO" ]; then
+        /usr/bin/codesign --force \
+            --sign "$EXPANDED_CODE_SIGN_IDENTITY" \
+            $OTHER_CODE_SIGN_FLAGS \
+            --preserve-metadata=identifier,entitlements \
+            "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/${framework_name}.framework"
+    fi
+}
+
+if [ "${CONFIGURATION}" == "Debug" ]; then
+    copy_and_sign_framework "${MOE_FRAMEWORK_PATH}" "svmjdwp"
+    for arch in ${ARCHS}; do
+        cp "${MOE_PROJECT_BUILD_DIR}/moe/${MOE_BUILD_SOURCE_SET}/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/jdwp_${arch}.metadata" "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/jdwp_${arch}.metadata"
+    done
+fi

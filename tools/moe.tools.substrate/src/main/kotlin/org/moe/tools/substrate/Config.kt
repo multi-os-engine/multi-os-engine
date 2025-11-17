@@ -35,6 +35,7 @@ data class Config(
         val proxyConfigFiles: Set<File> = emptySet(),
         val resourceConfigFile: Set<File> = emptySet(),
         val useLLVM: Boolean = true,
+        val enableJDWP: Boolean = false,
 
         val customOptions: List<String> = emptyList(),
         // Platform & arch config

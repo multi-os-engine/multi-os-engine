@@ -327,7 +327,7 @@ public class LaunchHelper implements IStopReplyListener {
                 ArrayList<String> _args = new ArrayList<String>();
                 _args.add(appPath);
                 if (debugPort != null) {
-                    _args.add("-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=" + debugPort.getRemotePort());
+                    _args.add("-XX:JDWPOptions=transport=dt_socket,server=y,suspend=y,address=" + debugPort.getRemotePort());
                 }
                 _args.addAll(launchArgs);
                 String args_arr[] = new String[_args.size()];

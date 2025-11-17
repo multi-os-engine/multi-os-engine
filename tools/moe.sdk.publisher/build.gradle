@@ -105,6 +105,11 @@ def getSDKCopySpec() {
             from files(rootProject.external.moe_core.out.iphoneos_libmoe) {
                 rename rootProject.external.moe_core.out.iphoneos_libmoe.name, 'libmoe.a'
             }
+            into('svmjdwp.framework') {
+                from files(rootProject.external.moe_core.out.iphoneos_svmjdwp) {
+                    exclude '_CodeSignature'
+                }
+            }
             into('include') {
                 into('.') {
                     from files(rootProject.external.moe_core.out.iphoneos_libmoe_headers) {
@@ -121,6 +126,11 @@ def getSDKCopySpec() {
         into('sdk/iphonesimulator') {
             from files(rootProject.external.moe_core.out.iphonesimulator_libmoe) {
                 rename rootProject.external.moe_core.out.iphonesimulator_libmoe.name, 'libmoe.a'
+            }
+            into('svmjdwp.framework') {
+                from files(rootProject.external.moe_core.out.iphonesimulator_svmjdwp) {
+                    exclude '_CodeSignature'
+                }
             }
             into('include') {
                 into('.') {

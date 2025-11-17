@@ -12,6 +12,7 @@ import java.nio.file.Path
 data class CompileResult(
     val mainObj: Path,
     val llvmObj: Path?,
+    val jdwpMetadata: Path?
 )
 
 class SubstrateExecutor(
@@ -66,6 +67,9 @@ class SubstrateExecutor(
                 "-H:+UseCAPCache",
                 "-H:CAPCacheDir=${ensureCapCacheDir()}",
                 "--no-server",
+
+                *argsIf(config.enableJDWP, "-H:+JDWP", "-H:-CopyNativeJDWPLibrary"),
+
                 *config.customOptions.toTypedArray(),
 
                 // Resource configs
@@ -113,9 +117,22 @@ class SubstrateExecutor(
             llvmObj = null
         }
 
+        val metadata: Path?
+        if (config.enableJDWP) {
+            metadata = config.outputDir.findOne(
+                fileName = "${config.mainClassName.toLowerCase()}.dylib.metadata",
+                isDirectory = false,
+                maxDepth = 5,
+            )
+            println("Metadata file: $metadata")
+        } else {
+            metadata = null;
+        }
+
         return CompileResult(
             mainObj = mainObj,
             llvmObj = llvmObj,
+            jdwpMetadata = metadata,
         )
     }
 
@@ -152,7 +169,8 @@ class SubstrateExecutor(
                 "JNIHeaderDirectivesJDK19OrLater.cap",
                 "JNIHeaderDirectivesJDK20OrLater.cap",
                 "JNIHeaderDirectivesJDK21OrLater.cap",
-                "LocaleDirectives.cap"
+                "LocaleDirectives.cap",
+                "JNI_JNIHeaderDirectives.cap"
         )
 
         private fun Triplet.toSVMPlatform(): String = when (this) {
