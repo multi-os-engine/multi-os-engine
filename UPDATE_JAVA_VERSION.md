@@ -42,6 +42,11 @@ This guide describes the steps required to update the underlying native-image ve
 2. Run the `./gradlew :tools:moe.tools.substrate:runQueryCode` task. The new files will be generated into `tools/moe.tools.substrate/src/main/resources`
 3. If new files got added/removed, add/remove them to/from the list in `tools/moe.tools.substrate/src/main/kotlin/org/moe/tools/substrate/SubstrateExecutor#CAP_CACHES` 
 
+
+### JDWP
+1. Check, whether the substitutions are still valid at `moe-core/moe.apple/moe.core.java/src/main/java/org/moe/core/svm/JDWPSubstitutions.java`
+2. Compare the native-image flags in `moe-core/moe.apple/moe.core.native/svm.jdwp/build.gradle` against `moe-core/moe.apple/moe.core.native/build/graalDist/lib/svm/macros/svmjdwp-library/native-image.properties`
+
 ### Other adjustments
 - Adjust the compatibility matrix in `tools/moe.tools.substrate/src/main/kotlin/org/moe/tools/substrate/GraalVM.kt`. Note, that there can be breaking changes in regard to linking in one major release.
 
