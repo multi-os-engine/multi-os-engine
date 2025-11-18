@@ -41,9 +41,6 @@ class SubstrateExecutor(
                 graalVM.nativeImage,
                 "-H:+SharedLibrary",
 
-                // We don't need isolates
-                "-H:-SpawnIsolates",
-
                 // iOS specific flags
                 "-H:PageSize=16384",
 
@@ -69,7 +66,9 @@ class SubstrateExecutor(
                 "-H:CAPCacheDir=${ensureCapCacheDir()}",
                 "--no-server",
 
-                *argsIf(config.enableJDWP, "-H:+JDWP", "-H:-CopyNativeJDWPLibrary"),
+                // We don't need isolates
+                *argsIf(!config.enableJDWP, "-H:-SpawnIsolates"),
+                *argsIf(config.enableJDWP, "-H:+JDWP", "-H:-CopyNativeJDWPLibrary", "-H:+SpawnIsolates", "-R:ReservedAddressSpaceSize=536870912"),
 
                 *config.customOptions.toTypedArray(),
 

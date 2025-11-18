@@ -33,12 +33,9 @@ import org.moe.gradle.options.ProGuardOptions;
 import org.moe.gradle.utils.GradleCompatUtils;
 import org.moe.gradle.utils.Mode;
 import org.moe.gradle.utils.Require;
-import org.moe.gradle.utils.StringUtils;
-import org.moe.gradle.utils.TaskUtils;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.List;
 
 import static java.util.Arrays.asList;
 
@@ -72,52 +69,42 @@ public class ResourcePackager {
                 // Add dependencies
                 final R8 r8Task = plugin.getTaskBy(R8.class, sourceSet, mode);
                 resourcePackagerTask.dependsOn(r8Task);
-
-                Action<Project> configureTask = _project -> {
-                    // Update settings
-                    if (GradleVersion.current().compareTo(GradleVersion.version("5.1")) >= 0) {
-                        resourcePackagerTask.getDestinationDirectory().set(project.file(project.getBuildDir().toPath().resolve(out).toFile()));
-                        resourcePackagerTask.getArchiveFileName().set("application.jar");
-                    } else {
-                        // we must be on an old version of gradle, try the older methods
-                        GradleCompatUtils.legacyCall(resourcePackagerTask, "setDestinationDir", project.file(project.getBuildDir().toPath().resolve(out).toFile()));
-                        GradleCompatUtils.legacyCall(resourcePackagerTask, "setArchiveName", "application.jar");
-                    }
-                    resourcePackagerTask.from(project.zipTree(r8Task.getOutJar()));
-                    resourcePackagerTask.exclude("**/*.class");
-
-                    // When using full trim, ProGuard will copy the the resources from the common jar
-                    switch (ext.proguard.getLevelRaw()) {
-                    case ProGuardOptions.LEVEL_APP:
-                        resourcePackagerTask.from(_project.zipTree(sdk.getCoreJar()));
-                        if (ext.getPlatformJar() != null) {
-                            resourcePackagerTask.from(_project.zipTree(ext.getPlatformJar()));
-                        }
-                        break;
-                    case ProGuardOptions.LEVEL_PLATFORM:
-                        resourcePackagerTask.from(_project.zipTree(sdk.getCoreJar()));
-                        break;
-                    case ProGuardOptions.LEVEL_ALL:
-                        break;
-                    default:
-                        throw new IllegalStateException();
-                    }
-
-                    ext.packaging.getExcludes().forEach(resourcePackagerTask::exclude);
-
-                    // Add support for copying resources from the source directory
-                    addResourceFromSources(ext, resourcePackagerTask, sourceSet);
-                    if (SourceSet.TEST_SOURCE_SET_NAME.equals(sourceSet.getName())) {
-                        SourceSet main = plugin.getJavaConvention().getSourceSets().getByName(SourceSet.MAIN_SOURCE_SET_NAME);
-                        addResourceFromSources(ext, resourcePackagerTask, main);
-                    }
-                };
-
-                // Make sure the project is configured after project is evaluated
-                if (project.getState().getExecuted()) {
-                    configureTask.execute(project);
+                // Update settings
+                if (GradleVersion.current().compareTo(GradleVersion.version("5.1")) >= 0) {
+                    resourcePackagerTask.getDestinationDirectory().set(project.file(project.getBuildDir().toPath().resolve(out).toFile()));
+                    resourcePackagerTask.getArchiveFileName().set("application.jar");
                 } else {
-                    project.afterEvaluate(configureTask);
+                    // we must be on an old version of gradle, try the older methods
+                    GradleCompatUtils.legacyCall(resourcePackagerTask, "setDestinationDir", project.file(project.getBuildDir().toPath().resolve(out).toFile()));
+                    GradleCompatUtils.legacyCall(resourcePackagerTask, "setArchiveName", "application.jar");
+                }
+                resourcePackagerTask.from(project.zipTree(r8Task.getOutJar()));
+                resourcePackagerTask.exclude("**/*.class");
+
+                // When using full trim, ProGuard will copy the the resources from the common jar
+                switch (ext.proguard.getLevelRaw()) {
+                case ProGuardOptions.LEVEL_APP:
+                    resourcePackagerTask.from(project.zipTree(sdk.getCoreJar()));
+                    if (ext.getPlatformJar() != null) {
+                        resourcePackagerTask.from(project.zipTree(ext.getPlatformJar()));
+                    }
+                    break;
+                case ProGuardOptions.LEVEL_PLATFORM:
+                    resourcePackagerTask.from(project.zipTree(sdk.getCoreJar()));
+                    break;
+                case ProGuardOptions.LEVEL_ALL:
+                    break;
+                default:
+                    throw new IllegalStateException();
+                }
+
+                ext.packaging.getExcludes().forEach(resourcePackagerTask::exclude);
+
+                // Add support for copying resources from the source directory
+                addResourceFromSources(ext, resourcePackagerTask, sourceSet);
+                if (SourceSet.TEST_SOURCE_SET_NAME.equals(sourceSet.getName())) {
+                    SourceSet main = plugin.getJavaConvention().getSourceSets().getByName(SourceSet.MAIN_SOURCE_SET_NAME);
+                    addResourceFromSources(ext, resourcePackagerTask, main);
                 }
             });
         });
