@@ -117,7 +117,7 @@ public class Script extends BaseTask {
 
     public void rsync(File from, File to) {
         exec("rsync",
-                "-a",
+                "-aL",
                 "--delete",
                 from.getAbsolutePath() + "/",
                 to.getAbsolutePath() + "/"
