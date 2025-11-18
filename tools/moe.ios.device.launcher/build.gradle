@@ -20,7 +20,7 @@ sourceCompatibility = "11"
 targetCompatibility = "11"
 
 dependencies {
-    implementation 'org.multi-os-engine:javapymobiledevice3:1.1.0'
+    implementation 'org.multi-os-engine:javapymobiledevice3:1.2.0'
     implementation("com.badlogicgames.jnigen:jnigen-commons:3.1.1")
     implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.+'
     implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.+'
