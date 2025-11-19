@@ -25,12 +25,25 @@ class PyMobileHandler {
     companion object {
         private val LOG: Logger = LoggerFactory.getLogger(PyMobileHandler::class.java)
 
+        @Volatile
         private var instance: CompletableFuture<PyMobileDevice3IPC>? = null
 
         @JvmStatic
+        @Synchronized
         fun ensureInitialized(project: Project, foreground: Boolean) {
-            if (instance != null)
-                return
+            val current = instance
+            if (current != null) {
+                if (!current.isDone)
+                    return
+
+                try {
+                    if (current.getNow(null)?.isAlive == true)
+                        return
+                } catch (e: Exception) {
+                    LOG.warn("Previous IPC instance init failed", e)
+                    // Fall through to reinitialize
+                }
+            }
 
             instance = CompletableFuture()
 
@@ -125,20 +138,18 @@ class PyMobileHandler {
             onError: Consumer<Throwable>
         ) {
             ensureInitialized(project, true)
-            ApplicationManager.getApplication().executeOnPooledThread {
-                try {
-                    val ipc = instance!!.get()
-                    val future = runnable(ipc)
-                    val result = future.get()
+            instance!!.thenComposeAsync(runnable)
+                .thenAccept { result ->
                     ApplicationManager.getApplication().invokeLater(
                         { onUIThread.accept(result) },
                         ModalityState.any()
                     )
-                } catch (e: Exception) {
+                }
+                .exceptionally { e ->
                     LOG.warn("IPC Daemon execution failed", e)
                     onError.accept(e)
+                    null
                 }
-            }
         }
     }
 }
