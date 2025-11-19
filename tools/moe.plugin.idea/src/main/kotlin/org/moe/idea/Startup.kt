@@ -35,6 +35,7 @@ import org.moe.idea.facet.gradle.GradleFacet
 import org.moe.idea.model.GradleModuleModel
 import org.moe.idea.utils.FileEditorListener
 import org.moe.idea.utils.ModuleObserver
+import org.moe.idea.utils.PyMobileHandler
 import org.moe.idea.utils.logger.LoggerFactory
 
 /**
@@ -51,10 +52,23 @@ class Startup : StartupActivity {
         // Find MOE modules
         readCache(project)
 
+        // Launch PyMobile Daemon
+        launchPyMobileDaemon(project)
+
         // Register listeners
         val messageBusConnection = project.messageBus.connect()
         messageBusConnection.subscribe(FileEditorManagerListener.FILE_EDITOR_MANAGER, FileEditorListener())
         messageBusConnection.subscribe(ProjectTopics.MODULES, ModuleObserver())
+    }
+
+    private fun launchPyMobileDaemon(project: Project) {
+        val moduleManager = ModuleManager.getInstance(project)
+        val hasMoeModules = moduleManager.modules.any { module -> GradleFacet.getInstance(module) != null }
+
+        if (!hasMoeModules)
+            return
+
+        PyMobileHandler.ensureInitialized(project, false)
     }
 
     private fun readCache(project: Project) {

@@ -44,7 +44,7 @@ intellij {
     version = 'IC-2022.2'
     plugins = ['com.intellij.gradle', 'com.intellij.java']
     pluginName = PLUGIN_NAME
-    downloadSources = false
+    downloadSources = true
     updateSinceUntilBuild = false
 }
 

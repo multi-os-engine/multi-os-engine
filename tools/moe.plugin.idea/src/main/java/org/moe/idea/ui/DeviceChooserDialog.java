@@ -39,6 +39,7 @@ public class DeviceChooserDialog extends DialogWrapper {
 
     private static final Logger LOG = LoggerFactory.getLogger(DeviceChooserDialog.class);
 
+    private Module module;
     private JPanel contentPane;
     private JComboBox simulatorCombo;
     private JRadioButton simulatorRadio;
@@ -49,6 +50,7 @@ public class DeviceChooserDialog extends DialogWrapper {
 
     public DeviceChooserDialog(final Module module, MOERunConfiguration runConfig) {
         super(module.getProject(), true, IdeModalityType.PROJECT);
+        this.module = module;
         this.configuration = runConfig;
         setTitle("Select Deployment Target");
 
@@ -106,7 +108,7 @@ public class DeviceChooserDialog extends DialogWrapper {
 
         deviceCombo.setSelectedItem(MOEText.get("First.Device.Available"));
 
-        PyMobileHandler.invokeOnUIThread(PyMobileDevice3IPC::listDevicesUDID, deviceInfos -> {
+        PyMobileHandler.invokeOnUIThread(module.getProject(), PyMobileDevice3IPC::listDevicesUDID, deviceInfos -> {
             deviceCombo.removeAllItems();
             deviceCombo.addItem(MOEText.get("First.Device.Available"));
 

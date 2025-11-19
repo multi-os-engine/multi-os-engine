@@ -51,6 +51,7 @@ public class ModuleObserver implements ModuleListener {
                 if (MOESdkPlugin.isValidMoeModule(module)) {
                     checkRunConfiguration(project, module);
                     checkMoeSDK(module);
+                    PyMobileHandler.ensureInitialized(project, false);
                 }
             }
         });

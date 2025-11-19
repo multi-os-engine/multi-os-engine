@@ -110,6 +110,8 @@
         <facetType implementation="org.moe.idea.facet.gradle.GradleFacetType"/>
 
         <sdkType implementation="org.moe.idea.sdk.MOESdkType"/>
+
+      <notificationGroup id="PyMobileDevice3 Daemon Launch" displayType="BALLOON"/>
     </extensions>
 
     <extensions defaultExtensionNs="org.jetbrains.plugins.gradle">

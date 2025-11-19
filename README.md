@@ -102,6 +102,6 @@ cd <repo>/moe
 [IDEA Plugin](https://github.com/multi-os-engine/moe-ide-integration): building the IDEA plugin:
 
 ```sh
-cd <repo>/moe/tools/master
+cd <repo>/moe/
 ./gradlew :tools:moe.plugin.idea:build
 ```

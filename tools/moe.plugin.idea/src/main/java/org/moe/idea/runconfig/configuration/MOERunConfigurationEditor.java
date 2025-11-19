@@ -419,7 +419,7 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
         deviceCombo.addItem(MOEText.get("First.Device.Available"));
         deviceCombo.setSelectedItem(MOEText.get("First.Device.Available"));
 
-        PyMobileHandler.invokeOnUIThread(PyMobileDevice3IPC::listDevicesUDID, deviceInfos -> {
+        PyMobileHandler.invokeOnUIThread(myProject, PyMobileDevice3IPC::listDevicesUDID, deviceInfos -> {
             deviceCombo.removeAllItems();
             deviceCombo.addItem(MOEText.get("First.Device.Available"));
             deviceCombo.setSelectedItem(MOEText.get("First.Device.Available"));
