@@ -60,7 +60,7 @@ dependencies {
     implementation project(':moe.generator.project')
     implementation project(':moe.tools.natjgen')
     implementation project(':moe.plugin.common')
-    implementation 'org.multi-os-engine:javapymobiledevice3:1.2.1'
+    implementation "org.multi-os-engine:javapymobiledevice3"
 
     implementation "org.jetbrains.kotlin:kotlin-reflect"
 

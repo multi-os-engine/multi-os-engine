@@ -17,6 +17,7 @@ limitations under the License.
 includeBuild("../natj")
 includeBuild("../moe-core")
 includeBuild("../prebuilts")
+includeBuild("../../external/javapymobiledevice3")
 
 include 'moe.binding.clang'
 include 'moe.document.pbxproj'
