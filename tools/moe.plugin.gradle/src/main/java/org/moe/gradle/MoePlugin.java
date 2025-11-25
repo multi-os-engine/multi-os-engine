@@ -179,35 +179,25 @@ public class MoePlugin extends AbstractMoePlugin {
         installCommonDependencies();
 
         // Install rules
-        registerTask(R8.class, "Creates a R8'd jar.",
-                asList(SOURCE_SET, MODE));
-        registerTask(ClassValidate.class, "Validate classes.",
-                asList(SOURCE_SET, MODE));
-        registerTask(ReflectionCollect.class, "Collect reflection config.",
-                asList(SOURCE_SET, MODE));
+        registerTask(R8.class, "Creates a R8'd jar.", asList(SOURCE_SET, MODE));
+        registerTask(ClassValidate.class, "Validate classes.", asList(SOURCE_SET, MODE));
+        registerTask(ReflectionCollect.class, "Collect reflection config.", asList(SOURCE_SET, MODE));
         ResourcePackager.registerTask(this);
-        registerTask(ResourceCollect.class, "Collect resource config.",
-                asList(SOURCE_SET, MODE));
-        registerTask(NativeImage.class, "AOT compile using GraalVM native-image.",
-                asList(SOURCE_SET, MODE, ARCH, PLATFORM));
-        registerTask(TestClassesProvider.class, "Creates the classlist.txt file.",
-                asList(SOURCE_SET, MODE));
-        registerTask(StartupProvider.class, "Creates the preregister.txt file.",
-                asList(SOURCE_SET, MODE));
-        registerTask(XcodeProvider.class, "Collects the required dependencies.",
-                asList(SOURCE_SET, MODE, ARCH, PLATFORM));
-        registerTask(XcodeInternal.class, "Creates all files for Xcode.",
-                emptyList());
-        registerTask(XcodeBuild.class, "Creates .app files.",
-                asList(SOURCE_SET, MODE, PLATFORM));
-        registerTask(IpaBuild.class, "Creates .ipa files.",
-                emptyList());
-        registerTask(GenerateUIObjCInterfaces.class, "Creates a source file for Interface Builder",
-                singletonList(MODE));
-        registerTask(NatJGen.class, "Generate binding",
-                emptyList());
-        registerTask(UpdateXcodeSettings.class, "Updates Xcode project settings",
-                emptyList());
+        registerTask(ResourceCollect.class, "Collect resource config.", asList(SOURCE_SET, MODE));
+        registerTask(NativeImage.class, "AOT compile using GraalVM native-image.", asList(SOURCE_SET, MODE, ARCH, PLATFORM));
+        registerTask(TestClassesProvider.class, "Creates the classlist.txt file.", asList(SOURCE_SET, MODE));
+        registerTask(StartupProvider.class, "Creates the preregister.txt file.", asList(SOURCE_SET, MODE));
+        registerTask(XcodeProvider.class, "Collects the required dependencies.", asList(SOURCE_SET, MODE, ARCH, PLATFORM));
+
+        // Only register when launched from XCode
+        if (System.getenv("XCODE_PRODUCT_BUILD_VERSION") != null)
+            registerTask(XcodeInternal.class, "Creates all files for Xcode.", emptyList());
+
+        registerTask(XcodeBuild.class, "Creates .app files.", asList(SOURCE_SET, MODE, PLATFORM));
+        registerTask(IpaBuild.class, "Creates .ipa files.", emptyList());
+        registerTask(GenerateUIObjCInterfaces.class, "Creates a source file for Interface Builder", singletonList(MODE));
+        registerTask(NatJGen.class, "Generate binding", emptyList());
+        registerTask(UpdateXcodeSettings.class, "Updates Xcode project settings", emptyList());
 
         project.getTasks().create("moeSDKProperties", task -> {
             task.setGroup(MOE);
