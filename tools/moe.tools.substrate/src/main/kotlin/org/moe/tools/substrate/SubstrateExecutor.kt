@@ -54,7 +54,7 @@ class SubstrateExecutor(
                 *argsIf(config.useLLVM, "-H:CompilerBackend=llvm"),
 
                 // Build info
-                "--initialize-at-build-time=org.moe.MOE\$Build",
+                "--initialize-at-build-time=org.moe.core.MOE\$Build",
                 "-Dsvm.targetName=iOS",
                 "-Dsvm.targetArch=${config.target.arch}",
                 "-Dsvm.platform=org.graalvm.nativeimage.Platform\$${config.target.toSVMPlatform()}",
