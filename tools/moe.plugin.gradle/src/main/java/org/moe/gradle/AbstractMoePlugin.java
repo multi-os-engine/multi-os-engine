@@ -32,6 +32,7 @@ import org.gradle.api.tasks.compile.CompileOptions;
 import org.gradle.api.tasks.compile.JavaCompile;
 import org.gradle.internal.reflect.Instantiator;
 import org.gradle.tooling.provider.model.ToolingModelBuilderRegistry;
+import org.gradle.util.GradleVersion;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.model.builder.GradlePluginModelBuilder;
@@ -58,19 +59,8 @@ public abstract class AbstractMoePlugin implements Plugin<Project> {
      */
     public static final String MOE = "moe";
 
-    /**
-     * Required major version of Gradle.
-     */
-    private static final int GRADLE_MIN_VERSION_MAJOR = 6;
-    /**
-     * Required minor version of Gradle.
-     */
-    private static final int GRADLE_MIN_VERSION_MINOR = 1;
-
-    /**
-     * Optional revision version of Gradle.
-     */
-    private static final Integer GRADLE_MIN_REVISION = 1;
+    /** Required min gradle version */
+    private static final String GRADLE_MIN_VERSION = "7.1";
 
     @NotNull
     protected final Instantiator instantiator;
@@ -119,7 +109,7 @@ public abstract class AbstractMoePlugin implements Plugin<Project> {
         this.project = Require.nonNull(project);
 
         // Check Gradle version
-        checkGradleVersion(project);
+        checkGradleVersion();
 
         // Apply Java plugin
         project.getPluginManager().apply(
@@ -145,88 +135,17 @@ public abstract class AbstractMoePlugin implements Plugin<Project> {
     }
 
     public static String getGradleMinVersion() {
-        if (GRADLE_MIN_REVISION == null) {
-            return GRADLE_MIN_VERSION_MAJOR + "." + GRADLE_MIN_VERSION_MINOR;
-        } else {
-            return GRADLE_MIN_VERSION_MAJOR + "." + GRADLE_MIN_VERSION_MINOR + "." + GRADLE_MIN_REVISION;
-        }
+        return GRADLE_MIN_VERSION;
     }
 
     /**
      * Checks whether the host Gradle complies with MOE's version requirements.
-     *
-     * @param project Project to check
      */
-    private void checkGradleVersion(Project project) {
-        final String versionString = project.getGradle().getGradleVersion();
-        final String[] components = versionString.split("\\.");
-        final int major = Integer.parseInt(components[0 /* Major */]);
-
-        Integer revision = 0;
-
-        String minorString = components[1 /* Minor */];
-        String suffix = null;
-
-        int minor = 0;
-
-        if (!minorString.contains("-")) {
-            minor = Integer.parseInt(minorString);
-        } else {
-            String[] minorComponents = minorString.split("-");
-            minor = Integer.parseInt(minorComponents[0]);
-            if (minorComponents.length > 1) {
-                suffix = minorComponents[1];
-            }
+    private void checkGradleVersion() {
+        if (GradleVersion.current().compareTo(GradleVersion.version(getRequiredGradleVersion())) < 0) {
+            throw new GradleException("The 'moe' plugin requires Gradle version " + getRequiredGradleVersion() + " or higher! " +
+                    "Current version is " + GradleVersion.current().getVersion() + ".");
         }
-
-        if (components.length > 2) {
-            String revisionString = components[2 /* Revision */];
-            if (!revisionString.contains("-")) {
-                revision = Integer.parseInt(revisionString);
-            } else {
-                String[] revisionComponents = revisionString.split("-");
-                revision = Integer.parseInt(revisionComponents[0]);
-                if (revisionComponents.length > 1) {
-                    suffix = revisionComponents[1];
-                }
-            }
-        }
-
-        if (major > GRADLE_MIN_VERSION_MAJOR) {
-            return;
-        }
-        if (major == GRADLE_MIN_VERSION_MAJOR && minor > GRADLE_MIN_VERSION_MINOR) {
-            return;
-        }
-        if (GRADLE_MIN_REVISION == null) {
-            if (revision != null && revision.intValue() > 0) {
-                return;
-            }
-            if (major == GRADLE_MIN_VERSION_MAJOR && minor > GRADLE_MIN_VERSION_MINOR){
-                return;
-            }
-            if (suffix == null) {
-                if (major == GRADLE_MIN_VERSION_MAJOR && minor >= GRADLE_MIN_VERSION_MINOR) {
-                    return;
-                }
-            }
-        } else if (revision != null) {
-            if (major == GRADLE_MIN_VERSION_MAJOR && minor == GRADLE_MIN_VERSION_MINOR &&
-                    revision.intValue() > GRADLE_MIN_REVISION) {
-                return;
-            }
-            if (suffix == null) {
-                if (major == GRADLE_MIN_VERSION_MAJOR && minor == GRADLE_MIN_VERSION_MINOR &&
-                        revision.intValue() >= GRADLE_MIN_REVISION) {
-                    return;
-                }
-            }
-        }
-
-        String revisionMessage = GRADLE_MIN_REVISION == null ? "" :  "." + GRADLE_MIN_REVISION;
-        throw new GradleException("The 'moe' plugin requires Gradle version " + GRADLE_MIN_VERSION_MAJOR + "." +
-                GRADLE_MIN_VERSION_MINOR + revisionMessage + " or higher! " +
-                "Current version is " + versionString + ".");
     }
 
     public final Logger getLogger() {
