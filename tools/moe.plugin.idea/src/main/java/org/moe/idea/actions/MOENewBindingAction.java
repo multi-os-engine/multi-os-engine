@@ -84,12 +84,9 @@ public class MOENewBindingAction extends AnAction {
     @Override
     public void update(AnActionEvent e) {
         DataContext dataContext = e.getDataContext();
-        module = (Module) dataContext.getData(LangDataKeys.MODULE.getName());
+        module = dataContext.getData(LangDataKeys.MODULE);
 
-        boolean enabled = false;
-        if ((module != null) && MOESdkPlugin.isValidMoeLibModule(module)) {
-            enabled = true;
-        }
+        boolean enabled = MOESdkPlugin.isValidMoeLibModule(module);
 
         Presentation presentation = e.getPresentation();
         presentation.setEnabled(enabled);

@@ -107,12 +107,9 @@ public class MOEOpenXcodeEditorAction extends AnAction {
         }
 
         DataContext dataContext = e.getDataContext();
-        module = (Module) dataContext.getData(LangDataKeys.MODULE.getName());
+        module = dataContext.getData(LangDataKeys.MODULE);
 
-        boolean enabled = false;
-        if ((module != null) && MOESdkPlugin.isValidMoeModule(module)) {
-            enabled = true;
-        }
+        boolean enabled = MOESdkPlugin.isValidMoeModule(module);
 
         presentation.setEnabled(enabled);
         presentation.setVisible(enabled);

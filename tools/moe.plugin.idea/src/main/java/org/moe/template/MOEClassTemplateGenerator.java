@@ -44,7 +44,7 @@ public class MOEClassTemplateGenerator {
     String SUBCLASS_NAME = "__SUBCLASS_NAME__";
 
     public void generate(MOEClassTemplate classTemplate, DataContext dataContext) {
-        Module module = (Module) dataContext.getData(LangDataKeys.MODULE.getName());
+        Module module = dataContext.getData(LangDataKeys.MODULE);
         VirtualFile file = CommonDataKeys.VIRTUAL_FILE.getData(dataContext);
 
         if (module == null) {

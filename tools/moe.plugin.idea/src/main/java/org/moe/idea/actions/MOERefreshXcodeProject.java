@@ -48,8 +48,8 @@ public class MOERefreshXcodeProject extends AnAction {
     @Override
     public void update(AnActionEvent e) {
         DataContext dataContext = e.getDataContext();
-        Module module = (Module)dataContext.getData(LangDataKeys.MODULE.getName());
-        boolean isActionEnabled = (module != null) && MOESdkPlugin.isValidMoeModule(module);
+        Module module = dataContext.getData(LangDataKeys.MODULE);
+        boolean isActionEnabled = MOESdkPlugin.isValidMoeModule(module);
         e.getPresentation().setEnabled(isActionEnabled);
         e.getPresentation().setVisible(isActionEnabled);
     }
@@ -57,7 +57,7 @@ public class MOERefreshXcodeProject extends AnAction {
     @Override
     public void actionPerformed(AnActionEvent e) {
         final DataContext dataContext = e.getDataContext();
-        final Module module = (Module)dataContext.getData(LangDataKeys.MODULE.getName());
+        final Module module = dataContext.getData(LangDataKeys.MODULE);
         if (module == null) {
             Messages.showErrorDialog("Failed to locate module", "Injecting/Refreshing Xcode Settings Error");
             return;
