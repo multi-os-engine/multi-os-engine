@@ -6,7 +6,7 @@ import org.moe.idea.model.GradleModuleModel;
 
 public class MOEVersionVerifier {
 
-    public static final String VERSION_LAUNCH_TASK_REWRITE = "2.0.0-SNAPSHOT";
+    public static final String VERSION_LAUNCH_TASK_REWRITE = "2.0.0-beta1";
 
     public static boolean isVersionGreaterOrEqual(Module module, String minVersion) {
         return isVersionGreaterOrEqual(GradleModuleModel.getInstance(module), minVersion);

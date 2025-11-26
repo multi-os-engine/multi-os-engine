@@ -120,14 +120,6 @@ public class MOEProgramRunner extends GenericProgramRunner {
             @Override
             @NotNull
             public XDebugProcess start(@NotNull XDebugSession session) {
-                XDebugSessionImpl sessionImpl = (XDebugSessionImpl)session;
-                ExecutionResult executionResult = debugProcess.getExecutionResult();
-                sessionImpl.addExtraActions(executionResult.getActions());
-
-                if (executionResult instanceof DefaultExecutionResult) {
-                    sessionImpl.addRestartActions(((DefaultExecutionResult)executionResult).getRestartActions());
-                }
-
                 return JavaDebugProcess.create(session, debuggerSession);
             }
         }).getRunContentDescriptor();
