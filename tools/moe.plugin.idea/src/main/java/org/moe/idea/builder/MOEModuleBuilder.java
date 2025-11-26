@@ -30,9 +30,8 @@ import com.intellij.openapi.externalSystem.model.ExternalSystemDataKeys;
 import com.intellij.openapi.externalSystem.util.ExternalSystemApiUtil;
 import com.intellij.openapi.externalSystem.util.ExternalSystemUtil;
 import com.intellij.openapi.fileEditor.FileDocumentManager;
+import com.intellij.openapi.module.JavaModuleType;
 import com.intellij.openapi.module.Module;
-import com.intellij.openapi.module.ModuleType;
-import com.intellij.openapi.module.StdModuleTypes;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.projectRoots.JavaSdk;
@@ -121,8 +120,6 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
 
         super.setupRootModel(rootModel);
 
-        ProjectRootManager projectRootManager = ProjectRootManager.getInstance(project);
-
         String projectPath = rootModel.getProject().getBasePath();
 
         String contentEntryPath = getContentEntryPath();
@@ -134,7 +131,8 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
         VirtualFile contentRoot = LocalFileSystem.getInstance().findFileByIoFile(new File(contentEntryPath));
 
         try {
-            createModule(contentRoot, project);
+            if (contentRoot != null)
+                createModule(contentRoot, project);
         } catch (MOEProjectComposer.MOEProjectComposerException e) {
             throw new ConfigurationException(e.getMessage());
         }
@@ -204,7 +202,6 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
 
         // Refresh the gradle import
         ImportSpecBuilder builder = new ImportSpecBuilder(rootModel.getProject(), GradleConstants.SYSTEM_ID);
-        builder.forceWhenUptodate(true);
         ExternalSystemUtil.refreshProjects(builder);
 
         if (contentRoot != null) {
@@ -217,11 +214,6 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
                 configureRun(rootModel);
             }
         });
-    }
-
-    @Override
-    public ModuleType getModuleType() {
-        return StdModuleTypes.JAVA;
     }
 
     @Override
@@ -242,7 +234,7 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
             settingsStep.getModuleNameLocationSettings().setModuleName(projectName);
         }
 
-        return StdModuleTypes.JAVA.modifySettingsStep(settingsStep, this);
+        return JavaModuleType.getModuleType().modifySettingsStep(settingsStep, this);
     }
 
     private void createModule(VirtualFile contentRoot, Project project) throws MOEProjectComposer.MOEProjectComposerException {
