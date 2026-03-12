@@ -44,6 +44,7 @@ import org.moe.idea.runconfig.configuration.MOERunConfigurationBase;
 import org.moe.idea.runconfig.configuration.test.MOEJUnitUtil;
 import org.moe.idea.runconfig.configuration.test.MOETestListener;
 import org.moe.idea.ui.MOEToolWindow;
+import org.moe.idea.utils.PyMobileHandler;
 import org.moe.idea.utils.logger.LoggerFactory;
 
 import java.io.IOException;
@@ -88,6 +89,8 @@ public class MOERunProfileState extends CommandLineState {
         if (runConfiguration.configuration() == null) {
             throw new ExecutionException("Invalid build configuration for " + runConfiguration.getClass().getName());
         }
+
+        PyMobileHandler.ensureTunneld(runConfiguration.getProject());
 
         final MOEGradleRunner gradleRunner = new MOEGradleRunner(runConfiguration);
         final boolean isDebug = runConfiguration.getActionType().equals("Debug");

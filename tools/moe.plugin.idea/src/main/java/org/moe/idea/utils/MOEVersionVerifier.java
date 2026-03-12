@@ -20,6 +20,9 @@ public class MOEVersionVerifier {
         if (gradleModuleModel.getSdkProperties().getVersion() == null)
             return false;
 
+        if (gradleModuleModel.getSdkProperties().getVersion().startsWith("2."))
+            return true;
+
         return new ComparableVersion(gradleModuleModel.getSdkProperties().getVersion()).compareTo(new ComparableVersion(minVersion)) >= 0;
     }
 }

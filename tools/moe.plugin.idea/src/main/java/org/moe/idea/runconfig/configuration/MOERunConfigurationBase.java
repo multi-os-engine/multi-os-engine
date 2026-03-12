@@ -54,7 +54,6 @@ public abstract class MOERunConfigurationBase extends LocatableConfigurationBase
     public static final String ARCH_ARM64 = "arm64";
     public static final String ARCH_X86_64 = "x86_64";
 
-    protected static PasswordSafe safeStorage = PasswordSafe.getInstance();
     protected String archType = ARCH_TYPE_AUTO;
     protected String architectures = "";
     protected String configuration;
