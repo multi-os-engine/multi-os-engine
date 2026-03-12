@@ -9,6 +9,12 @@
     ]]></description>
 
     <change-notes><![CDATA[
+      1.6.1<br>
+      - Update to pymobiledevice3 9.1.1 and delay tunneld launch until execution<br>
+      <br>
+      1.6.0<br>
+      - Switch to pymobiledevice3 for iDevice interop<br>
+      <br>
       1.5.3<br>
       - Improve SDK management<br>
       - Set GraalVM JDK as SDK<br>
