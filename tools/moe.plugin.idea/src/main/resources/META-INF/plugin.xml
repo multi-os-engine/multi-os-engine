@@ -9,6 +9,9 @@
     ]]></description>
 
     <change-notes><![CDATA[
+      1.6.2<br>
+      - Update to pymobiledevice3 9.4.3 and fix issue with daemon connection failure<br>
+      <br>
       1.6.1<br>
       - Update to pymobiledevice3 9.1.1 and delay tunneld launch until execution<br>
       <br>
