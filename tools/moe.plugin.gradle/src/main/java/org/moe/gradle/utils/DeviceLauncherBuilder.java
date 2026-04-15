@@ -1,6 +1,7 @@
 package org.moe.gradle.utils;
 
 import org.gradle.process.JavaExecSpec;
+import org.gradle.util.GradleVersion;
 import org.moe.gradle.MoeSDK;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
@@ -140,7 +141,11 @@ public class DeviceLauncherBuilder {
 
         exec.setWorkingDir(sdk.getToolsDir().getAbsolutePath());
 
-        exec.setMain("-jar");
+        if (GradleVersion.current().compareTo(GradleVersion.version("6.4")) >= 0) {
+            exec.getMainClass().set("-jar");
+        } else {
+            GradleCompatUtils.legacyCall(exec, "setMain", "-jar");
+        }
         exec.args(sdk.getiOSDeviceJar().getAbsolutePath());
 
         if (udid != null) {

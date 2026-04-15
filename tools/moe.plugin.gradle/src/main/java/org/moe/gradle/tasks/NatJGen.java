@@ -22,9 +22,10 @@ import org.gradle.api.specs.Spec;
 import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.InputFile;
 import org.gradle.api.tasks.Optional;
+import org.gradle.util.GradleVersion;
 import org.moe.gradle.AbstractMoeExtension;
 import org.moe.gradle.anns.IgnoreUnused;
-import org.moe.gradle.anns.Nullable;
+import org.moe.gradle.anns.Nullable;import org.moe.gradle.utils.GradleCompatUtils;
 
 import java.io.File;
 import java.nio.file.Path;
@@ -111,7 +112,11 @@ public abstract class NatJGen extends AbstractBaseTask {
         final AbstractMoeExtension ext = getExtension();
 
         javaexec(spec -> {
-            spec.setMain("-jar");
+            if (GradleVersion.current().compareTo(GradleVersion.version("6.4")) >= 0) {
+                spec.getMainClass().set("-jar");
+            } else {
+                GradleCompatUtils.legacyCall(spec, "setMain", "-jar");
+            }
             spec.setWorkingDir(ext.getSDK().getToolsDir().getAbsolutePath());
             spec.args(getNatJGenJar().getAbsolutePath());
             spec.args(getProject().getProjectDir().getParent());

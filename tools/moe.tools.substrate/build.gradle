@@ -14,13 +14,22 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+import org.gradle.process.ExecOperations
+import javax.inject.Inject
+
 plugins {
-    id 'de.undercouch.download' version '5.4.0'
+    id 'de.undercouch.download' version '5.7.0'
     id "org.jetbrains.kotlin.jvm"
 }
 
-targetCompatibility = 1.8
-sourceCompatibility = 1.8
+interface InjectedExecOps {
+    @Inject ExecOperations getExecOps()
+}
+
+java {
+    targetCompatibility = 1.8
+    sourceCompatibility = 1.8
+}
 
 dependencies {
     implementation project(':moe.tools.common')
@@ -75,6 +84,8 @@ tasks.register("verifyGraalVMx86", Verify) {
 tasks.register("extractGraalVMArm64", Exec) {
     dependsOn verifyGraalVMArm64
 
+    def execOps = project.objects.newInstance(InjectedExecOps).execOps
+
     workingDir file("build/capCacheGeneration/arm64/graalvm")
     executable "tar"
     args = ["-xzf", "../downloads/graalvm.tar.gz", "--strip-components=1"]
@@ -92,13 +103,13 @@ tasks.register("extractGraalVMArm64", Exec) {
             file.renameTo(new File(renamedDir, file.name))
         }
 
-        exec {
+        execOps.exec {
             executable = "chmod"
             args = ["-R", "u+w", renamedDir]
             ignoreExitValue = true
         }
 
-        exec {
+        execOps.exec {
             executable = "xattr"
             args = ["-dr", "com.apple.quarantine", renamedDir]
             ignoreExitValue = true
@@ -108,6 +119,8 @@ tasks.register("extractGraalVMArm64", Exec) {
 
 tasks.register("extractGraalVMx86", Exec) {
     dependsOn verifyGraalVMx86
+
+    def execOps = project.objects.newInstance(InjectedExecOps).execOps
 
     workingDir file("build/capCacheGeneration/x86_64/graalvm")
     executable "tar"
@@ -126,13 +139,13 @@ tasks.register("extractGraalVMx86", Exec) {
             file.renameTo(new File(renamedDir, file.name))
         }
 
-        exec {
+        execOps.exec {
             executable = "chmod"
             args = ["-R", "u+w", renamedDir]
             ignoreExitValue = true
         }
 
-        exec {
+        execOps.exec {
             executable = "xattr"
             args = ["-dr", "com.apple.quarantine", renamedDir]
             ignoreExitValue = true
@@ -141,6 +154,7 @@ tasks.register("extractGraalVMx86", Exec) {
 }
 
 tasks.register("generateDummyClass") {
+    def execOps = project.objects.newInstance(InjectedExecOps).execOps
     doLast {
         def tempDir = file("build/tmp/")
         tempDir.mkdirs()
@@ -156,7 +170,7 @@ tasks.register("generateDummyClass") {
             languageVersion = JavaLanguageVersion.of(21)
         }
 
-        exec {
+        execOps.exec {
             executable = compiler.get().executablePath
             args = ["-d", tempDir, dummyClass]
         }
@@ -198,6 +212,7 @@ tasks.register("generateQueryCodex86_64", Exec) {
 tasks.register("runQueryCodeArm64") {
     dependsOn generateQueryCodeArm64
     def graalvmArm64Home = getGraalVMArm64Home()
+    def execOps = project.objects.newInstance(InjectedExecOps).execOps
 
     doLast {
         def arm64QuerySource = file("build/capCacheGeneration/arm64/querySrc")
@@ -210,12 +225,12 @@ tasks.register("runQueryCodeArm64") {
         if (arm64QuerySource.exists()) {
             for (f in arm64QuerySource.listFiles()) {
                 def nameWithoutExt = f.name.substring(0, f.name.lastIndexOf('.'))
-                exec {
+                execOps.exec {
                     workingDir = queryOut
                     executable = "clang"
                     args = ["-x", "objective-c", "-I${graalvmArm64Home}/Contents/Home/include", "-I${graalvmArm64Home}/Contents/Home/include/darwin", f, "-o", nameWithoutExt]
                 }
-                exec {
+                execOps.exec {
                     commandLine = [file(queryOut.absolutePath + "/" + nameWithoutExt)]
                     standardOutput = new FileOutputStream(file("src/main/resources/cap_arm64/${nameWithoutExt}.cap"))
                 }
@@ -227,6 +242,7 @@ tasks.register("runQueryCodeArm64") {
 tasks.register("runQueryCodex86_64") {
     dependsOn generateQueryCodex86_64
     def graalvmx86Home = getGraalVMx86Home()
+    def execOps = project.objects.newInstance(InjectedExecOps).execOps
 
     doLast {
         def x86_64QuerySource = file("build/capCacheGeneration/x86_64/querySrc")
@@ -239,12 +255,12 @@ tasks.register("runQueryCodex86_64") {
         if (x86_64QuerySource.exists()) {
             for (f in x86_64QuerySource.listFiles()) {
                 def nameWithoutExt = f.name.substring(0, f.name.lastIndexOf('.'))
-                exec {
+                execOps.exec {
                     workingDir = queryOut
                     executable = "clang"
                     args = ["-x", "objective-c", "-arch", "x86_64", "-I${graalvmx86Home}/Contents/Home/include", "-I${graalvmx86Home}/Contents/Home/include/darwin", f, "-o", nameWithoutExt]
                 }
-                exec {
+                execOps.exec {
                     executable = "arch"
                     args = ["-x86_64", file(queryOut.absolutePath + "/" + nameWithoutExt)]
                     standardOutput = new FileOutputStream(file("src/main/resources/cap_x86_64/${nameWithoutExt}.cap"))

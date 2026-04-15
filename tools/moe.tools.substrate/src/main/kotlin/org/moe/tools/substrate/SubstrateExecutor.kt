@@ -99,7 +99,7 @@ class SubstrateExecutor(
 
         // Now checking the result
         val mainObj = config.outputDir.findOne(
-                fileName = "${config.mainClassName.toLowerCase()}.o",
+                fileName = "${config.mainClassName.lowercase()}.o",
                 isDirectory = false,
                 maxDepth = 5,
         )
@@ -120,7 +120,7 @@ class SubstrateExecutor(
         val metadata: Path?
         if (config.enableJDWP) {
             metadata = config.outputDir.findOne(
-                fileName = "${config.mainClassName.toLowerCase()}.dylib.metadata",
+                fileName = "${config.mainClassName.lowercase()}.dylib.metadata",
                 isDirectory = false,
                 maxDepth = 5,
             )

@@ -21,15 +21,14 @@ apply plugin: 'java'
 
 java {
     disableAutoTargetJvm()
+    targetCompatibility = "1.8"
+    sourceCompatibility = "1.8"
 }
 
 static def JvmVersionMeets(version) {
     def currentJvm = Jvm.current()
     return version <= Integer.parseInt(currentJvm.javaVersion.majorVersion)
 }
-
-targetCompatibility = "1.8"
-sourceCompatibility = "1.8"
 
 tasks.classes.dependsOn ':ext_natj_ios'
 

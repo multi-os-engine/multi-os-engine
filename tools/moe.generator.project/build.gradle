@@ -18,8 +18,10 @@ evaluationDependsOn ':moe.tools.common'
 
 apply plugin: 'java'
 
-sourceCompatibility = "1.8"
-targetCompatibility = "1.8"
+java {
+    sourceCompatibility = "1.8"
+    targetCompatibility = "1.8"
+}
 
 dependencies {
     implementation project(':moe.document.pbxproj')

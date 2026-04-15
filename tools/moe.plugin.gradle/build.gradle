@@ -39,8 +39,10 @@ String loadPluginVersion() {
 
 version loadPluginVersion()
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+java {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
 
 configurations {
     included

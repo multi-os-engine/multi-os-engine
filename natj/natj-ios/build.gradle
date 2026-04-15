@@ -14,13 +14,21 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+import org.gradle.process.ExecOperations
+import javax.inject.Inject
+
 apply plugin: 'maven-publish'
+
+interface InjectedExecOps {
+    @Inject ExecOperations getExecOps()
+}
 
 ext {
     nativeOutputs = []
 }
 
 def buildNativeTarget(xcodeproject, configuration, sdk, target) {
+    def execOps = project.objects.newInstance(InjectedExecOps).execOps
     task("build_${target}_${configuration}_${sdk}") {
         // Calculate product directory
         def productDest = "$buildDir/xcode/${configuration}-${sdk}"
@@ -45,7 +53,7 @@ def buildNativeTarget(xcodeproject, configuration, sdk, target) {
         // Add action
         doLast {
             try {
-                exec {
+                execOps.exec {
                     executable 'xcodebuild'
 
                     args '-project', xcodeproject

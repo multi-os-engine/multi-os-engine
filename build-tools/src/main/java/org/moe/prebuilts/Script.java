@@ -28,7 +28,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Script extends BaseTask {
+public abstract class Script extends BaseTask {
 
     private Map<String, String> envMap = new HashMap<>();
 

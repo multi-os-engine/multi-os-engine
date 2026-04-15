@@ -31,6 +31,7 @@ import org.gradle.api.tasks.Optional;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.SourceSet;
 import org.gradle.api.tasks.compile.JavaCompile;
+import org.gradle.util.GradleVersion;
 import org.moe.common.developer.ProvisioningProfile;
 import org.moe.document.pbxproj.PBXNativeTarget;
 import org.moe.document.pbxproj.PBXObject;
@@ -51,6 +52,7 @@ import org.moe.gradle.remote.Server;
 import org.moe.gradle.remote.ServerChannelException;
 import org.moe.gradle.remote.file.FileList;
 import org.moe.gradle.utils.Arch;
+import org.moe.gradle.utils.GradleCompatUtils;
 import org.moe.gradle.utils.Mode;
 import org.moe.gradle.utils.Require;
 
@@ -438,8 +440,10 @@ public abstract class XcodeBuild extends AbstractBaseTask {
                 excludes.add(classValidateTask.getLogFile());
 
                 final JavaCompile classesTask = classValidateTask.getJavaCompileTaskDep();
-                if (classesTask != null) {
-                    excludes.add(classesTask.getDestinationDir());
+                if (GradleVersion.current().compareTo(GradleVersion.version("6.1")) >= 0) {
+                    excludes.add(classesTask.getDestinationDirectory().getAsFile().get());
+                } else {
+                    excludes.add(GradleCompatUtils.legacyCall(classesTask, "getDestinationDir"));
                 }
 
                 final StartupProvider startupProviderTask = xcodeProvider.getStartupProviderTaskDep();

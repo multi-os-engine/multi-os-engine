@@ -20,8 +20,10 @@ repositories {
     mavenCentral()
 }
 
-sourceCompatibility = "1.8"
-targetCompatibility = "1.8"
+java {
+    sourceCompatibility = "1.8"
+    targetCompatibility = "1.8"
+}
 
 dependencies {
     testImplementation 'junit:junit:[4,)'
@@ -35,7 +37,7 @@ task processCxxTests(type: JavaExec) {
 
     classpath = files("../natj-processor/build/libs/natj-processor-${version}.jar", 'build/classes/test',
             '../build/classes/main', 'dyntype/build/classes/main')
-    main 'org.moe.natj.processor.Main'
+    mainClass = 'org.moe.natj.processor.Main'
 
     args '-i', 'build/classes/test'
     args '-o', 'build/classes/processedCxxTest'

@@ -21,6 +21,8 @@ java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(21)
     }
+    sourceCompatibility = "1.8"
+    targetCompatibility = "1.8"
 }
 
 def external_path = rootProject.file("../../external").absolutePath
@@ -35,9 +37,6 @@ sourceSets {
         }
     }
 }
-
-sourceCompatibility = "1.8"
-targetCompatibility = "1.8"
 
 dependencies {
     implementation 'org.moe:natj'

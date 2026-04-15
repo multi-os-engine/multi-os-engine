@@ -32,7 +32,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
-public class Prebuild extends BaseTask {
+public abstract class Prebuild extends BaseTask {
 
     private Map<String, String> envMap = new HashMap<>();
 

@@ -71,17 +71,14 @@ def gcc_version = 'gcc-13.2.0'
 
 task mingw(type: Script) {
     progress 'Checking system dependencies'
-    new ByteArrayOutputStream().withStream { os ->
-        try {
-            def result = exec { spec ->
-                spec.setExecutable("xcrun");
-                spec.args("--show-sdk-path");
-                standardOutput = os
-            }
-            print "MacOSX SDK found at $os"
-        } catch (ExecException) {
-            throw new GradleException("Cannot find a valid MacOSX SDK! Please make sure the Command Line Tools is installed!")
-        }
+    try {
+        def sdkPath = providers.exec {
+            executable = "xcrun"
+            args("--show-sdk-path")
+        }.standardOutput.asText.get().trim()
+        print "MacOSX SDK found at $sdkPath"
+    } catch (Exception ignored) {
+        throw new GradleException("Cannot find a valid MacOSX SDK! Please make sure the Command Line Tools is installed!")
     }
 
     progress 'Checking brew dependencies'

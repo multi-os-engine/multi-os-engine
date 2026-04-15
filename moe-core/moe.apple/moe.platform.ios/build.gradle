@@ -24,8 +24,15 @@ def JvmVersionMeets(version) {
     return version <= Integer.parseInt(currentJvm.javaVersion.majorVersion)
 }
 
-sourceCompatibility = "1.8"
-targetCompatibility = "1.8"
+java {
+    sourceCompatibility = "1.8"
+    targetCompatibility = "1.8"
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.fork = true
+    options.forkOptions.memoryMaximumSize = '6g'
+}
 
 tasks.classes.dependsOn ':ext_natj_ios'
 

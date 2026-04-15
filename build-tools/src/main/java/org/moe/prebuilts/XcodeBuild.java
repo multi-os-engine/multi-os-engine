@@ -30,7 +30,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class XcodeBuild extends BaseTask {
+public abstract class XcodeBuild extends BaseTask {
 
     private Map<String, String> envMap = new HashMap<>();
 

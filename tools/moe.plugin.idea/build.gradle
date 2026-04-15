@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 plugins {
-    id "org.jetbrains.intellij" version "1.17.4"
+    id "org.jetbrains.intellij.platform" version "2.14.0"
     id "org.jetbrains.kotlin.jvm"
 }
 
@@ -38,23 +38,21 @@ tasks.runIde {
     jvmArgs '-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005'
 }
 
-intellij {
-    // to test with Android Studio, use:
-    // version = 'AI-231.9392.1.2311.11076708'
-    version = 'IC-2022.2'
-    plugins = ['com.intellij.gradle', 'com.intellij.java']
-    pluginName = PLUGIN_NAME
-    downloadSources = true
-    updateSinceUntilBuild = false
-}
-
-publishPlugin {
-    if (project.hasProperty('intellij.publishToken')) {
-        token = project.property('intellij.publishToken')
+repositories {
+    mavenCentral()
+    intellijPlatform {
+        defaultRepositories()
     }
 }
 
 dependencies {
+    intellijPlatform {
+        // to test with Android Studio, use:
+        // create("AI", "2023.3.1.18")
+        create("IC", "2023.3.8")
+        bundledPlugins(["com.intellij.gradle", "com.intellij.java"])
+    }
+
     implementation project(':moe.tools.common')
     implementation project(':moe.document.pbxproj')
     implementation project(':moe.generator.project')
@@ -66,6 +64,22 @@ dependencies {
 
     testImplementation group: 'junit', name: 'junit', version: '4.12'
     implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.+'
+}
+
+intellijPlatform {
+    pluginConfiguration {
+        name = PLUGIN_NAME
+        ideaVersion {
+            sinceBuild = "233"
+            untilBuild = provider { null }
+        }
+    }
+
+    publishing {
+        if (project.hasProperty('intellij.publishToken')) {
+            token = project.property('intellij.publishToken')
+        }
+    }
 }
 
 publishing {

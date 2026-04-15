@@ -16,8 +16,10 @@ limitations under the License.
 
 apply plugin: 'java'
 
-targetCompatibility = 1.8
-sourceCompatibility = 1.8
+java {
+    targetCompatibility = 1.8
+    sourceCompatibility = 1.8
+}
 
 dependencies {
     implementation fileTree(dir: 'lib', include: ['*.jar'])

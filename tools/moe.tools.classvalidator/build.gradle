@@ -2,8 +2,10 @@ plugins {
     id "org.jetbrains.kotlin.jvm"
 }
 
-targetCompatibility = 1.8
-sourceCompatibility = 1.8
+java {
+    targetCompatibility = 1.8
+    sourceCompatibility = 1.8
+}
 
 dependencies {
     implementation project(':moe.tools.common')
