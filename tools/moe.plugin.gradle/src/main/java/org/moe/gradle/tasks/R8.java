@@ -33,6 +33,7 @@ import org.gradle.util.GradleVersion;
 import org.moe.common.utils.FileUtilsKt;
 import org.moe.gradle.MoeExtension;
 import org.moe.gradle.MoePlugin;
+import org.moe.gradle.utils.GradleCompatUtils;
 import org.moe.gradle.MoeSDK;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
@@ -306,7 +307,7 @@ public abstract class R8 extends AbstractBaseTask {
             if (GradleVersion.current().compareTo(GradleVersion.version("6.4")) >= 0) {
                 spec.getMainClass().set("com.android.tools.r8.R8");
             } else {
-                spec.setMain("com.android.tools.r8.R8");
+                GradleCompatUtils.legacyCall(spec, "setMain", "com.android.tools.r8.R8");
             }
             spec.classpath(getR8Jar());
             spec.args(args.toArray());

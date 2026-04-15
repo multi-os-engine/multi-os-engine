@@ -27,7 +27,7 @@ public class GradleCompatUtils {
         if (GradleVersion.current().compareTo(GradleVersion.version("5.1")) >= 0) {
             return task.getArchiveFile().get().getAsFile();
         } else {
-            return task.getArchivePath();
+            return legacyCall(task, "getArchivePath");
         }
     }
 }
