@@ -18,6 +18,7 @@ task('jdk_gensrc', type: Script) {
     progress 'Configure jdk'
 
     exec "sh", "-c", "patch -p1 < ${file("add_ios_build_support.patch").absolutePath}"
+    exec "sh", "-c", "patch -p1 < ${file("fix_memset_call.patch").absolutePath}"
 
 
     def JVMCI_VERSION = "jvmci-25.0.1-b01"
