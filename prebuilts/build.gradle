@@ -39,14 +39,14 @@ task cleanAll {
     }
 }
 
-subprojects {
-    it.afterEvaluate {
-        prebuildAll.dependsOn it.tasks['prebuild']
-        cleanAll.dependsOn it.tasks['clean']
-    }
+tasks.named('prebuildAll') {
+    dependsOn ':external:libffi:prebuild'
+}
+tasks.named('cleanAll') {
+    dependsOn ':external:libffi:clean'
 }
 
-ext.isAppleSilicon = System.getProperty("os.arch") == "aarch64"
+ext.isAppleSilicon = providers.systemProperty("os.arch").get() == "aarch64"
 
 def brewPath(suffix) {
     return (isAppleSilicon ? "/opt/homebrew/" : "/usr/local/") + suffix
@@ -129,7 +129,7 @@ task mingw(type: Script) {
     exec 'rm', '-rf', "${gcc_version}"
     exec 'tar', 'xjf', "${gcc_version}.tar.xz"
 
-    env 'PATH', "${file('mingw').absolutePath}/bin:${System.getenv('PATH')}"
+    env 'PATH', "${file('mingw').absolutePath}/bin:${providers.environmentVariable('PATH').get()}"
 
     progress "Building 64-bit $gcc_version"
     rawWorkDir 'mingw'

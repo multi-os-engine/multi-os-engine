@@ -14,6 +14,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+plugins {
+    id 'org.moe.buildtools'
+}
+
 for (target in ['ios', 'macos', 'windows', 'ndk', 'linux']) {
     task("prebuild_libffi_$target") {
         dependsOn gradle.includedBuild("prebuilts").task(":external:libffi:prebuild_$target")

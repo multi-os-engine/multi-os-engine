@@ -22,6 +22,7 @@ import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.Optional;
 
 import java.io.File;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -30,28 +31,33 @@ import java.util.Map;
 
 public abstract class Script extends BaseTask {
 
-    private Map<String, String> envMap = new HashMap<>();
+    private final Map<String, String> envMap = new HashMap<>();
 
     private String tempWorkDir;
 
-    private List<Runnable> runnables = new ArrayList<>();
+    private final List<Step> steps = new ArrayList<>();
 
     private String failureMessage;
 
+    @Internal
+    public List<Step> getSteps() {
+        return steps;
+    }
+
     @Override
     protected File logFile() {
-        return getProject().file("build/" + getName() + ".log");
+        return getProjectLayout().getProjectDirectory().file("build/" + getName() + ".log").getAsFile();
     }
 
     @Override
     protected void executeImpl() {
-        for (Runnable runnable : runnables) {
-            runnable.run();
+        for (Step step : steps) {
+            step.run(this);
         }
     }
 
     public String checkDir(String path) {
-        final File file = getProject().file(path);
+        final File file = getProjectLayout().getProjectDirectory().file(path).getAsFile();
         if (!file.exists() || !file.isDirectory()) {
             throw new GradleException("Directory doesn't exist! " + file.getAbsolutePath());
         }
@@ -71,7 +77,7 @@ public abstract class Script extends BaseTask {
             throw new NullPointerException();
         }
         this.tempWorkDir = "build/" + tempWorkDir;
-        getProject().file(this.tempWorkDir).mkdirs();
+        getProjectLayout().getProjectDirectory().file(this.tempWorkDir).getAsFile().mkdirs();
     }
 
     public void setRawWorkDir(String tempWorkDir) {
@@ -79,7 +85,7 @@ public abstract class Script extends BaseTask {
             throw new NullPointerException();
         }
         this.tempWorkDir = tempWorkDir;
-        getProject().file(this.tempWorkDir).mkdirs();
+        getProjectLayout().getProjectDirectory().file(this.tempWorkDir).getAsFile().mkdirs();
     }
 
     @Internal
@@ -87,7 +93,7 @@ public abstract class Script extends BaseTask {
         if (tempWorkDir == null) {
             throw new GradleException("workDir is not set");
         }
-        return getProject().file(tempWorkDir);
+        return getProjectLayout().getProjectDirectory().file(tempWorkDir).getAsFile();
     }
 
     @Input
@@ -112,7 +118,7 @@ public abstract class Script extends BaseTask {
     }
 
     public void progress(String msg) {
-        runnables.add(() -> System.out.println("> " + msg));
+        steps.add(new ProgressStep(msg));
     }
 
     public void rsync(File from, File to) {
@@ -129,17 +135,57 @@ public abstract class Script extends BaseTask {
     }
 
     public void exec(String exec, Iterable<String> args) {
-        final String failureMessage = this.failureMessage;
+        final ArrayList<String> argsCopy = new ArrayList<>();
+        for (String a : args) {
+            argsCopy.add(a);
+        }
+        steps.add(new ExecStep(exec, argsCopy, getWorkDir(),
+                new HashMap<>(this.envMap), this.failureMessage));
         this.failureMessage = null;
-        final File workDir = getWorkDir();
-        final HashMap<String, String> envMap = new HashMap<>(this.envMap);
-        runnables.add(() -> {
-            try {
-                exec(spec -> {
-                    getProject().mkdir(workDir);
-                    spec.workingDir(workDir);
+    }
 
-                    spec.setExecutable(exec);
+    public interface Step extends Serializable {
+        void run(Script script);
+    }
+
+    public static final class ProgressStep implements Step {
+        private static final long serialVersionUID = 1L;
+        private final String message;
+
+        public ProgressStep(String message) {
+            this.message = message;
+        }
+
+        @Override
+        public void run(Script script) {
+            System.out.println("> " + message);
+        }
+    }
+
+    public static final class ExecStep implements Step {
+        private static final long serialVersionUID = 1L;
+        private final String executable;
+        private final List<String> args;
+        private final File workDir;
+        private final Map<String, String> envMap;
+        private final String failureMessage;
+
+        public ExecStep(String executable, List<String> args, File workDir,
+                        Map<String, String> envMap, String failureMessage) {
+            this.executable = executable;
+            this.args = args;
+            this.workDir = workDir;
+            this.envMap = envMap;
+            this.failureMessage = failureMessage;
+        }
+
+        @Override
+        public void run(Script script) {
+            try {
+                script.exec(spec -> {
+                    workDir.mkdirs();
+                    spec.workingDir(workDir);
+                    spec.setExecutable(executable);
                     spec.args(args);
                     spec.getEnvironment().putAll(envMap);
                 });
@@ -149,6 +195,6 @@ public abstract class Script extends BaseTask {
                 }
                 throw t;
             }
-        });
+        }
     }
 }

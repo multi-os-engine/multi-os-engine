@@ -17,20 +17,22 @@ limitations under the License.
 apply plugin: 'base'
 apply plugin: 'maven-publish'
 
-task buildNative(type: Exec) {
-    if (System.getenv('NDK_PATH') == null) {
-        logger.warn('NDK_PATH env var is not set')
-    }
+def ndkPathProvider = providers.environmentVariable('NDK_PATH')
 
+if (!ndkPathProvider.isPresent()) {
+    logger.warn('NDK_PATH env var is not set')
+}
+
+task buildNative(type: Exec) {
     doFirst {
-        if (System.getenv('NDK_PATH') == null) {
+        if (!ndkPathProvider.isPresent()) {
             throw new GradleException('NDK_PATH env var is not set')
         }
     }
 
     dependsOn ":prebuild_libffi_ndk"
 
-    executable "${System.getenv('NDK_PATH')}/ndk-build"
+    executable "${ndkPathProvider.getOrElse('')}/ndk-build"
     args 'NDK_OUT=build/Release/obj'
     args 'NDK_APP_LIBS_OUT=build/Release/libs'
     def stdoutfile = file("build/ndk-build.log")
@@ -39,19 +41,15 @@ task buildNative(type: Exec) {
 }
 
 task buildNativeDebug(type: Exec) {
-    if (System.getenv('NDK_PATH') == null) {
-        logger.warn('NDK_PATH env var is not set')
-    }
-
     doFirst {
-        if (System.getenv('NDK_PATH') == null) {
+        if (!ndkPathProvider.isPresent()) {
             throw new GradleException('NDK_PATH env var is not set')
         }
     }
 
     dependsOn ":prebuild_libffi_ndk"
 
-    executable "${System.getenv('NDK_PATH')}/ndk-build"
+    executable "${ndkPathProvider.getOrElse('')}/ndk-build"
     args 'NDK_OUT=build/Debug/obj'
     args 'NDK_APP_LIBS_OUT=build/Debug/libs'
     args 'DEBUG=1'

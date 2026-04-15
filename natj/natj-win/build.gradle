@@ -16,6 +16,7 @@ limitations under the License.
 
 apply plugin: 'maven-publish'
 
+def envPath = providers.environmentVariable('PATH').get()
 def pm5_configs = ['Debug', 'Release']
 def pm5_platforms = [
         // [name: 'Win32', mingw: 'i686-w64-mingw32'],
@@ -43,7 +44,7 @@ def createBuildTask(pmProj, gDeps, pmConf, pmPlat, pmProducts, pm5_allOutputs) {
 
         workingDir 'build'
         executable "make"
-        environment 'PATH', "${System.getenv('PATH')}:${file('../../prebuilts/mingw/bin').absolutePath}"
+        environment 'PATH', "${envPath}:${file('../../prebuilts/mingw/bin').absolutePath}"
         args "CC=${pmPlat['mingw']}-g++"
         args "CXX=${pmPlat['mingw']}-g++"
         args "AR=${pmPlat['mingw']}-ar"

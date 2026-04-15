@@ -14,82 +14,47 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import org.gradle.process.ExecOperations
-import javax.inject.Inject
+import org.moe.prebuilts.XcodeBuild
+
+plugins {
+    id 'org.moe.buildtools'
+}
 
 apply plugin: 'maven-publish'
-
-interface InjectedExecOps {
-    @Inject ExecOperations getExecOps()
-}
 
 ext {
     nativeOutputs = []
 }
 
-def buildNativeTarget(xcodeproject, configuration, sdk, target) {
-    def execOps = project.objects.newInstance(InjectedExecOps).execOps
-    task("build_${target}_${configuration}_${sdk}") {
-        // Calculate product directory
-        def productDest = "$buildDir/xcode/${configuration}-${sdk}"
+def useAsan = providers.gradleProperty("moe.use.addresssanitizer").isPresent()
+def xcodeProjectDir = file("natj.xcodeproj")
 
-        // Disable incremental build, leave it to Xcode
-        inputs.property('timestamp', new Date().toString())
-
-        // Set inputs and outputs
-        inputs.dir rootProject.file('src')
-        inputs.dir 'natj.xcodeproj'
-        if (target == 'natj') {
-            outputs.file "${productDest}/libnatj.a"
-            project.nativeOutputs.plus "${productDest}/libnatj.a"
+def registerNativeTarget = { String cfg, String sdkArg, String tgt ->
+    def productDest = "$buildDir/xcode/${cfg}-${sdkArg}"
+    def outputFile = "${productDest}/libnatj.a"
+    project.nativeOutputs.add(outputFile)
+    return tasks.register("build_${tgt}_${cfg}_${sdkArg}", XcodeBuild) { XcodeBuild t ->
+        t.xcodeProject.set(xcodeProjectDir)
+        t.configuration = cfg
+        t.target = tgt
+        t.sdk = sdkArg
+        if (useAsan) {
+            t.extraArgs('-enableAddressSanitizer', 'YES')
         }
-        dependsOn ":prebuild_libffi_ios"
-
-        // Prepare log file
-        def log = file("${productDest}/build-${target}.log")
-        mkdir log.parentFile
-        outputs.file(log)
-
-        // Add action
-        doLast {
-            try {
-                execOps.exec {
-                    executable 'xcodebuild'
-
-                    args '-project', xcodeproject
-                    args '-target', target
-                    args '-sdk', sdk
-                    args '-configuration', configuration
-
-                    if (rootProject.hasProperty("moe.use.addresssanitizer")) {
-                        args '-enableAddressSanitizer', 'YES'
-                    }
-
-                    /*
-                     * Uncomment to enable build with address sanitizer, Xcode 7+ required
-                     */
-                    // args 'OTHER_CFLAGS=$(OTHER_CFLAGS) -fsanitize=address'
-
-                    setIgnoreExitValue false
-
-                    FileOutputStream ostream = new FileOutputStream(log);
-                    setErrorOutput(ostream)
-                    setStandardOutput(ostream)
-                }
-            } catch (GradleException ex) {
-                logger.error(log.text)
-                throw new GradleException("Failed to build native components", ex)
-            }
-        }
+        t.dependsOn ":prebuild_libffi_ios"
+        t.inputs.dir rootProject.file('src')
+        t.inputs.dir xcodeProjectDir
+        t.outputs.file outputFile
+        t.outputs.upToDateWhen { false }
     }
 }
 
 // Create build task
 task build {
-    dependsOn buildNativeTarget("natj.xcodeproj", "Release", "iphoneos", "natj")
-    dependsOn buildNativeTarget("natj.xcodeproj", "Release", "iphonesimulator", "natj")
-    dependsOn buildNativeTarget("natj.xcodeproj", "Debug", "iphoneos", "natj")
-    dependsOn buildNativeTarget("natj.xcodeproj", "Debug", "iphonesimulator", "natj")
+    dependsOn registerNativeTarget("Release", "iphoneos", "natj")
+    dependsOn registerNativeTarget("Release", "iphonesimulator", "natj")
+    dependsOn registerNativeTarget("Debug", "iphoneos", "natj")
+    dependsOn registerNativeTarget("Debug", "iphonesimulator", "natj")
 }
 
 task buildAll {

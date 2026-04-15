@@ -17,7 +17,10 @@ limitations under the License.
 package org.moe.prebuilts;
 
 import org.gradle.api.Project;
+import org.gradle.api.file.DirectoryProperty;
+import org.gradle.api.logging.Logger;
 import org.gradle.api.tasks.Input;
+import org.gradle.api.tasks.Internal;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -32,9 +35,14 @@ import java.util.Map;
 
 public abstract class XcodeBuild extends BaseTask {
 
-    private Map<String, String> envMap = new HashMap<>();
+    private final Map<String, String> envMap = new HashMap<>();
 
-    private List<String> buildOpts = new ArrayList<>();
+    private final List<String> buildOpts = new ArrayList<>();
+
+    private final List<String> extraArgs = new ArrayList<>();
+
+    @Internal
+    public abstract DirectoryProperty getXcodeProject();
 
     private String configuration;
 
@@ -88,21 +96,29 @@ public abstract class XcodeBuild extends BaseTask {
         return this;
     }
 
+    public XcodeBuild extraArgs(String... args) {
+        Collections.addAll(extraArgs, args);
+        return this;
+    }
+
     @Override
     protected File logFile() {
-        return getProject().file("build/" + getTarget() + "-" + getConfiguration() + "-" + getSdk() + ".log");
+        return getProjectLayout().getProjectDirectory()
+                .file("build/" + getTarget() + "-" + getConfiguration() + "-" + getSdk() + ".log").getAsFile();
     }
 
     @Override
     protected void executeImpl() {
-        final Path repoRoot = getProject().getRootProject().file("../..").toPath();
-        final SplitOutputStream output = new SplitOutputStream(getLog(), new XcodeOutputStream(repoRoot));
+        final Path repoRoot = new File(getRootProjectDirectory().get().getAsFile(), "../..").toPath();
+        final String xcodeProjectPath = getXcodeProject().get().getAsFile().getAbsolutePath();
+        final SplitOutputStream output = new SplitOutputStream(getLog(), new XcodeOutputStream(repoRoot, getLogger()));
         exec(spec -> {
             spec.setExecutable("xcodebuild");
-            spec.args("-project", getProject().file(getProject().getName() + ".xcodeproj").getAbsolutePath());
+            spec.args("-project", xcodeProjectPath);
             spec.args("-configuration", getConfiguration());
             spec.args("-sdk", getSdk());
             spec.args("-target", getTarget());
+            spec.args(extraArgs);
             spec.args(buildOpts);
             spec.setStandardOutput(output);
             spec.setErrorOutput(output);
@@ -156,13 +172,15 @@ public abstract class XcodeBuild extends BaseTask {
         return task;
     }
 
-    private class XcodeOutputStream extends OutputStream {
+    private static class XcodeOutputStream extends OutputStream {
 
         final ByteArrayOutputStream buffer;
         private final Path repoRoot;
+        private final Logger logger;
 
-        public XcodeOutputStream(Path repoRoot) {
+        public XcodeOutputStream(Path repoRoot, Logger logger) {
             this.repoRoot = repoRoot;
+            this.logger = logger;
             buffer = new ByteArrayOutputStream(1024);
             captureFailures = false;
         }
@@ -209,9 +227,9 @@ public abstract class XcodeBuild extends BaseTask {
             final String output = processLine(line, true);
             if (output != null) {
                 if (captureFailures) {
-                    getProject().getLogger().error("    Failed: " + output);
+                    logger.error("    Failed: " + output);
                 } else {
-                    getProject().getLogger().info("    " + output);
+                    logger.info("    " + output);
                 }
             }
         }

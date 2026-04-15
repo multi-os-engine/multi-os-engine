@@ -187,15 +187,19 @@ jar {
 // Write the plugin's classpath to a file to share with the tests
 task createClasspathManifest {
     def outputDir = file("$buildDir/$name")
+    def runtimeClasspath = sourceSets.main.runtimeClasspath
+    def includedClasspath = configurations.included
+    def sdkLocalBuildPath = project(':moe-sdk').file('build/dev-sdk')
+    def pluginVersion = project.version
 
-    inputs.files sourceSets.main.runtimeClasspath
+    inputs.files runtimeClasspath
     outputs.dir outputDir
 
     doLast {
         outputDir.mkdirs()
-        file("$outputDir/plugin-classpath.txt").text = (sourceSets.main.runtimeClasspath + configurations.included).join("\n")
-        file("$outputDir/plugin-sdk-localbuild.txt").text = project(':moe-sdk').file('build/dev-sdk')
-        file("$outputDir/plugin-version.txt").text = project.version
+        new File(outputDir, 'plugin-classpath.txt').text = (runtimeClasspath + includedClasspath).join("\n")
+        new File(outputDir, 'plugin-sdk-localbuild.txt').text = sdkLocalBuildPath.toString()
+        new File(outputDir, 'plugin-version.txt').text = pluginVersion.toString()
     }
 }
 

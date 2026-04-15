@@ -18,6 +18,7 @@ package org.moe.prebuilts;
 
 import org.gradle.api.GradleException;
 import org.gradle.api.file.CopySpec;
+import org.gradle.api.provider.Property;
 import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.InputDirectory;
 import org.gradle.api.tasks.Internal;
@@ -34,13 +35,13 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public abstract class Prebuild extends BaseTask {
 
-    private Map<String, String> envMap = new HashMap<>();
+    private final Map<String, String> envMap = new HashMap<>();
 
     private String sourcePath;
 
     @InputDirectory
     public File getSourceFile() {
-        return sourcePath == null ? null : getProject().getRootProject().file("../../" + sourcePath);
+        return sourcePath == null ? null : new File(getRootProjectDirectory().get().getAsFile(), "../../" + sourcePath);
     }
 
     private int ramdiskSizeMB = 256;
@@ -55,7 +56,7 @@ public abstract class Prebuild extends BaseTask {
     public File getOutputDirectory() {
         if (sourcePath == null) return null;
         if (targetName == null) return null;
-        return getProject().getRootProject().file(sourcePath + "/build/" + targetName);
+        return new File(getRootProjectDirectory().get().getAsFile(), sourcePath + "/build/" + targetName);
     }
 
     @Input
@@ -94,6 +95,9 @@ public abstract class Prebuild extends BaseTask {
         this.targetName = targetName;
     }
 
+    @Internal
+    public abstract Property<Boolean> getDontUnmount();
+
     // TODO: 13.06.2023 This is bad, since it won't rerun the task if it changes
     @Internal
     public CopySpec getPreBuildCopySpec() {
@@ -110,7 +114,7 @@ public abstract class Prebuild extends BaseTask {
 
     @Override
     protected File logFile() {
-        return getProject().file("build/" + targetName + "-build.log");
+        return getProjectLayout().getProjectDirectory().file("build/" + targetName + "-build.log").getAsFile();
     }
 
     @Override
@@ -148,14 +152,14 @@ public abstract class Prebuild extends BaseTask {
         try {
             rsync(path);
             if (preBuildCopySpec != null) {
-                getProject().copy(spec -> {
+                getFileSystemOperations().copy(spec -> {
                     spec.into(new File(path));
                     spec.with(preBuildCopySpec);
                 });
             }
             runBuildScript(path);
         } finally {
-            if (!getProject().hasProperty("moe.dontunmount")) {
+            if (!getDontUnmount().get()) {
                 exec(spec -> {
                     spec.setExecutable("diskutil");
                     spec.args("unmountDisk", mountpoint);
@@ -181,7 +185,7 @@ public abstract class Prebuild extends BaseTask {
         exec(spec -> {
             spec.setWorkingDir(ramdisk);
 
-            spec.environment("MOE_PREBUILTS_DIR", getProject().getRootProject().getProjectDir().toString());
+            spec.environment("MOE_PREBUILTS_DIR", getRootProjectDirectory().get().getAsFile().toString());
             spec.environment("MOE_PREBUILTS_TARGET_DIR", sourcePath + "/build/" + targetName);
             spec.getEnvironment().putAll(envMap);
 

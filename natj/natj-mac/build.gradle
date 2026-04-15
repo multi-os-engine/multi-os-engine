@@ -14,104 +14,71 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+import org.moe.prebuilts.XcodeBuild
 
-import org.gradle.process.ExecOperations
-import javax.inject.Inject
+plugins {
+    id 'org.moe.buildtools'
+}
 
 apply plugin: 'maven-publish'
-
-interface InjectedExecOps {
-    @Inject ExecOperations getExecOps()
-}
 
 ext {
     nativeOutputs = []
 }
 
-def createXcodeTask(xcodeproject, configuration, sdk, target) {
-    def execOps = project.objects.newInstance(InjectedExecOps).execOps
-    task("build_${target}_${configuration}_${sdk}") {
-        // Calculate product directory
-        def productDest = "$buildDir/xcode/${configuration}"
+def useAsan = providers.gradleProperty("moe.use.addresssanitizer").isPresent()
+def xcodeProjectDir = file("natj.xcodeproj")
 
-        // Disable incremental build, leave it to Xcode
-        inputs.property('timestamp', new Date().toString())
-
-        // Set inputs and outputs
-        inputs.dir rootProject.file('src')
-        inputs.dir 'natj.xcodeproj'
-        if (target == 'natj') {
-            outputs.file "${productDest}/libnatj.dylib"
-            project.nativeOutputs.plus "${productDest}/libnatj.dylib"
-        } else {
-            dependsOn "build_natj_${configuration}_${sdk}"
+def registerNativeTarget = { String cfg, String sdkArg, String tgt ->
+    def productDest = "$buildDir/xcode/${cfg}"
+    if (tgt == 'natj') {
+        project.nativeOutputs.add("${productDest}/libnatj.dylib")
+    }
+    return tasks.register("build_${tgt}_${cfg}_${sdkArg}", XcodeBuild) { XcodeBuild t ->
+        t.xcodeProject.set(xcodeProjectDir)
+        t.configuration = cfg
+        t.target = tgt
+        t.sdk = sdkArg
+        if (useAsan) {
+            t.extraArgs('-enableAddressSanitizer', 'YES')
         }
-        dependsOn ":prebuild_libffi_macos"
-
-        // Prepare log file
-        def log = file("${productDest}/build-${target}.log")
-        mkdir log.parentFile
-        outputs.file(log)
-
-        // Add action
-        doLast {
-            try {
-                execOps.exec {
-                    executable 'xcodebuild'
-
-                    args '-project', xcodeproject
-                    args '-target', target
-                    args '-sdk', sdk
-                    args '-configuration', configuration
-
-                    if (rootProject.hasProperty("moe.use.addresssanitizer")) {
-                        args '-enableAddressSanitizer', 'YES'
-                    }
-
-                    /*
-                     * Uncomment to enable build with address sanitizer, Xcode 7+ required
-                     */
-                    // args 'OTHER_CFLAGS=$(OTHER_CFLAGS) -fsanitize=address'
-
-                    setIgnoreExitValue false
-
-                    FileOutputStream ostream = new FileOutputStream(log);
-                    setErrorOutput(ostream)
-                    setStandardOutput(ostream)
-                }
-            } catch (GradleException ex) {
-                logger.error(log.text)
-                throw new GradleException("Failed to build native components", ex)
-            }
+        t.dependsOn ":prebuild_libffi_macos"
+        t.inputs.dir rootProject.file('src')
+        t.inputs.dir xcodeProjectDir
+        t.outputs.upToDateWhen { false }
+        if (tgt == 'natj') {
+            t.outputs.file "${productDest}/libnatj.dylib"
+        } else {
+            t.dependsOn "build_natj_${cfg}_${sdkArg}"
         }
     }
 }
 
 // Create build task
 task build {
-    dependsOn createXcodeTask("natj.xcodeproj", "Release", "macosx", "natj")
-    dependsOn createXcodeTask("natj.xcodeproj", "Debug", "macosx", "natj")
+    dependsOn registerNativeTarget("Release", "macosx", "natj")
+    dependsOn registerNativeTarget("Debug", "macosx", "natj")
 }
 
 // Create test tasks
 task build_TestClasses_macosx {
-    dependsOn createXcodeTask("natj.xcodeproj", "Release", "macosx", "TestClasses")
-    dependsOn createXcodeTask("natj.xcodeproj", "Debug", "macosx", "TestClasses")
+    dependsOn registerNativeTarget("Release", "macosx", "TestClasses")
+    dependsOn registerNativeTarget("Debug", "macosx", "TestClasses")
 }
 
 task build_TestClassesC_macosx {
-    dependsOn createXcodeTask("natj.xcodeproj", "Release", "macosx", "TestClassesC")
-    dependsOn createXcodeTask("natj.xcodeproj", "Debug", "macosx", "TestClassesC")
+    dependsOn registerNativeTarget("Release", "macosx", "TestClassesC")
+    dependsOn registerNativeTarget("Debug", "macosx", "TestClassesC")
 }
 
 task build_TestClassesCxx_macosx {
-    dependsOn createXcodeTask("natj.xcodeproj", "Release", "macosx", "TestClassesCxx")
-    dependsOn createXcodeTask("natj.xcodeproj", "Debug", "macosx", "TestClassesCxx")
+    dependsOn registerNativeTarget("Release", "macosx", "TestClassesCxx")
+    dependsOn registerNativeTarget("Debug", "macosx", "TestClassesCxx")
 }
 
 task build_TestClassesObjC_macosx {
-    dependsOn createXcodeTask("natj.xcodeproj", "Release", "macosx", "TestClassesObjC")
-    dependsOn createXcodeTask("natj.xcodeproj", "Debug", "macosx", "TestClassesObjC")
+    dependsOn registerNativeTarget("Release", "macosx", "TestClassesObjC")
+    dependsOn registerNativeTarget("Debug", "macosx", "TestClassesObjC")
 }
 
 task buildAll {

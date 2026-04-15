@@ -1,7 +1,17 @@
 import org.moe.prebuilts.XcodeBuild
 import org.moe.prebuilts.Script
+import org.gradle.api.file.FileSystemOperations
+import javax.inject.Inject
 
 apply plugin: 'base'
+
+interface InjectedFsOps {
+    @Inject FileSystemOperations getFs()
+}
+
+def fsOps = project.objects.newInstance(InjectedFsOps).fs
+def jdwpDestDir = file("build/jdwpBuild")
+def baseCapPath = rootProject.file("../tools/moe.tools.substrate/src/main/resources/")
 
 def graalDeps = [
         projects: [
@@ -10,12 +20,11 @@ def graalDeps = [
         ]
 ]
 
-def createJDWPJarBuild(String arch) {
+def createJDWPJarBuild = { String arch ->
+    def platform = arch == "arm64" ? "IOS_AARCH64" : "IOS_AMD64"
+    def cAbi = arch == "arm64" ? "MAC_OS_AARCH_64" : "SYS_V"
+    def buildPath = file("build/jdwpBuild$arch")
     return tasks.register("build_jdwp_${arch}_jar", Script) {
-        def baseCapPath = rootProject.file("../tools/moe.tools.substrate/src/main/resources/")
-        def platform = arch == "arm64" ? "IOS_AARCH64" : "IOS_AMD64"
-        def cAbi = arch == "arm64" ? "MAC_OS_AARCH_64" : "SYS_V"
-        def buildPath = file("build/jdwpBuild$arch")
 
         dependsOn(graalDistTask)
         inputs.dir(graalDist)
@@ -63,13 +72,13 @@ def createJDWPJarBuild(String arch) {
 
         doLast {
             def resultDir = buildPath.listFiles().find { it.name.startsWith("SVM-") }
-            copy {
+            fsOps.copy {
                 from(resultDir) {
                     include "svmjdwp.o"
                     rename "svmjdwp.o", "svmjdwp_${arch}.o"
                 }
 
-                into "build/jdwpBuild"
+                into jdwpDestDir
             }
         }
     }

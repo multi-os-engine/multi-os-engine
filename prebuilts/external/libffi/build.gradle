@@ -52,7 +52,7 @@ task prebuild_windows(type: Prebuild) {
     ramdiskSizeMB 128
     buildScript 'moe-prebuild-windows.sh'
     targetName 'windows'
-    env 'PATH', "${System.getenv('PATH')}:${rootProject.file('mingw/bin').absolutePath}"
+    env 'PATH', "${providers.environmentVariable('PATH').get()}:${rootProject.file('mingw/bin').absolutePath}"
     preBuildCopySpec copySpec {
         from('.') {
             include 'moe-prebuild-windows.sh'
@@ -67,7 +67,7 @@ task prebuild_linux(type: Prebuild) {
     ramdiskSizeMB 128
     buildScript 'moe-prebuild-linux.sh'
     targetName 'linux'
-    env 'PATH', "${System.getenv('PATH')}"
+    env 'PATH', "${providers.environmentVariable('PATH').get()}"
     preBuildCopySpec copySpec {
         from('.') {
             include 'moe-prebuild-linux.sh'

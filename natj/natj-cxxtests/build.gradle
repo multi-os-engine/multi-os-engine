@@ -67,10 +67,6 @@ tasks.withType(Test) {
     def nativeConfiguration = 'Release'
     dependsOn ":natj-mac:build_TestClassesCxx_${nativeConfiguration}_macosx"
 
-    doFirst {
-        sourceSets.test.output.classesDir = 'build/classes/processedCxxTest'
-    }
-
     systemProperty 'java.library.path', file("../natj-mac/build/xcode/${nativeConfiguration}")
     testClassesDirs = processCxxTests.outputs.files
     testLogging.showStandardStreams = true

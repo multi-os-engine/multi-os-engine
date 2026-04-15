@@ -19,8 +19,11 @@ package org.moe.prebuilts;
 import org.gradle.api.Action;
 import org.gradle.api.DefaultTask;
 import org.gradle.api.GradleException;
+import org.gradle.api.file.DirectoryProperty;
+import org.gradle.api.file.ProjectLayout;
+import org.gradle.api.file.FileSystemOperations;
+import org.gradle.api.provider.Property;
 import org.gradle.api.tasks.Internal;
-import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.TaskAction;
 import org.gradle.process.ExecOperations;
 import org.gradle.process.ExecResult;
@@ -37,6 +40,21 @@ abstract class BaseTask extends DefaultTask {
 
     @Inject
     protected abstract ExecOperations getExecOperations();
+
+    @Inject
+    protected abstract FileSystemOperations getFileSystemOperations();
+
+    @Inject
+    public abstract ProjectLayout getProjectLayout();
+
+    @Internal
+    public abstract Property<Boolean> getVerbose();
+
+    @Internal
+    public abstract DirectoryProperty getRootProjectDirectory();
+
+    @Internal
+    public abstract Property<String> getProjectName();
 
     private File logFile;
     private NonClosingFileOutputStream log;
@@ -60,13 +78,10 @@ abstract class BaseTask extends DefaultTask {
     @TaskAction
     public final void doExecute() {
         logFile = logFile();
-        if (logFile == null) {
-            throw new NullPointerException();
-        }
-        getProject().mkdir(logFile.getParentFile());
+        logFile.getParentFile().mkdirs();
 
         try {
-            log = new NonClosingFileOutputStream(logFile, getProject().hasProperty("moe.verbose"));
+            log = new NonClosingFileOutputStream(logFile, getVerbose().get());
         } catch (FileNotFoundException e) {
             throw new GradleException(e.getMessage(), e);
         }
@@ -74,12 +89,12 @@ abstract class BaseTask extends DefaultTask {
         try {
             executeImpl();
         } catch (Throwable e) {
-            System.err.println("Full rror log available at " + logFile.getAbsolutePath());
-            getProject().getLogger().error("--------- COMMAND LOG START ---------");
+            System.err.println("Full error log available at " + logFile.getAbsolutePath());
+            getLogger().error("--------- COMMAND LOG START ---------");
             try {
-                getProject().getLogger().error(Files.readString(logFile.toPath()));
+                getLogger().error(Files.readString(logFile.toPath()));
             } catch (IOException ignored) {}
-            getProject().getLogger().error("--------- COMMAND LOG END ---------");
+            getLogger().error("--------- COMMAND LOG END ---------");
             throw e;
         } finally {
             try {

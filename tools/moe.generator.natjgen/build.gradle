@@ -68,10 +68,8 @@ tasks.withType(Test) {
 }
 
 jar {
-    doFirst {
-        from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
-        exclude 'META-INF/*.SF'
-    }
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    exclude 'META-INF/*.SF'
 
     manifest {
         attributes("Class-Path": ".")
