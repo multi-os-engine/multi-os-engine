@@ -47,11 +47,11 @@ dependencies {
     natJGen "org.multi-os-engine:moe.generator.natjgen"
 }
 
-task updateNatJGenConfig(type: Exec) {
+tasks.register('updateNatJGenConfig', Exec) {
     commandLine = ["python3", "platform_natjgen_updater.py"]
 }
 
-task generateBindings(type: JavaExec) {
+tasks.register('generateBindings', JavaExec) {
     finalizedBy spotlessApply
 
     def tempFile = file("build/generate_bindings.log")
@@ -68,11 +68,11 @@ task generateBindings(type: JavaExec) {
     }
 }
 
-task removeOutdatedBindings(type: Exec) {
+tasks.register('removeOutdatedBindings', Exec) {
     commandLine = ["python3", "remove_deprecated_files.py", file("build/generate_bindings.log").absolutePath]
 }
 
-task applyManualBindingFixes(type: Exec) {
+tasks.register('applyManualBindingFixes', Exec) {
     commandLine = ["git", "apply", "fix_manual_binding_changes.patch"]
 }
 
@@ -83,13 +83,14 @@ tasks.javadoc {
     }
 }
 
-task javadocJar(type: Jar, dependsOn: javadoc) {
+tasks.register('javadocJar', Jar) {
+    dependsOn javadoc
     archiveBaseName = 'moe-ios'
     archiveClassifier = 'javadoc'
     from javadoc.destinationDir
 }
 
-task sourceJar(type: Jar) {
+tasks.register('sourceJar', Jar) {
     archiveBaseName = 'moe-ios'
     archiveClassifier = 'sources'
     from sourceSets.main.allSource

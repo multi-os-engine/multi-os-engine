@@ -19,8 +19,9 @@ plugins {
 }
 
 for (target in ['ios', 'macos', 'windows', 'ndk', 'linux']) {
-    task("prebuild_libffi_$target") {
-        dependsOn gradle.includedBuild("prebuilts").task(":external:libffi:prebuild_$target")
+    def t = target
+    tasks.register("prebuild_libffi_${t}") {
+        dependsOn gradle.includedBuild("prebuilts").task(":external:libffi:prebuild_${t}")
     }
 }
 
@@ -71,12 +72,12 @@ test {
     }
 }
 
-task sourcesJar(type: Jar) {
+tasks.register('sourcesJar', Jar) {
     archiveClassifier = 'sources'
     from sourceSets.main.allSource
 }
 
-task buildAll {
+tasks.register('buildAll') {
     dependsOn 'build'
     dependsOn ':natj-ios:buildAll'
     dependsOn ':natj-mac:buildAll'

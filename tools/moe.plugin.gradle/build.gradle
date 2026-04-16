@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-
 /*
 Copyright (C) 2016 Migeran
 
@@ -110,12 +108,13 @@ topDeps.each {topDep ->
 
 tasks.test.dependsOn ':moe-sdk:devsdk'
 
-task javadocJar(type: Jar, dependsOn: javadoc) {
+def javadocJar = tasks.register('javadocJar', Jar) {
+    dependsOn javadoc
     archiveClassifier = 'javadoc'
     from javadoc.destinationDir
 }
 
-task sourceJar(type: Jar) {
+def sourceJar = tasks.register('sourceJar', Jar) {
     archiveClassifier = 'sources'
     from sourceSets.main.allSource
 }
@@ -187,7 +186,7 @@ jar {
 }
 
 // Write the plugin's classpath to a file to share with the tests
-task createClasspathManifest {
+def createClasspathManifest = tasks.register('createClasspathManifest') {
     def outputDir = layout.buildDirectory.dir(name).get().asFile
     def runtimeClasspath = sourceSets.main.runtimeClasspath
     def includedClasspath = configurations.included

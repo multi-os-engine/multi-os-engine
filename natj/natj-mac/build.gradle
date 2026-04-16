@@ -56,42 +56,47 @@ def createXcodeTask = { xcodeproject, configuration, sdk, target ->
     }
 }
 
+// Register all XcodeBuild tasks at project evaluation time
+def xcodeTasks = { target ->
+    [createXcodeTask("natj.xcodeproj", "Release", "macosx", target),
+     createXcodeTask("natj.xcodeproj", "Debug", "macosx", target)]
+}
+
+def buildNatj = xcodeTasks("natj")
+def buildTestClasses = xcodeTasks("TestClasses")
+def buildTestClassesC = xcodeTasks("TestClassesC")
+def buildTestClassesCxx = xcodeTasks("TestClassesCxx")
+def buildTestClassesObjC = xcodeTasks("TestClassesObjC")
+
 // Create build task
-task build {
-    dependsOn createXcodeTask("natj.xcodeproj", "Release", "macosx", "natj")
-    dependsOn createXcodeTask("natj.xcodeproj", "Debug", "macosx", "natj")
+tasks.register('build') {
+    dependsOn buildNatj
 }
 
 // Create test tasks
-task build_TestClasses_macosx {
-    dependsOn createXcodeTask("natj.xcodeproj", "Release", "macosx", "TestClasses")
-    dependsOn createXcodeTask("natj.xcodeproj", "Debug", "macosx", "TestClasses")
+tasks.register('build_TestClasses_macosx') {
+    dependsOn buildTestClasses
 }
 
-task build_TestClassesC_macosx {
-    dependsOn createXcodeTask("natj.xcodeproj", "Release", "macosx", "TestClassesC")
-    dependsOn createXcodeTask("natj.xcodeproj", "Debug", "macosx", "TestClassesC")
+tasks.register('build_TestClassesC_macosx') {
+    dependsOn buildTestClassesC
 }
 
-task build_TestClassesCxx_macosx {
-    dependsOn createXcodeTask("natj.xcodeproj", "Release", "macosx", "TestClassesCxx")
-    dependsOn createXcodeTask("natj.xcodeproj", "Debug", "macosx", "TestClassesCxx")
+tasks.register('build_TestClassesCxx_macosx') {
+    dependsOn buildTestClassesCxx
 }
 
-task build_TestClassesObjC_macosx {
-    dependsOn createXcodeTask("natj.xcodeproj", "Release", "macosx", "TestClassesObjC")
-    dependsOn createXcodeTask("natj.xcodeproj", "Debug", "macosx", "TestClassesObjC")
+tasks.register('build_TestClassesObjC_macosx') {
+    dependsOn buildTestClassesObjC
 }
 
-task buildAll {
-    dependsOn build, build_TestClasses_macosx, build_TestClassesC_macosx, build_TestClassesCxx_macosx, build_TestClassesObjC_macosx
+tasks.register('buildAll') {
+    dependsOn 'build', 'build_TestClasses_macosx', 'build_TestClassesC_macosx', 'build_TestClassesCxx_macosx', 'build_TestClassesObjC_macosx'
 }
 
 // Create clean task
-task clean {
-    doLast {
-        delete layout.buildDirectory
-    }
+tasks.register('clean', Delete) {
+    delete layout.buildDirectory
 }
 
 // Setup publishing

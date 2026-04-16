@@ -49,22 +49,24 @@ def buildNativeTarget = { xcodeproject, configuration, sdk, target ->
 }
 
 // Create build task
-task build {
-    dependsOn buildNativeTarget("natj.xcodeproj", "Release", "iphoneos", "natj")
-    dependsOn buildNativeTarget("natj.xcodeproj", "Release", "iphonesimulator", "natj")
-    dependsOn buildNativeTarget("natj.xcodeproj", "Debug", "iphoneos", "natj")
-    dependsOn buildNativeTarget("natj.xcodeproj", "Debug", "iphonesimulator", "natj")
+def nativeTasks = [
+    buildNativeTarget("natj.xcodeproj", "Release", "iphoneos", "natj"),
+    buildNativeTarget("natj.xcodeproj", "Release", "iphonesimulator", "natj"),
+    buildNativeTarget("natj.xcodeproj", "Debug", "iphoneos", "natj"),
+    buildNativeTarget("natj.xcodeproj", "Debug", "iphonesimulator", "natj"),
+]
+
+tasks.register('build') {
+    dependsOn nativeTasks
 }
 
-task buildAll {
-    dependsOn build
+tasks.register('buildAll') {
+    dependsOn 'build'
 }
 
 // Create clean task
-task clean {
-    doLast {
-        delete layout.buildDirectory
-    }
+tasks.register('clean', Delete) {
+    delete layout.buildDirectory
 }
 
 // Setup publishing

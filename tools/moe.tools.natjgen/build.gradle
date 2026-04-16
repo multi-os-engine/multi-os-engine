@@ -38,8 +38,9 @@ jar {
     exclude 'META-INF/*.RSA', 'META-INF/*.SF', 'META-INF/*.DSA'
 }
 
-task installTestPod(type: Exec, dependsOn: 'processTestResources') {
+tasks.register('installTestPod', Exec) {
+    dependsOn 'processTestResources'
     workingDir 'build/resources/test/MyApp'
     commandLine '/usr/local/bin/pod', 'install', '--no-ansi', '--silent'
 }
-tasks.test.dependsOn installTestPod
+tasks.named('test') { dependsOn 'installTestPod' }

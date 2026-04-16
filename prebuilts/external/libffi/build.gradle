@@ -16,9 +16,7 @@ limitations under the License.
 
 import org.moe.prebuilts.Prebuild
 
-task prebuild {}
-
-task prebuild_ios(type: Prebuild) {
+tasks.register('prebuild_ios', Prebuild) {
     sourcePath 'external/libffi'
     ramdiskSizeMB 128
     buildScript 'moe-prebuild-ios.sh'
@@ -31,9 +29,8 @@ task prebuild_ios(type: Prebuild) {
         }
     }
 }
-prebuild.dependsOn prebuild_ios
 
-task prebuild_macos(type: Prebuild) {
+tasks.register('prebuild_macos', Prebuild) {
     sourcePath 'external/libffi'
     ramdiskSizeMB 128
     buildScript 'moe-prebuild-macos.sh'
@@ -45,9 +42,8 @@ task prebuild_macos(type: Prebuild) {
         }
     }
 }
-prebuild.dependsOn prebuild_macos
 
-task prebuild_windows(type: Prebuild) {
+tasks.register('prebuild_windows', Prebuild) {
     sourcePath 'external/libffi'
     ramdiskSizeMB 128
     buildScript 'moe-prebuild-windows.sh'
@@ -58,11 +54,10 @@ task prebuild_windows(type: Prebuild) {
             include 'moe-prebuild-windows.sh'
         }
     }
+    dependsOn ':mingwPresence'
 }
-prebuild_windows.dependsOn ':mingwPresence'
-prebuild.dependsOn prebuild_windows
 
-task prebuild_linux(type: Prebuild) {
+tasks.register('prebuild_linux', Prebuild) {
     sourcePath 'external/libffi'
     ramdiskSizeMB 128
     buildScript 'moe-prebuild-linux.sh'
@@ -73,12 +68,10 @@ task prebuild_linux(type: Prebuild) {
             include 'moe-prebuild-linux.sh'
         }
     }
+    dependsOn ':linuxCrosscompiler'
 }
 
-prebuild_linux.dependsOn ':linuxCrosscompiler'
-prebuild.dependsOn prebuild_linux
-
-task prebuild_ndk(type: Prebuild) {
+tasks.register('prebuild_ndk', Prebuild) {
     sourcePath 'external/libffi'
     ramdiskSizeMB 256
     buildScript 'moe-prebuild-ndk.sh'
@@ -89,10 +82,11 @@ task prebuild_ndk(type: Prebuild) {
         }
     }
 }
-prebuild.dependsOn prebuild_ndk
 
-task clean {
-    doLast {
-        delete('build')
-    }
+tasks.register('prebuild') {
+    dependsOn 'prebuild_ndk', 'prebuild_linux', 'prebuild_windows', 'prebuild_macos', 'prebuild_ios'
+}
+
+tasks.register('clean', Delete) {
+    delete 'build'
 }

@@ -27,8 +27,8 @@ dependencies {
     testImplementation group: 'commons-io', name: 'commons-io', version: '2.5'
 }
 
-task copyTestResources(type: Copy) {
+tasks.register('copyTestResources', Copy) {
     from "${projectDir}/src/test/resources"
     into layout.buildDirectory.dir("classes/test")
 }
-processTestResources.dependsOn copyTestResources
+tasks.named('processTestResources') { dependsOn 'copyTestResources' }

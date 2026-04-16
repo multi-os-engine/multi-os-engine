@@ -29,6 +29,7 @@ def createJDWPJarBuild = { String arch ->
         dependsOn(graalDistTask)
         inputs.dir(graalDist)
         inputs.dir(baseCapPath)
+        outputs.file(file("${jdwpDestDir}/svmjdwp_${arch}.o"))
 
         rawWorkDir "$buildPath"
         exec "rm", "-rf", file(workDir).absolutePath
@@ -94,22 +95,26 @@ tasks.register("build_jdwp_jar") {
 }
 
 
-XcodeBuild.createTask(project, "svmjdwp", "ios", "iphoneos", "Debug", graalDeps)
-        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
-        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
-        .dependsOn(build_jdwp_jar)
-XcodeBuild.createTask(project, "svmjdwp", "ios", "iphoneos", "Release", graalDeps)
-        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
-        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
-        .dependsOn(build_jdwp_jar)
-XcodeBuild.createTask(project, "svmjdwp", "ios", "iphonesimulator", "Debug", graalDeps)
-        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
-        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
-        .dependsOn(build_jdwp_jar)
-XcodeBuild.createTask(project, "svmjdwp", "ios", "iphonesimulator", "Release", graalDeps)
-        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
-        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
-        .dependsOn(build_jdwp_jar)
+XcodeBuild.registerTask(project, "svmjdwp", "ios", "iphoneos", "Debug", graalDeps) {
+    cond_buildopt(buildfilter.ios.archs, "ARCHS")
+    cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+    dependsOn('build_jdwp_jar')
+}
+XcodeBuild.registerTask(project, "svmjdwp", "ios", "iphoneos", "Release", graalDeps) {
+    cond_buildopt(buildfilter.ios.archs, "ARCHS")
+    cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+    dependsOn('build_jdwp_jar')
+}
+XcodeBuild.registerTask(project, "svmjdwp", "ios", "iphonesimulator", "Debug", graalDeps) {
+    cond_buildopt(buildfilter.ios.archs, "ARCHS")
+    cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+    dependsOn('build_jdwp_jar')
+}
+XcodeBuild.registerTask(project, "svmjdwp", "ios", "iphonesimulator", "Release", graalDeps) {
+    cond_buildopt(buildfilter.ios.archs, "ARCHS")
+    cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+    dependsOn('build_jdwp_jar')
+}
 
 tasks.build {
     def configs = ['Release']

@@ -16,15 +16,19 @@ limitations under the License.
 
 import org.moe.prebuilts.XcodeBuild
 
-XcodeBuild.createTask(project, "javasqlite", "ios", "iphoneos", "Debug")
-        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
-        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
-XcodeBuild.createTask(project, "javasqlite", "ios", "iphoneos", "Release")
-        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
-        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
-XcodeBuild.createTask(project, "javasqlite", "ios", "iphonesimulator", "Debug")
-        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
-        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
-XcodeBuild.createTask(project, "javasqlite", "ios", "iphonesimulator", "Release")
-        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
-        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+XcodeBuild.registerTask(project, "javasqlite", "ios", "iphoneos", "Debug") {
+    cond_buildopt(buildfilter.ios.archs, "ARCHS")
+    cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+}
+XcodeBuild.registerTask(project, "javasqlite", "ios", "iphoneos", "Release") {
+    cond_buildopt(buildfilter.ios.archs, "ARCHS")
+    cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+}
+XcodeBuild.registerTask(project, "javasqlite", "ios", "iphonesimulator", "Debug") {
+    cond_buildopt(buildfilter.ios.archs, "ARCHS")
+    cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+}
+XcodeBuild.registerTask(project, "javasqlite", "ios", "iphonesimulator", "Release") {
+    cond_buildopt(buildfilter.ios.archs, "ARCHS")
+    cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+}

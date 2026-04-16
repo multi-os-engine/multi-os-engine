@@ -42,7 +42,7 @@ jar {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
-task sourcesJar (type : Jar) {
+tasks.register('sourcesJar', Jar) {
     archiveClassifier = 'sources'
     from sourceSets.main.allSource
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE

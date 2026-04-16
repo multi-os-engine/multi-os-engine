@@ -82,7 +82,7 @@ subprojects {
     def subproject = it
     afterEvaluate {
         if (subproject.tasks.findByName('clean')) return
-        subproject.tasks.create('clean', Delete) {
+        subproject.tasks.register('clean', Delete) {
             delete subproject.file('build')
         }
     }

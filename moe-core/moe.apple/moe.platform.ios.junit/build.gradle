@@ -50,13 +50,14 @@ tasks.javadoc {
     }
 }
 
-task javadocJar(type: Jar, dependsOn: javadoc) {
+tasks.register('javadocJar', Jar) {
+    dependsOn javadoc
     archiveBaseName = 'moe-ios-junit'
     archiveClassifier = 'javadoc'
     from javadoc.destinationDir
 }
 
-task sourceJar(type: Jar) {
+tasks.register('sourceJar', Jar) {
     archiveBaseName = 'moe-ios-junit'
     archiveClassifier = 'sources'
     from sourceSets.main.allSource

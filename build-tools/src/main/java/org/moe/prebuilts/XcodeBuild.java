@@ -16,11 +16,14 @@ limitations under the License.
 
 package org.moe.prebuilts;
 
+import groovy.lang.Closure;
+
 import org.gradle.api.Project;
 import org.gradle.api.file.DirectoryProperty;
 import org.gradle.api.logging.Logger;
 import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.Internal;
+import org.gradle.api.tasks.TaskProvider;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -126,13 +129,13 @@ public abstract class XcodeBuild extends BaseTask {
         });
     }
 
-    public static XcodeBuild createTask(Project project, String target, String platform, String sdk,
-            String configuration) {
-        return createTask(project, target, platform, sdk, configuration, Collections.emptyMap());
+    public static TaskProvider<XcodeBuild> registerTask(Project project, String target, String platform,
+            String sdk, String configuration, Closure configClosure) {
+        return registerTask(project, target, platform, sdk, configuration, Collections.emptyMap(), configClosure);
     }
 
-    public static XcodeBuild createTask(Project project, String target, String platform, String sdk,
-            String configuration, Map<String, Object> deps) {
+    public static TaskProvider<XcodeBuild> registerTask(Project project, String target, String platform,
+            String sdk, String configuration, Map<String, Object> deps, Closure configClosure) {
         // Construct name
         String name = "build";
         name += "_" + target;
@@ -140,36 +143,39 @@ public abstract class XcodeBuild extends BaseTask {
         name += "_" + sdk;
         name += "_" + configuration.toLowerCase();
 
-        // Create task
-        final XcodeBuild task = project.getTasks().create(name, XcodeBuild.class, xcodeBuild -> {
+        // Register task lazily
+        return project.getTasks().register(name, XcodeBuild.class, xcodeBuild -> {
             xcodeBuild.setConfiguration(configuration + "-" + platform);
             xcodeBuild.setTarget(target);
             xcodeBuild.setSdk(sdk);
-        });
 
-        // Calculate dependencies
-        final List projects = (List)deps.get("projects");
-        if (projects != null) {
-            for (Object _project : projects) {
-                String p = (String)_project;
-                String t;
-                if (p.contains("@")) {
-                    t = p.substring(p.lastIndexOf('@') + 1);
-                    p = p.substring(0, p.lastIndexOf('@'));
-                } else {
-                    t = p.substring(p.lastIndexOf('.') + 1);
+            // Calculate dependencies
+            @SuppressWarnings("unchecked")
+            final List<String> projects = (List<String>)deps.get("projects");
+            if (projects != null) {
+                for (String proj : projects) {
+                    String p = proj;
+                    String t;
+                    if (p.contains("@")) {
+                        t = p.substring(p.lastIndexOf('@') + 1);
+                        p = p.substring(0, p.lastIndexOf('@'));
+                    } else {
+                        t = p.substring(p.lastIndexOf('.') + 1);
+                    }
+
+                    String n = "build";
+                    n += "_" + t;
+                    n += "_" + platform;
+                    n += "_" + sdk;
+                    n += "_" + configuration.toLowerCase();
+                    xcodeBuild.dependsOn(p + ":" + n);
                 }
-
-                String n = "build";
-                n += "_" + t;
-                n += "_" + platform;
-                n += "_" + sdk;
-                n += "_" + configuration.toLowerCase();
-                task.dependsOn(p + ":" + n);
             }
-        }
 
-        return task;
+            configClosure.setDelegate(xcodeBuild);
+            configClosure.setResolveStrategy(Closure.DELEGATE_FIRST);
+            configClosure.call(xcodeBuild);
+        });
     }
 
     private static class XcodeOutputStream extends OutputStream {

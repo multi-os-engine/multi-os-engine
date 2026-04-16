@@ -53,10 +53,11 @@ for (target in [[name: 'ios', outputs: ["${external.natj.root}/natj-ios/build/xc
                                         "${external.natj.root}/natj-ios/build/xcode/Release-iphonesimulator/libnatj.a"]],
                 [name: 'mac', outputs: ["${external.natj.root}/natj-mac/build/xcode/Release/libnatj.dylib"]],
                 [name: 'win', outputs: ["${external.natj.root}/natj-win/build/Release-Win64/natj.dll"]]]) {
-    external.natj[target.name] = target.outputs.collect { file(it) }
+    def targetName = target.name
+    external.natj[targetName] = target.outputs.collect { file(it) }
 
-    task("ext_natj_${target.name}") {
-        dependsOn gradle.includedBuild("natj").task(":natj-${target.name}:build")
+    tasks.register("ext_natj_${targetName}") {
+        dependsOn gradle.includedBuild("natj").task(":natj-${targetName}:build")
     }
 }
 
@@ -83,7 +84,7 @@ subprojects.each { subproject ->
 }
 
 def createBrewCheckExecTask(def execname) {
-    tasks.create("check_exec_${execname}", Script) {
+    tasks.register("check_exec_${execname}", Script) {
         workDir '.'
         failureMessage """
     Error: ${execname} is not installed, please run `brew install ${execname}` to install.
@@ -93,7 +94,7 @@ def createBrewCheckExecTask(def execname) {
 }
 
 def createCheckExecTask(def execname, def failmsg) {
-    tasks.create("check_exec_${execname}", Script) {
+    tasks.register("check_exec_${execname}", Script) {
         workDir '.'
         failureMessage failmsg
         exec 'which', execname

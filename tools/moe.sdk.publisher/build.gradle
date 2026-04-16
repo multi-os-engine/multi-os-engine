@@ -39,29 +39,30 @@ def projectDeps = [
 
 projectDeps.each { evaluationDependsOn it }
 
-task downloadR8(type: Download) {
+def r8Dest = layout.buildDirectory.file("r8/r8lib.jar").get().asFile
+
+tasks.register('downloadR8', Download) {
     src 'https://storage.googleapis.com/r8-releases/raw/8.13.17/r8lib.jar'
-    dest layout.buildDirectory.file("r8/r8lib.jar").get().asFile
+    dest r8Dest
     onlyIfModified true
 }
 
-task verifyR8(type: Verify, dependsOn: downloadR8) {
-    src downloadR8.dest
+tasks.register('verifyR8', Verify) {
+    dependsOn 'downloadR8'
+    src r8Dest
     algorithm 'SHA-256'
     checksum 'd31fd0dc751d48740009cdd9a485126acb1d0d14c59b9f05579479940f4adf74'
 }
 
-task buildDeps {
+tasks.register('buildDeps') {
     projectDeps.each {
         dependsOn project(it).tasks.build
     }
-    dependsOn verifyR8
-}
-
-tasks.buildDeps.dependsOn(":ext_moe_core")
-
-if (!rootProject.hasProperty('moe.tools.sdk.exclude_mac')) {
-    tasks.buildDeps.dependsOn ':ext_natj_mac'
+    dependsOn 'verifyR8'
+    dependsOn ':ext_moe_core'
+    if (!rootProject.hasProperty('moe.tools.sdk.exclude_mac')) {
+        dependsOn ':ext_natj_mac'
+    }
 }
 
 def buildfiles(def proj, def subpath, def closure) {
@@ -184,11 +185,13 @@ def getSDKCopySpec() {
     }
 }
 
-task sdk(type: Zip, dependsOn: buildDeps) {
+def sdk = tasks.register('sdk', Zip) {
+    dependsOn 'buildDeps'
     with getSDKCopySpec()
 }
 
-task devsdk(type: Copy, dependsOn: buildDeps) {
+tasks.register('devsdk', Copy) {
+    dependsOn 'buildDeps'
     destinationDir = layout.buildDirectory.dir("dev-sdk").get().asFile
     with getSDKCopySpec()
 }
@@ -196,7 +199,7 @@ task devsdk(type: Copy, dependsOn: buildDeps) {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifact sdk {}
+            artifact sdk
             artifactId = 'moe-sdk'
 
             pom {

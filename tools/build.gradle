@@ -36,8 +36,9 @@ ext {
 for (target in [[name: 'ios'],
                 [name: 'macos'],
                 [name: 'windows']]) {
-    task("prebuild_libffi_$target.name") {
-        dependsOn gradle.includedBuild("prebuilts").task(":external:libffi:prebuild_${target.name}")
+    def targetName = target.name
+    tasks.register("prebuild_libffi_${targetName}") {
+        dependsOn gradle.includedBuild("prebuilts").task(":external:libffi:prebuild_${targetName}")
     }
 }
 
@@ -54,10 +55,11 @@ for (target in [[name: 'ios', outputs: ["${external.natj.root}/natj-ios/build/xc
                 [name: 'mac', outputs: ["${external.natj.root}/natj-mac/build/xcode/Release/libnatj.dylib"]],
                 [name: 'win', outputs: ["${external.natj.root}/natj-win/build/Release-Win64/natj.dll"]],
                 [name: 'linux', outputs: ["${external.natj.root}/natj-linux/build/Release/libnatj.so"]]]) {
-    external.natj[target.name] = target.outputs.collect { file(it) }
+    def targetName = target.name
+    external.natj[targetName] = target.outputs.collect { file(it) }
 
-    task("ext_natj_${target.name}") {
-        dependsOn gradle.includedBuild("natj").task(":natj-${target.name}:build")
+    tasks.register("ext_natj_${targetName}") {
+        dependsOn gradle.includedBuild("natj").task(":natj-${targetName}:build")
     }
 }
 
@@ -101,11 +103,11 @@ ext {
     }
 }
 
-task("build_ext_moe_core") {
+tasks.register("build_ext_moe_core") {
     dependsOn gradle.includedBuild("moe-core").task(":build")
 }
 
-task("ext_moe_core") {
+tasks.register("ext_moe_core") {
     dependsOn "build_ext_moe_core"
 }
 

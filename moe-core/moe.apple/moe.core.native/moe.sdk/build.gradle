@@ -26,26 +26,30 @@ def graalDeps = [
         ]
 ]
 
-XcodeBuild.createTask(project, "sdk", "ios", "iphoneos", "Debug", graalDeps)
-        .cond_buildopt(rootProject.version.toString(), 'GRADLE_BUILD_VERSION')
-        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
-        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
-        .dependsOn(':ext_natj_ios')
-XcodeBuild.createTask(project, "sdk", "ios", "iphoneos", "Release", graalDeps)
-        .cond_buildopt(rootProject.version.toString(), 'GRADLE_BUILD_VERSION')
-        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
-        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
-        .dependsOn(':ext_natj_ios')
-XcodeBuild.createTask(project, "sdk", "ios", "iphonesimulator", "Debug", graalDeps)
-        .cond_buildopt(rootProject.version.toString(), 'GRADLE_BUILD_VERSION')
-        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
-        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
-        .dependsOn(':ext_natj_ios')
-XcodeBuild.createTask(project, "sdk", "ios", "iphonesimulator", "Release", graalDeps)
-        .cond_buildopt(rootProject.version.toString(), 'GRADLE_BUILD_VERSION')
-        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
-        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
-        .dependsOn(':ext_natj_ios')
+XcodeBuild.registerTask(project, "sdk", "ios", "iphoneos", "Debug", graalDeps) {
+    cond_buildopt(rootProject.version.toString(), 'GRADLE_BUILD_VERSION')
+    cond_buildopt(buildfilter.ios.archs, "ARCHS")
+    cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+    dependsOn(':ext_natj_ios')
+}
+XcodeBuild.registerTask(project, "sdk", "ios", "iphoneos", "Release", graalDeps) {
+    cond_buildopt(rootProject.version.toString(), 'GRADLE_BUILD_VERSION')
+    cond_buildopt(buildfilter.ios.archs, "ARCHS")
+    cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+    dependsOn(':ext_natj_ios')
+}
+XcodeBuild.registerTask(project, "sdk", "ios", "iphonesimulator", "Debug", graalDeps) {
+    cond_buildopt(rootProject.version.toString(), 'GRADLE_BUILD_VERSION')
+    cond_buildopt(buildfilter.ios.archs, "ARCHS")
+    cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+    dependsOn(':ext_natj_ios')
+}
+XcodeBuild.registerTask(project, "sdk", "ios", "iphonesimulator", "Release", graalDeps) {
+    cond_buildopt(rootProject.version.toString(), 'GRADLE_BUILD_VERSION')
+    cond_buildopt(buildfilter.ios.archs, "ARCHS")
+    cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+    dependsOn(':ext_natj_ios')
+}
 
 tasks.build {
     def configs = ['Release']

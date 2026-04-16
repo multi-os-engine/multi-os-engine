@@ -1,2 +1,2 @@
-task prebuild {}
-task clean {}
+tasks.register('prebuild')
+tasks.register('clean')

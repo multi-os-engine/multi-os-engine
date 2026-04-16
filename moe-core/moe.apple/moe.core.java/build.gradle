@@ -59,7 +59,7 @@ jar {
     includeEmptyDirs false
 }
 
-task sourceJar(type: Jar) {
+tasks.register('sourceJar', Jar) {
     archiveBaseName = 'moe-core'
     archiveClassifier = 'sources'
 
@@ -82,7 +82,8 @@ javadoc {
     options.addStringOption('source', '1.8')
 }
 
-task javadocJar(type: Jar, dependsOn: javadoc) {
+tasks.register('javadocJar', Jar) {
+    dependsOn javadoc
     archiveBaseName = 'moe-core'
     archiveClassifier = 'javadoc'
 
