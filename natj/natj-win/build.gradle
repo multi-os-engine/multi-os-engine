@@ -24,7 +24,7 @@ def pm5_platforms = [
 ]
 def pm5_allOutputs = []
 
-def createBuildTask(pmProj, gDeps, pmConf, pmPlat, pmProducts, pm5_allOutputs) {
+def createBuildTask = { pmProj, gDeps, pmConf, pmPlat, pmProducts ->
     def tName = "build_${pmProj}_${pmConf}_${pmPlat['name']}"
     def tOutputs = [
             "build/obj/${pmPlat['name']}/${pmConf}/${pmProj}",
@@ -84,13 +84,13 @@ def pm_TestClassesCTasks = []
 for (conf in pm5_configs) {
     for (plat in pm5_platforms) {
         pm_NatJStaticTasks += createBuildTask('NatJStatic',
-                [premake], conf, plat, ['natj-static.a'], pm5_allOutputs)
+                [premake], conf, plat, ['natj-static.a'])
         pm_NatJTasks += createBuildTask('NatJ',
-                ['NatJStatic'], conf, plat, ['natj.lib', 'natj.dll'], pm5_allOutputs)
+                ['NatJStatic'], conf, plat, ['natj.lib', 'natj.dll'])
         pm_TestClassesCxxTasks += createBuildTask('TestClassesCxx',
-                ['NatJStatic'], conf, plat, ['TestClassesCxx.lib', 'TestClassesCxx.dll'], pm5_allOutputs)
+                ['NatJStatic'], conf, plat, ['TestClassesCxx.lib', 'TestClassesCxx.dll'])
         pm_TestClassesCTasks += createBuildTask('TestClassesC',
-                ['NatJStatic'], conf, plat, ['TestClassesC.lib', 'TestClassesC.dll'], pm5_allOutputs)
+                ['NatJStatic'], conf, plat, ['TestClassesC.lib', 'TestClassesC.dll'])
     }
 }
 

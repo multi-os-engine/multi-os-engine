@@ -27,34 +27,33 @@ ext {
 }
 
 def useAsan = providers.gradleProperty("moe.use.addresssanitizer").isPresent()
-def xcodeProjectDir = file("natj.xcodeproj")
 
-def registerNativeTarget = { String cfg, String sdkArg, String tgt ->
-    def productDest = "$buildDir/xcode/${cfg}-${sdkArg}"
+def buildNativeTarget = { xcodeproject, configuration, sdk, target ->
+    def productDest = "$buildDir/xcode/${configuration}-${sdk}"
     def outputFile = "${productDest}/libnatj.a"
     project.nativeOutputs.add(outputFile)
-    return tasks.register("build_${tgt}_${cfg}_${sdkArg}", XcodeBuild) { XcodeBuild t ->
-        t.xcodeProject.set(xcodeProjectDir)
-        t.configuration = cfg
-        t.target = tgt
-        t.sdk = sdkArg
+    return tasks.register("build_${target}_${configuration}_${sdk}", XcodeBuild) {
+        xcodeProject.set(file(xcodeproject))
+        setConfiguration(configuration)
+        setTarget(target)
+        setSdk(sdk)
         if (useAsan) {
-            t.extraArgs('-enableAddressSanitizer', 'YES')
+            extraArgs('-enableAddressSanitizer', 'YES')
         }
-        t.dependsOn ":prebuild_libffi_ios"
-        t.inputs.dir rootProject.file('src')
-        t.inputs.dir xcodeProjectDir
-        t.outputs.file outputFile
-        t.outputs.upToDateWhen { false }
+        dependsOn ":prebuild_libffi_ios"
+        inputs.dir rootProject.file('src')
+        inputs.dir file(xcodeproject)
+        outputs.file outputFile
+        outputs.upToDateWhen { false }
     }
 }
 
 // Create build task
 task build {
-    dependsOn registerNativeTarget("Release", "iphoneos", "natj")
-    dependsOn registerNativeTarget("Release", "iphonesimulator", "natj")
-    dependsOn registerNativeTarget("Debug", "iphoneos", "natj")
-    dependsOn registerNativeTarget("Debug", "iphonesimulator", "natj")
+    dependsOn buildNativeTarget("natj.xcodeproj", "Release", "iphoneos", "natj")
+    dependsOn buildNativeTarget("natj.xcodeproj", "Release", "iphonesimulator", "natj")
+    dependsOn buildNativeTarget("natj.xcodeproj", "Debug", "iphoneos", "natj")
+    dependsOn buildNativeTarget("natj.xcodeproj", "Debug", "iphonesimulator", "natj")
 }
 
 task buildAll {
