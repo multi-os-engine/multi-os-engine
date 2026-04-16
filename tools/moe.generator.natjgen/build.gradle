@@ -21,7 +21,7 @@ java {
     sourceCompatibility = "1.8"
 }
 
-if (!rootProject.hasProperty('moe.tools.sdk.win_only')) {
+if (!rootProject.hasProperty('moe.tools.sdk.exclude_mac')) {
     tasks.classes.dependsOn ':ext_natj_mac'
 }
 
