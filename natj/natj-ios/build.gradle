@@ -29,7 +29,7 @@ ext {
 def useAsan = providers.gradleProperty("moe.use.addresssanitizer").isPresent()
 
 def buildNativeTarget = { xcodeproject, configuration, sdk, target ->
-    def productDest = "$buildDir/xcode/${configuration}-${sdk}"
+    def productDest = layout.buildDirectory.dir("xcode/${configuration}-${sdk}").get().asFile.path
     def outputFile = "${productDest}/libnatj.a"
     project.nativeOutputs.add(outputFile)
     return tasks.register("build_${target}_${configuration}_${sdk}", XcodeBuild) {
@@ -63,7 +63,7 @@ task buildAll {
 // Create clean task
 task clean {
     doLast {
-        delete buildDir
+        delete layout.buildDirectory
     }
 }
 

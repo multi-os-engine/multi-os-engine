@@ -39,11 +39,9 @@ def projectDeps = [
 
 projectDeps.each { evaluationDependsOn it }
 
-mkdir buildDir
-
 task downloadR8(type: Download) {
     src 'https://storage.googleapis.com/r8-releases/raw/8.13.17/r8lib.jar'
-    dest "${project.buildDir}/r8/r8lib.jar"
+    dest layout.buildDirectory.file("r8/r8lib.jar").get().asFile
     onlyIfModified true
 }
 
@@ -67,7 +65,7 @@ if (!rootProject.hasProperty('moe.tools.sdk.exclude_mac')) {
 }
 
 def buildfiles(def proj, def subpath, def closure) {
-    files("${project(proj).buildDir.absolutePath}/$subpath", closure)
+    files("${project(proj).layout.buildDirectory.get().asFile.absolutePath}/$subpath", closure)
 }
 
 def getSDKCopySpec() {
@@ -191,7 +189,7 @@ task sdk(type: Zip, dependsOn: buildDeps) {
 }
 
 task devsdk(type: Copy, dependsOn: buildDeps) {
-    destinationDir = file("$buildDir/dev-sdk")
+    destinationDir = layout.buildDirectory.dir("dev-sdk").get().asFile
     with getSDKCopySpec()
 }
 

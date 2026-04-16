@@ -103,11 +103,6 @@ jar {
     from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
 }
 
-artifacts {
-    archives javadocJar
-    archives sourceJar
-}
-
 spotless {
     java {
         target("src/main/java/apple/**")

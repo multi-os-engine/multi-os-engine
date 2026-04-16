@@ -3,3 +3,4 @@ external/
 .repo/
 .idea
 .gradle
+tools/.intellijPlatform/

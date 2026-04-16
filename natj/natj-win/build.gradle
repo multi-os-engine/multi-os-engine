@@ -16,10 +16,9 @@ limitations under the License.
 
 apply plugin: 'maven-publish'
 
-def envPath = providers.environmentVariable('PATH').get()
+def envPath = providers.environmentVariable('PATH')
 def pm5_configs = ['Debug', 'Release']
 def pm5_platforms = [
-        // [name: 'Win32', mingw: 'i686-w64-mingw32'],
         [name: 'Win64', mingw: 'x86_64-w64-mingw32']
 ]
 def pm5_allOutputs = []
@@ -41,24 +40,29 @@ def createBuildTask = { pmProj, gDeps, pmConf, pmPlat, pmProducts ->
             }
         }
         dependsOn ":prebuild_libffi_windows"
+        if (pmProj == 'TestClassesCxx') {
+            dependsOn ':natj-cxxtests:processCxxTests'
+        }
 
         workingDir 'build'
         executable "make"
-        environment 'PATH', "${envPath}:${file('../../prebuilts/mingw/bin').absolutePath}"
         args "CC=${pmPlat['mingw']}-g++"
         args "CXX=${pmPlat['mingw']}-g++"
         args "AR=${pmPlat['mingw']}-ar"
         args "LD=${pmPlat['mingw']}-ld"
         args "config=${"${pmConf}_${pmPlat['name']}".toLowerCase()}"
         args pmProj
-        args "-j${Runtime.getRuntime().availableProcessors()}"
         args 'verbose=1'
         inputs.property 'fake-time', System.currentTimeMillis()
         def stdoutfile = file("build/native-logs/${tName}.log")
-        stdoutfile.parentFile.mkdirs()
         outputs.dirs tOutputs
         outputs.files stdoutfile
-        standardOutput = new FileOutputStream(stdoutfile)
+        doFirst {
+            environment 'PATH', "${envPath.get()}:${file('../../prebuilts/mingw/bin').absolutePath}"
+            args "-j${Runtime.getRuntime().availableProcessors()}"
+            stdoutfile.parentFile.mkdirs()
+            standardOutput = new FileOutputStream(stdoutfile)
+        }
     }
 }
 
@@ -72,8 +76,10 @@ task premake(type: Exec) {
     inputs.files files('premake5.lua')
     outputs.files files('build/Makefile', 'build/NatJ.make', 'build/NatJStatic.make', 'build/TestClassesCxx.make')
     def stdoutfile = file("build/native-logs/premake5.log")
-    stdoutfile.parentFile.mkdirs()
-    standardOutput = new FileOutputStream(stdoutfile)
+    doFirst {
+        stdoutfile.parentFile.mkdirs()
+        standardOutput = new FileOutputStream(stdoutfile)
+    }
 }
 
 def pm_NatJStaticTasks = []

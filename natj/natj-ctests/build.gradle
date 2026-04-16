@@ -26,7 +26,7 @@ java {
 }
 
 dependencies {
-    testImplementation 'junit:junit:[4,)'
+    testImplementation 'junit:junit:4.12'
     testImplementation rootProject
 }
 
@@ -37,8 +37,10 @@ tasks.withType(Test) {
     systemProperty 'java.library.path', file("../natj-mac/build/xcode/${nativeConfiguration}")
     testLogging.showStandardStreams = true
     if (rootProject.hasProperty("moe.use.addresssanitizer")) {
-        environment['DYLD_INSERT_LIBRARIES'] = '/Applications/Xcode.app/Contents/Developer/Toolchains/' +
-                'XcodeDefault.xctoolchain/usr/lib/clang/8.0.0/lib/darwin/libclang_rt.asan_osx_dynamic.dylib'
+        def clangResourceDir = providers.exec {
+            commandLine 'xcrun', 'clang', '-print-resource-dir'
+        }.standardOutput.asText.get().trim()
+        environment['DYLD_INSERT_LIBRARIES'] = "${clangResourceDir}/lib/darwin/libclang_rt.asan_osx_dynamic.dylib"
         environment['ASAN_OPTIONS'] = 'handle_segv=0:allow_user_segv_handler=1'
     }
 }
@@ -46,7 +48,6 @@ tasks.withType(Test) {
 task ansibleTestWinPrepare(type: Tar) {
     def nativeConfiguration = 'Release'
     dependsOn ":natj-win:build_TestClassesC_${nativeConfiguration}_Win64"
-    // dependsOn ":natj-win:build_TestClassesC_${nativeConfiguration}_Win32"
 
     archiveBaseName = "win-test"
     into('classes') {
@@ -64,9 +65,6 @@ task ansibleTestWinPrepare(type: Tar) {
     into('natives') {
         from "../natj-win/build/${nativeConfiguration}-Win64/TestClassesC.dll"
     }
-    // into('natives32') {
-    //     from "../natj-win/build/${nativeConfiguration}-Win32/TestClassesC.dll"
-    // }
     from '../build/libs/natj.jar'
 }
 

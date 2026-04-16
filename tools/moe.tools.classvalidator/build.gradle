@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     id "org.jetbrains.kotlin.jvm"
 }
@@ -17,8 +19,8 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.7'
 }
 
-compileKotlin {
-    kotlinOptions {
-        jvmTarget = '1.8'
+kotlin {
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_1_8
     }
 }

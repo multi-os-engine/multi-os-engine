@@ -36,8 +36,10 @@ task buildNative(type: Exec) {
     args 'NDK_OUT=build/Release/obj'
     args 'NDK_APP_LIBS_OUT=build/Release/libs'
     def stdoutfile = file("build/ndk-build.log")
-    stdoutfile.parentFile.mkdirs()
-    standardOutput = new FileOutputStream(stdoutfile)
+    doFirst {
+        stdoutfile.parentFile.mkdirs()
+        standardOutput = new FileOutputStream(stdoutfile)
+    }
 }
 
 task buildNativeDebug(type: Exec) {
@@ -54,8 +56,10 @@ task buildNativeDebug(type: Exec) {
     args 'NDK_APP_LIBS_OUT=build/Debug/libs'
     args 'DEBUG=1'
     def stdoutfile = file("build/ndk-build-debug.log")
-    stdoutfile.parentFile.mkdirs()
-    standardOutput = new FileOutputStream(stdoutfile)
+    doFirst {
+        stdoutfile.parentFile.mkdirs()
+        standardOutput = new FileOutputStream(stdoutfile)
+    }
 }
 
 String[] outputs = []

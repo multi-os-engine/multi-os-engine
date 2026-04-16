@@ -62,7 +62,6 @@ dependencies {
 }
 
 tasks.withType(Test) {
-    forkEvery 0
     systemProperty "java.library.path", rootProject.external.llvm.jnipath.absolutePath +
             File.pathSeparator + rootProject.external.natj.jnipath.absolutePath
 }

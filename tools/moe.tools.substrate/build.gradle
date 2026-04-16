@@ -15,6 +15,8 @@ limitations under the License.
 */
 
 import org.gradle.process.ExecOperations
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 import javax.inject.Inject
 
 plugins {
@@ -35,9 +37,9 @@ dependencies {
     implementation project(':moe.tools.common')
 }
 
-compileKotlin {
-    kotlinOptions {
-        jvmTarget = '1.8'
+kotlin {
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_1_8
     }
 }
 

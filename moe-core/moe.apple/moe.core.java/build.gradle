@@ -91,8 +91,3 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
     getDestinationDirectory().set(file('build/libs/core'))
     from(file('../eula/LICENSE.TXT')) { into 'META-INF' }
 }
-
-artifacts {
-    archives javadocJar
-    archives sourceJar
-}

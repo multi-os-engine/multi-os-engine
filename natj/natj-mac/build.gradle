@@ -29,7 +29,7 @@ ext {
 def useAsan = providers.gradleProperty("moe.use.addresssanitizer").isPresent()
 
 def createXcodeTask = { xcodeproject, configuration, sdk, target ->
-    def productDest = "$buildDir/xcode/${configuration}"
+    def productDest = layout.buildDirectory.dir("xcode/${configuration}").get().asFile.path
     if (target == 'natj') {
         project.nativeOutputs.add("${productDest}/libnatj.dylib")
     }
@@ -49,6 +49,9 @@ def createXcodeTask = { xcodeproject, configuration, sdk, target ->
             outputs.file "${productDest}/libnatj.dylib"
         } else {
             dependsOn "build_natj_${configuration}_${sdk}"
+        }
+        if (target == 'TestClassesCxx') {
+            dependsOn ':natj-cxxtests:processCxxTests'
         }
     }
 }
@@ -87,7 +90,7 @@ task buildAll {
 // Create clean task
 task clean {
     doLast {
-        delete buildDir
+        delete layout.buildDirectory
     }
 }
 

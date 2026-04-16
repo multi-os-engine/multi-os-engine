@@ -67,8 +67,3 @@ jar {
     from { configurations.included.collect { it.isDirectory() ? it : zipTree(it) } }
     exclude 'META-INF/*.SF'
 }
-
-artifacts {
-    archives javadocJar
-    archives sourceJar
-}

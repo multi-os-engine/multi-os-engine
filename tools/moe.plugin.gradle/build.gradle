@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 /*
 Copyright (C) 2016 Migeran
 
@@ -186,7 +188,7 @@ jar {
 
 // Write the plugin's classpath to a file to share with the tests
 task createClasspathManifest {
-    def outputDir = file("$buildDir/$name")
+    def outputDir = layout.buildDirectory.dir(name).get().asFile
     def runtimeClasspath = sourceSets.main.runtimeClasspath
     def includedClasspath = configurations.included
     def sdkLocalBuildPath = project(':moe-sdk').file('build/dev-sdk')
@@ -208,8 +210,8 @@ dependencies {
     testRuntimeOnly files(createClasspathManifest)
 }
 
-compileKotlin {
-    kotlinOptions {
-        jvmTarget = '1.8'
+kotlin {
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_1_8
     }
 }

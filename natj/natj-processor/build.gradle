@@ -28,9 +28,10 @@ java {
 
 dependencies {
 	implementation 'commons-cli:commons-cli:1.3.1'
-    implementation files('lib/asm-5.1/lib/all/asm-all-5.1.jar')
+    implementation 'org.ow2.asm:asm:9.8'
+    implementation 'org.ow2.asm:asm-tree:9.8'
     implementation 'commons-io:commons-io:2.4'
-    testImplementation 'junit:junit:[4,)'
+    testImplementation 'junit:junit:4.12'
 }
 
 jar {
@@ -45,10 +46,6 @@ task sourcesJar (type : Jar) {
     archiveClassifier = 'sources'
     from sourceSets.main.allSource
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-}
-
-artifacts {
-    archives sourcesJar
 }
 
 tasks.publish.dependsOn('build')

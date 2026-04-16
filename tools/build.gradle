@@ -37,7 +37,7 @@ for (target in [[name: 'ios'],
                 [name: 'macos'],
                 [name: 'windows']]) {
     task("prebuild_libffi_$target.name") {
-        dependsOn gradle.includedBuild("prebuilts").task(":external/libffi:prebuild_${target.name}")
+        dependsOn gradle.includedBuild("prebuilts").task(":external:libffi:prebuild_${target.name}")
     }
 }
 
