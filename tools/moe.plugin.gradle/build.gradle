@@ -16,12 +16,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-}
-
 plugins {
     id 'org.moe.java-conventions'
     id "org.jetbrains.kotlin.jvm"

@@ -30,7 +30,7 @@ dependencies {
     testCompile files('natj.jar')
 }
 
-tasks.withType(Test) {
+tasks.withType(Test).configureEach {
     doFirst {
         sourceSets.test.output.classesDir = 'classes'
     }

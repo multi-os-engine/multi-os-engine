@@ -36,7 +36,7 @@ if (rootProject.hasProperty('test.win32env')) {
     buildDir = file('build-Win64')
 }
 
-tasks.withType(Test) {
+tasks.withType(Test).configureEach {
     doFirst {
         sourceSets.test.output.classesDir = 'classes'
     }

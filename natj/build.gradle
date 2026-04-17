@@ -45,7 +45,7 @@ dependencies {
     testImplementation libs.junit
 }
 
-tasks.withType(Test) {
+tasks.withType(Test).configureEach {
     def nativeConfiguration = 'Release'
     dependsOn ":natj-mac:build_TestClasses_${nativeConfiguration}_macosx"
 
