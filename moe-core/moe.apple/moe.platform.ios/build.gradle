@@ -15,17 +15,12 @@ limitations under the License.
 */
 plugins {
     alias(libs.plugins.spotless)
-    id 'java'
+    id 'org.moe.java-conventions'
 }
 
 def JvmVersionMeets(version) {
     def currentJvm = org.gradle.internal.jvm.Jvm.current()
     return version <= Integer.parseInt(currentJvm.javaVersion.majorVersion)
-}
-
-java {
-    sourceCompatibility = "1.8"
-    targetCompatibility = "1.8"
 }
 
 tasks.withType(JavaCompile).configureEach {

@@ -22,6 +22,7 @@ dependencyResolutionManagement {
     }
 }
 
+includeBuild("../build-tools")
 includeBuild("../natj")
 includeBuild("../moe-core")
 includeBuild("../prebuilts")

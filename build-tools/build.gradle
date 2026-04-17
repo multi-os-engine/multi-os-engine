@@ -8,5 +8,9 @@ gradlePlugin {
             id = "org.moe.buildtools"
             implementationClass = "org.moe.prebuilts.BuildTools"
         }
+        javaConventions {
+            id = "org.moe.java-conventions"
+            implementationClass = "org.moe.prebuilts.JavaConventions"
+        }
     }
 }

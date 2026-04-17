@@ -15,12 +15,11 @@ limitations under the License.
 */
 
 plugins {
-    id 'java'
+    id 'org.moe.java-conventions'
 }
 
-java {
-    sourceCompatibility = "11"
-    targetCompatibility = "11"
+tasks.withType(JavaCompile).configureEach {
+    options.release = 11
 }
 
 dependencies {

@@ -17,7 +17,7 @@ limitations under the License.
 plugins {
     id 'org.moe.buildtools'
     id 'maven-publish'
-    id 'java'
+    id 'org.moe.java-conventions'
 }
 
 for (target in ['ios', 'macos', 'windows', 'ndk', 'linux']) {
@@ -40,10 +40,6 @@ repositories {
     mavenCentral()
 }
 
-java {
-    sourceCompatibility = "1.8"
-    targetCompatibility = "1.8"
-}
 
 dependencies {
     testImplementation libs.junit

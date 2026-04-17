@@ -17,11 +17,8 @@
 import org.gradle.internal.jvm.Jvm
 
 plugins {
-    id 'java'
+    id 'org.moe.java-conventions'
 }
-
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
 
 def currentJvm = Jvm.current()
 if (Integer.parseInt(currentJvm.javaVersion.majorVersion) <= 8) {

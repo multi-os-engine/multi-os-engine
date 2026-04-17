@@ -23,6 +23,7 @@ buildscript {
 }
 
 plugins {
+    id 'org.moe.java-conventions'
     id "org.jetbrains.kotlin.jvm"
     id "maven-publish"
     id "signing"
@@ -41,10 +42,6 @@ String loadPluginVersion() {
 
 version = loadPluginVersion()
 
-java {
-    sourceCompatibility = 1.8
-    targetCompatibility = 1.8
-}
 
 configurations {
     included

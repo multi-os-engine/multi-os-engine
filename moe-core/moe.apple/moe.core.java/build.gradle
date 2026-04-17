@@ -16,15 +16,13 @@ limitations under the License.
 
 
 plugins {
-    id 'java'
+    id 'org.moe.java-conventions'
 }
 
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(21)
     }
-    sourceCompatibility = "1.8"
-    targetCompatibility = "1.8"
 }
 
 def external_path = rootProject.file("../../external").absolutePath

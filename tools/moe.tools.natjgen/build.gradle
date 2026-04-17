@@ -15,12 +15,7 @@ limitations under the License.
 */
 
 plugins {
-    id 'java'
-}
-
-java {
-    targetCompatibility = 1.8
-    sourceCompatibility = 1.8
+    id 'org.moe.java-conventions'
 }
 
 dependencies {

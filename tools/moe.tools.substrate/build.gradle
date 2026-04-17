@@ -20,17 +20,13 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import javax.inject.Inject
 
 plugins {
+    id 'org.moe.java-conventions'
     alias(libs.plugins.download)
     id "org.jetbrains.kotlin.jvm"
 }
 
 interface InjectedExecOps {
     @Inject ExecOperations getExecOps()
-}
-
-java {
-    targetCompatibility = 1.8
-    sourceCompatibility = 1.8
 }
 
 dependencies {

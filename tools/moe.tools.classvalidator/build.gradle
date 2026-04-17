@@ -1,12 +1,8 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
+    id 'org.moe.java-conventions'
     id "org.jetbrains.kotlin.jvm"
-}
-
-java {
-    targetCompatibility = 1.8
-    sourceCompatibility = 1.8
 }
 
 dependencies {

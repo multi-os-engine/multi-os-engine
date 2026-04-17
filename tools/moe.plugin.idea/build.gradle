@@ -15,6 +15,7 @@ limitations under the License.
 */
 
 plugins {
+    id 'org.moe.java-conventions'
     alias(libs.plugins.intellij.platform)
     id "org.jetbrains.kotlin.jvm"
     id 'idea'
@@ -24,10 +25,8 @@ plugins {
 group = 'org.multi-os-engine'
 version = '1.6.2'
 
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
-    }
+tasks.withType(JavaCompile).configureEach {
+    options.release = 11
 }
 
 def PLUGIN_NAME = 'moe_intellij_plugin'

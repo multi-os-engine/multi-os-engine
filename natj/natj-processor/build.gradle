@@ -16,16 +16,11 @@ limitations under the License.
 
 plugins {
     id 'maven-publish'
-    id 'java'
+    id 'org.moe.java-conventions'
 }
 
 repositories {
     mavenCentral()
-}
-
-java {
-    sourceCompatibility = "1.8"
-    targetCompatibility = "1.8"
 }
 
 dependencies {
