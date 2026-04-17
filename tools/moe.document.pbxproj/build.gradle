@@ -24,9 +24,9 @@ java {
 }
 
 dependencies {
-    implementation 'commons-codec:commons-codec:1.9'
-    testImplementation 'junit:junit:4.12'
-    testImplementation 'commons-io:commons-io:2.5'
+    implementation libs.commons.codec
+    testImplementation libs.junit
+    testImplementation libs.commons.io
 }
 
 tasks.register('copyTestResources', Copy) {

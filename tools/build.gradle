@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 plugins {
-    id "org.jetbrains.kotlin.jvm" version "2.2.0" apply false
+    alias(libs.plugins.kotlin.jvm) apply false
 }
 
 allprojects {

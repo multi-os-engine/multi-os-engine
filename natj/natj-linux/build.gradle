@@ -13,8 +13,11 @@ def createTask(configuration) {
     }
 }
 
+def releaseTask = createTask("Release")
+def debugTask = createTask("Debug")
+
 // Create build task
 tasks.register('build') {
-    dependsOn createTask("Release")
-    dependsOn createTask("Debug")
+    dependsOn releaseTask
+    dependsOn debugTask
 }

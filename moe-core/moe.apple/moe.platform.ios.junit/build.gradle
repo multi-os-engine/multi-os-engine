@@ -39,8 +39,8 @@ configurations {
 }
 
 dependencies {
-    implementation 'junit:junit:4.12'
-    included 'junit:junit:4.12'
+    implementation libs.junit
+    included libs.junit
 
     implementation "org.moe:natj"
     implementation project(':moe.apple:moe.platform.ios')

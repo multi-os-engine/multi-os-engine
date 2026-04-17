@@ -1,0 +1,66 @@
+[versions]
+junit = "4.12"
+asm = "9.8"
+gson = "2.7"
+commons-io = "2.5"
+commons-lang3 = "3.4"
+commons-codec = "1.9"
+commons-cli = "1.3.1"
+commons-compress = "1.12"
+commons-exec = "1.3"
+slf4j = "1.7.36"
+dd-plist = "1.19"
+jsch = "0.1.53"
+jetbrains-annotations = "23.0.0"
+sqlite-jdbc = "3.8.11.2"
+ant = "1.9.16"
+hamcrest = "1.3"
+graalvm-svm = "23.0.7"
+jnigen-commons = "3.1.1"
+kotlin = "2.2.0"
+eclipse-jdt-core = "3.10.0"
+eclipse-jdt-annotation = "2.0.0"
+eclipse-contenttype = "3.4.200-v20140207-1251"
+eclipse-jobs = "3.6.0-v20140424-0053"
+eclipse-resources = "3.3.0-v20070604"
+eclipse-runtime = "3.10.0-v20140318-2214"
+eclipse-equinox-app = "1.3.200-v20130910-1609"
+eclipse-equinox-preferences = "3.5.200-v20140224-1527"
+
+[libraries]
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+asm = { group = "org.ow2.asm", name = "asm", version.ref = "asm" }
+asm-tree = { group = "org.ow2.asm", name = "asm-tree", version.ref = "asm" }
+asm-commons = { group = "org.ow2.asm", name = "asm-commons", version.ref = "asm" }
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+commons-io = { group = "commons-io", name = "commons-io", version.ref = "commons-io" }
+commons-lang3 = { group = "org.apache.commons", name = "commons-lang3", version.ref = "commons-lang3" }
+commons-codec = { group = "commons-codec", name = "commons-codec", version.ref = "commons-codec" }
+commons-cli = { group = "commons-cli", name = "commons-cli", version.ref = "commons-cli" }
+commons-compress = { group = "org.apache.commons", name = "commons-compress", version.ref = "commons-compress" }
+commons-exec = { group = "org.apache.commons", name = "commons-exec", version.ref = "commons-exec" }
+slf4j-api = { group = "org.slf4j", name = "slf4j-api", version.ref = "slf4j" }
+slf4j-simple = { group = "org.slf4j", name = "slf4j-simple", version.ref = "slf4j" }
+dd-plist = { group = "com.googlecode.plist", name = "dd-plist", version.ref = "dd-plist" }
+jsch = { group = "com.jcraft", name = "jsch", version.ref = "jsch" }
+jetbrains-annotations = { group = "org.jetbrains", name = "annotations", version.ref = "jetbrains-annotations" }
+sqlite-jdbc = { group = "org.xerial", name = "sqlite-jdbc", version.ref = "sqlite-jdbc" }
+ant = { group = "org.apache.ant", name = "ant", version.ref = "ant" }
+hamcrest-core = { group = "org.hamcrest", name = "hamcrest-core", version.ref = "hamcrest" }
+graalvm-svm = { group = "org.graalvm.nativeimage", name = "svm", version.ref = "graalvm-svm" }
+jnigen-commons = { group = "com.badlogicgames.jnigen", name = "jnigen-commons", version.ref = "jnigen-commons" }
+eclipse-jdt-core = { group = "org.eclipse.jdt", name = "org.eclipse.jdt.core", version.ref = "eclipse-jdt-core" }
+eclipse-jdt-annotation = { group = "org.eclipse.jdt", name = "org.eclipse.jdt.annotation", version.ref = "eclipse-jdt-annotation" }
+eclipse-contenttype = { group = "org.eclipse.core", name = "contenttype", version.ref = "eclipse-contenttype" }
+eclipse-jobs = { group = "org.eclipse.core", name = "jobs", version.ref = "eclipse-jobs" }
+eclipse-resources = { group = "org.eclipse.core", name = "resources", version.ref = "eclipse-resources" }
+eclipse-runtime = { group = "org.eclipse.core", name = "runtime", version.ref = "eclipse-runtime" }
+eclipse-equinox-app = { group = "org.eclipse.equinox", name = "app", version.ref = "eclipse-equinox-app" }
+eclipse-equinox-preferences = { group = "org.eclipse.equinox", name = "preferences", version.ref = "eclipse-equinox-preferences" }
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+intellij-platform = { id = "org.jetbrains.intellij.platform", version = "2.14.0" }
+spotless = { id = "com.diffplug.spotless", version = "7.0.2" }
+download = { id = "de.undercouch.download", version = "5.7.0" }
+foojay = { id = "org.gradle.toolchains.foojay-resolver-convention", version = "1.0.0" }

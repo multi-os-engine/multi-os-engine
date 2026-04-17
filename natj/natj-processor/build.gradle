@@ -29,11 +29,11 @@ java {
 }
 
 dependencies {
-	implementation 'commons-cli:commons-cli:1.3.1'
-    implementation 'org.ow2.asm:asm:9.8'
-    implementation 'org.ow2.asm:asm-tree:9.8'
-    implementation 'commons-io:commons-io:2.4'
-    testImplementation 'junit:junit:4.12'
+	implementation libs.commons.cli
+    implementation libs.asm
+    implementation libs.asm.tree
+    implementation libs.commons.io
+    testImplementation libs.junit
 }
 
 jar {

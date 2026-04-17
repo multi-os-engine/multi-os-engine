@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 plugins {
-    id "com.diffplug.spotless" version "7.0.2"
+    alias(libs.plugins.spotless)
     id 'java'
 }
 
@@ -42,7 +42,7 @@ configurations {
 dependencies {
     implementation "org.moe:natj"
     compileOnly project(':moe.apple:moe.core.java')
-    compileOnly 'org.jetbrains:annotations:23.0.0'
+    compileOnly libs.jetbrains.annotations
     natJGen "org.multi-os-engine:moe.generator.natjgen"
 }
 

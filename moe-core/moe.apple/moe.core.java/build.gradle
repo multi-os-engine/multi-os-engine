@@ -42,7 +42,7 @@ sourceSets {
 
 dependencies {
     implementation 'org.moe:natj'
-    compileOnly 'org.graalvm.nativeimage:svm:23.0.7'
+    compileOnly libs.graalvm.svm
 }
 
 // Don't run tests with the built-in junit

@@ -28,7 +28,7 @@ java {
 }
 
 dependencies {
-    testImplementation 'junit:junit:4.12'
+    testImplementation libs.junit
     testImplementation rootProject
     testImplementation project(':natj-processor')
     testImplementation project(':natj-cxxtests:dyntype')

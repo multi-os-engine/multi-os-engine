@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 /*
 Copyright (C) 2016 Migeran
 
@@ -65,12 +67,12 @@ configurations {
 dependencies {
     implementation gradleApi()
 
-    implementation 'org.apache.commons:commons-lang3:3.4'
-    implementation 'commons-io:commons-io:2.4'
-    implementation 'com.jcraft:jsch:0.1.53'
+    implementation libs.commons.lang3
+    implementation libs.commons.io
+    implementation libs.jsch
 
-    implementation 'org.ow2.asm:asm:9.8'
-    implementation 'com.google.code.gson:gson:2.7'
+    implementation libs.asm
+    implementation libs.gson
 
     included project(':moe.tools.common')
     included project(':moe.document.pbxproj')
@@ -78,7 +80,7 @@ dependencies {
     included project(':moe.tools.substrate')
     included project(':moe.tools.classvalidator')
 
-    testImplementation 'junit:junit:4.12'
+    testImplementation libs.junit
     testImplementation gradleTestKit()
 }
 

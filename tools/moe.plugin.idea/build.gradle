@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 plugins {
-    id "org.jetbrains.intellij.platform" version "2.14.0"
+    alias(libs.plugins.intellij.platform)
     id "org.jetbrains.kotlin.jvm"
     id 'idea'
     id 'maven-publish'
@@ -61,8 +61,8 @@ dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-reflect"
 
-    testImplementation 'junit:junit:4.12'
-    implementation 'org.slf4j:slf4j-simple:1.7.+'
+    testImplementation libs.junit
+    implementation libs.slf4j.simple
 }
 
 intellijPlatform {
