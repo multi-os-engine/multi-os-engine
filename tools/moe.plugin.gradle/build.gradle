@@ -25,6 +25,7 @@ buildscript {
 plugins {
     id 'org.moe.java-conventions'
     id "org.jetbrains.kotlin.jvm"
+    alias(libs.plugins.shadow)
     id "maven-publish"
     id "signing"
 }
@@ -42,69 +43,55 @@ String loadPluginVersion() {
 
 version = loadPluginVersion()
 
-
 configurations {
-    included
-
-    compileOnly {
-        extendsFrom included
+    shade {
+        canBeResolved = true
+        canBeConsumed = false
+        exclude group: 'org.jetbrains.kotlin'
+        exclude group: 'org.jetbrains', module: 'annotations'
     }
-
-    testImplementation {
-        extendsFrom included
-    }
-
-    // Make sure the transitive dependencies are not packed into the jar
-    included_no_transitive {
-        extendsFrom included
-        transitive = false
-    }
+    compileOnly.extendsFrom shade
+    testImplementation.extendsFrom shade
 }
 
 dependencies {
-    implementation gradleApi()
+    compileOnly gradleApi()
 
-    implementation libs.commons.lang3
-    implementation libs.commons.io
-    implementation libs.jsch
+    shade project(':moe.tools.common')
+    shade project(':moe.document.pbxproj')
+    shade project(':moe.generator.project')
+    shade project(':moe.tools.substrate')
+    shade project(':moe.tools.classvalidator')
 
-    implementation libs.asm
-    implementation libs.gson
-
-    included project(':moe.tools.common')
-    included project(':moe.document.pbxproj')
-    included project(':moe.generator.project')
-    included project(':moe.tools.substrate')
-    included project(':moe.tools.classvalidator')
+    shade libs.commons.lang3
+    shade libs.commons.io
+    shade libs.jsch
+    shade libs.asm
+    shade libs.asm.tree
+    shade libs.asm.commons
+    shade libs.gson
+    shade libs.slf4j.api
+    shade libs.dd.plist
+    shade libs.commons.codec
 
     testImplementation libs.junit
     testImplementation gradleTestKit()
 }
 
-// Resolve transitive deps of 'included' projects and add as implementation so they're on
-// the compile classpath and in the published POM. This must happen at configuration time —
-// project deps don't expose implementation transitives, so we discover them manually.
-// Config-cache incompatible by necessity; proper fix requires variant-aware dependency management.
-def topDeps = configurations.included.resolvedConfiguration.firstLevelModuleDependencies
-topDeps.each {topDep ->
-    topDep.children.each { child ->
-        if(!(child in topDeps)) {
-            child.allModuleArtifacts.each { artifact ->
-                def mvi = artifact.moduleVersion.id
-                def notation = "${mvi.group}:${mvi.name}:${mvi.version}"
-                if (artifact.classifier) {
-                    notation += ":${artifact.classifier}"
-                }
-                notation += "@${artifact.extension}"
-                dependencies.implementation(notation) {
-                    transitive = true
-                }
-            }
-        }
-    }
+tasks.test.dependsOn ':moe-sdk:devsdk'
+
+tasks.named('shadowJar', com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar) {
+    configurations = [project.configurations.shade]
+    archiveClassifier = ''
+    mergeServiceFiles()
+    enableAutoRelocation = true
+    relocationPrefix = 'org.moe.gradle.shadow'
+    relocate('org.moe', 'org.moe')
 }
 
-tasks.test.dependsOn ':moe-sdk:devsdk'
+jar {
+    archiveClassifier = 'plain'
+}
 
 def javadocJar = tasks.register('javadocJar', Jar) {
     dependsOn javadoc
@@ -120,7 +107,7 @@ def sourceJar = tasks.register('sourceJar', Jar) {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            from components.java
+            from components.shadow
             artifact(javadocJar)
             artifact(sourceJar)
             artifactId = 'moe-gradle'
@@ -180,15 +167,11 @@ if (project.hasProperty("signing.gnupg.keyId")) {
     }
 }
 
-jar {
-    from { configurations.included_no_transitive.collect {it.isDirectory() ? it : zipTree(it) } }
-}
-
 // Write the plugin's classpath to a file to share with the tests
 def createClasspathManifest = tasks.register('createClasspathManifest') {
     def outputDir = layout.buildDirectory.dir(name).get().asFile
     def runtimeClasspath = sourceSets.main.runtimeClasspath
-    def includedClasspath = configurations.included
+    def shadeClasspath = configurations.shade
     def sdkLocalBuildPath = project(':moe-sdk').file('build/dev-sdk')
     def pluginVersion = project.version
 
@@ -197,7 +180,7 @@ def createClasspathManifest = tasks.register('createClasspathManifest') {
 
     doLast {
         outputDir.mkdirs()
-        new File(outputDir, 'plugin-classpath.txt').text = (runtimeClasspath + includedClasspath).join("\n")
+        new File(outputDir, 'plugin-classpath.txt').text = (runtimeClasspath + shadeClasspath).join("\n")
         new File(outputDir, 'plugin-sdk-localbuild.txt').text = sdkLocalBuildPath.toString()
         new File(outputDir, 'plugin-version.txt').text = pluginVersion.toString()
     }
