@@ -39,7 +39,7 @@ public abstract class Script extends BaseTask {
 
     private String failureMessage;
 
-    @Internal
+    @Input
     public List<Step> getSteps() {
         return steps;
     }
