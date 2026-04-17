@@ -22,7 +22,7 @@ plugins {
 }
 
 group = 'org.multi-os-engine'
-version = '2.0.0-SNAPSHOT'
+version = MOE_VERSION + (project.hasProperty('RELEASE') ? '' : '-SNAPSHOT')
 
 def projectDeps = [
         ':moe.binding.clang',
@@ -191,25 +191,25 @@ publishing {
                 name = 'moe-sdk'
                 packaging = 'zip'
                 description = 'MOE sdk'
-                url = 'https://discuss.multi-os-engine.org'
+                url = POM_URL
 
                 scm {
-                    url = 'https://github.com/multi-os-engine/multi-os-engine'
+                    url = POM_SCM_URL
                 }
 
                 licenses {
                     license {
-                        name = 'The Apache License, Version 2.0'
-                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                        name = POM_LICENCE_NAME
+                        url = POM_LICENCE_URL
                     }
                 }
 
                 developers {
                     developer {
-                        id = 'MOE'
-                        name = 'Multi-OS Engine Dev'
-                        organization = 'Multi-OS Engine'
-                        organizationUrl = 'https://www.multi-os-engine.org/'
+                        id = POM_DEVELOPER_ID
+                        name = POM_DEVELOPER_NAME
+                        organization = POM_DEVELOPER_ORGANISATION
+                        organizationUrl = POM_DEVELOPER_ORGANISATION_URL
                     }
                 }
             }
@@ -218,9 +218,7 @@ publishing {
     repositories {
         maven {
             name = 'MavenCentral'
-            def releasesRepoUrl = 'https://ossrh-staging-api.central.sonatype.com/service/local/staging/deploy/maven2/'
-            def snapshotsRepoUrl = 'https://central.sonatype.com/repository/maven-snapshots/'
-            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+            url = version.endsWith('SNAPSHOT') ? SONATYPE_SNAPSHOT_URL : SONATYPE_RELEASE_URL
 
             credentials {
                 if (project.hasProperty('ossrhUsername')) {

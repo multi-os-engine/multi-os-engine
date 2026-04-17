@@ -5,13 +5,13 @@ set -e
 function exit_with_usage_error() {
   echo "Script to set component version numbers."
   echo "Usage: $0 COMPONENT VERSION"
-  echo "    COMPONENT   core/gradle/idea/build/all"
-  echo "        core    MOE SDK core"
-  echo "        gradle  MOE Gradle plugin"
+  echo "    COMPONENT   moe/idea"
+  echo "        moe     MOE SDK + Gradle plugin"
   echo "        idea    MOE IDEA/Android Studio plugin"
-  echo "        build   MOE SDK + Gradle plugin"
-  echo "        all     all components above"
-  echo "    VERSION     the version code to set to"
+  echo "    VERSION     the base version code (without -SNAPSHOT)"
+  echo ""
+  echo "Note: SNAPSHOT suffix is controlled at build time via -PRELEASE flag,"
+  echo "not by this script."
   exit 1
 }
 
@@ -25,30 +25,20 @@ VERSION="$2"
 MOE_BASE_DIR="$(cd "$(dirname "$0")" && pwd)"
 MOE_TOOLS_DIR="$MOE_BASE_DIR/tools"
 MOE_CORE_DIR="$MOE_BASE_DIR/moe-core"
-MOE_GRADLE_PROPERTIES="$MOE_TOOLS_DIR/moe.plugin.gradle/src/main/resources/org/moe/gradle/moe.properties"
 MOE_IDEA_PLUGIN_DIR="$MOE_TOOLS_DIR/moe.plugin.idea"
 
 WORKED=
 
-if [[ "$COMPONENT" == "core" || "$COMPONENT" == "build" || "$COMPONENT" == "all" ]]; then
-  echo "Updating MOE core version..."
+if [[ "$COMPONENT" == "moe"]]; then
+  echo "Updating MOE version..."
 
   WORKED=1
 
   sed -E -i '' "s/^version +'.+'/version '$VERSION'/" "$MOE_CORE_DIR/build.gradle"
-  sed -E -i '' "s/^version +'.+'/version '$VERSION'/" "$MOE_TOOLS_DIR/moe.sdk.publisher/build.gradle"
-  sed -E -i '' "s/^MOE-SDK-Version=.+$/MOE-SDK-Version=$VERSION/" "$MOE_GRADLE_PROPERTIES"
+  sed -E -i '' "s/^MOE_VERSION=.+$/MOE_VERSION=$VERSION/" "$MOE_TOOLS_DIR/gradle.properties"
 fi
 
-if [[ "$COMPONENT" == "gradle" || "$COMPONENT" == "build" || "$COMPONENT" == "all" ]]; then
-  echo "Updating MOE Gradle plugin version..."
-
-  WORKED=1
-
-  sed -E -i '' "s/^MOE-Plugin-Version=.+$/MOE-Plugin-Version=$VERSION/" "$MOE_GRADLE_PROPERTIES"
-fi
-
-if [[ "$COMPONENT" == "idea" || "$COMPONENT" == "all" ]]; then
+if [[ "$COMPONENT" == "idea"]]; then
   echo "Updating MOE IDEA plugin version..."
 
   WORKED=1
