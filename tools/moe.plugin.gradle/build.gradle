@@ -93,23 +93,17 @@ jar {
     archiveClassifier = 'plain'
 }
 
-def javadocJar = tasks.register('javadocJar', Jar) {
-    dependsOn javadoc
-    archiveClassifier = 'javadoc'
-    from javadoc.destinationDir
-}
-
-def sourceJar = tasks.register('sourceJar', Jar) {
-    archiveClassifier = 'sources'
-    from sourceSets.main.allSource
+java {
+    withSourcesJar()
+    withJavadocJar()
 }
 
 publishing {
     publications {
         mavenJava(MavenPublication) {
             from components.shadow
-            artifact(javadocJar)
-            artifact(sourceJar)
+            artifact tasks.named('sourcesJar')
+            artifact tasks.named('javadocJar')
             artifactId = 'moe-gradle'
 
             pom {
