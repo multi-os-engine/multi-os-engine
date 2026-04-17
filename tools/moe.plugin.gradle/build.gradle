@@ -29,7 +29,7 @@ plugins {
 if (name != 'moe-gradle') {
     throw new GradleException('Incorrect name')
 }
-group 'org.multi-os-engine'
+group = 'org.multi-os-engine'
 
 String loadPluginVersion() {
     final Properties props = new Properties()
@@ -37,7 +37,7 @@ String loadPluginVersion() {
     return props.getProperty('MOE-Plugin-Version')
 }
 
-version loadPluginVersion()
+version = loadPluginVersion()
 
 java {
     sourceCompatibility = 1.8
@@ -65,12 +65,12 @@ configurations {
 dependencies {
     implementation gradleApi()
 
-    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'
-    implementation group: 'commons-io', name: 'commons-io', version: '2.4'
-    implementation group: 'com.jcraft', name: 'jsch', version: '0.1.53'
+    implementation 'org.apache.commons:commons-lang3:3.4'
+    implementation 'commons-io:commons-io:2.4'
+    implementation 'com.jcraft:jsch:0.1.53'
 
-    implementation group: 'org.ow2.asm', name: 'asm', version: '9.8'
-    implementation group: 'com.google.code.gson', name: 'gson', version: '2.7'
+    implementation 'org.ow2.asm:asm:9.8'
+    implementation 'com.google.code.gson:gson:2.7'
 
     included project(':moe.tools.common')
     included project(':moe.document.pbxproj')
@@ -78,27 +78,26 @@ dependencies {
     included project(':moe.tools.substrate')
     included project(':moe.tools.classvalidator')
 
-    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    testImplementation 'junit:junit:4.12'
     testImplementation gradleTestKit()
 }
 
-// Add transitive dependencies into current project so they will be included into the pom file
+// Resolve transitive deps of 'included' projects and add as implementation so they're on
+// the compile classpath and in the published POM. This must happen at configuration time —
+// project deps don't expose implementation transitives, so we discover them manually.
+// Config-cache incompatible by necessity; proper fix requires variant-aware dependency management.
 def topDeps = configurations.included.resolvedConfiguration.firstLevelModuleDependencies
 topDeps.each {topDep ->
     topDep.children.each { child ->
         if(!(child in topDeps)) {
             child.allModuleArtifacts.each { artifact ->
                 def mvi = artifact.moduleVersion.id
-                def dep = [
-                        group  : mvi.group,
-                        name   : mvi.name,
-                        version: mvi.version,
-                        ext    : artifact.extension
-                ]
+                def notation = "${mvi.group}:${mvi.name}:${mvi.version}"
                 if (artifact.classifier) {
-                    dep['classifier'] = artifact.classifier
+                    notation += ":${artifact.classifier}"
                 }
-                dependencies.implementation(dep) {
+                notation += "@${artifact.extension}"
+                dependencies.implementation(notation) {
                     transitive = true
                 }
             }
@@ -152,6 +151,7 @@ publishing {
                         organizationUrl = 'https://www.multi-os-engine.org/'
                     }
                 }
+
             }
         }
     }

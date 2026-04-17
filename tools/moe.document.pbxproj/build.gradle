@@ -14,7 +14,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-apply plugin: 'java'
+plugins {
+    id 'java'
+}
 
 java {
     sourceCompatibility = "1.8"
@@ -23,8 +25,8 @@ java {
 
 dependencies {
     implementation 'commons-codec:commons-codec:1.9'
-    testImplementation group: 'junit', name: 'junit', version: '4.12'
-    testImplementation group: 'commons-io', name: 'commons-io', version: '2.5'
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'commons-io:commons-io:2.5'
 }
 
 tasks.register('copyTestResources', Copy) {

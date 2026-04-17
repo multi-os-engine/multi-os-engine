@@ -18,11 +18,10 @@ import org.moe.prebuilts.Script
 
 plugins {
     id 'org.moe.buildtools'
+    id 'base'
 }
 
-apply plugin: 'base'
-
-version '2.0.0-SNAPSHOT'
+version = '2.0.0-SNAPSHOT'
 
 allprojects {
     repositories {
@@ -85,8 +84,8 @@ subprojects.each { subproject ->
 
 def createBrewCheckExecTask(def execname) {
     tasks.register("check_exec_${execname}", Script) {
-        workDir '.'
-        failureMessage """
+        workDir = '.'
+        failureMessage = """
     Error: ${execname} is not installed, please run `brew install ${execname}` to install.
 """
         exec 'which', execname
@@ -95,8 +94,8 @@ def createBrewCheckExecTask(def execname) {
 
 def createCheckExecTask(def execname, def failmsg) {
     tasks.register("check_exec_${execname}", Script) {
-        workDir '.'
-        failureMessage failmsg
+        workDir = '.'
+        failureMessage = failmsg
         exec 'which', execname
     }
 }

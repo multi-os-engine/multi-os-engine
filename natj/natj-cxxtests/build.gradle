@@ -14,7 +14,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-apply plugin: 'java'
+plugins {
+    id 'java'
+}
 
 repositories {
     mavenCentral()
@@ -32,7 +34,7 @@ dependencies {
     testImplementation project(':natj-cxxtests:dyntype')
 }
 
-task processCxxTests(type: JavaExec) {
+def processCxxTestsTask = tasks.register('processCxxTests', JavaExec) {
     dependsOn(sourceSets.test.output)
 
     classpath = files("../natj-processor/build/libs/natj-processor-${version}.jar", 'build/classes/test',
@@ -58,12 +60,12 @@ task processCxxTests(type: JavaExec) {
     }
 }
 
-tasks.withType(Test) {
+tasks.withType(Test).configureEach {
     def nativeConfiguration = 'Release'
     dependsOn ":natj-mac:build_TestClassesCxx_${nativeConfiguration}_macosx"
 
     systemProperty 'java.library.path', file("../natj-mac/build/xcode/${nativeConfiguration}")
-    testClassesDirs = processCxxTests.outputs.files
+    testClassesDirs = processCxxTestsTask.get().outputs.files
     testLogging.showStandardStreams = true
     if (rootProject.hasProperty("moe.use.addresssanitizer")) {
         def clangResourceDir = providers.exec {
@@ -74,7 +76,7 @@ tasks.withType(Test) {
     }
 }
 
-task ansibleTestWinPrepare(type: Tar) {
+tasks.register('ansibleTestWinPrepare', Tar) {
     def nativeConfiguration = 'Release'
     dependsOn ":natj-win:build_TestClassesCxx_${nativeConfiguration}_Win64"
 
@@ -94,8 +96,8 @@ task ansibleTestWinPrepare(type: Tar) {
     from '../build/libs/natj.jar'
 }
 
-task ansibleTestWin(type: Exec) {
-    dependsOn ansibleTestWinPrepare
+tasks.register('ansibleTestWin', Exec) {
+    dependsOn 'ansibleTestWinPrepare'
     executable "ansible-playbook"
     args 'ansible-test-on-windows-pb.yml'
     inputs.files files('build/distributions/win-test.tar')

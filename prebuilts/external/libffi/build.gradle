@@ -17,70 +17,47 @@ limitations under the License.
 import org.moe.prebuilts.Prebuild
 
 tasks.register('prebuild_ios', Prebuild) {
-    sourcePath 'external/libffi'
-    ramdiskSizeMB 128
-    buildScript 'moe-prebuild-ios.sh'
-    targetName 'ios'
-    preBuildCopySpec copySpec {
-        from('.') {
-            include 'libffi-disable-armv7-ios.patch'
-            include 'libffi-backport-cif-fix.patch'
-            include 'moe-prebuild-ios.sh'
-        }
-    }
+    sourcePath = 'external/libffi'
+    ramdiskSizeMB = 128
+    buildScript = 'moe-prebuild-ios.sh'
+    targetName = 'ios'
+    preBuildFiles.from(files('libffi-disable-armv7-ios.patch', 'libffi-backport-cif-fix.patch', 'moe-prebuild-ios.sh'))
 }
 
 tasks.register('prebuild_macos', Prebuild) {
-    sourcePath 'external/libffi'
-    ramdiskSizeMB 128
-    buildScript 'moe-prebuild-macos.sh'
-    targetName 'macos'
-    preBuildCopySpec copySpec {
-        from('.') {
-            include 'libffi-backport-cif-fix.patch'
-            include 'moe-prebuild-macos.sh'
-        }
-    }
+    sourcePath = 'external/libffi'
+    ramdiskSizeMB = 128
+    buildScript = 'moe-prebuild-macos.sh'
+    targetName = 'macos'
+    preBuildFiles.from(files('libffi-backport-cif-fix.patch', 'moe-prebuild-macos.sh'))
 }
 
 tasks.register('prebuild_windows', Prebuild) {
-    sourcePath 'external/libffi'
-    ramdiskSizeMB 128
-    buildScript 'moe-prebuild-windows.sh'
-    targetName 'windows'
+    sourcePath = 'external/libffi'
+    ramdiskSizeMB = 128
+    buildScript = 'moe-prebuild-windows.sh'
+    targetName = 'windows'
     env 'PATH', "${providers.environmentVariable('PATH').get()}:${rootProject.file('mingw/bin').absolutePath}"
-    preBuildCopySpec copySpec {
-        from('.') {
-            include 'moe-prebuild-windows.sh'
-        }
-    }
+    preBuildFiles.from(files('moe-prebuild-windows.sh'))
     dependsOn ':mingwPresence'
 }
 
 tasks.register('prebuild_linux', Prebuild) {
-    sourcePath 'external/libffi'
-    ramdiskSizeMB 128
-    buildScript 'moe-prebuild-linux.sh'
-    targetName 'linux'
+    sourcePath = 'external/libffi'
+    ramdiskSizeMB = 128
+    buildScript = 'moe-prebuild-linux.sh'
+    targetName = 'linux'
     env 'PATH', "${providers.environmentVariable('PATH').get()}"
-    preBuildCopySpec copySpec {
-        from('.') {
-            include 'moe-prebuild-linux.sh'
-        }
-    }
+    preBuildFiles.from(files('moe-prebuild-linux.sh'))
     dependsOn ':linuxCrosscompiler'
 }
 
 tasks.register('prebuild_ndk', Prebuild) {
-    sourcePath 'external/libffi'
-    ramdiskSizeMB 256
-    buildScript 'moe-prebuild-ndk.sh'
-    targetName 'ndk'
-    preBuildCopySpec project.copySpec {
-        from('.') {
-            include 'moe-prebuild-ndk.sh'
-        }
-    }
+    sourcePath = 'external/libffi'
+    ramdiskSizeMB = 256
+    buildScript = 'moe-prebuild-ndk.sh'
+    targetName = 'ndk'
+    preBuildFiles.from(files('moe-prebuild-ndk.sh'))
 }
 
 tasks.register('prebuild') {

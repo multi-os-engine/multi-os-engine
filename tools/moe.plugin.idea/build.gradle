@@ -17,13 +17,12 @@ limitations under the License.
 plugins {
     id "org.jetbrains.intellij.platform" version "2.14.0"
     id "org.jetbrains.kotlin.jvm"
+    id 'idea'
+    id 'maven-publish'
 }
 
-apply plugin: 'idea'
-apply plugin: 'maven-publish'
-
-group 'org.multi-os-engine'
-version '1.6.2'
+group = 'org.multi-os-engine'
+version = '1.6.2'
 
 java {
     toolchain {
@@ -62,8 +61,8 @@ dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-reflect"
 
-    testImplementation group: 'junit', name: 'junit', version: '4.12'
-    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.+'
+    testImplementation 'junit:junit:4.12'
+    implementation 'org.slf4j:slf4j-simple:1.7.+'
 }
 
 intellijPlatform {
@@ -85,8 +84,8 @@ intellijPlatform {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId 'org.multi-os-engine'
-            artifactId PLUGIN_NAME
+            groupId = 'org.multi-os-engine'
+            artifactId = PLUGIN_NAME
 
             artifact file("build/distributions/${PLUGIN_NAME}.zip")
         }

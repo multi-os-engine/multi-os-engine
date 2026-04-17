@@ -14,20 +14,20 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-apply plugin: 'java'
+plugins {
+    id 'java'
+}
 
 java {
     sourceCompatibility = "1.8"
     targetCompatibility = "1.8"
 }
 
-if (!rootProject.hasProperty('moe.tools.sdk.exclude_mac')) {
-    tasks.classes.dependsOn ':ext_natj_mac'
-}
+tasks.classes.dependsOn ':ext_natj_mac'
 
 dependencies {
     implementation "org.moe:natj"
-    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    testImplementation 'junit:junit:4.12'
 }
 
 tasks.withType(Test) {

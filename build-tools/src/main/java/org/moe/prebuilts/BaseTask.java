@@ -54,6 +54,9 @@ abstract class BaseTask extends DefaultTask {
     public abstract DirectoryProperty getRootProjectDirectory();
 
     @Internal
+    public abstract DirectoryProperty getRepoRootDirectory();
+
+    @Internal
     public abstract Property<String> getProjectName();
 
     private File logFile;

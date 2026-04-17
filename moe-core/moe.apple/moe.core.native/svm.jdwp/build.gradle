@@ -3,7 +3,9 @@ import org.moe.prebuilts.Script
 import org.gradle.api.file.FileSystemOperations
 import javax.inject.Inject
 
-apply plugin: 'base'
+plugins {
+    id 'base'
+}
 
 interface InjectedFsOps {
     @Inject FileSystemOperations getFs()
@@ -31,7 +33,7 @@ def createJDWPJarBuild = { String arch ->
         inputs.dir(baseCapPath)
         outputs.file(file("${jdwpDestDir}/svmjdwp_${arch}.o"))
 
-        rawWorkDir "$buildPath"
+        rawWorkDir = "$buildPath"
         exec "rm", "-rf", file(workDir).absolutePath
 
         mkdir file(workDir).absolutePath

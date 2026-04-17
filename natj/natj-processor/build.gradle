@@ -14,8 +14,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-apply plugin: 'maven-publish'
-apply plugin: 'java'
+plugins {
+    id 'maven-publish'
+    id 'java'
+}
 
 repositories {
     mavenCentral()
@@ -53,7 +55,7 @@ tasks.publish.dependsOn('build')
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifactId 'natj-processor'
+            artifactId = 'natj-processor'
 
             from components.java
 

@@ -112,7 +112,7 @@ public abstract class XcodeBuild extends BaseTask {
 
     @Override
     protected void executeImpl() {
-        final Path repoRoot = new File(getRootProjectDirectory().get().getAsFile(), "../..").toPath();
+        final Path repoRoot = getRepoRootDirectory().get().getAsFile().toPath();
         final String xcodeProjectPath = getXcodeProject().get().getAsFile().getAbsolutePath();
         final SplitOutputStream output = new SplitOutputStream(getLog(), new XcodeOutputStream(repoRoot, getLogger()));
         exec(spec -> {

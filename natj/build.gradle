@@ -16,6 +16,8 @@ limitations under the License.
 
 plugins {
     id 'org.moe.buildtools'
+    id 'maven-publish'
+    id 'java'
 }
 
 for (target in ['ios', 'macos', 'windows', 'ndk', 'linux']) {
@@ -26,16 +28,13 @@ for (target in ['ios', 'macos', 'windows', 'ndk', 'linux']) {
 }
 
 allprojects {
-    group 'org.moe'
-    version '1.1.5'
+    group = 'org.moe'
+    version = '1.1.5'
 }
 
 /****************************
  *  Java part (NatJ API)
  ****************************/
-
-apply plugin: 'maven-publish'
-apply plugin: 'java'
 
 repositories {
     mavenCentral()
@@ -89,7 +88,7 @@ tasks.publish.dependsOn('build')
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifactId 'natj-api'
+            artifactId = 'natj-api'
 
             from components.java
 

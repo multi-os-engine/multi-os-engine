@@ -22,22 +22,19 @@ buildscript {
 
 plugins {
     id "de.undercouch.download" version "5.7.0"
+    id 'base'
+    id 'maven-publish'
+    id 'signing'
 }
 
-group 'org.multi-os-engine'
-version '2.0.0-SNAPSHOT'
-
-apply plugin: 'base'
-apply plugin: 'maven-publish'
-apply plugin: 'signing'
+group = 'org.multi-os-engine'
+version = '2.0.0-SNAPSHOT'
 
 def projectDeps = [
         ':moe.binding.clang',
         ':moe.generator.natjgen',
         ':moe.ios.device.launcher',
 ]
-
-projectDeps.each { evaluationDependsOn it }
 
 def r8Dest = layout.buildDirectory.file("r8/r8lib.jar").get().asFile
 
@@ -60,9 +57,7 @@ tasks.register('buildDeps') {
     }
     dependsOn 'verifyR8'
     dependsOn ':ext_moe_core'
-    if (!rootProject.hasProperty('moe.tools.sdk.exclude_mac')) {
-        dependsOn ':ext_natj_mac'
-    }
+    dependsOn ':ext_natj_mac'
 }
 
 def buildfiles(def proj, def subpath, def closure) {
@@ -173,12 +168,8 @@ def getSDKCopySpec() {
         }
 
         into('tools/macosx') {
-            if (!rootProject.hasProperty('moe.tools.sdk.exclude_mac')) {
-                from files(external.llvm.macos)
-                from files(external.natj.mac)
-            } else {
-                from files('.placeholder')
-            }
+            from files(external.llvm.macos)
+            from files(external.natj.mac)
         }
 
         eachFile { println "${it}" }

@@ -17,12 +17,15 @@ limitations under the License.
 package org.moe.prebuilts;
 
 import org.gradle.api.GradleException;
-import org.gradle.api.file.CopySpec;
+import org.gradle.api.file.ConfigurableFileCollection;
 import org.gradle.api.provider.Property;
 import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.InputDirectory;
+import org.gradle.api.tasks.InputFiles;
 import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.OutputDirectory;
+import org.gradle.api.tasks.PathSensitivity;
+import org.gradle.api.tasks.PathSensitive;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -41,7 +44,7 @@ public abstract class Prebuild extends BaseTask {
 
     @InputDirectory
     public File getSourceFile() {
-        return sourcePath == null ? null : new File(getRootProjectDirectory().get().getAsFile(), "../../" + sourcePath);
+        return sourcePath == null ? null : new File(getRepoRootDirectory().get().getAsFile(), sourcePath);
     }
 
     private int ramdiskSizeMB = 256;
@@ -49,8 +52,6 @@ public abstract class Prebuild extends BaseTask {
     private String buildScript;
 
     private String targetName;
-
-    private CopySpec preBuildCopySpec;
 
     @OutputDirectory
     public File getOutputDirectory() {
@@ -98,15 +99,9 @@ public abstract class Prebuild extends BaseTask {
     @Internal
     public abstract Property<Boolean> getDontUnmount();
 
-    // TODO: 13.06.2023 This is bad, since it won't rerun the task if it changes
-    @Internal
-    public CopySpec getPreBuildCopySpec() {
-        return preBuildCopySpec;
-    }
-
-    public void setPreBuildCopySpec(CopySpec preBuildCopySpec) {
-        this.preBuildCopySpec = preBuildCopySpec;
-    }
+    @InputFiles
+    @PathSensitive(PathSensitivity.RELATIVE)
+    public abstract ConfigurableFileCollection getPreBuildFiles();
 
     public void env(String key, String value) {
         envMap.put(key, value);
@@ -151,10 +146,10 @@ public abstract class Prebuild extends BaseTask {
 
         try {
             rsync(path);
-            if (preBuildCopySpec != null) {
+            if (!getPreBuildFiles().isEmpty()) {
                 getFileSystemOperations().copy(spec -> {
                     spec.into(new File(path));
-                    spec.with(preBuildCopySpec);
+                    spec.from(getPreBuildFiles());
                 });
             }
             runBuildScript(path);

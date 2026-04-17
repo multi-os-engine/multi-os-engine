@@ -18,9 +18,8 @@ import org.moe.prebuilts.XcodeBuild
 
 plugins {
     id 'org.moe.buildtools'
+    id 'maven-publish'
 }
-
-apply plugin: 'maven-publish'
 
 ext {
     nativeOutputs = []
@@ -104,7 +103,7 @@ tasks.publish.dependsOn build
 publishing {
     publications {
         mavenNative(MavenPublication) {
-            artifactId 'natj-mac'
+            artifactId = 'natj-mac'
 
             for (o in nativeOutputs) {
                 artifact source: o, extension: 'dylib', classifier: new File(o).getParentFile().getName()

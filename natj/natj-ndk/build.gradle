@@ -14,8 +14,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-apply plugin: 'base'
-apply plugin: 'maven-publish'
+plugins {
+    id 'base'
+    id 'maven-publish'
+}
 
 def ndkPathProvider = providers.environmentVariable('NDK_PATH')
 
@@ -23,7 +25,16 @@ if (!ndkPathProvider.isPresent()) {
     logger.warn('NDK_PATH env var is not set')
 }
 
-task buildNative(type: Exec) {
+String[] nativeOutputs = []
+for (arch in ['arm64-v8a', 'armeabi-v7a', 'mips', 'mips64', 'x86', 'x86_64']) {
+    for (conf in ['Release', 'Debug']) {
+        for (targ in ['natj', 'c++_shared']) {
+            nativeOutputs += "build/${conf}/libs/${arch}/lib${targ}.so".toString()
+        }
+    }
+}
+
+tasks.register('buildNative', Exec) {
     doFirst {
         if (!ndkPathProvider.isPresent()) {
             throw new GradleException('NDK_PATH env var is not set')
@@ -35,6 +46,18 @@ task buildNative(type: Exec) {
     executable "${ndkPathProvider.getOrElse('')}/ndk-build"
     args 'NDK_OUT=build/Release/obj'
     args 'NDK_APP_LIBS_OUT=build/Release/libs'
+
+    inputs.files rootProject.file('../../prebuilts/external/libffi/build/ndk/aarch64/lib/libffi.a')
+    inputs.files rootProject.file('../../prebuilts/external/libffi/build/ndk/arm/lib/libffi.a')
+    inputs.files rootProject.file('../../prebuilts/external/libffi/build/ndk/mips64el/lib/libffi.a')
+    inputs.files rootProject.file('../../prebuilts/external/libffi/build/ndk/mipsel/lib/libffi.a')
+    inputs.files rootProject.file('../../prebuilts/external/libffi/build/ndk/x86/lib/libffi.a')
+    inputs.files rootProject.file('../../prebuilts/external/libffi/build/ndk/x86_64/lib/libffi.a')
+    inputs.files file('jni/Android.mk')
+    inputs.files file('jni/Application.mk')
+    inputs.files fileTree('../src/main/native').getFiles().toArray()
+    outputs.files nativeOutputs
+
     def stdoutfile = file("build/ndk-build.log")
     doFirst {
         stdoutfile.parentFile.mkdirs()
@@ -42,7 +65,7 @@ task buildNative(type: Exec) {
     }
 }
 
-task buildNativeDebug(type: Exec) {
+tasks.register('buildNativeDebug', Exec) {
     doFirst {
         if (!ndkPathProvider.isPresent()) {
             throw new GradleException('NDK_PATH env var is not set')
@@ -62,37 +85,17 @@ task buildNativeDebug(type: Exec) {
     }
 }
 
-String[] outputs = []
-for (arch in ['arm64-v8a', 'armeabi-v7a', 'mips', 'mips64', 'x86', 'x86_64']) {
-    for (conf in ['Release', 'Debug']) {
-        for (targ in ['natj', 'c++_shared']) {
-            outputs += "build/${conf}/libs/${arch}/lib${targ}.so".toString()
-        }
-    }
+tasks.named('build').configure {
+    dependsOn 'buildNative'
+    dependsOn 'buildNativeDebug'
 }
-
-buildNative.inputs.files rootProject.file('../../prebuilts/external/libffi/build/ndk/aarch64/lib/libffi.a')
-buildNative.inputs.files rootProject.file('../../prebuilts/external/libffi/build/ndk/arm/lib/libffi.a')
-buildNative.inputs.files rootProject.file('../../prebuilts/external/libffi/build/ndk/mips64el/lib/libffi.a')
-buildNative.inputs.files rootProject.file('../../prebuilts/external/libffi/build/ndk/mipsel/lib/libffi.a')
-buildNative.inputs.files rootProject.file('../../prebuilts/external/libffi/build/ndk/x86/lib/libffi.a')
-buildNative.inputs.files rootProject.file('../../prebuilts/external/libffi/build/ndk/x86_64/lib/libffi.a')
-
-buildNative.inputs.files file('jni/Android.mk')
-buildNative.inputs.files file('jni/Application.mk')
-
-buildNative.inputs.files fileTree('../src/main/native').getFiles().toArray()
-buildNative.outputs.files outputs
-
-tasks.build.dependsOn(buildNative)
-tasks.build.dependsOn(buildNativeDebug)
 
 publishing {
     publications {
         mavenNative(MavenPublication) {
             artifactId 'natj-ndk'
 
-            for (o in outputs) {
+            for (o in nativeOutputs) {
                 def conf = new File(o).getParentFile().getParentFile().getParentFile().getName()
                 def arch = new File(o).getParentFile().getName()
 

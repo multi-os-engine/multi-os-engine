@@ -21,6 +21,8 @@ public class BuildTools implements Plugin<Project> {
             task.getVerbose().convention(verbose);
             task.getRootProjectDirectory().convention(
                     root.getLayout().getProjectDirectory());
+            task.getRepoRootDirectory().convention(
+                    root.getLayout().getProjectDirectory().dir("../.."));
             task.getProjectName().convention(project.getName());
         });
 

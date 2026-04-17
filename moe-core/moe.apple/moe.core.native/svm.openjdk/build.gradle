@@ -10,7 +10,7 @@ tasks.register('jdk_gensrc', Script) {
     inputs.dir(external.svm.openjdk)
     outputs.dir(builtJdkDir)
 
-    rawWorkDir "${builtJdkDir}"
+    rawWorkDir = "${builtJdkDir}"
 
     progress 'Copy jdk'
     rsync file(external.svm.openjdk), workDir

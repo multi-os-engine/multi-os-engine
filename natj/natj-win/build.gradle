@@ -14,7 +14,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-apply plugin: 'maven-publish'
+plugins {
+    id 'maven-publish'
+}
 
 def envPath = providers.environmentVariable('PATH')
 def pm5_configs = ['Debug', 'Release']
@@ -31,12 +33,12 @@ def createBuildTask = { pmProj, gDeps, pmConf, pmPlat, pmProducts ->
     ]
     pm5_allOutputs.addAll(tOutputs)
 
-    tasks.create(name: tName, type: Exec) {
+    tasks.register(tName, Exec) {
         for (dep in gDeps) {
-            if (dep instanceof Task) {
-                dependsOn dep
-            } else {
+            if (dep instanceof String) {
                 dependsOn "build_${dep}_${pmConf}_${pmPlat['name']}"
+            } else {
+                dependsOn dep
             }
         }
         dependsOn ":prebuild_libffi_windows"
@@ -64,9 +66,10 @@ def createBuildTask = { pmProj, gDeps, pmConf, pmPlat, pmProducts ->
             standardOutput = new FileOutputStream(stdoutfile)
         }
     }
+    return tName
 }
 
-task premake(type: Exec) {
+def premakeTask = tasks.register('premake', Exec) {
     doFirst {
         delete pm5_allOutputs
     }
@@ -90,7 +93,7 @@ def pm_TestClassesCTasks = []
 for (conf in pm5_configs) {
     for (plat in pm5_platforms) {
         pm_NatJStaticTasks += createBuildTask('NatJStatic',
-                [premake], conf, plat, ['natj-static.a'])
+                [premakeTask], conf, plat, ['natj-static.a'])
         pm_NatJTasks += createBuildTask('NatJ',
                 ['NatJStatic'], conf, plat, ['natj.lib', 'natj.dll'])
         pm_TestClassesCxxTasks += createBuildTask('TestClassesCxx',
@@ -100,32 +103,32 @@ for (conf in pm5_configs) {
     }
 }
 
-task buildStaticNative {
+tasks.register('buildStaticNative') {
     dependsOn pm_NatJStaticTasks
 }
 
-task buildNative {
+tasks.register('buildNative') {
     dependsOn pm_NatJTasks
 }
 
-task buildTestClassesCxx {
+tasks.register('buildTestClassesCxx') {
     dependsOn pm_TestClassesCxxTasks
 }
 
-task buildTestClassesC {
+tasks.register('buildTestClassesC') {
     dependsOn pm_TestClassesCTasks
 }
 
-task build {
-    dependsOn buildNative
+tasks.register('build') {
+    dependsOn 'buildNative'
 }
 
-task buildAll {
-    dependsOn build, buildStaticNative, buildTestClassesCxx, buildTestClassesC
+tasks.register('buildAll') {
+    dependsOn 'build', 'buildStaticNative', 'buildTestClassesCxx', 'buildTestClassesC'
 }
 
 // Configure publishing
-tasks.publish.dependsOn buildNative
+tasks.publish.dependsOn 'buildNative'
 publishing {
     publications {
         mavenNative(MavenPublication) {

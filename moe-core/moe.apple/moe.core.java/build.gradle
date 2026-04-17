@@ -15,7 +15,9 @@ limitations under the License.
 */
 
 
-apply plugin: 'java'
+plugins {
+    id 'java'
+}
 
 java {
     toolchain {
@@ -56,7 +58,7 @@ jar {
     from { [rootProject.file('LICENSE'), rootProject.file('NOTICE')] }
     getDestinationDirectory().set(file('build/libs/core'))
     from(file('../eula/LICENSE.TXT')) { into 'META-INF' }
-    includeEmptyDirs false
+    includeEmptyDirs = false
 }
 
 tasks.register('sourceJar', Jar) {
@@ -67,7 +69,7 @@ tasks.register('sourceJar', Jar) {
     from sourceSets.main.allJava
     getDestinationDirectory().set(file('build/libs/core'))
     from(file('../eula/LICENSE.TXT')) { into 'META-INF' }
-    includeEmptyDirs false
+    includeEmptyDirs = false
 }
 
 /******************************************************************************

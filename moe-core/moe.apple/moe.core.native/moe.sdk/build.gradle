@@ -16,7 +16,9 @@ limitations under the License.
 
 import org.moe.prebuilts.XcodeBuild
 
-apply plugin: 'base'
+plugins {
+    id 'base'
+}
 
 def graalDeps = [
         projects: [

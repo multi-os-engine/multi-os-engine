@@ -14,7 +14,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-apply plugin: 'java'
+plugins {
+    id 'java'
+}
 
 java {
     targetCompatibility = 1.8
@@ -22,12 +24,12 @@ java {
 }
 
 dependencies {
-    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.+'
-    implementation group: 'commons-io', name: 'commons-io', version: '2.5'
-    implementation group: 'com.google.code.gson', name: 'gson', version: '2.7'
+    implementation 'org.slf4j:slf4j-api:1.7.+'
+    implementation 'commons-io:commons-io:2.5'
+    implementation 'com.google.code.gson:gson:2.7'
     implementation project(':moe.tools.common')
     implementation project(':moe.document.pbxproj')
-    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    testImplementation 'junit:junit:4.12'
 }
 
 test {

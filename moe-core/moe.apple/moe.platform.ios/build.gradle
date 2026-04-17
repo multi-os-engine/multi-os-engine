@@ -15,9 +15,8 @@ limitations under the License.
 */
 plugins {
     id "com.diffplug.spotless" version "7.0.2"
+    id 'java'
 }
-
-apply plugin: 'java'
 
 def JvmVersionMeets(version) {
     def currentJvm = org.gradle.internal.jvm.Jvm.current()

@@ -14,9 +14,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-evaluationDependsOn ':moe.tools.common'
-
-apply plugin: 'java'
+plugins {
+    id 'java'
+}
 
 java {
     sourceCompatibility = "1.8"
@@ -25,7 +25,7 @@ java {
 
 dependencies {
     implementation project(':moe.document.pbxproj')
-    implementation group: 'com.google.code.gson', name: 'gson', version: '2.7'
+    implementation 'com.google.code.gson:gson:2.7'
     implementation project(':moe.tools.common')
-    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    testImplementation 'junit:junit:4.12'
 }

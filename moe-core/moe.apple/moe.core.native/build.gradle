@@ -20,7 +20,7 @@ tasks.register('fetch_boot_jdk', Script) {
     outputs.dir(bootJdkDir)
 
     progress 'Fetching boot JDK'
-    rawWorkDir external.svm.mx
+    rawWorkDir = external.svm.mx
 
     exec "./mx",
             "-y", "--no-warning",
@@ -36,13 +36,13 @@ tasks.register('build_graal_dist', Script) {
     inputs.dir(external.svm.graal)
     outputs.dir(graalDist)
 
-    workDir 'graalBuild'
+    workDir = 'graalBuild'
 
     progress 'Copying graal'
     rsync file(external.svm.graal), workDir
 
     progress 'Build graal dist'
-    workDir 'graalBuild/vm/'
+    workDir = 'graalBuild/vm/'
     exec "${external.svm.mx}/mx", "--java-home", file(bootJdkDirHome).absolutePath, "--env", "ce", "build"
 
     progress 'Copy build distribution'

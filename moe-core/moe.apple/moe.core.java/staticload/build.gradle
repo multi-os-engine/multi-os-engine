@@ -16,7 +16,9 @@
 
 import org.gradle.internal.jvm.Jvm
 
-apply plugin: 'java'
+plugins {
+    id 'java'
+}
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
