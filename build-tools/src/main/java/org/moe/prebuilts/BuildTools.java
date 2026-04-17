@@ -14,8 +14,6 @@ public class BuildTools implements Plugin<Project> {
         final Project root = project.getRootProject();
         Provider<Boolean> verbose = project.getProviders().gradleProperty("moe.verbose")
                 .map(v -> Boolean.TRUE).orElse(Boolean.FALSE);
-        Provider<Boolean> dontUnmount = project.getProviders().gradleProperty("moe.dontunmount")
-                .map(v -> Boolean.TRUE).orElse(Boolean.FALSE);
 
         project.getTasks().withType(BaseTask.class).configureEach(task -> {
             task.getVerbose().convention(verbose);
@@ -24,10 +22,6 @@ public class BuildTools implements Plugin<Project> {
             task.getRepoRootDirectory().convention(
                     root.getLayout().getProjectDirectory().dir("../.."));
             task.getProjectName().convention(project.getName());
-        });
-
-        project.getTasks().withType(Prebuild.class).configureEach(task -> {
-            task.getDontUnmount().convention(dontUnmount);
         });
 
         project.getTasks().withType(XcodeBuild.class).configureEach(task -> {

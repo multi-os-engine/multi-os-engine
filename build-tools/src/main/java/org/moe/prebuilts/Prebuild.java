@@ -16,25 +16,17 @@ limitations under the License.
 
 package org.moe.prebuilts;
 
-import org.gradle.api.GradleException;
 import org.gradle.api.file.ConfigurableFileCollection;
-import org.gradle.api.provider.Property;
 import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.InputDirectory;
 import org.gradle.api.tasks.InputFiles;
-import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.OutputDirectory;
 import org.gradle.api.tasks.PathSensitivity;
 import org.gradle.api.tasks.PathSensitive;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.OutputStream;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicReference;
 
 public abstract class Prebuild extends BaseTask {
 
@@ -46,8 +38,6 @@ public abstract class Prebuild extends BaseTask {
     public File getSourceFile() {
         return sourcePath == null ? null : new File(getRepoRootDirectory().get().getAsFile(), sourcePath);
     }
-
-    private int ramdiskSizeMB = 256;
 
     private String buildScript;
 
@@ -70,15 +60,6 @@ public abstract class Prebuild extends BaseTask {
     }
 
     @Input
-    public int getRamdiskSizeMB() {
-        return ramdiskSizeMB;
-    }
-
-    public void setRamdiskSizeMB(int ramdiskSizeMB) {
-        this.ramdiskSizeMB = ramdiskSizeMB;
-    }
-
-    @Input
     public String getBuildScript() {
         return buildScript;
     }
@@ -96,9 +77,6 @@ public abstract class Prebuild extends BaseTask {
         this.targetName = targetName;
     }
 
-    @Internal
-    public abstract Property<Boolean> getDontUnmount();
-
     @InputFiles
     @PathSensitive(PathSensitivity.RELATIVE)
     public abstract ConfigurableFileCollection getPreBuildFiles();
@@ -114,71 +92,36 @@ public abstract class Prebuild extends BaseTask {
 
     @Override
     protected void executeImpl() {
-        mount();
+        File workDir = getProjectLayout().getBuildDirectory().dir("prebuild-" + targetName).get().getAsFile();
+        workDir.mkdirs();
+
+        rsync(workDir);
+        if (!getPreBuildFiles().isEmpty()) {
+            getFileSystemOperations().copy(spec -> {
+                spec.into(workDir);
+                spec.from(getPreBuildFiles());
+            });
+        }
+        runBuildScript(workDir);
     }
 
-    private void mount() {
-        if (ramdiskSizeMB <= 0) {
-            throw new GradleException("Ramdisk size must be a positive number");
-        }
-
-        final AtomicReference<OutputStream> osr = new AtomicReference<>();
-
-        // Create mountpoint
-        exec(spec -> {
-            spec.setExecutable("hdiutil");
-            spec.args("attach", "-nomount", "ram://" + (ramdiskSizeMB * 2048));
-
-            OutputStream os = new ByteArrayOutputStream();
-            osr.set(os);
-            spec.setStandardOutput(new SplitOutputStream(getLog(), os));
-        });
-        final String mountpoint = osr.get().toString().trim();
-
-        // Mount
-        final SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd-hhmmss");
-        final String volname = "build-" + formatter.format(new Date());
-        exec(spec -> {
-            spec.setExecutable("diskutil");
-            spec.args("erasevolume", "HFS+", volname, mountpoint);
-        });
-        final String path = "/Volumes/" + volname;
-
-        try {
-            rsync(path);
-            if (!getPreBuildFiles().isEmpty()) {
-                getFileSystemOperations().copy(spec -> {
-                    spec.into(new File(path));
-                    spec.from(getPreBuildFiles());
-                });
-            }
-            runBuildScript(path);
-        } finally {
-            if (!getDontUnmount().get()) {
-                exec(spec -> {
-                    spec.setExecutable("diskutil");
-                    spec.args("unmountDisk", mountpoint);
-                    spec.setIgnoreExitValue(true);
-                });
-            }
-        }
-    }
-
-    private void rsync(String ramdisk) {
+    private void rsync(File workDir) {
         exec(spec -> {
             spec.setExecutable("rsync");
-            spec.args("-r", "--exclude=.git", getSourceFile().getAbsolutePath() + "/", ramdisk + "/");
+            spec.args("-aL", "--delete", "--exclude=.git",
+                    getSourceFile().getAbsolutePath() + "/",
+                    workDir.getAbsolutePath() + "/");
         });
     }
 
-    private void runBuildScript(String ramdisk) {
-        final File scriptFile = new File(ramdisk, buildScript);
+    private void runBuildScript(File workDir) {
+        final File scriptFile = new File(workDir, buildScript);
         if (!scriptFile.canExecute()) {
             scriptFile.setExecutable(true);
         }
 
         exec(spec -> {
-            spec.setWorkingDir(ramdisk);
+            spec.setWorkingDir(workDir);
 
             spec.environment("MOE_PREBUILTS_DIR", getRootProjectDirectory().get().getAsFile().toString());
             spec.environment("MOE_PREBUILTS_TARGET_DIR", sourcePath + "/build/" + targetName);
