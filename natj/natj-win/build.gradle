@@ -132,7 +132,7 @@ tasks.publish.dependsOn 'buildNative'
 publishing {
     publications {
         mavenNative(MavenPublication) {
-            artifactId 'natj-win'
+            artifactId = 'natj-win'
 
             for (conf in pm5_configs) {
                 for (plat in pm5_platforms) {

@@ -93,7 +93,7 @@ tasks.named('build').configure {
 publishing {
     publications {
         mavenNative(MavenPublication) {
-            artifactId 'natj-ndk'
+            artifactId = 'natj-ndk'
 
             for (o in nativeOutputs) {
                 def conf = new File(o).getParentFile().getParentFile().getParentFile().getName()
