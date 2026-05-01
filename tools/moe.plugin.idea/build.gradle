@@ -32,7 +32,7 @@ java {
 }
 
 tasks.withType(JavaCompile).configureEach {
-    options.release = 11
+    options.release = 17
 }
 
 def PLUGIN_NAME = 'moe_intellij_plugin'
