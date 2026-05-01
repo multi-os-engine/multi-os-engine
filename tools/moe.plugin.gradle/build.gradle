@@ -20,8 +20,7 @@ plugins {
     id 'org.moe.java-conventions'
     id "org.jetbrains.kotlin.jvm"
     alias(libs.plugins.shadow)
-    id "maven-publish"
-    id "signing"
+    alias(libs.plugins.maven.publish.vanniktech)
 }
 
 if (name != 'moe-gradle') {
@@ -94,6 +93,19 @@ java {
     withJavadocJar()
 }
 
+mavenPublishing {
+    publishToMavenCentral()
+    if (project.hasProperty("signing.gnupg.keyId")) {
+        signAllPublications()
+    }
+}
+
+if (project.hasProperty("signing.gnupg.keyId")) {
+    signing {
+        useGpgCmd()
+    }
+}
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
@@ -129,28 +141,6 @@ publishing {
                 }
             }
         }
-    }
-    repositories {
-        maven {
-            name = 'MavenCentral'
-            url = version.endsWith('SNAPSHOT') ? SONATYPE_SNAPSHOT_URL : SONATYPE_RELEASE_URL
-
-            credentials {
-                if (project.hasProperty('ossrhUsername')) {
-                    username = ossrhUsername
-                }
-                if (project.hasProperty('ossrhPassword')) {
-                    password = ossrhPassword
-                }
-            }
-        }
-    }
-}
-
-if (project.hasProperty("signing.gnupg.keyId")) {
-    signing {
-        useGpgCmd()
-        sign publishing.publications.mavenJava
     }
 }
 

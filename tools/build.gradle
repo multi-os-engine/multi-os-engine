@@ -16,6 +16,7 @@ limitations under the License.
 
 plugins {
     alias(libs.plugins.kotlin.jvm) apply false
+    alias(libs.plugins.maven.publish.vanniktech) apply false
 }
 
 allprojects {

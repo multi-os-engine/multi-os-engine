@@ -65,3 +65,4 @@ spotless = { id = "com.diffplug.spotless", version = "7.0.2" }
 download = { id = "de.undercouch.download", version = "5.7.0" }
 shadow = { id = "com.gradleup.shadow", version = "9.4.1" }
 foojay = { id = "org.gradle.toolchains.foojay-resolver-convention", version = "1.0.0" }
+maven-publish-vanniktech = { id = "com.vanniktech.maven.publish.base", version = "0.36.0" }
