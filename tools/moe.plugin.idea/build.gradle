@@ -71,8 +71,8 @@ dependencies {
 }
 
 intellijPlatform {
+    projectName = PLUGIN_NAME
     pluginConfiguration {
-        name = PLUGIN_NAME
         ideaVersion {
             sinceBuild = "233"
             untilBuild = provider { null }
