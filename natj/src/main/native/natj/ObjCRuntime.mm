@@ -143,6 +143,7 @@ jmethodID gObjCExceptionConstructorMethod = NULL;
 jmethodID gCleanupObjCProxyMethod = NULL;
 jmethodID gCleanupObjCBlockMethod = NULL;
 jmethodID gHandleFrameworkInitializerMethod = NULL;
+jmethodID gRegisterUnloadedObjCBindingMethod = NULL;
 jmethodID gGetExceptionStacktraceStaticMethod = NULL;
 jmethodID gGetProtocolClassMethodSelectorMethod = NULL;
 jmethodID gSelectorFinderConstructorMethod = NULL;
@@ -356,6 +357,9 @@ void Java_org_moe_natj_objc_ObjCRuntime_initialize(JNIEnv* env,
   gHandleFrameworkInitializerMethod =
       env->GetMethodID(gObjCRuntimeClass, "handleFrameworkInitializer",
                        "(Lorg/moe/natj/objc/IFrameworkInitializer;)V");
+  gRegisterUnloadedObjCBindingMethod =
+      env->GetMethodID(gObjCRuntimeClass, "registerUnloadedObjCBinding",
+                       "(Ljava/lang/String;Ljava/lang/String;)V");
   gGetExceptionStacktraceStaticMethod =
       env->GetStaticMethodID(gObjCRuntimeClass, "getExceptionStacktrace",
                              "(Ljava/lang/Throwable;)Ljava/lang/String;");
@@ -1278,6 +1282,16 @@ std::tuple<void*, void*> getSelectorCallback(ffi_type* type) {
 
 jobject getObjCRuntime() {
   return gRuntime;
+}
+
+void handleObjCBindingPreregister(JNIEnv* env, const char* objcName,
+                                  const char* javaName) {
+  jstring jObjcName = env->NewStringUTF(objcName);
+  jstring jJavaName = env->NewStringUTF(javaName);
+  env->CallVoidMethod(gRuntime, gRegisterUnloadedObjCBindingMethod,
+                      jObjcName, jJavaName);
+  env->DeleteLocalRef(jObjcName);
+  env->DeleteLocalRef(jJavaName);
 }
 
 ObjCAllocInfo* getAllocInfoForClass(Class cls) {

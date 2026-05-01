@@ -65,9 +65,22 @@ public class RegisterOnStartupChecker {
     private String objCClassName;
 
     /**
+     * The corresponding ObjC class name for an {@code @ObjCClassBinding} class.
+     * Set independently of {@link #objCClassName} so the hybrid-duplicate detection
+     * keeps its existing semantics.
+     */
+    @Nullable
+    private String objCBindingClassName;
+
+    /**
      * Boolean indicating the search result.
      */
     private boolean isRegisterOnStartup;
+
+    /**
+     * Boolean indicating whether the class is an {@code @ObjCClassBinding}.
+     */
+    private boolean isObjCClassBinding;
 
     /**
      * Creates a new RegisterOnStartupChecker for the specified steam.
@@ -105,6 +118,29 @@ public class RegisterOnStartupChecker {
      */
     public boolean isRegisterOnStartup() {
         return isRegisterOnStartup;
+    }
+
+    /**
+     * Returns whether the class carries the {@code @ObjCClassBinding} annotation.
+     *
+     * @return true if the class is an ObjC binding
+     */
+    public boolean isObjCClassBinding() {
+        return isObjCClassBinding;
+    }
+
+    /**
+     * Returns the ObjC class name for an {@code @ObjCClassBinding} class.
+     * <p>
+     * If the class has an {@code @ObjCClassName} annotation, its value is returned.
+     * Otherwise, the simple Java class name is used (matching the runtime fallback in
+     * {@code ObjCRuntime.mm}).
+     *
+     * @return ObjC class name, or {@code null} if the class is not a binding
+     */
+    @Nullable
+    public String getObjCBindingClassName() {
+        return objCBindingClassName;
     }
 
     /**
@@ -161,6 +197,17 @@ public class RegisterOnStartupChecker {
                         objCClassName = getJavaClassName().replace('/', '.');
                     }
                     RegisterOnStartupChecker.this.objCClassName = objCClassName;
+                }
+                if (isObjCBinding) {
+                    RegisterOnStartupChecker.this.isObjCClassBinding = true;
+                    if (objCClassName != null) {
+                        RegisterOnStartupChecker.this.objCBindingClassName = objCClassName;
+                    } else {
+                        String javaName = getJavaClassName();
+                        int slash = javaName.lastIndexOf('/');
+                        RegisterOnStartupChecker.this.objCBindingClassName =
+                            slash < 0 ? javaName : javaName.substring(slash + 1);
+                    }
                 }
                 super.visitEnd();
             }

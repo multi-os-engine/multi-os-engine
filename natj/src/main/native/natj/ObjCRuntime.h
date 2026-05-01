@@ -240,6 +240,19 @@ extern IMP getBlockCallback(id block);
 extern jobject getObjCRuntime();
 
 /**
+ * Registers a known but not-yet-loaded @ObjCClassBinding with the ObjCRuntime.
+ *
+ * Forwards the (objcName, javaName) pair to ObjCRuntime.registerUnloadedObjCBinding
+ * via JNI. Used at startup to push every binding listed in objc-bindings.txt into
+ * the fallback map without actually loading the classes.
+ *
+ * @param env JNIEnv pointer for the current thread
+ * @param objcName ObjC class name
+ * @param javaName Java FQN of the binding
+ */
+extern "C" void handleObjCBindingPreregister(JNIEnv* env, const char* objcName, const char* javaName);
+
+/**
  * Return String with full stacktrace of java throwable object
  */
 extern NSString* getExceptionStacktrace(JNIEnv*, jthrowable);

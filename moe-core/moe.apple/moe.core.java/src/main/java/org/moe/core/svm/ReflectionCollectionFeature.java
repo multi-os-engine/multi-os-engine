@@ -133,6 +133,7 @@ public class ReflectionCollectionFeature implements Feature {
             RuntimeJNIAccess.register(ObjCRuntime.class.getDeclaredMethod("cleanupObjCProxy", Object.class));
             RuntimeJNIAccess.register(ObjCRuntime.class.getDeclaredMethod("cleanupObjCBlock", Object.class, Method.class));
             RuntimeJNIAccess.register(ObjCRuntime.class.getDeclaredMethod("handleFrameworkInitializer", IFrameworkInitializer.class));
+            RuntimeJNIAccess.register(ObjCRuntime.class.getDeclaredMethod("registerUnloadedObjCBinding", String.class, String.class));
             RuntimeJNIAccess.register(ObjCRuntime.class.getDeclaredMethod("getExceptionStacktrace", Throwable.class));
             RuntimeJNIAccess.register(ObjCObject.class);
             RuntimeJNIAccess.register(ObjCObjectMapper.class);
@@ -262,6 +263,11 @@ public class ReflectionCollectionFeature implements Feature {
                 return;
             if (aClass.isInterface())
                 return;
+
+            // Required so Class.forName(...) on a binding class succeeds at runtime,
+            // including the lazy lookup in ObjCRuntime.resolveObjCClass that loads
+            // bindings listed in objc-bindings.txt.
+            RuntimeReflection.register(aClass);
 
             RuntimeReflection.registerAllDeclaredMethods(aClass);
             RuntimeReflection.registerAllMethods(aClass);

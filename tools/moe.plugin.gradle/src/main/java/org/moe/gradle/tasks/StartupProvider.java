@@ -40,6 +40,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.Map;
 import java.util.Set;
 import java.util.jar.JarFile;
 
@@ -47,6 +48,7 @@ public abstract class StartupProvider extends AbstractBaseTask {
 
     private static final String CONVENTION_INPUT_FILES = "inputFiles";
     private static final String CONVENTION_PREREGISTER_FILE = "preregisterFile";
+    private static final String CONVENTION_OBJC_BINDINGS_FILE = "objCBindingsFile";
 
     @Nullable
     private Set<Object> inputFiles;
@@ -76,12 +78,30 @@ public abstract class StartupProvider extends AbstractBaseTask {
         this.preregisterFile = preregisterFile;
     }
 
+    @Nullable
+    private Object objCBindingsFile;
+
+    @OutputFile
+    @NotNull
+    public File getObjCBindingsFile() {
+        return getProject().file(getOrConvention(objCBindingsFile, CONVENTION_OBJC_BINDINGS_FILE));
+    }
+
+    @IgnoreUnused
+    public void setObjCBindingsFile(@Nullable Object objCBindingsFile) {
+        this.objCBindingsFile = objCBindingsFile;
+    }
+
     @Override
     protected void run() {
         try {
             FileUtils.deleteFileOrFolder(getPreregisterFile());
+            FileUtils.deleteFileOrFolder(getObjCBindingsFile());
 
             HashMap<String, LinkedHashSet<String>> nativeClassNames = new HashMap<>();
+            // ObjC class name -> Java FQNs of every @ObjCClassBinding observed.
+            // Used to detect duplicate bindings before writing the mapping file.
+            HashMap<String, LinkedHashSet<String>> bindingClassNames = new HashMap<>();
             try (FileWriter log = new FileWriter(getLogFile(), true);
                  FileWriter txt = new FileWriter(getPreregisterFile())) {
                 getInputFiles().forEach(it -> {
@@ -109,6 +129,11 @@ public abstract class StartupProvider extends AbstractBaseTask {
                                         .add(checker.getJavaClassName());
                                 }
                             }
+                            if (checker.isObjCClassBinding() && checker.getObjCBindingClassName() != null) {
+                                bindingClassNames
+                                    .computeIfAbsent(checker.getObjCBindingClassName(), k -> new LinkedHashSet<>())
+                                    .add(checker.getJavaClassName().replace('/', '.'));
+                            }
                         } catch (IOException e) {
                             throw new GradleException("An IOException occurred", e);
                         }
@@ -130,6 +155,24 @@ public abstract class StartupProvider extends AbstractBaseTask {
                             throw new GradleException("An IOException occurred", e);
                         }
                     });
+            }
+
+            try (FileWriter log = new FileWriter(getLogFile(), true);
+                 FileWriter txt = new FileWriter(getObjCBindingsFile())) {
+                for (Map.Entry<String, LinkedHashSet<String>> entry : bindingClassNames.entrySet()) {
+                    String objCName = entry.getKey();
+                    LinkedHashSet<String> javaNames = entry.getValue();
+                    if (javaNames.size() > 1) {
+                        String warn = "ObjC class \"" + objCName
+                            + "\" has multiple Java @ObjCClassBinding classes: ["
+                            + String.join(", ", javaNames) + "], using the first one for lazy resolution!";
+                        getLogger().warn(warn);
+                        log.append("WARN: ").append(warn).append("\n");
+                    }
+                    String javaName = javaNames.iterator().next();
+                    log.append("Binding: ").append(objCName).append(" -> ").append(javaName).append("\n");
+                    txt.append(objCName).append(':').append(javaName).append('\n');
+                }
             }
         } catch (IOException e) {
             throw new GradleException("An IOException occurred", e);
@@ -168,6 +211,7 @@ public abstract class StartupProvider extends AbstractBaseTask {
             return files;
         });
         addConvention(CONVENTION_PREREGISTER_FILE, () -> resolvePathInBuildDir(out, "preregister.txt"));
+        addConvention(CONVENTION_OBJC_BINDINGS_FILE, () -> resolvePathInBuildDir(out, "objc-bindings.txt"));
         addConvention(CONVENTION_LOG_FILE, () -> resolvePathInBuildDir(out, "StartupProvider.log"));
     }
 }

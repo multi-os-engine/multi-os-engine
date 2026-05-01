@@ -422,6 +422,13 @@ public class ObjCRuntime extends NativeRuntime {
     private final Set<String> externalPackages = new HashSet<String>();
 
     /**
+     * ObjC class name -> Java FQN fallback map. Populated at startup from
+     * {@code objc-bindings.txt} and consulted by {@link #resolveObjCClass(long)}
+     * before the parent-class fallback.
+     */
+    private final Map<String, String> unloadedObjCBindings = new HashMap<String, String>();
+
+    /**
      * Handles an @{link org.moe.natj.objc.IFrameworkInitializer} instance.
      *
      * @param initializer Framework initializer
@@ -450,6 +457,24 @@ public class ObjCRuntime extends NativeRuntime {
     public void addExternalPackage(String name) {
         synchronized (externalPackages) {
             externalPackages.add(name);
+        }
+    }
+
+    /**
+     * Registers a known but not-yet-loaded {@code @ObjCClassBinding} class.
+     *
+     * <p>
+     * The binding is recorded in a side-table that {@link #resolveObjCClass(long)}
+     * consults when no exact match is found via the package search; on a hit the
+     * Java class is loaded via {@code Class.forName}, triggering its static
+     * initializer and {@code NatJ.register()}.
+     *
+     * @param objcName ObjC class name
+     * @param javaName Java FQN of the binding
+     */
+    public void registerUnloadedObjCBinding(String objcName, String javaName) {
+        synchronized (unloadedObjCBindings) {
+            unloadedObjCBindings.put(objcName, javaName);
         }
     }
 
@@ -553,6 +578,23 @@ public class ObjCRuntime extends NativeRuntime {
                                             } catch (Exception ex) {
                                                 // nothing
                                             }
+                                        }
+                                    }
+                                }
+                                if (javaClass == null) {
+                                    String javaName;
+                                    synchronized (unloadedObjCBindings) {
+                                        javaName = unloadedObjCBindings.get(name);
+                                    }
+                                    if (javaName != null) {
+                                        try {
+                                            // Class.forName triggers <clinit> ->
+                                            // NatJ.register() -> doRegistration(), which
+                                            // populates resolvedObjCClasses.
+                                            javaClass = (java.lang.Class<? extends ObjCObject>)
+                                                    java.lang.Class.forName(javaName);
+                                        } catch (Exception ex) {
+                                            // Stale entry: class stripped post-build.
                                         }
                                     }
                                 }

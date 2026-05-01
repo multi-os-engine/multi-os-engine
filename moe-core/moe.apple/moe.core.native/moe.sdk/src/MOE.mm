@@ -277,12 +277,39 @@ JNIEXPORT jstring JNICALL Java_org_moe_core_MOE_getUserMainClassName(JNIEnv* env
  * Defined in NatJ
  */
 extern "C" void handleStartup(JNIEnv* env, const char* name);
+extern "C" void handleObjCBindingPreregister(JNIEnv* env, const char* objcName,
+                                             const char* javaName);
 
 JNIEXPORT void JNICALL Java_org_moe_core_MOE_handleStartup(JNIEnv* env, jclass clazz) {
     @autoreleasepool {
-        // Build up class preregister list
         NSBundle* mainBundle = [NSBundle mainBundle];
 
+        // Push every @ObjCClassBinding into the lazy-resolution side-table before
+        // running any static initializer that might call resolveObjCClass.
+        NSURL* bindingsUrl = [NSURL URLWithString:@"objc-bindings.txt"
+                                    relativeToURL:[mainBundle resourceURL]];
+        NSString* bindingsContents =
+            [NSString stringWithContentsOfFile:[bindingsUrl path]
+                                      encoding:NSUTF8StringEncoding
+                                         error:nil];
+        if (bindingsContents != nil) {
+            NSArray* bindingLines = [bindingsContents
+                componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+            for (NSString* line in bindingLines) {
+                if ([line length] == 0) continue;
+                NSRange sep = [line rangeOfString:@":"];
+                if (sep.location == NSNotFound) continue;
+                NSString* objcName = [line substringToIndex:sep.location];
+                NSString* javaName = [line substringFromIndex:sep.location + 1];
+                handleObjCBindingPreregister(env, [objcName UTF8String],
+                                             [javaName UTF8String]);
+                if (env->ExceptionOccurred()) {
+                    return;
+                }
+            }
+        }
+
+        // Build up class preregister list
         NSURL* url = [NSURL URLWithString:@"preregister.txt"
                             relativeToURL:[mainBundle resourceURL]];
         NSString* fileContents =
