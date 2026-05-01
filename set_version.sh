@@ -29,21 +29,21 @@ MOE_IDEA_PLUGIN_DIR="$MOE_TOOLS_DIR/moe.plugin.idea"
 
 WORKED=
 
-if [[ "$COMPONENT" == "moe"]]; then
+if [[ "$COMPONENT" == "moe" ]]; then
   echo "Updating MOE version..."
 
   WORKED=1
 
-  sed -E -i '' "s/^version +'.+'/version '$VERSION'/" "$MOE_CORE_DIR/build.gradle"
+  sed -E -i '' "s/^version += +'.+'/version = '$VERSION'/" "$MOE_CORE_DIR/build.gradle"
   sed -E -i '' "s/^MOE_VERSION=.+$/MOE_VERSION=$VERSION/" "$MOE_TOOLS_DIR/gradle.properties"
 fi
 
-if [[ "$COMPONENT" == "idea"]]; then
+if [[ "$COMPONENT" == "idea" ]]; then
   echo "Updating MOE IDEA plugin version..."
 
   WORKED=1
 
-  sed -E -i '' "s/^version +'.+'/version '$VERSION'/" "$MOE_IDEA_PLUGIN_DIR/build.gradle"
+  sed -E -i '' "s/^version += +'.+'/version = '$VERSION'/" "$MOE_IDEA_PLUGIN_DIR/build.gradle"
 fi
 
 if [[ ! "$WORKED" ]]; then
