@@ -34,14 +34,19 @@ import org.moe.gradle.utils.Require;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
+import java.util.Enumeration;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
 public abstract class StartupProvider extends AbstractBaseTask {
@@ -98,84 +103,108 @@ public abstract class StartupProvider extends AbstractBaseTask {
             FileUtils.deleteFileOrFolder(getPreregisterFile());
             FileUtils.deleteFileOrFolder(getObjCBindingsFile());
 
-            HashMap<String, LinkedHashSet<String>> nativeClassNames = new HashMap<>();
-            // ObjC class name -> Java FQNs of every @ObjCClassBinding observed.
-            // Used to detect duplicate bindings before writing the mapping file.
-            HashMap<String, LinkedHashSet<String>> bindingClassNames = new HashMap<>();
-            try (FileWriter log = new FileWriter(getLogFile(), true);
-                 FileWriter txt = new FileWriter(getPreregisterFile())) {
-                getInputFiles().forEach(it -> {
-                    JarFile file;
-                    try {
-                        log.append("Checking: ").append(it.getAbsolutePath()).append("\n");
-                        file = new JarFile(it);
-                    } catch (IOException e) {
-                        throw new GradleException("An IOException occurred", e);
-                    }
-                    file.stream().forEach(entry -> {
-                        try {
-                            if (!entry.getName().endsWith(".class")) {
-                                return;
-                            }
-
-                            RegisterOnStartupChecker checker = RegisterOnStartupChecker.getRegisterOnStartupChecker(file.getInputStream(entry));
-                            if (checker.isRegisterOnStartup()) {
-                                log.append("Found: ").append(checker.getJavaClassName()).append("\n");
-                                txt.append(checker.getJavaClassName()).append("\n");
-
-                                if (checker.getObjCClassName() != null) {
-                                    nativeClassNames
-                                        .computeIfAbsent(checker.getObjCClassName(), k -> new LinkedHashSet<>())
-                                        .add(checker.getJavaClassName());
-                                }
-                            }
-                            if (checker.isObjCClassBinding() && checker.getObjCBindingClassName() != null) {
-                                bindingClassNames
-                                    .computeIfAbsent(checker.getObjCBindingClassName(), k -> new LinkedHashSet<>())
-                                    .add(checker.getJavaClassName().replace('/', '.'));
-                            }
-                        } catch (IOException e) {
-                            throw new GradleException("An IOException occurred", e);
-                        }
-                    });
-                });
-
-                nativeClassNames
-                    .entrySet()
-                    .stream()
-                    .filter(entry -> entry.getValue().size() > 1)
-                    .forEach(entry -> {
-                        String warn = "ObjC class \"" + entry.getKey()
-                            + "\" is preregistered with multiple hybrid Java classes: ["
-                            + String.join(", ", entry.getValue()) + "], this might cause crash at runtime!";
-                        getLogger().warn(warn);
-                        try {
-                            log.append("WARN: ").append(warn);
-                        } catch (IOException e) {
-                            throw new GradleException("An IOException occurred", e);
-                        }
-                    });
-            }
-
-            try (FileWriter log = new FileWriter(getLogFile(), true);
-                 FileWriter txt = new FileWriter(getObjCBindingsFile())) {
-                for (Map.Entry<String, LinkedHashSet<String>> entry : bindingClassNames.entrySet()) {
-                    String objCName = entry.getKey();
-                    LinkedHashSet<String> javaNames = entry.getValue();
-                    if (javaNames.size() > 1) {
-                        String warn = "ObjC class \"" + objCName
-                            + "\" has multiple Java @ObjCClassBinding classes: ["
-                            + String.join(", ", javaNames) + "], using the first one for lazy resolution!";
-                        getLogger().warn(warn);
-                        log.append("WARN: ").append(warn).append("\n");
-                    }
-                    String javaName = javaNames.iterator().next();
-                    log.append("Binding: ").append(objCName).append(" -> ").append(javaName).append("\n");
-                    txt.append(objCName).append(':').append(javaName).append('\n');
-                }
+            try (FileWriter log = new FileWriter(getLogFile(), true)) {
+                ScanResults results = scanInputs(log);
+                writePreregisterFile(log, results);
+                writeObjCBindingsFile(log, results);
             }
         } catch (IOException e) {
             throw new GradleException("An IOException occurred", e);
+        }
+    }
+
+    /**
+     * Aggregated state from a single pass over the input jars. The two output
+     * files are written from disjoint slices of this struct.
+     */
+    private static final class ScanResults {
+        // Java FQNs (slash form) of every @RegisterOnStartup class, in jar-walk order.
+        final List<String> preregister = new ArrayList<>();
+        // ObjC name -> Java FQNs (slash form) for hybrid duplicate detection. Only
+        // populated for classes where RegisterOnStartupChecker.getObjCClassName()
+        // is non-null (i.e. @RegisterOnStartup without @ObjCClassBinding).
+        final Map<String, LinkedHashSet<String>> hybridByObjCName = new LinkedHashMap<>();
+        // ObjC name -> Java FQNs (dot form) for every @ObjCClassBinding class.
+        final Map<String, LinkedHashSet<String>> bindingByObjCName = new LinkedHashMap<>();
+    }
+
+    private ScanResults scanInputs(FileWriter log) throws IOException {
+        ScanResults r = new ScanResults();
+        for (File jarFile : getInputFiles()) {
+            log.append("Checking: ").append(jarFile.getAbsolutePath()).append("\n");
+            try (JarFile jar = new JarFile(jarFile)) {
+                Enumeration<JarEntry> entries = jar.entries();
+                while (entries.hasMoreElements()) {
+                    JarEntry entry = entries.nextElement();
+                    if (!entry.getName().endsWith(".class")) {
+                        continue;
+                    }
+                    try (InputStream in = jar.getInputStream(entry)) {
+                        RegisterOnStartupChecker checker =
+                            RegisterOnStartupChecker.getRegisterOnStartupChecker(in);
+                        if (checker.isRegisterOnStartup()) {
+                            r.preregister.add(checker.getJavaClassName());
+                            if (checker.getObjCClassName() != null) {
+                                r.hybridByObjCName
+                                    .computeIfAbsent(checker.getObjCClassName(), k -> new LinkedHashSet<>())
+                                    .add(checker.getJavaClassName());
+                            }
+                        }
+                        if (checker.isObjCClassBinding() && checker.getObjCBindingClassName() != null) {
+                            r.bindingByObjCName
+                                .computeIfAbsent(checker.getObjCBindingClassName(), k -> new LinkedHashSet<>())
+                                .add(checker.getJavaClassName().replace('/', '.'));
+                        }
+                    }
+                }
+            }
+        }
+        return r;
+    }
+
+    private void writePreregisterFile(FileWriter log, ScanResults r) throws IOException {
+        try (FileWriter txt = new FileWriter(getPreregisterFile())) {
+            for (String javaName : r.preregister) {
+                log.append("Found: ").append(javaName).append("\n");
+                txt.append(javaName).append('\n');
+            }
+        }
+
+        // Hybrid collisions are warned but every class is still emitted: NatJ.register()
+        // throws at runtime when two Java classes claim the same ObjC class, and that
+        // crash is the user-visible signal.
+        warnDuplicates(log, r.hybridByObjCName,
+            "is preregistered with multiple hybrid Java classes",
+            "this might cause crash at runtime!");
+    }
+
+    private void writeObjCBindingsFile(FileWriter log, ScanResults r) throws IOException {
+        try (FileWriter txt = new FileWriter(getObjCBindingsFile())) {
+            for (Map.Entry<String, LinkedHashSet<String>> entry : r.bindingByObjCName.entrySet()) {
+                // The runtime side-table is Map<String,String>; only one Java FQN can
+                // win. Pick the first encountered so the result is deterministic.
+                String javaName = entry.getValue().iterator().next();
+                log.append("Binding: ").append(entry.getKey()).append(" -> ").append(javaName).append("\n");
+                txt.append(entry.getKey()).append(':').append(javaName).append('\n');
+            }
+        }
+        warnDuplicates(log, r.bindingByObjCName,
+            "has multiple Java @ObjCClassBinding classes",
+            "using the first one for lazy resolution!");
+    }
+
+    private void warnDuplicates(FileWriter log,
+                                Map<String, LinkedHashSet<String>> byObjCName,
+                                String midText,
+                                String suffix) throws IOException {
+        for (Map.Entry<String, LinkedHashSet<String>> entry : byObjCName.entrySet()) {
+            if (entry.getValue().size() <= 1) {
+                continue;
+            }
+            String warn = "ObjC class \"" + entry.getKey() + "\" " + midText + ": ["
+                + String.join(", ", entry.getValue()) + "], " + suffix;
+            getLogger().warn(warn);
+            log.append("WARN: ").append(warn).append("\n");
         }
     }
 
