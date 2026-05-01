@@ -47,3 +47,13 @@ NATJ_TEST_EXTERN NSNumber **NGNumberArrayCreate(NSUInteger capacity);
 NATJ_TEST_EXTERN NSNumber *NGNumberGetAtIndex(NSNumber **objects, NSUInteger idx);
 NATJ_TEST_EXTERN NSNumber *NGNumberSetAtIndex(NSNumber **objects, NSUInteger idx, NSNumber *object);
 NATJ_TEST_EXTERN void NGNumberArrayFree(NSNumber **objects, NSUInteger capacity);
+
+// Fixtures for LazyBindingResolutionTest: a parent/child pair plus a C function
+// whose declared return type is the parent but the actual instance is the child.
+@interface LazyParent : NSObject
+@end
+
+@interface LazyChild : LazyParent
+@end
+
+NATJ_TEST_EXTERN LazyParent *createLazyChildAsParent(void);

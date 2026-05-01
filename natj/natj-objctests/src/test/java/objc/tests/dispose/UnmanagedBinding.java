@@ -16,6 +16,7 @@ limitations under the License.
 
 package objc.tests.dispose;
 
+import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.NUInt;
@@ -30,6 +31,10 @@ import apple.NSObject;
 @ObjCClassBinding
 @Library("TestClassesObjC")
 public class UnmanagedBinding extends NSObject {
+
+    static {
+        NatJ.register();
+    }
 
     protected UnmanagedBinding(Pointer peer) {
         super(peer);

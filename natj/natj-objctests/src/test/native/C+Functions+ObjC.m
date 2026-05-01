@@ -87,3 +87,13 @@ void NGNumberArrayFree(NSNumber **objects, NSUInteger capacity) {
     }
     free(objects);
 }
+
+@implementation LazyParent
+@end
+
+@implementation LazyChild
+@end
+
+LazyParent *createLazyChildAsParent(void) {
+    return [[[LazyChild alloc] init] autorelease];
+}

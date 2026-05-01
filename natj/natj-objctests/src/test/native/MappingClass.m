@@ -22,7 +22,7 @@ limitations under the License.
 
 + (NSString*)testListMapping:(NSMutableArray*)list :(NSArray*)narray :(NSUInteger)index {
     // Sanity test
-    __NATJ_ASSERT([list count] > index > 0);
+    __NATJ_ASSERT(([list count] > index) > 0);
 
     // Testing type
     __NATJ_ASSERT([list isKindOfClass:[NSMutableArray class]]);

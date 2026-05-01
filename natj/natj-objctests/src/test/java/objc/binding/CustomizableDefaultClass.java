@@ -16,6 +16,7 @@ limitations under the License.
 
 package objc.binding;
 
+import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
@@ -33,6 +34,11 @@ import objc.binding.protocol.DefaultClassAttributes;
 @ObjCClassBinding
 @Library("TestClassesObjC")
 public class CustomizableDefaultClass extends NSObject implements DefaultClassAttributes {
+
+    static {
+        NatJ.register();
+    }
+
     protected CustomizableDefaultClass(Pointer peer) {
         super(peer);
     }

@@ -4,3 +4,4 @@ external/
 .idea
 .gradle
 tools/.intellijPlatform/
+build/
