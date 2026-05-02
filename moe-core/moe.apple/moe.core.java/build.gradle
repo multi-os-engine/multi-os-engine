@@ -19,10 +19,16 @@ plugins {
     id 'org.moe.java-conventions'
 }
 
+base {
+    archivesName = 'moe-core'
+}
+
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(21)
     }
+    withSourcesJar()
+    withJavadocJar()
 }
 
 def external_path = rootProject.file("../../external").absolutePath
@@ -46,33 +52,11 @@ dependencies {
 // Don't run tests with the built-in junit
 test { exclude '**' }
 
-/******************************************************************************
- * Core Jar Generation
- ******************************************************************************/
-
 jar {
-    archiveBaseName = 'moe-core'
-
     from { [rootProject.file('LICENSE'), rootProject.file('NOTICE')] }
-    getDestinationDirectory().set(file('build/libs/core'))
     from(file('../eula/LICENSE.TXT')) { into 'META-INF' }
     includeEmptyDirs = false
 }
-
-tasks.register('sourceJar', Jar) {
-    archiveBaseName = 'moe-core'
-    archiveClassifier = 'sources'
-
-    from rootProject.file('LICENSE'), rootProject.file('NOTICE')
-    from sourceSets.main.allJava
-    getDestinationDirectory().set(file('build/libs/core'))
-    from(file('../eula/LICENSE.TXT')) { into 'META-INF' }
-    includeEmptyDirs = false
-}
-
-/******************************************************************************
- * Core Javadoc Jar Generation
- ******************************************************************************/
 
 javadoc {
     title = "moe.ios.core API"
@@ -80,15 +64,4 @@ javadoc {
     include "**/*.java"
     options.addStringOption('Xdoclint:none', '-quiet')
     options.addStringOption('source', '1.8')
-}
-
-tasks.register('javadocJar', Jar) {
-    dependsOn javadoc
-    archiveBaseName = 'moe-core'
-    archiveClassifier = 'javadoc'
-
-    from javadoc.destinationDir
-    from { [rootProject.file('LICENSE'), rootProject.file('NOTICE')] }
-    getDestinationDirectory().set(file('build/libs/core'))
-    from(file('../eula/LICENSE.TXT')) { into 'META-INF' }
 }

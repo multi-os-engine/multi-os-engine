@@ -21,8 +21,14 @@ plugins {
     id 'org.moe.java-conventions'
 }
 
+base {
+    archivesName = 'moe-ios-junit'
+}
+
 java {
     disableAutoTargetJvm()
+    withSourcesJar()
+    withJavadocJar()
 }
 
 static def JvmVersionMeets(version) {
@@ -50,21 +56,7 @@ tasks.javadoc {
     }
 }
 
-tasks.register('javadocJar', Jar) {
-    dependsOn javadoc
-    archiveBaseName = 'moe-ios-junit'
-    archiveClassifier = 'javadoc'
-    from javadoc.destinationDir
-}
-
-tasks.register('sourceJar', Jar) {
-    archiveBaseName = 'moe-ios-junit'
-    archiveClassifier = 'sources'
-    from sourceSets.main.allSource
-}
-
 jar {
-    archiveBaseName = 'moe-ios-junit'
     from { configurations.included.collect { it.isDirectory() ? it : zipTree(it) } }
     exclude 'META-INF/*.SF'
 }

@@ -18,6 +18,15 @@ plugins {
     id 'org.moe.java-conventions'
 }
 
+base {
+    archivesName = 'moe-ios'
+}
+
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
 def JvmVersionMeets(version) {
     def currentJvm = org.gradle.internal.jvm.Jvm.current()
     return version <= Integer.parseInt(currentJvm.javaVersion.majorVersion)
@@ -77,24 +86,13 @@ tasks.javadoc {
     }
 }
 
-tasks.register('javadocJar', Jar) {
-    dependsOn javadoc
-    archiveBaseName = 'moe-ios'
-    archiveClassifier = 'javadoc'
-    from javadoc.destinationDir
-}
-
-tasks.register('sourceJar', Jar) {
-    archiveBaseName = 'moe-ios'
-    archiveClassifier = 'sources'
-    from sourceSets.main.allSource
+tasks.named('sourcesJar', Jar) {
     from(rootProject.external.natj.sources) {
         include '**/*.java'
     }
 }
 
 jar {
-    archiveBaseName = 'moe-ios'
     from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
 }
 
