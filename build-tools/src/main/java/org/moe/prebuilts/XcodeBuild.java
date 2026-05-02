@@ -16,8 +16,7 @@ limitations under the License.
 
 package org.moe.prebuilts;
 
-import groovy.lang.Closure;
-
+import org.gradle.api.Action;
 import org.gradle.api.Project;
 import org.gradle.api.file.DirectoryProperty;
 import org.gradle.api.logging.Logger;
@@ -130,12 +129,12 @@ public abstract class XcodeBuild extends BaseTask {
     }
 
     public static TaskProvider<XcodeBuild> registerTask(Project project, String target, String platform,
-            String sdk, String configuration, Closure configClosure) {
-        return registerTask(project, target, platform, sdk, configuration, Collections.emptyMap(), configClosure);
+            String sdk, String configuration, Action<? super XcodeBuild> configAction) {
+        return registerTask(project, target, platform, sdk, configuration, Collections.emptyMap(), configAction);
     }
 
     public static TaskProvider<XcodeBuild> registerTask(Project project, String target, String platform,
-            String sdk, String configuration, Map<String, Object> deps, Closure configClosure) {
+            String sdk, String configuration, Map<String, Object> deps, Action<? super XcodeBuild> configAction) {
         // Construct name
         String name = "build";
         name += "_" + target;
@@ -172,9 +171,7 @@ public abstract class XcodeBuild extends BaseTask {
                 }
             }
 
-            configClosure.setDelegate(xcodeBuild);
-            configClosure.setResolveStrategy(Closure.DELEGATE_FIRST);
-            configClosure.call(xcodeBuild);
+            configAction.execute(xcodeBuild);
         });
     }
 

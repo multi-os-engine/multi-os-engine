@@ -1,0 +1,94 @@
+/*
+Copyright 2014-2016 Intel Corporation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+import org.gradle.api.tasks.bundling.Tar
+import java.io.ByteArrayOutputStream
+
+plugins {
+    id("org.moe.java-conventions")
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(libs.junit)
+    testImplementation(rootProject)
+}
+
+tasks.withType<Test>().configureEach {
+    val nativeConfiguration = "Release"
+    dependsOn(":natj-mac:build_TestClassesC_${nativeConfiguration}_macosx")
+
+    systemProperty("java.library.path", file("../natj-mac/build/xcode/$nativeConfiguration"))
+    testLogging.showStandardStreams = true
+    if (rootProject.hasProperty("moe.use.addresssanitizer")) {
+        val clangResourceDir = providers.exec {
+            commandLine("xcrun", "clang", "-print-resource-dir")
+        }.standardOutput.asText.get().trim()
+        environment("DYLD_INSERT_LIBRARIES", "$clangResourceDir/lib/darwin/libclang_rt.asan_osx_dynamic.dylib")
+        environment("ASAN_OPTIONS", "handle_segv=0:allow_user_segv_handler=1")
+    }
+}
+
+tasks.register<Tar>("ansibleTestWinPrepare") {
+    val nativeConfiguration = "Release"
+    dependsOn(":natj-win:build_TestClassesC_${nativeConfiguration}_Win64")
+
+    archiveBaseName.set("win-test")
+    into("classes") {
+        from("build/classes/test")
+    }
+    from("win-test/build.gradle")
+    from("win-test/run.ps1")
+    into("gradle") {
+        from("../gradle")
+    }
+    into("src/test/resources") {
+        from("src/test/resources")
+    }
+    from("../gradlew.bat")
+    into("natives") {
+        from("../natj-win/build/${nativeConfiguration}-Win64/TestClassesC.dll")
+    }
+    from("../build/libs/natj.jar")
+}
+
+tasks.register<Exec>("ansibleTestWin") {
+    dependsOn("ansibleTestWinPrepare")
+    executable = "ansible-playbook"
+    args("ansible-test-on-windows-pb.yml")
+    inputs.files(files("build/distributions/win-test.tar"))
+
+    val stdoutput = ByteArrayOutputStream()
+    standardOutput = stdoutput
+    isIgnoreExitValue = true
+    doLast {
+        val exitValue = executionResult.get().exitValue
+        if (exitValue != 0) {
+            val string = stdoutput.toString()
+            val search = ": FAILED! => "
+            val idx = string.indexOf(search)
+            if (idx != -1) {
+                val last = string.indexOf('\n', idx)
+                val substr = string.substring(idx + search.length, last)
+                println(groovy.json.JsonOutput.prettyPrint(substr))
+            }
+            throw GradleException("Process exited with code $exitValue")
+        }
+    }
+}

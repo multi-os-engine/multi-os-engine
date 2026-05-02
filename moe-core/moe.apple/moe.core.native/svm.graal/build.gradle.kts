@@ -1,0 +1,21 @@
+import org.moe.prebuilts.BuildFilter
+import org.moe.prebuilts.XcodeBuild
+
+val buildfilter = extensions.getByType<BuildFilter>()
+
+XcodeBuild.registerTask(project, "libjvm", "ios", "iphoneos", "Debug") {
+    cond_buildopt(buildfilter.ios.archs, "ARCHS")
+    cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+}
+XcodeBuild.registerTask(project, "libjvm", "ios", "iphoneos", "Release") {
+    cond_buildopt(buildfilter.ios.archs, "ARCHS")
+    cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+}
+XcodeBuild.registerTask(project, "libjvm", "ios", "iphonesimulator", "Debug") {
+    cond_buildopt(buildfilter.ios.archs, "ARCHS")
+    cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+}
+XcodeBuild.registerTask(project, "libjvm", "ios", "iphonesimulator", "Release") {
+    cond_buildopt(buildfilter.ios.archs, "ARCHS")
+    cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+}

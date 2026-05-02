@@ -1,0 +1,98 @@
+/*
+Copyright (C) 2016 Migeran
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+import org.moe.prebuilts.JavaConventions
+
+plugins {
+    id("org.moe.java-conventions")
+    alias(libs.plugins.intellij.platform)
+    id("org.jetbrains.kotlin.jvm")
+    id("idea")
+    id("maven-publish")
+}
+
+group = "org.multi-os-engine"
+version = "1.6.3"
+
+extensions.getByType<JavaConventions.Extension>().release = 17
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+val PLUGIN_NAME = "moe_intellij_plugin"
+
+// Uncomment to debug via `./gradlew :tools:moe.plugin.idea:runIde`
+tasks.runIde {
+    jvmArgs("-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005")
+}
+
+repositories {
+    mavenCentral()
+    intellijPlatform {
+        defaultRepositories()
+    }
+}
+
+dependencies {
+    intellijPlatform {
+        // to test with Android Studio, use:
+        // create("AI", "2023.3.1.18")
+        create("IC", "2023.3.8")
+        bundledPlugins(listOf("com.intellij.gradle", "com.intellij.java"))
+    }
+
+    implementation(project(":moe.tools.common"))
+    implementation(project(":moe.document.pbxproj"))
+    implementation(project(":moe.generator.project"))
+    implementation(project(":moe.tools.natjgen"))
+    implementation(project(":moe.plugin.common"))
+    implementation("org.multi-os-engine:javapymobiledevice3")
+
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
+
+    testImplementation(libs.junit)
+    implementation(libs.slf4j.simple)
+}
+
+intellijPlatform {
+    projectName = PLUGIN_NAME
+    pluginConfiguration {
+        ideaVersion {
+            sinceBuild = "233"
+            untilBuild.set(null as String?)
+        }
+    }
+
+    publishing {
+        if (project.hasProperty("intellij.publishToken")) {
+            token = project.property("intellij.publishToken").toString()
+        }
+    }
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            groupId = "org.multi-os-engine"
+            artifactId = PLUGIN_NAME
+
+            artifact(file("build/distributions/${PLUGIN_NAME}.zip"))
+        }
+    }
+}

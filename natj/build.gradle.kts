@@ -1,0 +1,98 @@
+/*
+Copyright 2014-2016 Intel Corporation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+plugins {
+    id("org.moe.buildtools")
+    id("maven-publish")
+    id("org.moe.java-conventions")
+}
+
+for (target in listOf("ios", "macos", "windows", "ndk", "linux")) {
+    tasks.register("prebuild_libffi_$target") {
+        dependsOn(gradle.includedBuild("prebuilts").task(":external:libffi:prebuild_$target"))
+    }
+}
+
+allprojects {
+    group = "org.moe"
+    version = "1.1.5"
+}
+
+/****************************
+ *  Java part (NatJ API)
+ ****************************/
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(libs.junit)
+}
+
+tasks.withType<Test>().configureEach {
+    val nativeConfiguration = "Release"
+    dependsOn(":natj-mac:build_TestClasses_${nativeConfiguration}_macosx")
+
+    systemProperty("java.library.path", file("natj-mac/build/xcode/$nativeConfiguration"))
+}
+
+tasks.build {
+    dependsOn(":natj-ios:build")
+    dependsOn(":natj-mac:build")
+    dependsOn(":natj-win:build")
+}
+
+tasks.test {
+    exclude("org/moe/xosrt/binding/core/test/memory/**")
+    if (rootProject.hasProperty("moe.use.addresssanitizer")) {
+        val clangResourceDir = providers.exec {
+            commandLine("xcrun", "clang", "-print-resource-dir")
+        }.standardOutput.asText.get().trim()
+        environment("DYLD_INSERT_LIBRARIES", "$clangResourceDir/lib/darwin/libclang_rt.asan_osx_dynamic.dylib")
+        environment("ASAN_OPTIONS", "handle_segv=0:allow_user_segv_handler=1")
+    }
+}
+
+val sourcesJar = tasks.register<Jar>("sourcesJar") {
+    archiveClassifier = "sources"
+    from(sourceSets["main"].allSource)
+}
+
+tasks.register("buildAll") {
+    dependsOn("build")
+    dependsOn(":natj-ios:buildAll")
+    dependsOn(":natj-mac:buildAll")
+    dependsOn(":natj-win:buildAll")
+}
+
+tasks.publish {
+    dependsOn("build")
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            artifactId = "natj-api"
+
+            from(components["java"])
+
+            artifact(sourcesJar.get()) {
+                classifier = "sources"
+            }
+        }
+    }
+}
