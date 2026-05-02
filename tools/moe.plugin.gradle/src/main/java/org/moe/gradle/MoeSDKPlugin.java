@@ -64,7 +64,7 @@ public class MoeSDKPlugin extends AbstractMoePlugin {
         // Add common MOE dependencies
         installCommonDependencies();
 
-        project.getTasks().create("moeSDKProperties", task -> {
+        project.getTasks().register("moeSDKProperties", task -> {
             task.setGroup(MOE);
             task.setDescription("Prints some properties of the MOE SDK.");
             task.getActions().add(t -> {

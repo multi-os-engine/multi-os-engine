@@ -21,11 +21,13 @@ import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.gradle.BuildResult;
+import org.gradle.api.DefaultTask;
 import org.gradle.api.GradleException;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
 import org.gradle.api.logging.Logger;
 import org.gradle.api.logging.Logging;
+import org.gradle.api.tasks.TaskProvider;
 import org.moe.gradle.MoePlugin;
 import org.moe.gradle.MoeSDK;
 import org.moe.gradle.anns.NotNull;
@@ -106,10 +108,10 @@ public class Server {
     }
 
     @Nullable
-    private Task moeRemoteServerSetupTask;
+    private TaskProvider<Task> moeRemoteServerSetupTask;
 
     @NotNull
-    public Task getMoeRemoteServerSetupTask() {
+    public TaskProvider<Task> getMoeRemoteServerSetupTask() {
         return Require.nonNull(moeRemoteServerSetupTask);
     }
 
@@ -157,14 +159,14 @@ public class Server {
         ServerSettings settings = new ServerSettings(plugin);
 
         final Project project = plugin.getProject();
-        project.getTasks().create("moeConfigRemote", task -> {
+        project.getTasks().register("moeConfigRemote", task -> {
             task.setGroup(MOE);
             task.setDescription("Starts an interactive remote server connection configurator and tester");
             task.getActions().add(t -> {
                 settings.interactiveConfig();
             });
         });
-        project.getTasks().create("moeTestRemote", task -> {
+        project.getTasks().register("moeTestRemote", task -> {
             task.setGroup(MOE);
             task.setDescription("Tests the connection to the remote server");
             task.getActions().add(t -> {
@@ -194,7 +196,7 @@ public class Server {
 
     public void connect() {
         Require.nonNull(plugin);
-        moeRemoteServerSetupTask = plugin.getProject().getTasks().create("moeRemoteServerSetup", task -> {
+        moeRemoteServerSetupTask = plugin.getProject().getTasks().register("moeRemoteServerSetup", task -> {
             task.setGroup(MOE);
             task.setDescription("Sets up the SDK on the remote server");
             task.getActions().add(t -> {

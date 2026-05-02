@@ -199,7 +199,7 @@ public class MoePlugin extends AbstractMoePlugin {
         registerTask(NatJGen.class, "Generate binding", emptyList());
         registerTask(UpdateXcodeSettings.class, "Updates Xcode project settings", emptyList());
 
-        project.getTasks().create("moeSDKProperties", task -> {
+        project.getTasks().register("moeSDKProperties", task -> {
             task.setGroup(MOE);
             task.setDescription("Prints some properties of the MOE SDK.");
             task.getActions().add(t -> {
@@ -212,7 +212,7 @@ public class MoePlugin extends AbstractMoePlugin {
                         "\n");
             });
         });
-        project.getTasks().create("moeXcodeProperties", task -> {
+        project.getTasks().register("moeXcodeProperties", task -> {
             task.setGroup(MOE);
             task.setDescription("Prints some properties of the MOE Xcode project.");
             task.getActions().add(t -> {
