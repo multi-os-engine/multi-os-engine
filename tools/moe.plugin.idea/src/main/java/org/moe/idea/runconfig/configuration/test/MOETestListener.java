@@ -18,12 +18,12 @@ package org.moe.idea.runconfig.configuration.test;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.process.ProcessOutputTypes;
 import com.intellij.execution.testframework.sm.ServiceMessageBuilder;
-import com.intellij.openapi.util.Comparing;
 import org.moe.common.junit.MOEITestRunListener;
 import org.moe.common.junit.MOETestIdentifier;
 import org.moe.idea.runconfig.MOERunProfileState;
 
 import java.util.Map;
+import java.util.Objects;
 
 public class MOETestListener implements MOEITestRunListener {
 
@@ -88,7 +88,7 @@ public class MOETestListener implements MOEITestRunListener {
 
   @Override
   public void testStarted(MOETestIdentifier test) {
-    if (!Comparing.equal(test.getClassName(), myTestClassName)) {
+    if (!Objects.equals(test.getClassName(), myTestClassName)) {
       if (myTestClassName != null) {
         testSuiteFinished();
       }

@@ -106,10 +106,15 @@
 
         <applicationConfigurable instance="org.moe.idea.MOEGlobalSearchableConfigurable" groupId="tools"/>
 
-        <applicationService
-            serviceInterface="org.moe.idea.fileTypes.MOEFileTypeFactory"
-            serviceImplementation="org.moe.idea.fileTypes.MOEFileTypeFactory"/>
-        <fileTypeFactory implementation="org.moe.idea.fileTypes.MOEFileTypeFactory"/>
+        <fileType
+            name="Xcode project"
+            implementationClass="org.moe.idea.fileTypes.XcodeEditorFileType"
+            extensions="pbxproj"/>
+        <fileType
+            name="NatJ Binding Config"
+            implementationClass="org.moe.idea.fileTypes.BindingEditorFileType"
+            extensions="nbc"
+            language="JSON"/>
 
         <fileEditorProvider implementation="org.moe.idea.editors.XcodeProjectEditorProvider"/>
         <fileEditorProvider implementation="org.moe.idea.editors.BindingEditorProvider"/>
@@ -185,7 +190,7 @@
     </actions>
 
     <depends>com.intellij.gradle</depends>
-    <depends>org.jetbrains.plugins.gradle</depends>
+    <depends>com.intellij.modules.json</depends>
     <depends>com.intellij.modules.java</depends>
 
     <depends optional="true" config-file="studio-contribs.xml">com.intellij.modules.androidstudio</depends>

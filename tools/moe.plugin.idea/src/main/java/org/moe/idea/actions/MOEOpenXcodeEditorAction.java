@@ -31,16 +31,11 @@ import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.moe.common.utils.ProjectUtil;
 import org.moe.gradle.model.MOEXcodeProperties;
 import org.moe.idea.MOESdkPlugin;
-import org.moe.idea.compiler.MOEGradleRunner;
 import org.moe.idea.model.GradleModuleModel;
-import org.moe.idea.utils.ModuleUtils;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.Properties;
 
 public class MOEOpenXcodeEditorAction extends AnAction {
     private Module module;
@@ -51,27 +46,15 @@ public class MOEOpenXcodeEditorAction extends AnAction {
             return;
         }
 
-        @Nullable String projectPath;
-
         // Read xcode property using facet
         MOEXcodeProperties xcodeProperties = GradleModuleModel.getXcodeProperties(module);
-        if (xcodeProperties != null) {
-            projectPath = xcodeProperties.getProject();
-        } else {
-            // For compatible with old Gradle plugin
-            final File modulePath = new File(ModuleUtils.getModulePath(module));
-            File javaHome;
-            try {
-                javaHome = MOEGradleRunner.requireGradleJavaHome(module);
-            } catch (IOException e) {
-                Messages.showErrorDialog(e.getMessage(), "Open Xcode Project");
-                return;
-            }
-            final Properties properties = ProjectUtil
-                .retrievePropertiesFromGradle(modulePath, ProjectUtil.XCODE_PROPERTIES_TASK, javaHome);
-
-            projectPath = properties.getProperty(ProjectUtil.XCODE_PROJECT_KEY);
+        if (xcodeProperties == null) {
+            Messages.showErrorDialog("Neither the Xcode project nor the workspace is set in the Gradle plugin",
+                    "Open Xcode Project");
+            return;
         }
+
+        @Nullable String projectPath = xcodeProperties.getProject();
 
         // Try to open project
         if (projectPath != null) {

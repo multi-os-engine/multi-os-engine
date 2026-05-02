@@ -18,7 +18,6 @@ package org.moe.idea.utils;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ReadAction;
-import com.intellij.openapi.application.WriteAction;
 import com.intellij.openapi.externalSystem.util.ExternalSystemApiUtil;
 import com.intellij.openapi.fileChooser.FileChooser;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
@@ -26,56 +25,13 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.DisposeAwareRunnable;
-import org.jetbrains.annotations.NotNull;
-
-import java.io.File;
 
 public class ModuleUtils {
 
-    public static final String MODULE_PATH_KEY = "external.linked.project.path";
-    public static final String MODULE_ID_KEY = "external.linked.project.id";
-    public static final String XCODE_PROJECT_PATH_KEY = "moe.xcode.xcodeProjectPath";
-    public static final String MAIN_PRODUCT_NAME_KEY = "moe.xcode.mainProductName";
-
-    public static final String XCODE_PROJECT_PATH_TASK = "moeXcodeProperties";
-    public static final String MAIN_PRODUCT_NAME_TASK = "moeMainProductName";
-
     public static Module findModuleByName(Project project, String moduleName) {
         return ReadAction.compute(() -> ModuleManager.getInstance(project).findModuleByName(moduleName));
-    }
-    
-    public static void setOption(Module module, String key, String value) {
-        if ((module == null) || (value == null) || (key == null)) {
-            return;
-        }
-
-        runInDispatchedThread(() -> WriteAction.run(() -> module.setOption(key, value)));
-    }
-
-    public static String getOption(Module module, String key) {
-        if (module == null) {
-            return null;
-        }
-        return ReadAction.compute(() -> module.getOptionValue(key));
-    }
-
-    public static void setXcodeProjectPath(Module module, String xcodeProjectPath) {
-        setOption(module, XCODE_PROJECT_PATH_KEY, xcodeProjectPath);
-    }
-
-    public static String getXcodeProjectPath(Module module) {
-        return getOption(module, XCODE_PROJECT_PATH_KEY);
-    }
-
-    public static void setProductName(Module module, String productName) {
-        setOption(module, MAIN_PRODUCT_NAME_KEY, productName);
-    }
-
-    public static String getProductName(Module module) {
-        return getOption(module, MAIN_PRODUCT_NAME_KEY);
     }
 
     public static String getModulePath(Module module) {
@@ -91,16 +47,12 @@ public class ModuleUtils {
         return getModulePath(findModuleByName(project, moduleName));
     }
 
-    public static void runInDispatchedThread(@NotNull Runnable runnable) {
-        ApplicationManager.getApplication().invokeLater(runnable);
-    }
-
     public static void runWhenInitialized(Project project, Runnable r) {
         if(!project.isDisposed()) {
             if(isNoBackgroundMode()) {
                 r.run();
             } else if(!project.isInitialized()) {
-                StartupManager.getInstance(project).registerPostStartupActivity(DisposeAwareRunnable.create(r, project));
+                DumbService.getInstance(project).runWhenSmart(DisposeAwareRunnable.create(r, project));
             } else {
                 runDumbAware(project, r);
             }

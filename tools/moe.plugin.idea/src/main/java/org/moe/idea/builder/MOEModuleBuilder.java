@@ -33,6 +33,7 @@ import com.intellij.openapi.fileEditor.FileDocumentManager;
 import com.intellij.openapi.module.JavaModuleType;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.projectRoots.JavaSdk;
 import com.intellij.openapi.projectRoots.JavaSdkVersion;
@@ -44,12 +45,10 @@ import com.intellij.openapi.roots.ModifiableRootModel;
 import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.roots.SourceFolder;
 import com.intellij.openapi.roots.ui.configuration.ModulesProvider;
-import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
-import org.apache.commons.codec.Charsets;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.jps.model.java.JavaModuleSourceRootTypes;
@@ -68,6 +67,7 @@ import org.moe.idea.wizards.project.MOEWizardPageOne;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -208,12 +208,7 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
             contentRoot.refresh(false, true);
         }
 
-        StartupManager.getInstance(project).runWhenProjectIsInitialized(new Runnable() {
-            @Override
-            public void run() {
-                configureRun(rootModel);
-            }
-        });
+        DumbService.getInstance(project).runWhenSmart(() -> configureRun(rootModel));
     }
 
     @Override
@@ -288,9 +283,9 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
     private void modifyGradleSettings(@NotNull File file, Module[] modules) throws IOException {
         StringBuilder stringBuilder = new StringBuilder();
 
-        String newLine = System.getProperty("line.separator");
+        String newLine = System.lineSeparator();
 
-        String existing = Files.asCharSource(file, Charsets.UTF_8).read();
+        String existing = Files.asCharSource(file, StandardCharsets.UTF_8).read();
 
         if (!existing.endsWith(newLine)) {
             stringBuilder.append(newLine);
@@ -303,7 +298,7 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
             stringBuilder.append(newLine);
         }
 
-        Files.asCharSink(file, Charsets.UTF_8, FileWriteMode.APPEND).write(stringBuilder.toString());
+        Files.asCharSink(file, StandardCharsets.UTF_8, FileWriteMode.APPEND).write(stringBuilder.toString());
 
         LocalFileSystem.getInstance().refreshIoFiles(Collections.singletonList(file));
     }

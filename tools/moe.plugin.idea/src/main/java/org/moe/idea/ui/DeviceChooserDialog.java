@@ -49,7 +49,7 @@ public class DeviceChooserDialog extends DialogWrapper {
     private MOERunConfiguration configuration;
 
     public DeviceChooserDialog(final Module module, MOERunConfiguration runConfig) {
-        super(module.getProject(), true, IdeModalityType.PROJECT);
+        super(module.getProject(), true);
         this.module = module;
         this.configuration = runConfig;
         setTitle("Select Deployment Target");

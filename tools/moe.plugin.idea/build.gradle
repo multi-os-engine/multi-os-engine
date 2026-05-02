@@ -52,7 +52,7 @@ dependencies {
         // to test with Android Studio, use:
         // create("AI", "2023.3.1.18")
         create("IC", "2023.3.8")
-        bundledPlugins(["com.intellij.gradle", "com.intellij.java"])
+        bundledPlugins(["com.intellij.gradle", "com.intellij.java", "com.intellij.modules.json"])
     }
 
     implementation project(':moe.tools.common')

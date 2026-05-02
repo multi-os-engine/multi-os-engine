@@ -16,8 +16,8 @@ limitations under the License.
 
 package org.moe.idea;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.PersistentStateComponent;
-import com.intellij.openapi.components.ServiceManager;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import org.jetbrains.annotations.NotNull;
@@ -77,7 +77,7 @@ public class MOEGlobalSettings implements PersistentStateComponent<MOEGlobalSett
 
     @NotNull
     public static MOEGlobalSettings getInstance() {
-        return ServiceManager.getService(MOEGlobalSettings.class);
+        return ApplicationManager.getApplication().getService(MOEGlobalSettings.class);
     }
 
     public String getGradleLoggingLevel() {

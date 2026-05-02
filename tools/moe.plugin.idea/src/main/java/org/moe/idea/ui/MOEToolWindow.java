@@ -23,7 +23,6 @@ import com.intellij.execution.ui.ConsoleView;
 import com.intellij.execution.ui.ConsoleViewContentType;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.components.ServiceManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.MessageType;
 import com.intellij.openapi.util.Disposer;
@@ -56,7 +55,7 @@ public class MOEToolWindow implements Disposable {
     }
 
     public static MOEToolWindow getInstance(@NotNull Project project) {
-        return ServiceManager.getService(project, MOEToolWindow.class);
+        return project.getService(MOEToolWindow.class);
     }
 
     public void initToolWindow(final ToolWindow window) {

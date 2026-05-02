@@ -40,12 +40,9 @@ import com.intellij.pom.java.LanguageLevel;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.moe.common.utils.ProjectUtil;
 import org.moe.gradle.model.GraalVMProperties;
 import org.moe.gradle.model.MOESdkProperties;
-import org.moe.idea.compiler.MOEGradleRunner;
 import org.moe.idea.model.GradleModuleModel;
-import org.moe.idea.utils.ModuleUtils;
 import res.MOEIcons;
 
 import javax.swing.*;
@@ -53,7 +50,6 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Properties;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -158,11 +154,6 @@ public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
 
     @Override
     public Icon getIcon() {
-        return MOEIcons.MOESmall;
-    }
-
-    @NotNull @Override
-    public Icon getIconForAddAction() {
         return MOEIcons.MOESmall;
     }
 
@@ -284,31 +275,14 @@ public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
             return null;
         }
 
-        String moeRootPath;
-
         // Read sdk property using facet
         MOESdkProperties sdkProperties = GradleModuleModel.getSdkProperties(module);
-        GraalVMProperties graalVM = null;
-        if (sdkProperties != null) {
-            moeRootPath = sdkProperties.getHome();
-            graalVM = sdkProperties.getGraalVM();
-        } else {
-            // For compatible with old Gradle plugin
-            String modulePath = ModuleUtils.getModulePath(module);
-            if (modulePath == null) {
-                return null;
-            }
-
-            final Properties properties = ProjectUtil
-                .retrievePropertiesFromGradle(new File(modulePath), ProjectUtil.SDK_PROPERTIES_TASK,
-                        MOEGradleRunner.getGradleJavaHome(module));
-
-            moeRootPath = properties.getProperty(ProjectUtil.SDK_PATH_KEY);
-        }
-
-        if (moeRootPath == null) {
+        if (sdkProperties == null) {
             return null;
         }
+
+        String moeRootPath = sdkProperties.getHome();
+        GraalVMProperties graalVM = sdkProperties.getGraalVM();
 
         // Create MOE SDK regardless
         Sdk moeSdk = ensureMOESdk(moeRootPath);

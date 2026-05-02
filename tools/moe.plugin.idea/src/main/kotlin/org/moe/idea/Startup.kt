@@ -15,7 +15,6 @@ limitations under the License.
 */
 package org.moe.idea
 
-import com.intellij.ProjectTopics
 import com.intellij.facet.Facet
 import com.intellij.facet.FacetManager
 import com.intellij.openapi.application.ApplicationInfo
@@ -26,8 +25,9 @@ import com.intellij.openapi.externalSystem.util.ExternalSystemApiUtil
 import com.intellij.openapi.fileEditor.FileEditorManagerListener
 import com.intellij.openapi.module.Module
 import com.intellij.openapi.module.ModuleManager
+import com.intellij.openapi.project.ModuleListener
 import com.intellij.openapi.project.Project
-import com.intellij.openapi.startup.StartupActivity
+import com.intellij.openapi.startup.ProjectActivity
 import org.jetbrains.plugins.gradle.model.data.GradleSourceSetData
 import org.jetbrains.plugins.gradle.settings.GradleSettings
 import org.jetbrains.plugins.gradle.util.GradleConstants
@@ -39,10 +39,10 @@ import org.moe.idea.utils.PyMobileHandler
 import org.moe.idea.utils.logger.LoggerFactory
 
 /**
- * This is our StartupActivity used to execute code on project open.
+ * Project-open activity for the MOE plugin.
  */
-class Startup : StartupActivity {
-    override fun runActivity(project: Project) {
+class Startup : ProjectActivity {
+    override suspend fun execute(project: Project) {
         LOG.info(
             "Plugin started " + ApplicationInfo.getInstance().build.asString()
                 + " (" + ApplicationInfo.getInstance().versionName
@@ -58,7 +58,7 @@ class Startup : StartupActivity {
         // Register listeners
         val messageBusConnection = project.messageBus.connect()
         messageBusConnection.subscribe(FileEditorManagerListener.FILE_EDITOR_MANAGER, FileEditorListener())
-        messageBusConnection.subscribe(ProjectTopics.MODULES, ModuleObserver())
+        messageBusConnection.subscribe(ModuleListener.TOPIC, ModuleObserver())
     }
 
     private fun launchPyMobileDaemon(project: Project) {

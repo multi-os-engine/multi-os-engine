@@ -44,17 +44,16 @@ public class ModuleObserver implements ModuleListener {
     private static final Logger LOG = LoggerFactory.getLogger(ModuleObserver.class);
 
     @Override
-    public void moduleAdded(@NotNull final Project project, @NotNull final Module module) {
-        ModuleUtils.runWhenInitialized(project, new DumbAwareRunnable() {
-            @Override
-            public void run() {
+    public void modulesAdded(@NotNull final Project project, @NotNull final List<? extends Module> modules) {
+        for (final Module module : modules) {
+            ModuleUtils.runWhenInitialized(project, (DumbAwareRunnable) () -> {
                 if (MOESdkPlugin.isValidMoeModule(module)) {
                     checkRunConfiguration(project, module);
                     checkMoeSDK(module);
                     PyMobileHandler.ensureInitialized(project, false);
                 }
-            }
-        });
+            });
+        }
     }
 
     public static void checkMoeSDK(@NotNull Module module) {
