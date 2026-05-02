@@ -25,14 +25,12 @@ plugins {
 group = 'org.multi-os-engine'
 version = '1.6.3'
 
+javaConventions.release = 17
+
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(17)
     }
-}
-
-tasks.withType(JavaCompile).configureEach {
-    options.release = 17
 }
 
 def PLUGIN_NAME = 'moe_intellij_plugin'

@@ -18,9 +18,7 @@ plugins {
     id 'org.moe.java-conventions'
 }
 
-tasks.withType(JavaCompile).configureEach {
-    options.release = 11
-}
+javaConventions.release = 11
 
 dependencies {
     implementation 'org.multi-os-engine:javapymobiledevice3'
