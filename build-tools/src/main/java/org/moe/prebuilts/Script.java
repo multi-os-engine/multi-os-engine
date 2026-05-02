@@ -130,6 +130,14 @@ public abstract class Script extends BaseTask {
         );
     }
 
+    public void copyFile(File from, File to) {
+        steps.add(new CopyFileStep(new FixedFileSource(from), to));
+    }
+
+    public void copyFile(FileSource from, File to) {
+        steps.add(new CopyFileStep(from, to));
+    }
+
     public void exec(String exec, String... args) {
         exec(exec, Arrays.asList(args));
     }
@@ -195,6 +203,64 @@ public abstract class Script extends BaseTask {
                 }
                 throw t;
             }
+        }
+    }
+
+    public interface FileSource extends Serializable {
+        File get();
+    }
+
+    public static final class FixedFileSource implements FileSource {
+        private static final long serialVersionUID = 1L;
+        private final File file;
+
+        public FixedFileSource(File file) {
+            this.file = file;
+        }
+
+        @Override
+        public File get() {
+            return file;
+        }
+    }
+
+    public static final class FirstMatchingSubdirFile implements FileSource {
+        private static final long serialVersionUID = 1L;
+        private final File baseDir;
+        private final String subdirPrefix;
+        private final String relativePath;
+
+        public FirstMatchingSubdirFile(File baseDir, String subdirPrefix, String relativePath) {
+            this.baseDir = baseDir;
+            this.subdirPrefix = subdirPrefix;
+            this.relativePath = relativePath;
+        }
+
+        @Override
+        public File get() {
+            File subdir = baseDir.listFiles((d, name) -> name.startsWith(subdirPrefix))[0];
+            return new File(subdir, relativePath);
+        }
+    }
+
+    public static final class CopyFileStep implements Step {
+        private static final long serialVersionUID = 1L;
+        private final FileSource from;
+        private final File to;
+
+        public CopyFileStep(FileSource from, File to) {
+            this.from = from;
+            this.to = to;
+        }
+
+        @Override
+        public void run(Script script) {
+            File src = from.get();
+            script.getFileSystemOperations().copy(spec -> {
+                spec.from(src);
+                spec.rename(name -> to.getName());
+                spec.into(to.getParentFile());
+            });
         }
     }
 }

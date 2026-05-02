@@ -1,17 +1,11 @@
-import org.gradle.api.file.FileSystemOperations
 import org.gradle.api.tasks.TaskProvider
 import org.moe.prebuilts.MOECoreNativeContext
 import org.moe.prebuilts.Script
+import org.moe.prebuilts.Script.FirstMatchingSubdirFile
 import org.moe.prebuilts.XcodeBuild
-import javax.inject.Inject
 
 plugins {
     id("base")
-}
-
-interface InjectedFsOps {
-    @Inject
-    fun getFs(): FileSystemOperations
 }
 
 val jdwpDestDir = file("build/jdwpBuild")
@@ -33,12 +27,6 @@ fun createJDWPJarBuild(arch: String): TaskProvider<Script> {
     val cAbi = if (arch == "arm64") "MAC_OS_AARCH_64" else "SYS_V"
     val buildPath = file("build/jdwpBuild$arch")
     return tasks.register<Script>("build_jdwp_${arch}_jar") {
-        // Kotlin lambdas in doLast capture the enclosing script class, which the
-        // configuration cache cannot serialize. Groovy closures in the original
-        // build had different capture semantics. Opt out of config cache here.
-        notCompatibleWithConfigurationCache("doLast captures script-scope FileSystemOperations and File refs")
-        val fsOps = project.objects.newInstance<InjectedFsOps>().getFs()
-
         dependsOn(graalDistTask)
         inputs.dir(graalDist)
         inputs.dir(baseCapPath)
@@ -86,16 +74,10 @@ fun createJDWPJarBuild(arch: String): TaskProvider<Script> {
             "--module-path", file("$graalDist/lib/graalvm/svm-jdwp-server.jar").absolutePath,
         )
 
-        doLast {
-            val resultDir = buildPath.listFiles()!!.first { it.name.startsWith("SVM-") }
-            fsOps.copy {
-                from(resultDir) {
-                    include("svmjdwp.o")
-                    rename("svmjdwp.o", "svmjdwp_${arch}.o")
-                }
-                into(jdwpDestDir)
-            }
-        }
+        copyFile(
+            FirstMatchingSubdirFile(buildPath, "SVM-", "svmjdwp.o"),
+            file("$jdwpDestDir/svmjdwp_${arch}.o")
+        )
     }
 }
 
