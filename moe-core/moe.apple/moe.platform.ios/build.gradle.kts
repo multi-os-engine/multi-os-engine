@@ -58,16 +58,9 @@ tasks.register<Exec>("updateNatJGenConfig") {
     commandLine("python3", "platform_natjgen_updater.py")
 }
 
-@Suppress("UNCHECKED_CAST")
-val externalLlvm: Map<String, Any?> =
-    (rootProject.extra["external"] as Map<String, Any?>)["llvm"] as Map<String, Any?>
-val llvmJnipath = externalLlvm["jnipath"] as File
-
-@Suppress("UNCHECKED_CAST")
-val externalNatj: Map<String, Any?> =
-    (rootProject.extra["external"] as Map<String, Any?>)["natj"] as Map<String, Any?>
-val natjJnipath = externalNatj["jnipath"] as File
-val natjSources = externalNatj["sources"] as File
+val llvmJnipath = moeExternal.llvm.jnipath
+val natjJnipath = moeExternal.natJ.jnipath
+val natjSources = moeExternal.natJ.sources
 
 tasks.register<JavaExec>("generateBindings") {
     finalizedBy("spotlessApply")

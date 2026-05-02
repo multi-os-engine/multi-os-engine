@@ -1,9 +1,8 @@
 import org.gradle.api.file.FileSystemOperations
 import org.gradle.api.tasks.TaskProvider
-import org.moe.prebuilts.BuildFilter
+import org.moe.prebuilts.MOECoreNativeContext
 import org.moe.prebuilts.Script
 import org.moe.prebuilts.XcodeBuild
-import java.io.File
 import javax.inject.Inject
 
 plugins {
@@ -15,15 +14,12 @@ interface InjectedFsOps {
     fun getFs(): FileSystemOperations
 }
 
-val buildfilter = extensions.getByType<BuildFilter>()
-
 val jdwpDestDir = file("build/jdwpBuild")
 val baseCapPath = rootProject.file("../tools/moe.tools.substrate/src/main/resources/")
 
-val parentExtra = parent!!.extra
-@Suppress("UNCHECKED_CAST")
-val graalDistTask = parentExtra["graalDistTask"] as TaskProvider<*>
-val graalDist = parentExtra["graalDist"] as File
+val nativeContext = parent!!.the<MOECoreNativeContext>()
+val graalDistTask = nativeContext.graalDistTask
+val graalDist = nativeContext.graalDist
 
 val graalDeps: Map<String, Any> = mapOf(
     "projects" to listOf(

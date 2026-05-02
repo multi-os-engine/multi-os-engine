@@ -15,7 +15,6 @@ limitations under the License.
 */
 
 import org.moe.prebuilts.Script
-import java.io.File
 
 plugins {
     id("org.moe.buildtools")
@@ -30,58 +29,11 @@ allprojects {
     }
 }
 
-// Build the same dynamic external.* map tree that the Groovy version exposed via
-// `ext`. Subprojects read it as `rootProject.extra["external"]` and cast as needed.
-val svmRoot = file("../../svm").absolutePath
-val externalSvm: Map<String, Any?> = mapOf(
-    "root" to svmRoot,
-    "mx" to file("$svmRoot/mx").absolutePath,
-    "graal" to file("$svmRoot/graal").absolutePath,
-    "openjdk" to file("$svmRoot/labs-openjdk").absolutePath,
-)
-
-val natjRoot = file("../natj").absolutePath
-val externalNatj: MutableMap<String, Any?> = mutableMapOf(
-    "root" to natjRoot,
-    "sources" to file("$natjRoot/src/main/java"),
-    "jnipath" to file("$natjRoot/natj-mac/build/xcode/Release"),
-)
-
-data class NatjTargetSpec(val name: String, val outputs: List<String>)
-val natjTargets = listOf(
-    NatjTargetSpec("ios", listOf(
-        "$natjRoot/natj-ios/build/xcode/Release-iphoneos/libnatj.a",
-        "$natjRoot/natj-ios/build/xcode/Release-iphonesimulator/libnatj.a",
-    )),
-    NatjTargetSpec("mac", listOf("$natjRoot/natj-mac/build/xcode/Release/libnatj.dylib")),
-    NatjTargetSpec("win", listOf("$natjRoot/natj-win/build/Release-Win64/natj.dll")),
-)
-for (target in natjTargets) {
-    externalNatj[target.name] = target.outputs.map { file(it) }
-
-    tasks.register("ext_natj_${target.name}") {
-        dependsOn(gradle.includedBuild("natj").task(":natj-${target.name}:build"))
+for (target in listOf("ios", "mac", "win")) {
+    tasks.register("ext_natj_$target") {
+        dependsOn(gradle.includedBuild("natj").task(":natj-$target:build"))
     }
 }
-
-val externalPrebuilts = file("../prebuilts").absolutePath
-val llvmRoot = file("$externalPrebuilts/llvm/macos").absolutePath
-val externalLlvm: Map<String, Any?> = mapOf(
-    "root" to llvmRoot,
-    "jnipath" to file("$llvmRoot/lib"),
-    "macos" to file("$llvmRoot/lib/libclang.dylib"),
-)
-val llvmMacos = externalLlvm["macos"] as File
-if (!llvmMacos.exists()) {
-    logger.warn("WARNING: libclang is missing from ${llvmMacos.absolutePath}")
-}
-
-extra["external"] = mapOf(
-    "prebuilts" to externalPrebuilts,
-    "svm" to externalSvm,
-    "natj" to externalNatj,
-    "llvm" to externalLlvm,
-)
 
 val rootBuild = tasks.build
 subprojects.forEach { subproject ->

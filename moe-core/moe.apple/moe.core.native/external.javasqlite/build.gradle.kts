@@ -14,10 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import org.moe.prebuilts.BuildFilter
 import org.moe.prebuilts.XcodeBuild
-
-val buildfilter = extensions.getByType<BuildFilter>()
 
 XcodeBuild.registerTask(project, "javasqlite", "ios", "iphoneos", "Debug") {
     cond_buildopt(buildfilter.ios.archs, "ARCHS")

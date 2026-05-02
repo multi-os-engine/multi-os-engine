@@ -14,14 +14,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import org.moe.prebuilts.BuildFilter
 import org.moe.prebuilts.XcodeBuild
 
 plugins {
     id("base")
 }
-
-val buildfilter = extensions.getByType<BuildFilter>()
 
 val graalDeps: Map<String, Any> = mapOf(
     "projects" to listOf(

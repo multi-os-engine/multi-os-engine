@@ -1,7 +1,4 @@
-import org.moe.prebuilts.BuildFilter
 import org.moe.prebuilts.XcodeBuild
-
-val buildfilter = extensions.getByType<BuildFilter>()
 
 XcodeBuild.registerTask(project, "libjvm", "ios", "iphoneos", "Debug") {
     cond_buildopt(buildfilter.ios.archs, "ARCHS")

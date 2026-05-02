@@ -18,7 +18,6 @@ import de.undercouch.gradle.tasks.download.Download
 import de.undercouch.gradle.tasks.download.Verify
 import org.gradle.api.file.CopySpec
 import org.gradle.api.file.FileTree
-import java.io.File
 
 plugins {
     alias(libs.plugins.download)
@@ -71,93 +70,48 @@ val buildDeps = tasks.register("buildDeps") {
     dependsOn(":ext_natj_mac")
 }
 
-@Suppress("UNCHECKED_CAST")
-val external: Map<String, Any?> = rootProject.extra["external"] as Map<String, Any?>
-@Suppress("UNCHECKED_CAST")
-val moeCore: Map<String, Any?> = external["moe_core"] as Map<String, Any?>
-@Suppress("UNCHECKED_CAST")
-val out: Map<String, Any?> = moeCore["out"] as Map<String, Any?>
-@Suppress("UNCHECKED_CAST")
-val externalLlvm: Map<String, Any?> = external["llvm"] as Map<String, Any?>
-@Suppress("UNCHECKED_CAST")
-val externalNatj: Map<String, Any?> = external["natj"] as Map<String, Any?>
-
-fun outFile(key: String): File = out[key] as File
+val out = moeExternal.moeCore.out
 
 fun buildfiles(proj: String, subpath: String): FileTree =
     fileTree("${project(proj).layout.buildDirectory.get().asFile.absolutePath}/$subpath")
 
 fun getSDKCopySpec(): CopySpec = copySpec {
     into("sdk") {
-        from(files(outFile("moe_core_jar"))) {
-            rename(outFile("moe_core_jar").name, "moe-core.jar")
-        }
-        from(files(outFile("moe_core_sources_jar"))) {
-            rename(outFile("moe_core_sources_jar").name, "moe-core-sources.jar")
-        }
-        from(files(outFile("moe_core_javadoc_jar"))) {
-            rename(outFile("moe_core_javadoc_jar").name, "moe-core-javadoc.jar")
-        }
-        from(files(outFile("moe_ios_jar"))) {
-            rename(outFile("moe_ios_jar").name, "moe-ios.jar")
-        }
-        from(files(outFile("moe_ios_sources_jar"))) {
-            rename(outFile("moe_ios_sources_jar").name, "moe-ios-sources.jar")
-        }
-        from(files(outFile("moe_ios_javadoc_jar"))) {
-            rename(outFile("moe_ios_javadoc_jar").name, "moe-ios-javadoc.jar")
-        }
-        from(files(outFile("moe_ios_junit_jar"))) {
-            rename(outFile("moe_ios_junit_jar").name, "moe-ios-junit.jar")
-        }
-        from(files(outFile("moe_ios_junit_sources_jar"))) {
-            rename(outFile("moe_ios_junit_sources_jar").name, "moe-ios-junit-sources.jar")
-        }
-        from(files(outFile("moe_ios_junit_javadoc_jar"))) {
-            rename(outFile("moe_ios_junit_javadoc_jar").name, "moe-ios-junit-javadoc.jar")
-        }
+        from(files(out.moeCoreJar)) { rename(out.moeCoreJar.name, "moe-core.jar") }
+        from(files(out.moeCoreSourcesJar)) { rename(out.moeCoreSourcesJar.name, "moe-core-sources.jar") }
+        from(files(out.moeCoreJavadocJar)) { rename(out.moeCoreJavadocJar.name, "moe-core-javadoc.jar") }
+        from(files(out.moeIosJar)) { rename(out.moeIosJar.name, "moe-ios.jar") }
+        from(files(out.moeIosSourcesJar)) { rename(out.moeIosSourcesJar.name, "moe-ios-sources.jar") }
+        from(files(out.moeIosJavadocJar)) { rename(out.moeIosJavadocJar.name, "moe-ios-javadoc.jar") }
+        from(files(out.moeIosJunitJar)) { rename(out.moeIosJunitJar.name, "moe-ios-junit.jar") }
+        from(files(out.moeIosJunitSourcesJar)) { rename(out.moeIosJunitSourcesJar.name, "moe-ios-junit-sources.jar") }
+        from(files(out.moeIosJunitJavadocJar)) { rename(out.moeIosJunitJavadocJar.name, "moe-ios-junit-javadoc.jar") }
     }
     into("sdk/iphoneos") {
-        from(files(outFile("iphoneos_libmoe"))) {
-            rename(outFile("iphoneos_libmoe").name, "libmoe.a")
-        }
+        from(files(out.iphoneosLibmoe)) { rename(out.iphoneosLibmoe.name, "libmoe.a") }
         into("svmjdwp.framework") {
-            from(files(outFile("iphoneos_svmjdwp"))) {
-                exclude("_CodeSignature")
-            }
+            from(files(out.iphoneosSvmjdwp)) { exclude("_CodeSignature") }
         }
         into("include") {
             into(".") {
-                from(files(outFile("iphoneos_libmoe_headers"))) {
-                    include("jni.h")
-                }
+                from(files(out.iphoneosLibmoeHeaders)) { include("jni.h") }
             }
             into("MOE") {
-                from(files(outFile("iphoneos_libmoe_headers"))) {
-                    exclude("jni.h")
-                }
+                from(files(out.iphoneosLibmoeHeaders)) { exclude("jni.h") }
             }
         }
     }
     into("sdk/iphonesimulator") {
-        from(files(outFile("iphonesimulator_libmoe"))) {
-            rename(outFile("iphonesimulator_libmoe").name, "libmoe.a")
-        }
+        from(files(out.iphonesimulatorLibmoe)) { rename(out.iphonesimulatorLibmoe.name, "libmoe.a") }
         into("svmjdwp.framework") {
-            from(files(outFile("iphonesimulator_svmjdwp"))) {
-                exclude("_CodeSignature")
-            }
+            from(files(out.iphonesimulatorSvmjdwp)) { exclude("_CodeSignature") }
         }
         into("include") {
             into(".") {
-                from(files(outFile("iphonesimulator_libmoe_headers"))) {
-                    include("jni.h")
-                }
+                from(files(out.iphonesimulatorLibmoeHeaders)) { include("jni.h") }
             }
             into("MOE") {
-                from(files(outFile("iphonesimulator_libmoe_headers"))) {
-                    exclude("jni.h")
-                }
+                from(files(out.iphonesimulatorLibmoeHeaders)) { exclude("jni.h") }
             }
         }
     }
@@ -167,11 +121,11 @@ fun getSDKCopySpec(): CopySpec = copySpec {
             rename("moe.ios.device.launcher.jar", "ios-device.jar")
         }
 
-        from(files(outFile("proguard_cfg").parentFile)) {
-            include(outFile("jni_config_base_json").name)
-            include(outFile("reflection_config_base_json").name)
-            include(outFile("proguard_full_cfg").name)
-            include(outFile("proguard_cfg").name)
+        from(files(out.proguardCfg.parentFile)) {
+            include(out.jniConfigBaseJson.name)
+            include(out.reflectionConfigBaseJson.name)
+            include(out.proguardFullCfg.name)
+            include(out.proguardCfg.name)
         }
 
         from(buildfiles(":moe.generator.natjgen", "libs")) {
@@ -190,9 +144,8 @@ fun getSDKCopySpec(): CopySpec = copySpec {
     }
 
     into("tools/macosx") {
-        from(files(externalLlvm["macos"] as File))
-        @Suppress("UNCHECKED_CAST")
-        from(files(externalNatj["mac"] as List<File>))
+        from(files(moeExternal.llvm.macos))
+        from(files(moeExternal.natJ.mac))
     }
 
     eachFile { println("$this") }

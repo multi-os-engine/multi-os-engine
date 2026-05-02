@@ -1,27 +1,16 @@
-import org.gradle.api.tasks.TaskProvider
-import org.moe.prebuilts.BuildFilter
+import org.moe.prebuilts.MOECoreNativeContext
 import org.moe.prebuilts.Script
 import org.moe.prebuilts.XcodeBuild
-import java.io.File
 
-val buildfilter = extensions.getByType<BuildFilter>()
-
-@Suppress("UNCHECKED_CAST")
-val externalSvm: Map<String, Any?> =
-    (rootProject.extra["external"] as Map<String, Any?>)["svm"] as Map<String, Any?>
-val svmOpenjdkPath = externalSvm["openjdk"] as String
-
-val parentExtra = parent!!.extra
-@Suppress("UNCHECKED_CAST")
-val bootJdkTask = parentExtra["bootJdkTask"] as TaskProvider<*>
-val bootJdkDirHome = parentExtra["bootJdkDirHome"] as File
+val svmOpenjdkPath = moeExternal.svm.openjdk
+val nativeContext = parent!!.the<MOECoreNativeContext>()
 
 tasks.register<Script>("jdk_gensrc") {
-    dependsOn(bootJdkTask)
+    dependsOn(nativeContext.bootJdkTask)
 
     val builtJdkDir = file("build/labsjdk")
 
-    inputs.dir(bootJdkDirHome)
+    inputs.dir(nativeContext.bootJdkDirHome)
     inputs.dir(svmOpenjdkPath)
     outputs.dir(builtJdkDir)
 
@@ -37,7 +26,7 @@ tasks.register<Script>("jdk_gensrc") {
 
     val jvmciVersion = "jvmci-25.0.1-b01"
     // For whatever reason setting "--with-boot-jdk" does not work
-    env("JAVA_HOME", file(bootJdkDirHome).absolutePath)
+    env("JAVA_HOME", file(nativeContext.bootJdkDirHome).absolutePath)
     env("MX_PYTHON", "python3")
     exec("sh", "configure", "--with-conf-name=labsjdk", "--with-version-opt=$jvmciVersion", "--with-version-pre=",
         "--with-vendor-name=GraalVM Community", "--with-vendor-url=https://www.graalvm.org/", "--with-vendor-bug-url=https://github.com/oracle/graal/issues",

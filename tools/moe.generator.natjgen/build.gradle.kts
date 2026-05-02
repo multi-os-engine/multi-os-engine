@@ -20,7 +20,7 @@ plugins {
     id("org.moe.java-conventions")
 }
 
-tasks.named("classes") { dependsOn(":ext_natj_mac") }
+tasks.classes { dependsOn(":ext_natj_mac") }
 
 dependencies {
     implementation(fileTree("lib") { include("*.jar") })
@@ -58,18 +58,8 @@ dependencies {
     testImplementation(libs.junit)
 }
 
-@Suppress("UNCHECKED_CAST")
-val externalLlvm: Map<String, Any?> =
-    (rootProject.extra["external"] as Map<String, Any?>)["llvm"] as Map<String, Any?>
-val llvmJnipath = externalLlvm["jnipath"] as File
-
-@Suppress("UNCHECKED_CAST")
-val externalNatj: Map<String, Any?> =
-    (rootProject.extra["external"] as Map<String, Any?>)["natj"] as Map<String, Any?>
-val natjJnipath = externalNatj["jnipath"] as File
-
 tasks.withType<Test>().configureEach {
-    systemProperty("java.library.path", llvmJnipath.absolutePath + File.pathSeparator + natjJnipath.absolutePath)
+    systemProperty("java.library.path", moeExternal.llvm.jnipath.absolutePath + File.pathSeparator + moeExternal.natJ.jnipath.absolutePath)
 }
 
 tasks.jar {
