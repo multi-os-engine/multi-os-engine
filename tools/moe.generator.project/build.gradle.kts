@@ -19,6 +19,8 @@ plugins {
 }
 
 dependencies {
-    implementation(libs.slf4j.api)
+    implementation(project(":moe.document.pbxproj"))
+    implementation(libs.gson)
+    implementation(project(":moe.tools.common"))
     testImplementation(libs.junit)
 }
