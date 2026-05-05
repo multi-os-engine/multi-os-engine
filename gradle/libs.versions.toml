@@ -32,6 +32,7 @@ junit = { group = "junit", name = "junit", version.ref = "junit" }
 asm = { group = "org.ow2.asm", name = "asm", version.ref = "asm" }
 asm-tree = { group = "org.ow2.asm", name = "asm-tree", version.ref = "asm" }
 asm-commons = { group = "org.ow2.asm", name = "asm-commons", version.ref = "asm" }
+asm-util = { group = "org.ow2.asm", name = "asm-util", version.ref = "asm" }
 gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 commons-io = { group = "commons-io", name = "commons-io", version.ref = "commons-io" }
 commons-lang3 = { group = "org.apache.commons", name = "commons-lang3", version.ref = "commons-lang3" }

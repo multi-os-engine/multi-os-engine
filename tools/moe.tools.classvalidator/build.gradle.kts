@@ -13,6 +13,10 @@ dependencies {
     implementation(libs.asm.commons)
 
     implementation(libs.gson)
+
+    testImplementation("org.moe:natj")
+    testImplementation(libs.junit)
+    testImplementation(libs.asm.util)
 }
 
 kotlin {
