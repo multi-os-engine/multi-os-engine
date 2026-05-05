@@ -14,13 +14,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import org.moe.prebuilts.JavaConventions
-
 plugins {
     id("org.moe.java-conventions")
 }
 
-extensions.getByType<JavaConventions.Extension>().release = 11
+javaConventions.release = 11
 
 dependencies {
     implementation("org.multi-os-engine:javapymobiledevice3")

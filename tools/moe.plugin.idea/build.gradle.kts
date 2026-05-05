@@ -14,8 +14,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import org.moe.prebuilts.JavaConventions
-
 plugins {
     id("org.moe.java-conventions")
     alias(libs.plugins.intellij.platform)
@@ -27,7 +25,7 @@ plugins {
 group = "org.multi-os-engine"
 version = "1.6.3"
 
-extensions.getByType<JavaConventions.Extension>().release = 17
+javaConventions.release = 17
 
 java {
     toolchain {
