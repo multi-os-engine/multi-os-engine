@@ -77,7 +77,6 @@ dependencies {
     "shade"(libs.asm.tree)
     "shade"(libs.asm.commons)
     "shade"(libs.gson)
-    "shade"(libs.slf4j.api)
     "shade"(libs.dd.plist)
     "shade"(libs.commons.codec)
 
@@ -94,6 +93,10 @@ tasks.shadowJar {
     enableAutoRelocation = true
     relocationPrefix = "org.moe.gradle.shadow"
     relocate("org.moe", "org.moe")
+
+    dependencies {
+        exclude(dependency("org.slf4j:slf4j-api:.*"))
+    }
 }
 
 tasks.jar {
