@@ -17,16 +17,15 @@ buildscript {
     }
 }
 
-// Apply plugins
-apply plugin: 'eclipse'
 //<<---REGION:USE_KOTLIN_PLUGIN
 apply plugin: 'kotlin'
 //>>---REGION:USE_KOTLIN_PLUGIN
 apply plugin: 'moe'
-
-// Set source and target to Java 8
-sourceCompatibility = "1.8"
-targetCompatibility = "1.8"
+java {
+    // Set source and target to Java 8
+    sourceCompatibility = "1.8"
+    targetCompatibility = "1.8"
+}
 
 // Set maven repository
 repositories {
@@ -70,11 +69,3 @@ sourceSets {
     main.java.srcDirs += 'src/main/kotlin'
 }
 //>>---REGION:USE_KOTLIN_PLUGIN
-
-// Setup Eclipse
-eclipse {
-    // Set Multi-OS Engine nature
-    project {
-        natures 'org.multi-os-engine.project'
-    }
-}

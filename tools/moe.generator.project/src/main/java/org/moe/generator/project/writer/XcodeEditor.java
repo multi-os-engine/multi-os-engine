@@ -150,7 +150,7 @@ public class XcodeEditor extends AbstractXcodeEditor {
          */
         public File xcodeProject;
 
-        public boolean useLLVM = true;
+        public boolean useLLVM = false;
 
         /**
          * Validates the fields.
