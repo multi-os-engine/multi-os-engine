@@ -164,17 +164,18 @@ val createClasspathManifest = tasks.register("createClasspathManifest") {
     val outputDir = layout.buildDirectory.dir(name).get().asFile
     val runtimeClasspath = sourceSets["main"].runtimeClasspath
     val shadeClasspath = configurations["shade"]
-    val sdkLocalBuildPath = project(":moe-sdk").file("build/dev-sdk")
-    val pluginVersion = project.version
+    val classpath = runtimeClasspath + shadeClasspath
+    val sdkLocalBuildPath = project(":moe-sdk").file("build/dev-sdk").toString()
+    val pluginVersion = project.version.toString()
 
-    inputs.files(runtimeClasspath)
+    inputs.files(classpath)
     outputs.dir(outputDir)
 
     doLast {
         outputDir.mkdirs()
-        File(outputDir, "plugin-classpath.txt").writeText((runtimeClasspath.files + shadeClasspath.files).joinToString("\n"))
-        File(outputDir, "plugin-sdk-localbuild.txt").writeText(sdkLocalBuildPath.toString())
-        File(outputDir, "plugin-version.txt").writeText(pluginVersion.toString())
+        File(outputDir, "plugin-classpath.txt").writeText(classpath.files.joinToString("\n"))
+        File(outputDir, "plugin-sdk-localbuild.txt").writeText(sdkLocalBuildPath)
+        File(outputDir, "plugin-version.txt").writeText(pluginVersion)
     }
 }
 
