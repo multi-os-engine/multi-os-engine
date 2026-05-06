@@ -60,4 +60,24 @@ class CollectSimpleReflectionConfigTest : ASMTest() {
 
         assertEquals(canonicalJson("[]"), canonicalJson(out))
     }
+
+    @Test
+    fun `native descendant is made reachable`() {
+        val bytes = classBytes(internalName = "com/example/NativeDescendant", superName = "org/moe/natj/general/NativeObject")
+
+        val cfg = ReflectionConfig()
+        ClassReader(bytes).accept(CollectSimpleReflectionConfig(cfg), 0)
+
+        val out = tmp.newFile("reflection-config.json")
+        cfg.save(out)
+
+        val expected = """
+            [
+                {
+                    "name": "com.example.NativeDescendant"
+                }
+            ]
+        """.trimIndent()
+        assertEquals(canonicalJson(expected), canonicalJson(out))
+    }
 }

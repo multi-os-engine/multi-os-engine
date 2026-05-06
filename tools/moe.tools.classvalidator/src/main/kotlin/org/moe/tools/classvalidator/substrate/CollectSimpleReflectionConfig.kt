@@ -22,6 +22,8 @@ class CollectSimpleReflectionConfig(
         interfaces: Array<out String>?
     ) {
         this.name = name
+        if (NatJRuntime.isNativeObjectDescendant(superName))
+            config.addClass(name)
     }
 
     override fun visitAnnotation(descriptor: String, visible: Boolean): AnnotationVisitor? {
