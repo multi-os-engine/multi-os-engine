@@ -170,6 +170,7 @@ val createClasspathManifest = tasks.register("createClasspathManifest") {
 
     inputs.files(classpath)
     outputs.dir(outputDir)
+    outputs.cacheIf { false }
 
     doLast {
         outputDir.mkdirs()
