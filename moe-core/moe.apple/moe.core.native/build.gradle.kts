@@ -1,3 +1,4 @@
+import org.gradle.api.tasks.PathSensitivity
 import org.moe.prebuilts.MOECoreNativeContext
 import org.moe.prebuilts.Script
 
@@ -15,16 +16,17 @@ val nativeContext = extensions.create("moeCoreNative", MOECoreNativeContext::cla
 }
 
 nativeContext.bootJdkTask = tasks.register<Script>("fetch_boot_jdk") {
+    inputs.dir(svm.mx).withPathSensitivity(PathSensitivity.RELATIVE)
     outputs.dir(nativeContext.bootJdkDir)
 
     progress("Fetching boot JDK")
-    setRawWorkDir(svm.mx)
+    setRawWorkDir(file(svm.mx))
 
     exec(
         "./mx",
         "-y", "--no-warning",
         "fetch-jdk",
-        "--to", file(nativeContext.bootJdkDir).absolutePath,
+        "--to", rel(nativeContext.bootJdkDir),
         "--alias", nativeContext.bootJdkDirAlias,
         "labsjdk-ce-latest", "ce-25.0.1+8-jvmci-b01",
     )
@@ -32,9 +34,11 @@ nativeContext.bootJdkTask = tasks.register<Script>("fetch_boot_jdk") {
 
 nativeContext.graalDistTask = tasks.register<Script>("build_graal_dist") {
     dependsOn(nativeContext.bootJdkTask)
-    inputs.dir(nativeContext.bootJdkDir)
-    inputs.dir(svm.graal)
+    inputs.dir(nativeContext.bootJdkDir).withPathSensitivity(PathSensitivity.RELATIVE)
+    inputs.dir(svm.mx).withPathSensitivity(PathSensitivity.RELATIVE)
+    inputs.dir(svm.graal).withPathSensitivity(PathSensitivity.RELATIVE)
     outputs.dir(nativeContext.graalDist)
+    localState.register(layout.buildDirectory.dir("graalBuild"))
 
     setWorkDir("graalBuild")
 
@@ -43,11 +47,11 @@ nativeContext.graalDistTask = tasks.register<Script>("build_graal_dist") {
 
     progress("Build graal dist")
     setWorkDir("graalBuild/vm/")
-    exec("${svm.mx}/mx", "--java-home", file(nativeContext.bootJdkDirHome).absolutePath, "--env", "ce", "build")
+    exec("${rel(svm.mx)}/mx", "--java-home", rel(nativeContext.bootJdkDirHome), "--env", "ce", "build")
 
     progress("Copy build distribution")
     exec("bash", "-c",
-        "rsync -a --delete \$(${svm.mx}/mx --java-home ${file(nativeContext.bootJdkDirHome).absolutePath} --env ce graalvm-home)/ ${file(nativeContext.graalDist).absolutePath}/")
+        "rsync -a --delete \$(${rel(svm.mx)}/mx --java-home ${rel(nativeContext.bootJdkDirHome)} --env ce graalvm-home)/ ${rel(nativeContext.graalDist)}/")
 }
 
 subprojects {

@@ -14,6 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+import org.gradle.api.tasks.PathSensitivity
 import org.moe.prebuilts.Script
 
 plugins {
@@ -22,14 +23,6 @@ plugins {
 }
 
 idea {
-    project {
-        // The Gradle `idea` plugin defaults idea.project.languageLevel to JDK_1_6 when no
-        // Java module under this root provides a sourceCompatibility. Without this override
-        // the IDE picks up that 1.6 as the project-default language level across composite
-        // builds, breaking lambda support in unrelated modules.
-        setLanguageLevel(JavaVersion.VERSION_21)
-        targetBytecodeVersion = JavaVersion.VERSION_21
-    }
     module {
         excludeDirs = excludeDirs + file("llvm")
         excludeDirs = excludeDirs + file("mingw")
@@ -41,7 +34,7 @@ tasks.register("prebuildAll") {
 }
 
 tasks.register<Delete>("cleanAll") {
-    dependsOn(":external:libffi:clean")
+    dependsOn(subprojects.map { it.tasks.named("clean") })
     delete("build")
     delete("llvm")
     delete("mingw")
@@ -60,9 +53,9 @@ tasks.register<Script>("linuxCrosscompiler") {
     progress("Downloading crosscompiler")
     setWorkDir("linux-crosscompiler")
     if (isAppleSilicon) {
-        download("linux_crosscompiler.zip", "https://github.com/messense/homebrew-macos-cross-toolchains/releases/download/v1.1.0/x86_64-unknown-linux-gnu-aarch64-darwin.zip")
+        download("linux_crosscompiler.zip", "https://github.com/messense/homebrew-macos-cross-toolchains/releases/download/v1.1.0/x86_64-unknown-linux-gnu-aarch64-darwin.zip", "d5ff7b14d6a8820b8bba36e67e1551de51c2e35e069a97a1282f10f80db82bcb")
     } else {
-        download("linux_crosscompiler.zip", "https://github.com/messense/homebrew-macos-cross-toolchains/releases/download/v1.1.0/x86_64-unknown-linux-gnu-x86_64-darwin.zip")
+        download("linux_crosscompiler.zip", "https://github.com/messense/homebrew-macos-cross-toolchains/releases/download/v1.1.0/x86_64-unknown-linux-gnu-x86_64-darwin.zip", "e93d8bfdd584db398c3b70007a41bc3e57b69511ce746375aaa9a3ea024e6116")
     }
     exec("rm", "-rf", "linux_crosscompiler")
     exec("unzip", "-o", "linux_crosscompiler.zip")
@@ -96,7 +89,7 @@ tasks.register<Script>("mingw") {
 
     progress("Downloading $binutilsVersion")
     setWorkDir("mingw")
-    download("$binutilsVersion.tar.bz2", "http://ftp.gnu.org/gnu/binutils/$binutilsVersion.tar.bz2")
+    download("$binutilsVersion.tar.bz2", "http://ftp.gnu.org/gnu/binutils/$binutilsVersion.tar.bz2", "0cb4843da15a65a953907c96bad658283f3c4419d6bcc56bf2789db16306adb2")
     exec("rm", "-rf", binutilsVersion)
     exec("tar", "xjf", "$binutilsVersion.tar.bz2")
 
@@ -104,22 +97,22 @@ tasks.register<Script>("mingw") {
     setWorkDir("mingw/$binutilsVersion/build64")
     exec("../configure", "--target=x86_64-w64-mingw32",
         "--disable-werror", "--disable-multilib",
-        "--prefix=${file("mingw").absolutePath}",
-        "--with-sysroot=${file("mingw").absolutePath}",
+        "--prefix=${rel("mingw")}",
+        "--with-sysroot=${rel("mingw")}",
         "--enable-64-bit-bfd")
     exec("make")
     exec("make", "install-strip")
 
     progress("Downloading $mingwVersion")
     setWorkDir("mingw")
-    download("$mingwVersion.tar.bz2", "http://downloads.sourceforge.net/project/mingw-w64/mingw-w64/mingw-w64-release/$mingwVersion.tar.bz2")
+    download("$mingwVersion.tar.bz2", "http://downloads.sourceforge.net/project/mingw-w64/mingw-w64/mingw-w64-release/$mingwVersion.tar.bz2", "aa20dfff3596f08a7f427aab74315a6cb80c2b086b4a107ed35af02f9496b628")
     exec("rm", "-rf", mingwVersion)
     exec("tar", "xjf", "$mingwVersion.tar.bz2")
 
     progress("Building 64-bit $mingwVersion")
     setWorkDir("mingw/$mingwVersion/build-headers64")
     exec("../mingw-w64-headers/configure", "--host=x86_64-w64-mingw32",
-        "--prefix=${file("mingw").absolutePath}/x86_64-w64-mingw32")
+        "--prefix=${rel("mingw")}/x86_64-w64-mingw32")
     exec("make")
     exec("make", "install-strip")
     setRawWorkDir("mingw/x86_64-w64-mingw32")
@@ -128,11 +121,11 @@ tasks.register<Script>("mingw") {
 
     progress("Downloading $gccVersion")
     setWorkDir("mingw")
-    download("$gccVersion.tar.xz", "https://ftp.gnu.org/gnu/gcc/$gccVersion/$gccVersion.tar.xz")
+    download("$gccVersion.tar.xz", "https://ftp.gnu.org/gnu/gcc/$gccVersion/$gccVersion.tar.xz", "e275e76442a6067341a27f04c5c6b83d8613144004c0413528863dc6b5c743da")
     exec("rm", "-rf", gccVersion)
     exec("tar", "xjf", "$gccVersion.tar.xz")
 
-    env("PATH", "${file("mingw").absolutePath}/bin:${providers.environmentVariable("PATH").get()}")
+    env("PATH", "${rel("mingw")}/bin:${providers.environmentVariable("PATH").get()}")
 
     progress("Building 64-bit $gccVersion")
     setRawWorkDir("mingw")
@@ -151,8 +144,8 @@ tasks.register<Script>("mingw") {
         "--with-gmp=$BREW_GMP", "--with-mpfr=$BREW_MPFR", "--with-mpc=$BREW_MPC", "--with-cloog=$BREW_CLOOG", "--with-isl=$BREW_ISL",
         "--with-system-zlib", "--enable-version-specific-runtime-libs", "--enable-libstdcxx-time=yes", "--enable-stage1-checking",
         "--enable-checking=release", "--enable-lto", "--enable-threads=win32",
-        "--prefix=${file("mingw").absolutePath}",
-        "--with-sysroot=${file("mingw").absolutePath}")
+        "--prefix=${rel("mingw")}",
+        "--with-sysroot=${rel("mingw")}")
     exec("make", "all-gcc", "-j$cpuCount")
     exec("make", "install-gcc")
 
@@ -162,8 +155,8 @@ tasks.register<Script>("mingw") {
     exec("ln", "-s", "x86_64-w64-mingw32", "mingw")
     setWorkDir("mingw/$mingwVersion/build-crt64")
     exec("../mingw-w64-crt/configure", "--host=x86_64-w64-mingw32",
-        "--prefix=${file("mingw").absolutePath}/x86_64-w64-mingw32",
-        "--with-sysroot=${file("mingw").absolutePath}")
+        "--prefix=${rel("mingw")}/x86_64-w64-mingw32",
+        "--with-sysroot=${rel("mingw")}")
     exec("make")
     exec("make", "install-strip")
 
@@ -185,7 +178,7 @@ tasks.register<Script>("mingw") {
     progress("Building 64-bit $mingwVersion winpthreads")
     setWorkDir("mingw/$mingwVersion/mingw-w64-libraries/winpthreads/build64")
     exec("../configure", "--host=x86_64-w64-mingw32",
-        "--prefix=${file("mingw").absolutePath}/x86_64-w64-mingw32")
+        "--prefix=${rel("mingw")}/x86_64-w64-mingw32")
     exec("make")
     exec("make", "install-strip")
 }
@@ -199,25 +192,27 @@ tasks.register("mingwPresence") {
 }
 
 tasks.register<Script>("llvm") {
+    inputs.dir(file("../../external/llvm/llvm")).withPathSensitivity(PathSensitivity.RELATIVE)
+    inputs.property("hostArch", providers.systemProperty("os.arch"))
+    outputs.dir("llvm/macos")
+    localState.register("build/llvm/macos")
+
     progress("Checking brew dependencies")
-    val BREW_CMAKE = checkDir(brewPath("./opt/cmake"))
-    val isNew = !file("build/llvm/macos/Makefile").exists()
+    checkDir(brewPath("./opt/cmake"))
 
     progress("Creating LLVM makefiles")
     setWorkDir("llvm/macos")
-    if (isNew) {
-        exec("cmake",
-            "-DCMAKE_BUILD_TYPE=MinSizeRel",
-            "-DCMAKE_INSTALL_PREFIX=" + file("llvm/macos").absolutePath,
-            "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64",
-            "-DLLVM_TARGETS_TO_BUILD=AArch64;ARM;X86",
-            "-DLLVM_BUILD_TOOLS=OFF",
-            "-DLLVM_BUILD_EXAMPLES=OFF",
-            "-DLLVM_ENABLE_PROJECTS=clang",
-            "-DLLVM_ENABLE_ZSTD=OFF",
-            "-G", "Unix Makefiles",
-            file("../../external/llvm/llvm").absolutePath)
-    }
+    exec(brewPath("./bin/cmake"),
+        "-DCMAKE_BUILD_TYPE=MinSizeRel",
+        "-DCMAKE_INSTALL_PREFIX=" + rel("llvm/macos"),
+        "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64",
+        "-DLLVM_TARGETS_TO_BUILD=AArch64;ARM;X86",
+        "-DLLVM_BUILD_TOOLS=OFF",
+        "-DLLVM_BUILD_EXAMPLES=OFF",
+        "-DLLVM_ENABLE_PROJECTS=clang",
+        "-DLLVM_ENABLE_ZSTD=OFF",
+        "-G", "Unix Makefiles",
+        rel("../../external/llvm/llvm"))
 
     progress("Building LLVM")
     exec("make", "-j$cpuCount", "libclang", "libclang-headers")

@@ -21,7 +21,9 @@ import org.gradle.api.Project;
 import org.gradle.api.file.DirectoryProperty;
 import org.gradle.api.logging.Logger;
 import org.gradle.api.tasks.Input;
-import org.gradle.api.tasks.Internal;
+import org.gradle.api.tasks.InputDirectory;
+import org.gradle.api.tasks.PathSensitive;
+import org.gradle.api.tasks.PathSensitivity;
 import org.gradle.api.tasks.TaskProvider;
 
 import java.io.ByteArrayOutputStream;
@@ -43,7 +45,8 @@ public abstract class XcodeBuild extends BaseTask {
 
     private final List<String> extraArgs = new ArrayList<>();
 
-    @Internal
+    @InputDirectory
+    @PathSensitive(PathSensitivity.RELATIVE)
     public abstract DirectoryProperty getXcodeProject();
 
     private String configuration;

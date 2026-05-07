@@ -1,1 +1,4 @@
+includeBuild("moe-core")
+includeBuild("natj")
+includeBuild("prebuilts")
 includeBuild("tools")

@@ -21,3 +21,7 @@ tasks.register("build") {
     dependsOn(releaseTask)
     dependsOn(debugTask)
 }
+
+tasks.register<Delete>("clean") {
+    delete(layout.buildDirectory)
+}

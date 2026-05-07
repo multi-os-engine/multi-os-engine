@@ -73,3 +73,7 @@ tasks.check {
     brewChecks.forEach { dependsOn(it) }
     dependsOn(premakeCheck)
 }
+
+tasks.register("cleanAll") {
+    dependsOn(allprojects.map { it.tasks.named("clean") })
+}

@@ -144,6 +144,10 @@ tasks.register("buildAll") {
     dependsOn("build", "buildStaticNative", "buildTestClassesCxx", "buildTestClassesC")
 }
 
+tasks.register<Delete>("clean") {
+    delete(layout.buildDirectory)
+}
+
 // Configure publishing
 tasks.publish {
     dependsOn("buildNative")

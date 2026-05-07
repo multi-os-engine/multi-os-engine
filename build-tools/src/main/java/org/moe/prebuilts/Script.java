@@ -17,21 +17,30 @@ limitations under the License.
 package org.moe.prebuilts;
 
 import org.gradle.api.GradleException;
+import org.gradle.api.tasks.CacheableTask;
 import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.Internal;
-import org.gradle.api.tasks.Optional;
+import org.gradle.internal.impldep.org.apache.commons.codec.digest.DigestUtils;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.Serializable;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.TreeMap;
+import java.util.stream.Collectors;
 
+@CacheableTask
 public abstract class Script extends BaseTask {
 
     private final Map<String, String> envMap = new HashMap<>();
+    private final Map<String, String> roots = new HashMap<>();
 
     private String tempWorkDir;
 
@@ -39,6 +48,12 @@ public abstract class Script extends BaseTask {
 
     private String failureMessage;
 
+    public void registerRoot(String alias, File path) {
+        if (roots.containsKey(alias))
+            throw new GradleException("Duplicate alias " + alias);
+        roots.put(alias, path.toPath().normalize().toString());
+    }
+    
     @Input
     public List<Step> getSteps() {
         return steps;
@@ -65,6 +80,7 @@ public abstract class Script extends BaseTask {
     }
 
     public void env(String key, String value) {
+        requirePortable(value);
         envMap.put(key, value);
     }
 
@@ -73,19 +89,22 @@ public abstract class Script extends BaseTask {
     }
 
     public void setWorkDir(String tempWorkDir) {
-        if (tempWorkDir == null) {
+        if (tempWorkDir == null)
             throw new NullPointerException();
-        }
-        this.tempWorkDir = "build/" + tempWorkDir;
-        getProjectLayout().getProjectDirectory().file(this.tempWorkDir).getAsFile().mkdirs();
+        requirePortable(tempWorkDir);
+        File f = getProjectLayout().getProjectDirectory().file("build/" + tempWorkDir).getAsFile();
+        this.tempWorkDir = rel(f);
     }
 
     public void setRawWorkDir(String tempWorkDir) {
-        if (tempWorkDir == null) {
+        if (tempWorkDir == null)
             throw new NullPointerException();
-        }
-        this.tempWorkDir = tempWorkDir;
-        getProjectLayout().getProjectDirectory().file(this.tempWorkDir).getAsFile().mkdirs();
+        requirePortable(tempWorkDir);
+        this.tempWorkDir = rel(tempWorkDir);
+    }
+
+    public void setRawWorkDir(File f) {
+        this.tempWorkDir = rel(f);
     }
 
     @Internal
@@ -93,11 +112,10 @@ public abstract class Script extends BaseTask {
         if (tempWorkDir == null) {
             throw new GradleException("workDir is not set");
         }
-        return getProjectLayout().getProjectDirectory().file(tempWorkDir).getAsFile();
+        return new File(unwrap(tempWorkDir));
     }
 
-    @Input
-    @Optional
+    @Internal
     public String getFailureMessage() {
         return failureMessage;
     }
@@ -106,11 +124,12 @@ public abstract class Script extends BaseTask {
         this.failureMessage = failureMessage;
     }
 
-    public void download(String target, String url) {
-        final File targetFile = new File(getWorkDir(), target);
-        if (!targetFile.exists()) {
-            exec("curl", "-L", "-o", target, "--fail", url);
+    public void download(String target, String url, String sha256) {
+        requirePortable(target);
+        if (tempWorkDir == null) {
+            throw new GradleException("workDir is not set");
         }
+        steps.add(new DownloadStep(target, url, sha256, tempWorkDir));
     }
 
     public void mkdir(String path) {
@@ -125,31 +144,83 @@ public abstract class Script extends BaseTask {
         exec("rsync",
                 "-aL",
                 "--delete",
-                from.getAbsolutePath() + "/",
-                to.getAbsolutePath() + "/"
+                rel(from) + "/",
+                rel(to) + "/"
         );
     }
 
     public void copyFile(File from, File to) {
-        steps.add(new CopyFileStep(new FixedFileSource(from), to));
+        copyFile(new FixedFileSource(rel(from)), to);
     }
 
     public void copyFile(FileSource from, File to) {
-        steps.add(new CopyFileStep(from, to));
+        steps.add(new CopyFileStep(from, rel(to)));
+    }
+
+    public FirstMatchingSubdirFile firstMatchingSubdir(File baseDir, String subdirPrefix, String relativePath) {
+        return new FirstMatchingSubdirFile(rel(baseDir), subdirPrefix, relativePath);
     }
 
     public void exec(String exec, String... args) {
         exec(exec, Arrays.asList(args));
     }
 
-    public void exec(String exec, Iterable<String> args) {
-        final ArrayList<String> argsCopy = new ArrayList<>();
-        for (String a : args) {
-            argsCopy.add(a);
+    public void exec(String exec, List<String> args) {
+        requirePortable(exec);
+        args.forEach(this::requirePortable);
+
+        if (tempWorkDir == null) {
+            throw new GradleException("workDir is not set");
         }
-        steps.add(new ExecStep(exec, argsCopy, getWorkDir(),
-                new HashMap<>(this.envMap), this.failureMessage));
+        steps.add(new ExecStep(exec, args, tempWorkDir,
+                new TreeMap<>(this.envMap), this.failureMessage));
         this.failureMessage = null;
+    }
+
+    /**
+     * Relativize a file to declared roots
+     */
+    public String rel(File f) {
+        Path abs = f.toPath().normalize();
+        for (var e : roots.entrySet()) {
+            Path root = Path.of(e.getValue());
+            if (abs.equals(root))
+                return "$" + e.getKey();
+            if (abs.startsWith(root))
+                return "$" + e.getKey() + "/" + root.relativize(abs);
+        }
+        return abs.toString();
+    }
+
+    /**
+     * Relativize a file if it lives in the project
+     */
+    public String rel(String path) {
+        return rel(getProjectLayout().getProjectDirectory().file(path).getAsFile());
+    }
+
+    /** Substitute the root template back to an absolute path. */
+    private String unwrap(String s) {
+        if (s == null) return null;
+        for (var e : roots.entrySet()) {
+            s = s.replace("$" + e.getKey(), e.getValue());
+        }
+        return s;
+    }
+
+    /**
+     * Throw at config time if {@code s} contains a root abs path.
+     */
+    private void requirePortable(String s) {
+        if (s == null)
+            return;
+        for (var e : roots.entrySet()) {
+            if (s.contains(e.getValue())) {
+                throw new GradleException(
+                        "Script value contains an absolute path:\n  " + s + "\n"
+                                + "Use rel(...) to make it portable.");
+            }
+        }
     }
 
     public interface Step extends Serializable {
@@ -174,12 +245,12 @@ public abstract class Script extends BaseTask {
         private static final long serialVersionUID = 1L;
         private final String executable;
         private final List<String> args;
-        private final File workDir;
-        private final Map<String, String> envMap;
+        private final String workDir;
+        private final TreeMap<String, String> envMap;
         private final String failureMessage;
 
-        public ExecStep(String executable, List<String> args, File workDir,
-                        Map<String, String> envMap, String failureMessage) {
+        public ExecStep(String executable, List<String> args, String workDir,
+                        TreeMap<String, String> envMap, String failureMessage) {
             this.executable = executable;
             this.args = args;
             this.workDir = workDir;
@@ -189,13 +260,18 @@ public abstract class Script extends BaseTask {
 
         @Override
         public void run(Script script) {
+            File resolvedWorkDir = new File(script.unwrap(workDir));
+            String resolvedExec = script.unwrap(executable);
+            List<String> resolvedArgs = args.stream().map(script::unwrap).toList();
+            Map<String, String> resolvedEnv = envMap.entrySet().stream()
+                    .collect(Collectors.toMap(Entry::getKey, entry -> script.unwrap(entry.getValue())));
             try {
                 script.exec(spec -> {
-                    workDir.mkdirs();
-                    spec.workingDir(workDir);
-                    spec.setExecutable(executable);
-                    spec.args(args);
-                    spec.getEnvironment().putAll(envMap);
+                    resolvedWorkDir.mkdirs();
+                    spec.workingDir(resolvedWorkDir);
+                    spec.setExecutable(resolvedExec);
+                    spec.args(resolvedArgs);
+                    spec.getEnvironment().putAll(resolvedEnv);
                 });
             } catch (Throwable t) {
                 if (failureMessage != null) {
@@ -207,37 +283,38 @@ public abstract class Script extends BaseTask {
     }
 
     public interface FileSource extends Serializable {
-        File get();
+        File resolve(Script script);
     }
 
     public static final class FixedFileSource implements FileSource {
         private static final long serialVersionUID = 1L;
-        private final File file;
+        private final String pathSentinel;
 
-        public FixedFileSource(File file) {
-            this.file = file;
+        public FixedFileSource(String pathSentinel) {
+            this.pathSentinel = pathSentinel;
         }
 
         @Override
-        public File get() {
-            return file;
+        public File resolve(Script script) {
+            return new File(script.unwrap(pathSentinel));
         }
     }
 
     public static final class FirstMatchingSubdirFile implements FileSource {
         private static final long serialVersionUID = 1L;
-        private final File baseDir;
+        private final String baseDirSentinel;
         private final String subdirPrefix;
         private final String relativePath;
 
-        public FirstMatchingSubdirFile(File baseDir, String subdirPrefix, String relativePath) {
-            this.baseDir = baseDir;
+        public FirstMatchingSubdirFile(String baseDirSentinel, String subdirPrefix, String relativePath) {
+            this.baseDirSentinel = baseDirSentinel;
             this.subdirPrefix = subdirPrefix;
             this.relativePath = relativePath;
         }
 
         @Override
-        public File get() {
+        public File resolve(Script script) {
+            File baseDir = new File(script.unwrap(baseDirSentinel));
             File subdir = baseDir.listFiles((d, name) -> name.startsWith(subdirPrefix))[0];
             return new File(subdir, relativePath);
         }
@@ -246,21 +323,73 @@ public abstract class Script extends BaseTask {
     public static final class CopyFileStep implements Step {
         private static final long serialVersionUID = 1L;
         private final FileSource from;
-        private final File to;
+        private final String toSentinel;
 
-        public CopyFileStep(FileSource from, File to) {
+        public CopyFileStep(FileSource from, String toSentinel) {
             this.from = from;
-            this.to = to;
+            this.toSentinel = toSentinel;
         }
 
         @Override
         public void run(Script script) {
-            File src = from.get();
+            File src = from.resolve(script);
+            File dest = new File(script.unwrap(toSentinel));
             script.getFileSystemOperations().copy(spec -> {
                 spec.from(src);
-                spec.rename(name -> to.getName());
-                spec.into(to.getParentFile());
+                spec.rename(_ -> dest.getName());
+                spec.into(dest.getParentFile());
             });
+        }
+    }
+
+    public static final class DownloadStep implements Step {
+        private static final long serialVersionUID = 1L;
+        private final String target;
+        private final String url;
+        private final String sha256;
+        private final String workDir;
+
+        public DownloadStep(String target, String url, String sha256, String workDir) {
+            this.target = target;
+            this.url = url;
+            this.sha256 = sha256.toLowerCase();
+            this.workDir = workDir;
+        }
+
+        @Override
+        public void run(Script script) {
+            File resolvedWorkDir = new File(script.unwrap(workDir));
+            File targetFile = new File(resolvedWorkDir, target);
+
+            if (targetFile.exists()) {
+                String actual = sha256(targetFile);
+                if (actual.equals(sha256))
+                    return;
+                System.out.println("> hash mismatch for " + target + ", re-downloading");
+                targetFile.delete();
+            }
+
+            resolvedWorkDir.mkdirs();
+            script.exec(spec -> {
+                spec.workingDir(resolvedWorkDir);
+                spec.setExecutable("curl");
+                spec.args("-L", "-o", target, "--fail", url);
+            });
+
+            String actual = sha256(targetFile);
+            if (!actual.equals(sha256)) {
+                targetFile.delete();
+                throw new GradleException(
+                        "Hash mismatch for " + url + "\n  expected: " + sha256 + "\n  actual:   " + actual);
+            }
+        }
+
+        private static String sha256(File f) {
+            try (var in = new FileInputStream(f)) {
+                return DigestUtils.sha256Hex(in);
+            } catch (IOException e) {
+                throw new GradleException("Failed to hash " + f, e);
+            }
         }
     }
 }

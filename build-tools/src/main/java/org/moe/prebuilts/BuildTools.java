@@ -16,21 +16,19 @@ public class BuildTools implements Plugin<Project> {
 
     private static void configure(Project project) {
         final Project root = project.getRootProject();
-        Provider<Boolean> verbose = project.getProviders().gradleProperty("moe.verbose")
-                .map(v -> Boolean.TRUE).orElse(Boolean.FALSE);
+        Provider<Boolean> verbose = project.getProviders().gradleProperty("moe.verbose").map(v -> true).orElse(false);
 
         project.getTasks().withType(BaseTask.class).configureEach(task -> {
+            MOEExternal external = project.getExtensions().getByType(MOEExternal.class);
+
             task.getVerbose().convention(verbose);
-            task.getRootProjectDirectory().convention(
-                    root.getLayout().getProjectDirectory());
-            task.getRepoRootDirectory().convention(
-                    root.getLayout().getProjectDirectory().dir("../.."));
-            task.getProjectName().convention(project.getName());
+            task.getRootProjectDirectory().set(root.getLayout().getProjectDirectory());
+            task.getRepoRootDirectory().set(new File(external.root));
+            task.getProjectName().set(project.getName());
         });
 
         project.getTasks().withType(XcodeBuild.class).configureEach(task -> {
-            task.getXcodeProject().convention(
-                    project.getLayout().getProjectDirectory().dir(project.getName() + ".xcodeproj"));
+            task.getXcodeProject().convention(project.getLayout().getProjectDirectory().dir(project.getName() + ".xcodeproj"));
             String xcodeprojPath = task.getXcodeProject().get().getAsFile().getAbsolutePath();
             Provider<XcodeBuildLockService> xcodeLock = project.getGradle().getSharedServices()
                     .registerIfAbsent(
@@ -39,6 +37,13 @@ public class BuildTools implements Plugin<Project> {
                             spec -> spec.getMaxParallelUsages().set(1)
                     );
             task.usesService(xcodeLock);
+        });
+
+        project.getTasks().withType(Script.class).configureEach(task -> {
+            MOEExternal external = project.getExtensions().getByType(MOEExternal.class);
+            task.registerRoot("ROOT", new File(external.moe));
+            task.registerRoot("SVM", new File(external.svm.root));
+            task.registerRoot("EXTERNAL", new File(external.external));
         });
 
         registerBuildFilter(project, root);
@@ -72,19 +77,19 @@ public class BuildTools implements Plugin<Project> {
             return;
         }
         MOEExternal external = project.getExtensions().create("moeExternal", MOEExternal.class);
+        external.root = root.file("../../").getAbsolutePath();
+        external.moe = root.file("../").getAbsolutePath();
 
-        File prebuiltsDir = root.file("../prebuilts");
-        external.prebuilts = prebuiltsDir.getAbsolutePath();
+        external.prebuilts = new File(external.moe, "prebuilts").getAbsolutePath();
+        external.external = new File(external.root, "external").getAbsolutePath();
 
-        // SVM (one level above moe/, sibling of the moe/ tree)
-        File svmRoot = root.file("../../svm");
+        File svmRoot = new File(external.root, "svm");
         external.svm.root = svmRoot.getAbsolutePath();
         external.svm.mx = new File(svmRoot, "mx").getAbsolutePath();
         external.svm.graal = new File(svmRoot, "graal").getAbsolutePath();
         external.svm.openjdk = new File(svmRoot, "labs-openjdk").getAbsolutePath();
 
-        // NatJ (composite root sibling)
-        File natjRoot = root.file("../natj");
+        File natjRoot = new File(external.moe, "natj");
         external.natJ.root = natjRoot.getAbsolutePath();
         external.natJ.sources = new File(natjRoot, "src/main/java");
         external.natJ.jnipath = new File(natjRoot, "natj-mac/build/xcode/Release");
@@ -97,13 +102,12 @@ public class BuildTools implements Plugin<Project> {
         external.natJ.linux = Arrays.asList(new File(natjRoot, "natj-linux/build/Release/libnatj.so"));
 
         // LLVM (within prebuilts)
-        File llvmRoot = new File(prebuiltsDir, "llvm/macos");
+        File llvmRoot = new File(external.prebuilts, "llvm/macos");
         external.llvm.root = llvmRoot.getAbsolutePath();
         external.llvm.jnipath = new File(llvmRoot, "lib");
         external.llvm.macos = new File(llvmRoot, "lib/libclang.dylib");
 
-        // MOECore (composite root sibling)
-        File moeCoreRoot = root.file("../moe-core");
+        File moeCoreRoot = new File(external.moe, "moe-core");
         external.moeCore.root = moeCoreRoot.getAbsolutePath();
 
         String sdkConfig = root.hasProperty("moe.moe_core.sdk.debug") ? "Debug" : "Release";

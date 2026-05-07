@@ -17,24 +17,24 @@ limitations under the License.
 package org.moe.prebuilts;
 
 import org.gradle.api.file.ConfigurableFileCollection;
+import org.gradle.api.provider.MapProperty;
+import org.gradle.api.tasks.CacheableTask;
 import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.InputDirectory;
 import org.gradle.api.tasks.InputFiles;
 import org.gradle.api.tasks.OutputDirectory;
-import org.gradle.api.tasks.PathSensitivity;
 import org.gradle.api.tasks.PathSensitive;
+import org.gradle.api.tasks.PathSensitivity;
 
 import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
 
+@CacheableTask
 public abstract class Prebuild extends BaseTask {
-
-    private final Map<String, String> envMap = new HashMap<>();
 
     private String sourcePath;
 
     @InputDirectory
+    @PathSensitive(PathSensitivity.RELATIVE)
     public File getSourceFile() {
         return sourcePath == null ? null : new File(getRepoRootDirectory().get().getAsFile(), sourcePath);
     }
@@ -81,8 +81,11 @@ public abstract class Prebuild extends BaseTask {
     @PathSensitive(PathSensitivity.RELATIVE)
     public abstract ConfigurableFileCollection getPreBuildFiles();
 
+    @Input
+    public abstract MapProperty<String, String> getEnvMap();
+
     public void env(String key, String value) {
-        envMap.put(key, value);
+        getEnvMap().put(key, value);
     }
 
     @Override
@@ -125,7 +128,7 @@ public abstract class Prebuild extends BaseTask {
 
             spec.environment("MOE_PREBUILTS_DIR", getRootProjectDirectory().get().getAsFile().toString());
             spec.environment("MOE_PREBUILTS_TARGET_DIR", sourcePath + "/build/" + targetName);
-            spec.getEnvironment().putAll(envMap);
+            spec.getEnvironment().putAll(getEnvMap().get());
 
             spec.setExecutable("bash");
             spec.args(buildScript);

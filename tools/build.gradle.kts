@@ -46,3 +46,7 @@ tasks.register("build_ext_moe_core") {
 tasks.register("ext_moe_core") {
     dependsOn("build_ext_moe_core")
 }
+
+tasks.register("cleanAll") {
+    dependsOn(subprojects.map { it.tasks.named("clean") })
+}

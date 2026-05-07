@@ -30,7 +30,10 @@ import java.util.List;
  * the inverse.
  */
 public class MOEExternal {
+    public String root;
     public String prebuilts;
+    public String external;
+    public String moe;
 
     public final SVM svm = new SVM();
     public final NatJ natJ = new NatJ();
@@ -56,6 +59,7 @@ public class MOEExternal {
     }
 
     public static class LLVM {
+        public String source;
         public String root;
         public File jnipath;
         public File macos;

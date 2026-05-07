@@ -79,6 +79,10 @@ tasks.register("buildAll") {
     dependsOn(":natj-win:buildAll")
 }
 
+tasks.register("cleanAll") {
+    dependsOn(allprojects.map { it.tasks.named("clean") })
+}
+
 tasks.publish {
     dependsOn("build")
 }

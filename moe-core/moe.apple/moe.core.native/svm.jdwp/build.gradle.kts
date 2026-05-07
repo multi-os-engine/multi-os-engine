@@ -1,7 +1,7 @@
+import org.gradle.api.tasks.PathSensitivity
 import org.gradle.api.tasks.TaskProvider
 import org.moe.prebuilts.MOECoreNativeContext
 import org.moe.prebuilts.Script
-import org.moe.prebuilts.Script.FirstMatchingSubdirFile
 import org.moe.prebuilts.XcodeBuild
 
 plugins {
@@ -26,26 +26,28 @@ fun createJDWPJarBuild(arch: String): TaskProvider<Script> {
     val platform = if (arch == "arm64") "IOS_AARCH64" else "IOS_AMD64"
     val cAbi = if (arch == "arm64") "MAC_OS_AARCH_64" else "SYS_V"
     val buildPath = file("build/jdwpBuild$arch")
+    val capPathForArch = File(baseCapPath, "cap_$arch")
     return tasks.register<Script>("build_jdwp_${arch}_jar") {
         dependsOn(graalDistTask)
-        inputs.dir(graalDist)
-        inputs.dir(baseCapPath)
+        inputs.dir(graalDist).withPathSensitivity(PathSensitivity.RELATIVE)
+        inputs.dir(capPathForArch).withPathSensitivity(PathSensitivity.RELATIVE)
+        inputs.property("arch", arch)
         outputs.file(file("${jdwpDestDir}/svmjdwp_${arch}.o"))
+        localState.register(buildPath)
 
-        setRawWorkDir("$buildPath")
-        exec("rm", "-rf", file(getWorkDir()).absolutePath)
-
-        mkdir(file(getWorkDir()).absolutePath)
+        setRawWorkDir(buildPath)
+        exec("rm", "-rf", rel(workDir))
+        mkdir(rel(workDir))
 
         exec(
-            file("$graalDist/bin/native-image").absolutePath,
+            rel("$graalDist/bin/native-image"),
             "-H:+SharedLibrary",
             "-H:-SpawnIsolates",
             "-H:PageSize=16384",
             "-H:+ExitAfterRelocatableImageWrite",
-            "-H:TempDirectory=${getWorkDir()}",
+            "-H:TempDirectory=${rel(workDir)}",
             "-H:+UseCAPCache",
-            "-H:CAPCacheDir=${file("$baseCapPath/cap_$arch/")}",
+            "-H:CAPCacheDir=${rel("$baseCapPath/cap_$arch/")}",
             "--no-server",
             "-Dsvm.targetName=iOS",
             "-Dsvm.targetArch=${arch}",
@@ -71,11 +73,11 @@ fun createJDWPJarBuild(arch: String): TaskProvider<Script> {
             "--add-exports", "jdk.internal.vm.ci/jdk.vm.ci.meta=com.oracle.svm.jdwp.server",
 
             "-o", "svmjdwp",
-            "--module-path", file("$graalDist/lib/graalvm/svm-jdwp-server.jar").absolutePath,
+            "--module-path", rel("$graalDist/lib/graalvm/svm-jdwp-server.jar"),
         )
 
         copyFile(
-            FirstMatchingSubdirFile(buildPath, "SVM-", "svmjdwp.o"),
+            firstMatchingSubdir(buildPath, "SVM-", "svmjdwp.o"),
             file("$jdwpDestDir/svmjdwp_${arch}.o")
         )
     }
