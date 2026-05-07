@@ -42,6 +42,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.model.java.JavaModuleSourceRootTypes;
 import org.moe.idea.runconfig.MOERunProfileState;
 import org.moe.idea.runconfig.configuration.MOERunConfigurationBase;
+import res.MOEText;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -117,7 +118,7 @@ public class MOEJUnitUtil {
                 }
                 final PsiPackage testPackage = facade.findPackage(PACKAGE_NAME);
                 if (testPackage == null) {
-                    throw new RuntimeConfigurationWarning(ExecutionBundle.message("package.does.not.exist.error.message", PACKAGE_NAME));
+                    throw new RuntimeConfigurationWarning(String.format(MOEText.get("Test.Package.Not.Found"), PACKAGE_NAME));
                 }
 
                 Vector<PsiClass> packageTestClasses = MOEJUnitUtil.getTestClasses(module, PACKAGE_NAME);
@@ -129,7 +130,7 @@ public class MOEJUnitUtil {
                 JavaRunConfigurationModule configurationModule = new JavaRunConfigurationModule(module.getProject(), false);
                 configurationModule.setModule(module);
                 final PsiClass testClass =
-                        configurationModule.checkModuleAndClassName(CLASS_NAME, ExecutionBundle.message("no.test.class.specified.error.text"));
+                        configurationModule.checkModuleAndClassName(CLASS_NAME, MOEText.get("Test.Class.Not.Specified"));
                 if (!JUnitUtil.isTestClass(testClass)) {
                     throw new RuntimeConfigurationWarning(ExecutionBundle.message("class.isnt.test.class.error.message", CLASS_NAME));
                 }

@@ -33,7 +33,6 @@ import com.intellij.openapi.projectRoots.impl.SdkConfigurationUtil;
 import com.intellij.openapi.roots.AnnotationOrderRootType;
 import com.intellij.openapi.roots.JavadocOrderRootType;
 import com.intellij.openapi.roots.OrderRootType;
-import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.pom.java.LanguageLevel;
@@ -96,15 +95,23 @@ public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
         return null;
     }
 
+    private static File moeHome() {
+        String override = System.getenv("USER_MOE_HOME");
+        if (override != null && !override.isEmpty()) {
+            return new File(override);
+        }
+        return new File(System.getProperty("user.home"), ".moe");
+    }
+
     @Nullable
     @Override
     public String suggestHomePath() {
-        return FileUtil.expandUserHome("~/.moe");
+        return moeHome().getAbsolutePath();
     }
 
     @Override
     public @NotNull Collection<String> suggestHomePaths() {
-        File[] sdks = new File(FileUtil.expandUserHome("~/.moe")).listFiles(File::isDirectory);
+        File[] sdks = moeHome().listFiles(File::isDirectory);
         if (sdks == null) {
             return Collections.emptyList();
         }
@@ -118,7 +125,7 @@ public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
         }
         File sdkPath = new File(path);
 
-        File coreJar = new File(FileUtil.join(sdkPath.getAbsolutePath(), "sdk", "moe-core.jar"));
+        File coreJar = new File(new File(sdkPath, "sdk"), "moe-core.jar");
         return coreJar.exists() && coreJar.isFile();
     }
 

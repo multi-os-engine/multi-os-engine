@@ -19,8 +19,8 @@ package org.moe.idea.actions;
 import com.intellij.execution.ExecutionException;
 import com.intellij.execution.configurations.GeneralCommandLine;
 import com.intellij.execution.process.OSProcessHandler;
-import com.intellij.execution.process.ProcessAdapter;
 import com.intellij.execution.process.ProcessEvent;
+import com.intellij.execution.process.ProcessListener;
 import com.intellij.execution.process.ProcessOutputTypes;
 import com.intellij.openapi.actionSystem.ActionUpdateThread;
 import com.intellij.openapi.actionSystem.AnAction;
@@ -108,7 +108,7 @@ public class MOEGenerateActionsAndOutletsAction extends AnAction {
                 // Configure output
                 final MOEToolWindow toolWindow = MOEToolWindow.getInstance(module.getProject());
                 toolWindow.clear();
-                handler.addProcessListener(new ProcessAdapter() {
+                handler.addProcessListener(new ProcessListener() {
                     @Override
                     public void onTextAvailable(ProcessEvent event, Key outputType) {
                         if (ProcessOutputTypes.STDERR.equals(outputType)) {

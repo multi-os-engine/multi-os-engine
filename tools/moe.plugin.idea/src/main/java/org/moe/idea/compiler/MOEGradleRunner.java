@@ -18,8 +18,10 @@ package org.moe.idea.compiler;
 
 import com.intellij.execution.ExecutionException;
 import com.intellij.execution.configurations.GeneralCommandLine;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
+import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.text.StringUtil;
 import org.jetbrains.annotations.NotNull;
@@ -40,6 +42,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class MOEGradleRunner {
 
@@ -235,8 +238,18 @@ public class MOEGradleRunner {
 
     @Nullable
     public static File getGradleJavaHome(@NotNull Project project) {
-        String p = GradleInstallationManager.getInstance().getGradleJvmPath(project, project.getBasePath());
-
+        final String p;
+        if (ApplicationManager.getApplication().isDispatchThread()) {
+            AtomicReference<String> result = new AtomicReference<>();
+            ProgressManager.getInstance().runProcessWithProgressSynchronously(
+                    () -> result.set(GradleInstallationManager.getInstance().getGradleJvmPath(project, project.getBasePath())),
+                    "Resolving Gradle JVM",
+                    false,
+                    project);
+            p = result.get();
+        } else {
+            p = GradleInstallationManager.getInstance().getGradleJvmPath(project, project.getBasePath());
+        }
         return p == null ? null : new File(p);
     }
 

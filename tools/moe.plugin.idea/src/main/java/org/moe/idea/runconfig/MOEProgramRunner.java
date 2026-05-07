@@ -16,14 +16,7 @@ limitations under the License.
 
 package org.moe.idea.runconfig;
 
-import com.intellij.debugger.DebugEnvironment;
-import com.intellij.debugger.DebuggerManagerEx;
-import com.intellij.debugger.DefaultDebugUIEnvironment;
-import com.intellij.debugger.engine.DebugProcessImpl;
-import com.intellij.debugger.engine.JavaDebugProcess;
-import com.intellij.debugger.impl.DebuggerSession;
-import com.intellij.debugger.ui.tree.render.BatchEvaluator;
-import com.intellij.execution.DefaultExecutionResult;
+import com.intellij.debugger.impl.GenericDebuggerRunner;
 import com.intellij.execution.ExecutionException;
 import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.Executor;
@@ -31,20 +24,14 @@ import com.intellij.execution.configurations.RemoteConnection;
 import com.intellij.execution.configurations.RunProfile;
 import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.runners.ExecutionEnvironment;
-import com.intellij.execution.runners.GenericProgramRunner;
 import com.intellij.execution.runners.RunContentBuilder;
 import com.intellij.execution.ui.RunContentDescriptor;
-import com.intellij.xdebugger.XDebugProcess;
-import com.intellij.xdebugger.XDebugProcessStarter;
-import com.intellij.xdebugger.XDebugSession;
-import com.intellij.xdebugger.XDebuggerManager;
-import com.intellij.xdebugger.impl.XDebugSessionImpl;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.moe.idea.runconfig.configuration.MOERunConfiguration;
 import org.moe.idea.runconfig.configuration.MOERunConfigurationBase;
 
-public class MOEProgramRunner extends GenericProgramRunner {
+public class MOEProgramRunner extends GenericDebuggerRunner {
     private static final String DEBUG = "Debug";
 
     public static boolean isDebugExecutor(Executor exec) {
@@ -62,27 +49,16 @@ public class MOEProgramRunner extends GenericProgramRunner {
         return (runProfile instanceof MOERunConfigurationBase);
     }
 
-    @Override
-    protected void execute(@NotNull ExecutionEnvironment environment, @Nullable Callback callback, @NotNull RunProfileState state) {
-        if(environment.getRunnerAndConfigurationSettings() != null) {
-            MOERunConfigurationBase runConfig = (MOERunConfigurationBase) environment.getRunnerAndConfigurationSettings().getConfiguration();
-            runConfig.debug(isDebugExecutor(environment.getExecutor()));
-        }
-
-        super.execute(environment, callback, state);
-    }
-
     @Nullable
     @Override
     protected RunContentDescriptor doExecute(@NotNull RunProfileState state, @NotNull ExecutionEnvironment environment) throws ExecutionException {
         MOERunConfiguration runConfig = (MOERunConfiguration)environment.getRunProfile();
+        runConfig.debug(isDebugExecutor(environment.getExecutor()));
         if (runConfig.isCanceled()) {
             return null;
         }
         if(isDebugExecutor(environment.getExecutor())) {
-
             RemoteConnection connection = new RemoteConnection(true, "localhost", Integer.toString(runConfig.debugPort()), false);
-
             return attachVirtualMachine(state, environment, connection, true);
         }
         else {
@@ -94,34 +70,5 @@ public class MOEProgramRunner extends GenericProgramRunner {
 
             return new RunContentBuilder(executionResult, environment).showRunContent(environment.getContentToReuse());
         }
-    }
-
-    @Nullable
-    protected RunContentDescriptor attachVirtualMachine(RunProfileState state, @NotNull ExecutionEnvironment env, RemoteConnection connection, boolean pollConnection) throws ExecutionException {
-        DebugEnvironment environment = new DefaultDebugUIEnvironment(env, state, connection, pollConnection).getEnvironment();
-
-        final DebuggerSession debuggerSession = DebuggerManagerEx.getInstanceEx(env.getProject()).attachVirtualMachine(environment);
-
-        if (debuggerSession == null) {
-            return null;
-        }
-
-        final DebugProcessImpl debugProcess = debuggerSession.getProcess();
-
-        if (debugProcess.isDetached() || debugProcess.isDetaching()) {
-            debuggerSession.dispose();
-            return null;
-        }
-
-        debugProcess.putUserData(BatchEvaluator.REMOTE_SESSION_KEY, Boolean.TRUE);
-
-        return XDebuggerManager.getInstance(env.getProject()).startSession(env, new XDebugProcessStarter() {
-
-            @Override
-            @NotNull
-            public XDebugProcess start(@NotNull XDebugSession session) {
-                return JavaDebugProcess.create(session, debuggerSession);
-            }
-        }).getRunContentDescriptor();
     }
 }

@@ -28,6 +28,6 @@ public class MOENewProjectAction extends AnAction implements DumbAware {
     @Override
     public void actionPerformed(@NotNull AnActionEvent anActionEvent) {
         NewProjectWizard wizard = new NewProjectWizard(null, ModulesProvider.EMPTY_MODULES_PROVIDER, null);
-        NewProjectUtil.createNewProject(wizard);
+        NewProjectUtil.createFromWizard(wizard);
     }
 }

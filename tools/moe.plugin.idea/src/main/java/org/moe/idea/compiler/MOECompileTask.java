@@ -20,8 +20,8 @@ import com.intellij.execution.ExecutionException;
 import com.intellij.execution.configurations.GeneralCommandLine;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.execution.process.OSProcessHandler;
-import com.intellij.execution.process.ProcessAdapter;
 import com.intellij.execution.process.ProcessEvent;
+import com.intellij.execution.process.ProcessListener;
 import com.intellij.execution.process.ProcessOutputTypes;
 import com.intellij.openapi.compiler.CompileContext;
 import com.intellij.openapi.compiler.CompileTask;
@@ -170,7 +170,7 @@ public class MOECompileTask implements CompileTask {
 
             // Configure output
             final MOEToolWindow toolWindow = MOEToolWindow.getInstance(runConfig.getProject());
-            handler.addProcessListener(new ProcessAdapter() {
+            handler.addProcessListener(new ProcessListener() {
                 @Override
                 public void onTextAvailable(ProcessEvent event, Key outputType) {
                     if (ProcessOutputTypes.STDERR.equals(outputType)) {

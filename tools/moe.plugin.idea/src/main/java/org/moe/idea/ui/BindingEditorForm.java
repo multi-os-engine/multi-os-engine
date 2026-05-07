@@ -17,6 +17,7 @@ limitations under the License.
 package org.moe.idea.ui;
 
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.command.WriteCommandAction;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.fileEditor.FileDocumentManager;
@@ -120,26 +121,27 @@ public class BindingEditorForm {
     }
 
     public void save() {
+        final StringWriter writer = new StringWriter();
         try {
             saveInProgress = true;
-            StringWriter writer = new StringWriter();
             bindings.save(writer);
-            ApplicationManager.getApplication().runWriteAction(() -> {
-                FileDocumentManager.getInstance().getDocument(configurationFile).setText(writer.toString());
-            });
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             LOG.info("Unable save binding configuration: " + e.getMessage());
+            saveInProgress = false;
+            return;
         }
-        finally {
+        try {
+            WriteCommandAction.writeCommandAction(project)
+                    .withName("Update MOE Binding Configuration")
+                    .run(() -> {
+                        Document doc = FileDocumentManager.getInstance().getDocument(configurationFile);
+                        doc.setText(writer.toString());
+                    });
+        } finally {
             saveInProgress = false;
         }
 
-        if (!bindings.isEmpty()) {
-            editorTabbedPane.setVisible(true);
-        } else {
-            editorTabbedPane.setVisible(false);
-        }
+        editorTabbedPane.setVisible(!bindings.isEmpty());
     }
 
     public void generate() {

@@ -577,7 +577,7 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
     }
 
     private void showPropertiesChoicerDialog() {
-        final FileChooserDescriptor descriptor = FileChooserDescriptorFactory.createSingleFileDescriptor();
+        final FileChooserDescriptor descriptor = FileChooserDescriptorFactory.createSingleFileNoJarsDescriptor();
         descriptor.setTitle("Select remote build properties file");
         descriptor.setHideIgnored(true);
         VirtualFile selected = FileChooser.chooseFile(descriptor, myProject, null);

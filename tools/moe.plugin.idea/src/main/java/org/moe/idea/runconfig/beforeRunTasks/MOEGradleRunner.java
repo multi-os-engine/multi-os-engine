@@ -22,8 +22,8 @@ import com.google.common.collect.Sets;
 import com.intellij.compiler.CompilerManagerImpl;
 import com.intellij.execution.configurations.GeneralCommandLine;
 import com.intellij.execution.process.OSProcessHandler;
-import com.intellij.execution.process.ProcessAdapter;
 import com.intellij.execution.process.ProcessEvent;
+import com.intellij.execution.process.ProcessListener;
 import com.intellij.execution.process.ProcessOutputTypes;
 import com.intellij.openapi.compiler.CompilerManager;
 import com.intellij.openapi.diagnostic.Logger;
@@ -135,7 +135,7 @@ public class MOEGradleRunner extends Task.Backgroundable {
             final OSProcessHandler handler = new OSProcessHandler(commandLine);
             try {
                 handler.setShouldDestroyProcessRecursively(true);
-                handler.addProcessListener(new ProcessAdapter() {
+                handler.addProcessListener(new ProcessListener() {
                     @Override
                     public void onTextAvailable(ProcessEvent event, Key outputType) {
                         if (ProcessOutputTypes.STDERR.equals(outputType)) {
