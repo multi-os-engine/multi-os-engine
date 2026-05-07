@@ -336,7 +336,7 @@ public abstract class Script extends BaseTask {
             File dest = new File(script.unwrap(toSentinel));
             script.getFileSystemOperations().copy(spec -> {
                 spec.from(src);
-                spec.rename(_ -> dest.getName());
+                spec.rename(name -> dest.getName());
                 spec.into(dest.getParentFile());
             });
         }
