@@ -1,0 +1,32 @@
+[submodule "vendor/svm/mx"]
+	path = vendor/svm/mx
+	url = https://github.com/multi-os-engine/mx.git
+	branch = moe-svm
+[submodule "vendor/svm/graal"]
+	path = vendor/svm/graal
+	url = https://github.com/multi-os-engine/graal.git
+	branch = moe-svm-25.0.1
+[submodule "vendor/svm/labs-openjdk"]
+	path = vendor/svm/labs-openjdk
+	url = https://github.com/multi-os-engine/labs-openjdk.git
+	branch = moe-svm-25.0.1+8-jvmci-b01
+[submodule "vendor/external/libffi"]
+	path = vendor/external/libffi
+	url = https://github.com/multi-os-engine/libffi.git
+	branch = moe-svm
+[submodule "vendor/external/llvm"]
+	path = vendor/external/llvm
+	url = https://github.com/multi-os-engine/llvm-project.git
+	branch = moe-svm
+[submodule "vendor/external/javasqlite"]
+	path = vendor/external/javasqlite
+	url = https://github.com/multi-os-engine/javasqlite.git
+	branch = moe-svm
+[submodule "vendor/external/javapymobiledevice3"]
+	path = vendor/external/javapymobiledevice3
+	url = https://github.com/multi-os-engine/javapymobiledevice3.git
+	branch = moe-svm
+[submodule "vendor/external/ipcpymobiledevice3"]
+	path = vendor/external/ipcpymobiledevice3
+	url = https://github.com/multi-os-engine/ipcpymobiledevice3.git
+	branch = master

@@ -76,4 +76,4 @@ The base `*-config-base.json` files are hand-maintained at `moe-core/moe.apple/t
 
 ## External composite include
 
-`tools/settings.gradle.kts` includeBuilds `../../external/javapymobiledevice3` (the GPL `IPCPyMobileDevice3` sibling lives next to it and is intentionally separate — Apache-2.0 boundary). Both `moe.ios.device.launcher` and `moe.plugin.idea` consume it.
+`tools/settings.gradle.kts` includeBuilds `../vendor/external/javapymobiledevice3` (the GPL `IPCPyMobileDevice3` sibling lives next to it and is intentionally separate — Apache-2.0 boundary). Both `moe.ios.device.launcher` and `moe.plugin.idea` consume it.

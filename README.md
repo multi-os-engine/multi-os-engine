@@ -18,43 +18,26 @@
 - Apple macOS 10.14+
 - Minimum 8GB RAM
 
-### Install the 'repo' Tool
-
-```
-mkdir ~/bin
-PATH=~/bin:$PATH
-curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-chmod a+x ~/bin/repo
-```
-
-You may also install the repo using brew:
-
-```
-brew install repo
-```
-
 ### Get the Source Code
 
-Mainline branch:
-
 ```
-repo init -u https://github.com/multi-os-engine/manifest.git -b moe-master
-repo sync
+git clone --recurse-submodules https://github.com/multi-os-engine/multi-os-engine.git
 ```
 
-Note: if you want to get the source code from development branch with initial support of Windows and bitcode, switch to "moe-windows-bitcode" branch:
+If you already cloned without `--recurse-submodules`, populate them with:
 
 ```
-repo init -u https://github.com/multi-os-engine/manifest.git -b moe-windows-bitcode
-repo sync
+git submodule update --init --recursive
 ```
+
+Vendored dependencies (GraalVM/labs-openjdk fork, libffi, llvm, etc.) live under `vendor/svm/` and `vendor/external/` as git submodules. The legacy `repo` tool layout is no longer used on this branch.
 
 ### Installing Homebrew & Dependencies
 
 Install brew from [brew.sh](http://brew.sh), then you can install MOE's dependencies:
 
 ```sh
-brew install autogen autoconf automake libtool pkg-config wget isl cloog cmake gpg ant maven mpfr libmpc repo premake texinfo
+brew install autogen autoconf automake libtool pkg-config wget isl cloog cmake gpg ant maven mpfr libmpc premake texinfo
 ```
 
 ### Building LLVM
@@ -62,7 +45,6 @@ brew install autogen autoconf automake libtool pkg-config wget isl cloog cmake g
 Building the complete SDK and related tools requires LLVM. To build these execute the following:
 
 ```sh
-cd <repo>/moe
 ./gradlew :prebuilts:llvm
 ```
 
@@ -71,37 +53,31 @@ This step only needs to be done once (or until MinGW or LLVM components/requirem
 ### Setting a custom version
 
 ```sh
-cd <repo>/moe
-sh set_version.sh <component> <version>  
+sh set_version.sh <component> <version>
 ```
 
 ### Building Multi-OS Engine
 
-[SDK Publisher](https://github.com/multi-os-engine/moe-sdk-publisher): creating a developer SDK:
+Creating a developer SDK:
 
 ```sh
-cd <repo>/moe
 ./gradlew :tools:moe-sdk:devsdk
 ```
 
-
-[SDK Publisher](https://github.com/multi-os-engine/moe-sdk-publisher): building and publishing a SDK to Maven local:
+Building and publishing the SDK to Maven local:
 
 ```sh
-cd <repo>/moe
 ./gradlew :tools:moe-sdk:publishToMavenLocal
 ```
 
-[Gradle Plugin](https://github.com/multi-os-engine/moe-plugin-gradle): building and publishing the Gradle plugin to Maven local:
+Building and publishing the Gradle plugin to Maven local:
 
 ```sh
-cd <repo>/moe
 ./gradlew :tools:moe-gradle:publishToMavenLocal
 ```
 
-[IDEA Plugin](https://github.com/multi-os-engine/moe-ide-integration): building the IDEA plugin:
+Building the IDEA plugin:
 
 ```sh
-cd <repo>/moe/
 ./gradlew :tools:moe.plugin.idea:build
 ```

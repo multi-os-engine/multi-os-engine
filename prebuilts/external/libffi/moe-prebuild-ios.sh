@@ -17,8 +17,8 @@ echo "MOE_PREBUILTS_TARGET_DIR=$MOE_PREBUILTS_TARGET_DIR"
 # Clean old build
 rm -rf "$MOE_PREBUILTS_DIR/$MOE_PREBUILTS_TARGET_DIR"
 
-git apply libffi-disable-armv7-ios.patch
-git apply libffi-backport-cif-fix.patch
+patch -p1 < libffi-disable-armv7-ios.patch
+patch -p1 < libffi-backport-cif-fix.patch
 
 # Shared pre-build setup
 ./autogen.sh

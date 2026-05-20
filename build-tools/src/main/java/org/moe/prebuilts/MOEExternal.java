@@ -33,6 +33,7 @@ public class MOEExternal {
     public String root;
     public String prebuilts;
     public String external;
+    public String javasqlite;
     public String moe;
 
     public final SVM svm = new SVM();

@@ -111,7 +111,7 @@ public abstract class Prebuild extends BaseTask {
     private void rsync(File workDir) {
         exec(spec -> {
             spec.setExecutable("rsync");
-            spec.args("-aL", "--delete",
+            spec.args("-aL", "--delete", "--exclude=.git",
                     getSourceFile().getAbsolutePath() + "/",
                     workDir.getAbsolutePath() + "/");
         });

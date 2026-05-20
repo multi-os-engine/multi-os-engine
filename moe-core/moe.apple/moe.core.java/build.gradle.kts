@@ -33,9 +33,8 @@ java {
     withJavadocJar()
 }
 
-val externalPath = rootProject.file("../../external").absolutePath
 val externalJavaSources = listOf(
-    "$externalPath/javasqlite/src/main/java",
+    "${moeExternal.javasqlite}/src/main/java",
 )
 
 sourceSets {

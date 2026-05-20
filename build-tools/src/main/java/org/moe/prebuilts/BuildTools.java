@@ -77,11 +77,14 @@ public class BuildTools implements Plugin<Project> {
             return;
         }
         MOEExternal external = project.getExtensions().create("moeExternal", MOEExternal.class);
-        external.root = root.file("../../").getAbsolutePath();
+        external.root = root.file("../vendor").getAbsolutePath();
         external.moe = root.file("../").getAbsolutePath();
 
         external.prebuilts = new File(external.moe, "prebuilts").getAbsolutePath();
-        external.external = new File(external.root, "external").getAbsolutePath();
+
+        File externalRoot = new File(external.root, "external");
+        external.external = externalRoot.getAbsolutePath();
+        external.javasqlite = new File(externalRoot, "javasqlite").getAbsolutePath();
 
         File svmRoot = new File(external.root, "svm");
         external.svm.root = svmRoot.getAbsolutePath();
@@ -103,6 +106,7 @@ public class BuildTools implements Plugin<Project> {
 
         // LLVM (within prebuilts)
         File llvmRoot = new File(external.prebuilts, "llvm/macos");
+        external.llvm.source = new File(externalRoot, "llvm").getAbsolutePath();
         external.llvm.root = llvmRoot.getAbsolutePath();
         external.llvm.jnipath = new File(llvmRoot, "lib");
         external.llvm.macos = new File(llvmRoot, "lib/libclang.dylib");

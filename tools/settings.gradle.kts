@@ -26,7 +26,7 @@ includeBuild("../build-tools")
 includeBuild("../natj")
 includeBuild("../moe-core")
 includeBuild("../prebuilts")
-includeBuild("../../external/javapymobiledevice3")
+includeBuild("../vendor/external/javapymobiledevice3")
 
 include("moe.binding.clang")
 include("moe.document.pbxproj")

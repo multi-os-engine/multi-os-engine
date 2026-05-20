@@ -2,20 +2,23 @@
 
 This is the `moe-svm` branch of MOE. The user app's Java compiles to a native iOS binary via **GraalVM native-image** (Substrate VM). The legacy `moe-master` toolchain (dex2oat, ART, retrolambda, the proguard tool) is gone. R8 is still used as a JVM bytecode shrinker before native-image — the `proguard.cfg` files are kept because R8 reads ProGuard syntax (standard Android-ecosystem convention, not a mismatch).
 
-The `README.md` in this directory is currently moe-master-flavoured (points at `repo init -b moe-master`, links to the old separate `moe-sdk-publisher`/`moe-plugin-gradle`/`moe-ide-integration` repos that are now in-tree under `tools/`). It will be refreshed when moe-svm merges back to mainline. Treat it as orientation prose, not source of truth.
-
 ## Repository shape
 
-`moe/` is the orchestrator inside a `repo`-managed multi-repo checkout. Sibling directories one level up:
+`moe/` is THE project root. Vendored dependencies live under `vendor/` as git submodules:
 
 ```
-<checkout root>/
-├── moe/                       ← you are here
-├── svm/{mx, graal, labs-openjdk}    ← vendored, pinned via repo manifest
-└── external/{libffi, llvm, javasqlite, javapymobiledevice3, ipcpymobiledevice3}   ← vendored
+moe/                                  ← project root. Clone with --recurse-submodules.
+├── .gitmodules
+├── vendor/
+│   ├── svm/{mx, graal, labs-openjdk}        ← submodules, branch-tracked
+│   └── external/{libffi, llvm, javasqlite,
+│                 javapymobiledevice3,
+│                 ipcpymobiledevice3}        ← submodules, branch-tracked
+├── .github/workflows/publish.yml     ← in-repo CI (also see ../moe-gha/ for moe-master legacy)
+└── ... (composites below)
 ```
 
-`moe-gha/` (sibling, not pictured here) holds the publishing CI. There is no `.github/` inside `moe/`.
+The legacy `repo`-tool layout (`<checkout>/{moe,svm,external}` siblings, pinned via `multi-os-engine/manifest`) is retired for moe-svm; the manifest repo is kept around only for the `moe-master` branch. `moe-gha/` (sibling, not pictured) still holds the moe-master publishing CI; new moe-svm work uses `moe/.github/workflows/publish.yml`.
 
 Inside `moe/` is a Gradle composite-of-composites:
 
@@ -57,13 +60,13 @@ The IDEA plugin's build script also has a `maven-publish` block — that block i
 
 ## moe-core has two roles
 
-1. **Build the SVM-ready JVM bits.** `moe-core/moe.apple/moe.core.native/` orchestrates: fetch a boot JDK from `svm/labs-openjdk`, run `mx ... build` against `svm/graal`, build `libjvm.a` + `libjava.a` + `libjavasqlite.a` per arch/sdk via Xcode, invoke `native-image` to produce `svmjdwp.framework` (a feature framework user apps link against for JDWP debug support), and finally Xcode-link everything plus `MOE.mm` shims into `libmoe.a`.
+1. **Build the SVM-ready JVM bits.** `moe-core/moe.apple/moe.core.native/` orchestrates: fetch a boot JDK from `vendor/svm/labs-openjdk`, run `mx ... build` against `vendor/svm/graal`, build `libjvm.a` + `libjava.a` + `libjavasqlite.a` per arch/sdk via Xcode, invoke `native-image` to produce `svmjdwp.framework` (a feature framework user apps link against for JDWP debug support), and finally Xcode-link everything plus `MOE.mm` shims into `libmoe.a`.
 2. **Host the iOS bindings.** `moe-core/moe.apple/moe.platform.ios/src/main/java/apple/**` is **checked-in generated code with manual fixes layered on top**. The lifecycle build just `javac`'s those sources into `moe-ios.jar`. NatJGen (via the `generateBindings` task) only runs when bindings are intentionally regenerated; see `moe-core/moe.apple/moe.platform.ios/UPDATE_IOS_BINDING.md` for the workflow.
 
 ## GraalVM versions — two values, intentional
 
 - `gradle/libs.versions.toml` pins `graalvm-svm = "23.0.7"`. This is the **API library** used `compileOnly` to compile SVM Features (e.g. `ReflectionCollectionFeature` in `moe-core/moe.apple/moe.core.java/src/main/java/org/moe/core/svm/`).
-- The actual `native-image` binary is built from `svm/graal` at GraalVM **25**. That's what user apps and `svm.jdwp` invoke at build time.
+- The actual `native-image` binary is built from `vendor/svm/graal` at GraalVM **25**. That's what user apps and `svm.jdwp` invoke at build time.
 
 Two distinct code paths. They are deliberately not the same number.
 

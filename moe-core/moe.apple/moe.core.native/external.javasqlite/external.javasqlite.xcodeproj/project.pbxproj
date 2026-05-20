@@ -65,7 +65,7 @@
 				238453C119E2C2E6000DFC86 /* external */,
 			);
 			name = "Project Root";
-			path = ../../../../..;
+			path = ../../../../vendor;
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
@@ -153,7 +153,7 @@
 					"-fexceptions",
 					"-fstack-protector-strong",
 				);
-				PROJECT_ROOT = "$(SRCROOT)/../../../../..";
+				PROJECT_ROOT = "$(SRCROOT)/../../../..";
 				SDKROOT = iphoneos;
 				SYMROOT = build/xcode;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -191,7 +191,7 @@
 					"-fexceptions",
 					"-fstack-protector-strong",
 				);
-				PROJECT_ROOT = "$(SRCROOT)/../../../../..";
+				PROJECT_ROOT = "$(SRCROOT)/../../../..";
 				SDKROOT = iphoneos;
 				SYMROOT = build/xcode;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -223,12 +223,12 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = (
-					"\"$(PROJECT_ROOT)/external/javasqlite/src/main/native\"",
-					"$(PROJECT_ROOT)/moe/natj/src/main/native/include",
+					"\"$(PROJECT_ROOT)/vendor/external/javasqlite/src/main/native\"",
+					"$(PROJECT_ROOT)/natj/src/main/native/include",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROJECT_ROOT = "$(SRCROOT)/../../../../..";
+				PROJECT_ROOT = "$(SRCROOT)/../../../..";
 				SKIP_INSTALL = YES;
 			};
 			name = "Debug-ios";
@@ -251,12 +251,12 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = (
-					"\"$(PROJECT_ROOT)/external/javasqlite/src/main/native\"",
-					"$(PROJECT_ROOT)/moe/natj/src/main/native/include",
+					"\"$(PROJECT_ROOT)/vendor/external/javasqlite/src/main/native\"",
+					"$(PROJECT_ROOT)/natj/src/main/native/include",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROJECT_ROOT = "$(SRCROOT)/../../../../..";
+				PROJECT_ROOT = "$(SRCROOT)/../../../..";
 				SKIP_INSTALL = YES;
 				VALIDATE_PRODUCT = YES;
 			};

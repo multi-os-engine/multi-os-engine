@@ -192,7 +192,8 @@ tasks.register("mingwPresence") {
 }
 
 tasks.register<Script>("llvm") {
-    inputs.dir(file("../../external/llvm/llvm")).withPathSensitivity(PathSensitivity.RELATIVE)
+    val llvmSource = "${moeExternal.llvm.source}/llvm"
+    inputs.dir(file(llvmSource)).withPathSensitivity(PathSensitivity.RELATIVE)
     inputs.property("hostArch", providers.systemProperty("os.arch"))
     outputs.dir("llvm/macos")
     localState.register("build/llvm/macos")
@@ -212,7 +213,7 @@ tasks.register<Script>("llvm") {
         "-DLLVM_ENABLE_PROJECTS=clang",
         "-DLLVM_ENABLE_ZSTD=OFF",
         "-G", "Unix Makefiles",
-        rel("../../external/llvm/llvm"))
+        rel(llvmSource))
 
     progress("Building LLVM")
     exec("make", "-j$cpuCount", "libclang", "libclang-headers")

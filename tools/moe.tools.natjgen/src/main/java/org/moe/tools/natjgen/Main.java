@@ -42,7 +42,7 @@ public class Main {
 
         HeaderBinding clang = new HeaderBinding();
         clang.setName("clang");
-        clang.setHeaderPath("../../../external/llvm/tools/clang/include");
+        clang.setHeaderPath("../../../../vendor/external/llvm/tools/clang/include");
         clang.setImportCode("#import \"clang-c/Index.h\"\n" + "#import \"clang-c/Documentation.h\"\n");
         clang.setPackageBase("org.clang");
         clang.setExplicitLibrary("clang");

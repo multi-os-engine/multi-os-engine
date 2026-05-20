@@ -144,8 +144,24 @@ public abstract class Script extends BaseTask {
         exec("rsync",
                 "-aL",
                 "--delete",
+                "--exclude=.git",
                 rel(from) + "/",
                 rel(to) + "/"
+        );
+        // Embed the source's real git directory in the rsync target. Submodules use
+        // a .git pointer FILE that rsync can't follow. Without this, downstream tools
+        // like mx's libffi patch step lose history and walk up to the parent moe
+        // repo's .gitignore, silently skipping patched files under build/.
+        exec("bash", "-c",
+                "set -e; " +
+                "src_gitdir=$(git -C \"" + rel(from) + "\" rev-parse --absolute-git-dir); " +
+                "rm -rf \"" + rel(to) + "/.git\"; " +
+                "cp -RL \"$src_gitdir\" \"" + rel(to) + "/.git\"; " +
+                // Strip core.worktree via sed, NOT via `git config --unset` — the
+                // worktree value is a relative path back to the original submodule
+                // location, which is broken after cp, and `git config` itself errors
+                // trying to chdir into that broken path before reading config.
+                "sed -i '' '/^[[:space:]]*worktree[[:space:]]*=/d' \"" + rel(to) + "/.git/config\""
         );
     }
 

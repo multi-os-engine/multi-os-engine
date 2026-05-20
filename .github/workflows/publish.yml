@@ -2,8 +2,6 @@
 # They are provided by a third-party and are governed by
 # separate terms of service, privacy policy, and support
 # documentation.
-# This workflow will build a package using Gradle and then publish it to GitHub packages when a release is created
-# For more information see: https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#Publishing-using-gradle
 
 name: Publish MOE
 
@@ -15,13 +13,6 @@ on:
         description: Whether to make a release
         default: false
         required: true
-      branch:
-        type: choice
-        description: Which branch to use
-        default: 'moe-svm'
-        required: true
-        options:
-          - 'moe-svm'
 
   release:
     types: [ published ]
@@ -31,7 +22,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      packages: write
 
     steps:
       - name: Test for release
@@ -42,98 +32,68 @@ jobs:
         if: ${{ inputs.release == false }}
         run: echo "Building snapshot version"
 
-  prebuild:
+  build-and-publish:
+    needs: verify-release-config
     runs-on: macos-26
     permissions:
       contents: read
       packages: write
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up JDK 21
-      uses: actions/setup-java@v4
-      with:
-        java-version: 21
-        distribution: 'graalvm'
-        server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
-        settings-path: ${{ github.workspace }} # location for the settings.xml file
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 1
 
-    - name: build
-      run: |
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: 21
+          distribution: 'graalvm'
+
+      - name: Setup macOS toolchain
+        run: |
           sudo mv /Library/Developer/CommandLineTools/SDKs/* /tmp
           sudo mv /Applications/Xcode.app /Applications/Xcode.app.bak
           sudo mv /Applications/Xcode_26.1.app /Applications/Xcode.app
           sudo xcode-select -switch /Applications/Xcode.app
           xcodebuild -version
-          brew install autogen autoconf automake libtool pkg-config wget isl cloog cmake gpg ant maven mpfr libmpc repo premake texinfo
-          mkdir moe-ci
-          cd moe-ci
-          repo init -u https://github.com/multi-os-engine/manifest.git -b ${{ inputs.branch }}
-          repo sync
-          cd moe
-          ./gradlew :prebuilts:llvm
+          brew install autogen autoconf automake libtool pkg-config wget isl cloog cmake gpg ant maven mpfr libmpc premake texinfo
 
-    - name: Upload Artifact
-      uses: actions/upload-artifact@v4
-      with:
-          name: llvm
-          path: moe-ci/moe/prebuilts/llvm/macos/lib/libclang.dylib
-  build:
-    needs: [prebuild, verify-release-config]
-    runs-on: macos-26
-    permissions:
-      contents: read
-      packages: write
+      - name: Cache libclang prebuild
+        uses: actions/cache@v4
+        id: llvm-cache
+        with:
+          path: prebuilts/llvm/macos/lib/libclang.dylib
+          key: llvm-${{ hashFiles('.gitmodules') }}-xcode26.1
 
-    steps:
-    - uses: actions/checkout@v3
-    - name: Set up JDK 21
-      uses: actions/setup-java@v4
-      with:
-        java-version: 21
-        distribution: 'graalvm'
-        server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
-        settings-path: ${{ github.workspace }} # location for the settings.xml file
+      - name: Build libclang
+        if: steps.llvm-cache.outputs.cache-hit != 'true'
+        run: ./gradlew :prebuilts:llvm
 
-    - name: Setup
-      run: |
-          sudo mv /Library/Developer/CommandLineTools/SDKs/* /tmp
-          sudo mv /Applications/Xcode.app /Applications/Xcode.app.bak
-          sudo mv /Applications/Xcode_26.1.app /Applications/Xcode.app
-          sudo xcode-select -switch /Applications/Xcode.app
-          xcodebuild -version
-          brew install autogen autoconf automake libtool pkg-config wget isl cloog cmake gpg ant maven mpfr libmpc repo premake texinfo
-          mkdir moe-ci
-          cd moe-ci
-          repo init -u https://github.com/multi-os-engine/manifest.git -b moe-svm
-          repo sync
+      - name: Build MOE SDK
+        run: ./gradlew :tools:moe-sdk:sdk
 
-    - uses: actions/download-artifact@v4
-      with:
-          name: llvm
-          path: moe-ci/moe/prebuilts/llvm/macos/lib/
+      - name: Import GPG key
+        if: ${{ inputs.release }}
+        id: import_gpg
+        uses: crazy-max/ghaction-import-gpg@1c6a9e9d3594f2d743f1b1dd7669ab0dfdffa922
+        with:
+          gpg-private-key: ${{ secrets.MOE_RELEASE_PRIVATE_KEY }}
+          passphrase: ${{ secrets.MOE_RELEASE_PRIVATE_KEY_PASSPHRASE }}
 
-    - name: Build MOE
-      run: |
-          cd moe-ci/moe/
-          ./gradlew :tools:moe-sdk:sdk
-
-    - name: Import GPG key
-      if: ${{ inputs.release }}
-      id: import_gpg
-      uses: crazy-max/ghaction-import-gpg@1c6a9e9d3594f2d743f1b1dd7669ab0dfdffa922
-      with:
-        gpg-private-key: ${{ secrets.MOE_RELEASE_PRIVATE_KEY }}
-        passphrase: ${{ secrets.MOE_RELEASE_PRIVATE_KEY_PASSPHRASE }}
-
-    - name: Publish to Maven Central
-      env:
-        ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.ossrhUsername }}
-        ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.ossrhPassword }}
-      run: |
-          cd moe-ci/moe
+      - name: Publish to Maven Central (Portal API)
+        env:
+          ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.ossrhUsername }}
+          ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.ossrhPassword }}
+        run: |
           if [ "${{ inputs.release }}" = "true" ]; then
-            ./gradlew :tools:moe-sdk:publishAndReleaseToMavenCentral :tools:moe-gradle:publishAndReleaseToMavenCentral -PRELEASE -Psigning.gnupg.keyId=${{ secrets.MOE_RELEASE_PRIVATE_KEY_ID }}
+            ./gradlew :tools:moe-sdk:publishAndReleaseToMavenCentral \
+                      :tools:moe-gradle:publishAndReleaseToMavenCentral \
+                      -PRELEASE -Psigning.gnupg.keyId=${{ secrets.MOE_RELEASE_PRIVATE_KEY_ID }} \
+                      --no-configuration-cache
           else
-            ./gradlew :tools:moe-sdk:publishAllPublicationsToMavenCentralRepository :tools:moe-gradle:publishAllPublicationsToMavenCentralRepository
+            ./gradlew :tools:moe-sdk:publishAllPublicationsToMavenCentralRepository \
+                      :tools:moe-gradle:publishAllPublicationsToMavenCentralRepository \
+                      --no-configuration-cache
           fi

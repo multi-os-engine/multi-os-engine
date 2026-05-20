@@ -326,7 +326,7 @@
 				5A11F42F2615ED8300E59D56 /* java.base */,
 			);
 			name = src;
-			path = "../../../../../svm/labs-openjdk/src";
+			path = "../../../../vendor/svm/labs-openjdk/src";
 			sourceTree = SOURCE_ROOT;
 		};
 		5A11C4022615ED7100E59D56 /* jdk.net */ = {

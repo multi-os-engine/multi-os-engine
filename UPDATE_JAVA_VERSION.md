@@ -2,13 +2,13 @@ This guide describes the steps required to update the underlying native-image ve
 
 ### Upgrading labsjdk
 1. Every major java release has multiple minor releases. Find out the specific latest one for the most recent graalvm build (like `25.0.1+8`)
-2. Go into the labsjdk project (under `../svm/labs-openjdk`) and find the tag specific to the found java version (like `25.0.1+8-jvmci-b01`).
+2. Go into the labsjdk submodule (under `vendor/svm/labs-openjdk`) and find the tag specific to the found java version (like `25.0.1+8-jvmci-b01`).
 3. Create a new branch like `moe-svm-25.0.1+8-jvmci-b01` for this specific tag.
 4. Apply the following patches:
    - `moe-core/moe.apple/moe.core.native/svm.openjdk/add_ios_build_support.patch`
-5. Change the [manifest](https://github.com/multi-os-engine/manifest) to match this new branch.
+5. Bump the `vendor/svm/labs-openjdk` submodule SHA on the moe-svm branch to point at the new branch tip, and update the branch tracking in `.gitmodules` if needed.
 6. Pull the latest upstream changes into `https://github.com/multi-os-engine/mx` `moe-svm` branch. No special care needs to be given.
-7. Go to `moe-core/moe.apple/moe.core.native/svm.openjdk/build.gradle` and adjust the references to your target jdk. Make sure to also adjust the `JVMCI_VERSION` variable. Also make sure to correctly change the `fetch_boot_jdk` task.
+7. Go to `moe-core/moe.apple/moe.core.native/svm.openjdk/build.gradle.kts` and adjust the references to your target jdk. Make sure to also adjust the `JVMCI_VERSION` variable. Also make sure to correctly change the `fetch_boot_jdk` task.
 8. Run `./gradlew :moe-core:moe.apple:moe.core.native:svm.openjdk:jdk_gensrc` and see how far you get. You might have to adjust/remove patches.
 9. Now open the xcode project `moe-core/moe.apple/moe.core.native/svm.openjdk/svm.openjdk.xcodeproj`
 10. Check for any outdated references (marked in red) and delete them
@@ -29,10 +29,10 @@ This guide describes the steps required to update the underlying native-image ve
 2. Checkout a new branch with the tag (like `moe-svm-25.0.1`)
 3. Apply the following patches:
     - `moe-core/moe.apple/moe.core.native/svm.graal/fix_undefined_symbol__clear_cache_apple_clang.patch`
-4. Change the [manifest](https://github.com/multi-os-engine/manifest) to match this new branch.
+4. Bump the `vendor/svm/graal` submodule SHA on the moe-svm branch to point at the new branch tip, and update the branch tracking in `.gitmodules` if needed.
 5. Generate new JVM Fallback functions:
-   - Go to `../svm/graal/substratevm/`
-   - Run `../../mx --java-home moe/moe-core/moe.apple/moe.core.native/svm.openjdk/build/bootJDK/jdk25/Contents/Home build --projects svm-jvmfuncs-fallback-builder`
+   - Go to `vendor/svm/graal/substratevm/`
+   - Run `../mx/mx --java-home <moe>/moe-core/moe.apple/moe.core.native/svm.openjdk/build/bootJDK/jdk25/Contents/Home build --projects svm-jvmfuncs-fallback-builder`
    - Copy the file `mxbuild/jdk25/svm-jvmfuncs-fallback-builder/gensrc/JvmFuncsFallbacks.c` to `moe-core/moe.apple/moe.core.native/svm.graal/src/main/native/JvmFuncsFallbacks.c`
 6. Now open the XCode project `moe-core/moe.apple/moe.core.native/svm.graal/svm.graal.xcodeproj` and check if everything compiles
 7. If yes, this step is done!

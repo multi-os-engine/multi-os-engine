@@ -8,7 +8,7 @@ This composite hosts cross-toolchain build tasks: LLVM (libclang), MinGW, a down
 ./gradlew :prebuilts:llvm
 ```
 
-Run once after first checkout (or after the `external/llvm` revision moves). It cmake-builds libclang from `external/llvm` for macOS arm64+x86_64 and lands the install at `prebuilts/llvm/macos/`. It is **deliberately not** wired transitively into other tasks — the build is multi-minute and would dominate every clean build if it were. Any task that needs libclang assumes it's present and reads the path from `moeExternal.llvm.{root,jnipath,macos}`.
+Run once after first checkout (or after the `vendor/external/llvm` submodule SHA moves). It cmake-builds libclang from `vendor/external/llvm` for macOS arm64+x86_64 and lands the install at `prebuilts/llvm/macos/`. It is **deliberately not** wired transitively into other tasks — the build is multi-minute and would dominate every clean build if it were. Any task that needs libclang assumes it's present and reads the path from `moeExternal.llvm.{root,jnipath,macos}`.
 
 Every other prebuild task in this directory (libffi, mingw, linuxCrosscompiler) is on-demand from downstream tasks — `:tools:moe-sdk:sdk` and the natj platform builds pull them in transitively. Don't run those by hand unless you know why.
 
@@ -16,11 +16,11 @@ Every other prebuild task in this directory (libffi, mingw, linuxCrosscompiler) 
 
 Checked-in patches that must apply cleanly against the vendored sources:
 
-- `external/libffi/libffi-disable-armv7-ios.patch`
-- `external/libffi/libffi-backport-cif-fix.patch`
+- `prebuilts/external/libffi/libffi-disable-armv7-ios.patch`
+- `prebuilts/external/libffi/libffi-backport-cif-fix.patch`
 - `mingw-disable-tzdb.patch`, `mingw-fix-libc.patch`, `mingw-xcode15-fix.patch`
 
-If the `repo` manifest pin for `external/libffi` advances, re-test the patch chain.
+If the `vendor/external/libffi` submodule SHA advances, re-test the patch chain.
 
 ## Output layout
 
