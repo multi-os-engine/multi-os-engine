@@ -23,6 +23,7 @@ plugins {
     id("signing")
     alias(libs.plugins.shadow)
     alias(libs.plugins.maven.publish.vanniktech)
+    alias(libs.plugins.gradle.plugin.publish)
 }
 
 if (name != "moe-gradle") {
@@ -108,54 +109,61 @@ java {
     withJavadocJar()
 }
 
+gradlePlugin {
+    website = POM_URL
+    vcsUrl = POM_SCM_URL
+    plugins {
+        create("moe-gradle") {
+            id = "org.multi-os-engine.moe-gradle"
+            implementationClass = "org.moe.gradle.MoePlugin"
+            displayName = "Multi-OS Engine Gradle Plugin"
+            description = "Build, package, and launch iOS apps from a Gradle project."
+            tags = listOf("multi-os-engine", "moe", "ios", "graalvm", "native-image")
+        }
+        create("moe-sdk") {
+            id = "org.multi-os-engine.moe-sdk"
+            implementationClass = "org.moe.gradle.MoeSDKPlugin"
+            displayName = "Multi-OS Engine SDK Plugin"
+            description = "Resolves and exposes the MOE SDK to a consuming build."
+            tags = listOf("multi-os-engine", "moe", "ios", "sdk")
+        }
+    }
+}
+
 mavenPublishing {
+    coordinates("org.multi-os-engine", "moe-gradle", version.toString())
+    pom {
+        name = "moe-gradle"
+        description = "MOE Gradle Plugin"
+        url = POM_URL
+        scm {
+            url = POM_SCM_URL
+        }
+        licenses {
+            license {
+                name = POM_LICENCE_NAME
+                url = POM_LICENCE_URL
+            }
+        }
+        developers {
+            developer {
+                id = POM_DEVELOPER_ID
+                name = POM_DEVELOPER_NAME
+                organization = POM_DEVELOPER_ORGANISATION
+                organizationUrl = POM_DEVELOPER_ORGANISATION_URL
+            }
+        }
+    }
     publishToMavenCentral()
     if (project.hasProperty("signing.gnupg.keyId")) {
         signAllPublications()
     }
 }
 
-if (project.hasProperty("signing.gnupg.keyId")) {
-    signing {
+signing {
+    setRequired({ project.hasProperty("signing.gnupg.keyId") })
+    if (project.hasProperty("signing.gnupg.keyId")) {
         useGpgCmd()
-    }
-}
-
-publishing {
-    publications {
-        create<MavenPublication>("mavenJava") {
-            from(components["shadow"])
-            artifact(tasks.named("sourcesJar"))
-            artifact(tasks.named("javadocJar"))
-            artifactId = "moe-gradle"
-
-            pom {
-                name = "moe-gradle"
-                packaging = "jar"
-                description = "MOE Gradle Plugin"
-                url = POM_URL
-
-                scm {
-                    url = POM_SCM_URL
-                }
-
-                licenses {
-                    license {
-                        name = POM_LICENCE_NAME
-                        url = POM_LICENCE_URL
-                    }
-                }
-
-                developers {
-                    developer {
-                        id = POM_DEVELOPER_ID
-                        name = POM_DEVELOPER_NAME
-                        organization = POM_DEVELOPER_ORGANISATION
-                        organizationUrl = POM_DEVELOPER_ORGANISATION_URL
-                    }
-                }
-            }
-        }
     }
 }
 
