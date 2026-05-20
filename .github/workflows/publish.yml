@@ -1,39 +1,13 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
 name: Publish MOE
 
 on:
   workflow_dispatch:
-    inputs:
-      release:
-        type: boolean
-        description: Whether to make a release
-        default: false
-        required: true
 
   release:
     types: [ published ]
 
 jobs:
-  verify-release-config:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-
-    steps:
-      - name: Test for release
-        if: ${{ inputs.release }}
-        run: echo "Building release version"
-
-      - name: Test for snapshot
-        if: ${{ inputs.release == false }}
-        run: echo "Building snapshot version"
-
   build-and-publish:
-    needs: verify-release-config
     runs-on: macos-26
     permissions:
       contents: read
@@ -71,29 +45,28 @@ jobs:
         if: steps.llvm-cache.outputs.cache-hit != 'true'
         run: ./gradlew :prebuilts:llvm
 
-      - name: Build MOE SDK
-        run: ./gradlew :tools:moe-sdk:sdk
-
       - name: Import GPG key
-        if: ${{ inputs.release }}
-        id: import_gpg
+        if: github.event_name == 'release'
         uses: crazy-max/ghaction-import-gpg@1c6a9e9d3594f2d743f1b1dd7669ab0dfdffa922
         with:
           gpg-private-key: ${{ secrets.MOE_RELEASE_PRIVATE_KEY }}
           passphrase: ${{ secrets.MOE_RELEASE_PRIVATE_KEY_PASSPHRASE }}
 
-      - name: Publish to Maven Central (Portal API)
+      - name: Publish release to Maven Central
+        if: github.event_name == 'release'
         env:
           ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.ossrhUsername }}
           ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.ossrhPassword }}
         run: |
-          if [ "${{ inputs.release }}" = "true" ]; then
-            ./gradlew :tools:moe-sdk:publishAndReleaseToMavenCentral \
-                      :tools:moe-gradle:publishAndReleaseToMavenCentral \
-                      -PRELEASE -Psigning.gnupg.keyId=${{ secrets.MOE_RELEASE_PRIVATE_KEY_ID }} \
-                      --no-configuration-cache
-          else
-            ./gradlew :tools:moe-sdk:publishAllPublicationsToMavenCentralRepository \
-                      :tools:moe-gradle:publishAllPublicationsToMavenCentralRepository \
-                      --no-configuration-cache
-          fi
+          ./gradlew :tools:moe-sdk:publishAndReleaseToMavenCentral \
+                    :tools:moe-gradle:publishAndReleaseToMavenCentral \
+                    -PRELEASE -Psigning.gnupg.keyId=${{ secrets.MOE_RELEASE_PRIVATE_KEY_ID }}
+
+      - name: Publish snapshot to Maven Central
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.ossrhUsername }}
+          ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.ossrhPassword }}
+        run: |
+          ./gradlew :tools:moe-sdk:publishAllPublicationsToMavenCentralRepository \
+                    :tools:moe-gradle:publishAllPublicationsToMavenCentralRepository
