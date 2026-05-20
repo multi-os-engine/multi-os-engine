@@ -1,0 +1,72 @@
+name: Publish MOE
+
+on:
+  workflow_dispatch:
+
+  release:
+    types: [ published ]
+
+jobs:
+  build-and-publish:
+    runs-on: macos-26
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 1
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: 21
+          distribution: 'graalvm'
+
+      - name: Setup macOS toolchain
+        run: |
+          sudo mv /Library/Developer/CommandLineTools/SDKs/* /tmp
+          sudo mv /Applications/Xcode.app /Applications/Xcode.app.bak
+          sudo mv /Applications/Xcode_26.1.app /Applications/Xcode.app
+          sudo xcode-select -switch /Applications/Xcode.app
+          xcodebuild -version
+          brew install autogen autoconf automake libtool pkg-config wget isl cloog cmake gpg ant maven mpfr libmpc premake texinfo
+
+      - name: Cache libclang prebuild
+        uses: actions/cache@v4
+        id: llvm-cache
+        with:
+          path: prebuilts/llvm/macos/lib/libclang.dylib
+          key: llvm-${{ hashFiles('.gitmodules') }}-xcode26.1
+
+      - name: Build libclang
+        if: steps.llvm-cache.outputs.cache-hit != 'true'
+        run: ./gradlew :prebuilts:llvm
+
+      - name: Import GPG key
+        if: github.event_name == 'release'
+        uses: crazy-max/ghaction-import-gpg@1c6a9e9d3594f2d743f1b1dd7669ab0dfdffa922
+        with:
+          gpg-private-key: ${{ secrets.MOE_RELEASE_PRIVATE_KEY }}
+          passphrase: ${{ secrets.MOE_RELEASE_PRIVATE_KEY_PASSPHRASE }}
+
+      - name: Publish release to Maven Central
+        if: github.event_name == 'release'
+        env:
+          ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.ossrhUsername }}
+          ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.ossrhPassword }}
+        run: |
+          ./gradlew :tools:moe-sdk:publishAndReleaseToMavenCentral \
+                    :tools:moe-gradle:publishAndReleaseToMavenCentral \
+                    -PRELEASE -Psigning.gnupg.keyId=${{ secrets.MOE_RELEASE_PRIVATE_KEY_ID }}
+
+      - name: Publish snapshot to Maven Central
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.ossrhUsername }}
+          ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.ossrhPassword }}
+        run: |
+          ./gradlew :tools:moe-sdk:publishAllPublicationsToMavenCentralRepository \
+                    :tools:moe-gradle:publishAllPublicationsToMavenCentralRepository
