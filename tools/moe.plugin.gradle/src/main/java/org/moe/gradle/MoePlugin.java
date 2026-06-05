@@ -59,9 +59,11 @@ import org.moe.gradle.utils.Arch;
 import org.moe.gradle.utils.PropertiesUtil;
 import org.moe.gradle.utils.Require;
 import org.moe.tools.substrate.GraalVM;
+import org.moe.tools.substrate.LocalGraalVMHost;
 
 import javax.inject.Inject;
 import java.io.File;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Optional;
@@ -128,8 +130,9 @@ public class MoePlugin extends AbstractMoePlugin {
         graalVM = project.getObjects().property(GraalVM.class);
 
         Provider<GraalVM> graalVMProvider = project.provider(() -> {
+            Path install;
             if (PropertiesUtil.tryGetProperty(project, MOE_GRAALVM_HOME_PROPERTY) != null) {
-                return new GraalVM(Paths.get(PropertiesUtil.getProperty(project, MOE_GRAALVM_HOME_PROPERTY)));
+                install = Paths.get(PropertiesUtil.getProperty(project, MOE_GRAALVM_HOME_PROPERTY));
             } else {
                 JavaToolchainService toolchains = project.getExtensions().getByType(JavaToolchainService.class);
                 JavaLauncher launcher = toolchains.launcherFor(spec -> {
@@ -137,8 +140,11 @@ public class MoePlugin extends AbstractMoePlugin {
                     spec.getVendor().set(JvmVendorSpec.GRAAL_VM);
                     spec.getImplementation().set(JvmImplementation.VENDOR_SPECIFIC);
                 }).get();
-                return new GraalVM(launcher.getExecutablePath().getAsFile().getParentFile().getParentFile().toPath());
+
+                install = launcher.getMetadata().getInstallationPath().getAsFile().toPath();
             }
+
+            return new GraalVM(GraalVM.Companion.rootJDK(install).toFile().getAbsolutePath(), new LocalGraalVMHost());
         });
 
         if (GradleVersion.current().compareTo(GradleVersion.version("6.1")) >= 0) {

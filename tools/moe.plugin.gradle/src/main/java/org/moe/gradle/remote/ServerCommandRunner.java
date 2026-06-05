@@ -28,6 +28,7 @@ import org.moe.gradle.utils.Require;
 import org.moe.gradle.utils.TermColor;
 
 import java.io.ByteArrayOutputStream;
+import java.nio.charset.StandardCharsets;
 
 class ServerCommandRunner extends AbstractServerTask {
 
@@ -79,22 +80,16 @@ class ServerCommandRunner extends AbstractServerTask {
 
         try {
             channel.connect();
-        } catch (JSchException e) {
-            throw new GradleException(e.getMessage(), e);
-        }
-
-        while (!channel.isClosed()) {
-            try {
+            while (!channel.isClosed()) {
                 Thread.sleep(100);
-            } catch (InterruptedException e) {
-                throw new GradleException(e.getMessage(), e);
             }
+            output = baos.toString(StandardCharsets.UTF_8);
+        } catch (JSchException | InterruptedException e) {
+            throw new GradleException(e.getMessage(), e);
+        } finally {
+            channel.disconnect();
+            CloseableUtil.tryClose(baos, LOG, "Failed to close stream");
         }
-
-        output = baos.toString();
-        CloseableUtil.tryClose(baos, LOG, "Failed to close stream");
-
-        channel.disconnect();
         if (channel.getExitStatus() != 0) {
             throw new ServerChannelException("Remote command execution failed", output);
         }

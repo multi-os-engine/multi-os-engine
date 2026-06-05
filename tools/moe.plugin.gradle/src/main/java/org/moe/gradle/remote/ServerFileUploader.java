@@ -88,6 +88,7 @@ class ServerFileUploader extends AbstractServerTask {
             outlog.flush();
 
             server.exec("unzip files", "unzip -o -d " + list.getTarget().getPath() + " " + serverPath);
+            Files.deleteIfExists(zipPath);
         } catch (IOException e) {
             throw new GradleException("Unable to create temporary zip file: " + e.getMessage());
         }

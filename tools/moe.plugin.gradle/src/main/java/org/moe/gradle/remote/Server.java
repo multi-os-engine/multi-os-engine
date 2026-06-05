@@ -35,6 +35,7 @@ import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.groovy.closures.ConfigurationClosure;
 import org.moe.gradle.remote.file.FileList;
 import org.moe.gradle.utils.Require;
+import org.moe.tools.substrate.GraalVM;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -105,6 +106,20 @@ public class Server {
     @NotNull
     public boolean isRemoteAARCH64() {
         return Require.nonNull(remoteAARCH64);
+    }
+
+    @Nullable
+    private GraalVM remoteGraalVM;
+
+    @NotNull
+    public GraalVM getRemoteGraalVM() {
+        return Require.nonNull(remoteGraalVM);
+    }
+
+    /** The configured remote GraalVM home (`moe.remotebuild.graalvm.home`), available at config time; null if unset. */
+    @Nullable
+    public File getGraalVMHomeSetting() {
+        return settings.getGraalVMHome();
     }
 
     @Nullable
@@ -214,6 +229,7 @@ public class Server {
                 setupUserHome();
                 setupBuildDir();
                 prepareServerMOE();
+                prepareServerGraalVM();
             });
         });
     }
@@ -226,7 +242,7 @@ public class Server {
     private void prepareServerMOE() {
         final MoeSDK sdk = plugin.getSDK();
         try {
-            final FileList list = new FileList(sdk.getRoot().getParentFile(), new URI("file://" + getUserHome() + "/").resolve(".moe-remote"));
+            final FileList list = new FileList(sdk.getRoot().getParentFile(), new URI("file://" + getUserHome() + "/").resolve(".moe-remote-sdk"));
             final String remoteGradlewZip = list.add(sdk.getRoot());
             upload("upload sdk", list);
             // Since zip's can't hold executable info, we need to apply it afterwards. Maybe we can be more selective if we want
@@ -238,6 +254,32 @@ public class Server {
         }
 
         exec("check MOE SDK path", "[ -d '" + sdkDir.getPath() + "' ]");
+    }
+
+    private void prepareServerGraalVM() {
+        final File localGraal = settings.getGraalVMHome();
+        if (localGraal == null || !localGraal.exists() || !localGraal.isDirectory()) {
+            throw new GradleException("Remote build requires a GraalVM for the build server: set "
+                    + "'moe.remotebuild.graalvm.home' to the path of a Java " + GraalVM.SUPPORTED_JAVA_MAJOR
+                    + " GraalVM home on the host, targetting the build server.");
+        }
+
+        try {
+            final FileList list = new FileList(localGraal.getParentFile(), new URI("file://" + getUserHome() + "/").resolve(".moe-remote-graal"));
+            String remoteGraalDir = list.add(localGraal);
+            upload("upload graal", list);
+            exec("make executable", "chmod -R +x " + list.getTarget().getPath());
+            try {
+                remoteGraalVM = new GraalVM(remoteGraalDir, new RemoteGraalVMHost(this));
+            } catch (Exception e) {
+                throw new GradleException("Remote graal '" + remoteGraalDir + "' broken on build host", e);
+            }
+        } catch (Exception e) {
+            throw new GradleException("Failed to deploy graalvm '" + localGraal.getAbsolutePath() + "' to build host", e);
+        }
+
+        exec("check MOE SDK path", "[ -d '" + remoteGraalVM.getHome() + "' ]");
+        LOG.quiet("MOE Remote Build - REMOTE_GRAALVM=" + remoteGraalVM.getHome());
     }
 
     private void setupUserHome() {

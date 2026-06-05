@@ -1,7 +1,9 @@
 package org.moe.gradle.tasks
 
+import org.gradle.api.GradleException
 import org.gradle.api.file.ConfigurableFileCollection
 import org.gradle.api.tasks.Input
+import org.gradle.api.tasks.InputDirectory
 import org.gradle.api.tasks.InputFile
 import org.gradle.api.tasks.InputFiles
 import org.gradle.api.tasks.Internal
@@ -14,9 +16,12 @@ import org.moe.gradle.anns.IgnoreUnused
 import org.moe.gradle.anns.NotNull
 import org.moe.gradle.anns.Nullable
 import org.moe.gradle.options.ProGuardOptions
+import org.moe.gradle.remote.Server
+import org.moe.gradle.remote.file.FileList
 import org.moe.gradle.utils.Arch
 import org.moe.gradle.utils.GradleCompatUtils
 import org.moe.gradle.utils.Mode
+import org.moe.tools.substrate.CompileResult
 import org.moe.tools.substrate.Config
 import org.moe.tools.substrate.SubstrateExecutor
 import org.moe.tools.substrate.Triplet
@@ -29,10 +34,12 @@ abstract class NativeImage : AbstractBaseTask() {
 
     private var inputFiles: Set<Any>? = null
 
-    @Input
+    @InputDirectory
     @NotNull
-    fun getGvmHomePath(): String {
-        return moePlugin.graalVM.home.toString()
+    fun getGvmHomePath(): File {
+        val remote = moePlugin.remoteServer ?: return File(moePlugin.graalVM.base)
+        return remote.graalVMHomeSetting
+                ?: throw GradleException("Remote build requires 'moe.remotebuild.graalvm.home' to point at a GraalVM home for the remote build.")
     }
 
     @InputFiles
@@ -212,12 +219,17 @@ abstract class NativeImage : AbstractBaseTask() {
                 outputDir = getSvmTmpDir().toPath(),
                 logFile = logFile,
         )
+        val remoteServer = moePlugin.remoteServer
         val executor = SubstrateExecutor(
-                graalVM = moePlugin.graalVM,
-                config = svmConf
+                graalVM = if (remoteServer != null) remoteServer.remoteGraalVM else moePlugin.graalVM,
+                config = svmConf,
         )
-        val result = executor.compile()
 
+        val result = if (remoteServer != null) runRemote(remoteServer, svmConf, executor) else executor.compile()
+        moveResults(svmConf, result)
+    }
+
+    private fun moveResults(svmConf: Config, result: CompileResult) {
         // Move generated object files to a fixed position, so they can be found by Xcode
         Files.move(result.mainObj, getMainObjFile().toPath(), StandardCopyOption.REPLACE_EXISTING)
         if (svmConf.useLLVM) {
@@ -232,6 +244,47 @@ abstract class NativeImage : AbstractBaseTask() {
             getJDWPMetadataFile().delete()
         }
     }
+
+    /**
+     * Run native-image on the remote macOS build server: upload the inputs + CAP cache, invoke
+     * native-image over SSH with every path translated to its remote equivalent, then download the build dir.
+     */
+    private fun runRemote(remoteServer: Server, svmConf: Config, executor: SubstrateExecutor): CompileResult {
+        val rootProjectDir = project.rootDir
+        val sdkRoot = moeSDK.root.toPath().toAbsolutePath()
+
+        fun isSdkFile(f: File): Boolean = f.toPath().toAbsolutePath().startsWith(sdkRoot)
+        fun remotePathFor(f: File): String =
+                if (isSdkFile(f)) remoteServer.getSDKRemotePath(f)
+                else remoteServer.getRemotePath(getInnerProjectRelativePath(f.absoluteFile))
+
+        executor.clearOutputDir()
+        val capLocal = executor.ensureCapCacheDir()
+
+        val list = FileList(rootProjectDir, remoteServer.buildDir)
+        val inputs = svmConf.classpath + svmConf.resourceConfigFile + svmConf.jniConfigFiles +
+                svmConf.reflectionConfigFiles + svmConf.proxyConfigFiles + setOf(capLocal.toFile())
+        inputs.filterNot { isSdkFile(it) }.forEach { list.add(it.absoluteFile) }
+        remoteServer.upload("native-image inputs", list)
+
+        val capRemote = remotePathFor(capLocal.toFile())
+        val tmpRemote = remotePathFor(svmConf.outputDir.toFile())
+        val args = executor.buildArgs(
+                capDir = capRemote,
+                tmpDir = tmpRemote,
+                resolve = { remotePathFor(File(it)) },
+        )
+        val nativeImage = remoteServer.remoteGraalVM.nativeImage
+        remoteServer.exec("native-image", "mkdir -p ${shellQuote(tmpRemote)} && cd ${shellQuote(tmpRemote)} && " +
+                shellQuote(nativeImage) + " " + args.joinToString(" ") { shellQuote(it) })
+
+        executor.clearOutputDir()
+        remoteServer.downloadDirectory("native-image output", tmpRemote, svmConf.outputDir.toFile())
+
+        return executor.locateOutputs()
+    }
+
+    private fun shellQuote(s: String): String = "'" + s.replace("'", "'\\''") + "'"
 
     @get:Internal
     lateinit var r8TaskDep: R8
@@ -257,7 +310,7 @@ abstract class NativeImage : AbstractBaseTask() {
             @NotNull arch: Arch,
             @NotNull platform: MoePlatform
     ) {
-        setSupportsRemoteBuild(false)
+        setSupportsRemoteBuild(true)
 
         // Construct default output path
         val outRoot = Paths.get(MoePlugin.MOE, sourceSet.name, "native_image")

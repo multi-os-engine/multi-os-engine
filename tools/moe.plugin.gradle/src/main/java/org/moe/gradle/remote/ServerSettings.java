@@ -32,6 +32,7 @@ import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.utils.FileUtils;
 import org.moe.gradle.utils.Require;
 import org.moe.gradle.utils.TermColor;
+import org.moe.tools.substrate.GraalVM;
 
 import java.io.ByteArrayOutputStream;
 import java.io.Console;
@@ -41,6 +42,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -192,15 +195,19 @@ class ServerSettings {
         return i;
     });
 
-    private static final Key<String> GRADLE_REPOSITORIES_KEY = new Key<>("gradle.repositories", "repositories to be used when setting up the MOE SDK on the remote server, defaults to 'mavenCentral()'", (plugin, value) -> {
-        if (value == null) {
+    private static final Key<File> GRAALVM_HOME_KEY = new Key<>("graalvm.home", "path to a Java 25 GraalVM home on the host build server (required)", (plugin, value) -> {
+        if (value == null)
             return null;
-        }
-        return value;
+        Path file = Path.of(value);
+
+        if (!Files.exists(file) || !Files.isDirectory(file))
+            printWarning("'" + value + "' doesn't exist or is not a file");
+
+        return GraalVM.Companion.rootJDK(file).toFile();
     });
 
     private static final Key<?>[] ALL_KEYS = new Key<?>[]{HOST_KEY, PORT_KEY, USER_KEY, KNOWNHOSTS_KEY,
-            IDENTITY_KEY, KEYCHAIN_NAME_KEY, KEYCHAIN_PASS_KEY, KEYCHAIN_LOCKTIMEOUT_KEY, GRADLE_REPOSITORIES_KEY};
+            IDENTITY_KEY, KEYCHAIN_NAME_KEY, KEYCHAIN_PASS_KEY, KEYCHAIN_LOCKTIMEOUT_KEY, GRAALVM_HOME_KEY};
 
     @NotNull
     private final Map<Key, Object> settings = new HashMap<>();
@@ -319,10 +326,9 @@ class ServerSettings {
         return value == null ? 3600 : value;
     }
 
-    @NotNull
-    public String getGradleRepositories() {
-        final String value = get(GRADLE_REPOSITORIES_KEY);
-        return value == null ? "mavenCentral()" : value;
+    @Nullable
+    public File getGraalVMHome() {
+        return get(GRAALVM_HOME_KEY);
     }
 
     private static class OptionScreen {

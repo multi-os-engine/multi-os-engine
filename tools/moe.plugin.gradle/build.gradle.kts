@@ -43,6 +43,8 @@ val POM_DEVELOPER_ORGANISATION_URL: String by project
 
 version = MOE_VERSION + (if (project.hasProperty("RELEASE")) "" else "-SNAPSHOT")
 
+javaConventions.release = 11
+
 tasks.processResources {
     val moeVer = version
     inputs.property("version", moeVer)
@@ -195,6 +197,6 @@ dependencies {
 
 kotlin {
     compilerOptions {
-        jvmTarget = JvmTarget.JVM_1_8
+        jvmTarget = JvmTarget.JVM_11
     }
 }

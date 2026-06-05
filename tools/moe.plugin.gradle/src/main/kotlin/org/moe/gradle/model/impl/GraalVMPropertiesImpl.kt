@@ -10,7 +10,7 @@ data class GraalVMPropertiesImpl(
     override val jdkVersion: JDKVersion
 ) : GraalVMProperties, Serializable {
     constructor(graalVM: GraalVM) : this(
-        home = graalVM.home.toAbsolutePath().toString(),
+        home = graalVM.home,
         jdkVersion = graalVM.version,
     )
 }
