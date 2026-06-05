@@ -424,7 +424,7 @@ public abstract class XcodeBuild extends AbstractBaseTask {
 
                 final NativeImage nativeImageTask = xcodeProvider.getNativeImageTaskDep();
                 excludes.add(nativeImageTask.getLogFile());
-                excludes.add(resolvePathInBuildDir(nativeImageTask.getSvmTmpDir()));
+                excludes.add(nativeImageTask.getSvmTmpDir());
 
                 final ReflectionCollect reflectionCollectTask = nativeImageTask.getReflectionCollectTaskDep();
                 excludes.add(reflectionCollectTask.getOutputDir());
