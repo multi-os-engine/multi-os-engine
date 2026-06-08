@@ -1,52 +1,36 @@
 package org.moe.tools.substrate
 
-import org.moe.common.exec.ExecOutputCollector
-import org.moe.common.exec.SimpleExec
-import org.moe.common.utils.OsUtils
-import org.moe.tools.substrate.utils.findByExt
 import org.slf4j.LoggerFactory
 import java.io.IOException
-import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
 
-/**
- * @property home path to the GraalVM home
- */
 class GraalVM(
-        val home: Path
+        val base: String,
+        val host: GraalVMHost,
 ) {
-
-    val javaPath: Path
-    val bin: Path
-    val nativeImage: Path
+    val home = if (host.exists(host.resolve(base, "Contents", "Home"))) host.resolve(base, "Contents", "Home") else base
+    val bin: String = host.resolve(home, "bin")
+    val javaPath: String = host.resolve(bin, "java")
+    val nativeImage: String = host.resolve(bin, if (host.isWindows) "native-image.cmd" else "native-image")
     val version: JDKVersion
 
     init {
-        if (!Files.exists(home)) {
+        if (!host.exists(home)) {
             throw IOException("GraalVM home not exist: $home")
         }
-        bin = home.resolve("bin")
-        if (!Files.exists(bin)) {
+        if (!host.exists(bin)) {
             throw IOException("GraalVM home doesn't contain the bin directory: $home")
         }
-
-        javaPath = bin.resolve("java")
-        if (!Files.exists(javaPath)) {
+        if (!host.exists(javaPath)) {
             throw IOException("GraalVM bin/java does not exist: $javaPath")
         }
 
-        if (OsUtils.isWindows()) {
-            nativeImage = bin.resolve("native-image.cmd")
-        } else {
-            nativeImage = bin.resolve("native-image")
+        if (host.isMac) {
+            host.ensureUnquarantined(base)
         }
 
-        if (OsUtils.isMac()) {
-            checkQuarantine()
-        }
-
-        version = parseVMVersion()
+        version = parseVMVersion(host.exec(javaPath, "-version"))
         println("Using GraalVM $version at $home")
 
         require (version.feature == SUPPORTED_JAVA_MAJOR) {
@@ -62,52 +46,20 @@ class GraalVM(
         }
     }
 
-    private fun parseVMVersion(): JDKVersion {
-        val versionOut = ExecOutputCollector.collect(
-                SimpleExec
-                        .getExec(bin.resolve("java"), "-version")
-                        .runner
-                        // Not sure why java output version in stderr...
-                        .apply { builder.redirectErrorStream(true) }
-        ).trim()
-
-        val jdkVersion = "openjdk version \"([0-9._]+)\"".toPattern().matcher(versionOut).let {
+    fun parseVMVersion(versionOutput: String): JDKVersion =
+        "openjdk version \"([0-9._]+)\"".toPattern().matcher(versionOutput).let {
             if (!it.find()) {
-                throw IllegalStateException("Cannot determine the JDK version from $versionOut")
+                throw IllegalStateException("Cannot determine the JDK version from $versionOutput")
             }
             JDKVersion.parse(it.group(1))
         }
 
-        return jdkVersion
-    }
 
     /**
      * Make sure the llvm-toolchain is installed
      */
     fun ensureLLVM() {
         throw IOException("The LLVM-Backend is currently unsupported")
-    }
-
-    /**
-     * Check if the GraalVM files have [MAC_ATTR_COM_APPLE_QUARANTINE] attr.
-     */
-    private fun checkQuarantine() {
-        val root = if (home.endsWith(Paths.get("Contents", "Home"))) {
-            home.parent.parent
-        } else {
-            home
-        }.toAbsolutePath()
-
-        LOG.debug("Checking quarantine of {}", root)
-
-        val attrs = SimpleExec.exec("xattr", root.toString()).trim().lines()
-        if (MAC_ATTR_COM_APPLE_QUARANTINE in attrs) {
-            LOG.warn(
-                "GraalVM home quarantined, run the following command to remove the quarantine attribute:\nsudo xattr -r -d {} {}",
-                MAC_ATTR_COM_APPLE_QUARANTINE, root
-            )
-            throw IllegalArgumentException("GraalVM home quarantined")
-        }
     }
 
     data class JDKVersion(
@@ -198,9 +150,16 @@ class GraalVM(
     companion object {
         private val LOG = LoggerFactory.getLogger(GraalVM::class.java)
 
-        private const val MAC_ATTR_COM_APPLE_QUARANTINE = "com.apple.quarantine"
+        const val MAC_ATTR_COM_APPLE_QUARANTINE = "com.apple.quarantine"
 
         const val SUPPORTED_JAVA_MAJOR = 25
+
+        fun Path.rootJDK(): Path {
+            if (endsWith(Paths.get("Contents", "Home")))
+                return parent.parent
+
+            return this
+        }
 
         private fun List<String>.parseComponent(index: Int): Int = getOrNull(index)?.toInt() ?: 0
 

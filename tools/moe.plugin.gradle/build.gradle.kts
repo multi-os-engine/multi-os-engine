@@ -43,6 +43,8 @@ val POM_DEVELOPER_ORGANISATION_URL: String by project
 
 version = MOE_VERSION + (if (project.hasProperty("RELEASE")) "" else "-SNAPSHOT")
 
+javaConventions.release = 17
+
 tasks.processResources {
     val moeVer = version
     inputs.property("version", moeVer)
@@ -74,6 +76,7 @@ dependencies {
     "shade"(libs.commons.lang3)
     "shade"(libs.commons.io)
     "shade"(libs.jsch)
+    "shade"(libs.bcprov.jdk18on)
     "shade"(libs.asm)
     "shade"(libs.asm.tree)
     "shade"(libs.asm.commons)
@@ -85,8 +88,6 @@ dependencies {
     testImplementation(gradleTestKit())
 }
 
-tasks.test { dependsOn(":moe-sdk:devsdk") }
-
 tasks.shadowJar {
     configurations = listOf(project.configurations["shade"])
     archiveClassifier = ""
@@ -94,6 +95,11 @@ tasks.shadowJar {
     enableAutoRelocation = true
     relocationPrefix = "org.moe.gradle.shadow"
     relocate("org.moe", "org.moe")
+    // BouncyCastle ships a signed jar; its signature files break once shaded.
+    exclude("META-INF/*.SF")
+    exclude("META-INF/*.DSA")
+    exclude("META-INF/*.RSA")
+    exclude("META-INF/*.EC")
 
     dependencies {
         exclude(dependency("org.slf4j:slf4j-api:.*"))
@@ -193,8 +199,17 @@ dependencies {
     testRuntimeOnly(files(createClasspathManifest))
 }
 
+val launcher = javaToolchains.launcherFor {
+    languageVersion = JavaLanguageVersion.of(javaConventions.release.get())
+}
+
+tasks.test {
+    dependsOn(":moe-sdk:devsdk")
+    systemProperty("moe.test.java_home", launcher.get().metadata.installationPath.asFile.absolutePath)
+}
+
 kotlin {
     compilerOptions {
-        jvmTarget = JvmTarget.JVM_1_8
+        jvmTarget = JvmTarget.JVM_17
     }
 }

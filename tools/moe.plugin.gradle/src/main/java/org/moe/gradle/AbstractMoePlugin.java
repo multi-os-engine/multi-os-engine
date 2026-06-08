@@ -60,7 +60,7 @@ public abstract class AbstractMoePlugin implements Plugin<Project> {
     public static final String MOE = "moe";
 
     /** Required min gradle version */
-    private static final String GRADLE_MIN_VERSION = "7.1";
+    private static final String GRADLE_MIN_VERSION = "7.6.4";
 
     @NotNull
     protected final Instantiator instantiator;

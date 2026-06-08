@@ -295,7 +295,7 @@ public abstract class R8 extends AbstractBaseTask {
 
         composeConfigurationFile();
         ArrayList<String> args = new ArrayList<>(Arrays.asList(getR8Jar().getAbsolutePath(), "--output", getOutJar().getAbsolutePath()));
-        args.addAll(Arrays.asList("--pg-compat", "--classfile", "--lib", getMoePlugin().getGraalVM().getHome().toString(), "--pg-conf", getComposedCfgFile().getAbsolutePath()));
+        args.addAll(Arrays.asList("--pg-compat", "--classfile", "--lib", getMoePlugin().getGraalVM().getHome(), "--pg-conf", getComposedCfgFile().getAbsolutePath()));
         if (isDebugEnabled()) {
             args.add("--debug");
         } else {
@@ -303,7 +303,7 @@ public abstract class R8 extends AbstractBaseTask {
         }
 
         javaexec(spec -> {
-            spec.setExecutable(getMoePlugin().getGraalVM().getJavaPath().toFile().getAbsolutePath());
+            spec.setExecutable(getMoePlugin().getGraalVM().getJavaPath());
             if (GradleVersion.current().compareTo(GradleVersion.version("6.4")) >= 0) {
                 spec.getMainClass().set("com.android.tools.r8.R8");
             } else {

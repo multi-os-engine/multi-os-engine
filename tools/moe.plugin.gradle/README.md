@@ -743,13 +743,17 @@ The following settings are available for configuring the remote connection:
 - `host`: address of the remote build server.
 - `port`: port for ssh, defaults to 22.
 - `user`: user on the remote build server.
-- `identity`: path to private key.
+- `identity`: path to private key. Mutually exclusive with `agent`.
+- `agent`: use the local ssh-agent (`SSH_AUTH_SOCK`) for public-key authentication, defaults to false. Mutually exclusive with `identity`. On Windows this requires `SSH_AUTH_SOCK` to be exported (WSL / Git-Bash / MSYS2). The native Windows OpenSSH agent and PuTTY Pageant are not supported.
 - `knownhosts`: path to known_hosts file.
 - `keychain.name`: name of keychain to unlock, defaults to 'moeremotebuild.keychain'.
 - `keychain.pass`: password for keychain, defaults to ''.
 - `keychain.locktimeout`: keychain lock timeout in seconds, defaults to 3600.
 - `gradle.repositories`: repositories to be used when setting up the MOE SDK on the remote server, defaults to
 'mavenCentral()'.
+- `executablePaths`: comma-separated glob patterns (relative to the project root). On a **Windows build host**
+only, files whose uploaded path matches one of these are made executable on the build server. Defaults to empty.
+Ignored on macOS/Linux hosts.
 
 The identity and knownhosts keys accept special parameters to access environmental variables (`$env$KEY`),
 system properties (`$sys$KEY`) and project properties (`$proj$KEY`).

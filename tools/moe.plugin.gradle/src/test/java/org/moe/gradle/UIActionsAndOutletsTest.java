@@ -65,18 +65,19 @@ public class UIActionsAndOutletsTest extends AbstractPluginTest {
         gradleBuilder.append("moe.actionsAndOutlets.include 'org\\\\.moe\\\\.UnmappedController'\n");
         gradleBuilder.append("moe.actionsAndOutlets.include 'org\\\\.moe\\\\.ValidController'\n");
         gradleBuilder.append("moe.actionsAndOutlets.excludeLibrary 'AVFoundation'\n");
+        gradleBuilder.append("moe.actionsAndOutlets.excludeLibrary 'AVFAudio'\n");
         gradleBuilder.append("moe.actionsAndOutlets.additionalCode '#warning This is my additional code!'\n");
         FileUtils.write(buildGradleFile, gradleBuilder.toString());
 
         BuildResult result = GradleRunner.create()
                 .withProjectDir(testProjectDir.getRoot())
-                .withArguments("moeGenerateUIObjCInterfaces", "-Pmoe.sdk.localbuild=" + getSdkLocalbuild(), "-s")
+                .withArguments("moeDebugGenerateUIObjCInterfaces", "-Pmoe.sdk.localbuild=" + getSdkLocalbuild(), "-s")
                 .withPluginClasspath(getPluginClasspath())
                 .build();
 
         final String output = result.getOutput();
         assertTrue(output.contains("moe"));
-        assertEquals(result.task(":moeGenerateUIObjCInterfaces").getOutcome(), SUCCESS);
+        assertEquals(result.task(":moeDebugGenerateUIObjCInterfaces").getOutcome(), SUCCESS);
 
         assertTrue(output.contains(
                 "Skipping org.moe.InvalidController: superclass (org.moe.UnmappedController) is not mapped to Objective-C"));

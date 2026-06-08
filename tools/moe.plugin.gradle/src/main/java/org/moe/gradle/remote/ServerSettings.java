@@ -16,10 +16,13 @@ limitations under the License.
 
 package org.moe.gradle.remote;
 
+import com.jcraft.jsch.AgentIdentityRepository;
+import com.jcraft.jsch.AgentProxyException;
 import com.jcraft.jsch.ChannelExec;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
+import com.jcraft.jsch.SSHAgentConnector;
 import com.jcraft.jsch.UserInfo;
 import org.gradle.api.GradleException;
 import org.gradle.api.Project;
@@ -32,6 +35,7 @@ import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.utils.FileUtils;
 import org.moe.gradle.utils.Require;
 import org.moe.gradle.utils.TermColor;
+import org.moe.tools.substrate.GraalVM;
 
 import java.io.ByteArrayOutputStream;
 import java.io.Console;
@@ -41,6 +45,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -53,7 +59,7 @@ import java.util.function.Consumer;
 
 import static org.moe.gradle.utils.TermColor.*;
 
-class ServerSettings {
+public class ServerSettings {
 
     private static final Logger LOG = Logging.getLogger(ServerSettings.class);
 
@@ -161,6 +167,20 @@ class ServerSettings {
         return value;
     });
 
+    private static final Key<Boolean> AGENT_KEY = new Key<>("agent", "use the local ssh-agent (SSH_AUTH_SOCK) for authentication, defaults to false; mutually exclusive with identity", (plugin, value) -> {
+        if (value == null) {
+            return null;
+        }
+        final String v = value.trim().toLowerCase();
+        if (v.equals("true")) {
+            return true;
+        }
+        if (v.equals("false")) {
+            return false;
+        }
+        throw new IOException("'" + value + "' is not 'true' or 'false'");
+    });
+
     private static final Key<String> KEYCHAIN_NAME_KEY = new Key<>("keychain.name", "name of keychain to unlock, defaults to 'moeremotebuild.keychain'", (plugin, value) -> {
         if (value == null) {
             return null;
@@ -192,15 +212,37 @@ class ServerSettings {
         return i;
     });
 
-    private static final Key<String> GRADLE_REPOSITORIES_KEY = new Key<>("gradle.repositories", "repositories to be used when setting up the MOE SDK on the remote server, defaults to 'mavenCentral()'", (plugin, value) -> {
-        if (value == null) {
+    private static final Key<File> GRAALVM_HOME_KEY = new Key<>("graalvm.home", "path to a Java 25 GraalVM home on the host build server (required)", (plugin, value) -> {
+        if (value == null)
             return null;
-        }
-        return value;
+        Path file = Path.of(value);
+
+        if (!Files.exists(file) || !Files.isDirectory(file))
+            printWarning("'" + value + "' doesn't exist or is not a file");
+
+        return GraalVM.Companion.rootJDK(file).toFile();
     });
 
+    private static final Key<List<String>> EXECUTABLE_PATHS_KEY = new Key<>("executablePaths",
+            "comma-separated glob patterns (relative to the project root) to force-mark executable on "
+                    + "the build server. Only used on windows host",
+            (plugin, value) -> {
+                if (value == null) {
+                    return null;
+                }
+                final List<String> out = new ArrayList<>();
+                for (String part : value.split(",")) {
+                    final String t = part.trim();
+                    if (!t.isEmpty()) {
+                        out.add(t);
+                    }
+                }
+                return out;
+            });
+
     private static final Key<?>[] ALL_KEYS = new Key<?>[]{HOST_KEY, PORT_KEY, USER_KEY, KNOWNHOSTS_KEY,
-            IDENTITY_KEY, KEYCHAIN_NAME_KEY, KEYCHAIN_PASS_KEY, KEYCHAIN_LOCKTIMEOUT_KEY, GRADLE_REPOSITORIES_KEY};
+            IDENTITY_KEY, AGENT_KEY, KEYCHAIN_NAME_KEY, KEYCHAIN_PASS_KEY, KEYCHAIN_LOCKTIMEOUT_KEY, GRAALVM_HOME_KEY,
+            EXECUTABLE_PATHS_KEY};
 
     @NotNull
     private final Map<Key, Object> settings = new HashMap<>();
@@ -211,7 +253,7 @@ class ServerSettings {
     @NotNull
     private final MoePlugin plugin;
 
-    ServerSettings(@NotNull MoePlugin plugin) {
+    public ServerSettings(@NotNull MoePlugin plugin) {
         this.plugin = Require.nonNull(plugin);
 
         fillUnset();
@@ -298,7 +340,12 @@ class ServerSettings {
     }
 
     public boolean isConfigured() {
-        return get(HOST_KEY) != null;
+        return getHostKey() != null;
+    }
+
+    @Nullable
+    public String getHostKey() {
+        return get(HOST_KEY);
     }
 
     @NotNull
@@ -319,10 +366,36 @@ class ServerSettings {
         return value == null ? 3600 : value;
     }
 
+    @Nullable
+    public File getGraalVMHome() {
+        return get(GRAALVM_HOME_KEY);
+    }
+
     @NotNull
-    public String getGradleRepositories() {
-        final String value = get(GRADLE_REPOSITORIES_KEY);
-        return value == null ? "mavenCentral()" : value;
+    public List<String> getExecutablePaths() {
+        final List<String> v = get(EXECUTABLE_PATHS_KEY);
+        return v == null ? new ArrayList<>() : v;
+    }
+
+    public boolean isAgentEnabled() {
+        final Boolean value = get(AGENT_KEY);
+        return value != null && value;
+    }
+
+    @Nullable
+    public String getIdentityKey() {
+        return get(IDENTITY_KEY);
+    }
+
+    @Nullable
+    public boolean hasIdentityKey() {
+        return getIdentityKey() != null;
+    }
+
+    private void assertSingleAuthMethod() throws JSchException {
+        if (isAgentEnabled() && hasIdentityKey()) {
+            throw new JSchException("Remote build: 'agent' and 'identity' are mutually exclusive — set only one.");
+        }
     }
 
     private static class OptionScreen {
@@ -562,8 +635,16 @@ class ServerSettings {
             jsch.setKnownHosts(file.getAbsolutePath());
         }
 
+        assertSingleAuthMethod();
+        final boolean agent = isAgentEnabled();
         final String identity = get(IDENTITY_KEY);
-        if (identity != null) {
+        if (agent) {
+            try {
+                jsch.setIdentityRepository(new AgentIdentityRepository(new SSHAgentConnector()));
+            } catch (AgentProxyException e) {
+                throw new JSchException("Failed to connect to ssh-agent: " + e.getMessage(), e);
+            }
+        } else if (identity != null) {
             final File file = getFileWithProperty(project, identity);
             jsch.addIdentity(file.getAbsolutePath());
         }

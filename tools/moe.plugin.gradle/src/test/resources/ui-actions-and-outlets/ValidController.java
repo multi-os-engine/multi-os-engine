@@ -17,7 +17,7 @@ limitations under the License.
 package org.moe;
 
 import apple.NSObject;
-import apple.avfoundation.protocol.AVAudioPlayerDelegate;
+import apple.avfaudio.protocol.AVAudioPlayerDelegate;
 import apple.uikit.UIEvent;
 import apple.uikit.UILabel;
 import apple.uikit.UIViewController;
