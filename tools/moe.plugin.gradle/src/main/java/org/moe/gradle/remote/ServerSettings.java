@@ -169,7 +169,7 @@ class ServerSettings {
 
     private static final Key<Boolean> AGENT_KEY = new Key<>("agent", "use the local ssh-agent (SSH_AUTH_SOCK) for authentication, defaults to false; mutually exclusive with identity", (plugin, value) -> {
         if (value == null) {
-            return false;
+            return null;
         }
         final String v = value.trim().toLowerCase();
         if (v.equals("true")) {

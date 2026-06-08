@@ -2,13 +2,7 @@ package org.moe.gradle.tasks
 
 import org.gradle.api.GradleException
 import org.gradle.api.file.ConfigurableFileCollection
-import org.gradle.api.tasks.Input
-import org.gradle.api.tasks.InputDirectory
-import org.gradle.api.tasks.InputFile
-import org.gradle.api.tasks.InputFiles
-import org.gradle.api.tasks.Internal
-import org.gradle.api.tasks.OutputFile
-import org.gradle.api.tasks.SourceSet
+import org.gradle.api.tasks.*
 import org.gradle.api.tasks.bundling.Jar
 import org.moe.gradle.MoePlatform
 import org.moe.gradle.MoePlugin
@@ -198,6 +192,7 @@ abstract class NativeImage : AbstractBaseTask() {
     fun isEnableJDWP(): Boolean = mode == Mode.DEBUG
 
     override fun run() {
+        moePlugin.requireMacHostOrRemoteServerConfig(this)
         val svmConf = Config(
                 mainClassName = getMainClassName(),
                 classpath = getInputFiles().toSet()
