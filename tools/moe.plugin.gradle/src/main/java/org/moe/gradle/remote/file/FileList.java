@@ -49,6 +49,9 @@ public class FileList implements EntryParent {
     @NotNull
     private final List<Entry> entries = new ArrayList<>();
 
+    @NotNull
+    private ExecPolicy execPolicy = ExecPolicy.EXPLICIT;
+
     public FileList(@NotNull File localRoot, @NotNull URI target) {
         this.localRoot = Require.nonNull(localRoot.getAbsoluteFile().toPath());
         this.target = Require.nonNull(target);
@@ -60,6 +63,15 @@ public class FileList implements EntryParent {
 
     public URI getTarget() {
         return target;
+    }
+
+    @NotNull
+    public ExecPolicy getExecPolicy() {
+        return execPolicy;
+    }
+
+    public void setExecPolicy(@NotNull ExecPolicy execPolicy) {
+        this.execPolicy = Require.nonNull(execPolicy);
     }
 
     public void walk(@NotNull Walker walker) {

@@ -751,6 +751,9 @@ The following settings are available for configuring the remote connection:
 - `keychain.locktimeout`: keychain lock timeout in seconds, defaults to 3600.
 - `gradle.repositories`: repositories to be used when setting up the MOE SDK on the remote server, defaults to
 'mavenCentral()'.
+- `executablePaths`: comma-separated glob patterns (relative to the project root). On a **Windows build host**
+only, files whose uploaded path matches one of these are made executable on the build server. Defaults to empty.
+Ignored on macOS/Linux hosts.
 
 The identity and knownhosts keys accept special parameters to access environmental variables (`$env$KEY`),
 system properties (`$sys$KEY`) and project properties (`$proj$KEY`).

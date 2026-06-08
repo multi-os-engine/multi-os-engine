@@ -59,7 +59,7 @@ import java.util.function.Consumer;
 
 import static org.moe.gradle.utils.TermColor.*;
 
-class ServerSettings {
+public class ServerSettings {
 
     private static final Logger LOG = Logging.getLogger(ServerSettings.class);
 
@@ -223,7 +223,26 @@ class ServerSettings {
         return GraalVM.Companion.rootJDK(file).toFile();
     });
 
-    private static final Key<?>[] ALL_KEYS = new Key<?>[]{HOST_KEY, PORT_KEY, USER_KEY, KNOWNHOSTS_KEY, IDENTITY_KEY, AGENT_KEY, KEYCHAIN_NAME_KEY, KEYCHAIN_PASS_KEY, KEYCHAIN_LOCKTIMEOUT_KEY, GRAALVM_HOME_KEY};
+    private static final Key<List<String>> EXECUTABLE_PATHS_KEY = new Key<>("executablePaths",
+            "comma-separated glob patterns (relative to the project root) to force-mark executable on "
+                    + "the build server. Only used on windows host",
+            (plugin, value) -> {
+                if (value == null) {
+                    return null;
+                }
+                final List<String> out = new ArrayList<>();
+                for (String part : value.split(",")) {
+                    final String t = part.trim();
+                    if (!t.isEmpty()) {
+                        out.add(t);
+                    }
+                }
+                return out;
+            });
+
+    private static final Key<?>[] ALL_KEYS = new Key<?>[]{HOST_KEY, PORT_KEY, USER_KEY, KNOWNHOSTS_KEY,
+            IDENTITY_KEY, AGENT_KEY, KEYCHAIN_NAME_KEY, KEYCHAIN_PASS_KEY, KEYCHAIN_LOCKTIMEOUT_KEY, GRAALVM_HOME_KEY,
+            EXECUTABLE_PATHS_KEY};
 
     @NotNull
     private final Map<Key, Object> settings = new HashMap<>();
@@ -234,7 +253,7 @@ class ServerSettings {
     @NotNull
     private final MoePlugin plugin;
 
-    ServerSettings(@NotNull MoePlugin plugin) {
+    public ServerSettings(@NotNull MoePlugin plugin) {
         this.plugin = Require.nonNull(plugin);
 
         fillUnset();
@@ -321,7 +340,12 @@ class ServerSettings {
     }
 
     public boolean isConfigured() {
-        return get(HOST_KEY) != null;
+        return getHostKey() != null;
+    }
+
+    @Nullable
+    public String getHostKey() {
+        return get(HOST_KEY);
     }
 
     @NotNull
@@ -345,6 +369,12 @@ class ServerSettings {
     @Nullable
     public File getGraalVMHome() {
         return get(GRAALVM_HOME_KEY);
+    }
+
+    @NotNull
+    public List<String> getExecutablePaths() {
+        final List<String> v = get(EXECUTABLE_PATHS_KEY);
+        return v == null ? new ArrayList<>() : v;
     }
 
     public boolean isAgentEnabled() {

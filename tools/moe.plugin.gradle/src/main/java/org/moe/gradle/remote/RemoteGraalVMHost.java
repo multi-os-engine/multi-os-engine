@@ -59,6 +59,7 @@ public class RemoteGraalVMHost implements GraalVMHost {
 
     @Override
     public void ensureUnquarantined(@NonNull String home) {
+        server.exec("graalvm write-perm", "chmod -R u+w " + quote(home));
         server.exec("graalvm dequarantine", "xattr -r -d " + GraalVM.MAC_ATTR_COM_APPLE_QUARANTINE + " " + quote(home));
     }
 

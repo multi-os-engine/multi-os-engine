@@ -21,7 +21,6 @@ import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.gradle.BuildResult;
-import org.gradle.api.DefaultTask;
 import org.gradle.api.GradleException;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
@@ -33,6 +32,7 @@ import org.moe.gradle.MoeSDK;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.groovy.closures.ConfigurationClosure;
+import org.moe.gradle.remote.file.ExecPolicy;
 import org.moe.gradle.remote.file.FileList;
 import org.moe.gradle.utils.Require;
 import org.moe.tools.substrate.GraalVM;
@@ -44,6 +44,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -120,6 +121,12 @@ public class Server {
     @Nullable
     public File getGraalVMHomeSetting() {
         return settings.getGraalVMHome();
+    }
+
+    /** Glob patterns (`moe.remotebuild.executablePaths`) to force-mark executable on the build server. */
+    @NotNull
+    public List<String> getExecutablePathsSetting() {
+        return settings.getExecutablePaths();
     }
 
     @Nullable
@@ -243,11 +250,9 @@ public class Server {
         final MoeSDK sdk = plugin.getSDK();
         try {
             final FileList list = new FileList(sdk.getRoot().getParentFile(), new URI("file://" + getUserHome() + "/").resolve(".moe-remote-sdk"));
+            list.setExecPolicy(ExecPolicy.ALL);
             final String remoteGradlewZip = list.add(sdk.getRoot());
             upload("upload sdk", list);
-            // Since zip's can't hold executable info, we need to apply it afterwards. Maybe we can be more selective if we want
-            // Or do it in ServerFileUploader, just making the files executable that also are locally
-            exec("make executable", "chmod -R +x " + list.getTarget().getPath());
             sdkDir = new URI("file://" + remoteGradlewZip);
         } catch (URISyntaxException e) {
             throw new GradleException(e.getMessage(), e);
@@ -266,9 +271,9 @@ public class Server {
 
         try {
             final FileList list = new FileList(localGraal.getParentFile(), new URI("file://" + getUserHome() + "/").resolve(".moe-remote-graal"));
+            list.setExecPolicy(ExecPolicy.ALL);
             String remoteGraalDir = list.add(localGraal);
             upload("upload graal", list);
-            exec("make executable", "chmod -R +x " + list.getTarget().getPath());
             try {
                 remoteGraalVM = new GraalVM(remoteGraalDir, new RemoteGraalVMHost(this));
             } catch (Exception e) {
