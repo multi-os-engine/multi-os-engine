@@ -16,10 +16,13 @@ limitations under the License.
 
 package org.moe.gradle.remote;
 
+import com.jcraft.jsch.AgentIdentityRepository;
+import com.jcraft.jsch.AgentProxyException;
 import com.jcraft.jsch.ChannelExec;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
+import com.jcraft.jsch.SSHAgentConnector;
 import com.jcraft.jsch.UserInfo;
 import org.gradle.api.GradleException;
 import org.gradle.api.Project;
@@ -164,6 +167,20 @@ class ServerSettings {
         return value;
     });
 
+    private static final Key<Boolean> AGENT_KEY = new Key<>("agent", "use the local ssh-agent (SSH_AUTH_SOCK) for authentication, defaults to false; mutually exclusive with identity", (plugin, value) -> {
+        if (value == null) {
+            return false;
+        }
+        final String v = value.trim().toLowerCase();
+        if (v.equals("true")) {
+            return true;
+        }
+        if (v.equals("false")) {
+            return false;
+        }
+        throw new IOException("'" + value + "' is not 'true' or 'false'");
+    });
+
     private static final Key<String> KEYCHAIN_NAME_KEY = new Key<>("keychain.name", "name of keychain to unlock, defaults to 'moeremotebuild.keychain'", (plugin, value) -> {
         if (value == null) {
             return null;
@@ -206,8 +223,7 @@ class ServerSettings {
         return GraalVM.Companion.rootJDK(file).toFile();
     });
 
-    private static final Key<?>[] ALL_KEYS = new Key<?>[]{HOST_KEY, PORT_KEY, USER_KEY, KNOWNHOSTS_KEY,
-            IDENTITY_KEY, KEYCHAIN_NAME_KEY, KEYCHAIN_PASS_KEY, KEYCHAIN_LOCKTIMEOUT_KEY, GRAALVM_HOME_KEY};
+    private static final Key<?>[] ALL_KEYS = new Key<?>[]{HOST_KEY, PORT_KEY, USER_KEY, KNOWNHOSTS_KEY, IDENTITY_KEY, AGENT_KEY, KEYCHAIN_NAME_KEY, KEYCHAIN_PASS_KEY, KEYCHAIN_LOCKTIMEOUT_KEY, GRAALVM_HOME_KEY};
 
     @NotNull
     private final Map<Key, Object> settings = new HashMap<>();
@@ -329,6 +345,27 @@ class ServerSettings {
     @Nullable
     public File getGraalVMHome() {
         return get(GRAALVM_HOME_KEY);
+    }
+
+    public boolean isAgentEnabled() {
+        final Boolean value = get(AGENT_KEY);
+        return value != null && value;
+    }
+
+    @Nullable
+    public String getIdentityKey() {
+        return get(IDENTITY_KEY);
+    }
+
+    @Nullable
+    public boolean hasIdentityKey() {
+        return getIdentityKey() != null;
+    }
+
+    private void assertSingleAuthMethod() throws JSchException {
+        if (isAgentEnabled() && hasIdentityKey()) {
+            throw new JSchException("Remote build: 'agent' and 'identity' are mutually exclusive — set only one.");
+        }
     }
 
     private static class OptionScreen {
@@ -568,8 +605,16 @@ class ServerSettings {
             jsch.setKnownHosts(file.getAbsolutePath());
         }
 
+        assertSingleAuthMethod();
+        final boolean agent = isAgentEnabled();
         final String identity = get(IDENTITY_KEY);
-        if (identity != null) {
+        if (agent) {
+            try {
+                jsch.setIdentityRepository(new AgentIdentityRepository(new SSHAgentConnector()));
+            } catch (AgentProxyException e) {
+                throw new JSchException("Failed to connect to ssh-agent: " + e.getMessage(), e);
+            }
+        } else if (identity != null) {
             final File file = getFileWithProperty(project, identity);
             jsch.addIdentity(file.getAbsolutePath());
         }

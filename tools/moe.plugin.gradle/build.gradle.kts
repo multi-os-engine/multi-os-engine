@@ -76,6 +76,7 @@ dependencies {
     "shade"(libs.commons.lang3)
     "shade"(libs.commons.io)
     "shade"(libs.jsch)
+    "shade"(libs.bcprov.jdk18on)
     "shade"(libs.asm)
     "shade"(libs.asm.tree)
     "shade"(libs.asm.commons)
@@ -96,6 +97,11 @@ tasks.shadowJar {
     enableAutoRelocation = true
     relocationPrefix = "org.moe.gradle.shadow"
     relocate("org.moe", "org.moe")
+    // BouncyCastle ships a signed jar; its signature files break once shaded.
+    exclude("META-INF/*.SF")
+    exclude("META-INF/*.DSA")
+    exclude("META-INF/*.RSA")
+    exclude("META-INF/*.EC")
 
     dependencies {
         exclude(dependency("org.slf4j:slf4j-api:.*"))

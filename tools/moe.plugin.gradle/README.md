@@ -743,7 +743,8 @@ The following settings are available for configuring the remote connection:
 - `host`: address of the remote build server.
 - `port`: port for ssh, defaults to 22.
 - `user`: user on the remote build server.
-- `identity`: path to private key.
+- `identity`: path to private key. Mutually exclusive with `agent`.
+- `agent`: use the local ssh-agent (`SSH_AUTH_SOCK`) for public-key authentication, defaults to false. Mutually exclusive with `identity`. On Windows this requires `SSH_AUTH_SOCK` to be exported (WSL / Git-Bash / MSYS2). The native Windows OpenSSH agent and PuTTY Pageant are not supported.
 - `knownhosts`: path to known_hosts file.
 - `keychain.name`: name of keychain to unlock, defaults to 'moeremotebuild.keychain'.
 - `keychain.pass`: password for keychain, defaults to ''.
