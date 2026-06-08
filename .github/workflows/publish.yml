@@ -34,12 +34,16 @@ jobs:
           xcodebuild -version
           brew install autogen autoconf automake libtool pkg-config wget isl cloog cmake gpg ant maven mpfr libmpc premake texinfo
 
+      - name: Resolve llvm submodule sha
+        id: llvm-sha
+        run: echo "sha=$(git rev-parse HEAD:vendor/external/llvm)" >> "$GITHUB_OUTPUT"
+
       - name: Cache libclang prebuild
         uses: actions/cache@v4
         id: llvm-cache
         with:
           path: prebuilts/llvm/macos/lib/libclang.dylib
-          key: llvm-${{ hashFiles('.git/modules/vendor/external/llvm/HEAD') }}-xcode26.1
+          key: llvm-${{ steps.llvm-sha.outputs.sha }}-xcode26.1
 
       - name: Build libclang
         if: steps.llvm-cache.outputs.cache-hit != 'true'
