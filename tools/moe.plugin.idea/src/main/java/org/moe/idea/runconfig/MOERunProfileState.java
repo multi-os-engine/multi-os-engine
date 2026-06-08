@@ -24,6 +24,7 @@ import com.intellij.execution.configurations.CommandLineState;
 import com.intellij.execution.configurations.GeneralCommandLine;
 import com.intellij.execution.filters.TextConsoleBuilder;
 import com.intellij.execution.filters.TextConsoleBuilderFactory;
+import com.intellij.execution.process.KillableProcessHandler;
 import com.intellij.execution.process.OSProcessHandler;
 import com.intellij.execution.process.ProcessEvent;
 import com.intellij.execution.process.ProcessHandler;
@@ -38,7 +39,6 @@ import com.intellij.openapi.util.Key;
 import org.jetbrains.annotations.NotNull;
 import org.moe.common.junit.MOETestResultParser;
 import org.moe.idea.compiler.MOEGradleRunner;
-import org.moe.idea.execution.process.MOEOSProcessHandler;
 import org.moe.idea.runconfig.configuration.MOERunConfiguration;
 import org.moe.idea.runconfig.configuration.MOERunConfigurationBase;
 import org.moe.idea.runconfig.configuration.test.MOEJUnitUtil;
@@ -100,7 +100,8 @@ public class MOERunProfileState extends CommandLineState {
         } catch (IOException e) {
             throw new ExecutionException(e);
         }
-        final OSProcessHandler handler = new MOEOSProcessHandler(commandLine);
+        final KillableProcessHandler handler = new KillableProcessHandler(commandLine);
+        handler.setShouldKillProcessSoftly(true);
         handler.setShouldDestroyProcessRecursively(true);
         final MOETestResultParser parser = new MOETestResultParser(new MOETestListener(this));
 
