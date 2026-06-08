@@ -43,7 +43,7 @@ val POM_DEVELOPER_ORGANISATION_URL: String by project
 
 version = MOE_VERSION + (if (project.hasProperty("RELEASE")) "" else "-SNAPSHOT")
 
-javaConventions.release = 11
+javaConventions.release = 17
 
 tasks.processResources {
     val moeVer = version
@@ -87,8 +87,6 @@ dependencies {
     testImplementation(libs.junit)
     testImplementation(gradleTestKit())
 }
-
-tasks.test { dependsOn(":moe-sdk:devsdk") }
 
 tasks.shadowJar {
     configurations = listOf(project.configurations["shade"])
@@ -201,8 +199,17 @@ dependencies {
     testRuntimeOnly(files(createClasspathManifest))
 }
 
+val launcher = javaToolchains.launcherFor {
+    languageVersion = JavaLanguageVersion.of(javaConventions.release.get())
+}
+
+tasks.test {
+    dependsOn(":moe-sdk:devsdk")
+    systemProperty("moe.test.java_home", launcher.get().metadata.installationPath.asFile.absolutePath)
+}
+
 kotlin {
     compilerOptions {
-        jvmTarget = JvmTarget.JVM_11
+        jvmTarget = JvmTarget.JVM_17
     }
 }
