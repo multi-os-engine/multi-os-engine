@@ -34,7 +34,7 @@ if [[ "$COMPONENT" == "moe" ]]; then
 
   WORKED=1
 
-  sed -E -i '' "s/^version += +'.+'/version = '$VERSION'/" "$MOE_CORE_DIR/build.gradle"
+  sed -E -i '' "s/^version += +\".+\"/version = \"$VERSION\"/" "$MOE_CORE_DIR/build.gradle.kts"
   sed -E -i '' "s/^MOE_VERSION=.+$/MOE_VERSION=$VERSION/" "$MOE_TOOLS_DIR/gradle.properties"
 fi
 
@@ -43,7 +43,7 @@ if [[ "$COMPONENT" == "idea" ]]; then
 
   WORKED=1
 
-  sed -E -i '' "s/^version += +'.+'/version = '$VERSION'/" "$MOE_IDEA_PLUGIN_DIR/build.gradle"
+  sed -E -i '' "s/^version += +'.+'/version = '$VERSION'/" "$MOE_IDEA_PLUGIN_DIR/build.gradle.kts"
 fi
 
 if [[ ! "$WORKED" ]]; then
