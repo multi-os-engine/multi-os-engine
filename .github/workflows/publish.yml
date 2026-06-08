@@ -39,7 +39,7 @@ jobs:
         id: llvm-cache
         with:
           path: prebuilts/llvm/macos/lib/libclang.dylib
-          key: llvm-${{ hashFiles('.git/modules/prebuilts/llvm/HEAD') }}-xcode26.1
+          key: llvm-${{ hashFiles('.git/modules/vendor/external/llvm/HEAD') }}-xcode26.1
 
       - name: Build libclang
         if: steps.llvm-cache.outputs.cache-hit != 'true'
