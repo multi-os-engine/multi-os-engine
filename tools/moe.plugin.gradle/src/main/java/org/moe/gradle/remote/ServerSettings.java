@@ -28,6 +28,7 @@ import org.gradle.api.GradleException;
 import org.gradle.api.Project;
 import org.gradle.api.logging.Logger;
 import org.gradle.api.logging.Logging;
+import org.gradle.internal.impldep.com.google.common.net.HostSpecifier;
 import org.moe.common.utils.CloseableUtil;
 import org.moe.gradle.MoePlugin;
 import org.moe.gradle.anns.NotNull;
@@ -106,20 +107,10 @@ public class ServerSettings {
         if (value == null) {
             return null;
         }
-        InetAddress address;
-        try {
-            address = InetAddress.getByName(value);
-        } catch (UnknownHostException ex) {
+
+        if (!HostSpecifier.isValid(value))
             throw new IOException("illegal host '" + value + "'");
-        }
-        try {
-            boolean reachable = address.isReachable(5000);
-            if (!reachable) {
-                throw new IOException();
-            }
-        } catch (IOException ex) {
-            printWarning("host '" + value + "' is unreachable");
-        }
+
         return value;
     });
 
