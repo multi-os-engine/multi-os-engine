@@ -83,6 +83,7 @@ dependencies {
     "shade"(libs.gson)
     "shade"(libs.dd.plist)
     "shade"(libs.commons.codec)
+    "shade"(libs.guava)
 
     testImplementation(libs.junit)
     testImplementation(gradleTestKit())

@@ -16,19 +16,19 @@ limitations under the License.
 
 package org.moe.gradle.remote;
 
+import com.google.common.net.HostSpecifier;
 import com.jcraft.jsch.AgentIdentityRepository;
 import com.jcraft.jsch.AgentProxyException;
 import com.jcraft.jsch.ChannelExec;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.JSchException;
-import com.jcraft.jsch.Session;
 import com.jcraft.jsch.SSHAgentConnector;
+import com.jcraft.jsch.Session;
 import com.jcraft.jsch.UserInfo;
 import org.gradle.api.GradleException;
 import org.gradle.api.Project;
 import org.gradle.api.logging.Logger;
 import org.gradle.api.logging.Logging;
-import org.gradle.internal.impldep.com.google.common.net.HostSpecifier;
 import org.moe.common.utils.CloseableUtil;
 import org.moe.gradle.MoePlugin;
 import org.moe.gradle.anns.NotNull;
@@ -44,8 +44,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
