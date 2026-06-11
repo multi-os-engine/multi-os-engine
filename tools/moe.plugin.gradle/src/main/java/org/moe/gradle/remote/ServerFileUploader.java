@@ -91,6 +91,8 @@ class ServerFileUploader extends AbstractServerTask {
             Map<String, String> env = new HashMap<>();
             env.put("create", "true");
             env.put("enablePosixFileAttributes", "true");
+            env.put("noCompression", "true");
+            env.put("compressionMethod", "STORED");
             try (FileSystem zipFile = FileSystems.newFileSystem(URI.create(zipPath.toUri().toString().replace("file://", "jar:file:")), env)) {
                 list.walk(new Zipper(zipFile, hostIsPosix, globs));
                 Files.createFile(zipFile.getPath("/.placeholder"));
