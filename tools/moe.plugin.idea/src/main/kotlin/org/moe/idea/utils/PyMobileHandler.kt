@@ -10,7 +10,6 @@ import com.intellij.openapi.progress.ProgressIndicator
 import com.intellij.openapi.progress.ProgressManager
 import com.intellij.openapi.progress.Task
 import com.intellij.openapi.project.Project
-import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.util.SystemInfo
 import io.github.berstanio.pymobiledevice3.daemon.DaemonHandler
 import io.github.berstanio.pymobiledevice3.ipc.PyMobileDevice3IPC
@@ -19,7 +18,6 @@ import org.moe.idea.utils.logger.LoggerFactory
 import java.nio.file.Path
 import java.nio.file.Paths
 import java.util.concurrent.CompletableFuture
-import java.util.concurrent.atomic.AtomicInteger
 import java.util.function.Consumer
 
 class PyMobileHandler {
@@ -80,7 +78,7 @@ class PyMobileHandler {
 
                         val installation = PyInstallationHandler.install(installDir)
                         DaemonHandler.startDaemon(installation)
-                        LOG.debug("Started IPC Daemon in {}", installation.vEnv)
+                        LOG.debug("Started IPC Daemon in {}", installation.pythonHome)
                     }
 
                     val ipc = PyMobileDevice3IPC()
@@ -117,48 +115,6 @@ class PyMobileHandler {
             ProgressManager.getInstance().run(task)
         }
 
-        @JvmStatic
-        fun ensureTunneld(project: Project) {
-            ensureInitialized(project, true)
-            val ipc = instance?.getNow(null) ?: throw IllegalStateException("Daemon must be running before starting tunneld")
-
-            if (ipc.isTunneldRunning.join())
-                return
-
-            if (SystemInfo.isMac) {
-                val response = AtomicInteger(Messages.NO)
-                ApplicationManager.getApplication().invokeAndWait({
-                    response.set(Messages.showYesNoDialog(
-                        project,
-                        "Starting tunneld will require elevated privileges. Tunneld is necessary for launching applications on-device. Do you want to continue?",
-                        "Start Tunneld Service",
-                        "Start",
-                        "Cancel",
-                        Messages.getQuestionIcon()
-                    ))
-                }, ModalityState.any())
-
-                if (response.get() == Messages.YES) {
-                    ProgressManager.getInstance().run(object : Task.Modal(project, "Starting tunneld service", false) {
-                        override fun run(tunneldIndicator: ProgressIndicator) {
-                            tunneldIndicator.text = "Starting tunneld service..."
-                            tunneldIndicator.text2 = "This will ask for elevated privileges."
-                            tunneldIndicator.isIndeterminate = true
-                            ipc.ensureTunneldRunning().join()
-                        }
-                    })
-                }
-            } else {
-                ProgressManager.getInstance().run(object : Task.Modal(project, "Starting tunneld service", false) {
-                    override fun run(indicator: ProgressIndicator) {
-                        indicator.text = "Starting tunneld service..."
-                        indicator.text2 = "This may take a few moments."
-                        indicator.isIndeterminate = true
-                        ipc.ensureTunneldRunning().join()
-                    }
-                })
-            }
-        }
         @JvmStatic
         fun <T> invokeOnUIThread(project: Project,
             runnable: (PyMobileDevice3IPC) -> CompletableFuture<T>,

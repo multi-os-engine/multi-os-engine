@@ -9,6 +9,11 @@
     ]]></description>
 
     <change-notes><![CDATA[
+      1.7.0<br>
+      - Update to pymobiledevice3 9.30.1<br>
+      - Remove tunneld need => no root, no admin prompt<br>
+      - Bundle a self-contained python interpreter<br>
+      <br>
       1.6.4<br>
       - Drop python 3.10 requirement<br>
       - Remove some deprecated API's<br>

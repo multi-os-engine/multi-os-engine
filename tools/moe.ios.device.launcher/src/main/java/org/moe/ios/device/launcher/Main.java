@@ -100,23 +100,10 @@ public class Main {
 
             PyInstallation installation = PyInstallationHandler.install(installDir);
             DaemonHandler.startDaemon(installation);
-            LOG.debug("Started IPC Daemon in {}", installation.getVEnv());
+            LOG.debug("Started IPC Daemon in {}", installation.getPythonHome());
         }
 
         IPCHandler.init();
-
-        if (IPCHandler.getInstance().isTunneldRunning().join())
-        {
-            LOG.debug("Tunneld is already running");
-        }
-        else
-        {
-            LOG.debug("Starting tunneld");
-            if (HostDetection.os == Os.MacOsX)
-                LOG.info("Elevated privileges are required to launch tunneld");
-            IPCHandler.getInstance().ensureTunneldRunning().join();
-            LOG.debug("Tunneld is started");
-        }
 
         // Launch
         Main main = new Main(config);

@@ -261,6 +261,8 @@ public class LaunchHelper implements IStopReplyListener {
         int port = 0;
         if (config.getDebugserverPort() != null)
             port = config.getDebugserverPort().getLocalPort();
+
+        IPCHandler.getInstance().autoMountImage(device).join();
         DebugServerConnection debugServer = IPCHandler.getInstance().debugServerConnect(device, port).join();
 
         Socket sockProxy = null;

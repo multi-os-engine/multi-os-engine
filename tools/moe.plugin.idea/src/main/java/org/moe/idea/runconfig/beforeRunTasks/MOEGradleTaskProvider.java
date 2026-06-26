@@ -34,7 +34,6 @@ import org.moe.idea.runconfig.configuration.MOERunConfiguration;
 import org.moe.idea.runconfig.configuration.MOERunConfigurationBase;
 import org.moe.idea.ui.DeviceChooserDialog;
 import org.moe.idea.ui.MOEToolWindow;
-import org.moe.idea.utils.PyMobileHandler;
 import org.moe.idea.utils.logger.LoggerFactory;
 import res.MOEIcons;
 
@@ -109,8 +108,6 @@ public class MOEGradleTaskProvider extends BeforeRunTaskProvider<MOEGradleTask> 
 
             final MOERunConfiguration runConfig = (MOERunConfiguration) configuration;
             isOpenDialog = runConfig.getOpenDeploymentTargetDialog();
-
-            PyMobileHandler.ensureTunneld(runConfig.getProject());
 
             final MOEGradleRunner gradleRunner = new MOEGradleRunner(env.getProject(), "Building MOE application", runConfig);
 

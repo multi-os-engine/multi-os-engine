@@ -23,7 +23,7 @@ plugins {
 }
 
 group = "org.multi-os-engine"
-version = "1.6.4"
+version = "1.7.0"
 
 javaConventions.release = 17
 
