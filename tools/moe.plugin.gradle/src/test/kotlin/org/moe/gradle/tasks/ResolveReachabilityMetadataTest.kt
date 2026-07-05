@@ -58,7 +58,7 @@ class ResolveReachabilityMetadataTest {
         excludedModules = excludedModules,
         forcedConfigVersions = forcedConfigVersions,
         logger = logger,
-    )
+    ).map { it.directory.toFile() }.toSet()
 
     private val configDir: File
         get() = repoRoot.resolve("com.example/lib/1.0.0").toFile()
