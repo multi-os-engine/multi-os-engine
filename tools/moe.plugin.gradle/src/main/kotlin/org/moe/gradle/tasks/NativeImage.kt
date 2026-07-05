@@ -172,6 +172,19 @@ abstract class NativeImage : AbstractBaseTask() {
         this.resourceConfigFiles = resourceConfigFile?.toSet()
     }
 
+    private var reachabilityMetadataDirs: Set<Any>? = null
+
+    @InputFiles
+    @NotNull
+    fun getReachabilityMetadataDirs(): ConfigurableFileCollection {
+        return project.files(getOrConvention(reachabilityMetadataDirs, CONVENTION_REACHABILITY_METADATA_DIRS))
+    }
+
+    @IgnoreUnused
+    fun setReachabilityMetadataDirs(reachabilityMetadataDirs: Collection<Any>?) {
+        this.reachabilityMetadataDirs = reachabilityMetadataDirs?.toSet()
+    }
+
     private var customOptions: List<String>? = null
 
     @Input
@@ -209,6 +222,7 @@ abstract class NativeImage : AbstractBaseTask() {
                 reflectionConfigFiles = getReflectionConfigFiles().toSet(),
                 proxyConfigFiles = getProxyConfigFiles().toSet(),
                 resourceConfigFile = getResourceConfigFiles().toSet(),
+                configurationFileDirectories = getReachabilityMetadataDirs().toSet(),
                 useLLVM = isUseLLVM(),
                 customOptions = getCustomOptions(),
                 outputDir = getSvmTmpDir().toPath(),
@@ -258,7 +272,8 @@ abstract class NativeImage : AbstractBaseTask() {
 
         val list = FileList(rootProjectDir, remoteServer.buildDir)
         val inputs = svmConf.classpath + svmConf.resourceConfigFile + svmConf.jniConfigFiles +
-                svmConf.reflectionConfigFiles + svmConf.proxyConfigFiles + setOf(capLocal.toFile())
+                svmConf.reflectionConfigFiles + svmConf.proxyConfigFiles +
+                svmConf.configurationFileDirectories + setOf(capLocal.toFile())
         inputs.filterNot { isSdkFile(it) }.forEach { list.add(it.absoluteFile) }
         remoteServer.upload("native-image inputs", list)
 
@@ -291,6 +306,10 @@ abstract class NativeImage : AbstractBaseTask() {
 
     @get:Internal
     lateinit var resourceCollectTaskDep: ResourceCollect
+        private set
+
+    @get:Internal
+    lateinit var reachabilityMetadataResolveTaskDep: ReachabilityMetadataResolve
         private set
 
     private lateinit var mode: Mode
@@ -330,6 +349,9 @@ abstract class NativeImage : AbstractBaseTask() {
         val resourceCollectTask = moePlugin.getTaskBy(ResourceCollect::class.java, sourceSet, mode)
         resourceCollectTaskDep = resourceCollectTask
         dependsOn(resourceCollectTask)
+        val reachabilityMetadataResolveTask = moePlugin.getTaskBy(ReachabilityMetadataResolve::class.java, sourceSet, mode)
+        reachabilityMetadataResolveTaskDep = reachabilityMetadataResolveTask
+        dependsOn(reachabilityMetadataResolveTask)
 
         val resourceTask = moePlugin.getTaskByName<Jar>(MoePlugin.getTaskName(ResourcePackager::class.java, sourceSet, mode))
         dependsOn(resourceTask)
@@ -394,6 +416,9 @@ abstract class NativeImage : AbstractBaseTask() {
                 project.file("resource-config.json").takeIf { it.exists() && it.isFile }
             ).toSet()
         }
+        addConvention(CONVENTION_REACHABILITY_METADATA_DIRS) {
+            reachabilityMetadataResolveTaskDep.configurationDirectories
+        }
         addConvention(CONVENTION_CUSTOM_OPTIONS) {
             listOfNotNull(
                 // Read the project custom config file
@@ -420,6 +445,7 @@ abstract class NativeImage : AbstractBaseTask() {
         private const val CONVENTION_REFLECTION_CONFIG_FILES = "reflectionConfigFiles"
         private const val CONVENTION_PROXY_CONFIG_FILES = "proxyConfigFiles"
         private const val CONVENTION_RESOURCE_CONFIG_FILES = "resourceConfigFiles"
+        private const val CONVENTION_REACHABILITY_METADATA_DIRS = "reachabilityMetadataDirs"
         private const val CONVENTION_CUSTOM_OPTIONS = "customOptions"
 
     }

@@ -53,7 +53,7 @@ public class MoeSDK {
     private static final String MOE_SDK_CONFIGURATION_NAME = "moeMavenSDK";
     private static final String MOE_LOCAL_SDK_PROPERTY = "moe.sdk.localbuild";
     private static final String MOE_LOCAL_SDK_ENV = "MOE_SDK_LOCALBUILD";
-    private static final String MOE_GROUP_ID = "org.multi-os-engine";
+    public static final String MOE_GROUP_ID = "org.multi-os-engine";
     private static final String MOE_SDK_ARTIFACT_ID = "moe-sdk";
 
     public static final Path USER_MOE_HOME;

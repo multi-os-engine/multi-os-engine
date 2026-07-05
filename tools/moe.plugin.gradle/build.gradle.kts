@@ -84,6 +84,7 @@ dependencies {
     "shade"(libs.dd.plist)
     "shade"(libs.commons.codec)
     "shade"(libs.guava)
+    "shade"(libs.graalvm.reachability.metadata)
 
     testImplementation(libs.junit)
     testImplementation(gradleTestKit())

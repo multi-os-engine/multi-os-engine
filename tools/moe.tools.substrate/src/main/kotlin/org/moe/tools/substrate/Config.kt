@@ -34,6 +34,7 @@ data class Config(
         val reflectionConfigFiles: Set<File> = emptySet(),
         val proxyConfigFiles: Set<File> = emptySet(),
         val resourceConfigFile: Set<File> = emptySet(),
+        val configurationFileDirectories: Set<File> = emptySet(),
         val useLLVM: Boolean = true,
         val enableJDWP: Boolean = false,
 

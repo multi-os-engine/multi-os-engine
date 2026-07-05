@@ -46,6 +46,8 @@ import org.moe.gradle.tasks.ListSimulators;
 import org.moe.gradle.tasks.NatJGen;
 import org.moe.gradle.tasks.NativeImage;
 import org.moe.gradle.tasks.R8;
+import org.moe.gradle.tasks.ReachabilityMetadataDownload;
+import org.moe.gradle.tasks.ReachabilityMetadataResolve;
 import org.moe.gradle.tasks.ReflectionCollect;
 import org.moe.gradle.tasks.ResourceCollect;
 import org.moe.gradle.tasks.ResourcePackager;
@@ -190,6 +192,8 @@ public class MoePlugin extends AbstractMoePlugin {
         registerTask(ReflectionCollect.class, "Collect reflection config.", asList(SOURCE_SET, MODE));
         ResourcePackager.registerTask(this);
         registerTask(ResourceCollect.class, "Collect resource config.", asList(SOURCE_SET, MODE));
+        registerTask(ReachabilityMetadataDownload.class, "Downloads the GraalVM reachability-metadata repository.", emptyList());
+        registerTask(ReachabilityMetadataResolve.class, "Resolves GraalVM reachability metadata for dependencies.", asList(SOURCE_SET, MODE));
         registerTask(NativeImage.class, "AOT compile using GraalVM native-image.", asList(SOURCE_SET, MODE, ARCH, PLATFORM));
         registerTask(TestClassesProvider.class, "Creates the classlist.txt file.", asList(SOURCE_SET, MODE));
         registerTask(StartupProvider.class, "Creates the preregister.txt file.", asList(SOURCE_SET, MODE));

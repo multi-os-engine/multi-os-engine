@@ -16,6 +16,7 @@ The MOE Gradle plugin adds support to building MOE based applications via Gradle
   * [Resource Packaging](#resource-packaging)
   * [Java Processes](#java-processes)
   * [UI Actions and Outlets](#ui-actions-and-outlets)
+  * [Reachability Metadata](#reachability-metadata)
 * [Tasks](#tasks)
   * [ProGuard Task](#proguard-task)
   * [Retrolambda Task](#retrolambda-task)
@@ -322,6 +323,44 @@ moe {
     }
 }
 ```
+
+### Reachability Metadata
+
+The plugin matches the project's dependencies against the
+[GraalVM reachability metadata repository](https://github.com/oracle/graalvm-reachability-metadata), which provides
+ready-made native-image configuration (reflection, JNI, resources, serialization) for many popular libraries. Matched
+configuration directories are passed to `native-image` automatically via `-H:ConfigurationFileDirectories`.
+
+The `moeReachabilityMetadataDownload` task downloads and extracts the repository into the project's build directory
+(`build/moe/graalvm-reachability-metadata/repository`) and re-uses it until the configured version or source changes;
+cleaning the build directory triggers a fresh download. The feature is enabled by default; projects without covered
+dependencies are unaffected.
+
+```groovy
+moe {
+    metadataRepository {
+        // Whether dependencies are matched against the metadata repository. Defaults to `true`
+        enabled = true
+
+        // Repository release version, ignored when `uri` is set
+        version = '1.0.4'
+
+        // Custom source instead of the official release: an http(s) URL of a repository zip,
+        // or a local repository zip file
+        uri = file('path/to/repository.zip')
+
+        // 'group:artifact' modules to exclude from metadata matching
+        excludedModules = ['com.example:excluded-lib']
+
+        // Force a specific metadata config version for a 'group:artifact' module
+        moduleToConfigVersion = ['com.example:lib': '1.2.3']
+    }
+}
+```
+
+If a dependency version is not covered by the repository, the latest available config for that module is used. Note
+that ProGuard/R8 shrinking can still remove classes which are only reachable through reflection described by the
+metadata; add keep rules via `proguard.append.cfg` if a library needs them.
 
 ## Tasks
 

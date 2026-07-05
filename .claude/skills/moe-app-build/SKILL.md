@@ -44,6 +44,8 @@ All major tasks are registered via `MoePlugin.registerTask(class, description, p
 | `ReflectionCollect` | SOURCE_SET × MODE | `tasks/ReflectionCollect.kt` |
 | `ResourcePackager` | SOURCE_SET × MODE | `tasks/ResourcePackager.java` |
 | `ResourceCollect` | SOURCE_SET × MODE | `tasks/ResourceCollect.kt` |
+| `ReachabilityMetadataDownload` | none | `tasks/ReachabilityMetadataDownload.kt` |
+| `ReachabilityMetadataResolve` | SOURCE_SET × MODE | `tasks/ReachabilityMetadataResolve.kt` |
 | `NativeImage` | SOURCE_SET × MODE × ARCH × PLATFORM | `tasks/NativeImage.kt` |
 | `TestClassesProvider` | SOURCE_SET × MODE | `tasks/TestClassesProvider.java` |
 | `StartupProvider` | SOURCE_SET × MODE | `tasks/StartupProvider.java` |
@@ -128,6 +130,16 @@ The `ReflectionCollect.run()` currently throws on anything other than `all`. `mo
 - `custom-config.cfg` — raw extra `native-image` flags, line-per-flag
 - `proguard.cfg` — overrides the SDK base config (`R8.setupMoeTask` checks before falling back to SDK)
 - `proguard.append.cfg` — appended to the composed proguard config
+
+## Reachability metadata repository
+
+`ReachabilityMetadataResolve` (per SOURCE_SET × MODE) matches the GAVs of the source set's runtime classpath configuration (minus group `org.multi-os-engine`) against the [oracle/graalvm-reachability-metadata](https://github.com/oracle/graalvm-reachability-metadata) repository and writes the matched config dir paths to `build/moe/<ss>/reachability-metadata/<mode>/matched-directories.txt`. `NativeImage` folds those into `Config.configurationFileDirectories` → `-H:ConfigurationFileDirectories=`.
+
+- Matching engine is Oracle's shaded `org.graalvm.buildtools:graalvm-reachability-metadata` library (version pinned in the catalog); the repo zip release version is pinned separately in `ReachabilityMetadataOptions.DEFAULT_VERSION`. The library refuses repos without a `schemas/` dir (metadata releases < 0.3.33).
+- `ReachabilityMetadataDownload` (single task, no params) streams the repo zip URL (any scheme, incl. `file:`) to a temp file and extracts it to its `@OutputDirectory` `build/moe/graalvm-reachability-metadata/repository`; staleness is plain Gradle up-to-date checking on the `@Input` version/uri key — no hand-rolled markers, no scheme branching. `clean` re-downloads; changed content behind an unchanged uri/version is NOT detected. Matched dirs are project-local, which is what makes them uploadable by the remote build. Fetch failure fails the build (no silent skip). The zip must carry the `<group>/<artifact>` tree and `schemas/` at its root (as all release zips do) — the library rejects anything else with a clear "no 'schemas' directory" error.
+- DSL: `moe.metadataRepository { enabled(true) / version / uri / excludedModules / moduleToConfigVersion }`. `uri` is always a zip URL/path — extracted local directories are not supported.
+- GAV resolution must use the runtime classpath *configuration* — NativeImage's own inputs are post-R8 (one merged jar, coordinates gone).
+- Known gap: R8 shrinking can remove classes only reachable via metadata-described reflection; keep-rule generation from matched metadata is a follow-up.
 
 ## Critical files
 

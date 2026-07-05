@@ -149,6 +149,12 @@ class SubstrateExecutor(
         args += config.jniConfigFiles.map { "-H:JNIConfigurationFiles=${resolve.resolve(it.absolutePath)}" }
         args += config.reflectionConfigFiles.map { "-H:ReflectionConfigurationFiles=${resolve.resolve(it.absolutePath)}" }
         args += config.proxyConfigFiles.map { "-H:DynamicProxyConfigurationFiles=${resolve.resolve(it.absolutePath)}" }
+
+        if (config.configurationFileDirectories.isNotEmpty()) {
+            args += "-H:ConfigurationFileDirectories=" +
+                    config.configurationFileDirectories.joinToString(",") { resolve.resolve(it.absolutePath) }
+        }
+
         args += "-H:+AllowIncompleteClasspath"
 
         val classpath = config.classpath.joinToString(graalVM.host.pathSeparator) {

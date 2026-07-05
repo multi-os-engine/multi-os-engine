@@ -57,6 +57,9 @@ public class MoeExtension extends AbstractMoeExtension {
     public final NativeImageOptions nativeImage;
 
     @NotNull
+    public final ReachabilityMetadataOptions metadataRepository;
+
+    @NotNull
     private MoePlatform platform = MoePlatform.IOS;
 
     @NotNull
@@ -76,6 +79,7 @@ public class MoeExtension extends AbstractMoeExtension {
         this.remoteBuildOptions = instantiator.newInstance(RemoteBuildOptions.class);
         this.proguard = instantiator.newInstance(ProGuardOptions.class);
         this.nativeImage = instantiator.newInstance(NativeImageOptions.class);
+        this.metadataRepository = instantiator.newInstance(ReachabilityMetadataOptions.class);
     }
 
     void setup() {}
@@ -123,6 +127,11 @@ public class MoeExtension extends AbstractMoeExtension {
     @IgnoreUnused
     public void nativeImage(Action<NativeImageOptions> action) {
         Require.nonNull(action).execute(nativeImage);
+    }
+
+    @IgnoreUnused
+    public void metadataRepository(Action<ReachabilityMetadataOptions> action) {
+        Require.nonNull(action).execute(metadataRepository);
     }
 
     @NotNull
